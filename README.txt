@@ -1,1 +1,1 @@
-placeholder readme
+This framework contains various Elegant Chaos utility classes.
