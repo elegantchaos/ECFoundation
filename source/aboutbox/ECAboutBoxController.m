@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECAboutBoxController.h"
+#import "ECDictionaryUtilities.h"
 
 // --------------------------------------------------------------------------
 // Private Interface
@@ -83,24 +84,6 @@
 	mAnimateFrame = YES;
 }
 
-- (void) setBoolIfPresent: (BOOL*) valueOut withKey: (NSString*) key fromDictionary: (NSDictionary*) dictionary
-{
-	id value = [dictionary valueForKey: key];
-	if (value)
-	{
-		*valueOut = [value boolValue];
-	}
-}
-
-- (void) setDoubleIfPresent: (double*) valueOut withKey: (NSString*) key fromDictionary: (NSDictionary*) dictionary
-{
-	id value = [dictionary valueForKey: key];
-	if (value)
-	{
-		*valueOut = [value doubleValue];
-	}
-}
-
 // --------------------------------------------------------------------------
 //! Initialise properties using a bundle's info dictionary.
 // --------------------------------------------------------------------------
@@ -116,9 +99,9 @@
 	self.applicationCopyright = [infoDict valueForKey:@"NSHumanReadableCopyright"];
 	self.applicationName = [infoDict valueForKey:@"CFBundleName"];
 	
-	[self setBoolIfPresent: &mClickToHide withKey: @"ECAboutBoxClickToHide" fromDictionary: infoDict];
-	[self setBoolIfPresent: &mAnimateFrame withKey: @"ECAboutBoxAnimateFrame" fromDictionary: infoDict];
-	[self setDoubleIfPresent: &mAnimationDuration withKey: @"ECAboutBoxAnimationDuration" fromDictionary: infoDict];
+	[infoDict valueForKey: @"ECAboutBoxClickToHide" intoBool: &mClickToHide];
+	[infoDict valueForKey: @"ECAboutBoxAnimateFrame" intoBool: &mAnimateFrame];
+	[infoDict valueForKey: @"ECAboutBoxAnimationDuration" intoDouble: &mAnimationDuration];
 }
 
 // --------------------------------------------------------------------------
