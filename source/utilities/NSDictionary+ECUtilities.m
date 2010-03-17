@@ -5,10 +5,10 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECDictionaryUtilities.h"
+#import "NSDictionary+ECUtilities.h"
 
 
-@implementation NSDictionary(ECDictionaryUtilities)
+@implementation NSDictionary(ECUtilities)
 
 // --------------------------------------------------------------------------
 //! If a given key is in the dictionary, place its value into a bool variable.
