@@ -20,4 +20,9 @@
 }
 
 
+- (BOOL)isFilePackageAtURL: (NSURL*) fullPath
+{
+	return [self isFilePackageAtPath: [fullPath path]];
+}
+
 @end
