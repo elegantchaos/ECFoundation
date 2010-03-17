@@ -25,4 +25,9 @@
 	return [self isFilePackageAtPath: [fullPath path]];
 }
 
+- (NSImage*)	iconForURL:(NSURL*) fullPath
+{
+	return [self iconForFile: [fullPath path]];
+}
+
 @end

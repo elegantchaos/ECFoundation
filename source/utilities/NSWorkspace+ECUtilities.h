@@ -8,7 +8,8 @@
 
 @interface NSWorkspace(ECUtilities)
 
-- (BOOL)selectURL:(NSURL*) fullPath inFileViewerRootedAtURL:(NSURL*) rootFullPath;
-- (BOOL)isFilePackageAtURL: (NSURL*)fullPath;
+- (BOOL)		selectURL:(NSURL*) fullPath inFileViewerRootedAtURL:(NSURL*) rootFullPath;
+- (BOOL)		isFilePackageAtURL: (NSURL*) fullPath;
+- (NSImage*)	iconForURL:(NSURL*) fullPath;
 
 @end
