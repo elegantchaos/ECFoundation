@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECAboutBoxController.h"
-#import "ECDictionaryUtilities.h"
+#import "NSDictionary+ECUtilities.h"
 
 // --------------------------------------------------------------------------
 // Private Interface
