@@ -8,3 +8,5 @@
 #import "ECSharedPrefix.pch"
 
 #define EC_RELEASE 1
+
+#define ECDebug(...) 

@@ -8,3 +8,6 @@
 #import "ECSharedPrefix.pch"
 
 #define EC_DEBUG 1
+
+#define ECDebug(...) ECLog(__VA_ARGS__)
+
