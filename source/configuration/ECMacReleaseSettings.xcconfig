@@ -4,7 +4,8 @@
 // (c) Elegant Chaos.
 // --------------------------------------------------------------------------
 
-#include "ECSharedSettings.xcconfig"
+#include "ECFoundationReleaseSettings.xcconfig"
+#include "ECMacSharedSettings.xcconfig"
 
 // --------------------------------------------------------------------------
 // Build Options

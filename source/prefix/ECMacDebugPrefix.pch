@@ -6,4 +6,4 @@
 // --------------------------------------------------------------------------
 
 #import "ECFoundationDebugPrefix.pch"
-#import "ECFoundationSharedPrefix.pch"
+#import "ECMacSharedPrefix.pch"

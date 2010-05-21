@@ -4,7 +4,8 @@
 // (c) Elegant Chaos.
 // --------------------------------------------------------------------------
 
-#include "ECSharedSettings.xcconfig"
+#include "ECFoundationDebugSettings.xcconfig"
+#include "ECMacSharedSettings.xcconfig"
 
 // --------------------------------------------------------------------------
 // Architectures
