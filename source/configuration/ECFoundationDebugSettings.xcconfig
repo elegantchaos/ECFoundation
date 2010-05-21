@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
-//! @date 16/01/2010
+//! Standard Elegant Chaos debug configuration settings.
 //
-//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// (c) Elegant Chaos.
 // --------------------------------------------------------------------------
 
+#include "ECFoundationSharedSettings.xcconfig"

@@ -1,0 +1,8 @@
+// --------------------------------------------------------------------------
+//! Standard Elegant Chaos debug configuration settings.
+//
+// (c) Elegant Chaos.
+// --------------------------------------------------------------------------
+
+#include "ECFoundationDebugSettings.xcconfig"
+#include "ECTouchSharedSettings.xcconfig"
