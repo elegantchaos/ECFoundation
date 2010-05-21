@@ -5,6 +5,5 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
+#import "ECFoundationDebugPrefix.pch"
+#import "ECTouchSharedPrefix.pch" 

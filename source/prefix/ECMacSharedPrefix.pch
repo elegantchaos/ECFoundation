@@ -5,6 +5,8 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECSharedPrefix.pch"
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
 
-#define EC_RELEASE 1
+#define EC_MAC 1

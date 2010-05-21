@@ -5,6 +5,5 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECSharedPrefix.pch"
-
-#define EC_DEBUG 1
+#import "ECFoundationDebugPrefix.pch"
+#import "ECFoundationSharedPrefix.pch"
