@@ -10,4 +10,8 @@
 	#import <UIKit/UIKit.h>
 #endif
 
+<<<<<<< HEAD:frameworks/ECFoundation/source/prefix/ECTouchSharedPrefix.pch
 #define EC_TOUCH 1
+=======
+#define ECLog(...) NSLog(__VA_ARGS__)
+>>>>>>> 09ffff59bd25947de859079956db728a3126f03c:frameworks/ECFoundation/source/prefix/ECSharedPrefix.pch

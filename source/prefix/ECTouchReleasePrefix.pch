@@ -5,5 +5,14 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+<<<<<<< HEAD:frameworks/ECFoundation/source/prefix/ECTouchReleasePrefix.pch
 #import "ECFoundationReleasePrefix.pch"
 #import "ECTouchSharedPrefix.pch" 
+=======
+#import "ECSharedPrefix.pch"
+
+#define EC_DEBUG 1
+
+#define ECDebug(...) ECLog(__VA_ARGS__)
+
+>>>>>>> 09ffff59bd25947de859079956db728a3126f03c:frameworks/ECFoundation/source/prefix/ECDebugPrefix.pch

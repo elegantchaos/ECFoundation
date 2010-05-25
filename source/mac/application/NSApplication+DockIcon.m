@@ -32,7 +32,7 @@
 	NSApplicationActivationPolicy currentPolicy = [NSApp activationPolicy];
 	if (flag && (currentPolicy == NSApplicationActivationPolicyAccessory)) 
 	{
-		NSLog(@"enabling dock icon");
+		ECDebug(@"enabling dock icon");
 		[NSApp setActivationPolicy: NSApplicationActivationPolicyRegular];
 		[self bringNextProcessToFront];
 		[self performSelector:@selector(bringToFront) withObject:nil afterDelay:0.0];
@@ -40,7 +40,7 @@
 	
 	else if (!flag && (currentPolicy == NSApplicationActivationPolicyRegular))
 	{
-		NSLog(@"disabling dock icon");
+		ECDebug(@"disabling dock icon");
 		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
 		[alert addButtonWithTitle:@"Relaunch Now"];
 		[alert addButtonWithTitle:@"Later"];
