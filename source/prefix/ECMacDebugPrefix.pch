@@ -5,13 +5,5 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-<<<<<<< HEAD:frameworks/ECFoundation/source/prefix/ECMacDebugPrefix.pch
 #import "ECFoundationDebugPrefix.pch"
 #import "ECMacSharedPrefix.pch"
-=======
-#import "ECSharedPrefix.pch"
-
-#define EC_RELEASE 1
-
-#define ECDebug(...) 
->>>>>>> 09ffff59bd25947de859079956db728a3126f03c:frameworks/ECFoundation/source/prefix/ECReleasePrefix.pch

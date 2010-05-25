@@ -5,3 +5,5 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#define ECLog(...) NSLog(__VA_ARGS__)
+
