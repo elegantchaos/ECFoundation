@@ -34,4 +34,3 @@ GCC_C_LANGUAGE_STANDARD = c99
 // GCC 4.2 Warnings
 // --------------------------------------------------------------------------
 
-GCC_WARN_UNUSED_VARIABLE = YES
