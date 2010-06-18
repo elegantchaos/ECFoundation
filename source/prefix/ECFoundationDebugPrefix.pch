@@ -9,4 +9,7 @@
 
 #define EC_DEBUG 1
 
+#define ECUnusedInDebug(v) ECUnused(v)
+#define ECUnusedInRelease(v)
 #define ECDebug(...) ECLog(__VA_ARGS__)
+

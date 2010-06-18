@@ -6,3 +6,10 @@
 
 #include "ECFoundationDebugSettings.xcconfig"
 #include "ECTouchSharedSettings.xcconfig"
+
+
+// --------------------------------------------------------------------------
+// Code Signing
+// --------------------------------------------------------------------------
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer: Sam Deane (72P22YUDL6)

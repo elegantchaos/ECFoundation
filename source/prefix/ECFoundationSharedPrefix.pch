@@ -7,3 +7,4 @@
 
 #define ECLog(...) NSLog(__VA_ARGS__)
 
+#define ECUnused(v)	(void) (v)

@@ -9,4 +9,7 @@
 
 #define EC_RELEASE 1
 
+#define ECUnusedInDebug(v)
+#define ECUnusedInRelease(v) ECUnused(v)
+
 #define ECDebug(...) 
