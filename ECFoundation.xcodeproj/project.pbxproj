@@ -53,6 +53,12 @@
 		227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; };
 		227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; };
 		227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; };
+		22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; };
+		22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */; };
+		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; };
+		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
+		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; };
+		22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -108,12 +114,20 @@
 		227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebugPrefix.pch; sourceTree = "<group>"; };
 		227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchReleasePrefix.pch; sourceTree = "<group>"; };
 		227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchSharedPrefix.pch; sourceTree = "<group>"; };
+		22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libECFoundation Touch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		22FBFE6511DD0D9400578A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
+				22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,6 +368,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		22FBFE6311DD0D9400578A66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */,
+				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
+				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +411,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		22FBFE6611DD0D9400578A66 /* ECFoundation Touch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation Touch" */;
+			buildPhases = (
+				22FBFE6311DD0D9400578A66 /* Headers */,
+				22FBFE6411DD0D9400578A66 /* Sources */,
+				22FBFE6511DD0D9400578A66 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECFoundation Touch";
+			productName = "ECFoundation Touch";
+			productReference = 22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		8DC2EF4F0486A6940098B216 /* ECFoundation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "ECFoundation" */;
@@ -419,6 +461,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ECFoundation */,
+				22FBFE6611DD0D9400578A66 /* ECFoundation Touch */,
 			);
 		};
 /* End PBXProject section */
@@ -444,6 +487,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		22FBFE6411DD0D9400578A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */,
+				22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */,
+				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,6 +574,33 @@
 			};
 			name = Release;
 		};
+		22FBFE6811DD0D9400578A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				PREBINDING = NO;
+				PRODUCT_NAME = "ECFoundation Touch";
+			};
+			name = Debug;
+		};
+		22FBFE6911DD0D9400578A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				PREBINDING = NO;
+				PRODUCT_NAME = "ECFoundation Touch";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -538,6 +618,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation Touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FBFE6811DD0D9400578A66 /* Debug */,
+				22FBFE6911DD0D9400578A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
