@@ -71,7 +71,8 @@
 // Designated initializer
 - (id)initWithPanesSearchPath:(NSString*)path bundleExtension:(NSString *)ext
 {
-    if (self = [super init]) {
+    if ((self = [super init]) != nil)
+	{
         [self setDebug:NO];
         preferencePanes = [[NSMutableDictionary alloc] init];
         panesOrder = [[NSMutableArray alloc] init];
@@ -191,7 +192,8 @@
     // Load last view
     NSString *lastViewName = [defaults objectForKey:Last_Pane_Defaults_Key];
     
-    if ([panesOrder containsObject:lastViewName] && [self loadPrefsPaneNamed:lastViewName display:NO]) {
+    if ([panesOrder containsObject:lastViewName] && [self loadPrefsPaneNamed:lastViewName display:NO]) 
+	{
         if (shouldDisplay) {
             [prefsWindow makeKeyAndOrderFront:nil];
         }
@@ -203,7 +205,8 @@
     // Try to load each prefpane in turn if loading the last-viewed one fails.
     NSEnumerator* panes = [panesOrder objectEnumerator];
     NSString *pane;
-    while (pane = [panes nextObject]) {
+    while ((pane = [panes nextObject]) != nil)
+	{
         if (![pane isEqualToString:lastViewName]) {
             if ([self loadPrefsPaneNamed:pane display:NO]) {
                 if (shouldDisplay) {
@@ -253,7 +256,8 @@
                     NSEnumerator *enumerator = [panes objectEnumerator];
                     id <ECPreferencePaneProtocol> aPane;
                     
-                    while (aPane = [enumerator nextObject]) {
+                    while ((aPane = [enumerator nextObject]) != nil)
+					{
                         [panesOrder addObject:[aPane paneName]];
                         [preferencePanes setObject:aPane forKey:[aPane paneName]];
                     }
@@ -310,17 +314,18 @@
     }
     
     // Get rid of old view before resizing, for display purposes.
-    if (disp) {
-        NSView *tempView = [[NSView alloc] initWithFrame:[[prefsWindow contentView] frame]];
+    if (disp) 
+	{
+        NSView *tempView = [(NSView*) [NSView alloc] initWithFrame:[(NSView*)[prefsWindow contentView] frame]];
         [prefsWindow setContentView:tempView];
         [tempView release]; 
     }
     
     // Preserve upper left point of window during resize.
     NSRect newFrame = [prefsWindow frame];
-    newFrame.size.height = [prefsView frame].size.height + ([prefsWindow frame].size.height - [[prefsWindow contentView] frame].size.height);
+    newFrame.size.height = [prefsView frame].size.height + ([prefsWindow frame].size.height - [(NSView*)[prefsWindow contentView] frame].size.height);
     newFrame.size.width = [prefsView frame].size.width;
-    newFrame.origin.y += ([[prefsWindow contentView] frame].size.height - [prefsView frame].size.height);
+    newFrame.origin.y += ([(NSView*)[prefsWindow contentView] frame].size.height - [prefsView frame].size.height);
     
     id <ECPreferencePaneProtocol> pane = [preferencePanes objectForKey:name];
     [prefsWindow setShowsResizeIndicator:([pane allowsHorizontalResizing] || [pane allowsHorizontalResizing])];
@@ -376,7 +381,7 @@
 float ToolbarHeightForWindow(NSWindow *window)
 {
     NSToolbar *toolbar;
-    float toolbarHeight = 0.0;
+    float toolbarHeight = 0.0f;
     NSRect windowFrame;
     
     toolbar = [window toolbar];
@@ -385,8 +390,7 @@ float ToolbarHeightForWindow(NSWindow *window)
     {
         windowFrame = [NSWindow contentRectForFrameRect:[window frame]
                                               styleMask:[window styleMask]];
-        toolbarHeight = NSHeight(windowFrame)
-		- NSHeight([[window contentView] frame]);
+        toolbarHeight = (float) (NSHeight(windowFrame) - NSHeight([(NSView*)[window contentView] frame]));
     }
 	
     return toolbarHeight;
@@ -401,8 +405,10 @@ float ToolbarHeightForWindow(NSWindow *window)
     NSString *name;
     NSImage *itemImage;
     
-    while (name = [itemEnumerator nextObject]) {
-        if ([preferencePanes objectForKey:name] != nil) {
+    while ((name = [itemEnumerator nextObject]) != nil)
+	{
+        if ([preferencePanes objectForKey:name] != nil) 
+		{
             NSToolbarItem *item = [[NSToolbarItem alloc] initWithItemIdentifier:name];
             [item setPaletteLabel:name]; // item's label in the "Customize Toolbar" sheet (not relevant here, but we set it anyway)
             [item setLabel:name]; // item's label in the toolbar
@@ -425,7 +431,8 @@ float ToolbarHeightForWindow(NSWindow *window)
     }
     
     NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-    prefsToolbar = [[NSToolbar alloc] initWithIdentifier:[bundleIdentifier stringByAppendingString:@"_Preferences_Toolbar_Identifier"]];
+	NSString* identifier = [bundleIdentifier stringByAppendingString:@"_Preferences_Toolbar_Identifier"];
+    prefsToolbar = [(NSToolbar*) [NSToolbar alloc] initWithIdentifier: identifier];
     [prefsToolbar setDelegate:self];
     [prefsToolbar setAllowsUserCustomization:NO];
     [prefsToolbar setAutosavesConfiguration:NO];
@@ -535,10 +542,14 @@ float ToolbarHeightForWindow(NSWindow *window)
     NSEnumerator *enumerator = [newPanesOrder objectEnumerator];
     NSString *name;
     
-    while (name = [enumerator nextObject]) {
-        if ([preferencePanes objectForKey:name] != nil) {
+    while ((name = [enumerator nextObject]) != nil)
+	{
+        if ([preferencePanes objectForKey:name] != nil) 
+		{
             [panesOrder addObject:name];
-        } else {
+        }
+		else
+		{
             [self debugLog:[NSString stringWithFormat:@"Did not add preference pane \"%@\" to the toolbar ordering array, because that pane does not exist.", name]];
         }
     }

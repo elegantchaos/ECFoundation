@@ -36,7 +36,7 @@
 {
     NSRect titleFrame = [super titleRectForBounds:theRect];
     NSSize titleSize = [[self attributedStringValue] size];
-    titleFrame.origin.y = theRect.origin.y - .5 + (theRect.size.height - titleSize.height) / 2.0;
+    titleFrame.origin.y = theRect.origin.y - 0.5f + (theRect.size.height - titleSize.height) / 2.0f;
     return titleFrame;
 }
 

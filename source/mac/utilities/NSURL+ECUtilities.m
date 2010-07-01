@@ -29,13 +29,13 @@
 
 - (NSURL*) getUniqueFileWithName: (NSString*) name andExtension: (NSString*) extension usingManager: (NSFileManager*) fileManager
 {
-	NSInteger index = 0;
+	NSInteger iteration = 0;
 	NSURL* result;
 	NSString* newName = name;
 	do
 	{
 		result = [[self URLByAppendingPathComponent:newName] URLByAppendingPathExtension: extension];
-		newName = [NSString stringWithFormat: @"%@ %d", name, ++index];
+		newName = [NSString stringWithFormat: @"%@ %d", name, ++iteration];
 	} while ([fileManager fileExistsAtPath: [result path]]);
 	
 	return result;

@@ -16,11 +16,11 @@
                    backing:(NSBackingStoreType)bufferingType 
                      defer:(BOOL)flag 
 {
-    if (self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:bufferingType defer:flag]) 
+    if ((self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:bufferingType defer:flag]) != nil) 
 	{
         [self setLevel: NSStatusWindowLevel];
         [self setBackgroundColor: [NSColor clearColor]];
-        [self setAlphaValue:1.0];
+        [self setAlphaValue:1.0f];
         [self setOpaque:NO];
         [self setHasShadow:NO];
     }

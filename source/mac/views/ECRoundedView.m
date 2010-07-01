@@ -15,8 +15,8 @@
 
 - (void) setupDefaults
 {
-	self.radius = 25.0;
-	self.transparency = 0.75;
+	self.radius = 25.0f;
+	self.transparency = 0.75f;
 }
 
 // --------------------------------------------------------------------------
@@ -25,7 +25,7 @@
 
 - (id) initWithFrame:(NSRect)frameRect
 {
-	if (self = [super initWithFrame: frameRect])
+	if ((self = [super initWithFrame: frameRect]) != nil)
 	{
 		[self setupDefaults];
 	}
@@ -50,12 +50,12 @@
 - (void) drawRect: (NSRect) dirtyRect
 {
     NSRect frameRect = [self frame];
-    const int minX = NSMinX(frameRect);
-    const int midX = NSMidX(frameRect);
-    const int maxX = NSMaxX(frameRect);
-    const int minY = NSMinY(frameRect);
-    const int midY = NSMidY(frameRect);
-    const int maxY = NSMaxY(frameRect);
+    const CGFloat minX = NSMinX(frameRect);
+    const CGFloat midX = NSMidX(frameRect);
+    const CGFloat maxX = NSMaxX(frameRect);
+    const CGFloat minY = NSMinY(frameRect);
+    const CGFloat midY = NSMidY(frameRect);
+    const CGFloat maxY = NSMaxY(frameRect);
 
     NSBezierPath* path = [NSBezierPath bezierPath];
     [path moveToPoint:NSMakePoint(midX, minY)];
@@ -65,7 +65,7 @@
     [path appendBezierPathWithArcFromPoint:frameRect.origin toPoint:NSMakePoint(midX, minY) radius:mRadius];
     [path closePath];
     
-    NSColor* fillColour = [NSColor colorWithCalibratedWhite:0.0 alpha:mTransparency];
+    NSColor* fillColour = [NSColor colorWithCalibratedWhite:0.0f alpha:mTransparency];
     [fillColour set];
     [path fill];
 }
