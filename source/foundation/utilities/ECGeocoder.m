@@ -6,8 +6,12 @@
 // --------------------------------------------------------------------------
 
 #import "ECGeocoder.h"
+#import "ECGeocoderPoint.h"
+#import "JSON.h"
 
 @implementation ECGeocoder
+
+@synthesize delegate = mDelegate;
 
 // http://geocoding.cloudmade.com/BC9A493B41014CAABB98F0471D759707/geocoding/v2/find.js?query=croxted%20road
 
@@ -33,13 +37,23 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 	if (encodingName)
 	{
 		mEncoding = CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef) encodingName));
+		mRawJSON = [[NSMutableString alloc] init];
 	}
+
 	ECDebug(@"received response: type:%@ length:%lld encoding: %@ (%d)", [response MIMEType], [response expectedContentLength], encodingName, (int) mEncoding);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-	ECDebug(@"received data: %@", [[NSString alloc] initWithData: data encoding: mEncoding]);
+	NSString* text = [[NSString alloc] initWithData: data encoding: mEncoding];
+
+	if (mRawJSON)
+	{
+		[mRawJSON appendString: text];
+	}
+	
+	ECDebug(@"received data: %@", text);
+	[text release];
 }
 
 - (void)connection:(NSURLConnection *)theConnection didFailWithError:(NSError *)error
@@ -49,7 +63,29 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)theConnection
 {
-	ECDebug(@"finished");
+	NSDictionary* value = [mRawJSON JSONValue];
+	ECDebug(@"got data:\n%@", value);
+
+	if (mDelegate)
+	{
+		NSMutableArray* points = [[NSMutableArray alloc] init];
+		NSArray* features = [value valueForKey: @"features"];
+		for (NSDictionary* feature in features)
+		{
+			NSDictionary* centroid = [feature valueForKey: @"centroid"];
+			NSArray* centre = [centroid valueForKey: @"coordinates"];
+			CLLocationCoordinate2D location;
+			location.latitude = [[centre objectAtIndex: 0] doubleValue];
+			location.longitude = [[centre objectAtIndex: 1] doubleValue];
+
+			ECGeocoderPoint* point = [[ECGeocoderPoint alloc] initWithLocation: location andData: feature];
+			[points addObject: point];
+			[point release];
+		}
+		
+		[mDelegate geocoder:self foundPoints:points];
+		[points release];
+	}
 }
 
 @end
