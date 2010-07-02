@@ -10,13 +10,13 @@
 @implementation ECGeocoderPoint
 
 @synthesize location = mLocation;
+@synthesize bounds = mBounds;
 @synthesize data = mData;
 
-- (id) initWithLocation: (CLLocationCoordinate2D) location andData: (NSDictionary*) data
+- (id) initWithDictionary: (NSDictionary*) data
 {
 	if ((self = [super init]) != nil)
 	{
-		mLocation = location;
 		self.data = data;
 	}
 	

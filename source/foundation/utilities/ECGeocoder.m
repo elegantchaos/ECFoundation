@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECGeocoder.h"
-#import "ECGeocoderPoint.h"
+#import "ECGeocoderPointCloudmade.h"
 #import "JSON.h"
 
 @implementation ECGeocoder
@@ -22,7 +22,7 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 - (void) lookup: (NSString*) stringToLookup
 {
 	NSString* query = [NSString stringWithFormat: @"%@/%@/%@%@", kCloudMadeBase, kCloudMadeID, kCloudMadeQuery, stringToLookup];
-	ECDebug(@"geocoding request: %@", query);
+	ECDebug(GeocoderChannel, @"geocoding request: %@", query);
 	
 	NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:query]];
 	NSURLConnection* connection = [NSURLConnection connectionWithRequest: request delegate:self];
@@ -40,7 +40,7 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 		mRawJSON = [[NSMutableString alloc] init];
 	}
 
-	ECDebug(@"received response: type:%@ length:%lld encoding: %@ (%d)", [response MIMEType], [response expectedContentLength], encodingName, (int) mEncoding);
+	ECDebug(GeocoderChannel, @"received response: type:%@ length:%lld encoding: %@ (%d)", [response MIMEType], [response expectedContentLength], encodingName, (int) mEncoding);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -52,19 +52,19 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 		[mRawJSON appendString: text];
 	}
 	
-	ECDebug(@"received data: %@", text);
+	ECDebug(GeocoderChannel, @"received data: %@", text);
 	[text release];
 }
 
 - (void)connection:(NSURLConnection *)theConnection didFailWithError:(NSError *)error
 {
-	ECDebug(@"failed");
+	ECDebug(GeocoderChannel, @"failed");
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)theConnection
 {
 	NSDictionary* value = [mRawJSON JSONValue];
-	ECDebug(@"got data:\n%@", value);
+	ECDebug(GeocoderChannel, @"got data:\n%@", value);
 
 	if (mDelegate)
 	{
@@ -72,13 +72,7 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 		NSArray* features = [value valueForKey: @"features"];
 		for (NSDictionary* feature in features)
 		{
-			NSDictionary* centroid = [feature valueForKey: @"centroid"];
-			NSArray* centre = [centroid valueForKey: @"coordinates"];
-			CLLocationCoordinate2D location;
-			location.latitude = [[centre objectAtIndex: 0] doubleValue];
-			location.longitude = [[centre objectAtIndex: 1] doubleValue];
-
-			ECGeocoderPoint* point = [[ECGeocoderPoint alloc] initWithLocation: location andData: feature];
+			ECGeocoderPoint* point = [[ECGeocoderPointCloudmade alloc] initWithDictionary: feature];
 			[points addObject: point];
 			[point release];
 		}

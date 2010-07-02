@@ -82,3 +82,20 @@ CLLocationCoordinate2D CoordinateDelta(CLLocationCoordinate2D c1, CLLocationCoor
 	return result;
 	
 }
+
+// --------------------------------------------------------------------------
+//! Given an array return a coordinate. The first two items of the
+//! array are assumed to be doubles.
+// --------------------------------------------------------------------------
+
+CLLocationCoordinate2D CoordinateFromArray(NSArray* array)
+{
+	ECAssertNonNilC(array);
+	ECAssertCountAtLeastC(array, 2);
+	
+	CLLocationCoordinate2D result;
+	result.latitude = [[array objectAtIndex: 0] doubleValue];
+	result.longitude = [[array objectAtIndex: 1] doubleValue];
+	
+	return result;
+}

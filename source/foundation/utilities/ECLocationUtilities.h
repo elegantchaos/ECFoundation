@@ -10,5 +10,5 @@ CLLocationCoordinate2D CoordinateMinimum(CLLocationCoordinate2D c1, CLLocationCo
 CLLocationCoordinate2D CoordinateMaximum(CLLocationCoordinate2D c1, CLLocationCoordinate2D c2);
 CLLocationCoordinate2D CoordinateCentre(CLLocationCoordinate2D c1, CLLocationCoordinate2D c2);
 CLLocationCoordinate2D CoordinateDelta(CLLocationCoordinate2D c1, CLLocationCoordinate2D c2);
-
+CLLocationCoordinate2D CoordinateFromArray(NSArray* array);
 

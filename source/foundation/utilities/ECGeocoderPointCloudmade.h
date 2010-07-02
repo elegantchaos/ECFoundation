@@ -1,15 +1,17 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 16/01/2010
+//! @date 01/07/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECFoundationSharedPrefix.pch"
+#import "ECGeocoderPoint.h"
 
-#define EC_DEBUG 1
+@interface ECGeocoderPointCloudmade : ECGeocoderPoint
+{
+}
 
-#define ECUnusedInDebug(v) ECUnused(v)
-#define ECUnusedInRelease(v)
-#define ECDebug(channel, ...) ECLog(channel, __VA_ARGS__)
 
+- (id) initWithDictionary: (NSDictionary*) data;
+
+@end

@@ -8,13 +8,15 @@
 @interface ECGeocoderPoint : NSObject
 {
 	CLLocationCoordinate2D	mLocation;
+	MKCoordinateRegion		mBounds;
 	NSDictionary*			mData;
 }
 
 
 @property (assign, nonatomic, readonly)	CLLocationCoordinate2D	location;
+@property (assign, nonatomic, readonly)	MKCoordinateRegion		bounds;
 @property (retain, nonatomic) NSDictionary*						data;
 
-- (id) initWithLocation: (CLLocationCoordinate2D) location andData: (NSDictionary*) data;
+- (id) initWithDictionary: (NSDictionary*) data;
 
 @end
