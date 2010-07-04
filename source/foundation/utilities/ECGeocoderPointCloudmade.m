@@ -11,15 +11,15 @@
 
 @implementation ECGeocoderPointCloudmade
 
-- (id) initWithData: (NSDictionary*) data
+- (id) initWithDictionary: (NSDictionary*) data
 {
-	if ((self = [super initWithData: data]) != nil)
+	if ((self = [super initWithDictionary: data]) != nil)
 	{
 		NSDictionary* centroid = [data valueForKey: @"centroid"];
 		NSArray* centre = [centroid valueForKey: @"coordinates"];
 		mLocation = CoordinateFromArray(centre);
 		
-		NSArray* bounds = [centroid valueForKey: @"bounds"];
+		NSArray* bounds = [data valueForKey: @"bounds"];
 		CLLocationCoordinate2D min = CoordinateFromArray([bounds objectAtIndex: 0]);
 		CLLocationCoordinate2D max = CoordinateFromArray([bounds objectAtIndex: 1]);
 		mBounds = RegionFromCoordinates(min, max);

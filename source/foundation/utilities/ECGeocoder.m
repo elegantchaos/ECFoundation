@@ -68,17 +68,20 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 
 	if (mDelegate)
 	{
-		NSMutableArray* points = [[NSMutableArray alloc] init];
 		NSArray* features = [value valueForKey: @"features"];
-		for (NSDictionary* feature in features)
+		if ([features count] > 0)
 		{
-			ECGeocoderPoint* point = [[ECGeocoderPointCloudmade alloc] initWithDictionary: feature];
-			[points addObject: point];
-			[point release];
+			NSMutableArray* points = [[NSMutableArray alloc] init];
+			for (NSDictionary* feature in features)
+			{
+				ECGeocoderPoint* point = [[ECGeocoderPointCloudmade alloc] initWithDictionary: feature];
+				[points addObject: point];
+				[point release];
+			}
+			
+			[mDelegate geocoder:self foundPoints:points];
+			[points release];
 		}
-		
-		[mDelegate geocoder:self foundPoints:points];
-		[points release];
 	}
 }
 
