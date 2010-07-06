@@ -21,7 +21,8 @@ static const NSString* kCloudMadeQuery = @"geocoding/v2/find.js?query=";
 
 - (void) lookup: (NSString*) stringToLookup
 {
-	NSString* query = [NSString stringWithFormat: @"%@/%@/%@%@", kCloudMadeBase, kCloudMadeID, kCloudMadeQuery, stringToLookup];
+	NSString* encodedLookup = [stringToLookup stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	NSString* query = [NSString stringWithFormat: @"%@/%@/%@%@", kCloudMadeBase, kCloudMadeID, kCloudMadeQuery, encodedLookup];
 	ECDebug(GeocoderChannel, @"geocoding request: %@", query);
 	
 	NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:query]];
