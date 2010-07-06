@@ -53,11 +53,32 @@
 		227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; };
 		227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; };
 		227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; };
-		22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; };
+		2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
+		228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
+		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
+		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; };
+		2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
+		2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311211E32FC100654739 /* CoreLocation.framework */; };
+		2286311511E32FC100654739 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311411E32FC100654739 /* MapKit.framework */; };
+		22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */; };
-		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; };
+		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
-		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; };
+		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
@@ -114,7 +135,15 @@
 		227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebugPrefix.pch; sourceTree = "<group>"; };
 		227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchReleasePrefix.pch; sourceTree = "<group>"; };
 		227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchSharedPrefix.pch; sourceTree = "<group>"; };
-		22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libECFoundation Touch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
+		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
+		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
+		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
+		228630F811E32E8E00654739 /* ECMapUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMapUtilities.h; sourceTree = "<group>"; };
+		228630F911E32E8E00654739 /* ECMapUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMapUtilities.m; sourceTree = "<group>"; };
+		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -125,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */,
+				2286311511E32FC100654739 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
-				22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */,
+				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +217,7 @@
 				227EEB8E11A6BCD2009420F7 /* prefix */,
 				227EEB8011A6BCCD009420F7 /* foundation */,
 				227EEB4D11A6BCC4009420F7 /* mac */,
+				2286307311E32AA800654739 /* touch */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -195,6 +227,8 @@
 			children = (
 				2210B6201152E695006C6CCA /* Carbon.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				2286311211E32FC100654739 /* CoreLocation.framework */,
+				2286311411E32FC100654739 /* MapKit.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -331,6 +365,10 @@
 		227EEB8111A6BCCD009420F7 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				228630F611E32E8E00654739 /* ECLocationUtilities.h */,
+				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
+				228630F811E32E8E00654739 /* ECMapUtilities.h */,
+				228630F911E32E8E00654739 /* ECMapUtilities.m */,
 				227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */,
 				227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */,
 				227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */,
@@ -358,6 +396,24 @@
 			path = source/prefix;
 			sourceTree = "<group>";
 		};
+		2286307311E32AA800654739 /* touch */ = {
+			isa = PBXGroup;
+			children = (
+				2286307411E32AA800654739 /* animation */,
+			);
+			name = touch;
+			path = source/touch;
+			sourceTree = "<group>";
+		};
+		2286307411E32AA800654739 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */,
+				2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,9 +428,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
+				228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */,
+				228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */,
+				228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */,
+				228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */,
+				228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */,
+				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
+				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
+				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
 				22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */,
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
+				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
+				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +473,8 @@
 				227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */,
 				227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */,
 				227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */,
+				2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +495,7 @@
 			);
 			name = "ECFoundation Touch";
 			productName = "ECFoundation Touch";
-			productReference = 22FBFE6711DD0D9400578A66 /* libECFoundation Touch.a */;
+			productReference = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		8DC2EF4F0486A6940098B216 /* ECFoundation */ = {
@@ -494,6 +564,9 @@
 				22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */,
 				22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */,
 				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
+				2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */,
+				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +587,8 @@
 				227EEB8911A6BCCD009420F7 /* ECRectUtilities.m in Sources */,
 				227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */,
 				227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */,
+				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +658,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PREBINDING = NO;
-				PRODUCT_NAME = "ECFoundation Touch";
+				PRODUCT_NAME = ECFoundationTouch;
 			};
 			name = Debug;
 		};
@@ -596,7 +671,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PREBINDING = NO;
-				PRODUCT_NAME = "ECFoundation Touch";
+				PRODUCT_NAME = ECFoundationTouch;
 				ZERO_LINK = NO;
 			};
 			name = Release;

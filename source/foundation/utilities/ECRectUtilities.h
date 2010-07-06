@@ -5,6 +5,8 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#import <Foundation/Foundation.h>
+
 @interface ECRectUtilities : NSObject 
 {
 

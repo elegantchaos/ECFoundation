@@ -5,6 +5,8 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#import <UIKit/UIKit.h>
+
 @interface ECDropAllViewsAnimation : NSObject 
 {
 

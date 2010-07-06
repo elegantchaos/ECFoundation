@@ -5,6 +5,8 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#import <MapKit/MapKit.h>
+
 @interface ECGeocoderPoint : NSObject
 {
 	CLLocationCoordinate2D	mLocation;
