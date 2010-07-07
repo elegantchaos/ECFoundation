@@ -7,40 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2210B5F71152E630006C6CCA /* ECAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5CC1152E630006C6CCA /* ECAboutBoxController.h */; };
-		2210B5F81152E630006C6CCA /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5CD1152E630006C6CCA /* ECAboutBoxController.m */; };
-		2210B5F91152E630006C6CCA /* NSApplication+DockIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5CF1152E630006C6CCA /* NSApplication+DockIcon.h */; };
-		2210B5FA1152E630006C6CCA /* NSApplication+DockIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5D01152E630006C6CCA /* NSApplication+DockIcon.m */; };
-		2210B5FB1152E630006C6CCA /* ECTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5D21152E630006C6CCA /* ECTextFieldCell.h */; };
-		2210B5FC1152E630006C6CCA /* ECTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5D31152E630006C6CCA /* ECTextFieldCell.m */; };
-		2210B5FD1152E630006C6CCA /* ECDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2210B5D51152E630006C6CCA /* ECDebugSettings.xcconfig */; };
-		2210B5FE1152E630006C6CCA /* ECReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2210B5D61152E630006C6CCA /* ECReleaseSettings.xcconfig */; };
-		2210B5FF1152E630006C6CCA /* ECSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2210B5D71152E630006C6CCA /* ECSharedSettings.xcconfig */; };
-		2210B6011152E630006C6CCA /* ECLegalFilenameFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5DA1152E630006C6CCA /* ECLegalFilenameFormatter.h */; };
-		2210B6021152E630006C6CCA /* ECLegalFilenameFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5DB1152E630006C6CCA /* ECLegalFilenameFormatter.m */; };
-		2210B6031152E630006C6CCA /* ECPreferencePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5DD1152E630006C6CCA /* ECPreferencePanel.h */; };
-		2210B6041152E630006C6CCA /* ECPreferencePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5DE1152E630006C6CCA /* ECPreferencePanel.m */; };
-		2210B6051152E630006C6CCA /* ECPreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5DF1152E630006C6CCA /* ECPreferencePaneProtocol.h */; };
-		2210B6061152E630006C6CCA /* ECPreferencesController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E01152E630006C6CCA /* ECPreferencesController.h */; };
-		2210B6071152E630006C6CCA /* ECPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5E11152E630006C6CCA /* ECPreferencesController.m */; };
-		2210B6081152E630006C6CCA /* ECDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E31152E630006C6CCA /* ECDebugPrefix.pch */; };
-		2210B6091152E630006C6CCA /* ECReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E41152E630006C6CCA /* ECReleasePrefix.pch */; };
-		2210B60A1152E630006C6CCA /* ECSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E51152E630006C6CCA /* ECSharedPrefix.pch */; };
-		2210B60B1152E630006C6CCA /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E71152E630006C6CCA /* ECRectUtilities.h */; };
-		2210B60C1152E630006C6CCA /* ECRectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5E81152E630006C6CCA /* ECRectUtilities.m */; };
-		2210B60D1152E630006C6CCA /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5E91152E630006C6CCA /* NSDictionary+ECUtilities.h */; };
-		2210B60E1152E630006C6CCA /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5EA1152E630006C6CCA /* NSDictionary+ECUtilities.m */; };
-		2210B60F1152E630006C6CCA /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5EB1152E630006C6CCA /* NSFileManager+ECUtilities.h */; };
-		2210B6101152E630006C6CCA /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5EC1152E630006C6CCA /* NSFileManager+ECUtilities.m */; };
-		2210B6111152E630006C6CCA /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5ED1152E630006C6CCA /* NSURL+ECUtilities.h */; };
-		2210B6121152E630006C6CCA /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5EE1152E630006C6CCA /* NSURL+ECUtilities.m */; };
-		2210B6131152E630006C6CCA /* NSWorkspace+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5EF1152E630006C6CCA /* NSWorkspace+ECUtilities.h */; };
-		2210B6141152E630006C6CCA /* NSWorkspace+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5F01152E630006C6CCA /* NSWorkspace+ECUtilities.m */; };
-		2210B6151152E630006C6CCA /* ECRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5F21152E630006C6CCA /* ECRoundedView.h */; };
-		2210B6161152E630006C6CCA /* ECRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5F31152E630006C6CCA /* ECRoundedView.m */; };
-		2210B6171152E630006C6CCA /* ECTransparentWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 2210B5F51152E630006C6CCA /* ECTransparentWindow.h */; };
-		2210B6181152E630006C6CCA /* ECTransparentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2210B5F61152E630006C6CCA /* ECTransparentWindow.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
+		227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */; };
+		227EEB4311A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */; };
+		227EEB4411A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */; };
+		227EEB4511A6BC66009420F7 /* ECMacDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */; };
+		227EEB4611A6BC66009420F7 /* ECMacReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */; };
+		227EEB4711A6BC66009420F7 /* ECMacSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3E11A6BC66009420F7 /* ECMacSharedSettings.xcconfig */; };
+		227EEB4811A6BC66009420F7 /* ECTouchDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */; };
+		227EEB4911A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */; };
+		227EEB4A11A6BC66009420F7 /* ECTouchSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB4111A6BC66009420F7 /* ECTouchSharedSettings.xcconfig */; };
+		227EEB6B11A6BCC4009420F7 /* ECAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB4F11A6BCC4009420F7 /* ECAboutBoxController.h */; };
+		227EEB6C11A6BCC4009420F7 /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */; };
+		227EEB6D11A6BCC4009420F7 /* NSApplication+DockIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */; };
+		227EEB6E11A6BCC4009420F7 /* NSApplication+DockIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */; };
+		227EEB6F11A6BCC4009420F7 /* ECTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5511A6BCC4009420F7 /* ECTextFieldCell.h */; };
+		227EEB7011A6BCC4009420F7 /* ECTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5611A6BCC4009420F7 /* ECTextFieldCell.m */; };
+		227EEB7111A6BCC4009420F7 /* ECLegalFilenameFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5811A6BCC4009420F7 /* ECLegalFilenameFormatter.h */; };
+		227EEB7211A6BCC4009420F7 /* ECLegalFilenameFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5911A6BCC4009420F7 /* ECLegalFilenameFormatter.m */; };
+		227EEB7311A6BCC4009420F7 /* ECPreferencePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5B11A6BCC4009420F7 /* ECPreferencePanel.h */; };
+		227EEB7411A6BCC4009420F7 /* ECPreferencePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5C11A6BCC4009420F7 /* ECPreferencePanel.m */; };
+		227EEB7511A6BCC4009420F7 /* ECPreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5D11A6BCC4009420F7 /* ECPreferencePaneProtocol.h */; };
+		227EEB7611A6BCC4009420F7 /* ECPreferencesController.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5E11A6BCC4009420F7 /* ECPreferencesController.h */; };
+		227EEB7711A6BCC4009420F7 /* ECPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5F11A6BCC4009420F7 /* ECPreferencesController.m */; };
+		227EEB7811A6BCC4009420F7 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB6111A6BCC4009420F7 /* NSURL+ECUtilities.h */; };
+		227EEB7911A6BCC4009420F7 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB6211A6BCC4009420F7 /* NSURL+ECUtilities.m */; };
+		227EEB7A11A6BCC4009420F7 /* NSWorkspace+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB6311A6BCC4009420F7 /* NSWorkspace+ECUtilities.h */; };
+		227EEB7B11A6BCC4009420F7 /* NSWorkspace+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB6411A6BCC4009420F7 /* NSWorkspace+ECUtilities.m */; };
+		227EEB7C11A6BCC4009420F7 /* ECRoundedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB6611A6BCC4009420F7 /* ECRoundedView.h */; };
+		227EEB7D11A6BCC4009420F7 /* ECRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB6711A6BCC4009420F7 /* ECRoundedView.m */; };
+		227EEB7E11A6BCC4009420F7 /* ECTransparentWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB6911A6BCC4009420F7 /* ECTransparentWindow.h */; };
+		227EEB7F11A6BCC4009420F7 /* ECTransparentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB6A11A6BCC4009420F7 /* ECTransparentWindow.m */; };
+		227EEB8811A6BCCD009420F7 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; };
+		227EEB8911A6BCCD009420F7 /* ECRectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */; };
+		227EEB8A11A6BCCD009420F7 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; };
+		227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
+		227EEB8C11A6BCCD009420F7 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; };
+		227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
+		227EEB9811A6BCD2009420F7 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; };
+		227EEB9911A6BCD2009420F7 /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */; };
+		227EEB9A11A6BCD2009420F7 /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */; };
+		227EEB9B11A6BCD2009420F7 /* ECMacDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */; };
+		227EEB9C11A6BCD2009420F7 /* ECMacReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */; };
+		227EEB9D11A6BCD2009420F7 /* ECMacSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */; };
+		227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; };
+		227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; };
+		227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; };
+		2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
+		228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
+		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
+		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; };
+		2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
+		2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311211E32FC100654739 /* CoreLocation.framework */; };
+		2286311511E32FC100654739 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311411E32FC100654739 /* MapKit.framework */; };
+		22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */; };
+		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
+		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -50,47 +89,76 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2210B5CC1152E630006C6CCA /* ECAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECAboutBoxController.h; sourceTree = "<group>"; };
-		2210B5CD1152E630006C6CCA /* ECAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECAboutBoxController.m; sourceTree = "<group>"; };
-		2210B5CF1152E630006C6CCA /* NSApplication+DockIcon.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = "NSApplication+DockIcon.h"; sourceTree = "<group>"; };
-		2210B5D01152E630006C6CCA /* NSApplication+DockIcon.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+DockIcon.m"; sourceTree = "<group>"; };
-		2210B5D21152E630006C6CCA /* ECTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECTextFieldCell.h; sourceTree = "<group>"; };
-		2210B5D31152E630006C6CCA /* ECTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECTextFieldCell.m; sourceTree = "<group>"; };
-		2210B5D51152E630006C6CCA /* ECDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = text.xcconfig; path = ECDebugSettings.xcconfig; sourceTree = "<group>"; };
-		2210B5D61152E630006C6CCA /* ECReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = text.xcconfig; path = ECReleaseSettings.xcconfig; sourceTree = "<group>"; };
-		2210B5D71152E630006C6CCA /* ECSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = text.xcconfig; path = ECSharedSettings.xcconfig; sourceTree = "<group>"; };
-		2210B5DA1152E630006C6CCA /* ECLegalFilenameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECLegalFilenameFormatter.h; sourceTree = "<group>"; };
-		2210B5DB1152E630006C6CCA /* ECLegalFilenameFormatter.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECLegalFilenameFormatter.m; sourceTree = "<group>"; };
-		2210B5DD1152E630006C6CCA /* ECPreferencePanel.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECPreferencePanel.h; sourceTree = "<group>"; };
-		2210B5DE1152E630006C6CCA /* ECPreferencePanel.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECPreferencePanel.m; sourceTree = "<group>"; };
-		2210B5DF1152E630006C6CCA /* ECPreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECPreferencePaneProtocol.h; sourceTree = "<group>"; };
-		2210B5E01152E630006C6CCA /* ECPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECPreferencesController.h; sourceTree = "<group>"; };
-		2210B5E11152E630006C6CCA /* ECPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECPreferencesController.m; sourceTree = "<group>"; };
-		2210B5E31152E630006C6CCA /* ECDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECDebugPrefix.pch; sourceTree = "<group>"; };
-		2210B5E41152E630006C6CCA /* ECReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECReleasePrefix.pch; sourceTree = "<group>"; };
-		2210B5E51152E630006C6CCA /* ECSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECSharedPrefix.pch; sourceTree = "<group>"; };
-		2210B5E71152E630006C6CCA /* ECRectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECRectUtilities.h; sourceTree = "<group>"; };
-		2210B5E81152E630006C6CCA /* ECRectUtilities.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECRectUtilities.m; sourceTree = "<group>"; };
-		2210B5E91152E630006C6CCA /* NSDictionary+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilities.h"; sourceTree = "<group>"; };
-		2210B5EA1152E630006C6CCA /* NSDictionary+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilities.m"; sourceTree = "<group>"; };
-		2210B5EB1152E630006C6CCA /* NSFileManager+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECUtilities.h"; sourceTree = "<group>"; };
-		2210B5EC1152E630006C6CCA /* NSFileManager+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECUtilities.m"; sourceTree = "<group>"; };
-		2210B5ED1152E630006C6CCA /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
-		2210B5EE1152E630006C6CCA /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
-		2210B5EF1152E630006C6CCA /* NSWorkspace+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+ECUtilities.h"; sourceTree = "<group>"; };
-		2210B5F01152E630006C6CCA /* NSWorkspace+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace+ECUtilities.m"; sourceTree = "<group>"; };
-		2210B5F21152E630006C6CCA /* ECRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECRoundedView.h; sourceTree = "<group>"; };
-		2210B5F31152E630006C6CCA /* ECRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECRoundedView.m; sourceTree = "<group>"; };
-		2210B5F51152E630006C6CCA /* ECTransparentWindow.h */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.h; path = ECTransparentWindow.h; sourceTree = "<group>"; };
-		2210B5F61152E630006C6CCA /* ECTransparentWindow.m */ = {isa = PBXFileReference; fileEncoding = 12; lastKnownFileType = sourcecode.c.objc; path = ECTransparentWindow.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		32DBCF5E0370ADEE00C91783 /* ECFoundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECFoundation_Prefix.pch; path = source/ECFoundation_Prefix.pch; sourceTree = "<group>"; };
+		227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationDebugSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationReleaseSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationSharedSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECMacDebugSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECMacReleaseSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3E11A6BC66009420F7 /* ECMacSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECMacSharedSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECTouchDebugSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECTouchReleaseSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB4111A6BC66009420F7 /* ECTouchSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECTouchSharedSettings.xcconfig; sourceTree = "<group>"; };
+		227EEB4F11A6BCC4009420F7 /* ECAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAboutBoxController.h; sourceTree = "<group>"; };
+		227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAboutBoxController.m; sourceTree = "<group>"; };
+		227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+DockIcon.h"; sourceTree = "<group>"; };
+		227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+DockIcon.m"; sourceTree = "<group>"; };
+		227EEB5511A6BCC4009420F7 /* ECTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTextFieldCell.h; sourceTree = "<group>"; };
+		227EEB5611A6BCC4009420F7 /* ECTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTextFieldCell.m; sourceTree = "<group>"; };
+		227EEB5811A6BCC4009420F7 /* ECLegalFilenameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLegalFilenameFormatter.h; sourceTree = "<group>"; };
+		227EEB5911A6BCC4009420F7 /* ECLegalFilenameFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLegalFilenameFormatter.m; sourceTree = "<group>"; };
+		227EEB5B11A6BCC4009420F7 /* ECPreferencePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPreferencePanel.h; sourceTree = "<group>"; };
+		227EEB5C11A6BCC4009420F7 /* ECPreferencePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPreferencePanel.m; sourceTree = "<group>"; };
+		227EEB5D11A6BCC4009420F7 /* ECPreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPreferencePaneProtocol.h; sourceTree = "<group>"; };
+		227EEB5E11A6BCC4009420F7 /* ECPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPreferencesController.h; sourceTree = "<group>"; };
+		227EEB5F11A6BCC4009420F7 /* ECPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPreferencesController.m; sourceTree = "<group>"; };
+		227EEB6111A6BCC4009420F7 /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
+		227EEB6211A6BCC4009420F7 /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
+		227EEB6311A6BCC4009420F7 /* NSWorkspace+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+ECUtilities.h"; sourceTree = "<group>"; };
+		227EEB6411A6BCC4009420F7 /* NSWorkspace+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace+ECUtilities.m"; sourceTree = "<group>"; };
+		227EEB6611A6BCC4009420F7 /* ECRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRoundedView.h; sourceTree = "<group>"; };
+		227EEB6711A6BCC4009420F7 /* ECRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRoundedView.m; sourceTree = "<group>"; };
+		227EEB6911A6BCC4009420F7 /* ECTransparentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTransparentWindow.h; sourceTree = "<group>"; };
+		227EEB6A11A6BCC4009420F7 /* ECTransparentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTransparentWindow.m; sourceTree = "<group>"; };
+		227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRectUtilities.h; sourceTree = "<group>"; };
+		227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRectUtilities.m; sourceTree = "<group>"; };
+		227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilities.h"; sourceTree = "<group>"; };
+		227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilities.m"; sourceTree = "<group>"; };
+		227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECUtilities.h"; sourceTree = "<group>"; };
+		227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECUtilities.m"; sourceTree = "<group>"; };
+		227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationDebugPrefix.pch; sourceTree = "<group>"; };
+		227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationReleasePrefix.pch; sourceTree = "<group>"; };
+		227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationSharedPrefix.pch; sourceTree = "<group>"; };
+		227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacDebugPrefix.pch; sourceTree = "<group>"; };
+		227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacReleasePrefix.pch; sourceTree = "<group>"; };
+		227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacSharedPrefix.pch; sourceTree = "<group>"; };
+		227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebugPrefix.pch; sourceTree = "<group>"; };
+		227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchReleasePrefix.pch; sourceTree = "<group>"; };
+		227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchSharedPrefix.pch; sourceTree = "<group>"; };
+		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
+		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
+		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
+		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
+		228630F811E32E8E00654739 /* ECMapUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMapUtilities.h; sourceTree = "<group>"; };
+		228630F911E32E8E00654739 /* ECMapUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMapUtilities.m; sourceTree = "<group>"; };
+		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		22FBFE6511DD0D9400578A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */,
+				2286311511E32FC100654739 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
+				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,15 +214,10 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5CB1152E630006C6CCA /* aboutbox */,
-				2210B5CE1152E630006C6CCA /* application */,
-				2210B5D11152E630006C6CCA /* cells */,
-				2210B5D91152E630006C6CCA /* formatting */,
-				2210B5DC1152E630006C6CCA /* preferences */,
-				2210B5E21152E630006C6CCA /* prefix */,
-				2210B5E61152E630006C6CCA /* utilities */,
-				2210B5F11152E630006C6CCA /* views */,
-				2210B5F41152E630006C6CCA /* windows */,
+				227EEB8E11A6BCD2009420F7 /* prefix */,
+				227EEB8011A6BCCD009420F7 /* foundation */,
+				227EEB4D11A6BCC4009420F7 /* mac */,
+				2286307311E32AA800654739 /* touch */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -163,6 +227,8 @@
 			children = (
 				2210B6201152E695006C6CCA /* Carbon.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				2286311211E32FC100654739 /* CoreLocation.framework */,
+				2286311411E32FC100654739 /* MapKit.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -177,123 +243,180 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		2210B5CB1152E630006C6CCA /* aboutbox */ = {
-			isa = PBXGroup;
-			children = (
-				2210B5CC1152E630006C6CCA /* ECAboutBoxController.h */,
-				2210B5CD1152E630006C6CCA /* ECAboutBoxController.m */,
-			);
-			name = aboutbox;
-			path = source/aboutbox;
-			sourceTree = "<group>";
-		};
-		2210B5CE1152E630006C6CCA /* application */ = {
-			isa = PBXGroup;
-			children = (
-				2210B5CF1152E630006C6CCA /* NSApplication+DockIcon.h */,
-				2210B5D01152E630006C6CCA /* NSApplication+DockIcon.m */,
-			);
-			name = application;
-			path = source/application;
-			sourceTree = "<group>";
-		};
-		2210B5D11152E630006C6CCA /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				2210B5D21152E630006C6CCA /* ECTextFieldCell.h */,
-				2210B5D31152E630006C6CCA /* ECTextFieldCell.m */,
-			);
-			name = cells;
-			path = source/cells;
-			sourceTree = "<group>";
-		};
 		2210B5D41152E630006C6CCA /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5D51152E630006C6CCA /* ECDebugSettings.xcconfig */,
-				2210B5D61152E630006C6CCA /* ECReleaseSettings.xcconfig */,
-				2210B5D71152E630006C6CCA /* ECSharedSettings.xcconfig */,
+				227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */,
+				227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */,
+				227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */,
+				227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */,
+				227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */,
+				227EEB3E11A6BC66009420F7 /* ECMacSharedSettings.xcconfig */,
+				227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */,
+				227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */,
+				227EEB4111A6BC66009420F7 /* ECTouchSharedSettings.xcconfig */,
 			);
 			name = Configuration;
 			path = source/configuration;
 			sourceTree = "<group>";
 		};
-		2210B5D91152E630006C6CCA /* formatting */ = {
+		227EEB4D11A6BCC4009420F7 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5DA1152E630006C6CCA /* ECLegalFilenameFormatter.h */,
-				2210B5DB1152E630006C6CCA /* ECLegalFilenameFormatter.m */,
+				227EEB4E11A6BCC4009420F7 /* aboutbox */,
+				227EEB5111A6BCC4009420F7 /* application */,
+				227EEB5411A6BCC4009420F7 /* cells */,
+				227EEB5711A6BCC4009420F7 /* formatting */,
+				227EEB5A11A6BCC4009420F7 /* preferences */,
+				227EEB6011A6BCC4009420F7 /* utilities */,
+				227EEB6511A6BCC4009420F7 /* views */,
+				227EEB6811A6BCC4009420F7 /* windows */,
 			);
-			name = formatting;
-			path = source/formatting;
+			name = mac;
+			path = source/mac;
 			sourceTree = "<group>";
 		};
-		2210B5DC1152E630006C6CCA /* preferences */ = {
+		227EEB4E11A6BCC4009420F7 /* aboutbox */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5DD1152E630006C6CCA /* ECPreferencePanel.h */,
-				2210B5DE1152E630006C6CCA /* ECPreferencePanel.m */,
-				2210B5DF1152E630006C6CCA /* ECPreferencePaneProtocol.h */,
-				2210B5E01152E630006C6CCA /* ECPreferencesController.h */,
-				2210B5E11152E630006C6CCA /* ECPreferencesController.m */,
+				227EEB4F11A6BCC4009420F7 /* ECAboutBoxController.h */,
+				227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */,
 			);
-			name = preferences;
-			path = source/preferences;
+			path = aboutbox;
 			sourceTree = "<group>";
 		};
-		2210B5E21152E630006C6CCA /* prefix */ = {
+		227EEB5111A6BCC4009420F7 /* application */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5E31152E630006C6CCA /* ECDebugPrefix.pch */,
-				2210B5E41152E630006C6CCA /* ECReleasePrefix.pch */,
-				2210B5E51152E630006C6CCA /* ECSharedPrefix.pch */,
+				227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */,
+				227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */,
+			);
+			path = application;
+			sourceTree = "<group>";
+		};
+		227EEB5411A6BCC4009420F7 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB5511A6BCC4009420F7 /* ECTextFieldCell.h */,
+				227EEB5611A6BCC4009420F7 /* ECTextFieldCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		227EEB5711A6BCC4009420F7 /* formatting */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB5811A6BCC4009420F7 /* ECLegalFilenameFormatter.h */,
+				227EEB5911A6BCC4009420F7 /* ECLegalFilenameFormatter.m */,
+			);
+			path = formatting;
+			sourceTree = "<group>";
+		};
+		227EEB5A11A6BCC4009420F7 /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB5B11A6BCC4009420F7 /* ECPreferencePanel.h */,
+				227EEB5C11A6BCC4009420F7 /* ECPreferencePanel.m */,
+				227EEB5D11A6BCC4009420F7 /* ECPreferencePaneProtocol.h */,
+				227EEB5E11A6BCC4009420F7 /* ECPreferencesController.h */,
+				227EEB5F11A6BCC4009420F7 /* ECPreferencesController.m */,
+			);
+			path = preferences;
+			sourceTree = "<group>";
+		};
+		227EEB6011A6BCC4009420F7 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB6111A6BCC4009420F7 /* NSURL+ECUtilities.h */,
+				227EEB6211A6BCC4009420F7 /* NSURL+ECUtilities.m */,
+				227EEB6311A6BCC4009420F7 /* NSWorkspace+ECUtilities.h */,
+				227EEB6411A6BCC4009420F7 /* NSWorkspace+ECUtilities.m */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		227EEB6511A6BCC4009420F7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB6611A6BCC4009420F7 /* ECRoundedView.h */,
+				227EEB6711A6BCC4009420F7 /* ECRoundedView.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		227EEB6811A6BCC4009420F7 /* windows */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB6911A6BCC4009420F7 /* ECTransparentWindow.h */,
+				227EEB6A11A6BCC4009420F7 /* ECTransparentWindow.m */,
+			);
+			path = windows;
+			sourceTree = "<group>";
+		};
+		227EEB8011A6BCCD009420F7 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB8111A6BCCD009420F7 /* utilities */,
+			);
+			name = foundation;
+			path = source/foundation;
+			sourceTree = "<group>";
+		};
+		227EEB8111A6BCCD009420F7 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				228630F611E32E8E00654739 /* ECLocationUtilities.h */,
+				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
+				228630F811E32E8E00654739 /* ECMapUtilities.h */,
+				228630F911E32E8E00654739 /* ECMapUtilities.m */,
+				227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */,
+				227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */,
+				227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */,
+				227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */,
+				227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */,
+				227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		227EEB8E11A6BCD2009420F7 /* prefix */ = {
+			isa = PBXGroup;
+			children = (
+				227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */,
+				227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */,
+				227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */,
+				227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */,
+				227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */,
+				227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */,
+				227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */,
+				227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */,
+				227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */,
 			);
 			name = prefix;
 			path = source/prefix;
 			sourceTree = "<group>";
 		};
-		2210B5E61152E630006C6CCA /* utilities */ = {
+		2286307311E32AA800654739 /* touch */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5E71152E630006C6CCA /* ECRectUtilities.h */,
-				2210B5E81152E630006C6CCA /* ECRectUtilities.m */,
-				2210B5E91152E630006C6CCA /* NSDictionary+ECUtilities.h */,
-				2210B5EA1152E630006C6CCA /* NSDictionary+ECUtilities.m */,
-				2210B5EB1152E630006C6CCA /* NSFileManager+ECUtilities.h */,
-				2210B5EC1152E630006C6CCA /* NSFileManager+ECUtilities.m */,
-				2210B5ED1152E630006C6CCA /* NSURL+ECUtilities.h */,
-				2210B5EE1152E630006C6CCA /* NSURL+ECUtilities.m */,
-				2210B5EF1152E630006C6CCA /* NSWorkspace+ECUtilities.h */,
-				2210B5F01152E630006C6CCA /* NSWorkspace+ECUtilities.m */,
+				2286307411E32AA800654739 /* animation */,
 			);
-			name = utilities;
-			path = source/utilities;
+			name = touch;
+			path = source/touch;
 			sourceTree = "<group>";
 		};
-		2210B5F11152E630006C6CCA /* views */ = {
+		2286307411E32AA800654739 /* animation */ = {
 			isa = PBXGroup;
 			children = (
-				2210B5F21152E630006C6CCA /* ECRoundedView.h */,
-				2210B5F31152E630006C6CCA /* ECRoundedView.m */,
+				2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */,
+				2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */,
 			);
-			name = views;
-			path = source/views;
-			sourceTree = "<group>";
-		};
-		2210B5F41152E630006C6CCA /* windows */ = {
-			isa = PBXGroup;
-			children = (
-				2210B5F51152E630006C6CCA /* ECTransparentWindow.h */,
-				2210B5F61152E630006C6CCA /* ECTransparentWindow.m */,
-			);
-			name = windows;
-			path = source/windows;
+			path = animation;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF5E0370ADEE00C91783 /* ECFoundation_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -301,33 +424,80 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		22FBFE6311DD0D9400578A66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
+				228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */,
+				228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */,
+				228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */,
+				228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */,
+				228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */,
+				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
+				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
+				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
+				22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */,
+				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
+				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
+				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
+				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2210B5F71152E630006C6CCA /* ECAboutBoxController.h in Headers */,
-				2210B5F91152E630006C6CCA /* NSApplication+DockIcon.h in Headers */,
-				2210B5FB1152E630006C6CCA /* ECTextFieldCell.h in Headers */,
-				2210B6011152E630006C6CCA /* ECLegalFilenameFormatter.h in Headers */,
-				2210B6031152E630006C6CCA /* ECPreferencePanel.h in Headers */,
-				2210B6051152E630006C6CCA /* ECPreferencePaneProtocol.h in Headers */,
-				2210B6061152E630006C6CCA /* ECPreferencesController.h in Headers */,
-				2210B6081152E630006C6CCA /* ECDebugPrefix.pch in Headers */,
-				2210B6091152E630006C6CCA /* ECReleasePrefix.pch in Headers */,
-				2210B60A1152E630006C6CCA /* ECSharedPrefix.pch in Headers */,
-				2210B60B1152E630006C6CCA /* ECRectUtilities.h in Headers */,
-				2210B60D1152E630006C6CCA /* NSDictionary+ECUtilities.h in Headers */,
-				2210B60F1152E630006C6CCA /* NSFileManager+ECUtilities.h in Headers */,
-				2210B6111152E630006C6CCA /* NSURL+ECUtilities.h in Headers */,
-				2210B6131152E630006C6CCA /* NSWorkspace+ECUtilities.h in Headers */,
-				2210B6151152E630006C6CCA /* ECRoundedView.h in Headers */,
-				2210B6171152E630006C6CCA /* ECTransparentWindow.h in Headers */,
+				227EEB6B11A6BCC4009420F7 /* ECAboutBoxController.h in Headers */,
+				227EEB6D11A6BCC4009420F7 /* NSApplication+DockIcon.h in Headers */,
+				227EEB6F11A6BCC4009420F7 /* ECTextFieldCell.h in Headers */,
+				227EEB7111A6BCC4009420F7 /* ECLegalFilenameFormatter.h in Headers */,
+				227EEB7311A6BCC4009420F7 /* ECPreferencePanel.h in Headers */,
+				227EEB7511A6BCC4009420F7 /* ECPreferencePaneProtocol.h in Headers */,
+				227EEB7611A6BCC4009420F7 /* ECPreferencesController.h in Headers */,
+				227EEB7811A6BCC4009420F7 /* NSURL+ECUtilities.h in Headers */,
+				227EEB7A11A6BCC4009420F7 /* NSWorkspace+ECUtilities.h in Headers */,
+				227EEB7C11A6BCC4009420F7 /* ECRoundedView.h in Headers */,
+				227EEB7E11A6BCC4009420F7 /* ECTransparentWindow.h in Headers */,
+				227EEB8811A6BCCD009420F7 /* ECRectUtilities.h in Headers */,
+				227EEB8A11A6BCCD009420F7 /* NSDictionary+ECUtilities.h in Headers */,
+				227EEB8C11A6BCCD009420F7 /* NSFileManager+ECUtilities.h in Headers */,
+				227EEB9811A6BCD2009420F7 /* ECFoundationDebugPrefix.pch in Headers */,
+				227EEB9911A6BCD2009420F7 /* ECFoundationReleasePrefix.pch in Headers */,
+				227EEB9A11A6BCD2009420F7 /* ECFoundationSharedPrefix.pch in Headers */,
+				227EEB9B11A6BCD2009420F7 /* ECMacDebugPrefix.pch in Headers */,
+				227EEB9C11A6BCD2009420F7 /* ECMacReleasePrefix.pch in Headers */,
+				227EEB9D11A6BCD2009420F7 /* ECMacSharedPrefix.pch in Headers */,
+				227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */,
+				227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */,
+				227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */,
+				2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		22FBFE6611DD0D9400578A66 /* ECFoundation Touch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation Touch" */;
+			buildPhases = (
+				22FBFE6311DD0D9400578A66 /* Headers */,
+				22FBFE6411DD0D9400578A66 /* Sources */,
+				22FBFE6511DD0D9400578A66 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECFoundation Touch";
+			productName = "ECFoundation Touch";
+			productReference = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		8DC2EF4F0486A6940098B216 /* ECFoundation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "ECFoundation" */;
@@ -361,6 +531,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ECFoundation */,
+				22FBFE6611DD0D9400578A66 /* ECFoundation Touch */,
 			);
 		};
 /* End PBXProject section */
@@ -371,32 +542,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
-				2210B5FD1152E630006C6CCA /* ECDebugSettings.xcconfig in Resources */,
-				2210B5FE1152E630006C6CCA /* ECReleaseSettings.xcconfig in Resources */,
-				2210B5FF1152E630006C6CCA /* ECSharedSettings.xcconfig in Resources */,
+				227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */,
+				227EEB4311A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig in Resources */,
+				227EEB4411A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig in Resources */,
+				227EEB4511A6BC66009420F7 /* ECMacDebugSettings.xcconfig in Resources */,
+				227EEB4611A6BC66009420F7 /* ECMacReleaseSettings.xcconfig in Resources */,
+				227EEB4711A6BC66009420F7 /* ECMacSharedSettings.xcconfig in Resources */,
+				227EEB4811A6BC66009420F7 /* ECTouchDebugSettings.xcconfig in Resources */,
+				227EEB4911A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig in Resources */,
+				227EEB4A11A6BC66009420F7 /* ECTouchSharedSettings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		22FBFE6411DD0D9400578A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FBFE7311DD0DD800578A66 /* ECRectUtilities.m in Sources */,
+				22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */,
+				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
+				2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */,
+				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2210B5F81152E630006C6CCA /* ECAboutBoxController.m in Sources */,
-				2210B5FA1152E630006C6CCA /* NSApplication+DockIcon.m in Sources */,
-				2210B5FC1152E630006C6CCA /* ECTextFieldCell.m in Sources */,
-				2210B6021152E630006C6CCA /* ECLegalFilenameFormatter.m in Sources */,
-				2210B6041152E630006C6CCA /* ECPreferencePanel.m in Sources */,
-				2210B6071152E630006C6CCA /* ECPreferencesController.m in Sources */,
-				2210B60C1152E630006C6CCA /* ECRectUtilities.m in Sources */,
-				2210B60E1152E630006C6CCA /* NSDictionary+ECUtilities.m in Sources */,
-				2210B6101152E630006C6CCA /* NSFileManager+ECUtilities.m in Sources */,
-				2210B6121152E630006C6CCA /* NSURL+ECUtilities.m in Sources */,
-				2210B6141152E630006C6CCA /* NSWorkspace+ECUtilities.m in Sources */,
-				2210B6161152E630006C6CCA /* ECRoundedView.m in Sources */,
-				2210B6181152E630006C6CCA /* ECTransparentWindow.m in Sources */,
+				227EEB6C11A6BCC4009420F7 /* ECAboutBoxController.m in Sources */,
+				227EEB6E11A6BCC4009420F7 /* NSApplication+DockIcon.m in Sources */,
+				227EEB7011A6BCC4009420F7 /* ECTextFieldCell.m in Sources */,
+				227EEB7211A6BCC4009420F7 /* ECLegalFilenameFormatter.m in Sources */,
+				227EEB7411A6BCC4009420F7 /* ECPreferencePanel.m in Sources */,
+				227EEB7711A6BCC4009420F7 /* ECPreferencesController.m in Sources */,
+				227EEB7911A6BCC4009420F7 /* NSURL+ECUtilities.m in Sources */,
+				227EEB7B11A6BCC4009420F7 /* NSWorkspace+ECUtilities.m in Sources */,
+				227EEB7D11A6BCC4009420F7 /* ECRoundedView.m in Sources */,
+				227EEB7F11A6BCC4009420F7 /* ECTransparentWindow.m in Sources */,
+				227EEB8911A6BCCD009420F7 /* ECRectUtilities.m in Sources */,
+				227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */,
+				227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */,
+				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +613,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_PREFIX_HEADER = source/prefix/ECDebugPrefix.pch;
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = ECFoundation;
@@ -435,7 +627,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = source/prefix/ECReleasePrefix.pch;
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = ECFoundation;
@@ -445,15 +637,42 @@
 		};
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2210B5D51152E630006C6CCA /* ECDebugSettings.xcconfig */;
+			baseConfigurationReference = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2210B5D61152E630006C6CCA /* ECReleaseSettings.xcconfig */;
+			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
 			buildSettings = {
+			};
+			name = Release;
+		};
+		22FBFE6811DD0D9400578A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				PREBINDING = NO;
+				PRODUCT_NAME = ECFoundationTouch;
+			};
+			name = Debug;
+		};
+		22FBFE6911DD0D9400578A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
+				PREBINDING = NO;
+				PRODUCT_NAME = ECFoundationTouch;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -474,6 +693,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation Touch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FBFE6811DD0D9400578A66 /* Debug */,
+				22FBFE6911DD0D9400578A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

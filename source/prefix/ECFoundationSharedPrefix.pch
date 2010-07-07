@@ -1,0 +1,24 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 16/01/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
+#define ECDeclareLogChannel(channel)
+#define ECDefineLogChannel(channel)
+#define ECLog(channel, ...) NSLog(__VA_ARGS__)
+
+#define ECUnused(v)	(void) (v)
+
+#define ECAssertNonNilBase(expression, imp) imp((expression) != nil)
+#define ECAssertCountAtLeastBase(container, countMinimum, imp) imp([container count] >= countMinimum)
+
+#define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
+#define ECAssertC(expression) assert(expression)
+
+#define ECAssertNonNil(expression) ECAssertNonNilBase(expression, ECAssert)
+#define ECAssertCountAtLeast(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssert)
+
+#define ECAssertNonNilC(expression) ECAssertNonNilBase(expression, ECAssertC)
+#define ECAssertCountAtLeastC(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssertC)

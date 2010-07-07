@@ -1,0 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 21/05/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
+#import "ECFoundationReleasePrefix.pch"
+#import "ECTouchSharedPrefix.pch"
