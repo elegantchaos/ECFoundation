@@ -66,12 +66,8 @@
 		228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F811E32E8E00654739 /* ECMapUtilities.h */; };
-		2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F911E32E8E00654739 /* ECMapUtilities.m */; };
 		2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311211E32FC100654739 /* CoreLocation.framework */; };
 		2286311511E32FC100654739 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311411E32FC100654739 /* MapKit.framework */; };
 		22FBFE7211DD0DD800578A66 /* ECRectUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,8 +135,6 @@
 		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
-		228630F811E32E8E00654739 /* ECMapUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMapUtilities.h; sourceTree = "<group>"; };
-		228630F911E32E8E00654739 /* ECMapUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMapUtilities.m; sourceTree = "<group>"; };
 		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,8 +361,6 @@
 			children = (
 				228630F611E32E8E00654739 /* ECLocationUtilities.h */,
 				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
-				228630F811E32E8E00654739 /* ECMapUtilities.h */,
-				228630F911E32E8E00654739 /* ECMapUtilities.m */,
 				227EEB8211A6BCCD009420F7 /* ECRectUtilities.h */,
 				227EEB8311A6BCCD009420F7 /* ECRectUtilities.m */,
 				227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */,
@@ -442,7 +434,6 @@
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
 				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
-				2286310211E32E8E00654739 /* ECMapUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +465,6 @@
 				227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */,
 				227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */,
 				2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */,
-				2286310C11E32E8E00654739 /* ECMapUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +556,6 @@
 				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
 				2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */,
 				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
-				2286310311E32E8E00654739 /* ECMapUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +577,6 @@
 				227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */,
 				227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */,
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
-				2286310D11E32E8E00654739 /* ECMapUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
