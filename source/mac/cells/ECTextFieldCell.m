@@ -25,7 +25,7 @@
 
 - (void)setAttributedStringValue:(NSAttributedString *)obj
 {
-	ECDebug(@"set att");
+	ECDebug(ECTextFieldChannel, @"set att");
 	
 	NSMutableAttributedString* modified = [obj mutableCopy];
 
