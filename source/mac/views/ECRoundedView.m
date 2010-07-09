@@ -49,22 +49,7 @@
 
 - (void) drawRect: (NSRect) dirtyRect
 {
-    NSRect frameRect = [self frame];
-    const CGFloat minX = NSMinX(frameRect);
-    const CGFloat midX = NSMidX(frameRect);
-    const CGFloat maxX = NSMaxX(frameRect);
-    const CGFloat minY = NSMinY(frameRect);
-    const CGFloat midY = NSMidY(frameRect);
-    const CGFloat maxY = NSMaxY(frameRect);
-
-    NSBezierPath* path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(midX, minY)];
-    [path appendBezierPathWithArcFromPoint:NSMakePoint(maxX, minY) toPoint:NSMakePoint(maxX, midY) radius:mRadius];
-    [path appendBezierPathWithArcFromPoint:NSMakePoint(maxX, maxY) toPoint:NSMakePoint(midX, maxY) radius:mRadius];
-    [path appendBezierPathWithArcFromPoint:NSMakePoint(minX, maxY) toPoint:NSMakePoint(minX, midY) radius:mRadius];
-    [path appendBezierPathWithArcFromPoint:frameRect.origin toPoint:NSMakePoint(midX, minY) radius:mRadius];
-    [path closePath];
-    
+    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect: [self frame] xRadius: mRadius yRadius: mRadius];
     NSColor* fillColour = [NSColor colorWithCalibratedWhite:0.0f alpha:mTransparency];
     [fillColour set];
     [path fill];
