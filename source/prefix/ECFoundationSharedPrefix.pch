@@ -11,11 +11,15 @@
 
 #define ECUnused(v)	(void) (v)
 
+#define ECAssertShouldntBeHereBase(imp) imp(FALSE)
 #define ECAssertNonNilBase(expression, imp) imp((expression) != nil)
 #define ECAssertCountAtLeastBase(container, countMinimum, imp) imp([container count] >= countMinimum)
 
 #define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
 #define ECAssertC(expression) assert(expression)
+
+#define ECAssertShouldntBeHere() ECAssertShouldntBeHereBase(ECAssert)
+#define ECAssertShouldntBeHereC() ECAssertShouldntBeHereBase(ECAssertC)
 
 #define ECAssertNonNil(expression) ECAssertNonNilBase(expression, ECAssert)
 #define ECAssertCountAtLeast(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssert)
