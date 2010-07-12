@@ -6,10 +6,10 @@
 //  Copyright 2010 Elegant Chaos. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "ECTestCase.h"
 
 
-@interface NSDictionary_ECUtilitiesTests : SenTestCase 
+@interface NSDictionary_ECUtilitiesTests : ECTestCase
 {
 	NSDictionary* mDictionary;
 }

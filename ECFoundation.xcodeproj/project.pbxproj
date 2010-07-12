@@ -10,6 +10,12 @@
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
+		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
+		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
+		227333BE11EBBAA400695FB4 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 227333BD11EBBAA400695FB4 /* GHUnitTestMain.m */; };
+		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
+		2273344811EBC1CB00695FB4 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2273344711EBC1CB00695FB4 /* ECTestCase.m */; };
+		2273346511EBC45300695FB4 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2273344711EBC1CB00695FB4 /* ECTestCase.m */; };
 		227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */; };
 		227EEB4311A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */; };
 		227EEB4411A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */; };
@@ -87,6 +93,13 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = ECFoundation;
+		};
+		227333B311EBBA2300695FB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
 			remoteInfo = ECFoundation;
 		};
@@ -101,7 +114,13 @@
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
-		225EC6D211EBB15D00A97AEA /* ECFoundation Unit Tests Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ECFoundation Unit Tests Info.plist"; path = "resources/ECFoundation Unit Tests Info.plist"; sourceTree = "<group>"; };
+		225EC6D211EBB15D00A97AEA /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ECFoundation SenTest.plist"; path = "resources/ECFoundation SenTest.plist"; sourceTree = "<group>"; };
+		227333A411EBBA0800695FB4 /* GHUnit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GHUnit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		227333AF11EBBA0800695FB4 /* ECFoundation GHUnit.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ECFoundation GHUnit.plist"; path = "resources/ECFoundation GHUnit.plist"; sourceTree = "<group>"; };
+		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
+		227333BD11EBBAA400695FB4 /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
+		2273344611EBC1CB00695FB4 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
+		2273344711EBC1CB00695FB4 /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
 		227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationSharedSettings.xcconfig; sourceTree = "<group>"; };
@@ -154,7 +173,7 @@
 		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resources/Info.plist; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* ECFoundation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundation.plist; path = resources/ECFoundation.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -165,6 +184,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A211EBBA0800695FB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */,
+				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +223,7 @@
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
 				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
+				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,8 +253,9 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				225EC6D211EBB15D00A97AEA /* ECFoundation Unit Tests Info.plist */,
-				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				225EC6D211EBB15D00A97AEA /* ECFoundation SenTest.plist */,
+				8DC2EF5A0486A6940098B216 /* ECFoundation.plist */,
+				227333AF11EBBA0800695FB4 /* ECFoundation GHUnit.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -238,6 +268,7 @@
 				227EEB8011A6BCCD009420F7 /* foundation */,
 				227EEB4D11A6BCC4009420F7 /* mac */,
 				2286307311E32AA800654739 /* touch */,
+				227333BC11EBBAA400695FB4 /* tests */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -256,6 +287,7 @@
 		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				227333B811EBBA3000695FB4 /* GHUnit.framework */,
 				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
 				D2F7E79907B2D74100F64583 /* CoreData.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
@@ -287,6 +319,15 @@
 				225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */,
 			);
 			path = tests;
+			sourceTree = "<group>";
+		};
+		227333BC11EBBAA400695FB4 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				227333BD11EBBAA400695FB4 /* GHUnitTestMain.m */,
+			);
+			name = tests;
+			path = source/tests;
 			sourceTree = "<group>";
 		};
 		227EEB4D11A6BCC4009420F7 /* mac */ = {
@@ -403,6 +444,8 @@
 				227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */,
 				227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */,
 				227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */,
+				2273344611EBC1CB00695FB4 /* ECTestCase.h */,
+				2273344711EBC1CB00695FB4 /* ECTestCase.m */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -507,9 +550,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		225EC67111EBAA4800A97AEA /* ECFoundation Unit Tests */ = {
+		225EC67111EBAA4800A97AEA /* ECFoundation SenTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation Unit Tests" */;
+			buildConfigurationList = 225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation SenTest" */;
 			buildPhases = (
 				225EC66D11EBAA4800A97AEA /* Resources */,
 				225EC66E11EBAA4800A97AEA /* Sources */,
@@ -521,10 +564,28 @@
 			dependencies = (
 				225EC67A11EBAB8100A97AEA /* PBXTargetDependency */,
 			);
-			name = "ECFoundation Unit Tests";
+			name = "ECFoundation SenTest";
 			productName = "EC Foundation Unit Tests";
 			productReference = 225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		227333A311EBBA0800695FB4 /* ECFoundation GHUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECFoundation GHUnit" */;
+			buildPhases = (
+				227333A011EBBA0800695FB4 /* Resources */,
+				227333A111EBBA0800695FB4 /* Sources */,
+				227333A211EBBA0800695FB4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				227333B411EBBA2300695FB4 /* PBXTargetDependency */,
+			);
+			name = "ECFoundation GHUnit";
+			productName = "GHUnit Tests";
+			productReference = 227333A411EBBA0800695FB4 /* GHUnit Tests.app */;
+			productType = "com.apple.product-type.application";
 		};
 		22FBFE6611DD0D9400578A66 /* ECFoundation Touch */ = {
 			isa = PBXNativeTarget;
@@ -577,13 +638,21 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ECFoundation */,
 				22FBFE6611DD0D9400578A66 /* ECFoundation Touch */,
-				225EC67111EBAA4800A97AEA /* ECFoundation Unit Tests */,
+				225EC67111EBAA4800A97AEA /* ECFoundation SenTest */,
+				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		225EC66D11EBAA4800A97AEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A011EBBA0800695FB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -631,6 +700,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */,
+				2273346511EBC45300695FB4 /* ECTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227333A111EBBA0800695FB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227333BE11EBBAA400695FB4 /* GHUnitTestMain.m in Sources */,
+				227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */,
+				2273344811EBC1CB00695FB4 /* ECTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +755,11 @@
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
 			targetProxy = 225EC67911EBAB8100A97AEA /* PBXContainerItemProxy */;
 		};
+		227333B411EBBA2300695FB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
+			targetProxy = 227333B311EBBA2300695FB4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -697,7 +782,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
-				INFOPLIST_FILE = resources/Info.plist;
+				INFOPLIST_FILE = resources/ECFoundation.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = ECFoundation;
 				WRAPPER_EXTENSION = framework;
@@ -711,7 +796,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
-				INFOPLIST_FILE = resources/Info.plist;
+				INFOPLIST_FILE = resources/ECFoundation.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = ECFoundation;
 				WRAPPER_EXTENSION = framework;
@@ -745,7 +830,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "resources/ECFoundation Unit Tests Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -771,7 +857,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "resources/ECFoundation Unit Tests Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -782,6 +869,53 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = "EC Foundation Unit Tests";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		227333B011EBBA0800695FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "resources/ECFoundation GHUnit.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "GHUnit Tests";
+			};
+			name = Debug;
+		};
+		227333B111EBBA0800695FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "resources/ECFoundation GHUnit.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "GHUnit Tests";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -834,11 +968,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation Unit Tests" */ = {
+		225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation SenTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				225EC67411EBAA4800A97AEA /* Debug */,
 				225EC67511EBAA4800A97AEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECFoundation GHUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227333B011EBBA0800695FB4 /* Debug */,
+				227333B111EBBA0800695FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

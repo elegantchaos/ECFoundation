@@ -46,20 +46,20 @@
 	
 	// try to get the bool value
 	id object = [mDictionary valueForKey: @"bool" intoBool: &value];
-	STAssertNotNil(object, @"object returned");
-	STAssertTrue(value, @"value is correct");
+	ECAssertNotNil(object, @"object returned");
+	ECAssertTrue(value, @"value is correct");
 	
 	// try to get the double value as a bool - should work
 	value = NO;
 	object = [mDictionary valueForKey: @"double" intoBool: &value];
-	STAssertNotNil(object, @"object returned");
-	STAssertTrue(value, @"value is correct");
+	ECAssertNotNil(object, @"object returned");
+	ECAssertTrue(value, @"value is correct");
 
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoBool: &value];
-	STAssertNil(object, @"object not returned");
-	STAssertFalse(value, @"value is unchanged");
+	ECAssertNil(object, @"object not returned");
+	ECAssertFalse(value, @"value is unchanged");
 	
 }
 
@@ -72,20 +72,20 @@
 	double value = 0.0;
 	
 	id object = [mDictionary valueForKey: @"double" intoDouble: &value];
-	STAssertNotNil(object, @"object returned");
-	STAssertTrue(value == 123.456, @"value is correct");
+	ECAssertNotNil(object, @"object returned");
+	ECAssertTrue(value == 123.456, @"value is correct");
 
 	// try to get the bool value as a double - should work
 	value = 0.0;
 	object = [mDictionary valueForKey: @"bool" intoDouble: &value];
-	STAssertNotNil(object, @"object returned");
-	STAssertTrue(value == 1.0, @"value is correct");
+	ECAssertNotNil(object, @"object returned");
+	ECAssertTrue(value == 1.0, @"value is correct");
 	
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoDouble: &value];
-	STAssertNil(object, @"object not returned");
-	STAssertFalse(value == 123.456, @"value is unchanged");
+	ECAssertNil(object, @"object not returned");
+	ECAssertFalse(value == 123.456, @"value is unchanged");
 }
 
 @end
