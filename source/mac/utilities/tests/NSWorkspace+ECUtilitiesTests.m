@@ -35,7 +35,7 @@
 
 - (void) testIsFilePackageAtURL
 {
-	
+	ECTestFail(@"deliberate failure");
 }
 
 // --------------------------------------------------------------------------

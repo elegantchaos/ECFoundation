@@ -15,6 +15,7 @@
 #define ECTestAssertNil		STAssertNil
 #define ECTestAssertTrue	STAssertTrue
 #define ECTestAssertFalse	STAssertFalse
+#define ECTestFail			STFail
 
 #else
 
@@ -26,6 +27,7 @@
 #define ECTestAssertNil		GHAssertNil
 #define ECTestAssertTrue	GHAssertTrue
 #define ECTestAssertFalse	GHAssertFalse
+#define ECTestFail			GHFail
 
 #endif
 
