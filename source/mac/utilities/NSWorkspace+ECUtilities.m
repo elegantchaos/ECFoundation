@@ -67,4 +67,46 @@
 	return url;
 }
 
+
+// --------------------------------------------------------------------------
+//! Return the path to the selected item in the finder.
+//! Returns nil if no windows are open.
+//! TODO - should move the script into the framework and not compile it every time
+// --------------------------------------------------------------------------
+
+- (NSArray*) urlsOfSelection
+{
+	NSMutableArray* urls = [[[NSMutableArray alloc] init] autorelease];
+
+	NSString* const kScript = @""
+	"tell application \"Finder\" \n"
+	"	set r to {} \n"
+	"	repeat with i in (the selection as list) \n"
+	"		set r to r & {POSIX path of (i as alias)} \n"
+	"	end repeat \n"
+	"	return r \n"
+	"end tell";
+	
+	NSDictionary* error = nil;
+	NSAppleScript * script = [[NSAppleScript alloc] initWithSource: kScript];
+	NSAppleEventDescriptor* result = [script executeAndReturnError: &error];
+	ECDebug(ReplicatorChannel, @"result: %@", result);
+	if (result)
+	{
+		NSInteger count = [result numberOfItems];
+		for (NSInteger index = 1; index <= count; ++index)
+		{
+			NSAppleEventDescriptor* descriptor = [result descriptorAtIndex: index];
+			NSString* string = [descriptor stringValue];
+			NSURL* url = [[NSURL alloc] initWithString: string];
+			[urls addObject: url];
+			[url release];
+		}
+	}
+	[script release];
+	
+	return urls;
+}
+
+
 @end

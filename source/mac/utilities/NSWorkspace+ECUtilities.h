@@ -12,5 +12,6 @@
 - (BOOL)		isFilePackageAtURL: (NSURL*) fullPath;
 - (NSImage*)	iconForURL:(NSURL*) fullPath;
 - (NSURL*)		urlOfFrontWindow;
+- (NSArray*)	urlsOfSelection;
 
 @end
