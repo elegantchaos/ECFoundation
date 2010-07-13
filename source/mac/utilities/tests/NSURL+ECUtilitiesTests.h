@@ -1,13 +1,18 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 06/03/2010
+//! @date 13/07/2010.
+//
+//! @file:
+//! Unit tests for the NSURL+ECUtilitiesTests.h category.
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECRectUtilities.h"
+#import "ECTestCase.h"
 
 
-@implementation ECRectUtilities
+@interface NSURL_ECUtilitiesTests : ECTestCase
+{
+}
 
 @end

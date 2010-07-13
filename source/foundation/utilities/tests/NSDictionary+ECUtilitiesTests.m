@@ -46,20 +46,20 @@
 	
 	// try to get the bool value
 	id object = [mDictionary valueForKey: @"bool" intoBool: &value];
-	ECAssertNotNil(object, @"object returned");
-	ECAssertTrue(value, @"value is correct");
+	ECTestAssertNotNil(object, @"object returned");
+	ECTestAssertTrue(value, @"value is correct");
 	
 	// try to get the double value as a bool - should work
 	value = NO;
 	object = [mDictionary valueForKey: @"double" intoBool: &value];
-	ECAssertNotNil(object, @"object returned");
-	ECAssertTrue(value, @"value is correct");
+	ECTestAssertNotNil(object, @"object returned");
+	ECTestAssertTrue(value, @"value is correct");
 
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoBool: &value];
-	ECAssertNil(object, @"object not returned");
-	ECAssertFalse(value, @"value is unchanged");
+	ECTestAssertNil(object, @"object not returned");
+	ECTestAssertFalse(value, @"value is unchanged");
 	
 }
 
@@ -72,20 +72,20 @@
 	double value = 0.0;
 	
 	id object = [mDictionary valueForKey: @"double" intoDouble: &value];
-	ECAssertNotNil(object, @"object returned");
-	ECAssertTrue(value == 123.456, @"value is correct");
+	ECTestAssertNotNil(object, @"object returned");
+	ECTestAssertTrue(value == 123.456, @"value is correct");
 
 	// try to get the bool value as a double - should work
 	value = 0.0;
 	object = [mDictionary valueForKey: @"bool" intoDouble: &value];
-	ECAssertNotNil(object, @"object returned");
-	ECAssertTrue(value == 1.0, @"value is correct");
+	ECTestAssertNotNil(object, @"object returned");
+	ECTestAssertTrue(value == 1.0, @"value is correct");
 	
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoDouble: &value];
-	ECAssertNil(object, @"object not returned");
-	ECAssertFalse(value == 123.456, @"value is unchanged");
+	ECTestAssertNil(object, @"object not returned");
+	ECTestAssertFalse(value == 123.456, @"value is unchanged");
 }
 
 @end

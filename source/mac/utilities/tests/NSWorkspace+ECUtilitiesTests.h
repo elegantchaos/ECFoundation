@@ -1,15 +1,18 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 06/03/2010
+//! @date 13/07/2010.
+//
+//! @file:
+//! Unit tests for the NSWorkspace+ECUtilitiesTests.h category.
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECTestCase.h"
 
-@interface ECRectUtilities : NSObject 
+
+@interface NSWorkspace_ECUtilitiesTests : ECTestCase
 {
-
 }
 
 @end

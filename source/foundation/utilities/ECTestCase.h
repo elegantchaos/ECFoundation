@@ -11,10 +11,10 @@
 
 #define ECTestCaseBase SenTestCase
 
-#define ECAssertNotNil	STAssertNotNil
-#define ECAssertNil		STAssertNil
-#define ECAssertTrue	STAssertTrue
-#define ECAssertFalse	STAssertFalse
+#define ECTestAssertNotNil	STAssertNotNil
+#define ECTestAssertNil		STAssertNil
+#define ECTestAssertTrue	STAssertTrue
+#define ECTestAssertFalse	STAssertFalse
 
 #else
 
@@ -22,10 +22,10 @@
 
 #define ECTestCaseBase GHTestCase
 
-#define ECAssertNotNil	GHAssertNotNil
-#define ECAssertNil		GHAssertNil
-#define ECAssertTrue	GHAssertTrue
-#define ECAssertFalse	GHAssertFalse
+#define ECTestAssertNotNil	GHAssertNotNil
+#define ECTestAssertNil		GHAssertNil
+#define ECTestAssertTrue	GHAssertTrue
+#define ECTestAssertFalse	GHAssertFalse
 
 #endif
 
