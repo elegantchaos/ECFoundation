@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSWorkspace+ECUtilities.h"
-
+#import "NSAppleEventDescriptor+ECUtilities.h"
 
 @implementation NSWorkspace(ECUtilities)
 
@@ -76,7 +76,6 @@
 
 - (NSArray*) urlsOfSelection
 {
-	NSMutableArray* urls = [[[NSMutableArray alloc] init] autorelease];
 
 	NSString* const kScript = @""
 	"tell application \"Finder\" \n"
@@ -87,21 +86,13 @@
 	"	return r \n"
 	"end tell";
 	
+	NSArray* urls = nil;
 	NSDictionary* error = nil;
 	NSAppleScript * script = [[NSAppleScript alloc] initWithSource: kScript];
 	NSAppleEventDescriptor* result = [script executeAndReturnError: &error];
-	ECDebug(ReplicatorChannel, @"result: %@", result);
 	if (result)
 	{
-		NSInteger count = [result numberOfItems];
-		for (NSInteger index = 1; index <= count; ++index)
-		{
-			NSAppleEventDescriptor* descriptor = [result descriptorAtIndex: index];
-			NSString* string = [descriptor stringValue];
-			NSURL* url = [[NSURL alloc] initWithString: string];
-			[urls addObject: url];
-			[url release];
-		}
+		urls = [result urlArrayValue];
 	}
 	[script release];
 	
