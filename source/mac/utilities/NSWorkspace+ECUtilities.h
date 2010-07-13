@@ -11,5 +11,6 @@
 - (BOOL)		selectURL:(NSURL*) fullPath inFileViewerRootedAtURL:(NSURL*) rootFullPath;
 - (BOOL)		isFilePackageAtURL: (NSURL*) fullPath;
 - (NSImage*)	iconForURL:(NSURL*) fullPath;
+- (NSURL*)		urlOfFrontWindow;
 
 @end
