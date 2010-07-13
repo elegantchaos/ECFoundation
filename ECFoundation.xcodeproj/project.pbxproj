@@ -586,6 +586,7 @@
 				227333A011EBBA0800695FB4 /* Resources */,
 				227333A111EBBA0800695FB4 /* Sources */,
 				227333A211EBBA0800695FB4 /* Frameworks */,
+				2255AE6811ECBF4100423A95 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -689,6 +690,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2255AE6811ECBF4100423A95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "scripts/run-tests.sh";
+			showEnvVarsInLog = 0;
+		};
 		225EC67011EBAA4800A97AEA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

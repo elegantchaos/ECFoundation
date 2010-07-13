@@ -19,6 +19,10 @@
 
 - (void) setUp
 {
+	mWorkspace = [NSWorkspace sharedWorkspace];
+	mPath = [[NSString alloc] initWithFormat:@"/Applications/Preview.app"];
+	mURL = [[NSURL alloc] initWithString: mPath];
+
 }
 
 // --------------------------------------------------------------------------
@@ -27,6 +31,12 @@
 
 - (void) tearDown
 {
+	[mURL release];
+	[mPath release];
+	
+	mWorkspace = nil;
+	mPath = nil;
+	mURL = nil;
 }
 
 // --------------------------------------------------------------------------
@@ -35,7 +45,10 @@
 
 - (void) testIsFilePackageAtURL
 {
-	ECTestFail(@"deliberate failure");
+	if (mWorkspace)
+	{
+		ECTestAssertTrue([mWorkspace isFilePackageAtURL: mURL], @"Preview is a package");
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -44,6 +57,16 @@
 
 - (void) testIconForURL
 {
+	if (mWorkspace)
+	{
+		NSImage* iconForFile = [mWorkspace iconForFile: mPath];
+		ECTestAssertNotNil(iconForFile, @"should get an icon");
+		NSImage* iconForURL = [mWorkspace iconForURL: mURL];
+		ECTestAssertNotNil(iconForURL, @"should get an icon");
+		CGSize sizeForFile = iconForFile.size;
+		CGSize sizeForURL = iconForURL.size;
+		ECTestAssertTrue(CGSizeEqualToSize(sizeForFile, sizeForURL), @"icons should be the same");
+	}
 	
 }
 

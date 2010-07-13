@@ -13,6 +13,9 @@
 
 @interface NSWorkspace_ECUtilitiesTests : ECTestCase
 {
+	NSWorkspace*	mWorkspace;
+	NSString*		mPath;
+	NSURL*			mURL;
 }
 
 @end

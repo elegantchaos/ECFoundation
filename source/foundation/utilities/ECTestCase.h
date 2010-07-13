@@ -16,6 +16,7 @@
 #define ECTestAssertTrue	STAssertTrue
 #define ECTestAssertFalse	STAssertFalse
 #define ECTestFail			STFail
+#define ECTestLog			NSLog
 
 #else
 
@@ -28,6 +29,7 @@
 #define ECTestAssertTrue	GHAssertTrue
 #define ECTestAssertFalse	GHAssertFalse
 #define ECTestFail			GHFail
+#define ECTestLog			GHTestLog
 
 #endif
 
