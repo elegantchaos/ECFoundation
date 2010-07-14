@@ -30,6 +30,8 @@
 	NSMutableAttributedString* modified = [obj mutableCopy];
 
 	[super setAttributedStringValue:modified];
+	
+	[modified release];
 }
 
 - (NSRect)titleRectForBounds:(NSRect)theRect 

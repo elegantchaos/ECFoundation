@@ -63,6 +63,10 @@
 		227EEB9E11A6BCD2009420F7 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; };
 		227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; };
 		227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; };
+		22822E6111ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22822E5F11ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h */; };
+		22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */; };
+		22822E6C11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
+		22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
 		2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
 		228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -168,6 +172,10 @@
 		227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchDebugPrefix.pch; sourceTree = "<group>"; };
 		227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchReleasePrefix.pch; sourceTree = "<group>"; };
 		227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchSharedPrefix.pch; sourceTree = "<group>"; };
+		22822E5F11ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+ECUtilities.h"; sourceTree = "<group>"; };
+		22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilities.m"; sourceTree = "<group>"; };
+		22822E6A11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+ECUtilitiesTests.h"; sourceTree = "<group>"; };
+		22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
 		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
@@ -335,6 +343,8 @@
 		227334FE11EC95E000695FB4 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				22822E6A11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.h */,
+				22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */,
 				227334FF11EC95E000695FB4 /* NSURL+ECUtilitiesTests.h */,
 				2273350011EC95E000695FB4 /* NSURL+ECUtilitiesTests.m */,
 				2273350111EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.h */,
@@ -410,11 +420,13 @@
 		227EEB6011A6BCC4009420F7 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				227334FE11EC95E000695FB4 /* tests */,
+				22822E5F11ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h */,
+				22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */,
 				227EEB6111A6BCC4009420F7 /* NSURL+ECUtilities.h */,
 				227EEB6211A6BCC4009420F7 /* NSURL+ECUtilities.m */,
 				227EEB6311A6BCC4009420F7 /* NSWorkspace+ECUtilities.h */,
 				227EEB6411A6BCC4009420F7 /* NSWorkspace+ECUtilities.m */,
+				227334FE11EC95E000695FB4 /* tests */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -554,6 +566,7 @@
 				227EEB9F11A6BCD2009420F7 /* ECTouchReleasePrefix.pch in Headers */,
 				227EEBA011A6BCD2009420F7 /* ECTouchSharedPrefix.pch in Headers */,
 				2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				22822E6111ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +729,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -728,6 +742,7 @@
 				2273346511EBC45300695FB4 /* ECTestCase.m in Sources */,
 				2273350511EC95E000695FB4 /* NSURL+ECUtilitiesTests.m in Sources */,
 				2273350611EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.m in Sources */,
+				22822E6C11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +755,7 @@
 				2273344811EBC1CB00695FB4 /* ECTestCase.m in Sources */,
 				2273350311EC95E000695FB4 /* NSURL+ECUtilitiesTests.m in Sources */,
 				2273350411EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.m in Sources */,
+				22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +787,7 @@
 				227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */,
 				227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */,
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

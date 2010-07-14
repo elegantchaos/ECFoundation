@@ -13,19 +13,20 @@
 
 @implementation NSURL_ECUtilitiesTests
 
+
 // --------------------------------------------------------------------------
-//! Set up before each test.
+//! Test the getUniqueFileWithName method.
 // --------------------------------------------------------------------------
 
-- (void) setUp
+- (void) testGetUniqueFileWithName
 {
-}
-
-// --------------------------------------------------------------------------
-//! Tear down after each test.
-// --------------------------------------------------------------------------
-
-- (void) tearDown
-{
+	NSURL* url = [NSURL URLWithString: @"/Applications/"];
+	NSURL* unique = [url getUniqueFileWithName: @"Preview" andExtension: @"app"];
+	ECTestAssertNotNil(unique, @"should be returned a URL");
+	ECTestAssertTrue([[unique path] isEqualToString: @"/Applications/Preview 1.app"], @"file name should be Preview 1.app");
+	
+	unique = [url getUniqueFileWithName: @"Bogus" andExtension: @"bogus"];
+	ECTestAssertNotNil(unique, @"should be returned a URL");
+	ECTestAssertTrue([[unique path] isEqualToString: @"/Applications/Bogus.bogus"], @"file name should be Bogus.bogus");
 }
 @end
