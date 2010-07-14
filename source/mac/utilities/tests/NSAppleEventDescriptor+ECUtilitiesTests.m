@@ -14,18 +14,52 @@
 @implementation NSAppleEventDescriptor_ECUtilitiesTests
 
 // --------------------------------------------------------------------------
-//! Set up before each test.
+//! Test coercing descriptor into a url.
 // --------------------------------------------------------------------------
 
-- (void) setUp
+- (void) testURLValue
 {
+	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor descriptorWithString: @"/Applications/Preview.app"];
+	ECTestAssertNotNil(desc, @"should get a valid desc");
+	
+	NSURL* url = [desc urlValue];
+	ECTestAssertTrue([[url path] isEqualToString: @"/Applications/Preview.app"], @"should get same path back");
 }
 
 // --------------------------------------------------------------------------
-//! Tear down after each test.
+//! Test coercing a descriptor into an NSArray of NSStrings.
 // --------------------------------------------------------------------------
 
-- (void) tearDown
+- (void) testStringArrayValue
 {
+	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor listDescriptor];
+	ECTestAssertNotNil(desc, @"should get a valid desc");
+	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
+	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
+	ECTestAssertTrue([desc numberOfItems] == 2, @"should have two items");
+	
+	NSArray* array = [desc stringArrayValue];
+	ECTestAssertTrue([array count] == 2, @"should have two items");
+	ECTestAssertTrue([[array objectAtIndex: 0] isEqualToString: @"/Test/1.txt"], @"first item should be correct");
+	ECTestAssertTrue([[array objectAtIndex: 1] isEqualToString: @"/Test/2.txt"], @"second item should be correct");
 }
+
+// --------------------------------------------------------------------------
+//! Test coercing a descriptor into an NSArray of NSURLs.
+// --------------------------------------------------------------------------
+
+- (void) testURLArrayValue
+{
+	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor listDescriptor];
+	ECTestAssertNotNil(desc, @"should get a valid desc");
+	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
+	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
+	ECTestAssertTrue([desc numberOfItems] == 2, @"should have two items");
+	
+	NSArray* array = [desc urlArrayValue];
+	ECTestAssertTrue([array count] == 2, @"should have two items");
+	ECTestAssertTrue([[[array objectAtIndex: 0] path] isEqualToString: @"/Test/1.txt"], @"first item should be correct");
+	ECTestAssertTrue([[[array objectAtIndex: 1] path] isEqualToString: @"/Test/2.txt"], @"second item should be correct");
+}
+
 @end
