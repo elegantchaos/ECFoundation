@@ -21,7 +21,7 @@
 	NSString* string = [self stringValue];
 	if (string)
 	{
-		url = [NSURL URLWithString: string];
+		url = [NSURL fileURLWithPath: string];
 	}
 	
 	return url;

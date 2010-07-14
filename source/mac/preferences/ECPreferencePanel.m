@@ -21,6 +21,7 @@
     
     if (loaded) 
 	{
+		[self paneDidLoad];
         return prefsView;
     }
     
@@ -43,6 +44,11 @@
 - (BOOL)allowsVerticalResizing
 {
     return NO;
+}
+
+- (void) paneDidLoad
+{
+	
 }
 
 // --------------------------------------------------------------------------

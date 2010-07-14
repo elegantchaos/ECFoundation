@@ -12,4 +12,6 @@
     IBOutlet NSView *prefsView;
 }
 
+- (void) paneDidLoad;
+
 @end

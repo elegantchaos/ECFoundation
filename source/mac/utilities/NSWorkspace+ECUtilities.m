@@ -60,7 +60,7 @@
 	NSAppleEventDescriptor* result = [script executeAndReturnError: &error];
 	if (result)
 	{
-		url = [NSURL URLWithString: [result stringValue]];
+		url = [NSURL fileURLWithPath: [result stringValue] isDirectory: YES];
 	}
 	[script release];
 
