@@ -35,7 +35,7 @@
 		ECDebug(NSApplicationChannel, @"enabling dock icon");
 		[NSApp setActivationPolicy: NSApplicationActivationPolicyRegular];
 		[self bringNextProcessToFront];
-		[self performSelector:@selector(bringToFront) withObject:nil afterDelay:0.0];
+		[self performSelector:@selector(bringToFront) withObject:nil afterDelay:0.1];
 	} 
 	
 	else if (!flag && (currentPolicy == NSApplicationActivationPolicyRegular))
@@ -49,7 +49,7 @@
 		[alert setMessageText:[NSString stringWithFormat:@"You must now restart %@", appName]];
 		[alert setInformativeText:@"Your new setting for the Dock icon won't show up until you relaunch this application."];
 		[alert setAlertStyle:NSWarningAlertStyle];
-		 NSInteger result = [alert runModal];
+		NSInteger result = [alert runModal];
 		if (result == NSAlertFirstButtonReturn) 
 		{
 			[NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:[NSArray arrayWithObjects:@"-c", [NSString stringWithFormat:@"sleep 1 ; /usr/bin/open '%@'", [[NSBundle mainBundle] bundlePath]], nil]];
