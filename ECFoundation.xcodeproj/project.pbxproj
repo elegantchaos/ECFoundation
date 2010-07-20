@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
+		22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */; };
+		22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
-		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
-		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
+		225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
+		227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
 		227333BE11EBBAA400695FB4 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 227333BD11EBBAA400695FB4 /* GHUnitTestMain.m */; };
 		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
@@ -72,9 +74,6 @@
 		228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9011A6BCD2009420F7 /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9111A6BCD2009420F7 /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9211A6BCD2009420F7 /* ECMacDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9311A6BCD2009420F7 /* ECMacReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9411A6BCD2009420F7 /* ECMacSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9511A6BCD2009420F7 /* ECTouchDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9611A6BCD2009420F7 /* ECTouchReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB9711A6BCD2009420F7 /* ECTouchSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,8 +81,6 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311211E32FC100654739 /* CoreLocation.framework */; };
-		2286311511E32FC100654739 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2286311411E32FC100654739 /* MapKit.framework */; };
 		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
 		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -115,6 +112,8 @@
 		089C1667FE841158C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECLabelValueTableController.h; path = controllers/ECLabelValueTableController.h; sourceTree = "<group>"; };
+		22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLabelValueTableController.m; path = controllers/ECLabelValueTableController.m; sourceTree = "<group>"; };
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
@@ -184,7 +183,7 @@
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5A0486A6940098B216 /* ECFoundation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundation.plist; path = resources/ECFoundation.plist; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* ECFoundation */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = ECFoundation; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */,
+				225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */,
+				227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */,
 				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,8 +209,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2286311311E32FC100654739 /* CoreLocation.framework in Frameworks */,
-				2286311511E32FC100654739 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +227,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
+				8DC2EF5B0486A6940098B216 /* ECFoundation */,
 				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
 				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
@@ -320,6 +317,15 @@
 			);
 			name = Configuration;
 			path = source/configuration;
+			sourceTree = "<group>";
+		};
+		22592EB411F5BBBE0056FF4B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */,
+				22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 		225EC68111EBAC1500A97AEA /* tests */ = {
@@ -494,6 +500,7 @@
 		2286307311E32AA800654739 /* touch */ = {
 			isa = PBXGroup;
 			children = (
+				22592EB411F5BBBE0056FF4B /* controllers */,
 				2286307411E32AA800654739 /* animation */,
 			);
 			name = touch;
@@ -526,9 +533,6 @@
 				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
 				228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */,
 				228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */,
-				228630C711E32DD900654739 /* ECMacDebugPrefix.pch in Headers */,
-				228630C811E32DD900654739 /* ECMacReleasePrefix.pch in Headers */,
-				228630C911E32DD900654739 /* ECMacSharedPrefix.pch in Headers */,
 				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
 				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
 				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
@@ -536,6 +540,7 @@
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
 				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +649,7 @@
 			name = ECFoundation;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = ECFoundation;
-			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */;
+			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -774,6 +779,7 @@
 				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
 				2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */,
 				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
+				22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,11 +981,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
-				PREBINDING = NO;
 				PRODUCT_NAME = ECFoundationTouch;
 			};
 			name = Debug;
@@ -988,13 +990,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
-				PREBINDING = NO;
 				PRODUCT_NAME = ECFoundationTouch;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
