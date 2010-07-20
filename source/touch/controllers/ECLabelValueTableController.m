@@ -44,21 +44,41 @@ NSString *const kDetailKey = @"Detail";
 
 - (NSDictionary*) dataForSection: (NSUInteger) section
 {
-	NSDictionary* data = [mData objectAtIndex: section];
+	NSDictionary* data = nil;
+	
+	if (mData)
+	{
+		data = [mData objectAtIndex: section];
+		
+	}
+	
 	return data;
 }
 
 - (NSArray*) rowsForSection: (NSUInteger) section
 {
-	NSDictionary* data = [mData objectAtIndex: section];
-	NSArray* rows = [data valueForKey: kRowsKey];
+	NSArray* rows = nil;
+	
+	if (mData)
+	{
+		NSDictionary* data = [mData objectAtIndex: section];
+		if (data)
+		{
+			rows = [data valueForKey: kRowsKey];
+		}
+	}
+	
 	return rows;
 }
 
 - (NSDictionary*) dataForRow: (NSIndexPath*) path
 {
+	NSDictionary* row = nil;
 	NSArray* rows = [self rowsForSection: path.section];
-	NSDictionary* row = [rows objectAtIndex: path.row];
+	if (rows)
+	{
+		row = [rows objectAtIndex: path.row];
+	}
 	return row;
 }
 
