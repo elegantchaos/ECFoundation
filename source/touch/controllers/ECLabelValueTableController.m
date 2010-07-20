@@ -25,22 +25,12 @@ NSString *const kFooterKey = @"Footer";
 NSString *const kRowsKey = @"Rows";
 NSString *const kLabelKey = @"Label";
 NSString *const kDetailKey = @"Detail";
-
-
+NSString *const kAccessoryKey = @"Accessory";
+NSString *const kDefaultsKey = @"Defaults";
 
 // --------------------------------------------------------------------------
-//! Release references and clean up.
+//! Return the data for a given section.
 // --------------------------------------------------------------------------
-
-- (void) dealloc 
-{
-	[mData release];
-	
-    [super dealloc];
-}
-
-
-#pragma mark UITableViewDataSource methods
 
 - (NSDictionary*) dataForSection: (NSUInteger) section
 {
@@ -54,6 +44,10 @@ NSString *const kDetailKey = @"Detail";
 	
 	return data;
 }
+
+// --------------------------------------------------------------------------
+//! Return the rows array for a given section.
+// --------------------------------------------------------------------------
 
 - (NSArray*) rowsForSection: (NSUInteger) section
 {
@@ -71,6 +65,45 @@ NSString *const kDetailKey = @"Detail";
 	return rows;
 }
 
+// --------------------------------------------------------------------------
+//! Return the default properties for a given section.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*) defaultsForSection: (NSUInteger) section
+{
+	NSDictionary* defaults = nil;
+	
+	if (mData)
+	{
+		NSDictionary* data = [mData objectAtIndex: section];
+		if (data)
+		{
+			defaults = [data valueForKey: kDefaultsKey];
+		}
+	}
+	
+	return defaults;
+}
+
+// --------------------------------------------------------------------------
+//! Return a property of a row, using a default if necessary.
+// --------------------------------------------------------------------------
+
+- (id) valueForKey: (NSString*) key inRow: (NSDictionary*) row withDefaults: (NSDictionary*) defaults
+{
+	id result = [row valueForKey: key];
+	if (result == nil)
+	{
+		result = [defaults valueForKey: key];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the data for a given path.
+// --------------------------------------------------------------------------
+
 - (NSDictionary*) dataForRow: (NSIndexPath*) path
 {
 	NSDictionary* row = nil;
@@ -82,6 +115,24 @@ NSString *const kDetailKey = @"Detail";
 	return row;
 }
 
+// --------------------------------------------------------------------------
+//! Release references and clean up.
+// --------------------------------------------------------------------------
+
+- (void) dealloc 
+{
+	[mData release];
+	
+    [super dealloc];
+}
+
+
+#pragma mark UITableViewDataSource methods
+
+// --------------------------------------------------------------------------
+//! How many sections are there?
+// --------------------------------------------------------------------------
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 	NSInteger count = mData.count;
@@ -90,6 +141,10 @@ NSString *const kDetailKey = @"Detail";
 	
 	return count;
 }
+
+// --------------------------------------------------------------------------
+//! Return the header title for a section.
+// --------------------------------------------------------------------------
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -101,6 +156,10 @@ NSString *const kDetailKey = @"Detail";
 	return result;
 }
 
+// --------------------------------------------------------------------------
+//! Return the footer title for a section.
+// --------------------------------------------------------------------------
+
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
 	NSDictionary* data = [self dataForSection: section];
@@ -110,6 +169,10 @@ NSString *const kDetailKey = @"Detail";
 
 	return result;
 }
+
+// --------------------------------------------------------------------------
+//! Return the number of rows in a section.
+// --------------------------------------------------------------------------
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
@@ -134,10 +197,17 @@ NSString *const kDetailKey = @"Detail";
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
+	NSDictionary* defaults = [self defaultsForSection: indexPath.section];
 	NSDictionary* row = [self dataForRow: indexPath];
-	cell.textLabel.text = [row objectForKey: kLabelKey];
-	cell.detailTextLabel.text = [row objectForKey: kDetailKey];
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	cell.textLabel.text = [self valueForKey: kLabelKey inRow: row withDefaults: defaults];
+	cell.detailTextLabel.text = [self valueForKey: kDetailKey inRow: row withDefaults: defaults];
+	
+	NSNumber* accessory = [self valueForKey: kAccessoryKey inRow: row withDefaults: defaults];
+	if (accessory)
+	{
+		cell.accessoryType = [accessory intValue];
+	}
 	
 	return cell;
 }

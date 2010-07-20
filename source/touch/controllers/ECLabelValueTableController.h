@@ -23,4 +23,5 @@ extern NSString *const kFooterKey;
 extern NSString *const kRowsKey;
 extern NSString *const kLabelKey;
 extern NSString *const kDetailKey;
-
+extern NSString *const kAccessoryKey;
+extern NSString *const kDefaultsKey;
