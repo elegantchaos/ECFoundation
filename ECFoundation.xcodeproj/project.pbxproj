@@ -16,7 +16,7 @@
 		2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207E05C11F742F3004BB01D /* ECNavigationController.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
-		223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */; };
+		223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */; };
 		22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */; };
 		22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -342,9 +342,9 @@
 		22592EB411F5BBBE0056FF4B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
 				223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */,
+				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
 				2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */,
 				22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */,
 				22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */,

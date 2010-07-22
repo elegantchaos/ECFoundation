@@ -8,7 +8,7 @@
 #import "ECProperties.h"
 #import "ECDataDrivenView.h"
 
-@interface ECTickListTableController : NSObject <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
+@interface ECTickListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 {
 	NSArray*						mValues;		//!< Cached values.
 	

@@ -258,17 +258,24 @@ NSString *const kSubviewKey = @"Subview";
 	ECSubviewInfo* info = [self valueForKey: kSubviewKey atPath: indexPath];
 	if (info)
 	{
-		UIViewController* controller = [[info.classToUse alloc] initWithNibName: info.nib bundle: nil];
-		if ([[controller class] conformsToProtocol: @protocol(ECDataDrivenView)])
+		Class class = info.classToUse;
+		if ([class isSubclassOfClass: [UIViewController class]])
 		{
-			NSDictionary* row = [self dataForPath: indexPath];
-			NSDictionary* defaults = [self defaultsForSection: indexPath.section];
-			[((id<ECDataDrivenView>) controller) setData: row defaults: defaults];
+			UIViewController* controller = [[class alloc] initWithNibName: info.nib bundle: nil];
+			if ([controller conformsToProtocol: @protocol(ECDataDrivenView)])
+			{
+				NSDictionary* row = [self dataForPath: indexPath];
+				NSDictionary* defaults = [self defaultsForSection: indexPath.section];
+				[((id<ECDataDrivenView>) controller) setData: row defaults: defaults];
+			}
+			
+			ECNavigationController* navigation = [ECNavigationController currentController];
+			[navigation pushViewController: controller animated:TRUE];
 		}
-
-		ECNavigationController* navigation = [ECNavigationController currentController];
-		[navigation pushViewController: controller animated:TRUE];
-
+		else
+		{
+			ECDebug(ECLabelValueTableChannel, @"Class %@ is not a UIViewController", class);
+		}
 	}
 }
 
