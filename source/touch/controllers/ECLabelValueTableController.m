@@ -6,6 +6,8 @@
 // --------------------------------------------------------------------------
 
 #import "ECLabelValueTableController.h"
+#import "ECSubviewInfo.h"
+#import "ECNavigationController.h"
 
 @implementation ECLabelValueTableController
 
@@ -13,8 +15,7 @@
 // Properties
 // --------------------------------------------------------------------------
 
-
-@synthesize data = mData;
+ECSynthesizeProperty(data);
 
 // --------------------------------------------------------------------------
 // Data Key Constants
@@ -27,6 +28,8 @@ NSString *const kLabelKey = @"Label";
 NSString *const kDetailKey = @"Detail";
 NSString *const kAccessoryKey = @"Accessory";
 NSString *const kDefaultsKey = @"Defaults";
+NSString *const kMoveableKey = @"Moveable";
+NSString *const kSubviewKey = @"Subview";
 
 // --------------------------------------------------------------------------
 //! Return the data for a given section.
@@ -34,14 +37,8 @@ NSString *const kDefaultsKey = @"Defaults";
 
 - (NSDictionary*) dataForSection: (NSUInteger) section
 {
-	NSDictionary* data = nil;
-	
-	if (mData)
-	{
-		data = [mData objectAtIndex: section];
+	NSDictionary* data = [self.data objectAtIndex: section];
 		
-	}
-	
 	return data;
 }
 
@@ -52,14 +49,10 @@ NSString *const kDefaultsKey = @"Defaults";
 - (NSArray*) rowsForSection: (NSUInteger) section
 {
 	NSArray* rows = nil;
-	
-	if (mData)
+	NSDictionary* data = [self.data objectAtIndex: section];
+	if (data)
 	{
-		NSDictionary* data = [mData objectAtIndex: section];
-		if (data)
-		{
-			rows = [data valueForKey: kRowsKey];
-		}
+		rows = [data valueForKey: kRowsKey];
 	}
 	
 	return rows;
@@ -73,31 +66,13 @@ NSString *const kDefaultsKey = @"Defaults";
 {
 	NSDictionary* defaults = nil;
 	
-	if (mData)
+	NSDictionary* data = [self.data objectAtIndex: section];
+	if (data)
 	{
-		NSDictionary* data = [mData objectAtIndex: section];
-		if (data)
-		{
-			defaults = [data valueForKey: kDefaultsKey];
-		}
+		defaults = [data valueForKey: kDefaultsKey];
 	}
 	
 	return defaults;
-}
-
-// --------------------------------------------------------------------------
-//! Return a property of a row, using a default if necessary.
-// --------------------------------------------------------------------------
-
-- (id) valueForKey: (NSString*) key inRow: (NSDictionary*) row withDefaults: (NSDictionary*) defaults
-{
-	id result = [row valueForKey: key];
-	if (result == nil)
-	{
-		result = [defaults valueForKey: key];
-	}
-	
-	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -116,12 +91,54 @@ NSString *const kDefaultsKey = @"Defaults";
 }
 
 // --------------------------------------------------------------------------
+//! Return a property of a row, using a default if necessary.
+// --------------------------------------------------------------------------
+
+- (id) valueForKey: (NSString*) key inRow: (NSDictionary*) row withDefaults: (NSDictionary*) defaults
+{
+	id result = [row valueForKey: key];
+	if (result == nil)
+	{
+		result = [defaults valueForKey: key];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return a property for a given path.
+// --------------------------------------------------------------------------
+
+- (id) valueForKey: (NSString*) key atPath: (NSIndexPath*) path
+{
+	NSInteger section = path.section;
+	if ((mCachedDefaults == nil) || (section != mCachedSection))
+	{
+		mCachedSection = section;
+		mCachedDefaults = [self defaultsForSection: section];
+		mCachedRow = -1;
+	}
+	
+	NSInteger row = path.row;
+	if ((mCachedRowData == nil) || (row != mCachedRow))
+	{
+		mCachedRowData = [self dataForRow: path];
+		mCachedRow = row;
+	}
+	
+	id result = [self valueForKey: key inRow: mCachedRowData withDefaults: mCachedDefaults];
+	
+	return result;
+}
+
+
+// --------------------------------------------------------------------------
 //! Release references and clean up.
 // --------------------------------------------------------------------------
 
 - (void) dealloc 
 {
-	[mData release];
+	ECPropertyRelease(data);
 	
     [super dealloc];
 }
@@ -135,7 +152,7 @@ NSString *const kDefaultsKey = @"Defaults";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	NSInteger count = mData.count;
+	NSInteger count = self.data.count;
 
 	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
 	
@@ -184,8 +201,9 @@ NSString *const kDefaultsKey = @"Defaults";
 	return count;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+// --------------------------------------------------------------------------
+//! Return the view for a given row.
+// --------------------------------------------------------------------------
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -197,13 +215,10 @@ NSString *const kDefaultsKey = @"Defaults";
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
-	NSDictionary* defaults = [self defaultsForSection: indexPath.section];
-	NSDictionary* row = [self dataForRow: indexPath];
+	cell.textLabel.text = [self valueForKey: kLabelKey atPath: indexPath];
+	cell.detailTextLabel.text = [self valueForKey: kDetailKey atPath: indexPath];
 	
-	cell.textLabel.text = [self valueForKey: kLabelKey inRow: row withDefaults: defaults];
-	cell.detailTextLabel.text = [self valueForKey: kDetailKey inRow: row withDefaults: defaults];
-	
-	NSNumber* accessory = [self valueForKey: kAccessoryKey inRow: row withDefaults: defaults];
+	NSNumber* accessory = [self valueForKey: kAccessoryKey atPath: indexPath];
 	if (accessory)
 	{
 		cell.accessoryType = [accessory intValue];
@@ -212,5 +227,41 @@ NSString *const kDefaultsKey = @"Defaults";
 	return cell;
 }
 
+// Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	BOOL result = [[self valueForKey: kMoveableKey  atPath: indexPath] boolValue];
+	
+	return result;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+	
+}
+
+
+
+// --------------------------------------------------------------------------
+//! Handle selecting a table row.
+// --------------------------------------------------------------------------
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ECSubviewInfo* info = [self valueForKey: kSubviewKey atPath: indexPath];
+	if (info)
+	{
+		UIViewController* controller = [[info.classToUse alloc] initWithNibName: info.nib bundle: nil];
+		ECNavigationController* navigation = [ECNavigationController currentController];
+		[navigation pushViewController: controller animated:TRUE];
+
+	}
+}
 
 @end

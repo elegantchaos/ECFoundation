@@ -5,12 +5,19 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#include "ECProperties.h"
+
 @interface ECLabelValueTableController : NSObject <UITableViewDataSource, UITableViewDelegate>
 {
-	NSArray*		mData;
+	NSInteger		mCachedSection;
+	NSInteger		mCachedRow;
+	NSDictionary*	mCachedRowData;
+	NSDictionary*	mCachedDefaults;
+	
+	ECDefinePropertyMember(data, NSArray*);
 }
 
-@property (retain, nonatomic) NSArray* data;
+ECDefineProperty(data, NSArray*, retain, nonatomic);
 
 @end
 
@@ -25,3 +32,5 @@ extern NSString *const kLabelKey;
 extern NSString *const kDetailKey;
 extern NSString *const kAccessoryKey;
 extern NSString *const kDefaultsKey;
+extern NSString *const kMoveableKey;
+extern NSString *const kSubviewKey;

@@ -15,4 +15,6 @@
 
 @property (retain, nonatomic) IBOutlet UIViewController* initialView;
 
++ (ECNavigationController*) currentController;
+
 @end

@@ -78,4 +78,13 @@ static ECNavigationController* gCurrentController = nil;
 	[super dealloc];
 }
 
+// --------------------------------------------------------------------------
+//! Return the controller that's currently visible.
+// --------------------------------------------------------------------------
+
++ (ECNavigationController*) currentController
+{
+	return gCurrentController;
+}
+
 @end
