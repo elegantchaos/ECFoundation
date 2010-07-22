@@ -63,8 +63,8 @@
 		ECTestAssertNotNil(iconForFile, @"should get an icon");
 		NSImage* iconForURL = [mWorkspace iconForURL: mURL];
 		ECTestAssertNotNil(iconForURL, @"should get an icon");
-		CGSize sizeForFile = iconForFile.size;
-		CGSize sizeForURL = iconForURL.size;
+		CGSize sizeForFile = CGSizeMake(iconForFile.size.width, iconForFile.size.height);
+		CGSize sizeForURL = CGSizeMake(iconForURL.size.width, iconForURL.size.height);
 		ECTestAssertTrue(CGSizeEqualToSize(sizeForFile, sizeForURL), @"icons should be the same");
 	}
 	

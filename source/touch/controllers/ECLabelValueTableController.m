@@ -268,9 +268,13 @@ NSString *const kSubviewKey = @"Subview";
 				NSDictionary* defaults = [self defaultsForSection: indexPath.section];
 				[((id<ECDataDrivenView>) controller) setData: row defaults: defaults];
 			}
-			
+
+			controller.title = [self valueForKey: kLabelKey atPath: indexPath];
+
 			ECNavigationController* navigation = [ECNavigationController currentController];
 			[navigation pushViewController: controller animated:TRUE];
+			[controller release];
+			
 		}
 		else
 		{

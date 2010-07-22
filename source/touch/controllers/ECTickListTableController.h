@@ -11,6 +11,7 @@
 @interface ECTickListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 {
 	NSArray*						mValues;		//!< Cached values.
+	NSUInteger						mSelection;		//!< Index of selected item.
 	
 	ECPropertyDefineMember(data, NSDictionary*);
 }

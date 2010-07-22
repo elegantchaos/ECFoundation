@@ -1,15 +1,13 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 16/01/2010
+//! @date 22/07/2010
 //
 //! @file:
-//! Common includes for all architectures and configurations.
+//! Logging utilities.
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-
-#import "ECAssertion.h"
-#import "ECLogging.h"
-#import "ECProperties.h"
-#import "ECMacros.h"
+#define ECDeclareLogChannel(channel)
+#define ECDefineLogChannel(channel)
+#define ECLog(channel, ...) NSLog(@"«%s» %@", #channel, [NSString stringWithFormat: __VA_ARGS__])

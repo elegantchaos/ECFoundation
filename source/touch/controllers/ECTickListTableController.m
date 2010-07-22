@@ -20,6 +20,7 @@ ECPropertySynthesize(data);
 // --------------------------------------------------------------------------
 
 NSString *const kValuesKey = @"Values";
+NSString *const kSelectionKey = @"Selection";
 
 // --------------------------------------------------------------------------
 //! Initialise
@@ -29,6 +30,7 @@ NSString *const kValuesKey = @"Values";
 {
 	self.data = data;
 	mValues = [data objectForKey: kValuesKey];
+	mSelection = [(NSNumber*) [data valueForKey: kSelectionKey] integerValue];
 }
 
 // --------------------------------------------------------------------------
@@ -42,9 +44,20 @@ NSString *const kValuesKey = @"Values";
     [super dealloc];
 }
 
+// --------------------------------------------------------------------------
+//! When the view goes away, update the selection property of
+//! the data.
+// --------------------------------------------------------------------------
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear: animated];
+	
+	[self.data setValue: [NSNumber numberWithInt: mSelection] forKey: kSelectionKey];
+}
+
 
 #pragma mark UITableViewDataSource methods
-
 
 // --------------------------------------------------------------------------
 //! Return the number of rows in a section.
@@ -73,11 +86,12 @@ NSString *const kValuesKey = @"Values";
 	}
 	
 	cell.textLabel.text = [mValues objectAtIndex: indexPath.row];
+	cell.accessoryType = (indexPath.row == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	
 	return cell;
 }
 
-
+#pragma mark UITableViewDelegate methods
 
 // --------------------------------------------------------------------------
 //! Handle selecting a table row.
@@ -85,16 +99,11 @@ NSString *const kValuesKey = @"Values";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	/*
-	ECSubviewInfo* info = [self valueForKey: kSubviewKey atPath: indexPath];
-	if (info)
+	if (mSelection != indexPath.row)
 	{
-		UIViewController* controller = [[info.classToUse alloc] initWithNibName: info.nib bundle: nil];
-		ECNavigationController* navigation = [ECNavigationController currentController];
-		[navigation pushViewController: controller animated:TRUE];
-	 
+		mSelection = indexPath.row;
+		[tableView reloadData];
 	}
-	 */
 }
 
 @end

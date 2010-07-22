@@ -1,15 +1,12 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 16/01/2010
+//! @date 22/07/2010
 //
 //! @file:
-//! Common includes for all architectures and configurations.
+//! Miscellaneous macros.
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#define ECUnused(v)	(void) (v)
 
-#import "ECAssertion.h"
-#import "ECLogging.h"
-#import "ECProperties.h"
-#import "ECMacros.h"
