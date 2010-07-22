@@ -21,9 +21,14 @@ static ECNavigationController* gCurrentController = nil;
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-	
-	ECDebug(PodListNavigationChannel, @"xx nav did load");
 
+	if (mInitialView)
+	{
+		mInitialView.title = self.title;
+		[self pushViewController: mInitialView animated:FALSE];
+	}
+	
+	ECDebug(ECNavigationControllerChannel, @"loaded");
 }
 
 // --------------------------------------------------------------------------
@@ -32,15 +37,9 @@ static ECNavigationController* gCurrentController = nil;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	ECDebug(PodListNavigationChannel, @"xx nav will appear");
-	gCurrentController = self;
+	ECDebug(ECNavigationControllerChannel, @"will appear");
 
-	if (mInitialView)
-	{
-		mInitialView.title = self.title;
-		[self pushViewController: mInitialView animated:FALSE];
-	}
-	
+	gCurrentController = self;
 	[super viewWillAppear:animated];
 }
 
@@ -50,7 +49,7 @@ static ECNavigationController* gCurrentController = nil;
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	ECDebug(PodListNavigationChannel, @"nav did disappear");
+	ECDebug(ECNavigationControllerChannel, @"did disappear");
 	if (gCurrentController == self)
 	{
 		gCurrentController = nil;
@@ -59,11 +58,13 @@ static ECNavigationController* gCurrentController = nil;
 	[super viewWillDisappear:animated];
 }
 
+// --------------------------------------------------------------------------
+//! We can rotate if the initial view can rotate.
+// --------------------------------------------------------------------------
 
-// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-	return YES;
+	return [mInitialView shouldAutorotateToInterfaceOrientation: interfaceOrientation];
 }
 
 // --------------------------------------------------------------------------
@@ -72,6 +73,8 @@ static ECNavigationController* gCurrentController = nil;
 
 - (void) dealloc
 {
+	[mInitialView release];
+	
 	[super dealloc];
 }
 
