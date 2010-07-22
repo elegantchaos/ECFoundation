@@ -23,10 +23,29 @@
 #define ECPropertyDefine(name, type, ...)		@property (__VA_ARGS__) type name
 
 // --------------------------------------------------------------------------
+//! Define a lazy property.
+// --------------------------------------------------------------------------
+
+#define ECPropertyDefineLazy(name, type, ...)		\
+@property (__VA_ARGS__) type name##Lazy; \
+@property (__VA_ARGS__) type name; \
+- (type) name##LazyInit
+
+// --------------------------------------------------------------------------
 //! Synthesize a property.
 // --------------------------------------------------------------------------
 
 #define ECPropertySynthesize(name)				@synthesize name = _##name
+
+// --------------------------------------------------------------------------
+//! Synthesize a lazy.
+// --------------------------------------------------------------------------
+
+#define ECPropertySynthesizeLazy(name, setter, type)	\
+@synthesize name##Lazy = _##name; \
+- (type) name { if (!_##name) self.name##Lazy = [self name##LazyInit]; return self.name##Lazy; } \
+- (void) setter: (type) value { self.name##Lazy = value; }
+
 
 // --------------------------------------------------------------------------
 //! Return the raw member backing a property.
