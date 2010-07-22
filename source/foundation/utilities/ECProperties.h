@@ -1,27 +1,50 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 22/07/2010
 //
-//  ECProperties.h
-//  ECFoundation
+//! @file:
+//! Property utilities.
 //
-//  Created by Sam Deane on 22/07/2010.
-//  Copyright 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
 
+// --------------------------------------------------------------------------
+//! Define the member variable that will back a property.
+// --------------------------------------------------------------------------
 
-#define ECDefinePropertyMember(name, type)		type _##name
+#define ECPropertyDefineMember(name, type)		type _##name
 
-#define ECDefineProperty(name, type, ...)		@property (__VA_ARGS__) type name
+// --------------------------------------------------------------------------
+//! Define a property.
+// --------------------------------------------------------------------------
 
-#define ECSynthesizeProperty(name)				@synthesize name = _##name
+#define ECPropertyDefine(name, type, ...)		@property (__VA_ARGS__) type name
+
+// --------------------------------------------------------------------------
+//! Synthesize a property.
+// --------------------------------------------------------------------------
+
+#define ECPropertySynthesize(name)				@synthesize name = _##name
+
+// --------------------------------------------------------------------------
+//! Return the raw member backing a property.
+// --------------------------------------------------------------------------
 
 #define ECPropertyMember(name)					_##name
 
-#define ECPropertyRelease(name)					[_##name release]
+// --------------------------------------------------------------------------
+//! Release a property in a way that's safe to use in dealloc.
+// --------------------------------------------------------------------------
 
-@interface ECProperties : NSObject 
-{
+#define ECPropertyDealloc(name)					[_##name release]
 
-}
+// --------------------------------------------------------------------------
+//! Initialise a property, in a way that's safe to use in init.
+//! We bypass any setter function, and therefore won't do any special 
+//! processing such as retaining/copying the value.
+// --------------------------------------------------------------------------
 
-@end
+#define ECPropertyInit(name, value)				_##name = value
+

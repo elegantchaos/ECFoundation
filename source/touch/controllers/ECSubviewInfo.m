@@ -11,8 +11,8 @@
 
 @implementation ECSubviewInfo
 
-ECSynthesizeProperty(classToUse);
-ECSynthesizeProperty(nib);
+ECPropertySynthesize(classToUse);
+ECPropertySynthesize(nib);
 
 - (id) init
 {

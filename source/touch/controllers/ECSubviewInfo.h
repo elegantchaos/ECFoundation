@@ -12,11 +12,11 @@
 
 @interface ECSubviewInfo : NSObject 
 {
-	ECDefinePropertyMember(classToUse, Class);
-	ECDefinePropertyMember(nib, NSString*);
+	ECPropertyDefineMember(classToUse, Class);
+	ECPropertyDefineMember(nib, NSString*);
 }
 
-ECDefineProperty(classToUse, Class, assign, nonatomic);
-ECDefineProperty(nib, NSString*, assign, nonatomic);
+ECPropertyDefine(classToUse, Class, assign, nonatomic);
+ECPropertyDefine(nib, NSString*, assign, nonatomic);
 
 @end

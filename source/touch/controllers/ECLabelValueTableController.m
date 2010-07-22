@@ -8,6 +8,7 @@
 #import "ECLabelValueTableController.h"
 #import "ECSubviewInfo.h"
 #import "ECNavigationController.h"
+#import "ECDataDrivenView.h"
 
 @implementation ECLabelValueTableController
 
@@ -15,7 +16,7 @@
 // Properties
 // --------------------------------------------------------------------------
 
-ECSynthesizeProperty(data);
+ECPropertySynthesize(data);
 
 // --------------------------------------------------------------------------
 // Data Key Constants
@@ -79,7 +80,7 @@ NSString *const kSubviewKey = @"Subview";
 //! Return the data for a given path.
 // --------------------------------------------------------------------------
 
-- (NSDictionary*) dataForRow: (NSIndexPath*) path
+- (NSDictionary*) dataForPath: (NSIndexPath*) path
 {
 	NSDictionary* row = nil;
 	NSArray* rows = [self rowsForSection: path.section];
@@ -122,7 +123,7 @@ NSString *const kSubviewKey = @"Subview";
 	NSInteger row = path.row;
 	if ((mCachedRowData == nil) || (row != mCachedRow))
 	{
-		mCachedRowData = [self dataForRow: path];
+		mCachedRowData = [self dataForPath: path];
 		mCachedRow = row;
 	}
 	
@@ -138,7 +139,7 @@ NSString *const kSubviewKey = @"Subview";
 
 - (void) dealloc 
 {
-	ECPropertyRelease(data);
+	ECPropertyDealloc(data);
 	
     [super dealloc];
 }
@@ -258,6 +259,13 @@ NSString *const kSubviewKey = @"Subview";
 	if (info)
 	{
 		UIViewController* controller = [[info.classToUse alloc] initWithNibName: info.nib bundle: nil];
+		if ([[controller class] conformsToProtocol: @protocol(ECDataDrivenView)])
+		{
+			NSDictionary* row = [self dataForPath: indexPath];
+			NSDictionary* defaults = [self defaultsForSection: indexPath.section];
+			[((id<ECDataDrivenView>) controller) setData: row defaults: defaults];
+		}
+
 		ECNavigationController* navigation = [ECNavigationController currentController];
 		[navigation pushViewController: controller animated:TRUE];
 

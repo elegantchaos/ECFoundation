@@ -14,10 +14,10 @@
 	NSDictionary*	mCachedRowData;
 	NSDictionary*	mCachedDefaults;
 	
-	ECDefinePropertyMember(data, NSArray*);
+	ECPropertyDefineMember(data, NSArray*);
 }
 
-ECDefineProperty(data, NSArray*, retain, nonatomic);
+ECPropertyDefine(data, NSArray*, retain, nonatomic);
 
 @end
 

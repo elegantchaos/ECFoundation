@@ -1,14 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 22/07/2010
 //
-//  ECProperties.m
-//  ECFoundation
+//! @file:
+//! Property utilities.
 //
-//  Created by Sam Deane on 22/07/2010.
-//  Copyright 2010 Elegant Chaos. All rights reserved.
-//
-
-#import "ECProperties.h"
-
-
-@implementation ECProperties
-
-@end
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
