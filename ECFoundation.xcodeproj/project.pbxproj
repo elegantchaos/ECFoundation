@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207E05C11F742F3004BB01D /* ECNavigationController.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
 		22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */; };
 		22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -111,6 +113,8 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2207E05B11F742F3004BB01D /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECNavigationController.h; path = controllers/ECNavigationController.h; sourceTree = "<group>"; };
+		2207E05C11F742F3004BB01D /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECNavigationController.m; path = controllers/ECNavigationController.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECLabelValueTableController.h; path = controllers/ECLabelValueTableController.h; sourceTree = "<group>"; };
 		22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLabelValueTableController.m; path = controllers/ECLabelValueTableController.m; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 			children = (
 				22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */,
 				22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */,
+				2207E05B11F742F3004BB01D /* ECNavigationController.h */,
+				2207E05C11F742F3004BB01D /* ECNavigationController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
 				22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */,
+				2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +787,7 @@
 				2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */,
 				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */,
+				2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
