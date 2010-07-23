@@ -26,6 +26,29 @@ NSString *const kSelectionKey = @"Selection";
 //! Initialise
 // --------------------------------------------------------------------------
 
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (NSDictionary*) data defaults: (NSDictionary*) defaults;
+{
+	if ((nibNameOrNil != nil) || (nibBundleOrNil != nil))
+	{
+		self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	}
+	else
+	{
+		self = [super initWithStyle: UITableViewStyleGrouped];
+	}
+	
+	if (self != nil)
+	{
+		[self setData: data defaults: defaults];
+	}
+	
+	return self;
+}
+
+// --------------------------------------------------------------------------
+//! Set Data
+// --------------------------------------------------------------------------
+
 - (void) setData: (NSDictionary*) data defaults: (NSDictionary*) defaults
 {
 	self.data = data;

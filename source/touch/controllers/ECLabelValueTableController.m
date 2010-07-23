@@ -261,12 +261,16 @@ NSString *const kSubviewKey = @"Subview";
 		Class class = info.classToUse;
 		if ([class isSubclassOfClass: [UIViewController class]])
 		{
-			UIViewController* controller = [[class alloc] initWithNibName: info.nib bundle: nil];
-			if ([controller conformsToProtocol: @protocol(ECDataDrivenView)])
+			UIViewController* controller;
+			if ([class conformsToProtocol: @protocol(ECDataDrivenView)])
 			{
 				NSDictionary* row = [self dataForPath: indexPath];
 				NSDictionary* defaults = [self defaultsForSection: indexPath.section];
-				[((id<ECDataDrivenView>) controller) setData: row defaults: defaults];
+				controller = [((id<ECDataDrivenView>) [class alloc]) initWithNibName: info.nib bundle: nil data: row defaults: defaults];
+			}
+			else
+			{
+				controller = [[class alloc] initWithNibName: info.nib bundle: nil];
 			}
 
 			controller.title = [self valueForKey: kLabelKey atPath: indexPath];
