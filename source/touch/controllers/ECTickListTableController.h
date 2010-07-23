@@ -16,7 +16,9 @@
 
 {
 	NSMutableArray*					mValues;		//!< Cached values.
-	NSUInteger						mSelection;		//!< Index of selected item.
+	id								mSelection;		//!< The selected item.
+	BOOL							mEditable;		//!< Are the items editable?
+	BOOL							mMoveable;		//!< Are the items moveable?
 	
 	ECPropertyDefineVariable(data, NSDictionary*);
 }
@@ -41,3 +43,5 @@ ECPropertyDefine(data, NSDictionary*, retain, nonatomic);
 // --------------------------------------------------------------------------
 
 extern NSString *const kValuesKey;
+extern NSString *const kEditableKey;
+
