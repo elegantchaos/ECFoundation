@@ -7,6 +7,7 @@
 
 #import "ECTickListTableController.h"
 #import "ECLabelValueTableController.h"
+#import "ECDataItem.h"
 
 @implementation ECTickListTableController
 
@@ -19,10 +20,6 @@ ECPropertySynthesize(data);
 // --------------------------------------------------------------------------
 // Data Key Constants
 // --------------------------------------------------------------------------
-
-NSString *const kValuesKey = @"Values";
-NSString *const kSelectionKey = @"Selection";
-NSString *const kEditableKey = @"Editable";
 
 static NSString *const kEditButtonEditTitle = @"Edit";
 static NSString *const kEditButtonDoneTitle = @"Done";

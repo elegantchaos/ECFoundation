@@ -9,6 +9,7 @@
 #import "ECSubviewInfo.h"
 #import "ECNavigationController.h"
 #import "ECDataDrivenView.h"
+#import "ECDataItem.h"
 
 @implementation ECLabelValueTableController
 
@@ -18,19 +19,6 @@
 
 ECPropertySynthesize(data);
 
-// --------------------------------------------------------------------------
-// Data Key Constants
-// --------------------------------------------------------------------------
-
-NSString *const kHeaderKey = @"Header";
-NSString *const kFooterKey = @"Footer";
-NSString *const kRowsKey = @"Rows";
-NSString *const kLabelKey = @"Label";
-NSString *const kDetailKey = @"Detail";
-NSString *const kAccessoryKey = @"Accessory";
-NSString *const kDefaultsKey = @"Defaults";
-NSString *const kMoveableKey = @"Moveable";
-NSString *const kSubviewKey = @"Subview";
 
 // --------------------------------------------------------------------------
 //! Return the data for a given section.
@@ -53,7 +41,7 @@ NSString *const kSubviewKey = @"Subview";
 	NSDictionary* data = [self.data objectAtIndex: section];
 	if (data)
 	{
-		rows = [data valueForKey: kRowsKey];
+		rows = [data valueForKey: kItemsKey];
 	}
 	
 	return rows;

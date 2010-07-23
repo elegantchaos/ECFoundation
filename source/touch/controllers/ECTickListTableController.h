@@ -38,10 +38,4 @@ ECPropertyDefine(data, NSDictionary*, retain, nonatomic);
 
 @end
 
-// --------------------------------------------------------------------------
-// Data Key Constants
-// --------------------------------------------------------------------------
-
-extern NSString *const kValuesKey;
-extern NSString *const kEditableKey;
 
