@@ -9,11 +9,16 @@
 #import "ECDataDrivenView.h"
 
 @interface ECTickListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
+
+// --------------------------------------------------------------------------
+// Instance Variables
+// --------------------------------------------------------------------------
+
 {
-	NSArray*						mValues;		//!< Cached values.
+	NSMutableArray*					mValues;		//!< Cached values.
 	NSUInteger						mSelection;		//!< Index of selected item.
 	
-	ECPropertyDefineMember(data, NSDictionary*);
+	ECPropertyDefineVariable(data, NSDictionary*);
 }
 
 // --------------------------------------------------------------------------

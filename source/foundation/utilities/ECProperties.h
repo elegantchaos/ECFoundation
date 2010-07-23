@@ -11,16 +11,21 @@
 #import <Foundation/Foundation.h>
 
 // --------------------------------------------------------------------------
-//! Define the member variable that will back a property.
+//! Define the instance variable that will back a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyDefineMember(name, type)		type _##name
+#define ECPropertyDefineVariable(name, type)		type _##name
 
 // --------------------------------------------------------------------------
 //! Define a property.
 // --------------------------------------------------------------------------
 
 #define ECPropertyDefine(name, type, ...)		@property (__VA_ARGS__) type name
+
+// some convenient abbreviatations for common cases
+#define ECPropertyDefineRN(name, type)	ECPropertyDefine(name, type, retain, nonatomic)
+#define ECPropertyDefineAN(name, type)	ECPropertyDefine(name, type, assign, nonatomic)
+#define ECPropertyDefineCN(name, type)	ECPropertyDefine(name, type, copy, nonatomic)
 
 // --------------------------------------------------------------------------
 //! Define a lazy property.
@@ -31,6 +36,10 @@
 @property (__VA_ARGS__) type name; \
 - (type) name##LazyInit
 
+#define ECPropertyDefineLazyRN(name, type)	ECPropertyDefineLazy(name, type, retain, nonatomic)
+#define ECPropertyDefineLazyAN(name, type)	ECPropertyDefineLazy(name, type, assign, nonatomic)
+#define ECPropertyDefineLazyCN(name, type)	ECPropertyDefineLazy(name, type, copy, nonatomic)
+
 // --------------------------------------------------------------------------
 //! Synthesize a property.
 // --------------------------------------------------------------------------
@@ -38,7 +47,7 @@
 #define ECPropertySynthesize(name)				@synthesize name = _##name
 
 // --------------------------------------------------------------------------
-//! Synthesize a lazy.
+//! Synthesize a lazy property.
 // --------------------------------------------------------------------------
 
 #define ECPropertySynthesizeLazy(name, setter, type)	\
@@ -48,10 +57,10 @@
 
 
 // --------------------------------------------------------------------------
-//! Return the raw member backing a property.
+//! Return the raw instance variable backing a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyMember(name)					_##name
+#define ECPropertyVariable(name)					_##name
 
 // --------------------------------------------------------------------------
 //! Release a property in a way that's safe to use in dealloc.

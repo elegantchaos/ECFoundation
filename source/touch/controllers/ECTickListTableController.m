@@ -29,7 +29,25 @@ NSString *const kSelectionKey = @"Selection";
 - (void) setData: (NSDictionary*) data defaults: (NSDictionary*) defaults
 {
 	self.data = data;
-	mValues = [data objectForKey: kValuesKey];
+	mValues = [[NSMutableArray alloc] init];
+	NSMutableArray* section = [[NSMutableArray alloc] init];
+	NSArray* values = [data objectForKey: kValuesKey];
+	for (NSString* value in values)
+	{
+		if ([value isEqualToString: @"-"])
+		{
+			[mValues addObject: section];
+			[section release];
+			section = [[NSMutableArray alloc] init];
+		}
+		else
+		{
+			[section addObject: value];
+		}
+	}
+	[mValues addObject: section];
+	[section release];
+		
 	mSelection = [(NSNumber*) [data valueForKey: kSelectionKey] integerValue];
 }
 
@@ -40,6 +58,7 @@ NSString *const kSelectionKey = @"Selection";
 - (void) dealloc 
 {
 	ECPropertyDealloc(data);
+	[mValues release];
 	
     [super dealloc];
 }
@@ -60,12 +79,26 @@ NSString *const kSelectionKey = @"Selection";
 #pragma mark UITableViewDataSource methods
 
 // --------------------------------------------------------------------------
+//! How many sections are there?
+// --------------------------------------------------------------------------
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	NSInteger count = mValues.count;
+	
+	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
+	
+	return count;
+}
+
+// --------------------------------------------------------------------------
 //! Return the number of rows in a section.
 // --------------------------------------------------------------------------
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-	NSInteger count = [mValues count];
+	NSArray* values = [mValues objectAtIndex: section];
+	NSInteger count = [values count];
 	ECDebug(ECTickListTableControllerChannel, @"number of rows for section %d: %d", section, count);
 
 	return count;
@@ -85,7 +118,8 @@ NSString *const kSelectionKey = @"Selection";
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
-	cell.textLabel.text = [mValues objectAtIndex: indexPath.row];
+	NSArray* sectionValues = [mValues objectAtIndex: indexPath.section];
+	cell.textLabel.text = [sectionValues objectAtIndex: indexPath.row];
 	cell.accessoryType = (indexPath.row == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	
 	return cell;

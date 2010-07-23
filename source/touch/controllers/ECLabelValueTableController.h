@@ -14,7 +14,7 @@
 	NSDictionary*	mCachedRowData;
 	NSDictionary*	mCachedDefaults;
 	
-	ECPropertyDefineMember(data, NSArray*);
+	ECPropertyDefineVariable(data, NSArray*);
 }
 
 ECPropertyDefine(data, NSArray*, retain, nonatomic);

@@ -10,7 +10,6 @@
 		2206CC6111F852FF00CDD442 /* ECSubviewInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC5F11F852FF00CDD442 /* ECSubviewInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2206CC6211F852FF00CDD442 /* ECSubviewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CC6011F852FF00CDD442 /* ECSubviewInfo.m */; };
 		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2206CC6811F853B100CDD442 /* ECProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CC6611F853B000CDD442 /* ECProperties.m */; };
 		2206CCAB11F875CD00CDD442 /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CCA911F875CD00CDD442 /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */; };
 		2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -130,7 +129,6 @@
 		2206CC5F11F852FF00CDD442 /* ECSubviewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSubviewInfo.h; path = controllers/ECSubviewInfo.h; sourceTree = "<group>"; };
 		2206CC6011F852FF00CDD442 /* ECSubviewInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ECSubviewInfo.m; path = controllers/ECSubviewInfo.m; sourceTree = "<group>"; };
 		2206CC6511F853B000CDD442 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ECProperties.h; sourceTree = "<group>"; };
-		2206CC6611F853B000CDD442 /* ECProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECProperties.m; sourceTree = "<group>"; };
 		2206CCA911F875CD00CDD442 /* ECTickListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTickListTableController.h; path = controllers/ECTickListTableController.h; sourceTree = "<group>"; };
 		2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ECTickListTableController.m; path = controllers/ECTickListTableController.m; sourceTree = "<group>"; };
 		2207E05B11F742F3004BB01D /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECNavigationController.h; path = controllers/ECNavigationController.h; sourceTree = "<group>"; };
@@ -511,7 +509,6 @@
 				226E1F9E11F8D03E00603F71 /* ECLogging.h */,
 				226E1FAD11F8D0A300603F71 /* ECMacros.h */,
 				2206CC6511F853B000CDD442 /* ECProperties.h */,
-				2206CC6611F853B000CDD442 /* ECProperties.m */,
 				227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */,
 				227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */,
 				227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */,
@@ -835,7 +832,6 @@
 				22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */,
 				2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */,
 				2206CC6211F852FF00CDD442 /* ECSubviewInfo.m in Sources */,
-				2206CC6811F853B100CDD442 /* ECProperties.m in Sources */,
 				2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */,
 				223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */,
 			);

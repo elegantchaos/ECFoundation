@@ -12,8 +12,8 @@
 
 @interface ECSubviewInfo : NSObject 
 {
-	ECPropertyDefineMember(classToUse, Class);
-	ECPropertyDefineMember(nib, NSString*);
+	ECPropertyDefineVariable(classToUse, Class);
+	ECPropertyDefineVariable(nib, NSString*);
 }
 
 ECPropertyDefine(classToUse, Class, assign, nonatomic);
