@@ -960,7 +960,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
@@ -987,7 +987,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
