@@ -50,6 +50,14 @@ ECPropertySynthesize(defaults);
 	return [self initWithItems: [NSMutableArray array]];
 }
 
+- (void) dealloc
+{
+	ECPropertyDealloc(data);
+	ECPropertyDealloc(items);
+	ECPropertyDealloc(defaults);
+	
+	[super dealloc];
+}
 // --------------------------------------------------------------------------
 //! Initialise with some existing items.
 // --------------------------------------------------------------------------

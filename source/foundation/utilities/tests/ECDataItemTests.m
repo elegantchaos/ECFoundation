@@ -35,7 +35,6 @@ static NSString *const kData2 = @"data2";
 
 - (void) dataTests: (ECDataItem*) item
 {
-	ECTestAssertTrue(item.count == 2, @"should have two items");
 	ECTestAssertTrue([item objectForKey: kKey1] == kData1, @"should have data");
 	ECTestAssertTrue([item objectForKey: kKey2] == kData2, @"should have data");
 	ECTestAssertTrue([item objectForKey: kKey3] == nil, @"shouldn't have data");
@@ -93,11 +92,9 @@ static NSString *const kData2 = @"data2";
 - (void) testInitWithObjectsAndKeys
 {
 	ECDataItem* item = [self makeItemWithData];
+	ECTestAssertTrue(item.count == 2, @"should have two items");
 	[self basicTests: item];
 	[self dataTests: item];
-					 
-	[item release];
-	
 }
 
 // --------------------------------------------------------------------------
@@ -124,6 +121,7 @@ static NSString *const kData2 = @"data2";
 	NSArray* items = [self makeItems];
 	ECDataItem* defaults = [self makeItemWithData];
 	ECDataItem* item = [[ECDataItem alloc] initWithItems: items defaults: defaults];
+	ECTestAssertTrue(item.count == 0, @"should have no data");
 	[self basicTests: item];
 	[self dataTests: item];
 	
