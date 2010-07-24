@@ -41,7 +41,7 @@ ECPropertySynthesize(data);
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	NSInteger count = self.data.count;
+	NSInteger count = self.data.items.count;
 
 	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
 	
@@ -83,7 +83,7 @@ ECPropertySynthesize(data);
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
 	ECDataItem* data = [self.data itemAtIndex: section];
-	NSInteger count = [data count];
+	NSInteger count = [data.items count];
 	
 	ECDebug(LabelValueTableChannel, @"number of rows for section %d: %d", section, count);
 
