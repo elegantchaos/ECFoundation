@@ -263,6 +263,15 @@ ECPropertySynthesize(defaults);
 }
 
 // --------------------------------------------------------------------------
+//! Insert an item to our item list.
+// --------------------------------------------------------------------------
+
+- (void) insertItem:(ECDataItem *)item atIndex:(NSUInteger)index
+{
+	[self.items insertObject: item atIndex: index];
+}
+
+// --------------------------------------------------------------------------
 //! Return a given item.
 // --------------------------------------------------------------------------
 
@@ -285,7 +294,7 @@ ECPropertySynthesize(defaults);
 	{
 		mCachedSection = section;
 		mCachedSectionData = [self.items objectAtIndex: path.section];
-		mCachedRow = -1;
+		mCachedRowData = nil;
 	}
 	
 	NSUInteger row = path.row;
@@ -296,6 +305,11 @@ ECPropertySynthesize(defaults);
 	}
 
 	return mCachedRowData;
+}
+
+- (void) invalidateCaches
+{
+	mCachedRowData = mCachedSectionData = nil;
 }
 
 // --------------------------------------------------------------------------
@@ -315,6 +329,45 @@ ECPropertySynthesize(defaults);
 - (void) setObject: (id) object forKey: (id) key
 {
 	[self.data setObject: object forKey: key];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) removeItemAtIndex: (NSUInteger) index
+{
+	[self.items removeObjectAtIndex: index];
+	[self invalidateCaches];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) removeItemAtIndexPath:(NSIndexPath *)path
+{
+	ECDataItem* sectionItem = [self.items objectAtIndex: path.section];
+	[sectionItem removeItemAtIndex: path.row];
+	[self invalidateCaches];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) moveItemFromIndex: (NSUInteger) from toIndex: (NSUInteger) to
+{
+	ECDataItem* item = [[self.items objectAtIndex: from] retain];
+	[self.items removeObjectAtIndex: from];
+	[self.items insertObject: item atIndex: to];
+	[self invalidateCaches];
+	[item release];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) moveItemFromIndexPath: (NSIndexPath*) fromPath toIndexPath: (NSIndexPath*) toPath
+{
+	ECDataItem* item = [[self itemAtIndexPath: fromPath] retain];
+	[self removeItemAtIndexPath: fromPath];
+	ECDataItem* toSection = [self.items objectAtIndex: toPath.section];
+	[toSection insertItem: item atIndex: toPath.row];
+	[item release];
 }
 
 @end
