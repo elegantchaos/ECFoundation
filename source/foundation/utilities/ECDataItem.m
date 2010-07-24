@@ -25,6 +25,10 @@ NSString *const kSelectionKey = @"Selection";
 NSString *const kEditableKey = @"Editable";
 
 
+@interface ECDataItem()
++ (NSMutableArray*)			itemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args;
++ (NSMutableDictionary*)	dataWithObjectsAndKeys: (id) firstObject args: (va_list) args;
+@end
 
 @implementation ECDataItem
 
@@ -36,9 +40,66 @@ ECPropertySynthesize(defaults);
 //! Return a new empty item, autoreleased.
 // --------------------------------------------------------------------------
 
-+ item
++ (ECDataItem*) item
 {
 	return [[[ECDataItem alloc] init] autorelease];
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item with some data.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*)	itemWithObjectsAndKeys: (id)firstObject, ...
+{
+	va_list args;
+    va_start(args, firstObject);
+	NSMutableDictionary* data = [ECDataItem dataWithObjectsAndKeys: firstObject args: args];
+    va_end(args);
+	
+	return [ECDataItem itemWithData: data items: [NSMutableArray array] defaults: nil];
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item with some sub-items.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*)	itemWithItems: (NSArray*) items
+{
+	return [[[ECDataItem alloc] initWithItems: items] autorelease];
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item with some sub items and defaults.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*)	itemWithItems: (NSArray*) items defaults: (ECDataItem*) defaults
+{
+	return [[[ECDataItem alloc] initWithItems: items defaults:defaults] autorelease];
+	
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item with some data, sub items and defaults.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
+{
+	return [[[ECDataItem alloc] initWithData: data items: items defaults: defaults] autorelease];	
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item with a list of sub-items, each of which has a single
+//! property set using the same key but different values.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*)	itemWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ...
+{
+	va_list args;
+    va_start(args, firstValue);
+	NSMutableArray* items = [ECDataItem itemsWithKey: key firstValue: firstValue args: args];
+    va_end(args);
+	
+	return [ECDataItem itemWithItems: items];	
 }
 
 // --------------------------------------------------------------------------
@@ -50,6 +111,10 @@ ECPropertySynthesize(defaults);
 	return [self initWithItems: [NSMutableArray array]];
 }
 
+// --------------------------------------------------------------------------
+//! Clean up.
+// --------------------------------------------------------------------------
+
 - (void) dealloc
 {
 	ECPropertyDealloc(data);
@@ -58,6 +123,7 @@ ECPropertySynthesize(defaults);
 	
 	[super dealloc];
 }
+
 // --------------------------------------------------------------------------
 //! Initialise with some existing items.
 // --------------------------------------------------------------------------
@@ -85,7 +151,7 @@ ECPropertySynthesize(defaults);
 	if ((self = [super init]) != nil)
 	{
 		self.data = data;
-		self.items = items;
+		self.items = [items mutableCopy];
 		self.defaults = defaults;
 	}
 	
@@ -99,10 +165,22 @@ ECPropertySynthesize(defaults);
 
 - (id) initWithObjectsAndKeys: (id) firstObject, ...
 {
-	NSMutableDictionary* data = [[NSMutableDictionary alloc] init];
-	
 	va_list args;
     va_start(args, firstObject);
+	NSMutableDictionary* data = [ECDataItem dataWithObjectsAndKeys: firstObject args: args];
+    va_end(args);
+
+	return [self initWithData: data items: [NSMutableArray array] defaults: nil];
+}
+
+// --------------------------------------------------------------------------
+//! Initialise with a set of objects and keys.
+// --------------------------------------------------------------------------
+
++ (NSMutableDictionary*) dataWithObjectsAndKeys: (id) firstObject args: (va_list) args
+{
+	NSMutableDictionary* data = [NSMutableDictionary dictionary];
+	
     for (id object = firstObject; object != nil; object = va_arg(args, id))
     {
 		NSString* key = va_arg(args, NSString*);
@@ -111,9 +189,8 @@ ECPropertySynthesize(defaults);
 			[data setObject: object forKey: key];
 		}
     }
-    va_end(args);
-
-	return [self initWithData: [data autorelease] items: [NSMutableArray array] defaults: nil];
+	
+	return data;
 }
 
 // --------------------------------------------------------------------------
@@ -123,19 +200,30 @@ ECPropertySynthesize(defaults);
 
 - (id) initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... 
 {
-	NSMutableArray* items = [NSMutableArray array];
-	
 	va_list args;
     va_start(args, firstValue);
-    for (id object = firstValue; object != nil; object = va_arg(args, id))
-    {
-		ECDataItem* item = [[ECDataItem alloc] initWithObjectsAndKeys: object, key, nil];
-		[items addObject: item];
-		[item release];
-    }
+	NSMutableArray* items = [ECDataItem itemsWithKey: key firstValue: firstValue args: args];
     va_end(args);
 	
 	return [self initWithItems: items];	
+}
+
+// --------------------------------------------------------------------------
+//! Return a list of sub-items, each of which has a single
+//! property set using the same key but different values.
+// --------------------------------------------------------------------------
+
++ (NSMutableArray*) itemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args
+{
+	NSMutableArray* items = [NSMutableArray array];
+	
+    for (id object = firstValue; object != nil; object = va_arg(args, id))
+    {
+		ECDataItem* item = [ECDataItem itemWithObjectsAndKeys: object, key, nil];
+		[items addObject: item];
+    }
+	
+	return items;
 }
 
 // --------------------------------------------------------------------------
@@ -160,6 +248,15 @@ ECPropertySynthesize(defaults);
 - (NSUInteger) count
 {
 	return self.data.count;
+}
+
+// --------------------------------------------------------------------------
+//! Add an item to our item list.
+// --------------------------------------------------------------------------
+
+- (void) addItem: (ECDataItem*) item
+{
+	[self.items addObject: item];
 }
 
 @end

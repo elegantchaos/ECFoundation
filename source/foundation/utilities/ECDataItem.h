@@ -11,14 +11,19 @@
 {
 	ECPropertyDefineVariable(data, NSDictionary*);
 	ECPropertyDefineVariable(defaults, ECDataItem*);
-	ECPropertyDefineVariable(items, NSArray*);
+	ECPropertyDefineVariable(items, NSMutableArray*);
 }
 
 ECPropertyDefineRN(data, NSDictionary*);
 ECPropertyDefineRN(defaults, ECDataItem*);
-ECPropertyDefineRN(items, NSArray*);
+ECPropertyDefineRN(items, NSMutableArray*);
 
-+ item;
++ (ECDataItem*) item;
++ (ECDataItem*)	itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
++ (ECDataItem*)	itemWithItems: (NSArray*) items;
++ (ECDataItem*)	itemWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
++ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
++ (ECDataItem*)	itemWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (id)			init;
 - (id)			initWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
