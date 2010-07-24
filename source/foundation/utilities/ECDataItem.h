@@ -1,0 +1,49 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 24/07/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
+#import <Foundation/Foundation.h>
+
+@interface ECDataItem : NSObject 
+{
+	ECPropertyDefineVariable(data, NSDictionary*);
+	ECPropertyDefineVariable(defaults, ECDataItem*);
+	ECPropertyDefineVariable(items, NSArray*);
+}
+
+ECPropertyDefineRN(data, NSDictionary*);
+ECPropertyDefineRN(defaults, ECDataItem*);
+ECPropertyDefineRN(items, NSArray*);
+
++ item;
+
+- (id)			init;
+- (id)			initWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)			initWithItems: (NSArray*) items;
+- (id)			initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
+- (id)			initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
+
+- (id)			objectForKey:(id)aKey;
+- (NSUInteger)	count;
+
+@end
+
+// --------------------------------------------------------------------------
+// Data Key Constants
+// --------------------------------------------------------------------------
+
+extern NSString *const kHeaderKey;
+extern NSString *const kFooterKey;
+extern NSString *const kItemsKey;
+extern NSString *const kLabelKey;
+extern NSString *const kDetailKey;
+extern NSString *const kAccessoryKey;
+extern NSString *const kDefaultsKey;
+extern NSString *const kMoveableKey;
+extern NSString *const kSubviewKey;
+extern NSString *const kValuesKey;
+extern NSString *const kEditableKey;
+extern NSString *const kSelectionKey;

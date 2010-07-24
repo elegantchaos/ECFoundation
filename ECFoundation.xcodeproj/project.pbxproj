@@ -15,10 +15,12 @@
 		2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207E05C11F742F3004BB01D /* ECNavigationController.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
-		2232B64C11F9F058001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B64A11F9F058001846FC /* ECDataItem.h */; };
-		2232B64D11F9F058001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B64A11F9F058001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2232B64E11F9F058001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B64B11F9F058001846FC /* ECDataItem.m */; };
-		2232B64F11F9F058001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B64B11F9F058001846FC /* ECDataItem.m */; };
+		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
+		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
+		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
+		2232B68711FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
+		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
+		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */; };
 		22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */; };
@@ -138,8 +140,10 @@
 		2207E05B11F742F3004BB01D /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECNavigationController.h; path = controllers/ECNavigationController.h; sourceTree = "<group>"; };
 		2207E05C11F742F3004BB01D /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECNavigationController.m; path = controllers/ECNavigationController.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		2232B64A11F9F058001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECDataItem.h; path = controllers/ECDataItem.h; sourceTree = "<group>"; };
-		2232B64B11F9F058001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECDataItem.m; path = controllers/ECDataItem.m; sourceTree = "<group>"; };
+		2232B68211FA02BB001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItem.h; sourceTree = "<group>"; };
+		2232B68311FA02BB001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItem.m; sourceTree = "<group>"; };
+		2232B68811FA02E6001846FC /* ECDataItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItemTests.h; sourceTree = "<group>"; };
+		2232B68911FA02E6001846FC /* ECDataItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItemTests.m; sourceTree = "<group>"; };
 		223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECDataDrivenView.h; path = controllers/ECDataDrivenView.h; sourceTree = "<group>"; };
 		223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECDataDrivenView.m; path = controllers/ECDataDrivenView.m; sourceTree = "<group>"; };
 		22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECLabelValueTableController.h; path = controllers/ECLabelValueTableController.h; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
+				2232B68811FA02E6001846FC /* ECDataItemTests.h */,
+				2232B68911FA02E6001846FC /* ECDataItemTests.m */,
 				225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */,
 				225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */,
 			);
@@ -512,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				225EC68111EBAC1500A97AEA /* tests */,
+				2232B68211FA02BB001846FC /* ECDataItem.h */,
+				2232B68311FA02BB001846FC /* ECDataItem.m */,
 				228630F611E32E8E00654739 /* ECLocationUtilities.h */,
 				226E1F9D11F8D03E00603F71 /* ECAssertion.h */,
 				226E1F9E11F8D03E00603F71 /* ECLogging.h */,
@@ -592,11 +600,11 @@
 				2206CC6111F852FF00CDD442 /* ECSubviewInfo.h in Headers */,
 				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
 				2206CCAB11F875CD00CDD442 /* ECTickListTableController.h in Headers */,
-				2232B64D11F9F058001846FC /* ECDataItem.h in Headers */,
 				223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */,
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
 				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
+				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +639,7 @@
 				226E1FA111F8D03E00603F71 /* ECAssertion.h in Headers */,
 				226E1FA211F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAF11F8D0A300603F71 /* ECMacros.h in Headers */,
-				2232B64C11F9F058001846FC /* ECDataItem.h in Headers */,
+				2232B68411FA02BB001846FC /* ECDataItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +823,7 @@
 				2273350511EC95E000695FB4 /* NSURL+ECUtilitiesTests.m in Sources */,
 				2273350611EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.m in Sources */,
 				22822E6C11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
+				2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +837,7 @@
 				2273350311EC95E000695FB4 /* NSURL+ECUtilitiesTests.m in Sources */,
 				2273350411EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.m in Sources */,
 				22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
+				2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +854,7 @@
 				2206CC6211F852FF00CDD442 /* ECSubviewInfo.m in Sources */,
 				2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */,
 				223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */,
-				2232B64F11F9F058001846FC /* ECDataItem.m in Sources */,
+				2232B68711FA02BB001846FC /* ECDataItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,7 +876,7 @@
 				227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */,
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */,
-				2232B64E11F9F058001846FC /* ECDataItem.m in Sources */,
+				2232B68611FA02BB001846FC /* ECDataItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,7 +962,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
@@ -979,7 +989,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
@@ -1005,7 +1015,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = "resources/ECFoundation GHUnit.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -1028,7 +1038,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREFIX_HEADER = "source/prefix/ECMac$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = "resources/ECFoundation GHUnit.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
