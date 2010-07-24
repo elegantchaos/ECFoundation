@@ -42,8 +42,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	if (self != nil)
 	{
 		self.data = data;
-		mSelection = [data valueForKey: kSelectionKey];
-		mEditable = [[data valueForKey: kEditableKey] boolValue];
+		mSelection = [data objectForKey: kSelectionKey];
+		mEditable = [[data objectForKey: kEditableKey] boolValue];
 	}
 	
 	return self;
@@ -110,7 +110,6 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	
 	NSInteger count = self.data.items.count;
 	
 	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
