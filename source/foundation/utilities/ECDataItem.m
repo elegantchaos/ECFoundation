@@ -275,7 +275,7 @@ ECPropertySynthesize(defaults);
 //! used to index that item's items.
 // --------------------------------------------------------------------------
 
-- (ECDataItem*) itemForPath: (NSIndexPath*) path
+- (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path
 {
 	NSUInteger section = path.section;
 	if ((mCachedSectionData == nil) || (section != mCachedSection))
@@ -301,7 +301,7 @@ ECPropertySynthesize(defaults);
 
 - (id) objectForKey: (NSString*) key atPath: (NSIndexPath*) path
 {
-	ECDataItem* item = [self itemForPath: path];
+	ECDataItem* item = [self itemAtIndexPath: path];
 	id result = [item objectForKey: key];
 	
 	return result;

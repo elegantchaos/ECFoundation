@@ -28,7 +28,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Initialise
 // --------------------------------------------------------------------------
 
-- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (NSDictionary*) data defaults: (NSDictionary*) defaults;
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 {
 	if ((nibNameOrNil != nil) || (nibBundleOrNil != nil))
 	{
@@ -41,7 +41,10 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	
 	if (self != nil)
 	{
-		[self setData: data defaults: defaults];
+		self.data = data;
+		mSelection = [data valueForKey: kSelectionKey];
+		mEditable = [[data valueForKey: kEditableKey] boolValue];
+		mMoveable = [[data valueForKey: kMoveableKey] boolValue];
 	}
 	
 	return self;
@@ -55,33 +58,9 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	ECPropertyDealloc(data);
 	
-	[mValues release];
-	
     [super dealloc];
 }
 
-// --------------------------------------------------------------------------
-//! Return the item at a given path.
-// --------------------------------------------------------------------------
-
-- (NSString*) itemAtPath: (NSIndexPath*) path
-{
-	NSArray* valuesForSection = [mValues objectAtIndex: path.section];
-	return [valuesForSection objectAtIndex: path.row];
-}
-
-// --------------------------------------------------------------------------
-//! Set Data
-// --------------------------------------------------------------------------
-
-- (void) setData: (NSDictionary*) data defaults: (NSDictionary*) defaults
-{
-	self.data = data;
-	mValues = [data objectForKey: kValuesKey];
-	mSelection = [data valueForKey: kSelectionKey];
-	mEditable = [[data valueForKey: kEditableKey] boolValue];
-	mMoveable = [[data valueForKey: kMoveableKey] boolValue];
-}
 
 // --------------------------------------------------------------------------
 //! Finish setting up the view.
@@ -132,7 +111,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	NSInteger count = mValues.count;
+	
+	NSInteger count = self.data.items.count;
 	
 	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
 	
@@ -145,8 +125,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-	NSArray* values = [mValues objectAtIndex: section];
-	NSInteger count = [values count];
+	ECDataItem* item = [self.data itemAtIndex: section];
+	NSInteger count = [item.items count];
 	ECDebug(ECTickListTableControllerChannel, @"number of rows for section %d: %d", section, count);
 
 	return count;
@@ -166,8 +146,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
-	NSString* item = [self itemAtPath: indexPath];
-	cell.textLabel.text = item;
+	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
+	cell.textLabel.text = [item objectForKey: kLabelKey];
 	cell.accessoryType = (item == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	
 	return cell;
@@ -181,7 +161,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSString* selectedItem = [self itemAtPath:indexPath];
+	ECDataItem* selectedItem = [self.data itemAtIndexPath: indexPath];
 	if (mSelection != selectedItem)
 	{
 		mSelection = selectedItem;

@@ -6,16 +6,10 @@
 // --------------------------------------------------------------------------
 
 #include "ECProperties.h"
-
-@class ECDataItem;
+#include "ECDataItem.h"
 
 @interface ECLabelValueTableController : NSObject <UITableViewDataSource, UITableViewDelegate>
 {
-	NSInteger		mCachedSection;
-	NSInteger		mCachedRow;
-	ECDataItem*		mCachedRowData;
-	ECDataItem*		mCachedDefaults;
-	
 	ECPropertyDefineVariable(data, ECDataItem*);
 }
 

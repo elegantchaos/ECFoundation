@@ -9,6 +9,7 @@
 #import "ECDataDrivenView.h"
 
 @class ECDataItem;
+
 @interface ECTickListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 
 // --------------------------------------------------------------------------
@@ -16,8 +17,7 @@
 // --------------------------------------------------------------------------
 
 {
-	NSMutableArray*					mValues;		//!< Cached values.
-	id								mSelection;		//!< The selected item.
+	ECDataItem*						mSelection;		//!< The selected item.
 	BOOL							mEditable;		//!< Are the items editable?
 	BOOL							mMoveable;		//!< Are the items moveable?
 	
@@ -28,13 +28,13 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyDefine(data, NSDictionary*, retain, nonatomic);
+ECPropertyDefineRN(data, ECDataItem*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 
 @end
 

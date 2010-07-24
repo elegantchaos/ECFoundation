@@ -43,7 +43,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (void)		addItem: (ECDataItem*) item;
 
 - (ECDataItem*)	itemAtIndex: (NSUInteger) index;
-- (ECDataItem*) itemForPath: (NSIndexPath*) path;
+- (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path;
 
 @end
 
