@@ -19,7 +19,6 @@
 {
 	ECDataItem*						mSelection;		//!< The selected item.
 	BOOL							mEditable;		//!< Are the items editable?
-	BOOL							mMoveable;		//!< Are the items moveable?
 	
 	ECPropertyDefineVariable(data, ECDataItem*);
 }

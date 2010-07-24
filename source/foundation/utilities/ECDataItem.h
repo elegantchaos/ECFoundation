@@ -9,7 +9,7 @@
 
 @interface ECDataItem : NSObject 
 {
-	ECPropertyDefineVariable(data, NSDictionary*);
+	ECPropertyDefineVariable(data, NSMutableDictionary*);
 	ECPropertyDefineVariable(defaults, ECDataItem*);
 	ECPropertyDefineVariable(items, NSMutableArray*);
 	
@@ -19,7 +19,7 @@
 	ECDataItem* mCachedRowData;
 }
 
-ECPropertyDefineRN(data, NSDictionary*);
+ECPropertyDefineRN(data, NSMutableDictionary*);
 ECPropertyDefineRN(defaults, ECDataItem*);
 ECPropertyDefineRN(items, NSMutableArray*);
 
@@ -37,7 +37,9 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (id)			initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
 - (id)			initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
-- (id)			objectForKey:(id)aKey;
+- (id)			objectForKey: (id) key;
+- (void)		setObject: (id) object forKey: (id) key;
+
 - (NSUInteger)	count;
 
 - (void)		addItem: (ECDataItem*) item;

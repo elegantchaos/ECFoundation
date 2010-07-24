@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2206CC6111F852FF00CDD442 /* ECSubviewInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC5F11F852FF00CDD442 /* ECSubviewInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2206CC6211F852FF00CDD442 /* ECSubviewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CC6011F852FF00CDD442 /* ECSubviewInfo.m */; };
 		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2206CCAB11F875CD00CDD442 /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CCA911F875CD00CDD442 /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */; };
@@ -132,8 +130,6 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		2206CC5F11F852FF00CDD442 /* ECSubviewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSubviewInfo.h; path = controllers/ECSubviewInfo.h; sourceTree = "<group>"; };
-		2206CC6011F852FF00CDD442 /* ECSubviewInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ECSubviewInfo.m; path = controllers/ECSubviewInfo.m; sourceTree = "<group>"; };
 		2206CC6511F853B000CDD442 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ECProperties.h; sourceTree = "<group>"; };
 		2206CCA911F875CD00CDD442 /* ECTickListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTickListTableController.h; path = controllers/ECTickListTableController.h; sourceTree = "<group>"; };
 		2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ECTickListTableController.m; path = controllers/ECTickListTableController.m; sourceTree = "<group>"; };
@@ -367,8 +363,6 @@
 				22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */,
 				2207E05B11F742F3004BB01D /* ECNavigationController.h */,
 				2207E05C11F742F3004BB01D /* ECNavigationController.m */,
-				2206CC5F11F852FF00CDD442 /* ECSubviewInfo.h */,
-				2206CC6011F852FF00CDD442 /* ECSubviewInfo.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -596,7 +590,6 @@
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
 				22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */,
 				2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */,
-				2206CC6111F852FF00CDD442 /* ECSubviewInfo.h in Headers */,
 				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
 				2206CCAB11F875CD00CDD442 /* ECTickListTableController.h in Headers */,
 				223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */,
@@ -849,7 +842,6 @@
 				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22592EC211F5BEDD0056FF4B /* ECLabelValueTableController.m in Sources */,
 				2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */,
-				2206CC6211F852FF00CDD442 /* ECSubviewInfo.m in Sources */,
 				2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */,
 				223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */,
 				2232B68711FA02BB001846FC /* ECDataItem.m in Sources */,

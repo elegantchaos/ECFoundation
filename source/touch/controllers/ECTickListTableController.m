@@ -44,7 +44,6 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		self.data = data;
 		mSelection = [data valueForKey: kSelectionKey];
 		mEditable = [[data valueForKey: kEditableKey] boolValue];
-		mMoveable = [[data valueForKey: kMoveableKey] boolValue];
 	}
 	
 	return self;
@@ -190,7 +189,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (BOOL) tableView: (UITableView*) table canEditRowAtIndexPath: (NSIndexPath*) path
 {
-	return mEditable;
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+	return [[item objectForKey: kEditableKey] boolValue];
 }
 
 // --------------------------------------------------------------------------
@@ -200,7 +200,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (BOOL) tableView: (UITableView*) table canMoveRowAtIndexPath: (NSIndexPath*) path
 {
-	return mMoveable;
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+	return [[item objectForKey: kMoveableKey] boolValue];
 }
 
 // --------------------------------------------------------------------------

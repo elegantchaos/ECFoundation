@@ -26,7 +26,7 @@ NSString *const kEditableKey = @"Editable";
 
 
 @interface ECDataItem()
-+ (NSMutableArray*)			itemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args;
+- (void)					addItemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args;
 + (NSMutableDictionary*)	dataWithObjectsAndKeys: (id) firstObject args: (va_list) args;
 @end
 
@@ -94,12 +94,13 @@ ECPropertySynthesize(defaults);
 
 + (ECDataItem*)	itemWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ...
 {
+	ECDataItem* item = [ECDataItem item];
 	va_list args;
     va_start(args, firstValue);
-	NSMutableArray* items = [ECDataItem itemsWithKey: key firstValue: firstValue args: args];
+	[item addItemsWithKey: key firstValue: firstValue args: args];
     va_end(args);
 	
-	return [ECDataItem itemWithItems: items];	
+	return item;	
 }
 
 // --------------------------------------------------------------------------
@@ -146,7 +147,7 @@ ECPropertySynthesize(defaults);
 //! Initialise with data, items and defaults.
 // --------------------------------------------------------------------------
 
-- (id) initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
+- (id) initWithData: (NSMutableDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
 {
 	if ((self = [super init]) != nil)
 	{
@@ -200,12 +201,14 @@ ECPropertySynthesize(defaults);
 
 - (id) initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... 
 {
+	ECDataItem* item = [self init];
+	
 	va_list args;
     va_start(args, firstValue);
-	NSMutableArray* items = [ECDataItem itemsWithKey: key firstValue: firstValue args: args];
+	[item addItemsWithKey: key firstValue: firstValue args: args];
     va_end(args);
 	
-	return [self initWithItems: items];	
+	return item;
 }
 
 // --------------------------------------------------------------------------
@@ -213,17 +216,13 @@ ECPropertySynthesize(defaults);
 //! property set using the same key but different values.
 // --------------------------------------------------------------------------
 
-+ (NSMutableArray*) itemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args
+- (void) addItemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args
 {
-	NSMutableArray* items = [NSMutableArray array];
-	
     for (id object = firstValue; object != nil; object = va_arg(args, id))
     {
 		ECDataItem* item = [ECDataItem itemWithObjectsAndKeys: object, key, nil];
-		[items addObject: item];
+		[self addItem: item];
     }
-	
-	return items;
 }
 
 // --------------------------------------------------------------------------
@@ -257,6 +256,10 @@ ECPropertySynthesize(defaults);
 - (void) addItem: (ECDataItem*) item
 {
 	[self.items addObject: item];
+	if (item.defaults == nil)
+	{
+		item.defaults = self;
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -305,6 +308,13 @@ ECPropertySynthesize(defaults);
 	id result = [item objectForKey: key];
 	
 	return result;
+}
+
+// --------------------------------------------------------------------------
+
+- (void) setObject: (id) object forKey: (id) key
+{
+	[self.data setObject: object forKey: key];
 }
 
 @end
