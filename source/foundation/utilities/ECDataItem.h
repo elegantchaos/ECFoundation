@@ -25,9 +25,12 @@ ECPropertyDefineRN(items, NSArray*);
 - (id)			initWithItems: (NSArray*) items;
 - (id)			initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
 - (id)			initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
+- (id)			initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (id)			objectForKey:(id)aKey;
 - (NSUInteger)	count;
+
+- (void)		addItem: (ECDataItem*) item;
 
 @end
 

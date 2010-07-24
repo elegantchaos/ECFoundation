@@ -117,6 +117,28 @@ ECPropertySynthesize(defaults);
 }
 
 // --------------------------------------------------------------------------
+//! Initialise with a list of sub-items, each of which has a single
+//! property set using the same key but different values.
+// --------------------------------------------------------------------------
+
+- (id) initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... 
+{
+	NSMutableArray* items = [NSMutableArray array];
+	
+	va_list args;
+    va_start(args, firstValue);
+    for (id object = firstValue; object != nil; object = va_arg(args, id))
+    {
+		ECDataItem* item = [[ECDataItem alloc] initWithObjectsAndKeys: object, key, nil];
+		[items addObject: item];
+		[item release];
+    }
+    va_end(args);
+	
+	return [self initWithItems: items];	
+}
+
+// --------------------------------------------------------------------------
 //! Return the object for a key. We look in the data first, then in the defaults.
 // --------------------------------------------------------------------------
 
