@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 24/07/2010
 //
-//  ECDataItem.m
-//  ECFoundation
-//
-//  Created by Sam Deane on 23/07/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECDataItem.h"
 
@@ -33,34 +32,62 @@ ECPropertySynthesize(data);
 ECPropertySynthesize(items);
 ECPropertySynthesize(defaults);
 
+// --------------------------------------------------------------------------
+//! Return a new empty item, autoreleased.
+// --------------------------------------------------------------------------
+
++ item
+{
+	return [[[ECDataItem alloc] init] autorelease];
+}
+
+// --------------------------------------------------------------------------
+//! Default initialisation.
+// --------------------------------------------------------------------------
 
 - (id) init
 {
 	return [self initWithItems: [NSMutableArray array]];
 }
 
+// --------------------------------------------------------------------------
+//! Initialise with some existing items.
+// --------------------------------------------------------------------------
+
 - (id) initWithItems: (NSArray*) items
 {
-	return [self initWithItems: items defaults: [NSMutableDictionary dictionary]];
+	return [self initWithItems: items defaults: nil];
 }
 
-- (id) initWithItems: (NSArray*) items defaults: (NSDictionary*) defaults
+// --------------------------------------------------------------------------
+//! Initialise with items and defaults.
+// --------------------------------------------------------------------------
+
+- (id) initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults
 {
 	return [self initWithData: [NSMutableDictionary dictionary] items: items defaults: defaults];
 }
 
-- (id) initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (NSDictionary*) defaults
+// --------------------------------------------------------------------------
+//! Initialise with data, items and defaults.
+// --------------------------------------------------------------------------
+
+- (id) initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
 {
 	if ((self = [super init]) != nil)
 	{
 		self.data = data;
 		self.items = items;
-		self.defaults= defaults;
+		self.defaults = defaults;
 	}
 	
 	return self;
 	
 }
+
+// --------------------------------------------------------------------------
+//! Initialise with a set of objects and keys.
+// --------------------------------------------------------------------------
 
 - (id) initWithObjectsAndKeys: (id) firstObject, ...
 {
@@ -78,7 +105,31 @@ ECPropertySynthesize(defaults);
     }
     va_end(args);
 
-	return [self initWithData: [data autorelease] items: [NSMutableArray array] defaults: [NSMutableDictionary dictionary]];
+	return [self initWithData: [data autorelease] items: [NSMutableArray array] defaults: nil];
+}
+
+// --------------------------------------------------------------------------
+//! Return the object for a key. We look in the data first, then in the defaults.
+// --------------------------------------------------------------------------
+
+- (id) objectForKey: (id) key
+{
+	id result = [self.data objectForKey: key];
+	if (!result && self.defaults)
+	{
+		result = [self.defaults objectForKey: key];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the number of dictionary items we contain directly.
+// --------------------------------------------------------------------------
+
+- (NSUInteger) count
+{
+	return self.data.count;
 }
 
 @end

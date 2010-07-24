@@ -1,29 +1,33 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 24/07/2010
 //
-//  ECDataItem.h
-//  ECFoundation
-//
-//  Created by Sam Deane on 23/07/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
 
 @interface ECDataItem : NSObject 
 {
 	ECPropertyDefineVariable(data, NSDictionary*);
-	ECPropertyDefineVariable(defaults, NSDictionary*);
+	ECPropertyDefineVariable(defaults, ECDataItem*);
 	ECPropertyDefineVariable(items, NSArray*);
 }
 
 ECPropertyDefineRN(data, NSDictionary*);
-ECPropertyDefineRN(defaults, NSDictionary*);
+ECPropertyDefineRN(defaults, ECDataItem*);
 ECPropertyDefineRN(items, NSArray*);
 
-- (id) init;
-- (id) initWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
-- (id) initWithItems: (NSArray*) items;
-- (id) initWithItems: (NSArray*) items defaults: (NSDictionary*) defaults;
-- (id) initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (NSDictionary*) defaults;
++ item;
+
+- (id)			init;
+- (id)			initWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)			initWithItems: (NSArray*) items;
+- (id)			initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
+- (id)			initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
+
+- (id)			objectForKey:(id)aKey;
+- (NSUInteger)	count;
 
 @end
 
