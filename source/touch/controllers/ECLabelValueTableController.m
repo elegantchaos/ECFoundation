@@ -20,106 +20,6 @@
 ECPropertySynthesize(data);
 
 
-// --------------------------------------------------------------------------
-//! Return the data for a given section.
-// --------------------------------------------------------------------------
-
-- (NSDictionary*) dataForSection: (NSUInteger) section
-{
-	NSDictionary* data = [self.data objectAtIndex: section];
-		
-	return data;
-}
-
-// --------------------------------------------------------------------------
-//! Return the rows array for a given section.
-// --------------------------------------------------------------------------
-
-- (NSArray*) rowsForSection: (NSUInteger) section
-{
-	NSArray* rows = nil;
-	NSDictionary* data = [self.data objectAtIndex: section];
-	if (data)
-	{
-		rows = [data valueForKey: kItemsKey];
-	}
-	
-	return rows;
-}
-
-// --------------------------------------------------------------------------
-//! Return the default properties for a given section.
-// --------------------------------------------------------------------------
-
-- (NSDictionary*) defaultsForSection: (NSUInteger) section
-{
-	NSDictionary* defaults = nil;
-	
-	NSDictionary* data = [self.data objectAtIndex: section];
-	if (data)
-	{
-		defaults = [data valueForKey: kDefaultsKey];
-	}
-	
-	return defaults;
-}
-
-// --------------------------------------------------------------------------
-//! Return the data for a given path.
-// --------------------------------------------------------------------------
-
-- (NSDictionary*) dataForPath: (NSIndexPath*) path
-{
-	NSDictionary* row = nil;
-	NSArray* rows = [self rowsForSection: path.section];
-	if (rows)
-	{
-		row = [rows objectAtIndex: path.row];
-	}
-	return row;
-}
-
-// --------------------------------------------------------------------------
-//! Return a property of a row, using a default if necessary.
-// --------------------------------------------------------------------------
-
-- (id) valueForKey: (NSString*) key inRow: (NSDictionary*) row withDefaults: (NSDictionary*) defaults
-{
-	id result = [row valueForKey: key];
-	if (result == nil)
-	{
-		result = [defaults valueForKey: key];
-	}
-	
-	return result;
-}
-
-// --------------------------------------------------------------------------
-//! Return a property for a given path.
-// --------------------------------------------------------------------------
-
-- (id) valueForKey: (NSString*) key atPath: (NSIndexPath*) path
-{
-	NSInteger section = path.section;
-	if ((mCachedDefaults == nil) || (section != mCachedSection))
-	{
-		mCachedSection = section;
-		mCachedDefaults = [self defaultsForSection: section];
-		mCachedRow = -1;
-	}
-	
-	NSInteger row = path.row;
-	if ((mCachedRowData == nil) || (row != mCachedRow))
-	{
-		mCachedRowData = [self dataForPath: path];
-		mCachedRow = row;
-	}
-	
-	id result = [self valueForKey: key inRow: mCachedRowData withDefaults: mCachedDefaults];
-	
-	return result;
-}
-
 
 // --------------------------------------------------------------------------
 //! Release references and clean up.
@@ -154,8 +54,8 @@ ECPropertySynthesize(data);
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	NSDictionary* data = [self dataForSection: section];
-	NSString* result = [data valueForKey: kHeaderKey];
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* result = [data objectForKey: kHeaderKey];
 
 	ECDebug(LabelValueTableChannel, @"header for section %d: %@", section, result);
 
@@ -168,8 +68,8 @@ ECPropertySynthesize(data);
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-	NSDictionary* data = [self dataForSection: section];
-	NSString* result = [data valueForKey: kFooterKey];
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* result = [data objectForKey: kFooterKey];
 
 	ECDebug(LabelValueTableChannel, @"footer for section %d: %@", section, result);
 
@@ -182,8 +82,8 @@ ECPropertySynthesize(data);
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-	NSArray* rows = [self rowsForSection: section];
-	NSInteger count = [rows count];
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSInteger count = [data count];
 	
 	ECDebug(LabelValueTableChannel, @"number of rows for section %d: %d", section, count);
 
@@ -204,10 +104,12 @@ ECPropertySynthesize(data);
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
-	cell.textLabel.text = [self valueForKey: kLabelKey atPath: indexPath];
-	cell.detailTextLabel.text = [self valueForKey: kDetailKey atPath: indexPath];
+	ECDataItem* item = [self.data itemForPath: indexPath];
+
+	cell.textLabel.text = [item objectForKey: kLabelKey];
+	cell.detailTextLabel.text = [item objectForKey: kDetailKey];
 	
-	NSNumber* accessory = [self valueForKey: kAccessoryKey atPath: indexPath];
+	NSNumber* accessory = [item objectForKey: kAccessoryKey];
 	if (accessory)
 	{
 		cell.accessoryType = [accessory intValue];
@@ -219,7 +121,8 @@ ECPropertySynthesize(data);
 // Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BOOL result = [[self valueForKey: kMoveableKey  atPath: indexPath] boolValue];
+	ECDataItem* item = [self.data itemForPath: indexPath];
+	BOOL result = [[item objectForKey: kMoveableKey] boolValue];
 	
 	return result;
 }
@@ -243,7 +146,8 @@ ECPropertySynthesize(data);
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ECSubviewInfo* info = [self valueForKey: kSubviewKey atPath: indexPath];
+	ECDataItem* item = [self.data itemForPath: indexPath];
+	ECSubviewInfo* info = [item objectForKey: kSubviewKey];
 	if (info)
 	{
 		Class class = info.classToUse;
@@ -252,16 +156,14 @@ ECPropertySynthesize(data);
 			UIViewController* controller;
 			if ([class conformsToProtocol: @protocol(ECDataDrivenView)])
 			{
-				NSDictionary* row = [self dataForPath: indexPath];
-				NSDictionary* defaults = [self defaultsForSection: indexPath.section];
-				controller = [((id<ECDataDrivenView>) [class alloc]) initWithNibName: info.nib bundle: nil data: row defaults: defaults];
+				controller = [((id<ECDataDrivenView>) [class alloc]) initWithNibName: info.nib bundle: nil data: item];
 			}
 			else
 			{
 				controller = [[class alloc] initWithNibName: info.nib bundle: nil];
 			}
 
-			controller.title = [self valueForKey: kLabelKey atPath: indexPath];
+			controller.title = [item valueForKey: kLabelKey];
 
 			ECNavigationController* navigation = [ECNavigationController currentController];
 			[navigation pushViewController: controller animated:TRUE];

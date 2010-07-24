@@ -259,5 +259,53 @@ ECPropertySynthesize(defaults);
 	[self.items addObject: item];
 }
 
+// --------------------------------------------------------------------------
+//! Return a given item.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*) itemAtIndex:(NSUInteger)index
+{
+	return [self.items objectAtIndex: index];
+}
+
+// --------------------------------------------------------------------------
+//! Return an item at a given path.
+//!
+//! The section of the path is used to index our items, and the row then
+//! used to index that item's items.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*) itemForPath: (NSIndexPath*) path
+{
+	NSUInteger section = path.section;
+	if ((mCachedSectionData == nil) || (section != mCachedSection))
+	{
+		mCachedSection = section;
+		mCachedSectionData = [self.items objectAtIndex: path.section];
+		mCachedRow = -1;
+	}
+	
+	NSUInteger row = path.row;
+	if ((mCachedRowData == nil) || (row != mCachedRow))
+	{
+		mCachedRowData = [mCachedSectionData itemAtIndex: row];
+		mCachedRow = row;
+	}
+
+	return mCachedRowData;
+}
+
+// --------------------------------------------------------------------------
+//! Return a property for a given path.
+// --------------------------------------------------------------------------
+
+- (id) objectForKey: (NSString*) key atPath: (NSIndexPath*) path
+{
+	ECDataItem* item = [self itemForPath: path];
+	id result = [item objectForKey: key];
+	
+	return result;
+}
+
 @end
 

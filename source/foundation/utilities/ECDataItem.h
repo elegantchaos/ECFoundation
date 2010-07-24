@@ -12,6 +12,11 @@
 	ECPropertyDefineVariable(data, NSDictionary*);
 	ECPropertyDefineVariable(defaults, ECDataItem*);
 	ECPropertyDefineVariable(items, NSMutableArray*);
+	
+	NSUInteger	mCachedSection;
+	NSUInteger	mCachedRow;
+	ECDataItem* mCachedSectionData;
+	ECDataItem* mCachedRowData;
 }
 
 ECPropertyDefineRN(data, NSDictionary*);
@@ -36,6 +41,9 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (NSUInteger)	count;
 
 - (void)		addItem: (ECDataItem*) item;
+
+- (ECDataItem*)	itemAtIndex: (NSUInteger) index;
+- (ECDataItem*) itemForPath: (NSIndexPath*) path;
 
 @end
 

@@ -16,7 +16,7 @@
 		2207E05E11F742F3004BB01D /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207E05C11F742F3004BB01D /* ECNavigationController.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
-		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
+		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
 		2232B68711FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
 		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
@@ -360,8 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
-				2232B64A11F9F058001846FC /* ECDataItem.h */,
-				2232B64B11F9F058001846FC /* ECDataItem.m */,
 				223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */,
 				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
 				2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */,
@@ -594,6 +592,7 @@
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
 				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
+				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
 				22592FA811F5C9660056FF4B /* ECLabelValueTableController.h in Headers */,
 				2207E05D11F742F3004BB01D /* ECNavigationController.h in Headers */,
@@ -604,7 +603,6 @@
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
 				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
-				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

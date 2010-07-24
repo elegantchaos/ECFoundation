@@ -8,6 +8,7 @@
 #import "ECProperties.h"
 #import "ECDataDrivenView.h"
 
+@class ECDataItem;
 @interface ECTickListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 
 // --------------------------------------------------------------------------
@@ -20,7 +21,7 @@
 	BOOL							mEditable;		//!< Are the items editable?
 	BOOL							mMoveable;		//!< Are the items moveable?
 	
-	ECPropertyDefineVariable(data, NSDictionary*);
+	ECPropertyDefineVariable(data, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
@@ -33,8 +34,7 @@ ECPropertyDefine(data, NSDictionary*, retain, nonatomic);
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (NSDictionary*) data defaults: (NSDictionary*) defaults;
-- (void) setData: (NSDictionary*) data defaults: (NSDictionary*) defaults;
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data
 
 @end
 

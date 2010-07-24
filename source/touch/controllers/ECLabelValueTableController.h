@@ -7,17 +7,19 @@
 
 #include "ECProperties.h"
 
+@class ECDataItem;
+
 @interface ECLabelValueTableController : NSObject <UITableViewDataSource, UITableViewDelegate>
 {
 	NSInteger		mCachedSection;
 	NSInteger		mCachedRow;
-	NSDictionary*	mCachedRowData;
-	NSDictionary*	mCachedDefaults;
+	ECDataItem*		mCachedRowData;
+	ECDataItem*		mCachedDefaults;
 	
-	ECPropertyDefineVariable(data, NSArray*);
+	ECPropertyDefineVariable(data, ECDataItem*);
 }
 
-ECPropertyDefine(data, NSArray*, retain, nonatomic);
+ECPropertyDefineRN(data, ECDataItem*);
 
 @end
 
