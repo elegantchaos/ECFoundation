@@ -19,6 +19,7 @@
 {
 	ECDataItem*						mSelection;		//!< The selected item.
 	BOOL							mEditable;		//!< Are the items editable?
+	UIBarButtonItem*				mAddButton;		
 	
 	ECPropertyDefineVariable(data, ECDataItem*);
 }

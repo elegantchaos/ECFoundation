@@ -57,6 +57,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	ECPropertyDealloc(data);
 	
+	[mAddButton release];
+	
     [super dealloc];
 }
 
@@ -74,6 +76,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle: kEditButtonEditTitle style: UIBarButtonItemStyleBordered target: self action: @selector(toggleEditing)];
 		self.navigationItem.rightBarButtonItem = editButton;
 		[editButton release];
+		
+		mAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
 	}
 }
 
@@ -86,7 +90,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	[super viewDidDisappear: animated];
 	
-	[self.data setValue: mSelection forKey: kSelectionKey];
+	[self.data setObject: mSelection ? mSelection : [NSNull null] forKey: kSelectionKey];
 }
 
 // --------------------------------------------------------------------------
@@ -100,6 +104,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	self.tableView.editing = editingWillBeEnabled;
 	self.navigationItem.rightBarButtonItem.title = editingWillBeEnabled ? kEditButtonDoneTitle : kEditButtonEditTitle;
 	self.navigationItem.rightBarButtonItem.style = editingWillBeEnabled ? UIBarButtonItemStyleDone : UIBarButtonItemStyleBordered;
+	self.navigationItem.leftBarButtonItem = editingWillBeEnabled ? mAddButton : nil;
 }
 
 #pragma mark UITableViewDataSource methods
@@ -204,12 +209,45 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 }
 
 // --------------------------------------------------------------------------
+//! Restrict movement of items so that they stay within their own sections.
+// --------------------------------------------------------------------------
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+	NSIndexPath* result;
+	NSUInteger sourceSection = sourceIndexPath.section;
+	NSUInteger proposedSection = proposedDestinationIndexPath.section;
+	
+	if (sourceSection == proposedSection)
+	{
+		result = proposedDestinationIndexPath;
+	}
+	else
+	{
+		NSUInteger row;
+		if (sourceSection < proposedSection)
+		{
+			ECDataItem* sectionData = [self.data itemAtIndex: sourceSection];
+			row = [sectionData.items count];
+		}
+		else
+		{
+			row = 0;
+		}
+		
+		result = [NSIndexPath indexPathForRow: row inSection: sourceIndexPath.section];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
 //! Change the position of a pod in the favourites list.
 // --------------------------------------------------------------------------
 
 - (void) tableView: (UITableView*) table moveRowAtIndexPath: (NSIndexPath*) fromPath toIndexPath: (NSIndexPath*) toPath
 {
-	//[mPods moveFavouriteFromIndex: fromPath.row toIndex: toPath.row];
+	[self.data moveItemFromIndexPath: fromPath toIndexPath: toPath];
 }
 
 // --------------------------------------------------------------------------
@@ -218,9 +256,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (void) tableView: (UITableView*) table commitEditingStyle: (UITableViewCellEditingStyle) style forRowAtIndexPath: (NSIndexPath*) path
 {
-	//NSUInteger row = path.row;
-	//Pod* pod = [mPods.favourites objectAtIndex: row];
-	//[mPods removePodFromFavourites: pod];
+	[self.data removeItemAtIndexPath: path];
 	[table deleteRowsAtIndexPaths:[NSArray arrayWithObject: path] withRowAnimation: UITableViewRowAnimationFade];
 }
 
