@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 26/07/2010
 //
-//  Class.h
-//  ECFoundation
-//
-//  Created by Sam Deane on 26/07/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
 
@@ -13,7 +12,7 @@
 @interface ECTextItemEditorController : UIViewController<ECDataDrivenView>
 {
 	ECPropertyDefineVariable(data, ECDataItem*);
-    
+	ECPropertyDefineVariable(editor, UITextField*);
 }
 
 // --------------------------------------------------------------------------
@@ -21,5 +20,14 @@
 // --------------------------------------------------------------------------
 
 ECPropertyDefineRN(data, ECDataItem*);
+ECPropertyDefineRN(editor, IBOutlet UITextField*);
+
+// --------------------------------------------------------------------------
+// Outlets
+// --------------------------------------------------------------------------
+
+#ifndef __OBJC__
+@property () IBOutlet UITextField* editor;
+#endif
 
 @end

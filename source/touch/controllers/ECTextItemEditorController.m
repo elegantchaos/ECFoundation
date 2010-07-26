@@ -1,13 +1,12 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 26/07/2010
 //
-//  Class.m
-//  ECFoundation
-//
-//  Created by Sam Deane on 26/07/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECTextItemEditorController.h"
-
+#import "ECDataItem.h"
 
 @implementation ECTextItemEditorController
 
@@ -16,6 +15,7 @@
 // --------------------------------------------------------------------------
 
 ECPropertySynthesize(data);
+ECPropertySynthesize(editor);
 
 
 // --------------------------------------------------------------------------
@@ -27,9 +27,20 @@ ECPropertySynthesize(data);
 	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) != nil)
 	{
 		self.data = data;
+		
 	}
 	
 	return self;
+}
+
+- (void) viewDidLoad
+{
+	[super viewDidLoad];
+	
+	if (self.editor)
+	{
+		self.editor.text = [self.data objectForKey: kLabelKey];
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -39,7 +50,8 @@ ECPropertySynthesize(data);
 - (void) dealloc 
 {
 	ECPropertyDealloc(data);
-	
+	ECPropertyDealloc(editor);
+
     [super dealloc];
 }
 
