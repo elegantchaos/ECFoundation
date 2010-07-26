@@ -8,6 +8,15 @@
 #import "ECTickListTableController.h"
 #import "ECLabelValueTableController.h"
 #import "ECDataItem.h"
+#import "ECNavigationController.h"
+
+// --------------------------------------------------------------------------
+// Internal Methods
+// --------------------------------------------------------------------------
+
+@interface ECTickListTableController()
+@end
+
 
 @implementation ECTickListTableController
 
@@ -107,13 +116,14 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	self.navigationItem.leftBarButtonItem = editingWillBeEnabled ? mAddButton : nil;
 }
 
+
 #pragma mark UITableViewDataSource methods
 
 // --------------------------------------------------------------------------
 //! How many sections are there?
 // --------------------------------------------------------------------------
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView: (UITableView*) view
 {
 	NSInteger count = self.data.items.count;
 	
@@ -139,20 +149,21 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Return the view for a given row.
 // --------------------------------------------------------------------------
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView: (UITableView*) view cellForRowAtIndexPath: (NSIndexPath*) path
 {
 	static NSString* kCellIdentifier = @"ECTickListTableCell";
 	
-	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: kCellIdentifier];
+	UITableViewCell* cell = [view dequeueReusableCellWithIdentifier: kCellIdentifier];
 	if (cell == nil)
 	{
 		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
 	}
 	
-	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
+	ECDataItem* item = [self.data itemAtIndexPath: path];
 	cell.textLabel.text = [item objectForKey: kLabelKey];
 	cell.accessoryType = (item == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-	
+	cell.editingAccessoryType = ([[item objectForKey: kEditableKey] boolValue]) ? UITableViewCellAccessoryDetailDisclosureButton : UITableViewCellAccessoryNone;
+
 	return cell;
 }
 
@@ -162,14 +173,25 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Handle selecting a table row.
 // --------------------------------------------------------------------------
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView: (UITableView*) view didSelectRowAtIndexPath: (NSIndexPath*) path
 {
-	ECDataItem* selectedItem = [self.data itemAtIndexPath: indexPath];
+	ECDataItem* selectedItem = [self.data itemAtIndexPath: path];
 	if (mSelection != selectedItem)
 	{
 		mSelection = selectedItem;
-		[tableView reloadData];
+		[view reloadData];
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Handle a tap on the accessory button.
+// --------------------------------------------------------------------------
+
+- (void) tableView: (UITableView*) view accessoryButtonTappedForRowWithIndexPath: (NSIndexPath*) path
+{
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+	ECNavigationController* navigation = [ECNavigationController currentController];
+	[navigation openViewForItem: item];
 }
 
 // --------------------------------------------------------------------------
@@ -212,7 +234,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Restrict movement of items so that they stay within their own sections.
 // --------------------------------------------------------------------------
 
-- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+- (NSIndexPath *)tableView: (UITableView*) view targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
 {
 	NSIndexPath* result;
 	NSUInteger sourceSection = sourceIndexPath.section;

@@ -146,32 +146,9 @@ ECPropertySynthesize(data);
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	ECNavigationController* navigation = [ECNavigationController currentController];
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	Class class = [item objectForKey: kSubviewKey];
-	if ([class isSubclassOfClass: [UIViewController class]])
-	{
-		NSString* nib = [item objectForKey: kSubviewNibKey];
-		UIViewController* controller;
-		if ([class conformsToProtocol: @protocol(ECDataDrivenView)])
-		{
-			controller = [((id<ECDataDrivenView>) [class alloc]) initWithNibName: nib bundle: nil data: item];
-		}
-		else
-		{
-			controller = [[class alloc] initWithNibName: nib bundle: nil];
-		}
-
-		controller.title = [item objectForKey: kLabelKey];
-
-		ECNavigationController* navigation = [ECNavigationController currentController];
-		[navigation pushViewController: controller animated:TRUE];
-		[controller release];
-		
-	}
-	else
-	{
-		ECDebug(ECLabelValueTableChannel, @"Class %@ is not a UIViewController", class);
-	}
+	[navigation openViewForItem: item];
 }
 
 @end

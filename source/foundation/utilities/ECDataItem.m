@@ -33,8 +33,9 @@ NSString *const kEditableKey = @"Editable";
 @implementation ECDataItem
 
 ECPropertySynthesize(data);
-ECPropertySynthesize(items);
 ECPropertySynthesize(defaults);
+ECPropertySynthesize(items);
+ECPropertySynthesize(parent);
 
 // --------------------------------------------------------------------------
 //! Return a new empty item, autoreleased.
@@ -56,7 +57,7 @@ ECPropertySynthesize(defaults);
 	NSMutableDictionary* data = [ECDataItem dataWithObjectsAndKeys: firstObject args: args];
     va_end(args);
 	
-	return [ECDataItem itemWithData: data items: [NSMutableArray array] defaults: nil];
+	return [ECDataItem itemWithData: data items: [NSMutableArray array] parent: nil];
 }
 
 // --------------------------------------------------------------------------
@@ -69,22 +70,22 @@ ECPropertySynthesize(defaults);
 }
 
 // --------------------------------------------------------------------------
-//! Return an auto released item with some sub items and defaults.
+//! Return an auto released item with some sub items and parent.
 // --------------------------------------------------------------------------
 
-+ (ECDataItem*)	itemWithItems: (NSArray*) items defaults: (ECDataItem*) defaults
++ (ECDataItem*)	itemWithItems: (NSArray*) items parent: (ECDataItem*) parent
 {
-	return [[[ECDataItem alloc] initWithItems: items defaults:defaults] autorelease];
+	return [[[ECDataItem alloc] initWithItems: items parent:parent] autorelease];
 	
 }
 
 // --------------------------------------------------------------------------
-//! Return an auto released item with some data, sub items and defaults.
+//! Return an auto released item with some data, sub items and parent.
 // --------------------------------------------------------------------------
 
-+ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
++ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items parent: (ECDataItem*) parent
 {
-	return [[[ECDataItem alloc] initWithData: data items: items defaults: defaults] autorelease];	
+	return [[[ECDataItem alloc] initWithData: data items: items parent: parent] autorelease];	
 }
 
 // --------------------------------------------------------------------------
@@ -119,8 +120,9 @@ ECPropertySynthesize(defaults);
 - (void) dealloc
 {
 	ECPropertyDealloc(data);
-	ECPropertyDealloc(items);
 	ECPropertyDealloc(defaults);
+	ECPropertyDealloc(items);
+	ECPropertyDealloc(parent);
 	
 	[super dealloc];
 }
@@ -131,29 +133,29 @@ ECPropertySynthesize(defaults);
 
 - (id) initWithItems: (NSArray*) items
 {
-	return [self initWithItems: items defaults: nil];
+	return [self initWithItems: items parent: nil];
 }
 
 // --------------------------------------------------------------------------
-//! Initialise with items and defaults.
+//! Initialise with items and parent.
 // --------------------------------------------------------------------------
 
-- (id) initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults
+- (id) initWithItems: (NSArray*) items parent: (ECDataItem*) parent
 {
-	return [self initWithData: [NSMutableDictionary dictionary] items: items defaults: defaults];
+	return [self initWithData: [NSMutableDictionary dictionary] items: items parent: parent];
 }
 
 // --------------------------------------------------------------------------
-//! Initialise with data, items and defaults.
+//! Initialise with data, items and parent.
 // --------------------------------------------------------------------------
 
-- (id) initWithData: (NSMutableDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults
+- (id) initWithData: (NSMutableDictionary*) data items: (NSArray*) items parent: (ECDataItem*) parent
 {
 	if ((self = [super init]) != nil)
 	{
 		self.data = data;
 		self.items = [items mutableCopy];
-		self.defaults = defaults;
+		self.parent = parent;
 	}
 	
 	return self;
@@ -171,7 +173,7 @@ ECPropertySynthesize(defaults);
 	NSMutableDictionary* data = [ECDataItem dataWithObjectsAndKeys: firstObject args: args];
     va_end(args);
 
-	return [self initWithData: data items: [NSMutableArray array] defaults: nil];
+	return [self initWithData: data items: [NSMutableArray array] parent: nil];
 }
 
 // --------------------------------------------------------------------------
@@ -226,15 +228,21 @@ ECPropertySynthesize(defaults);
 }
 
 // --------------------------------------------------------------------------
-//! Return the object for a key. We look in the data first, then in the defaults.
+//! Return the object for a key. 
+//! We look in the data first, then in the parent's defaults (which apply to
+//! all of its children). If those both fail, we ask the parent iself.
 // --------------------------------------------------------------------------
 
 - (id) objectForKey: (id) key
 {
 	id result = [self.data objectForKey: key];
-	if (!result && self.defaults)
+	if (!result && self.parent)
 	{
-		result = [self.defaults objectForKey: key];
+		result = [self.parent.defaults objectForKey: key];
+		if (!result)
+		{
+			result = [self.parent objectForKey: key];
+		}
 	}
 	
 	return result;
@@ -256,9 +264,9 @@ ECPropertySynthesize(defaults);
 - (void) addItem: (ECDataItem*) item
 {
 	[self.items addObject: item];
-	if (item.defaults == nil)
+	if (item.parent == nil)
 	{
-		item.defaults = self;
+		item.parent = self;
 	}
 }
 

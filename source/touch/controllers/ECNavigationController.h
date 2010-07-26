@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class ECDataItem;
 
 @interface ECNavigationController : UINavigationController
 {
@@ -16,5 +17,6 @@
 @property (retain, nonatomic) IBOutlet UIViewController* initialView;
 
 + (ECNavigationController*) currentController;
+- (void) openViewForItem: (ECDataItem*) item;
 
 @end

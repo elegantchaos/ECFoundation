@@ -6,6 +6,8 @@
 // --------------------------------------------------------------------------
 
 #import "ECNavigationController.h"
+#import "ECDataItem.h"
+#import "ECDataDrivenView.h"
 
 @implementation ECNavigationController
 
@@ -87,4 +89,37 @@ static ECNavigationController* gCurrentController = nil;
 	return gCurrentController;
 }
 
+// --------------------------------------------------------------------------
+//! Open the specified view controller for the given item, and push it into the 
+//! navigation stack as the current controller.
+// --------------------------------------------------------------------------
+
+- (void) openViewForItem: (ECDataItem*) item
+{
+	Class class = [item objectForKey: kSubviewKey];
+	if ([class isSubclassOfClass: [UIViewController class]])
+	{
+		NSString* nib = [item objectForKey: kSubviewNibKey];
+		UIViewController* controller;
+		if ([class conformsToProtocol: @protocol(ECDataDrivenView)])
+		{
+			controller = [((id<ECDataDrivenView>) [class alloc]) initWithNibName: nib bundle: nil data: item];
+		}
+		else
+		{
+			controller = [[class alloc] initWithNibName: nib bundle: nil];
+		}
+		
+		controller.title = [item objectForKey: kLabelKey];
+		
+		[self pushViewController: controller animated:TRUE];
+		[controller release];
+		
+	}
+	else
+	{
+		ECDebug(ECLabelValueTableChannel, @"Class %@ is not a UIViewController", class);
+	}
+
+}
 @end

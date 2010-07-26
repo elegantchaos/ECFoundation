@@ -88,6 +88,10 @@
 		22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */; };
 		22822E6C11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
 		22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
+		22859E1B11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; };
+		22859E1C11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22859E1D11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */; };
+		22859E1E11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */; };
 		2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
 		228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8F11A6BCD2009420F7 /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,6 +212,9 @@
 		22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilities.m"; sourceTree = "<group>"; };
 		22822E6A11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; };
+		22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTextItemEditorController.h; path = controllers/ECTextItemEditorController.h; sourceTree = "<group>"; };
+		22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTextItemEditorController.m; path = controllers/ECTextItemEditorController.m; sourceTree = "<group>"; };
+		22859E2011FE0384008EBC30 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = English; path = resources/English.lproj/ECTextItemEditorController.xib; sourceTree = "<group>"; };
 		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
 		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
@@ -293,6 +300,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22859E1F11FE0384008EBC30 /* ECTextItemEditorController.xib */,
 				225EC6D211EBB15D00A97AEA /* ECFoundation SenTest.plist */,
 				8DC2EF5A0486A6940098B216 /* ECFoundation.plist */,
 				227333AF11EBBA0800695FB4 /* ECFoundation GHUnit.plist */,
@@ -355,6 +363,8 @@
 		22592EB411F5BBBE0056FF4B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */,
+				22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
 				223EFD0011F883CA00CD6D19 /* ECDataDrivenView.m */,
 				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
@@ -594,6 +604,7 @@
 				2206CCAB11F875CD00CDD442 /* ECTickListTableController.h in Headers */,
 				223EFD0111F883CA00CD6D19 /* ECDataDrivenView.h in Headers */,
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
+				22859E1C11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */,
 				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
 			);
@@ -631,6 +642,7 @@
 				226E1FA211F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAF11F8D0A300603F71 /* ECMacros.h in Headers */,
 				2232B68411FA02BB001846FC /* ECDataItem.h in Headers */,
+				22859E1B11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +857,7 @@
 				2206CCAC11F875CD00CDD442 /* ECTickListTableController.m in Sources */,
 				223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */,
 				2232B68711FA02BB001846FC /* ECDataItem.m in Sources */,
+				22859E1E11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,6 +880,7 @@
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */,
 				2232B68611FA02BB001846FC /* ECDataItem.m in Sources */,
+				22859E1D11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +906,14 @@
 				089C1667FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22859E1F11FE0384008EBC30 /* ECTextItemEditorController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22859E2011FE0384008EBC30 /* English */,
+			);
+			name = ECTextItemEditorController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

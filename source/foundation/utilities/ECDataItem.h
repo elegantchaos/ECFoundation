@@ -10,7 +10,8 @@
 @interface ECDataItem : NSObject 
 {
 	ECPropertyDefineVariable(data, NSMutableDictionary*);
-	ECPropertyDefineVariable(defaults, ECDataItem*);
+	ECPropertyDefineVariable(defaults, NSMutableDictionary*);
+	ECPropertyDefineVariable(parent, ECDataItem*);
 	ECPropertyDefineVariable(items, NSMutableArray*);
 	
 	NSUInteger	mCachedSection;
@@ -20,21 +21,22 @@
 }
 
 ECPropertyDefineRN(data, NSMutableDictionary*);
-ECPropertyDefineRN(defaults, ECDataItem*);
+ECPropertyDefineRN(defaults, NSMutableDictionary*);
+ECPropertyDefineRN(parent, ECDataItem*);
 ECPropertyDefineRN(items, NSMutableArray*);
 
 + (ECDataItem*) item;
 + (ECDataItem*)	itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 + (ECDataItem*)	itemWithItems: (NSArray*) items;
-+ (ECDataItem*)	itemWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
-+ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
++ (ECDataItem*)	itemWithItems: (NSArray*) items parent: (ECDataItem*) parent;
++ (ECDataItem*)	itemWithData: (NSDictionary*) data items: (NSArray*) items parent: (ECDataItem*) parent;
 + (ECDataItem*)	itemWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (id)			init;
 - (id)			initWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 - (id)			initWithItems: (NSArray*) items;
-- (id)			initWithItems: (NSArray*) items defaults: (ECDataItem*) defaults;
-- (id)			initWithData: (NSDictionary*) data items: (NSArray*) items defaults: (ECDataItem*) defaults;
+- (id)			initWithItems: (NSArray*) items parent: (ECDataItem*) parent;
+- (id)			initWithData: (NSDictionary*) data items: (NSArray*) items parent: (ECDataItem*) parent;
 - (id)			initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (id)			objectForKey: (id) key;
