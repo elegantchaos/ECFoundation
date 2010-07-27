@@ -303,6 +303,15 @@ ECPropertySynthesize(parent);
 }
 
 // --------------------------------------------------------------------------
+//! Return a given item in a given section
+// --------------------------------------------------------------------------
+
+- (ECDataItem*) itemAtIndex:(NSUInteger)index inSection: (NSUInteger) section
+{
+	return [[self itemAtIndex: section] itemAtIndex: index];
+}
+
+// --------------------------------------------------------------------------
 //! Return an item at a given path.
 //!
 //! The section of the path is used to index our items, and the row then

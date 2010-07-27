@@ -34,7 +34,7 @@ ECPropertySynthesize(data);
 
 - (void) viewDidLoad
 {
-	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:[self.data itemAtIndex: 0]];
 }
 
 - (void) viewDidUnload

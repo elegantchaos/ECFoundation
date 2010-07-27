@@ -54,6 +54,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (void)		moveItemFromIndexPath: (NSIndexPath*) fromPath toIndexPath: (NSIndexPath*) toPath;
 
 - (ECDataItem*)	itemAtIndex: (NSUInteger) index;
+- (ECDataItem*)	itemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
 - (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path;
 
 - (void)		selectItemAtIndex: (NSUInteger) index;
