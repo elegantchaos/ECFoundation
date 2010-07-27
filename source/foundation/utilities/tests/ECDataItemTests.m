@@ -225,10 +225,34 @@ static NSString *const kData2 = @"data2";
 	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
 	[item removeItemAtIndex: 3]; // remove from end
 	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
+	[item moveItemFromIndex: 1 toIndex: 2];
+	ECTestAssertTrue([item itemAtIndex: 2] == child1, @"child1 in the right place");
 	[item removeItemAtIndex: 1]; // remove from middle
-	ECTestAssertTrue([item itemAtIndex: 1] != child1, @"child1 not there any more");
+	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
 	
 	[self itemsTests: item];
+}
+
+// --------------------------------------------------------------------------
+//! Test index paths
+// --------------------------------------------------------------------------
+
+- (void) testIndexPaths
+{
+	ECDataItem* parent = [ECDataItem item];
+	ECDataItem* item = [ECDataItem item];
+	ECDataItem* child = [ECDataItem item];
+	
+	[parent addItem: item];
+	[item addItem: child];
+	
+	NSUInteger indexes[] = { 0, 0 };
+	NSIndexPath* path = [NSIndexPath indexPathWithIndexes: indexes length: 2];
+	
+	ECTestAssertTrue([parent itemAtIndexPath: path] == child, @"child indexed ok");
+	
+	[parent removeItemAtIndexPath: path];
+	ECTestAssertTrue([item.items count] == 0, @"should have no items");
 }
 
 @end
