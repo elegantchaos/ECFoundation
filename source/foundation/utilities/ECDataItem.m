@@ -13,17 +13,19 @@
 
 NSString *const kHeaderKey = @"Header";
 NSString *const kFooterKey = @"Footer";
-NSString *const kItemsKey = @"Items";
 NSString *const kLabelKey = @"Label";
-NSString *const kDetailKey = @"Detail";
+NSString *const kValueKey = @"Value";
 NSString *const kAccessoryKey = @"Accessory";
 NSString *const kMoveableKey = @"Moveable";
-NSString *const kSubviewKey = @"Subview";
-NSString *const kSubviewNibKey = @"SubviewNib";
-NSString *const kValuesKey = @"Values";
+NSString *const kViewerKey = @"Viewer";
+NSString *const kViewerNibKey = @"ViewerNib";
+NSString *const kEditorKey = @"Editor";
+NSString *const kEditorNibKey = @"EditorNib";
 NSString *const kSelectionKey = @"Selection";
 NSString *const kEditableKey = @"Editable";
 
+NSString *const DataItemChanged = @"ECDataItemChanged";
+NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
 
 @interface ECDataItem()
 - (void)					addItemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args;
@@ -376,6 +378,17 @@ ECPropertySynthesize(parent);
 	ECDataItem* toSection = [self.items objectAtIndex: toPath.section];
 	[toSection insertItem: item atIndex: toPath.row];
 	[item release];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) postChangedNotifications
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChanged object:self];
+	if (self.parent)
+	{
+		[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChildChanged object:self.parent];
+	}
 }
 
 @end

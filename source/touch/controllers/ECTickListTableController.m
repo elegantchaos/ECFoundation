@@ -51,6 +51,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	if (self != nil)
 	{
 		self.data = data;
+		self.title = [data objectForKey: kLabelKey];
 		mSelection = [data objectForKey: kSelectionKey];
 		mEditable = [[data objectForKey: kEditableKey] boolValue];
 	}
@@ -160,7 +161,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	}
 	
 	ECDataItem* item = [self.data itemAtIndexPath: path];
-	cell.textLabel.text = [item objectForKey: kLabelKey];
+	cell.textLabel.text = [item objectForKey: kValueKey];
 	cell.accessoryType = (item == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = ([[item objectForKey: kEditableKey] boolValue]) ? UITableViewCellAccessoryDetailDisclosureButton : UITableViewCellAccessoryNone;
 
@@ -191,7 +192,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	ECDataItem* item = [self.data itemAtIndexPath: path];
 	ECNavigationController* navigation = [ECNavigationController currentController];
-	[navigation openViewForItem: item];
+	[navigation openEditorForItem: item];
 }
 
 // --------------------------------------------------------------------------

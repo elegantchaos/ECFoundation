@@ -90,16 +90,36 @@ static ECNavigationController* gCurrentController = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Open the default viewer controller for the given item, and push it into the 
+//! navigation stack as the current controller.
+// --------------------------------------------------------------------------
+
+- (void) openViewerForItem: (ECDataItem*) item
+{
+	[self openViewForItem: item classKey: kViewerKey nibKey: kViewerNibKey];
+}
+
+// --------------------------------------------------------------------------
+//! Open the default editor controller for the given item, and push it into the 
+//! navigation stack as the current controller.
+// --------------------------------------------------------------------------
+
+- (void) openEditorForItem: (ECDataItem*) item
+{
+	[self openViewForItem: item classKey: kEditorKey nibKey: kEditorNibKey];
+}
+
+// --------------------------------------------------------------------------
 //! Open the specified view controller for the given item, and push it into the 
 //! navigation stack as the current controller.
 // --------------------------------------------------------------------------
 
-- (void) openViewForItem: (ECDataItem*) item
+- (void) openViewForItem: (ECDataItem*) item classKey: (NSString*) classKey nibKey: (NSString*) nibKey
 {
-	Class class = [item objectForKey: kSubviewKey];
+	Class class = [item objectForKey: classKey];
 	if ([class isSubclassOfClass: [UIViewController class]])
 	{
-		NSString* nib = [item objectForKey: kSubviewNibKey];
+		NSString* nib = [item objectForKey: nibKey];
 		UIViewController* controller;
 		if ([class conformsToProtocol: @protocol(ECDataDrivenView)])
 		{
@@ -109,8 +129,6 @@ static ECNavigationController* gCurrentController = nil;
 		{
 			controller = [[class alloc] initWithNibName: nib bundle: nil];
 		}
-		
-		controller.title = [item objectForKey: kLabelKey];
 		
 		[self pushViewController: controller animated:TRUE];
 		[controller release];

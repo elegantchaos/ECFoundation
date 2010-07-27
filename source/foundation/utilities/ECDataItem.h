@@ -56,6 +56,8 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (ECDataItem*)	itemAtIndex: (NSUInteger) index;
 - (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path;
 
+- (void)		postChangedNotifications;
+
 @end
 
 // --------------------------------------------------------------------------
@@ -64,13 +66,22 @@ ECPropertyDefineRN(items, NSMutableArray*);
 
 extern NSString *const kHeaderKey;
 extern NSString *const kFooterKey;
-extern NSString *const kItemsKey;
 extern NSString *const kLabelKey;
-extern NSString *const kDetailKey;
+extern NSString *const kValueKey;
 extern NSString *const kAccessoryKey;
 extern NSString *const kMoveableKey;
-extern NSString *const kSubviewKey;
-extern NSString *const kSubviewNibKey;
-extern NSString *const kValuesKey;
+extern NSString *const kViewerKey;
+extern NSString *const kViewerNibKey;
+extern NSString *const kEditorKey;
+extern NSString *const kEditorNibKey;
 extern NSString *const kEditableKey;
 extern NSString *const kSelectionKey;
+
+// --------------------------------------------------------------------------
+// Notifications
+// --------------------------------------------------------------------------
+
+extern NSString *const DataItemChanged;
+extern NSString *const DataItemChildChanged;
+
+

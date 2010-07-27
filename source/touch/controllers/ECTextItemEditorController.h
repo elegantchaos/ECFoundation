@@ -9,7 +9,7 @@
 
 #import "ECDataDrivenView.h"
 
-@interface ECTextItemEditorController : UIViewController<ECDataDrivenView>
+@interface ECTextItemEditorController : UIViewController<ECDataDrivenView, UITextFieldDelegate>
 {
 	ECPropertyDefineVariable(data, ECDataItem*);
 	ECPropertyDefineVariable(editor, UITextField*);

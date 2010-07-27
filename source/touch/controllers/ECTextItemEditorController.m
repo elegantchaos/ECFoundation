@@ -28,10 +28,15 @@ ECPropertySynthesize(editor);
 	{
 		self.data = data;
 		
+		self.title = [data objectForKey: kValueKey];
 	}
 	
 	return self;
 }
+
+// --------------------------------------------------------------------------
+//! Set up ui.
+// --------------------------------------------------------------------------
 
 - (void) viewDidLoad
 {
@@ -39,8 +44,19 @@ ECPropertySynthesize(editor);
 	
 	if (self.editor)
 	{
-		self.editor.text = [self.data objectForKey: kLabelKey];
+		self.editor.text = [self.data objectForKey: kValueKey];
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Clean up after unloading.
+// --------------------------------------------------------------------------
+
+- (void) viewDidUnload 
+{
+    [super viewDidUnload];
+
+	self.editor = nil;
 }
 
 // --------------------------------------------------------------------------
@@ -55,20 +71,23 @@ ECPropertySynthesize(editor);
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning 
+// --------------------------------------------------------------------------
+//! Try to deal with low memory.
+// --------------------------------------------------------------------------
+
+- (void) didReceiveMemoryWarning 
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload 
+// --------------------------------------------------------------------------
+//! Update the text value.
+// --------------------------------------------------------------------------
+
+- (void) textFieldDidEndEditing: (UITextField*) field
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+	[self.data setObject: field.text forKey: kValueKey];
+	[self.data postChangedNotifications];
 }
-
 
 @end

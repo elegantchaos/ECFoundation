@@ -107,7 +107,7 @@ ECPropertySynthesize(data);
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
 
 	cell.textLabel.text = [item objectForKey: kLabelKey];
-	cell.detailTextLabel.text = [item objectForKey: kDetailKey];
+	cell.detailTextLabel.text = [item objectForKey: kValueKey];
 	
 	NSNumber* accessory = [item objectForKey: kAccessoryKey];
 	if (accessory)
@@ -148,7 +148,7 @@ ECPropertySynthesize(data);
 {
 	ECNavigationController* navigation = [ECNavigationController currentController];
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	[navigation openViewForItem: item];
+	[navigation openViewerForItem: item];
 }
 
 @end
