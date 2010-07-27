@@ -90,7 +90,6 @@
 		22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
 		22859E1B11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; };
 		22859E1C11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22859E1D11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */; };
 		22859E1E11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */; };
 		2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286307811E32AA800654739 /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
@@ -880,7 +879,6 @@
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */,
 				2232B68611FA02BB001846FC /* ECDataItem.m in Sources */,
-				22859E1D11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

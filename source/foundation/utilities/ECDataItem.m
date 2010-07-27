@@ -299,15 +299,15 @@ ECPropertySynthesize(parent);
 
 - (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path
 {
-	NSUInteger section = path.section;
+	NSUInteger section = [path indexAtPosition: 0];
 	if ((mCachedSectionData == nil) || (section != mCachedSection))
 	{
 		mCachedSection = section;
-		mCachedSectionData = [self.items objectAtIndex: path.section];
+		mCachedSectionData = [self.items objectAtIndex: section];
 		mCachedRowData = nil;
 	}
 	
-	NSUInteger row = path.row;
+	NSUInteger row = [path indexAtPosition: 1];
 	if ((mCachedRowData == nil) || (row != mCachedRow))
 	{
 		mCachedRowData = [mCachedSectionData itemAtIndex: row];
@@ -353,8 +353,8 @@ ECPropertySynthesize(parent);
 
 - (void) removeItemAtIndexPath:(NSIndexPath *)path
 {
-	ECDataItem* sectionItem = [self.items objectAtIndex: path.section];
-	[sectionItem removeItemAtIndex: path.row];
+	ECDataItem* sectionItem = [self.items objectAtIndex: [path indexAtPosition: 0]];
+	[sectionItem removeItemAtIndex: [path indexAtPosition: 1]];
 	[self invalidateCaches];
 }
 
@@ -375,8 +375,8 @@ ECPropertySynthesize(parent);
 {
 	ECDataItem* item = [[self itemAtIndexPath: fromPath] retain];
 	[self removeItemAtIndexPath: fromPath];
-	ECDataItem* toSection = [self.items objectAtIndex: toPath.section];
-	[toSection insertItem: item atIndex: toPath.row];
+	ECDataItem* toSection = [self.items objectAtIndex: [toPath indexAtPosition: 0]];
+	[toSection insertItem: item atIndex: [toPath indexAtPosition: 1]];
 	[item release];
 }
 
@@ -416,7 +416,7 @@ ECPropertySynthesize(parent);
 
 - (void) selectItemAtIndexPath: (NSIndexPath*) path
 {
-	[self selectItemAtIndex: [path row] inSection: [path section]];
+	[self selectItemAtIndex: [path indexAtPosition: 1] inSection: [path indexAtPosition: 0]];
 }
 
 @end
