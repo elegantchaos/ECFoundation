@@ -94,20 +94,17 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 }
 
 // --------------------------------------------------------------------------
-//! When the view goes away, update the selection property of
-//! the data.
+//! Clean up after the view unloads.
 // --------------------------------------------------------------------------
 
-- (void) viewDidDisappear:(BOOL)animated
+- (void) viewDidUnload
 {
-	[super viewDidDisappear: animated];
-	
 	if (mEditable)
 	{
 		[[NSNotificationCenter defaultCenter] removeObserver: self];
 	}
-	
-	[self.data setObject: mSelection ? mSelection : [NSNull null] forKey: kSelectionKey];
+
+	[super viewDidUnload];
 }
 
 // --------------------------------------------------------------------------
@@ -128,7 +125,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Respond to a change to one of our child items.
 // --------------------------------------------------------------------------
 
-- (void) childChanged: (id) sender
+- (void) childChanged: (NSNotification*) sender
 {
 	[self.tableView reloadData];
 }
@@ -195,6 +192,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	if (mSelection != selectedItem)
 	{
 		mSelection = selectedItem;
+		[self.data selectItemAtIndexPath: path];
 		[view reloadData];
 	}
 }

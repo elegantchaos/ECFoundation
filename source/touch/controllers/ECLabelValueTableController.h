@@ -8,7 +8,7 @@
 #include "ECProperties.h"
 #include "ECDataItem.h"
 
-@interface ECLabelValueTableController : NSObject <UITableViewDataSource, UITableViewDelegate>
+@interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
 	ECPropertyDefineVariable(data, ECDataItem*);
 }

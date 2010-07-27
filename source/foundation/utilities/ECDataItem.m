@@ -24,8 +24,16 @@ NSString *const kEditorNibKey = @"EditorNib";
 NSString *const kSelectionKey = @"Selection";
 NSString *const kEditableKey = @"Editable";
 
+// --------------------------------------------------------------------------
+// Notifications
+// --------------------------------------------------------------------------
+
 NSString *const DataItemChanged = @"ECDataItemChanged";
 NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
+
+// --------------------------------------------------------------------------
+// Private Methods
+// --------------------------------------------------------------------------
 
 @interface ECDataItem()
 - (void)					addItemsWithKey: (NSString*) key firstValue: (id) firstValue args: (va_list) args;
@@ -33,6 +41,10 @@ NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
 @end
 
 @implementation ECDataItem
+
+// --------------------------------------------------------------------------
+// Properties
+// --------------------------------------------------------------------------
 
 ECPropertySynthesize(data);
 ECPropertySynthesize(defaults);
@@ -398,6 +410,7 @@ ECPropertySynthesize(parent);
 - (void) selectItemAtIndex: (NSUInteger) index
 {
 	[self setObject: [self.items objectAtIndex: index] forKey: kSelectionKey];
+	[self postChangedNotifications];
 }
 
 // --------------------------------------------------------------------------
@@ -408,6 +421,7 @@ ECPropertySynthesize(parent);
 {
 	ECDataItem* sectionData = [self.items objectAtIndex: section];
 	[self setObject: [sectionData.items objectAtIndex: index] forKey: kSelectionKey];
+	[self postChangedNotifications];
 }
 
 // --------------------------------------------------------------------------

@@ -32,6 +32,20 @@ ECPropertySynthesize(data);
     [super dealloc];
 }
 
+- (void) viewDidLoad
+{
+	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
+}
+
+- (void) viewDidUnload
+{
+	[[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
+- (void) childChanged: (NSNotification*) notification
+{
+	[[self tableView] reloadData];
+}
 
 #pragma mark UITableViewDataSource methods
 
