@@ -4,12 +4,17 @@
 // (c) Elegant Chaos.
 // --------------------------------------------------------------------------
 
-#include "ECFoundationReleaseSettings.xcconfig"
-#include "ECTouchSharedSettings.xcconfig"
-
+#include "ECFoundationAdHocSettings.xcconfig"
+#include "ECTouchReleaseSettings.xcconfig"
 
 // --------------------------------------------------------------------------
-// GCC 4.2 Language
+// Build Options
 // --------------------------------------------------------------------------
 
-OTHER_CFLAGS = -DNS_BLOCK_ASSERTIONS=1
+VALIDATE_PRODUCT = YES
+
+// --------------------------------------------------------------------------
+// Code Signing
+// --------------------------------------------------------------------------
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution: Sam Deane

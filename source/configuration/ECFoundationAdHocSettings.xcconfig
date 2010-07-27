@@ -1,0 +1,8 @@
+// --------------------------------------------------------------------------
+//! Standard Elegant Chaos AdHoc configuration settings.
+//! Inherits most values from the Release settings.
+//
+// (c) Elegant Chaos.
+// --------------------------------------------------------------------------
+
+#include "ECFoundationReleaseSettings.xcconfig"

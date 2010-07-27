@@ -6,7 +6,6 @@
 // --------------------------------------------------------------------------
 
 #import "ECLabelValueTableController.h"
-#import "ECSubviewInfo.h"
 #import "ECNavigationController.h"
 #import "ECDataDrivenView.h"
 #import "ECDataItem.h"
