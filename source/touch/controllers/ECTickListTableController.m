@@ -15,6 +15,7 @@
 // --------------------------------------------------------------------------
 
 @interface ECTickListTableController()
+- (void) childChanged: (id) sender;
 @end
 
 
@@ -88,6 +89,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		[editButton release];
 		
 		mAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
+		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
 	}
 }
 
@@ -99,6 +101,11 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 - (void) viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear: animated];
+	
+	if (mEditable)
+	{
+		[[NSNotificationCenter defaultCenter] removeObserver: self];
+	}
 	
 	[self.data setObject: mSelection ? mSelection : [NSNull null] forKey: kSelectionKey];
 }
@@ -117,6 +124,14 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	self.navigationItem.leftBarButtonItem = editingWillBeEnabled ? mAddButton : nil;
 }
 
+// --------------------------------------------------------------------------
+//! Respond to a change to one of our child items.
+// --------------------------------------------------------------------------
+
+- (void) childChanged: (id) sender
+{
+	[self.tableView reloadData];
+}
 
 #pragma mark UITableViewDataSource methods
 

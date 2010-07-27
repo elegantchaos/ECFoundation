@@ -56,6 +56,10 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (ECDataItem*)	itemAtIndex: (NSUInteger) index;
 - (ECDataItem*) itemAtIndexPath: (NSIndexPath*) path;
 
+- (void)		selectItemAtIndex: (NSUInteger) index;
+- (void)		selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
+- (void)		selectItemAtIndexPath: (NSIndexPath*) path;
+
 - (void)		postChangedNotifications;
 
 @end

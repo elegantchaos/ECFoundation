@@ -391,5 +391,33 @@ ECPropertySynthesize(parent);
 	}
 }
 
+// --------------------------------------------------------------------------
+//! Set the kSelectionKey property to one of our items.
+// --------------------------------------------------------------------------
+
+- (void) selectItemAtIndex: (NSUInteger) index
+{
+	[self setObject: [self.items objectAtIndex: index] forKey: kSelectionKey];
+}
+
+// --------------------------------------------------------------------------
+//! Set the kSelectionKey property to one of our sub-items.
+// --------------------------------------------------------------------------
+
+- (void) selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section
+{
+	ECDataItem* sectionData = [self.items objectAtIndex: section];
+	[self setObject: [sectionData.items objectAtIndex: index] forKey: kSelectionKey];
+}
+
+// --------------------------------------------------------------------------
+//! Set the kSelectionKey property to one of our sub-items.
+// --------------------------------------------------------------------------
+
+- (void) selectItemAtIndexPath: (NSIndexPath*) path
+{
+	[self selectItemAtIndex: [path row] inSection: [path section]];
+}
+
 @end
 

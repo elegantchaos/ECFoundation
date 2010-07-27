@@ -107,7 +107,13 @@ ECPropertySynthesize(data);
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
 
 	cell.textLabel.text = [item objectForKey: kLabelKey];
-	cell.detailTextLabel.text = [item objectForKey: kValueKey];
+	
+	ECDataItem* detailItem = [item objectForKey: kSelectionKey];
+	if (!detailItem)
+	{
+		detailItem = item;
+	}
+	cell.detailTextLabel.text = [detailItem objectForKey: kValueKey];
 	
 	NSNumber* accessory = [item objectForKey: kAccessoryKey];
 	if (accessory)
@@ -118,7 +124,10 @@ ECPropertySynthesize(data);
 	return cell;
 }
 
+// --------------------------------------------------------------------------
 // Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
+// --------------------------------------------------------------------------
+
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
@@ -127,11 +136,16 @@ ECPropertySynthesize(data);
 	return result;
 }
 
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	
 }
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
