@@ -18,13 +18,17 @@ ECPropertySynthesize(data);
 ECPropertySynthesize(editor);
 ECPropertySynthesize(label);
 
-
 // --------------------------------------------------------------------------
 //! Initialise
 // --------------------------------------------------------------------------
 
 - (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 {
+	if (!nibNameOrNil)
+	{
+		nibNameOrNil = @"ECTouchTextItemEditor";
+	}
+	
 	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) != nil)
 	{
 		self.data = data;

@@ -8,3 +8,5 @@
 #import "ECFoundationReleasePrefix.pch"
 
 #define EC_ADHOC 1
+#undef EC_CONFIGURATION_STRING
+#define EC_CONFIGURATION_STRING @"AdHoc"

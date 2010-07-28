@@ -8,6 +8,7 @@
 #import "ECFoundationSharedPrefix.pch"
 
 #define EC_RELEASE 1
+#define EC_CONFIGURATION_STRING @"Release"
 
 #define ECUnusedInDebug(v)
 #define ECUnusedInRelease(v) ECUnused(v)

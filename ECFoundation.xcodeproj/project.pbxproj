@@ -109,6 +109,8 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22B12E561200E9AB00F1D033 /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B12E571200E9AB00F1D033 /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */; };
 		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
 		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -223,13 +225,16 @@
 		22822E6B11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTextItemEditorController.h; path = controllers/ECTextItemEditorController.h; sourceTree = "<group>"; };
 		22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTextItemEditorController.m; path = controllers/ECTextItemEditorController.m; sourceTree = "<group>"; };
-		22859E2011FE0384008EBC30 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = English; path = resources/English.lproj/ECTextItemEditorController.xib; sourceTree = "<group>"; };
+		22859E2011FE0384008EBC30 /* ECTouchTextItemEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ECTouchTextItemEditor.xib; path = resources/English.lproj/ECTouchTextItemEditor.xib; sourceTree = "<group>"; };
 		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
 		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLocationUtilities.m; path = ../ECLocationUtilities.m; sourceTree = "<group>"; };
 		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
+		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22B12E8E1200F54200F1D033 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = English; path = resources/English.lproj/ECTouchAboutBox.xib; sourceTree = "<group>"; };
 		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5A0486A6940098B216 /* ECFoundation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundation.plist; path = resources/ECFoundation.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,7 +314,8 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22859E1F11FE0384008EBC30 /* ECTextItemEditorController.xib */,
+				22B12E8D1200F54200F1D033 /* ECTouchAboutBox.xib */,
+				22859E1F11FE0384008EBC30 /* ECTouchTextItemEditor.xib */,
 				225EC6D211EBB15D00A97AEA /* ECFoundation SenTest.plist */,
 				8DC2EF5A0486A6940098B216 /* ECFoundation.plist */,
 				227333AF11EBBA0800695FB4 /* ECFoundation GHUnit.plist */,
@@ -374,6 +380,8 @@
 		22592EB411F5BBBE0056FF4B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */,
+				22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */,
 				22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */,
 				22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
@@ -606,6 +614,7 @@
 				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
 				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
 				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
+				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
 				2286307711E32AA800654739 /* ECDropAllViewsAnimation.h in Headers */,
@@ -619,9 +628,9 @@
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
 				22859E1C11FE0356008EBC30 /* ECTextItemEditorController.h in Headers */,
 				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
+				22B12E561200E9AB00F1D033 /* ECTouchAboutBoxController.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
 				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
-				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +886,7 @@
 				223EFD0211F883CA00CD6D19 /* ECDataDrivenView.m in Sources */,
 				2232B68711FA02BB001846FC /* ECDataItem.m in Sources */,
 				22859E1E11FE0356008EBC30 /* ECTextItemEditorController.m in Sources */,
+				22B12E571200E9AB00F1D033 /* ECTouchAboutBoxController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,12 +936,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		22859E1F11FE0384008EBC30 /* ECTextItemEditorController.xib */ = {
+		22859E1F11FE0384008EBC30 /* ECTouchTextItemEditor.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				22859E2011FE0384008EBC30 /* English */,
+				22859E2011FE0384008EBC30 /* ECTouchTextItemEditor.xib */,
 			);
-			name = ECTextItemEditorController.xib;
+			name = ECTouchTextItemEditor.xib;
+			sourceTree = "<group>";
+		};
+		22B12E8D1200F54200F1D033 /* ECTouchAboutBox.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B12E8E1200F54200F1D033 /* English */,
+			);
+			name = ECTouchAboutBox.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
