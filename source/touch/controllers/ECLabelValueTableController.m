@@ -175,7 +175,14 @@ ECPropertySynthesize(data);
 {
 	ECNavigationController* navigation = [ECNavigationController currentController];
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	[navigation openViewerForItem: item];
+	if ([[item objectForKey: kEditableKey] boolValue])
+	{
+		[navigation openEditorForItem: item];
+	}
+	else
+	{
+		[navigation openViewerForItem: item];
+	}
 }
 
 @end
