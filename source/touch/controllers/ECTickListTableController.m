@@ -54,7 +54,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		self.data = data;
 		self.title = [data objectForKey: kLabelKey];
 		mSelection = [data objectForKey: kSelectionKey];
-		mEditable = [[data objectForKey: kEditableKey] boolValue];
+		mEditable = [data boolForKey: kEditableKey];
 	}
 	
 	return self;
@@ -175,7 +175,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	ECDataItem* item = [self.data itemAtIndexPath: path];
 	cell.textLabel.text = [item objectForKey: kValueKey];
 	cell.accessoryType = (item == mSelection) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-	cell.editingAccessoryType = ([[item objectForKey: kEditableKey] boolValue]) ? UITableViewCellAccessoryDetailDisclosureButton : UITableViewCellAccessoryNone;
+	cell.editingAccessoryType = ([item boolForKey: kEditableKey]) ? UITableViewCellAccessoryDetailDisclosureButton : UITableViewCellAccessoryNone;
 
 	return cell;
 }
@@ -230,7 +230,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 - (BOOL) tableView: (UITableView*) table canEditRowAtIndexPath: (NSIndexPath*) path
 {
 	ECDataItem* item = [self.data itemAtIndexPath: path];
-	return [[item objectForKey: kEditableKey] boolValue];
+	return [item boolForKey: kEditableKey];
 }
 
 // --------------------------------------------------------------------------
@@ -241,7 +241,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 - (BOOL) tableView: (UITableView*) table canMoveRowAtIndexPath: (NSIndexPath*) path
 {
 	ECDataItem* item = [self.data itemAtIndexPath: path];
-	return [[item objectForKey: kMoveableKey] boolValue];
+	return [item boolForKey: kMoveableKey];
 }
 
 // --------------------------------------------------------------------------

@@ -1112,6 +1112,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2274C97E11FF881E00E5C351 /* ECTouchAdHocSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1175,6 +1176,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1185,6 +1187,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;

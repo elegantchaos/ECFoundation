@@ -16,6 +16,7 @@
 
 ECPropertySynthesize(data);
 ECPropertySynthesize(editor);
+ECPropertySynthesize(label);
 
 
 // --------------------------------------------------------------------------
@@ -28,7 +29,6 @@ ECPropertySynthesize(editor);
 	{
 		self.data = data;
 		
-		self.title = [data objectForKey: kValueKey];
 	}
 	
 	return self;
@@ -41,9 +41,22 @@ ECPropertySynthesize(editor);
 - (void) viewDidLoad
 {
 	[super viewDidLoad];
+
+	NSString* title = [self.data objectForKey: kLabelKey];
+	if (!title)
+	{
+		title = [self.data objectForKey: kValueKey];
+	}
+	
+	self.title = title;
+	if (self.label)
+	{
+		self.label.text = title;
+	}
 	
 	if (self.editor)
 	{
+		self.editor.secureTextEntry = [self.data boolForKey: kSecureKey];
 		self.editor.text = [self.data objectForKey: kValueKey];
 	}
 }
@@ -67,6 +80,7 @@ ECPropertySynthesize(editor);
 {
 	ECPropertyDealloc(data);
 	ECPropertyDealloc(editor);
+	ECPropertyDealloc(label);
 
     [super dealloc];
 }

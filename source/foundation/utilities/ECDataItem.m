@@ -23,6 +23,7 @@ NSString *const kEditorKey = @"Editor";
 NSString *const kEditorNibKey = @"EditorNib";
 NSString *const kSelectionKey = @"Selection";
 NSString *const kEditableKey = @"Editable";
+NSString *const kSecureKey = @"Secure";
 
 // --------------------------------------------------------------------------
 // Notifications
@@ -260,6 +261,15 @@ ECPropertySynthesize(parent);
 	}
 	
 	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the boolean value of a key. 
+// --------------------------------------------------------------------------
+
+- (BOOL) boolForKey: (id) key
+{
+	return [[self objectForKey: key] boolValue];
 }
 
 // --------------------------------------------------------------------------

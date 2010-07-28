@@ -121,12 +121,21 @@ ECPropertySynthesize(data);
 
 	cell.textLabel.text = [item objectForKey: kLabelKey];
 	
-	ECDataItem* detailItem = [item objectForKey: kSelectionKey];
-	if (!detailItem)
+	NSString* detail;
+	if ([item boolForKey: kSecureKey])
 	{
-		detailItem = item;
+		detail = @"••••";
 	}
-	cell.detailTextLabel.text = [detailItem objectForKey: kValueKey];
+	else
+	{
+		ECDataItem* detailItem = [item objectForKey: kSelectionKey];
+		if (!detailItem)
+		{
+			detailItem = item;
+		}
+		detail = [detailItem objectForKey: kValueKey];
+	}
+	cell.detailTextLabel.text = detail;
 	
 	NSNumber* accessory = [item objectForKey: kAccessoryKey];
 	if (accessory)
@@ -144,7 +153,7 @@ ECPropertySynthesize(data);
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	BOOL result = [[item objectForKey: kMoveableKey] boolValue];
+	BOOL result = [item boolForKey: kMoveableKey];
 	
 	return result;
 }
@@ -175,7 +184,7 @@ ECPropertySynthesize(data);
 {
 	ECNavigationController* navigation = [ECNavigationController currentController];
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	if ([[item objectForKey: kEditableKey] boolValue])
+	if ([item boolForKey: kEditableKey])
 	{
 		[navigation openEditorForItem: item];
 	}

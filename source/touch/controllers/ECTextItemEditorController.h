@@ -13,6 +13,7 @@
 {
 	ECPropertyDefineVariable(data, ECDataItem*);
 	ECPropertyDefineVariable(editor, UITextField*);
+	ECPropertyDefineVariable(label, UILabel*);
 }
 
 // --------------------------------------------------------------------------
@@ -21,6 +22,7 @@
 
 ECPropertyDefineRN(data, ECDataItem*);
 ECPropertyDefineRN(editor, IBOutlet UITextField*);
+ECPropertyDefineRN(label, IBOutlet UILabel*);
 
 // --------------------------------------------------------------------------
 // Outlets

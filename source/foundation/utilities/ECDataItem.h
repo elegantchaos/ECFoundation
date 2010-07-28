@@ -40,6 +40,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (id)			initWithItemsWithKey: (NSString*) key andValues: (id) firstValue, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (id)			objectForKey: (id) key;
+- (BOOL)		boolForKey: (id) key;
 - (void)		setObject: (id) object forKey: (id) key;
 
 - (NSUInteger)	count;
@@ -81,6 +82,7 @@ extern NSString *const kEditorKey;
 extern NSString *const kEditorNibKey;
 extern NSString *const kEditableKey;
 extern NSString *const kSelectionKey;
+extern NSString *const kSecureKey;
 
 // --------------------------------------------------------------------------
 // Notifications
