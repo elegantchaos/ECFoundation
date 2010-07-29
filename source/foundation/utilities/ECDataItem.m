@@ -521,7 +521,9 @@ ECPropertySynthesize(parent);
 
 - (void) selectItemAtIndexPath: (NSIndexPath*) path
 {
-	[self selectItemAtIndex: [path indexAtPosition: 1] inSection: [path indexAtPosition: 0]];
+	NSUInteger index = [path indexAtPosition: 1];
+	NSUInteger section = [path indexAtPosition: 0];
+	[self selectItemAtIndex: index  inSection: section];
 }
 
 // --------------------------------------------------------------------------
@@ -584,19 +586,19 @@ ECPropertySynthesize(parent);
 	ECDataItem* selection = [self.data objectForKey: kSelectionKey];
 	NSUInteger section = 0;
 	NSUInteger index = 0;
+	NSUInteger indexes[2] = { 0, 0 };
 	for (ECDataItem* item in self.items)
 	{
 		if ([item.items containsObject: selection])
 		{
 			index = [item.items indexOfObject: selection];
+			indexes[0] = section;
+			indexes[1] = index;
 			break;
 		}
 		++section;
 	}
 
-	NSUInteger indexes[2];
-	indexes[0] = section;
-	indexes[1] = index;
 	return [NSIndexPath indexPathWithIndexes:  indexes length: 2];
 }
 
