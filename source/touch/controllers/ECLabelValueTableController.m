@@ -137,11 +137,26 @@ ECPropertySynthesize(data);
 	}
 	cell.detailTextLabel.text = detail;
 	
-	NSNumber* accessory = [item objectForKey: kAccessoryKey];
-	if (accessory)
+	UITableViewCellAccessoryType accessory = UITableViewCellAccessoryNone;
+	NSNumber* accessoryValue = [item objectForKey: kAccessoryKey];
+	if (accessoryValue)
 	{
-		cell.accessoryType = [accessory intValue];
+		accessory = (UITableViewCellAccessoryType) [accessoryValue intValue];
 	}
+	else
+	{
+		BOOL gotViewer = [item objectForKey: kViewerKey] != nil;
+		BOOL gotEditor = [item objectForKey: kEditorKey] != nil;
+		if (gotViewer && gotEditor)
+		{
+			accessory = UITableViewCellAccessoryDetailDisclosureButton;
+		}
+		else if (gotViewer || gotEditor)
+		{
+			accessory = UITableViewCellAccessoryDisclosureIndicator;
+		}
+	}
+	cell.accessoryType = accessory;
 	
 	return cell;
 }
