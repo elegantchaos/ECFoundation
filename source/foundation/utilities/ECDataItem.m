@@ -263,7 +263,7 @@ ECPropertySynthesize(parent);
 	NSMutableDictionary* defaults = [[dictionary objectForKey: kDefaultsKey] mutableCopy];
 	NSArray* items = [dictionary objectForKey: kItemsKey];
 	
-	if ((self = [self initWithData: properties items: nil parent: nil]) != nil)
+	if ((self = [self initWithData: properties items: [NSMutableArray array] parent: nil]) != nil)
 	{
 		self.defaults = defaults;
 		for (NSDictionary* itemData in items)
@@ -450,6 +450,7 @@ ECPropertySynthesize(parent);
 {
 	[self.items removeObjectAtIndex: index];
 	[self invalidateCaches];
+	[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChildChanged object:self];
 }
 
 // --------------------------------------------------------------------------
@@ -469,6 +470,7 @@ ECPropertySynthesize(parent);
 	[self.items removeObjectAtIndex: from];
 	[self.items insertObject: item atIndex: to];
 	[self invalidateCaches];
+	[item postChangedNotifications];
 	[item release];
 }
 
@@ -480,6 +482,7 @@ ECPropertySynthesize(parent);
 	[self removeItemAtIndexPath: fromPath];
 	ECDataItem* toSection = [self.items objectAtIndex: [toPath indexAtPosition: 0]];
 	[toSection insertItem: item atIndex: [toPath indexAtPosition: 1]];
+	[item postChangedNotifications];
 	[item release];
 }
 
