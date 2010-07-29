@@ -14,11 +14,13 @@
     ECPropertyDefineVariable(version, UILabel*);
     ECPropertyDefineVariable(about, UITextField*);
     ECPropertyDefineVariable(copyright, UILabel*);
+    ECPropertyDefineVariable(logo, UIImageView*);
 }
 
 ECPropertyDefineRN(application, IBOutlet UILabel*);
 ECPropertyDefineRN(version, IBOutlet UILabel*);
 ECPropertyDefineRN(about, IBOutlet UITextField*);
 ECPropertyDefineRN(copyright, IBOutlet UILabel*);
+ECPropertyDefineRN(logo, IBOutlet UIImageView*);
 
 @end

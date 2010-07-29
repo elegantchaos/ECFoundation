@@ -15,6 +15,7 @@ ECPropertySynthesize(application);
 ECPropertySynthesize(version);
 ECPropertySynthesize(about);
 ECPropertySynthesize(copyright);
+ECPropertySynthesize(logo);
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
@@ -36,15 +37,23 @@ ECPropertySynthesize(copyright);
 {
 	[super viewDidLoad];
 	
-	NSString* applicationText = @"Blah App";
-	NSString* versionText = @"Version 1.0 (16 " EC_CONFIGURATION_STRING ")";
-	NSString* aboutText = @"About the app. Blah blah.";
-	NSString* copyrightText = @"(C) 2010 Sam Deane, Elegant Chaos.";
+	
+	NSBundle* bundle = [NSBundle mainBundle];
+	NSDictionary* info = [bundle infoDictionary];
+	
+	NSError* error = nil;
+	NSString* aboutPath = [bundle pathForResource:@"Credits" ofType:@"txt"];  
+	NSString* aboutText = [NSString stringWithContentsOfFile: aboutPath encoding: NSUTF8StringEncoding error: &error];
+	NSString* imageName = [info objectForKey: @"CFBundleIconFile"];
+	NSString* applicationText = [info objectForKey: @"CFBundleDisplayName"];
+	NSString* versionText = [NSString stringWithFormat: @"Version %@ (%@ %@)", [info objectForKey:@"CFBundleShortVersionString"], [info objectForKey:@"CFBundleVersion"], EC_CONFIGURATION_STRING];
+	NSString* copyrightText = [info objectForKey: @"ECAboutBoxCopyright"];
 	
 	self.application.text = applicationText;
 	self.version.text = versionText;
 	self.about.text = aboutText;
 	self.copyright.text = copyrightText;
+	self.logo.image = [UIImage imageNamed: imageName];
 }
 
 /*
@@ -55,14 +64,16 @@ ECPropertySynthesize(copyright);
 }
 */
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload 
+{
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -75,6 +86,7 @@ ECPropertySynthesize(copyright);
 	ECPropertyDealloc(version);
 	ECPropertyDealloc(about);
 	ECPropertyDealloc(copyright);
+	ECPropertyDealloc(logo);
 
     [super dealloc];
 }
