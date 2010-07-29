@@ -24,6 +24,10 @@ NSString *const kEditorNibKey = @"EditorNib";
 NSString *const kSelectionKey = @"Selection";
 NSString *const kEditableKey = @"Editable";
 NSString *const kSecureKey = @"Secure";
+NSString *const kPropertiesKey = @"Properties";
+NSString *const kItemsKey = @"Items";
+NSString *const kParentKey = @"Parent";
+NSString *const kDefaultsKey = @"Defaults";
 
 // --------------------------------------------------------------------------
 // Notifications
@@ -117,6 +121,26 @@ ECPropertySynthesize(parent);
     va_end(args);
 	
 	return item;	
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item created from a dictionary
+//! which contains entries for the data item's properties, defaults and items.
+// --------------------------------------------------------------------------
+
++ (ECDataItem*) itemWithNestedDictionary: (NSDictionary*) dictionary
+{
+	return [[[ECDataItem alloc] initWithNestedDictionary: dictionary] autorelease];
+}
+
+// --------------------------------------------------------------------------
+//! Return an auto released item by reading in from a file.
+// --------------------------------------------------------------------------
+
+
++ (ECDataItem*) itemWithContentsOfURL:(NSURL*) url
+{
+	return [[[ECDataItem alloc] initWithContentsOfURL: url] autorelease];
 }
 
 // --------------------------------------------------------------------------
@@ -226,6 +250,54 @@ ECPropertySynthesize(parent);
     va_end(args);
 
 	return item;
+}
+
+// --------------------------------------------------------------------------
+//! Initialise from a dictionary which contains entries for the
+//! data item's properties, defaults and items.
+// --------------------------------------------------------------------------
+
+- (id) initWithNestedDictionary:(NSDictionary *) dictionary
+{
+	NSMutableDictionary* properties = [[dictionary objectForKey: kPropertiesKey] mutableCopy];
+	NSMutableDictionary* defaults = [[dictionary objectForKey: kDefaultsKey] mutableCopy];
+	NSArray* items = [dictionary objectForKey: kItemsKey];
+	
+	if ((self = [self initWithData: properties items: nil parent: nil]) != nil)
+	{
+		self.defaults = defaults;
+		for (NSDictionary* itemData in items)
+		{
+			ECDataItem* item = [[ECDataItem alloc] initWithNestedDictionary: itemData];
+			[self addItem: item];
+			[item release];
+		}
+	}
+	
+	[properties release];
+	[defaults release];
+	
+	return self;
+}
+
+// --------------------------------------------------------------------------
+//! Initialise by reading in from a file.
+// --------------------------------------------------------------------------
+
+- (id) initWithContentsOfURL:(NSURL*) url
+{
+	NSDictionary* data = [NSDictionary dictionaryWithContentsOfURL: url];
+	if (data)
+	{
+		self = [self initWithNestedDictionary: data];
+	}
+	else
+	{
+		[self release];
+		return nil;
+	}
+	
+	return self;
 }
 
 // --------------------------------------------------------------------------
@@ -450,6 +522,82 @@ ECPropertySynthesize(parent);
 - (void) selectItemAtIndexPath: (NSIndexPath*) path
 {
 	[self selectItemAtIndex: [path indexAtPosition: 1] inSection: [path indexAtPosition: 0]];
+}
+
+// --------------------------------------------------------------------------
+//! Return contents as a dictionary with items for our
+//! properties, defaults and items.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*) asNestedDictionary
+{
+	NSMutableDictionary* data = [NSMutableDictionary dictionary];
+	
+	[data setObject: self.data forKey: kPropertiesKey];
+	if (self.defaults)
+	{
+		[data setObject: self.defaults forKey: kDefaultsKey];
+	}
+	
+	NSMutableArray* itemArray = [[NSMutableArray alloc] init];
+	for (ECDataItem* item in self.items)
+	{
+		NSDictionary* itemData = [item asNestedDictionary];
+		[itemArray addObject: itemData];
+	}
+	[data setObject: itemArray forKey:kItemsKey];
+	[itemArray release];
+	
+	return data;
+}
+
+// --------------------------------------------------------------------------
+//! Write our contents to a file.
+// --------------------------------------------------------------------------
+
+- (BOOL) writeToURL:(NSURL*) url atomically:(BOOL) atomically
+{
+	NSDictionary* data = [self asNestedDictionary];
+	return [data writeToURL: url atomically:atomically];
+}
+
+// --------------------------------------------------------------------------
+//! Return the index of the selected object in our items.
+// --------------------------------------------------------------------------
+
+- (NSUInteger) selectedItemIndex
+{
+	ECDataItem* selection = [self.data objectForKey: kSelectionKey];
+	NSUInteger index = [self.items indexOfObject: selection];
+	
+	return index;
+}
+
+// --------------------------------------------------------------------------
+//! Return the index of the selected object in our items.
+//! We assume that the selection is a sub-item of one of our
+//! items.
+// --------------------------------------------------------------------------
+
+- (NSIndexPath*) selectedItemIndexPath
+{
+	ECDataItem* selection = [self.data objectForKey: kSelectionKey];
+	NSUInteger section = 0;
+	NSUInteger index = 0;
+	for (ECDataItem* item in self.items)
+	{
+		if ([item.items containsObject: selection])
+		{
+			index = [item.items indexOfObject: selection];
+			break;
+		}
+		++section;
+	}
+
+	NSUInteger indexes[2];
+	indexes[0] = section;
+	indexes[1] = index;
+	return [NSIndexPath indexPathWithIndexes:  indexes length: 2];
 }
 
 @end
