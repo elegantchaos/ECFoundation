@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 28/07/2010
 //
-//  ECAboutBoxController.m
-//  ECFoundation
-//
-//  Created by Sam Deane on 28/07/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECTouchAboutBoxController.h"
 

@@ -9,6 +9,8 @@
 #import "ECNavigationController.h"
 #import "ECDataDrivenView.h"
 #import "ECDataItem.h"
+#import "ECLabelValueEditableCell.h"
+#import "ECLabelValueCell.h"
 
 @implementation ECLabelValueTableController
 
@@ -17,7 +19,7 @@
 // --------------------------------------------------------------------------
 
 ECPropertySynthesize(data);
-
+ECPropertySynthesize(cellClass);
 
 
 // --------------------------------------------------------------------------
@@ -33,6 +35,15 @@ ECPropertySynthesize(data);
 
 - (void) viewDidLoad
 {
+	if ([self.data boolForKey: kEditableKey])
+	{
+		self.cellClass = [ECLabelValueEditableCell class];
+	}
+	else
+	{
+		self.cellClass = [ECLabelValueCell class];
+	}
+	
 	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:[self.data itemAtIndex: 0]];
 }
 
@@ -111,52 +122,15 @@ ECPropertySynthesize(data);
 {
 	static NSString* kCellIdentifier = @"ECLabelValueCell";
 	
-	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: kCellIdentifier];
-	if (cell == nil)
-	{
-		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: kCellIdentifier] autorelease];
-	}
-	
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
 
-	cell.textLabel.text = [item objectForKey: kLabelKey];
+	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: kCellIdentifier];
+	if (cell == nil)
+	{
+		cell = [[[self.cellClass alloc] initForItem: item reuseIdentifier: kCellIdentifier] autorelease];
+	}
 	
-	NSString* detail;
-	if ([item boolForKey: kSecureKey])
-	{
-		detail = @"••••";
-	}
-	else
-	{
-		ECDataItem* detailItem = [item objectForKey: kSelectionKey];
-		if (!detailItem)
-		{
-			detailItem = item;
-		}
-		detail = [detailItem objectForKey: kValueKey];
-	}
-	cell.detailTextLabel.text = detail;
-	
-	UITableViewCellAccessoryType accessory = UITableViewCellAccessoryNone;
-	NSNumber* accessoryValue = [item objectForKey: kAccessoryKey];
-	if (accessoryValue)
-	{
-		accessory = (UITableViewCellAccessoryType) [accessoryValue intValue];
-	}
-	else
-	{
-		BOOL gotViewer = [item objectForKey: kViewerKey] != nil;
-		BOOL gotEditor = [item objectForKey: kEditorKey] != nil;
-		if (gotViewer && gotEditor)
-		{
-			accessory = UITableViewCellAccessoryDetailDisclosureButton;
-		}
-		else if (gotViewer || gotEditor)
-		{
-			accessory = UITableViewCellAccessoryDisclosureIndicator;
-		}
-	}
-	cell.accessoryType = accessory;
+	[cell setupForItem: item];
 	
 	return cell;
 }
