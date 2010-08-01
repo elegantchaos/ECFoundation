@@ -24,10 +24,6 @@
 		223CBAE81205C66A0008A641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CBAE71205C66A0008A641 /* UIKit.framework */; };
 		223CBAEA1205C67C0008A641 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CBAE91205C67C0008A641 /* CoreGraphics.framework */; };
 		223CBAED1205C6C00008A641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CBAE61205C6380008A641 /* Foundation.framework */; };
-		223CBB151205C7DF0008A641 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223CBB001205C7680008A641 /* FirstView.xib */; };
-		223CBB161205C7DF0008A641 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 223CBB021205C7680008A641 /* InfoPlist.strings */; };
-		223CBB171205C7DF0008A641 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223CBB041205C7680008A641 /* MainWindow.xib */; };
-		223CBB181205C7DF0008A641 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223CBB061205C7680008A641 /* SecondView.xib */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,24 +32,28 @@
 		226E1FA211F8D03E00603F71 /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9E11F8D03E00603F71 /* ECLogging.h */; };
 		226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1FAD11F8D0A300603F71 /* ECMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FAF11F8D0A300603F71 /* ECMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1FAD11F8D0A300603F71 /* ECMacros.h */; };
-		227271BE1205C98B009CB32F /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B5E1204A495005441CE /* ECLabelValueCell.h */; };
+		227271BE1205C98B009CB32F /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B5E1204A495005441CE /* ECLabelValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271BF1205C98B009CB32F /* ECLabelValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C9B5F1204A495005441CE /* ECLabelValueCell.m */; };
-		227271C01205C98B009CB32F /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B4C1204A092005441CE /* ECLabelValueEditableCell.h */; };
+		227271C01205C98B009CB32F /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B4C1204A092005441CE /* ECLabelValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271C11205C98B009CB32F /* ECLabelValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C9B4D1204A092005441CE /* ECLabelValueEditableCell.m */; };
-		227271C21205C98B009CB32F /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */; };
+		227271C21205C98B009CB32F /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271C31205C98B009CB32F /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */; };
-		227271C41205C98B009CB32F /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; };
+		227271C41205C98B009CB32F /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271C51205C98B009CB32F /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */; };
-		227271C61205C98B009CB32F /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */; };
-		227271C71205C98B009CB32F /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B6A1204A5FF005441CE /* ECDataDrivenTableCell.h */; };
-		227271C81205C98B009CB32F /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CCA911F875CD00CDD442 /* ECTickListTableController.h */; };
+		227271C61205C98B009CB32F /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		227271C71205C98B009CB32F /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 224C9B6A1204A5FF005441CE /* ECDataDrivenTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		227271C81205C98B009CB32F /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CCA911F875CD00CDD442 /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271C91205C98B009CB32F /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */; };
-		227271CA1205C98B009CB32F /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */; };
+		227271CA1205C98B009CB32F /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271CB1205C98B009CB32F /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22592EB611F5BBDA0056FF4B /* ECLabelValueTableController.m */; };
-		227271CC1205C98B009CB32F /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; };
+		227271CC1205C98B009CB32F /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2207E05B11F742F3004BB01D /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271CD1205C98B009CB32F /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207E05C11F742F3004BB01D /* ECNavigationController.m */; };
-		227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; };
+		227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227271CF1205C98B009CB32F /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */; };
+		227272791205CDBB009CB32F /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272711205CDBB009CB32F /* FirstView.xib */; };
+		2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227272731205CDBB009CB32F /* InfoPlist.strings */; };
+		2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272751205CDBB009CB32F /* MainWindow.xib */; };
+		2272727C1205CDBB009CB32F /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272771205CDBB009CB32F /* SecondView.xib */; };
 		227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
 		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
@@ -193,10 +193,6 @@
 		223CBAFC1205C7680008A641 /* ECFoundation GHUnit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation GHUnit.plist"; sourceTree = "<group>"; };
 		223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation SenTest.plist"; sourceTree = "<group>"; };
 		223CBAFF1205C7680008A641 /* ECFoundationTouchTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECFoundationTouchTest.plist; sourceTree = "<group>"; };
-		223CBB011205C7680008A641 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		223CBB031205C7680008A641 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		223CBB051205C7680008A641 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		223CBB071205C7680008A641 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
 		223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECDataDrivenView.h; path = controllers/ECDataDrivenView.h; sourceTree = "<group>"; };
 		224C9B4C1204A092005441CE /* ECLabelValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECLabelValueEditableCell.h; path = controllers/ECLabelValueEditableCell.h; sourceTree = "<group>"; };
 		224C9B4D1204A092005441CE /* ECLabelValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLabelValueEditableCell.m; path = controllers/ECLabelValueEditableCell.m; sourceTree = "<group>"; };
@@ -212,6 +208,10 @@
 		226E1F9D11F8D03E00603F71 /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		226E1F9E11F8D03E00603F71 /* ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogging.h; sourceTree = "<group>"; };
 		226E1FAD11F8D0A300603F71 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
+		227272721205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = FirstView.xib; sourceTree = "<group>"; };
+		227272741205CDBB009CB32F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		227272761205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainWindow.xib; sourceTree = "<group>"; };
+		227272781205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = SecondView.xib; sourceTree = "<group>"; };
 		227333A411EBBA0800695FB4 /* GHUnit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GHUnit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2273344611EBC1CB00695FB4 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
@@ -499,10 +499,10 @@
 			isa = PBXGroup;
 			children = (
 				223CBAFF1205C7680008A641 /* ECFoundationTouchTest.plist */,
-				223CBB001205C7680008A641 /* FirstView.xib */,
-				223CBB021205C7680008A641 /* InfoPlist.strings */,
-				223CBB041205C7680008A641 /* MainWindow.xib */,
-				223CBB061205C7680008A641 /* SecondView.xib */,
+				227272711205CDBB009CB32F /* FirstView.xib */,
+				227272731205CDBB009CB32F /* InfoPlist.strings */,
+				227272751205CDBB009CB32F /* MainWindow.xib */,
+				227272771205CDBB009CB32F /* SecondView.xib */,
 			);
 			path = touchtest;
 			sourceTree = "<group>";
@@ -942,10 +942,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223CBB151205C7DF0008A641 /* FirstView.xib in Resources */,
-				223CBB161205C7DF0008A641 /* InfoPlist.strings in Resources */,
-				223CBB171205C7DF0008A641 /* MainWindow.xib in Resources */,
-				223CBB181205C7DF0008A641 /* SecondView.xib in Resources */,
+				227272791205CDBB009CB32F /* FirstView.xib in Resources */,
+				2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */,
+				2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */,
+				2272727C1205CDBB009CB32F /* SecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1147,36 +1147,40 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		223CBB001205C7680008A641 /* FirstView.xib */ = {
+		227272711205CDBB009CB32F /* FirstView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				223CBB011205C7680008A641 /* en */,
+				227272721205CDBB009CB32F /* English */,
 			);
 			name = FirstView.xib;
+			path = English.lproj;
 			sourceTree = "<group>";
 		};
-		223CBB021205C7680008A641 /* InfoPlist.strings */ = {
+		227272731205CDBB009CB32F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				223CBB031205C7680008A641 /* en */,
+				227272741205CDBB009CB32F /* English */,
 			);
 			name = InfoPlist.strings;
+			path = English.lproj;
 			sourceTree = "<group>";
 		};
-		223CBB041205C7680008A641 /* MainWindow.xib */ = {
+		227272751205CDBB009CB32F /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				223CBB051205C7680008A641 /* en */,
+				227272761205CDBB009CB32F /* English */,
 			);
 			name = MainWindow.xib;
+			path = English.lproj;
 			sourceTree = "<group>";
 		};
-		223CBB061205C7680008A641 /* SecondView.xib */ = {
+		227272771205CDBB009CB32F /* SecondView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				223CBB071205C7680008A641 /* en */,
+				227272781205CDBB009CB32F /* English */,
 			);
 			name = SecondView.xib;
+			path = English.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

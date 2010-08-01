@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ECFoundation/ECLabelValueTableController.h>
 
-
-@interface FirstViewController : UIViewController {
+@interface FirstViewController : ECLabelValueTableController
+{
 
 }
 
