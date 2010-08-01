@@ -1,45 +1,30 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 01/08/2010
 //
-//  FirstViewController.m
-//  ECFoundation TouchTest
-//
-//  Created by Sam Deane on 01/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 sam, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "FirstViewController.h"
-
+#import "TouchTestAppDelegate.h"
 #import <ECFoundation/ECTickListTableController.h>
 
 @implementation FirstViewController
 
+// --------------------------------------------------------------------------
+//! Set up the view.
+// --------------------------------------------------------------------------
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
 	// make some test data to display/edit
+	TouchTestAppDelegate* app = [UIApplication sharedApplication].delegate;
 	
 	ECDataItem* data = [ECDataItem item];
-	ECDataItem* section1 = [ECDataItem itemWithItemsWithKey: kLabelKey andValues: @"one", @"two", @"three", nil];
-	for (ECDataItem* item in section1.items)
-	{
-		[item setObject: @"doodah" forKey:kValueKey];
-	}
+	ECDataItem* section1 = [ECDataItem item];
+	[section1 addItem: app.name];
+	[section1 addItem: app.password];
+	[section1 addItem: [ECDataItem itemWithObjectsAndKeys: @"Description", kLabelKey, @"Blah blah, blah de blah", kValueKey, nil]];
 	[section1 setObject: @"Editable Section" forKey: kHeaderKey];
 	[section1 setBooleanDefault: YES forKey: kEditableKey];
 	[data addItem: section1];
@@ -63,28 +48,21 @@
     [super viewDidLoad];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+// --------------------------------------------------------------------------
+//! Deal with low memory.
+// --------------------------------------------------------------------------
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
+// --------------------------------------------------------------------------
+//! Release retained data.
+// --------------------------------------------------------------------------
 
-
-- (void)dealloc {
+- (void)dealloc 
+{
     [super dealloc];
 }
 

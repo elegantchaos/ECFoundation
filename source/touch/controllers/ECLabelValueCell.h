@@ -36,4 +36,15 @@ ECPropertyDefineRN(item, ECDataItem*);
 - (void) setupDetail;
 - (void) setupAccessory;
 
+// --------------------------------------------------------------------------
+//! Style properties.
+// --------------------------------------------------------------------------
+
+extern NSString *const kAutocapitalizationTypeKey;
+extern NSString *const kAutocorrectionTypeKey;
+extern NSString *const kKeyboardTypeKey;
+extern NSString *const kKeyboardAppearanceKey;
+extern NSString *const kReturnKeyTypeKey;
+extern NSString *const kEnablesReturnKeyAutomaticallyKey;
+
 @end

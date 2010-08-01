@@ -11,6 +11,17 @@
 @implementation ECLabelValueCell
 
 // --------------------------------------------------------------------------
+// Constants
+// --------------------------------------------------------------------------
+
+NSString *const kAutocapitalizationTypeKey = @"AutocapitalizationType";
+NSString *const kAutocorrectionTypeKey = @"AutocorrectionType";
+NSString *const kKeyboardTypeKey = @"KeyboardType";
+NSString *const kKeyboardAppearanceKey = @"KeyboardAppearance";
+NSString *const kReturnKeyTypeKey = @"ReturnKeyType";
+NSString *const kEnablesReturnKeyAutomaticallyKey = @"EnablesReturnKeyAutomatically";
+
+// --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
 

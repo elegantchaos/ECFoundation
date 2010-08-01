@@ -17,7 +17,6 @@
 		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		223CBABB1205C4180008A641 /* libECFoundationTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */; };
 		223CBAD21205C4FB0008A641 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBACC1205C4FB0008A641 /* FirstViewController.m */; };
-		223CBAD31205C4FB0008A641 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBACE1205C4FB0008A641 /* SecondViewController.m */; };
 		223CBAD41205C4FB0008A641 /* TouchTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */; };
 		223CBAD51205C4FB0008A641 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD11205C4FB0008A641 /* main.m */; };
 		223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD71205C51F0008A641 /* GHUnitTestMain.m */; };
@@ -53,7 +52,6 @@
 		227272791205CDBB009CB32F /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272711205CDBB009CB32F /* FirstView.xib */; };
 		2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227272731205CDBB009CB32F /* InfoPlist.strings */; };
 		2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272751205CDBB009CB32F /* MainWindow.xib */; };
-		2272727C1205CDBB009CB32F /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272771205CDBB009CB32F /* SecondView.xib */; };
 		227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
 		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
@@ -126,6 +124,8 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */; };
+		22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */; };
 		22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */; };
 		22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */; };
 		22F8C9D51205D633009486B3 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9D31205D633009486B3 /* about.png */; };
@@ -183,8 +183,6 @@
 		223CBAB21205C3330008A641 /* ReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePrefix.pch; sourceTree = "<group>"; };
 		223CBACB1205C4FB0008A641 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		223CBACC1205C4FB0008A641 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		223CBACD1205C4FB0008A641 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		223CBACE1205C4FB0008A641 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		223CBACF1205C4FB0008A641 /* TouchTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchTestAppDelegate.h; sourceTree = "<group>"; };
 		223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchTestAppDelegate.m; sourceTree = "<group>"; };
 		223CBAD11205C4FB0008A641 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 		227272721205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = FirstView.xib; sourceTree = "<group>"; };
 		227272741205CDBB009CB32F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		227272761205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainWindow.xib; sourceTree = "<group>"; };
-		227272781205CDBB009CB32F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = SecondView.xib; sourceTree = "<group>"; };
 		227333A411EBBA0800695FB4 /* GHUnit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GHUnit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2273344611EBC1CB00695FB4 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
@@ -288,6 +285,8 @@
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
 		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ECUtilities.h"; path = "utilities/UIColor+ECUtilities.h"; sourceTree = "<group>"; };
+		22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ECUtilities.m"; path = "utilities/UIColor+ECUtilities.m"; sourceTree = "<group>"; };
 		22F8C9BC1205D51E009486B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ECTouchAboutBox.xib; sourceTree = "<group>"; };
 		22F8C9BE1205D51E009486B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ECTouchTextItemEditor.xib; sourceTree = "<group>"; };
 		22F8C9D31205D633009486B3 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
@@ -459,8 +458,6 @@
 			children = (
 				223CBACB1205C4FB0008A641 /* FirstViewController.h */,
 				223CBACC1205C4FB0008A641 /* FirstViewController.m */,
-				223CBACD1205C4FB0008A641 /* SecondViewController.h */,
-				223CBACE1205C4FB0008A641 /* SecondViewController.m */,
 				223CBACF1205C4FB0008A641 /* TouchTestAppDelegate.h */,
 				223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */,
 			);
@@ -522,7 +519,6 @@
 				227272711205CDBB009CB32F /* FirstView.xib */,
 				227272731205CDBB009CB32F /* InfoPlist.strings */,
 				227272751205CDBB009CB32F /* MainWindow.xib */,
-				227272771205CDBB009CB32F /* SecondView.xib */,
 			);
 			path = touchtest;
 			sourceTree = "<group>";
@@ -743,6 +739,7 @@
 		2286307311E32AA800654739 /* touch */ = {
 			isa = PBXGroup;
 			children = (
+				22BFA1481205F8F300343D91 /* utilities */,
 				22592EB411F5BBBE0056FF4B /* controllers */,
 				2286307411E32AA800654739 /* animation */,
 			);
@@ -757,6 +754,15 @@
 				2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */,
 			);
 			path = animation;
+			sourceTree = "<group>";
+		};
+		22BFA1481205F8F300343D91 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */,
+				22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */,
+			);
+			name = utilities;
 			sourceTree = "<group>";
 		};
 		22F8C9BA1205D51E009486B3 /* touch */ = {
@@ -802,6 +808,7 @@
 				227271CA1205C98B009CB32F /* ECLabelValueTableController.h in Headers */,
 				227271CC1205C98B009CB32F /* ECNavigationController.h in Headers */,
 				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
+				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,7 +982,6 @@
 				227272791205CDBB009CB32F /* FirstView.xib in Resources */,
 				2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */,
 				2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */,
-				2272727C1205CDBB009CB32F /* SecondView.xib in Resources */,
 				22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */,
 				22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */,
 				22F8C9D51205D633009486B3 /* about.png in Resources */,
@@ -1057,7 +1063,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				223CBAD21205C4FB0008A641 /* FirstViewController.m in Sources */,
-				223CBAD31205C4FB0008A641 /* SecondViewController.m in Sources */,
 				223CBAD41205C4FB0008A641 /* TouchTestAppDelegate.m in Sources */,
 				223CBAD51205C4FB0008A641 /* main.m in Sources */,
 			);
@@ -1106,6 +1111,7 @@
 				227271CB1205C98B009CB32F /* ECLabelValueTableController.m in Sources */,
 				227271CD1205C98B009CB32F /* ECNavigationController.m in Sources */,
 				227271CF1205C98B009CB32F /* ECDropAllViewsAnimation.m in Sources */,
+				22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1208,15 +1214,6 @@
 				227272761205CDBB009CB32F /* English */,
 			);
 			name = MainWindow.xib;
-			path = English.lproj;
-			sourceTree = "<group>";
-		};
-		227272771205CDBB009CB32F /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				227272781205CDBB009CB32F /* English */,
-			);
-			name = SecondView.xib;
 			path = English.lproj;
 			sourceTree = "<group>";
 		};

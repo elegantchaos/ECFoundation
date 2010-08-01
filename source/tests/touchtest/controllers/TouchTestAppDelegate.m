@@ -1,23 +1,47 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 01/08/2010
 //
-//  ECFoundation_TouchTestAppDelegate.m
-//  ECFoundation TouchTest
-//
-//  Created by Sam Deane on 01/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
-
+//  Copyright 2010 sam, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "TouchTestAppDelegate.h"
 
+#import <ECFoundation/ECDataItem.h>
+
+// --------------------------------------------------------------------------
+// Constants
+// --------------------------------------------------------------------------
+
+static NSString *const kNameSetting = @"Name";
+static NSString *const kPasswordSetting = @"Password";
+
+
 @implementation TouchTestAppDelegate
 
+// --------------------------------------------------------------------------
+// Properties
+// --------------------------------------------------------------------------
 
 @synthesize window;
-
 @synthesize tabBarController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ECPropertySynthesize(name);
+ECPropertySynthesize(password);
 
+// --------------------------------------------------------------------------
+//! Setup after launching.
+// --------------------------------------------------------------------------
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{
+
+	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+	[defaults registerDefaults: [NSDictionary dictionaryWithObjectsAndKeys: @"Sam Deane", kNameSetting, @"top secret", kPasswordSetting, nil]];
+	
+	self.name = [ECDataItem itemWithObjectsAndKeys: @"Name", kLabelKey, [defaults stringForKey: kNameSetting], kValueKey, nil];
+	self.password = [ECDataItem itemWithObjectsAndKeys: @"Password", kLabelKey, [defaults stringForKey: kPasswordSetting], kValueKey, [NSNumber numberWithBool:YES], kSecureKey, nil];
+	
 	// Override point for customization after application launch.
 	// Add the tab bar controller's current view as a subview of the window
 	[window addSubview:tabBarController.view];
@@ -25,29 +49,33 @@
     return YES;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+// --------------------------------------------------------------------------
+//! Clean up before quitting.
+// --------------------------------------------------------------------------
 
-	// Save data if appropriate.
+- (void)applicationWillTerminate:(UIApplication *)application 
+{
+	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+	
+	[defaults setValue: [self.name objectForKey: kValueKey] forKey: kNameSetting];
+	[defaults setValue: [self.password objectForKey: kValueKey] forKey: kPasswordSetting];
+	[defaults synchronize];
 }
 
-- (void)dealloc {
+// --------------------------------------------------------------------------
+//! Release retained data.
+// --------------------------------------------------------------------------
+
+- (void)dealloc 
+{
+
+	ECPropertyDealloc(name);
+	ECPropertyDealloc(password);
 
 	[window release];
 	[tabBarController release];
     [super dealloc];
 }
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
 
 @end
 

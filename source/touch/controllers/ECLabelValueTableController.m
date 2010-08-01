@@ -74,8 +74,10 @@ ECPropertySynthesize(data);
 {
 	ECDataItem* data = [self.data itemAtIndex: section];
 	NSString* result = [data objectForKey: kHeaderKey];
-
-	ECDebug(LabelValueTableChannel, @"header for section %d: %@", section, result);
+	if (result)
+	{
+		ECDebug(LabelValueTableChannel, @"header for section %d: %@", section, result);
+	}
 
 	return result;
 }
@@ -89,7 +91,10 @@ ECPropertySynthesize(data);
 	ECDataItem* data = [self.data itemAtIndex: section];
 	NSString* result = [data objectForKey: kFooterKey];
 
-	ECDebug(LabelValueTableChannel, @"footer for section %d: %@", section, result);
+	if (result)
+	{
+		ECDebug(LabelValueTableChannel, @"footer for section %d: %@", section, result);
+	}
 
 	return result;
 }
@@ -115,7 +120,11 @@ ECPropertySynthesize(data);
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	Class cellClass = [item boolForKey: kEditableKey] ? [ECLabelValueEditableCell class] : [ECLabelValueCell class];
+	Class cellClass = [item objectForKey: kCellClassKey];
+	if (!cellClass)
+	{
+		cellClass = [item boolForKey: kEditableKey] ? [ECLabelValueEditableCell class] : [ECLabelValueCell class];
+	}
 	NSString* cellIdentifier = NSStringFromClass(cellClass);
 	
 	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];

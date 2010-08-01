@@ -45,6 +45,8 @@ ECPropertyDefineRN(items, NSMutableArray*);
 
 - (id)				objectForKey: (id) key;
 - (BOOL)			boolForKey: (id) key;
+- (NSInteger)		intForKey: (id) key;
+- (NSInteger)		intForKey: (id) key orDefault: (NSInteger) defaultValue;
 - (void)			setObject: (id) object forKey: (id) key;
 - (void)			setDefault: (id) object forKey: (id) key;
 
@@ -85,6 +87,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 // --------------------------------------------------------------------------
 
 extern NSString *const kAccessoryKey;
+extern NSString *const kCellClassKey;
 extern NSString *const kDefaultsKey;
 extern NSString *const kEditableKey;
 extern NSString *const kEditorKey;

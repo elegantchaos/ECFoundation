@@ -12,6 +12,7 @@
 // --------------------------------------------------------------------------
 
 NSString *const kAccessoryKey = @"Accessory";
+NSString *const kCellClassKey = @"CellClass";
 NSString *const kDefaultsKey = @"Defaults";
 NSString *const kEditableKey = @"Editable";
 NSString *const kEditorKey = @"Editor";
@@ -435,6 +436,27 @@ ECPropertySynthesize(parent);
 	ECDataItem* item = [self itemAtIndexPath: path];
 	id result = [item objectForKey: key];
 	
+	return result;
+}
+
+- (NSInteger) intForKey: (id) key
+{
+	return [[self objectForKey: key] intValue];
+}
+
+- (NSInteger) intForKey: (id) key orDefault: (NSInteger) defaultValue
+{
+	NSInteger result;
+	id value = [self objectForKey: key];
+	if (value)
+	{
+		result = [value intValue];
+	}
+	else
+	{
+		result = defaultValue;
+	}
+
 	return result;
 }
 

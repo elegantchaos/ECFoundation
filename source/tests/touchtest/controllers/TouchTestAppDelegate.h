@@ -1,24 +1,33 @@
+/// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 01/08/2010
 //
-//  ECFoundation_TouchTestAppDelegate.h
-//  ECFoundation TouchTest
-//
-//  Created by Sam Deane on 01/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 sam, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 
 #import <UIKit/UIKit.h>
 
-@interface TouchTestAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
-	UIWindow *window;
+@class ECDataItem;
 
-	UITabBarController *tabBarController;
+@interface TouchTestAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> 
+{
+	UIWindow*				window;
+	UITabBarController*		tabBarController;
+
+	ECPropertyDefineVariable(name, ECDataItem*);
+	ECPropertyDefineVariable(password, ECDataItem*);
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+// --------------------------------------------------------------------------
+// Public Properties
+// --------------------------------------------------------------------------
 
+@property (nonatomic, retain) IBOutlet UIWindow*			window;
+@property (nonatomic, retain) IBOutlet UITabBarController*	tabBarController;
 
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+ECPropertyDefineRN(name, ECDataItem*);
+ECPropertyDefineRN(password, ECDataItem*);
 
 @end
 
