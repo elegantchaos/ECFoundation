@@ -11,23 +11,24 @@
 // Data Key Constants
 // --------------------------------------------------------------------------
 
-NSString *const kHeaderKey = @"Header";
-NSString *const kFooterKey = @"Footer";
-NSString *const kLabelKey = @"Label";
-NSString *const kValueKey = @"Value";
 NSString *const kAccessoryKey = @"Accessory";
-NSString *const kMoveableKey = @"Moveable";
-NSString *const kViewerKey = @"Viewer";
-NSString *const kViewerNibKey = @"ViewerNib";
+NSString *const kDefaultsKey = @"Defaults";
+NSString *const kEditableKey = @"Editable";
 NSString *const kEditorKey = @"Editor";
 NSString *const kEditorNibKey = @"EditorNib";
-NSString *const kSelectionKey = @"Selection";
-NSString *const kEditableKey = @"Editable";
-NSString *const kSecureKey = @"Secure";
-NSString *const kPropertiesKey = @"Properties";
+NSString *const kFooterKey = @"Footer";
+NSString *const kHeaderKey = @"Header";
 NSString *const kItemsKey = @"Items";
+NSString *const kLabelKey = @"Label";
+NSString *const kMoveableKey = @"Moveable";
 NSString *const kParentKey = @"Parent";
-NSString *const kDefaultsKey = @"Defaults";
+NSString *const kPropertiesKey = @"Properties";
+NSString *const kSecureKey = @"Secure";
+NSString *const kSelectableKey = @"Selection";
+NSString *const kSelectionKey = @"Selectable";
+NSString *const kValueKey = @"Value";
+NSString *const kViewerKey = @"Viewer";
+NSString *const kViewerNibKey = @"ViewerNib";
 
 // --------------------------------------------------------------------------
 // Notifications
@@ -442,6 +443,36 @@ ECPropertySynthesize(parent);
 - (void) setObject: (id) object forKey: (id) key
 {
 	[self.data setObject: object forKey: key];
+}
+
+// --------------------------------------------------------------------------
+
+- (void) setDefault: (id) object forKey: (id) key
+{
+	if (!self.defaults)
+	{
+		self.defaults = [NSMutableDictionary dictionary];
+	}
+	
+	[self.defaults setObject: object forKey: key];
+}
+
+// --------------------------------------------------------------------------
+//! Set a boolean value for a key.
+// --------------------------------------------------------------------------
+
+- (void) setBoolean:(BOOL) value forKey: (id) key
+{
+	[self setObject: [NSNumber numberWithBool: value] forKey: key];
+}
+
+// --------------------------------------------------------------------------
+//! Set a boolean value for a default.
+// --------------------------------------------------------------------------
+
+- (void) setBooleanDefault: (BOOL) value forKey: (id) key
+{
+	[self setDefault: [NSNumber numberWithBool: value] forKey: key];
 }
 
 // --------------------------------------------------------------------------

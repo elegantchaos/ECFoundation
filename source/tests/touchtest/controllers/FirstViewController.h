@@ -11,7 +11,6 @@
 
 @interface FirstViewController : ECLabelValueTableController
 {
-
 }
 
 @end

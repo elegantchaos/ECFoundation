@@ -43,8 +43,12 @@ ECPropertySynthesize(cellClass);
 	{
 		self.cellClass = [ECLabelValueCell class];
 	}
-	
-	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:[self.data itemAtIndex: 0]];
+
+	// watch for changes on all items
+	for (ECDataItem* item in self.data.items)
+	{
+		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:item];
+	}
 }
 
 - (void) viewDidUnload
@@ -169,17 +173,22 @@ ECPropertySynthesize(cellClass);
 //! Handle selecting a table row.
 // --------------------------------------------------------------------------
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView*) table didSelectRowAtIndexPath:(NSIndexPath*) path
 {
+	BOOL subviewOpened = NO;
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+	
+	// open a subview?
 	ECNavigationController* navigation = [ECNavigationController currentController];
-	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	if ([item boolForKey: kEditableKey])
+	if (navigation)
 	{
-		[navigation openEditorForItem: item];
+		subviewOpened = [navigation openSubviewForItem: item];
 	}
-	else
+
+	// reset the selection?
+	if (!subviewOpened && ![item boolForKey:kSelectableKey])
 	{
-		[navigation openViewerForItem: item];
+		[table deselectRowAtIndexPath: path animated: YES];
 	}
 }
 

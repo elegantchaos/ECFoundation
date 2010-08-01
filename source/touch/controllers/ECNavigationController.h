@@ -17,8 +17,10 @@
 @property (retain, nonatomic) IBOutlet UIViewController* initialView;
 
 + (ECNavigationController*) currentController;
-- (void) openViewerForItem: (ECDataItem*) item;
-- (void) openEditorForItem: (ECDataItem*) item;
-- (void) openViewForItem: (ECDataItem*) item classKey: (NSString*) classKey nibKey: (NSString*) nibKey;
+
+- (BOOL) openSubviewForItem: (ECDataItem*) item;
+- (BOOL) openViewerForItem: (ECDataItem*) item;
+- (BOOL) openEditorForItem: (ECDataItem*) item;
+- (BOOL) openViewForItem: (ECDataItem*) item classKey: (NSString*) classKey nibKey: (NSString*) nibKey;
 
 @end

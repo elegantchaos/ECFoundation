@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 
+#import <ECFoundation/ECTickListTableController.h>
 
 @implementation FirstViewController
 
@@ -28,12 +29,36 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
+	// make some test data to display/edit
+	
+	ECDataItem* data = [ECDataItem item];
+	ECDataItem* section1 = [ECDataItem itemWithItemsWithKey: kLabelKey andValues: @"one", @"two", @"three", nil];
+	[section1 setObject: @"Editable Section" forKey: kHeaderKey];
+	[section1 setBooleanDefault: YES forKey: kEditableKey];
+	[data addItem: section1];
+
+	ECDataItem* section2 = [ECDataItem itemWithItemsWithKey: kLabelKey andValues: @"four", @"five", @"six", nil];
+	[section2 setObject: @"Selectable Section" forKey: kHeaderKey];
+	[section2 setBooleanDefault: YES forKey: kSelectableKey];
+	[data addItem: section2];
+
+	ECDataItem* section3 = [ECDataItem item];
+	ECDataItem* tickableItem = [ECDataItem itemWithObjectsAndKeys: @"Tickable Items",kLabelKey, [ECTickListTableController class], kEditorKey, nil];
+	ECDataItem* subsection1 = [ECDataItem itemWithItemsWithKey: kValueKey andValues: @"scooby", @"dooby", @"doo", nil];
+	[tickableItem setBoolean: YES forKey: kEditableKey];
+	[tickableItem addItem: subsection1];
+	[tickableItem selectItemAtIndex: 0 inSection: 0];
+	[section3 addItem: tickableItem];
+	[section3 setObject: @"Subview Section" forKey: kHeaderKey];
+	[data addItem: section3];
+
+	self.data = data;
+	
     [super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
