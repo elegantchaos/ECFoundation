@@ -126,6 +126,13 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */; };
+		22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */; };
+		22F8C9D51205D633009486B3 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9D31205D633009486B3 /* about.png */; };
+		22F8C9D61205D633009486B3 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9D41205D633009486B3 /* test.png */; };
+		22F8C9E01205D671009486B3 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9DE1205D671009486B3 /* icon57.png */; };
+		22F8C9E11205D671009486B3 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9DF1205D671009486B3 /* icon72.png */; };
+		22F8CA0C1205D774009486B3 /* Credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22F8CA0B1205D774009486B3 /* Credits.txt */; };
 		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
 		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -281,6 +288,13 @@
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
 		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22F8C9BC1205D51E009486B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ECTouchAboutBox.xib; sourceTree = "<group>"; };
+		22F8C9BE1205D51E009486B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ECTouchTextItemEditor.xib; sourceTree = "<group>"; };
+		22F8C9D31205D633009486B3 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		22F8C9D41205D633009486B3 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		22F8C9DE1205D671009486B3 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		22F8C9DF1205D671009486B3 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		22F8CA0B1205D774009486B3 /* Credits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Credits.txt; sourceTree = "<group>"; };
 		22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundationTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = ECFoundation; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -371,8 +385,9 @@
 		089C1665FE841158C02AAC07 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				223CBAFB1205C7680008A641 /* tests */,
 				223CBAF01205C7580008A641 /* mac */,
+				223CBAFB1205C7680008A641 /* tests */,
+				22F8C9BA1205D51E009486B3 /* touch */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -498,6 +513,11 @@
 		223CBAFE1205C7680008A641 /* touchtest */ = {
 			isa = PBXGroup;
 			children = (
+				22F8C9DE1205D671009486B3 /* icon57.png */,
+				22F8C9DF1205D671009486B3 /* icon72.png */,
+				22F8C9D31205D633009486B3 /* about.png */,
+				22F8CA0B1205D774009486B3 /* Credits.txt */,
+				22F8C9D41205D633009486B3 /* test.png */,
 				223CBAFF1205C7680008A641 /* ECFoundationTouchTest.plist */,
 				227272711205CDBB009CB32F /* FirstView.xib */,
 				227272731205CDBB009CB32F /* InfoPlist.strings */,
@@ -739,6 +759,16 @@
 			path = animation;
 			sourceTree = "<group>";
 		};
+		22F8C9BA1205D51E009486B3 /* touch */ = {
+			isa = PBXGroup;
+			children = (
+				22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */,
+				22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */,
+			);
+			name = touch;
+			path = resources/touch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -946,6 +976,13 @@
 				2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */,
 				2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */,
 				2272727C1205CDBB009CB32F /* SecondView.xib in Resources */,
+				22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */,
+				22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */,
+				22F8C9D51205D633009486B3 /* about.png in Resources */,
+				22F8C9D61205D633009486B3 /* test.png in Resources */,
+				22F8C9E01205D671009486B3 /* icon57.png in Resources */,
+				22F8C9E11205D671009486B3 /* icon72.png in Resources */,
+				22F8CA0C1205D774009486B3 /* Credits.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,6 +1220,22 @@
 			path = English.lproj;
 			sourceTree = "<group>";
 		};
+		22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22F8C9BC1205D51E009486B3 /* English */,
+			);
+			name = ECTouchAboutBox.xib;
+			sourceTree = "<group>";
+		};
+		22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22F8C9BE1205D51E009486B3 /* English */,
+			);
+			name = ECTouchTextItemEditor.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1243,7 +1296,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "ECFoundation TouchTest";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
 		};
@@ -1259,7 +1312,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "ECFoundation TouchTest";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};
