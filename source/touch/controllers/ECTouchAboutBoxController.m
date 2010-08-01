@@ -46,7 +46,7 @@ ECPropertySynthesize(logo);
 	NSString* imageName = [info objectForKey: @"CFBundleIconFile"];
 	NSString* applicationText = [info objectForKey: @"CFBundleDisplayName"];
 	NSString* versionText = [NSString stringWithFormat: @"Version %@ (%@ %@)", [info objectForKey:@"CFBundleShortVersionString"], [info objectForKey:@"CFBundleVersion"], EC_CONFIGURATION_STRING];
-	NSString* copyrightText = [info objectForKey: @"ECAboutBoxCopyright"];
+	NSString* copyrightText = [info objectForKey: @"NSHumanReadableCopyright"];
 	
 	self.application.text = applicationText;
 	self.version.text = versionText;

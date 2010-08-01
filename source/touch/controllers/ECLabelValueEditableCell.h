@@ -8,10 +8,14 @@
 #import <Foundation/Foundation.h>
 #import "ECLabelValueCell.h"
 
-@interface ECLabelValueEditableCell : ECLabelValueCell 
+@interface ECLabelValueEditableCell : ECLabelValueCell<UITextFieldDelegate> 
 {
-
+	ECPropertyDefineVariable(label, UILabel*);
+	ECPropertyDefineVariable(text, UITextField*);
 }
+
+ECPropertyDefineRN(label, UILabel*);
+ECPropertyDefineRN(text, UITextField*);
 
 // --------------------------------------------------------------------------
 // Public Methods

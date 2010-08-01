@@ -45,7 +45,13 @@ ECPropertyDefineRN(items, NSMutableArray*);
 
 - (id)				objectForKey: (id) key;
 - (BOOL)			boolForKey: (id) key;
+- (NSInteger)		intForKey: (id) key;
+- (NSInteger)		intForKey: (id) key orDefault: (NSInteger) defaultValue;
 - (void)			setObject: (id) object forKey: (id) key;
+- (void)			setDefault: (id) object forKey: (id) key;
+
+- (void)			setBoolean: (BOOL) value forKey: (id) key;
+- (void)			setBooleanDefault: (BOOL) value forKey: (id) key;
 
 - (NSUInteger)		count;
 
@@ -80,24 +86,25 @@ ECPropertyDefineRN(items, NSMutableArray*);
 // Data Key Constants
 // --------------------------------------------------------------------------
 
-extern NSString *const kHeaderKey;
-extern NSString *const kFooterKey;
-extern NSString *const kLabelKey;
-extern NSString *const kValueKey;
 extern NSString *const kAccessoryKey;
-extern NSString *const kMoveableKey;
-extern NSString *const kViewerKey;
-extern NSString *const kViewerNibKey;
+extern NSString *const kCellClassKey;
+extern NSString *const kDefaultsKey;
+extern NSString *const kEditableKey;
 extern NSString *const kEditorKey;
 extern NSString *const kEditorNibKey;
-extern NSString *const kEditableKey;
-extern NSString *const kSelectionKey;
-extern NSString *const kSecureKey;
-
-extern NSString *const kPropertiesKey;
+extern NSString *const kFooterKey;
+extern NSString *const kHeaderKey;
 extern NSString *const kItemsKey;
+extern NSString *const kLabelKey;
+extern NSString *const kMoveableKey;
 extern NSString *const kParentKey;
-extern NSString *const kDefaultsKey;
+extern NSString *const kPropertiesKey;
+extern NSString *const kSecureKey;
+extern NSString *const kSelectableKey;
+extern NSString *const kSelectionKey;
+extern NSString *const kValueKey;
+extern NSString *const kViewerKey;
+extern NSString *const kViewerNibKey;
 
 // --------------------------------------------------------------------------
 // Notifications

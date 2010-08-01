@@ -90,13 +90,35 @@ static ECNavigationController* gCurrentController = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Open an editor or viewer subview for the item.
+//! If the item has both defined, we use the editor.
+// --------------------------------------------------------------------------
+
+- (BOOL) openSubviewForItem: (ECDataItem*) item
+{
+	BOOL opened = NO;
+	
+	if ([item objectForKey: kEditorKey] != nil)
+	{
+		opened = [self openEditorForItem: item];
+	}
+	
+	if (!opened)
+	{
+		opened = [self openViewerForItem: item];
+	}
+	
+	return opened;
+}
+
+// --------------------------------------------------------------------------
 //! Open the default viewer controller for the given item, and push it into the 
 //! navigation stack as the current controller.
 // --------------------------------------------------------------------------
 
-- (void) openViewerForItem: (ECDataItem*) item
+- (BOOL) openViewerForItem: (ECDataItem*) item
 {
-	[self openViewForItem: item classKey: kViewerKey nibKey: kViewerNibKey];
+	return [self openViewForItem: item classKey: kViewerKey nibKey: kViewerNibKey];
 }
 
 // --------------------------------------------------------------------------
@@ -104,9 +126,9 @@ static ECNavigationController* gCurrentController = nil;
 //! navigation stack as the current controller.
 // --------------------------------------------------------------------------
 
-- (void) openEditorForItem: (ECDataItem*) item
+- (BOOL) openEditorForItem: (ECDataItem*) item
 {
-	[self openViewForItem: item classKey: kEditorKey nibKey: kEditorNibKey];
+	return [self openViewForItem: item classKey: kEditorKey nibKey: kEditorNibKey];
 }
 
 // --------------------------------------------------------------------------
@@ -114,8 +136,10 @@ static ECNavigationController* gCurrentController = nil;
 //! navigation stack as the current controller.
 // --------------------------------------------------------------------------
 
-- (void) openViewForItem: (ECDataItem*) item classKey: (NSString*) classKey nibKey: (NSString*) nibKey
+- (BOOL) openViewForItem: (ECDataItem*) item classKey: (NSString*) classKey nibKey: (NSString*) nibKey
 {
+	BOOL opened = NO;
+	
 	Class class = [item objectForKey: classKey];
 	if ([class isSubclassOfClass: [UIViewController class]])
 	{
@@ -132,12 +156,21 @@ static ECNavigationController* gCurrentController = nil;
 		
 		[self pushViewController: controller animated:TRUE];
 		[controller release];
-		
+		opened = YES;
 	}
 	else
 	{
-		ECDebug(ECLabelValueTableChannel, @"Class %@ is not a UIViewController", class);
+		if (class)
+		{
+			ECDebug(ECLabelValueTableChannel, @"%@ class %@ for item %@ is not a UIViewController", classKey, item, class);
+		}
+		else
+		{
+			ECDebug(ECLabelValueTableChannel, @"%@ class not set for item %@", classKey, item);
+		}
+
 	}
 
+	return opened;
 }
 @end

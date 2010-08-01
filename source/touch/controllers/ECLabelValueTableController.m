@@ -21,7 +21,6 @@
 ECPropertySynthesize(data);
 ECPropertySynthesize(cellClass);
 
-
 // --------------------------------------------------------------------------
 //! Release references and clean up.
 // --------------------------------------------------------------------------
@@ -35,16 +34,11 @@ ECPropertySynthesize(cellClass);
 
 - (void) viewDidLoad
 {
-	if ([self.data boolForKey: kEditableKey])
+	// watch for changes on all items
+	for (ECDataItem* item in self.data.items)
 	{
-		self.cellClass = [ECLabelValueEditableCell class];
+		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:item];
 	}
-	else
-	{
-		self.cellClass = [ECLabelValueCell class];
-	}
-	
-	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:[self.data itemAtIndex: 0]];
 }
 
 - (void) viewDidUnload
@@ -80,8 +74,10 @@ ECPropertySynthesize(cellClass);
 {
 	ECDataItem* data = [self.data itemAtIndex: section];
 	NSString* result = [data objectForKey: kHeaderKey];
-
-	ECDebug(LabelValueTableChannel, @"header for section %d: %@", section, result);
+	if (result)
+	{
+		ECDebug(LabelValueTableChannel, @"header for section %d: %@", section, result);
+	}
 
 	return result;
 }
@@ -95,7 +91,10 @@ ECPropertySynthesize(cellClass);
 	ECDataItem* data = [self.data itemAtIndex: section];
 	NSString* result = [data objectForKey: kFooterKey];
 
-	ECDebug(LabelValueTableChannel, @"footer for section %d: %@", section, result);
+	if (result)
+	{
+		ECDebug(LabelValueTableChannel, @"footer for section %d: %@", section, result);
+	}
 
 	return result;
 }
@@ -120,14 +119,18 @@ ECPropertySynthesize(cellClass);
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString* kCellIdentifier = @"ECLabelValueCell";
-	
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-
-	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: kCellIdentifier];
+	Class cellClass = [item objectForKey: kCellClassKey];
+	if (!cellClass)
+	{
+		cellClass = [item boolForKey: kEditableKey] ? [ECLabelValueEditableCell class] : [ECLabelValueCell class];
+	}
+	NSString* cellIdentifier = NSStringFromClass(cellClass);
+	
+	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[self.cellClass alloc] initForItem: item reuseIdentifier: kCellIdentifier] autorelease];
+		cell = [[[cellClass alloc] initForItem: item reuseIdentifier: cellIdentifier] autorelease];
 	}
 	
 	[cell setupForItem: item];
@@ -169,17 +172,22 @@ ECPropertySynthesize(cellClass);
 //! Handle selecting a table row.
 // --------------------------------------------------------------------------
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView*) table didSelectRowAtIndexPath:(NSIndexPath*) path
 {
+	BOOL subviewOpened = NO;
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+	
+	// open a subview?
 	ECNavigationController* navigation = [ECNavigationController currentController];
-	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-	if ([item boolForKey: kEditableKey])
+	if (navigation)
 	{
-		[navigation openEditorForItem: item];
+		subviewOpened = [navigation openSubviewForItem: item];
 	}
-	else
+
+	// reset the selection?
+	if (!subviewOpened && ![item boolForKey:kSelectableKey])
 	{
-		[navigation openViewerForItem: item];
+		[table deselectRowAtIndexPath: path animated: YES];
 	}
 }
 
