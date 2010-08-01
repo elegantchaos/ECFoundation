@@ -6,6 +6,24 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		22FDC6C2120615F900011C6F /* Everything */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */;
+			buildPhases = (
+			);
+			dependencies = (
+				22FDC6C7120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6C9120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6CB120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6CD120615FF00011C6F /* PBXTargetDependency */,
+				22FDC6CF120615FF00011C6F /* PBXTargetDependency */,
+			);
+			name = Everything;
+			productName = Everything;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
@@ -161,6 +179,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ECFoundation;
+		};
+		22FDC6C6120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
+			remoteInfo = ECFoundation;
+		};
+		22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22FBFE6611DD0D9400578A66 /* ECFoundation Touch */;
+			remoteInfo = "ECFoundation Touch";
+		};
+		22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225EC67111EBAA4800A97AEA /* ECFoundation SenTest */;
+			remoteInfo = "ECFoundation SenTest";
+		};
+		22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
+			remoteInfo = "ECFoundation GHUnit";
+		};
+		22FDC6CE120615FF00011C6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 224C9BA81205BFE0005441CE /* ECFoundation TouchTest */;
+			remoteInfo = "ECFoundation TouchTest";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -970,6 +1023,7 @@
 				225EC67111EBAA4800A97AEA /* ECFoundation SenTest */,
 				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
 				224C9BA81205BFE0005441CE /* ECFoundation TouchTest */,
+				22FDC6C2120615F900011C6F /* Everything */,
 			);
 		};
 /* End PBXProject section */
@@ -1154,6 +1208,31 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
 			targetProxy = 227333B311EBBA2300695FB4 /* PBXContainerItemProxy */;
+		};
+		22FDC6C7120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
+			targetProxy = 22FDC6C6120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6C9120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22FBFE6611DD0D9400578A66 /* ECFoundation Touch */;
+			targetProxy = 22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6CB120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225EC67111EBAA4800A97AEA /* ECFoundation SenTest */;
+			targetProxy = 22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6CD120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
+			targetProxy = 22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */;
+		};
+		22FDC6CF120615FF00011C6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 224C9BA81205BFE0005441CE /* ECFoundation TouchTest */;
+			targetProxy = 22FDC6CE120615FF00011C6F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1528,6 +1607,34 @@
 			};
 			name = Release;
 		};
+		22FDC6C3120615FA00011C6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Everything;
+			};
+			name = Debug;
+		};
+		22FDC6C4120615FA00011C6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Everything;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		22FDC6C5120615FA00011C6F /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Everything;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1586,6 +1693,16 @@
 				22FBFE6811DD0D9400578A66 /* Debug */,
 				22FBFE6911DD0D9400578A66 /* Release */,
 				2274C8EA11FF841B00E5C351 /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FDC6C3120615FA00011C6F /* Debug */,
+				22FDC6C4120615FA00011C6F /* Release */,
+				22FDC6C5120615FA00011C6F /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
