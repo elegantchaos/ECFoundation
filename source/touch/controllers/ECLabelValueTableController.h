@@ -11,11 +11,9 @@
 @interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
 	ECPropertyDefineVariable(data, ECDataItem*);
-	ECPropertyDefineVariable(cellClass, Class);
 }
 
 ECPropertyDefineRN(data, ECDataItem*);
-ECPropertyDefineAN(cellClass, Class);
 
 @end
 

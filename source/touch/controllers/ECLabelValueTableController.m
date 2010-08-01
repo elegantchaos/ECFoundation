@@ -19,7 +19,6 @@
 // --------------------------------------------------------------------------
 
 ECPropertySynthesize(data);
-ECPropertySynthesize(cellClass);
 
 
 // --------------------------------------------------------------------------
@@ -35,15 +34,6 @@ ECPropertySynthesize(cellClass);
 
 - (void) viewDidLoad
 {
-	if ([self.data boolForKey: kEditableKey])
-	{
-		self.cellClass = [ECLabelValueEditableCell class];
-	}
-	else
-	{
-		self.cellClass = [ECLabelValueCell class];
-	}
-
 	// watch for changes on all items
 	for (ECDataItem* item in self.data.items)
 	{
@@ -124,14 +114,14 @@ ECPropertySynthesize(cellClass);
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString* kCellIdentifier = @"ECLabelValueCell";
-	
 	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
-
-	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: kCellIdentifier];
+	Class cellClass = [item boolForKey: kEditableKey] ? [ECLabelValueEditableCell class] : [ECLabelValueCell class];
+	NSString* cellIdentifier = NSStringFromClass(cellClass);
+	
+	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[self.cellClass alloc] initForItem: item reuseIdentifier: kCellIdentifier] autorelease];
+		cell = [[[cellClass alloc] initForItem: item reuseIdentifier: cellIdentifier] autorelease];
 	}
 	
 	[cell setupForItem: item];

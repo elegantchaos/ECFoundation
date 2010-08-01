@@ -48,7 +48,6 @@
 	ECDataItem* section3 = [ECDataItem item];
 	ECDataItem* tickableItem = [ECDataItem itemWithObjectsAndKeys: @"Tickable Items",kLabelKey, [ECTickListTableController class], kEditorKey, nil];
 	ECDataItem* subsection1 = [ECDataItem itemWithItemsWithKey: kValueKey andValues: @"scooby", @"dooby", @"doo", nil];
-	[tickableItem setBoolean: YES forKey: kEditableKey];
 	[tickableItem addItem: subsection1];
 	[tickableItem selectItemAtIndex: 0 inSection: 0];
 	[section3 addItem: tickableItem];

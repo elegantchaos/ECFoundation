@@ -98,7 +98,7 @@ static ECNavigationController* gCurrentController = nil;
 {
 	BOOL opened = NO;
 	
-	if ([item boolForKey: kEditableKey])
+	if ([item objectForKey: kEditorKey] != nil)
 	{
 		opened = [self openEditorForItem: item];
 	}
