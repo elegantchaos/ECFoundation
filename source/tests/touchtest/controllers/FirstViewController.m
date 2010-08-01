@@ -36,6 +36,10 @@
 	
 	ECDataItem* data = [ECDataItem item];
 	ECDataItem* section1 = [ECDataItem itemWithItemsWithKey: kLabelKey andValues: @"one", @"two", @"three", nil];
+	for (ECDataItem* item in section1.items)
+	{
+		[item setObject: @"doodah" forKey:kValueKey];
+	}
 	[section1 setObject: @"Editable Section" forKey: kHeaderKey];
 	[section1 setBooleanDefault: YES forKey: kEditableKey];
 	[data addItem: section1];
