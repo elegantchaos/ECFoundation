@@ -35,6 +35,7 @@ ECPropertySynthesize(cellClass);
 - (void) viewDidLoad
 {
 	// watch for changes on all items
+	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:self.data];
 	for (ECDataItem* item in self.data.items)
 	{
 		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:item];
@@ -48,7 +49,11 @@ ECPropertySynthesize(cellClass);
 
 - (void) childChanged: (NSNotification*) notification
 {
-	[[self tableView] reloadData];
+	UITableView* table = [self tableView];
+	if (table)
+	{
+		[table reloadData];
+	}
 }
 
 #pragma mark UITableViewDataSource methods
@@ -123,7 +128,7 @@ ECPropertySynthesize(cellClass);
 	Class cellClass = [item objectForKey: kCellClassKey];
 	if (!cellClass)
 	{
-		cellClass = [item boolForKey: kEditableKey] ? [ECLabelValueEditableCell class] : [ECLabelValueCell class];
+		cellClass = [ECLabelValueCell class];
 	}
 	NSString* cellIdentifier = NSStringFromClass(cellClass);
 	

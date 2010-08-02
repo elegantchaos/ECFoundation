@@ -184,35 +184,35 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ECFoundation */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ECFoundation;
 		};
 		22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 22FBFE6611DD0D9400578A66 /* ECFoundation Touch */;
+			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
 			remoteInfo = "ECFoundation Touch";
 		};
 		22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 225EC67111EBAA4800A97AEA /* ECFoundation SenTest */;
+			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
 			remoteInfo = "ECFoundation SenTest";
 		};
 		22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
+			remoteGlobalIDString = 227333A311EBBA0800695FB4;
 			remoteInfo = "ECFoundation GHUnit";
 		};
 		22FDC6CE120615FF00011C6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 224C9BA81205BFE0005441CE /* ECFoundation TouchTest */;
+			remoteGlobalIDString = 224C9BA81205BFE0005441CE;
 			remoteInfo = "ECFoundation TouchTest";
 		};
 /* End PBXContainerItemProxy section */
