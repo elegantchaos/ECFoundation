@@ -11,17 +11,6 @@
 @implementation ECLabelValueCell
 
 // --------------------------------------------------------------------------
-// Constants
-// --------------------------------------------------------------------------
-
-NSString *const kAutocapitalizationTypeKey = @"AutocapitalizationType";
-NSString *const kAutocorrectionTypeKey = @"AutocorrectionType";
-NSString *const kKeyboardTypeKey = @"KeyboardType";
-NSString *const kKeyboardAppearanceKey = @"KeyboardAppearance";
-NSString *const kReturnKeyTypeKey = @"ReturnKeyType";
-NSString *const kEnablesReturnKeyAutomaticallyKey = @"EnablesReturnKeyAutomatically";
-
-// --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
 
@@ -71,6 +60,23 @@ ECPropertySynthesize(item);
 		detail = [detailItem objectForKey: kValueKey];
 	}
 	
+	if ((detail == nil) && (item.items != nil))
+	{
+		NSUInteger count = [item.items count];
+		if (count > 0)
+		{
+			ECDataItem* list = [item itemAtIndex: 0];
+			count = [list.items count];
+			if (count > 1)
+			{
+				detail = [NSString stringWithFormat: @"%@, %@, …", [[list itemAtIndex: 0] objectForKey: kValueKey], [[list itemAtIndex: 1] objectForKey: kValueKey]];
+			}
+			else
+			{
+				detail = [NSString stringWithFormat: @"%@, …", [[list itemAtIndex: 0] objectForKey: kValueKey]];
+			}
+		}
+	}
 	self.detailTextLabel.text = detail;
 }
 

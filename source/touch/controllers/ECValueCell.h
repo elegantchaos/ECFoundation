@@ -10,7 +10,7 @@
 
 @class ECDataItem;
 
-@interface ECLabelValueCell : UITableViewCell<ECDataDrivenTableCell> 
+@interface ECValueCell : UITableViewCell<ECDataDrivenTableCell> 
 {
 	ECPropertyDefineVariable(item, ECDataItem*);
 }
@@ -27,13 +27,5 @@ ECPropertyDefineRN(item, ECDataItem*);
 
 - (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
 - (void) setupForItem:(ECDataItem *)item;
-
-// --------------------------------------------------------------------------
-// Internal Methods
-// --------------------------------------------------------------------------
-
-- (void) setupLabel;
-- (void) setupDetail;
-- (void) setupAccessory;
 
 @end

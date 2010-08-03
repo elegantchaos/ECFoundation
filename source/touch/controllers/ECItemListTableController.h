@@ -1,39 +1,41 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 31/07/2010
+//! @date 03/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
-#import "ECDataDrivenTableCell.h"
+#import "ECProperties.h"
+#import "ECDataDrivenView.h"
 
 @class ECDataItem;
 
-@interface ECLabelValueCell : UITableViewCell<ECDataDrivenTableCell> 
+@interface ECItemListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
+
+// --------------------------------------------------------------------------
+// Instance Variables
+// --------------------------------------------------------------------------
+
 {
-	ECPropertyDefineVariable(item, ECDataItem*);
+	ECDataItem*						mSelection;		//!< The selected item.
+	BOOL							mEditable;		//!< Are the items editable?
+	UIBarButtonItem*				mAddButton;		
+	
+	ECPropertyDefineVariable(data, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
-// Public Properties.
+// Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(item, ECDataItem*);
+ECPropertyDefineRN(data, ECDataItem*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
-- (void) setupForItem:(ECDataItem *)item;
-
-// --------------------------------------------------------------------------
-// Internal Methods
-// --------------------------------------------------------------------------
-
-- (void) setupLabel;
-- (void) setupDetail;
-- (void) setupAccessory;
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 
 @end
+
+

@@ -142,7 +142,15 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */; };
+		22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BD8F8712081FAA006DEA84 /* ECItemListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */; };
+		22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F9E12082712006DEA84 /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BD8FA312082712006DEA84 /* ECValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8F9F12082712006DEA84 /* ECValueCell.m */; };
+		22BD8FA412082712006DEA84 /* ECValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8FA012082712006DEA84 /* ECValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BD8FA512082712006DEA84 /* ECValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8FA112082712006DEA84 /* ECValueEditableCell.m */; };
+		22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8FA612082773006DEA84 /* ECCellProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BD8FA912082773006DEA84 /* ECCellProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8FA712082773006DEA84 /* ECCellProperties.m */; };
+		22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */; };
 		22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */; };
 		22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */; };
@@ -338,6 +346,14 @@
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
 		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECItemListTableController.h; path = controllers/ECItemListTableController.h; sourceTree = "<group>"; };
+		22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECItemListTableController.m; path = controllers/ECItemListTableController.m; sourceTree = "<group>"; };
+		22BD8F9E12082712006DEA84 /* ECValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECValueCell.h; path = controllers/ECValueCell.h; sourceTree = "<group>"; };
+		22BD8F9F12082712006DEA84 /* ECValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECValueCell.m; path = controllers/ECValueCell.m; sourceTree = "<group>"; };
+		22BD8FA012082712006DEA84 /* ECValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECValueEditableCell.h; path = controllers/ECValueEditableCell.h; sourceTree = "<group>"; };
+		22BD8FA112082712006DEA84 /* ECValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECValueEditableCell.m; path = controllers/ECValueEditableCell.m; sourceTree = "<group>"; };
+		22BD8FA612082773006DEA84 /* ECCellProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCellProperties.h; path = controllers/ECCellProperties.h; sourceTree = "<group>"; };
+		22BD8FA712082773006DEA84 /* ECCellProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCellProperties.m; path = controllers/ECCellProperties.m; sourceTree = "<group>"; };
 		22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ECUtilities.h"; path = "utilities/UIColor+ECUtilities.h"; sourceTree = "<group>"; };
 		22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ECUtilities.m"; path = "utilities/UIColor+ECUtilities.m"; sourceTree = "<group>"; };
 		22F8C9BC1205D51E009486B3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ECTouchAboutBox.xib; sourceTree = "<group>"; };
@@ -589,6 +605,12 @@
 		22592EB411F5BBBE0056FF4B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22BD8FA612082773006DEA84 /* ECCellProperties.h */,
+				22BD8FA712082773006DEA84 /* ECCellProperties.m */,
+				22BD8F9E12082712006DEA84 /* ECValueCell.h */,
+				22BD8F9F12082712006DEA84 /* ECValueCell.m */,
+				22BD8FA012082712006DEA84 /* ECValueEditableCell.h */,
+				22BD8FA112082712006DEA84 /* ECValueEditableCell.m */,
 				224C9B5E1204A495005441CE /* ECLabelValueCell.h */,
 				224C9B5F1204A495005441CE /* ECLabelValueCell.m */,
 				224C9B4C1204A092005441CE /* ECLabelValueEditableCell.h */,
@@ -599,6 +621,8 @@
 				22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
 				224C9B6A1204A5FF005441CE /* ECDataDrivenTableCell.h */,
+				22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */,
+				22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */,
 				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
 				2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */,
 				22592EB511F5BBDA0056FF4B /* ECLabelValueTableController.h */,
@@ -860,8 +884,12 @@
 				227271C81205C98B009CB32F /* ECTickListTableController.h in Headers */,
 				227271CA1205C98B009CB32F /* ECLabelValueTableController.h in Headers */,
 				227271CC1205C98B009CB32F /* ECNavigationController.h in Headers */,
-				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
 				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
+				22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */,
+				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
+				22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */,
+				22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */,
+				22BD8FA412082712006DEA84 /* ECValueEditableCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1166,6 +1194,10 @@
 				227271CD1205C98B009CB32F /* ECNavigationController.m in Sources */,
 				227271CF1205C98B009CB32F /* ECDropAllViewsAnimation.m in Sources */,
 				22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */,
+				22BD8F8712081FAA006DEA84 /* ECItemListTableController.m in Sources */,
+				22BD8FA312082712006DEA84 /* ECValueCell.m in Sources */,
+				22BD8FA512082712006DEA84 /* ECValueEditableCell.m in Sources */,
+				22BD8FA912082773006DEA84 /* ECCellProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

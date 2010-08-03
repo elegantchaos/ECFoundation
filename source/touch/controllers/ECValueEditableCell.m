@@ -5,16 +5,15 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECLabelValueEditableCell.h"
+#import "ECValueEditableCell.h"
 #import "ECDataItem.h"
 #import "UIColor+ECUtilities.h"
 #import "ECCellProperties.h"
 
-@implementation ECLabelValueEditableCell
+@implementation ECValueEditableCell
 
 static const CGFloat kVerticalInset = 11.0f;
 static const CGFloat kHorizontalInset = 32.0f;
-static const CGFloat kHorizontalOffset = 32.0f;
 
 enum
 {
@@ -31,15 +30,13 @@ ECPropertySynthesize(text);
 
 - (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
 {
-	if ((self = [super initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: identifier]) != nil)
+	if ((self = [super initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifier]) != nil)
 	{
 		CGRect rect = CGRectInset(self.bounds, kHorizontalInset, kVerticalInset);
-		rect.origin.x += kHorizontalOffset;
-		rect.size.width -= kHorizontalOffset;
 
 		UITextField* textField = [[UITextField alloc] initWithFrame: rect];
 		textField.clearsOnBeginEditing = NO;
-		textField.textAlignment = UITextAlignmentRight;
+		textField.textAlignment = UITextAlignmentLeft;
 		textField.textColor = [UIColor blueTextColor];
         textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[textField setDelegate:self];
@@ -58,8 +55,6 @@ ECPropertySynthesize(text);
 - (void) setupForItem: (ECDataItem*) item
 {
 	self.item = item;
-	
-	[self setupLabel];
 	
 	self.text.text = [item objectForKey: kValueKey];
 	self.text.secureTextEntry = [item boolForKey: kSecureKey];
