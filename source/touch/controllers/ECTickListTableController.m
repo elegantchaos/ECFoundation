@@ -107,6 +107,28 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	[super viewDidUnload];
 }
 
+
+// --------------------------------------------------------------------------
+// Make sure that the item links are consistent.
+// --------------------------------------------------------------------------
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.data updateParentLinks];
+	[super viewWillAppear:animated];
+}
+
+// --------------------------------------------------------------------------
+//! Mark the table for reload in case any contents are changed
+//! whilst we're hidden.
+// --------------------------------------------------------------------------
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[self.tableView reloadData];
+	[super viewWillDisappear:animated];
+}
+
 // --------------------------------------------------------------------------
 //! Toggle editing of a pod.
 // --------------------------------------------------------------------------

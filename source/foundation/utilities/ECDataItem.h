@@ -75,7 +75,9 @@ ECPropertyDefineRN(items, NSMutableArray*);
 - (NSUInteger)		selectedItemIndex;
 - (NSIndexPath*)	selectedItemIndexPath;
 
+- (void)			updateParentLinks;
 - (void)			postChangedNotifications;
+- (void)			postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer;
 
 - (NSDictionary*)	asNestedDictionary;
 - (BOOL)			writeToURL:(NSURL*) url atomically:(BOOL)atomically; // the atomically flag is ignored if url of a type that cannot be written atomically.
@@ -112,4 +114,7 @@ extern NSString *const kViewerNibKey;
 
 extern NSString *const DataItemChanged;
 extern NSString *const DataItemChildChanged;
+
+extern NSString *const DataItemMoved;
+extern NSString *const DataItemChildMoved;
 

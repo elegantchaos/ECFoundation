@@ -32,6 +32,10 @@ ECPropertySynthesize(cellClass);
     [super dealloc];
 }
 
+// --------------------------------------------------------------------------
+//! Finish setting up the view.
+// --------------------------------------------------------------------------
+
 - (void) viewDidLoad
 {
 	// watch for changes on all items
@@ -42,9 +46,34 @@ ECPropertySynthesize(cellClass);
 	}
 }
 
+// --------------------------------------------------------------------------
+//! Clean up view.
+// --------------------------------------------------------------------------
+
 - (void) viewDidUnload
 {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
+// --------------------------------------------------------------------------
+//! Make sure that the item links are consistent.
+// --------------------------------------------------------------------------
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.data updateParentLinks];
+	[super viewWillAppear:animated];
+}
+
+// --------------------------------------------------------------------------
+//! Mark the table for reload in case any contents are changed
+//! whilst we're hidden.
+// --------------------------------------------------------------------------
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[self.tableView reloadData];
+	[super viewWillDisappear:animated];
 }
 
 - (void) childChanged: (NSNotification*) notification

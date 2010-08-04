@@ -20,6 +20,7 @@
 	ECDataItem*						mSelection;		//!< The selected item.
 	BOOL							mEditable;		//!< Are the items editable?
 	UIBarButtonItem*				mAddButton;		
+	BOOL							mIgnoreNextNotification;
 	
 	ECPropertyDefineVariable(data, ECDataItem*);
 }

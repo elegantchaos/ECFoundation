@@ -110,6 +110,27 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 }
 
 // --------------------------------------------------------------------------
+// Make sure that the item links are consistent.
+// --------------------------------------------------------------------------
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.data updateParentLinks];
+	[super viewWillAppear:animated];
+}
+
+// --------------------------------------------------------------------------
+//! Mark the table for reload in case any contents are changed
+//! whilst we're hidden.
+// --------------------------------------------------------------------------
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[self.tableView reloadData];
+	[super viewWillDisappear:animated];
+}
+
+// --------------------------------------------------------------------------
 //! Toggle editing of a pod.
 // --------------------------------------------------------------------------
 
@@ -130,7 +151,14 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (void) childChanged: (NSNotification*) sender
 {
-	[self.tableView reloadData];
+	if (mIgnoreNextNotification)
+	{
+		mIgnoreNextNotification = NO;
+	}
+	else
+	{
+		[self.tableView reloadData];
+	}
 }
 
 #pragma mark UITableViewDataSource methods
@@ -288,6 +316,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 
 - (void) tableView: (UITableView*) table commitEditingStyle: (UITableViewCellEditingStyle) style forRowAtIndexPath: (NSIndexPath*) path
 {
+	mIgnoreNextNotification = YES;
 	[self.data removeItemAtIndexPath: path];
 	[table deleteRowsAtIndexPaths:[NSArray arrayWithObject: path] withRowAnimation: UITableViewRowAnimationFade];
 }

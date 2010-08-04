@@ -38,6 +38,9 @@ NSString *const kViewerNibKey = @"ViewerNib";
 NSString *const DataItemChanged = @"ECDataItemChanged";
 NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
 
+NSString *const DataItemMoved = @"ECDataItemMoved";
+NSString *const DataItemChildMoved = @"ECDataItemChildMoved";
+
 // --------------------------------------------------------------------------
 // Private Methods
 // --------------------------------------------------------------------------
@@ -362,10 +365,7 @@ ECPropertySynthesize(parent);
 - (void) addItem: (ECDataItem*) item
 {
 	[self.items addObject: item];
-	if (item.parent == nil)
-	{
-		item.parent = self;
-	}
+	item.parent = self;
 }
 
 // --------------------------------------------------------------------------
@@ -523,7 +523,7 @@ ECPropertySynthesize(parent);
 	[self.items removeObjectAtIndex: from];
 	[self.items insertObject: item atIndex: to];
 	[self invalidateCaches];
-	[item postChangedNotifications];
+	[item postMovedNotificationsFromOldContainer: self.parent toNewContainer: self.parent];
 	[item release];
 }
 
@@ -531,11 +531,21 @@ ECPropertySynthesize(parent);
 
 - (void) moveItemFromIndexPath: (NSIndexPath*) fromPath toIndexPath: (NSIndexPath*) toPath
 {
-	ECDataItem* item = [[self itemAtIndexPath: fromPath] retain];
-	[self removeItemAtIndexPath: fromPath];
-	ECDataItem* toSection = [self.items objectAtIndex: [toPath indexAtPosition: 0]];
-	[toSection insertItem: item atIndex: [toPath indexAtPosition: 1]];
-	[item postChangedNotifications];
+	// remove object that we're moving
+	NSUInteger fromPositionIndex = [fromPath indexAtPosition: 1];
+	NSUInteger fromSectionIndex = [fromPath indexAtPosition: 0];
+	ECDataItem* fromSection = [self.items objectAtIndex: fromSectionIndex];
+	ECDataItem* item = [[fromSection.items objectAtIndex: fromPositionIndex] retain];
+	[fromSection.items removeObjectAtIndex: fromPositionIndex];
+
+	// insert it at new position
+	NSUInteger toPositionIndex = [toPath indexAtPosition: 1];
+	NSUInteger toSectionIndex = [toPath indexAtPosition: 0];
+	ECDataItem* toSection = [self.items objectAtIndex: toSectionIndex];
+	[toSection insertItem: item atIndex: toPositionIndex];
+	
+	// post notifications
+	[item postMovedNotificationsFromOldContainer: fromSection toNewContainer: toSection];
 	[item release];
 }
 
@@ -543,13 +553,26 @@ ECPropertySynthesize(parent);
 
 - (void) postChangedNotifications
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChanged object:self];
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName: DataItemChanged object:self];
 	if (self.parent)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChildChanged object:self.parent];
+		[nc postNotificationName: DataItemChildChanged object:self.parent];
 	}
 }
 
+// --------------------------------------------------------------------------
+
+- (void) postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer
+{
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName: DataItemMoved object:self];
+	[nc postNotificationName: DataItemChildMoved object: oldContainer];
+	if (oldContainer != newContainer)
+	{
+		[nc postNotificationName: DataItemChildMoved object: newContainer];
+	}
+}
 // --------------------------------------------------------------------------
 //! Set the kSelectionKey property to one of our items.
 // --------------------------------------------------------------------------
@@ -656,6 +679,23 @@ ECPropertySynthesize(parent);
 	}
 
 	return [NSIndexPath indexPathWithIndexes:  indexes length: 2];
+}
+
+// --------------------------------------------------------------------------
+//! Ensure that parent links are pointing to the correct items.
+//! If the same item has been added to more than one parents,
+//! then only one of the parents should be displayed at any one
+//! time, and you will need to call this method before displaying
+//! each parent.
+// --------------------------------------------------------------------------
+
+- (void) updateParentLinks
+{
+	for (ECDataItem* item in self.items)
+	{
+		item.parent = self;
+		[item updateParentLinks];
+	}
 }
 
 @end
