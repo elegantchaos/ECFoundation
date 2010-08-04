@@ -115,6 +115,3 @@ extern NSString *const kViewerNibKey;
 extern NSString *const DataItemChanged;
 extern NSString *const DataItemChildChanged;
 
-extern NSString *const DataItemMoved;
-extern NSString *const DataItemChildMoved;
-

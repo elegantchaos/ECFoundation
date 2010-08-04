@@ -142,6 +142,8 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22A7654A1209688A00FBE46C /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A765481209688900FBE46C /* ECListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22A7654C120968D100FBE46C /* ECListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7654B120968D100FBE46C /* ECListTableController.m */; };
 		22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BD8F8712081FAA006DEA84 /* ECItemListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */; };
 		22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F9E12082712006DEA84 /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -344,6 +346,8 @@
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLocationUtilities.m; path = ../ECLocationUtilities.m; sourceTree = "<group>"; };
 		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		22A765481209688900FBE46C /* ECListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECListTableController.h; path = controllers/ECListTableController.h; sourceTree = "<group>"; };
+		22A7654B120968D100FBE46C /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECListTableController.m; path = controllers/ECListTableController.m; sourceTree = "<group>"; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
 		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
 		22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECItemListTableController.h; path = controllers/ECItemListTableController.h; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
 				224C9B6A1204A5FF005441CE /* ECDataDrivenTableCell.h */,
+				22A765481209688900FBE46C /* ECListTableController.h */,
+				22A7654B120968D100FBE46C /* ECListTableController.m */,
 				22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */,
 				22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */,
 				2206CCA911F875CD00CDD442 /* ECTickListTableController.h */,
@@ -888,6 +894,7 @@
 				22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */,
 				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
 				22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */,
+				22A7654A1209688A00FBE46C /* ECListTableController.h in Headers */,
 				22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */,
 				22BD8FA412082712006DEA84 /* ECValueEditableCell.h in Headers */,
 			);
@@ -1198,6 +1205,7 @@
 				22BD8FA312082712006DEA84 /* ECValueCell.m in Sources */,
 				22BD8FA512082712006DEA84 /* ECValueEditableCell.m in Sources */,
 				22BD8FA912082773006DEA84 /* ECCellProperties.m in Sources */,
+				22A7654C120968D100FBE46C /* ECListTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

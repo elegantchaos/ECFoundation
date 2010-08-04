@@ -38,9 +38,6 @@ NSString *const kViewerNibKey = @"ViewerNib";
 NSString *const DataItemChanged = @"ECDataItemChanged";
 NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
 
-NSString *const DataItemMoved = @"ECDataItemMoved";
-NSString *const DataItemChildMoved = @"ECDataItemChildMoved";
-
 // --------------------------------------------------------------------------
 // Private Methods
 // --------------------------------------------------------------------------
@@ -566,11 +563,11 @@ ECPropertySynthesize(parent);
 - (void) postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer
 {
 	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-	[nc postNotificationName: DataItemMoved object:self];
-	[nc postNotificationName: DataItemChildMoved object: oldContainer];
+	[nc postNotificationName: DataItemChanged object:self];
+	[nc postNotificationName: DataItemChildChanged object: oldContainer];
 	if (oldContainer != newContainer)
 	{
-		[nc postNotificationName: DataItemChildMoved object: newContainer];
+		[nc postNotificationName: DataItemChildChanged object: newContainer];
 	}
 }
 // --------------------------------------------------------------------------

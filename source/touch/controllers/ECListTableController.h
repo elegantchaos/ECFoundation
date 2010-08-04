@@ -5,24 +5,37 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECListTableController.h"
+#import "ECProperties.h"
+#import "ECDataDrivenView.h"
 
-@interface ECItemListTableController : ECListTableController
+@class ECDataItem;
+
+@interface ECListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 
 // --------------------------------------------------------------------------
 // Instance Variables
 // --------------------------------------------------------------------------
 
 {
+	ECDataItem*						mSelection;		//!< The selected item.
+	BOOL							mEditable;		//!< Are the items editable?
+	UIBarButtonItem*				mAddButton;		
+	BOOL							mIgnoreNextNotification;
+	
+	ECPropertyDefineVariable(data, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
+ECPropertyDefineRN(data, ECDataItem*);
+
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
+
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 
 @end
 
