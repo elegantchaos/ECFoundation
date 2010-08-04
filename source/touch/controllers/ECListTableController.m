@@ -57,6 +57,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		self.title = [data objectForKey: kLabelKey];
 		mSelection = [data objectForKey: kSelectionKey];
 		mEditable = [data boolForKey: kEditableKey];
+		mExtensible = [data boolForKey: kExtensibleKey];
 	}
 	
 	return self;
@@ -89,10 +90,15 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle: kEditButtonEditTitle style: UIBarButtonItemStyleBordered target: self action: @selector(toggleEditing)];
 		self.navigationItem.rightBarButtonItem = editButton;
 		[editButton release];
-		
-		mAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
+
+		if (mExtensible)
+		{
+			mAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
+		}
+
 		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
 	}
+	
 }
 
 // --------------------------------------------------------------------------
@@ -141,7 +147,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	self.tableView.editing = editingWillBeEnabled;
 	self.navigationItem.rightBarButtonItem.title = editingWillBeEnabled ? kEditButtonDoneTitle : kEditButtonEditTitle;
 	self.navigationItem.rightBarButtonItem.style = editingWillBeEnabled ? UIBarButtonItemStyleDone : UIBarButtonItemStyleBordered;
-	self.navigationItem.leftBarButtonItem = editingWillBeEnabled ? mAddButton : nil;
+	self.navigationItem.leftBarButtonItem = editingWillBeEnabled && mExtensible ? mAddButton : nil;
 	[self.tableView reloadData];
 }
 
@@ -160,6 +166,29 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 		[self.tableView reloadData];
 	}
 }
+
+// --------------------------------------------------------------------------
+//! Respond to a click on the [+] button
+// --------------------------------------------------------------------------
+
+- (void) addItem: (id) sender
+{
+	ECDataItem* firstSection = [self.data itemAtIndex: 0];
+	if (firstSection)
+	{
+		NSString* defaultValue = [firstSection objectForKey: kNewValueKey];
+		if (!defaultValue)
+		{
+			defaultValue = @"Untitled";
+		}
+		
+		ECDataItem* newItem = [ECDataItem itemWithObjectsAndKeys: defaultValue, kValueKey, nil];
+		[firstSection addItem: newItem];
+		[newItem postChangedNotifications];
+		[self.tableView reloadData];
+	}
+}
+
 
 #pragma mark UITableViewDataSource methods
 
@@ -236,11 +265,11 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 //! Return editing style to use for each row.
 // --------------------------------------------------------------------------
 
-- (UITableViewCellEditingStyle) tableView:(UITableView*) view editingStlyeForRowAtIndexPath: (NSIndexPath*) path
+- (UITableViewCellEditingStyle) tableView:(UITableView*) view editingStyleForRowAtIndexPath: (NSIndexPath*) path
 {
-	UITableViewCellEditingStyle style;
-	
-	style = UITableViewCellEditingStyleDelete;
+	ECDataItem* item = [self.data itemAtIndexPath: path];
+
+	UITableViewCellEditingStyle style = [item boolForKey: kDeletableKey] ? UITableViewCellEditingStyleDelete : UITableViewCellEditingStyleNone;
 	
 	return style;
 }

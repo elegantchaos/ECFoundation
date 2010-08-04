@@ -19,6 +19,7 @@
 {
 	ECDataItem*						mSelection;		//!< The selected item.
 	BOOL							mEditable;		//!< Are the items editable?
+	BOOL							mExtensible;	//!< Can we add new items?
 	UIBarButtonItem*				mAddButton;		
 	BOOL							mIgnoreNextNotification;
 	
