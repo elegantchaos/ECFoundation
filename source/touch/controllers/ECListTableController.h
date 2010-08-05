@@ -8,6 +8,8 @@
 #import "ECProperties.h"
 #import "ECDataDrivenView.h"
 
+#include <UIKit/UIKit.h>
+
 @class ECDataItem;
 
 @interface ECListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>

@@ -9,7 +9,9 @@
 // --------------------------------------------------------------------------
 
 
+#ifdef __OBJC__
 #import "ECAssertion.h"
 #import "ECLogging.h"
 #import "ECProperties.h"
 #import "ECMacros.h"
+#endif

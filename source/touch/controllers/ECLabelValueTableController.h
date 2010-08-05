@@ -5,8 +5,10 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#include "ECProperties.h"
-#include "ECDataItem.h"
+#import "ECProperties.h"
+#import "ECDataItem.h"
+
+#import <UIKit/UIKit.h>
 
 @interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
