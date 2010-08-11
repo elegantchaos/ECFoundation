@@ -26,6 +26,25 @@
 
 /* Begin PBXBuildFile section */
 		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2209879C1212C7C4003EDD48 /* ECGLAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987891212C7C4003EDD48 /* ECGLAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2209879D1212C7C4003EDD48 /* ECGLAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209878A1212C7C4003EDD48 /* ECGLAttribute.m */; };
+		2209879E1212C7C4003EDD48 /* ECGLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209878B1212C7C4003EDD48 /* ECGLCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2209879F1212C7C4003EDD48 /* ECGLFragmentShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209878C1212C7C4003EDD48 /* ECGLFragmentShader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987A01212C7C4003EDD48 /* ECGLFragmentShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209878D1212C7C4003EDD48 /* ECGLFragmentShader.m */; };
+		220987A11212C7C4003EDD48 /* ECGLMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209878E1212C7C4003EDD48 /* ECGLMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987A21212C7C4003EDD48 /* ECGLMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209878F1212C7C4003EDD48 /* ECGLMesh.m */; };
+		220987A31212C7C4003EDD48 /* ECGLShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987901212C7C4003EDD48 /* ECGLShader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987A41212C7C4003EDD48 /* ECGLShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987911212C7C4003EDD48 /* ECGLShader.m */; };
+		220987A51212C7C4003EDD48 /* ECGLShaderProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987921212C7C4003EDD48 /* ECGLShaderProgram.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987A61212C7C4003EDD48 /* ECGLShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987931212C7C4003EDD48 /* ECGLShaderProgram.m */; };
+		220987A71212C7C4003EDD48 /* ECGLTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987941212C7C4003EDD48 /* ECGLTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987A81212C7C4003EDD48 /* ECGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987951212C7C4003EDD48 /* ECGLTexture.m */; };
+		220987A91212C7C4003EDD48 /* ECGLTextureLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987961212C7C4003EDD48 /* ECGLTextureLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987AA1212C7C4003EDD48 /* ECGLTextureLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987971212C7C4003EDD48 /* ECGLTextureLink.m */; };
+		220987AB1212C7C4003EDD48 /* ECGLVertexShader.h in Headers */ = {isa = PBXBuildFile; fileRef = 220987981212C7C4003EDD48 /* ECGLVertexShader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987AC1212C7C4003EDD48 /* ECGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987991212C7C4003EDD48 /* ECGLVertexShader.m */; };
+		220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209879A1212C7C4003EDD48 /* ECGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220987AE1212C7C4003EDD48 /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209879B1212C7C4003EDD48 /* ECGLView.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
 		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -236,6 +255,25 @@
 		2206CCAA11F875CD00CDD442 /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ECTickListTableController.m; path = controllers/ECTickListTableController.m; sourceTree = "<group>"; };
 		2207E05B11F742F3004BB01D /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECNavigationController.h; path = controllers/ECNavigationController.h; sourceTree = "<group>"; };
 		2207E05C11F742F3004BB01D /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECNavigationController.m; path = controllers/ECNavigationController.m; sourceTree = "<group>"; };
+		220987891212C7C4003EDD48 /* ECGLAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLAttribute.h; sourceTree = "<group>"; };
+		2209878A1212C7C4003EDD48 /* ECGLAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLAttribute.m; sourceTree = "<group>"; };
+		2209878B1212C7C4003EDD48 /* ECGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLCommon.h; sourceTree = "<group>"; };
+		2209878C1212C7C4003EDD48 /* ECGLFragmentShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLFragmentShader.h; sourceTree = "<group>"; };
+		2209878D1212C7C4003EDD48 /* ECGLFragmentShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLFragmentShader.m; sourceTree = "<group>"; };
+		2209878E1212C7C4003EDD48 /* ECGLMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLMesh.h; sourceTree = "<group>"; };
+		2209878F1212C7C4003EDD48 /* ECGLMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLMesh.m; sourceTree = "<group>"; };
+		220987901212C7C4003EDD48 /* ECGLShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLShader.h; sourceTree = "<group>"; };
+		220987911212C7C4003EDD48 /* ECGLShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLShader.m; sourceTree = "<group>"; };
+		220987921212C7C4003EDD48 /* ECGLShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLShaderProgram.h; sourceTree = "<group>"; };
+		220987931212C7C4003EDD48 /* ECGLShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLShaderProgram.m; sourceTree = "<group>"; };
+		220987941212C7C4003EDD48 /* ECGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLTexture.h; sourceTree = "<group>"; };
+		220987951212C7C4003EDD48 /* ECGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLTexture.m; sourceTree = "<group>"; };
+		220987961212C7C4003EDD48 /* ECGLTextureLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLTextureLink.h; sourceTree = "<group>"; };
+		220987971212C7C4003EDD48 /* ECGLTextureLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLTextureLink.m; sourceTree = "<group>"; };
+		220987981212C7C4003EDD48 /* ECGLVertexShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLVertexShader.h; sourceTree = "<group>"; };
+		220987991212C7C4003EDD48 /* ECGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLVertexShader.m; sourceTree = "<group>"; };
+		2209879A1212C7C4003EDD48 /* ECGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLView.h; sourceTree = "<group>"; };
+		2209879B1212C7C4003EDD48 /* ECGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLView.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		2232B68211FA02BB001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItem.h; sourceTree = "<group>"; };
 		2232B68311FA02BB001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItem.m; sourceTree = "<group>"; };
@@ -495,6 +533,32 @@
 				227333B811EBBA3000695FB4 /* GHUnit.framework */,
 			);
 			name = Testing;
+			sourceTree = "<group>";
+		};
+		220987881212C7C4003EDD48 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				220987891212C7C4003EDD48 /* ECGLAttribute.h */,
+				2209878A1212C7C4003EDD48 /* ECGLAttribute.m */,
+				2209878B1212C7C4003EDD48 /* ECGLCommon.h */,
+				2209878C1212C7C4003EDD48 /* ECGLFragmentShader.h */,
+				2209878D1212C7C4003EDD48 /* ECGLFragmentShader.m */,
+				2209878E1212C7C4003EDD48 /* ECGLMesh.h */,
+				2209878F1212C7C4003EDD48 /* ECGLMesh.m */,
+				220987901212C7C4003EDD48 /* ECGLShader.h */,
+				220987911212C7C4003EDD48 /* ECGLShader.m */,
+				220987921212C7C4003EDD48 /* ECGLShaderProgram.h */,
+				220987931212C7C4003EDD48 /* ECGLShaderProgram.m */,
+				220987941212C7C4003EDD48 /* ECGLTexture.h */,
+				220987951212C7C4003EDD48 /* ECGLTexture.m */,
+				220987961212C7C4003EDD48 /* ECGLTextureLink.h */,
+				220987971212C7C4003EDD48 /* ECGLTextureLink.m */,
+				220987981212C7C4003EDD48 /* ECGLVertexShader.h */,
+				220987991212C7C4003EDD48 /* ECGLVertexShader.m */,
+				2209879A1212C7C4003EDD48 /* ECGLView.h */,
+				2209879B1212C7C4003EDD48 /* ECGLView.m */,
+			);
+			path = gl;
 			sourceTree = "<group>";
 		};
 		2210B5D41152E630006C6CCA /* configuration */ = {
@@ -822,6 +886,7 @@
 		2286307311E32AA800654739 /* touch */ = {
 			isa = PBXGroup;
 			children = (
+				220987881212C7C4003EDD48 /* gl */,
 				22BFA1481205F8F300343D91 /* utilities */,
 				22592EB411F5BBBE0056FF4B /* controllers */,
 				2286307411E32AA800654739 /* animation */,
@@ -872,6 +937,7 @@
 				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
 				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
 				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
+				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
 				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
@@ -880,7 +946,7 @@
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
 				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
-				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
+				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
 				227271BE1205C98B009CB32F /* ECLabelValueCell.h in Headers */,
 				227271C01205C98B009CB32F /* ECLabelValueEditableCell.h in Headers */,
 				227271C21205C98B009CB32F /* ECTouchAboutBoxController.h in Headers */,
@@ -890,13 +956,22 @@
 				227271C81205C98B009CB32F /* ECTickListTableController.h in Headers */,
 				227271CA1205C98B009CB32F /* ECLabelValueTableController.h in Headers */,
 				227271CC1205C98B009CB32F /* ECNavigationController.h in Headers */,
-				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
 				22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */,
-				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
 				22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */,
 				22A7654A1209688A00FBE46C /* ECListTableController.h in Headers */,
-				22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */,
 				22BD8FA412082712006DEA84 /* ECValueEditableCell.h in Headers */,
+				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
+				2209879C1212C7C4003EDD48 /* ECGLAttribute.h in Headers */,
+				2209879E1212C7C4003EDD48 /* ECGLCommon.h in Headers */,
+				22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */,
+				2209879F1212C7C4003EDD48 /* ECGLFragmentShader.h in Headers */,
+				220987A11212C7C4003EDD48 /* ECGLMesh.h in Headers */,
+				220987A51212C7C4003EDD48 /* ECGLShaderProgram.h in Headers */,
+				220987A31212C7C4003EDD48 /* ECGLShader.h in Headers */,
+				220987A71212C7C4003EDD48 /* ECGLTexture.h in Headers */,
+				220987A91212C7C4003EDD48 /* ECGLTextureLink.h in Headers */,
+				220987AB1212C7C4003EDD48 /* ECGLVertexShader.h in Headers */,
+				220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1281,15 @@
 				22BD8FA512082712006DEA84 /* ECValueEditableCell.m in Sources */,
 				22BD8FA912082773006DEA84 /* ECCellProperties.m in Sources */,
 				22A7654C120968D100FBE46C /* ECListTableController.m in Sources */,
+				2209879D1212C7C4003EDD48 /* ECGLAttribute.m in Sources */,
+				220987A01212C7C4003EDD48 /* ECGLFragmentShader.m in Sources */,
+				220987A21212C7C4003EDD48 /* ECGLMesh.m in Sources */,
+				220987A41212C7C4003EDD48 /* ECGLShader.m in Sources */,
+				220987A61212C7C4003EDD48 /* ECGLShaderProgram.m in Sources */,
+				220987A81212C7C4003EDD48 /* ECGLTexture.m in Sources */,
+				220987AA1212C7C4003EDD48 /* ECGLTextureLink.m in Sources */,
+				220987AC1212C7C4003EDD48 /* ECGLVertexShader.m in Sources */,
+				220987AE1212C7C4003EDD48 /* ECGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
