@@ -1,12 +1,15 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
 //
-//  VertexShader.h
-//  Shader
-//
-//  Created by Sam Deane on 06/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECGLShader.h"
+
+// --------------------------------------------------------------------------
+//! An OpenGL vertex shader.
+// --------------------------------------------------------------------------
 
 @interface ECGLVertexShader : ECGLShader 
 {

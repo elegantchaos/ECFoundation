@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
 //
-//  OpenGLTexture3D.h
-//  NeHe Lesson 06
-//
-//  Created by Jeff LaMarche on 12/24/08.
-//  Copyright 2008 Jeff LaMarche Consulting. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
 

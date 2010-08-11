@@ -1,3 +1,10 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
 #import "ECGLView.h"
 
 #import "ECGLVertexShader.h"
@@ -6,7 +13,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/EAGLDrawable.h>
-#include <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES1/glext.h>
 
 
 #define USE_DEPTH_BUFFER 1

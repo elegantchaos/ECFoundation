@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
 //
-//  VertexShader.m
-//  Shader
-//
-//  Created by Sam Deane on 06/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECGLVertexShader.h"
 
@@ -12,6 +11,10 @@
 
 
 @implementation ECGLVertexShader
+
+// --------------------------------------------------------------------------
+//! Initialise the shader.
+// --------------------------------------------------------------------------
 
 - (id) init
 {
@@ -22,6 +25,10 @@
 	
 	return self;
 }
+
+// --------------------------------------------------------------------------
+//! Return the type of file to load the shader from.
+// --------------------------------------------------------------------------
 
 - (NSString*) fileType
 {

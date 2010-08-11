@@ -1,3 +1,13 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
+//
+//! @file:
+//! Miscellaneous utilities and common types for OpenGL.
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
 #include <OpenGLES/ES2/gl.h>
 
 #define DEGREES_TO_RADIANS(x) ((x) / 180.0 * M_PI)

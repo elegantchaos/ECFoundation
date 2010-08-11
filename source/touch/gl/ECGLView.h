@@ -1,16 +1,12 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
 //
-//  EAGLView.h
-//  Shader
-//
-//  Created by Noel on 8/21/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
-
-#import <UIKit/UIKit.h>
+#import "ECGLCommon.h"
 #import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
 
 /*
 This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
