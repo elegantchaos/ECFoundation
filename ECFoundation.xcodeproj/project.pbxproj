@@ -62,6 +62,8 @@
 		223CBAED1205C6C00008A641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CBAE61205C6380008A641 /* Foundation.framework */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
+		226079BE1212CDBD00CEDA1C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226079BD1212CDBD00CEDA1C /* OpenGLES.framework */; };
+		226079C31212CDD900CEDA1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226079C21212CDD900CEDA1C /* QuartzCore.framework */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9E11F8D03E00603F71 /* ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA111F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; };
@@ -311,6 +313,8 @@
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
+		226079BD1212CDBD00CEDA1C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		226079C21212CDD900CEDA1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		226E1F9D11F8D03E00603F71 /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		226E1F9E11F8D03E00603F71 /* ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogging.h; sourceTree = "<group>"; };
 		226E1FAD11F8D0A300603F71 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
@@ -419,6 +423,8 @@
 				223CBAED1205C6C00008A641 /* Foundation.framework in Frameworks */,
 				223CBAE81205C66A0008A641 /* UIKit.framework in Frameworks */,
 				223CBAEA1205C67C0008A641 /* CoreGraphics.framework in Frameworks */,
+				226079BE1212CDBD00CEDA1C /* OpenGLES.framework in Frameworks */,
+				226079C31212CDD900CEDA1C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +484,8 @@
 				089C1665FE841158C02AAC07 /* resources */,
 				0867D69AFE84028FC02AAC07 /* frameworks */,
 				034768DFFF38A50411DB9C8B /* products */,
+				226079BD1212CDBD00CEDA1C /* OpenGLES.framework */,
+				226079C21212CDD900CEDA1C /* QuartzCore.framework */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
