@@ -59,7 +59,7 @@
 	NSString* path = [[NSBundle mainBundle] pathForResource: name ofType: [self fileType]];
 	if (path)
 	{
-		success = [self compileFromFile: path];
+		success = [self compileFromPath: path];
 	}
 	else
 	{
@@ -69,7 +69,12 @@
 	return success;
 }
 
-- (int) compileFromFile: (NSString*) path
+- (int) compileFromURL: (NSURL*) url
+{
+	return [self compileFromPath: [url path]];
+}
+
+- (int) compileFromPath: (NSString*) path
 {
 	NSError* error = nil;
 	NSString* source = [NSString stringWithContentsOfFile: path encoding: NSUTF8StringEncoding error: &error];

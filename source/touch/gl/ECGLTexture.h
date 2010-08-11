@@ -13,7 +13,9 @@
 	NSString	*filename;
 }
 @property (nonatomic, retain) NSString *filename;
-- (id)initWithFilename:(NSString *)filename;
+- (id)initWithResourceNamed:(NSString*) name;
+- (id)initWithPath:(NSString*) path;
+- (id)initWithURL:(NSURL*) url;
 - (void)use;
 + (void)useDefaultTexture;
 @end

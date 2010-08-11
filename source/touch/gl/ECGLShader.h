@@ -20,7 +20,8 @@
 - (id)			initWithType: (NSUInteger) type;
 - (int)			compileFromResourceNamed: (NSString*) source;
 - (int)			compileFromSource: (NSString*) source;
-- (int)			compileFromFile: (NSString*) path;
+- (int)			compileFromPath: (NSString*) path;
+- (int)			compileFromURL: (NSURL*) url;
 - (NSString*)	fileType;
 
 @end

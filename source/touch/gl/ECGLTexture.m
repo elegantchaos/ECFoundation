@@ -14,14 +14,29 @@
 @implementation ECGLTexture
 @synthesize filename;
 
-- (id)initWithFilename:(NSString *)inFilename
+- (id) initWithResourceNamed: (NSString*) name
+{
+	NSString* extension = [name pathExtension];
+	NSString* baseFilenameWithExtension = [name lastPathComponent];
+	NSString* baseFilename = [baseFilenameWithExtension substringToIndex:[baseFilenameWithExtension length] - [extension length] - 1];
+	
+	NSString* path = [[NSBundle mainBundle] pathForResource:baseFilename ofType:extension];
+	return [self initWithPath: path];
+}
+
+- (id)initWithURL:(NSURL*) url
+{
+	return [self initWithPath: [url path]];
+}
+
+- (id) initWithPath: (NSString*) path
 {
 	if ((self = [super init]))
 	{
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_BLEND);
         
-		self.filename = inFilename;
+		self.filename = path;
 		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  
 		glGenTextures(1, &texture);
 		glBindTexture(GL_TEXTURE_2D, texture);
@@ -32,12 +47,8 @@
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		
-		NSString *extension = [filename pathExtension];
-		NSString *baseFilenameWithExtension = [filename lastPathComponent];
-		NSString *baseFilename = [baseFilenameWithExtension substringToIndex:[baseFilenameWithExtension length] - [extension length] - 1];
-        
-		NSString *path = [[NSBundle mainBundle] pathForResource:baseFilename ofType:extension];
-		NSData *texData = [[NSData alloc] initWithContentsOfFile:path];
+		NSData *texData = [[NSData alloc] initWithContentsOfFile: path];
+		
 		
         
         UIImage *image = [[UIImage alloc] initWithData:texData];
