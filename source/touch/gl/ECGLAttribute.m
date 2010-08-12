@@ -14,13 +14,21 @@
 //! Properties.
 // --------------------------------------------------------------------------
 
-@synthesize name;
-@synthesize data;
-@synthesize count;
-@synthesize index;
-@synthesize size;
-@synthesize type;
-@synthesize normalized;
-@synthesize stride;
+ECPropertySynthesize(name);
+ECPropertySynthesize(data);
+ECPropertySynthesize(offset);
+ECPropertySynthesize(count);
+ECPropertySynthesize(index);
+ECPropertySynthesize(size);
+ECPropertySynthesize(type);
+ECPropertySynthesize(normalized);
+ECPropertySynthesize(stride);
 
+- (void) dealloc
+{
+	ECPropertyDealloc(data);
+	ECPropertyDealloc(name);
+	
+	[super dealloc];
+}
 @end

@@ -9,7 +9,7 @@
 #import "ECGLLoader.h"
 #import "ECGLMesh.h"
 
-#import "NSString+ECUtilities.h"
+#import <ECFoundation/NSString+ECUtilities.h>
 
 @implementation ECGLLoader
 
@@ -118,7 +118,10 @@
 	
 	if ([elementName isEqualToString:@"float_array"]) 
 	{
-		mFloats = [[[NSString stringWithString: mContent] splitWordsIntoFloats] retain];
+		NSLog(@"bigjobs");
+		NSString* string = [mContent copy];
+		mFloats = [[string splitWordsIntoFloats] retain];
+		[string release];
 	}
 	
 	else if ([elementName isEqualToString:@"p"]) 
@@ -129,11 +132,11 @@
 
 	else if ([elementName isEqualToString: @"source"])
 	{
-		if (mSourceID && mSources)
+		if (mSourceID && mFloats && mSources)
 		{
-			[mSources setObject: mIndexes forKey:mSourceID];
-			[mIndexes release];
-			mIndexes = nil;
+			[mSources setObject: mFloats forKey:mSourceID];
+			[mFloats release];
+			mFloats = nil;
 			mSourceID = nil;
 		}
 	}

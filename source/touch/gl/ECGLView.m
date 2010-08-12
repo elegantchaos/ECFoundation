@@ -43,9 +43,11 @@
     return [CAEAGLLayer class];
 }
 
-- (id)initWithCoder:(NSCoder*)coder {
+- (id)initWithCoder:(NSCoder*)coder 
+{
     
-    if ((self = [super initWithCoder:coder])) {
+    if ((self = [super initWithCoder:coder])) 
+	{
         // Get the layer
         CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
         
@@ -55,7 +57,8 @@
         
 		// Make sure this is the right version!
         context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        if (!context || ![EAGLContext setCurrentContext:context]) {
+        if (!context || ![EAGLContext setCurrentContext:context]) 
+		{
             [self release];
             return nil;
         }
@@ -92,8 +95,11 @@
 }
 
 
-- (BOOL)createFramebuffer {
-    
+- (BOOL)createFramebuffer 
+{
+    CGRect frame = self.frame;
+	frame = frame;
+	
     glGenFramebuffersOES(1, &viewFramebuffer);
     glGenRenderbuffersOES(1, &viewRenderbuffer);
     
@@ -105,14 +111,16 @@
     glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_WIDTH_OES, &backingWidth);
     glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_HEIGHT_OES, &backingHeight);
     
-    if (USE_DEPTH_BUFFER) {
+    if (USE_DEPTH_BUFFER) 
+	{
         glGenRenderbuffersOES(1, &depthRenderbuffer);
         glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
         glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, backingWidth, backingHeight);
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
     }
     
-    if(glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES) {
+    if(glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES) 
+	{
         NSLog(@"failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
         return NO;
     }
@@ -121,31 +129,36 @@
 }
 
 
-- (void)destroyFramebuffer {
+- (void)destroyFramebuffer 
+{
     
     glDeleteFramebuffersOES(1, &viewFramebuffer);
     viewFramebuffer = 0;
     glDeleteRenderbuffersOES(1, &viewRenderbuffer);
     viewRenderbuffer = 0;
     
-    if(depthRenderbuffer) {
+    if(depthRenderbuffer) 
+	{
         glDeleteRenderbuffersOES(1, &depthRenderbuffer);
         depthRenderbuffer = 0;
     }
 }
 
 
-- (void)startAnimation {
+- (void)startAnimation 
+{
     self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(drawView) userInfo:nil repeats:YES];
 }
 
 
-- (void)stopAnimation {
+- (void)stopAnimation 
+{
     self.animationTimer = nil;
 }
 
 
-- (void)setAnimationTimer:(NSTimer *)newTimer {
+- (void)setAnimationTimer:(NSTimer *)newTimer 
+{
     [animationTimer invalidate];
     animationTimer = newTimer;
 }
@@ -155,10 +168,12 @@
 	return animationInterval;
 }
 
-- (void)setAnimationInterval:(NSTimeInterval)interval {
+- (void)setAnimationInterval:(NSTimeInterval)interval 
+{
     
     animationInterval = interval;
-    if (animationTimer) {
+    if (animationTimer) 
+	{
         [self stopAnimation];
         [self startAnimation];
     }
@@ -170,7 +185,8 @@
     
     [self stopAnimation];
     
-    if ([EAGLContext currentContext] == context) {
+    if ([EAGLContext currentContext] == context) 
+	{
         [EAGLContext setCurrentContext:nil];
     }
 	

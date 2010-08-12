@@ -11,7 +11,6 @@
 
 @implementation NSString(ECUtilities)
 
-
 - (NSData*) splitWordsIntoInts
 {
 	NSArray* numbers = [self componentsSeparatedByString: @" "];

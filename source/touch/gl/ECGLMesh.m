@@ -117,7 +117,7 @@
 	
 	for (ECGLAttribute* attribute in self.attributes)
 	{
-		glVertexAttribPointer(attribute.index, attribute.size, attribute.type, attribute.normalized, attribute.stride, attribute.data);
+		glVertexAttribPointer(attribute.index, attribute.size, attribute.type, attribute.normalized, attribute.stride, [attribute.data bytes]);
 		glEnableVertexAttribArray(attribute.index);
 	}
 	

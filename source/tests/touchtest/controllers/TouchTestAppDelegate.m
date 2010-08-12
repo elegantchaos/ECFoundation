@@ -8,6 +8,7 @@
 #import "TouchTestAppDelegate.h"
 
 #import <ECFoundation/ECDataItem.h>
+#import <ECFoundation/NSString+ECUtilities.h>
 
 // --------------------------------------------------------------------------
 // Constants
@@ -35,7 +36,9 @@ ECPropertySynthesize(password);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
-
+	NSString* pointlessString = @"blah";
+	[pointlessString splitWordsIntoInts];
+	
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 	[defaults registerDefaults: [NSDictionary dictionaryWithObjectsAndKeys: @"Sam Deane", kNameSetting, @"top secret", kPasswordSetting, nil]];
 	
