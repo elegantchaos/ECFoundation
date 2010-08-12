@@ -66,6 +66,8 @@
 		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		226079BE1212CDBD00CEDA1C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226079BD1212CDBD00CEDA1C /* OpenGLES.framework */; };
 		226079C31212CDD900CEDA1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226079C21212CDD900CEDA1C /* QuartzCore.framework */; };
+		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
+		22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9E11F8D03E00603F71 /* ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA111F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; };
@@ -179,6 +181,8 @@
 		22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */; };
 		22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EA44D01212FB7C00EFDD11 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
+		22F76C471214234B006BC0F8 /* NSString+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */; };
+		22F76C5512142381006BC0F8 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
 		22F8C9BF1205D51E009486B3 /* ECTouchAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BB1205D51E009486B3 /* ECTouchAboutBox.xib */; };
 		22F8C9C01205D51E009486B3 /* ECTouchTextItemEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9BD1205D51E009486B3 /* ECTouchTextItemEditor.xib */; };
 		22F8C9D51205D633009486B3 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F8C9D31205D633009486B3 /* about.png */; };
@@ -319,8 +323,10 @@
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
-		226079BD1212CDBD00CEDA1C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		226079C21212CDD900CEDA1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		226079BD1212CDBD00CEDA1C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OpenGLES.framework; sourceTree = SDKROOT; };
+		226079C21212CDD900CEDA1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = QuartzCore.framework; sourceTree = SDKROOT; };
+		22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilitiesTests.h"; sourceTree = "<group>"; };
+		22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		226E1F9D11F8D03E00603F71 /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		226E1F9E11F8D03E00603F71 /* ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogging.h; sourceTree = "<group>"; };
 		226E1FAD11F8D0A300603F71 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
@@ -391,9 +397,9 @@
 		2286307511E32AA800654739 /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
 		2286307611E32AA800654739 /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
-		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECLocationUtilities.m; path = ../ECLocationUtilities.m; sourceTree = "<group>"; };
+		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
 		2286311211E32FC100654739 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
-		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2286311411E32FC100654739 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MapKit.framework; sourceTree = SDKROOT; };
 		22A765481209688900FBE46C /* ECListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECListTableController.h; path = controllers/ECListTableController.h; sourceTree = "<group>"; };
 		22A7654B120968D100FBE46C /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECListTableController.m; path = controllers/ECListTableController.m; sourceTree = "<group>"; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
@@ -492,8 +498,6 @@
 				089C1665FE841158C02AAC07 /* resources */,
 				0867D69AFE84028FC02AAC07 /* frameworks */,
 				034768DFFF38A50411DB9C8B /* products */,
-				226079BD1212CDBD00CEDA1C /* OpenGLES.framework */,
-				226079C21212CDD900CEDA1C /* QuartzCore.framework */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
@@ -538,7 +542,6 @@
 				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
 				2210B6201152E695006C6CCA /* Carbon.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
-				2286311411E32FC100654739 /* MapKit.framework */,
 			);
 			name = MacOS;
 			sourceTree = "<group>";
@@ -630,10 +633,13 @@
 		223CBAE11205C5930008A641 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				226079BD1212CDBD00CEDA1C /* OpenGLES.framework */,
 				223CBAE91205C67C0008A641 /* CoreGraphics.framework */,
 				223CBAE71205C66A0008A641 /* UIKit.framework */,
 				223CBAE61205C6380008A641 /* Foundation.framework */,
 				2286311211E32FC100654739 /* CoreLocation.framework */,
+				226079C21212CDD900CEDA1C /* QuartzCore.framework */,
+				2286311411E32FC100654739 /* MapKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -724,7 +730,8 @@
 		225EC68111EBAC1500A97AEA /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
+				22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */,
+				22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */,
 				2232B68811FA02E6001846FC /* ECDataItemTests.h */,
 				2232B68911FA02E6001846FC /* ECDataItemTests.m */,
 				225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */,
@@ -868,6 +875,7 @@
 				2232B68211FA02BB001846FC /* ECDataItem.h */,
 				2232B68311FA02BB001846FC /* ECDataItem.m */,
 				228630F611E32E8E00654739 /* ECLocationUtilities.h */,
+				228630F711E32E8E00654739 /* ECLocationUtilities.m */,
 				226E1F9D11F8D03E00603F71 /* ECAssertion.h */,
 				226E1F9E11F8D03E00603F71 /* ECLogging.h */,
 				226E1FAD11F8D0A300603F71 /* ECMacros.h */,
@@ -1031,6 +1039,7 @@
 				2232B68411FA02BB001846FC /* ECDataItem.h in Headers */,
 				2274C8D111FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
 				2274C8D211FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
+				22F76C471214234B006BC0F8 /* NSString+ECUtilitiesTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,6 +1273,7 @@
 				2273350611EC95E000695FB4 /* NSWorkspace+ECUtilitiesTests.m in Sources */,
 				22822E6C11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
 				2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */,
+				22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,6 +1288,7 @@
 				22822E6D11ED332500D84612 /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
 				2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */,
 				223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */,
+				22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1347,7 @@
 				2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */,
 				22822E6211ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m in Sources */,
 				2232B68611FA02BB001846FC /* ECDataItem.m in Sources */,
+				22F76C5512142381006BC0F8 /* NSString+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1497,6 +1509,7 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Debug;
@@ -1504,6 +1517,7 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Release;
@@ -1557,6 +1571,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1585,6 +1600,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1617,7 +1633,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "GHUnit Tests";
 			};
 			name = Debug;
@@ -1641,7 +1656,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "GHUnit Tests";
 				ZERO_LINK = NO;
 			};
@@ -1650,6 +1664,7 @@
 		2274C8E811FF841B00E5C351 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = AdHoc;
@@ -1673,7 +1688,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2274C97E11FF881E00E5C351 /* ECTouchAdHocSettings.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1696,6 +1711,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1727,7 +1743,6 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "GHUnit Tests";
 				ZERO_LINK = NO;
 			};
@@ -1737,7 +1752,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECTouchDebugSettings.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1748,7 +1763,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECTouchReleaseSettings.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PREFIX_HEADER = "source/prefix/ECTouch$(CONFIGURATION)Prefix.pch";
 				PRODUCT_NAME = ECFoundationTouch;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
