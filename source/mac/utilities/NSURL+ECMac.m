@@ -5,10 +5,10 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "NSURL+ECUtilities.h"
+#import "NSURL+ECMac.h"
 
 
-@implementation NSURL(ECUtilities)
+@implementation NSURL(ECMac)
 
 // --------------------------------------------------------------------------
 //! Get a unique name to use for a file in a folder, using the default

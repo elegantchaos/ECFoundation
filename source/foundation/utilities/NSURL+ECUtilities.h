@@ -5,12 +5,11 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Cocoa/Cocoa.h>
-
+#import <Foundation/Foundation.h>
 
 @interface NSURL(ECUtilities)
 
-- (NSURL*) getUniqueFileWithName: (NSString*) name andExtension: (NSString*) extension;
-- (NSURL*) getUniqueFileWithName: (NSString*) name andExtension: (NSString*) extension usingManager: (NSFileManager*) fileManager;
++ (NSURL*) URLWithResourceNamed: (NSString*) name ofType: (NSString*) type;
+- (id) initWithResourceNamed: (NSString*) name ofType: (NSString*) type;
 
 @end
