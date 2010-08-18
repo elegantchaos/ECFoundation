@@ -17,4 +17,4 @@ VALIDATE_PRODUCT = YES
 // Code Signing
 // --------------------------------------------------------------------------
 
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution: Sam Deane
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution
