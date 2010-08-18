@@ -8,8 +8,8 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "NSURL+ECUtilitiesTests.h"
-#import "NSURL+ECUtilities.h"
+#import "NSURL+ECMacTests.h"
+#import "NSURL+ECMac.h"
 
 @implementation NSURL_ECUtilitiesTests
 
