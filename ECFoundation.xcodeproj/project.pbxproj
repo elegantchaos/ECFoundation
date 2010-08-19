@@ -46,6 +46,8 @@
 		220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209879A1212C7C4003EDD48 /* ECGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220987AE1212C7C4003EDD48 /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209879B1212C7C4003EDD48 /* ECGLView.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
+		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
+		2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; };
 		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
@@ -69,7 +71,7 @@
 		2257F1B71212D274007BE593 /* ECGLLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2257F1B51212D274007BE593 /* ECGLLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2257F1B81212D274007BE593 /* ECGLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2257F1B61212D274007BE593 /* ECGLLoader.m */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
-		225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
+		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,7 +101,7 @@
 		227272791205CDBB009CB32F /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272711205CDBB009CB32F /* FirstView.xib */; };
 		2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227272731205CDBB009CB32F /* InfoPlist.strings */; };
 		2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272751205CDBB009CB32F /* MainWindow.xib */; };
-		227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
+		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
 		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		2273344811EBC1CB00695FB4 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2273344711EBC1CB00695FB4 /* ECTestCase.m */; };
@@ -296,6 +298,8 @@
 		2209879A1212C7C4003EDD48 /* ECGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLView.h; sourceTree = "<group>"; };
 		2209879B1212C7C4003EDD48 /* ECGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLView.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		2224D5BE121D974200C51C31 /* NSDate+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilitiesTests.h"; sourceTree = "<group>"; };
+		2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		2232B68211FA02BB001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItem.h; sourceTree = "<group>"; };
 		2232B68311FA02BB001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItem.m; sourceTree = "<group>"; };
 		2232B68811FA02E6001846FC /* ECDataItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItemTests.h; sourceTree = "<group>"; };
@@ -440,7 +444,7 @@
 		22FD5E131214490C0009DD71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilities.m"; sourceTree = "<group>"; };
 		22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilities.h"; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* ECFoundation */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = ECFoundation; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -462,7 +466,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */,
+				225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */,
+				227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */,
 				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +501,7 @@
 		034768DFFF38A50411DB9C8B /* products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* ECFoundation */,
+				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
 				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
 				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
@@ -745,6 +749,8 @@
 		225EC68111EBAC1500A97AEA /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				2224D5BE121D974200C51C31 /* NSDate+ECUtilitiesTests.h */,
+				2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */,
 				22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */,
 				22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */,
 				2232B68811FA02E6001846FC /* ECDataItemTests.h */,
@@ -1161,7 +1167,7 @@
 			name = ECFoundation;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = ECFoundation;
-			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation */;
+			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1301,6 +1307,7 @@
 				2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */,
 				22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 				227D28AF121ABE260093040C /* NSURL+ECMacTests.m in Sources */,
+				2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1316,6 +1323,7 @@
 				223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */,
 				22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 				227D28B0121ABE260093040C /* NSURL+ECMacTests.m in Sources */,
+				2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

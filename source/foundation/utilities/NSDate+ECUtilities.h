@@ -9,7 +9,12 @@
 
 @interface NSDate(ECUtilities)
 
++ (NSString *) formattedRelativeToInterval: (NSTimeInterval) interval;
+
+- (NSString *) formattedRelativeTo: (NSDate*) date;
 - (NSString *) formattedRelative;
+
+- (NSString*) formattedRelativeWithDayTo: (NSDate*) date;
 - (NSString *) formattedRelativeWithDay;
 
 @end
