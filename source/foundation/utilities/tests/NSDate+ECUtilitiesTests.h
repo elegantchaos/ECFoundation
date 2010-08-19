@@ -17,6 +17,7 @@
 	NSDate*				mOrigin;
 	NSDate*				mThirtySecondsLater;
 	NSDate*				mFiveMinutesLater;
+	NSDate*				mSevenHoursLater;
 	NSDate*				mTwentyThreeHoursLater;
 	NSDate*				mThreeDaysLater;
 }

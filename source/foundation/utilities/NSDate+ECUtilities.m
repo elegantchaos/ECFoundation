@@ -28,7 +28,11 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 {
 	NSString* result;
 	
-	if (interval < kMinute)
+	if (interval < 0)
+	{
+		result = @"In the future";
+	}
+	else if (interval < kMinute)
 	{
 		result = @"Less than a minute ago";
 	}
@@ -83,8 +87,8 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 
 - (NSString*) formattedRelativeWithDayTo: (NSDate*) date;
 {
-	NSString* result = [self formattedRelative];
-	if (!result)
+	NSString* result = [self formattedRelativeTo: date];
+	if (result == nil)
 	{
 		NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 		[formatter setDateFormat:@"yyyy-MM-dd"];
@@ -103,11 +107,11 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 		}
 		else if (dayDiff < 8)
 		{
-			result = [NSString stringWithFormat: @"%d days ago", -dayDiff];
+			result = [NSString stringWithFormat: @"%d days ago", dayDiff];
 		}
 		else if (dayDiff < 365)
 		{
-			[formatter setDateFormat: @"MM"];
+			[formatter setDateFormat: @"MMMM"];
 			result = [formatter stringFromDate:self];
 		}
 		else
