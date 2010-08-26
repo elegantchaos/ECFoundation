@@ -23,6 +23,8 @@
 
 @implementation ECListTableController
 
+ECDefineDebugChannel(ECListTableControllerChannel);
+
 // --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
@@ -198,7 +200,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	NSInteger count = self.data.items.count;
 	
-	ECDebug(LabelValueTableChannel, @"number of sections: %d", count);
+	ECDebug(ECListTableControllerChannel, @"number of sections: %d", count);
 	
 	return count;
 }
@@ -211,7 +213,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 {
 	ECDataItem* item = [self.data itemAtIndex: section];
 	NSInteger count = [item.items count];
-	ECDebug(ECTickListTableControllerChannel, @"number of rows for section %d: %d", section, count);
+	ECDebug(ECListTableControllerChannel, @"number of rows for section %d: %d", section, count);
 
 	return count;
 }

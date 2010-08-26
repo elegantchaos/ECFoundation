@@ -9,6 +9,7 @@
 #import "ECDataItem.h"
 #import "UIColor+ECUtilities.h"
 #import "ECCellProperties.h"
+#import "ECLogging.h"
 
 @implementation ECLabelValueEditableCell
 
@@ -21,6 +22,8 @@ enum
 	kLabelTag,
 	kTextTag
 };
+
+ECDefineLogChannel(ECLabelValueEditorChannel);
 
 ECPropertySynthesize(label);
 ECPropertySynthesize(text);

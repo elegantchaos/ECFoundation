@@ -14,3 +14,4 @@
 #define ECUnusedInRelease(v) ECUnused(v)
 
 #define ECDebug(...) 
+#define ECDefineDebugChannel(...)

@@ -12,5 +12,5 @@
 
 #define ECUnusedInDebug(v) ECUnused(v)
 #define ECUnusedInRelease(v)
-#define ECDebug(channel, ...) ECLog(channel, __VA_ARGS__)
-
+#define ECDebug ECLog
+#define ECDefineDebugChannel ECDefineLogChannel

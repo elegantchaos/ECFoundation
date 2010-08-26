@@ -12,6 +12,8 @@
 
 @implementation ECValueEditableCell
 
+ECDefineDebugChannel(ValueEditableCellChannel);
+
 static const CGFloat kVerticalInset = 11.0f;
 static const CGFloat kHorizontalInset = 32.0f;
 
@@ -74,7 +76,7 @@ ECPropertySynthesize(text);
 {
 	for (UIView* view in self.contentView.subviews)
 	{
-		ECDebug(ECLabelValueEditorChannel, @"view %@", view);
+		ECDebug(ValueEditableCellChannel, @"view %@", view);
 	}
 }
 
@@ -84,14 +86,14 @@ ECPropertySynthesize(text);
 
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
-	ECDebug(ECLabelValueEditorChannel, @"text end editing");
+	ECDebug(ValueEditableCellChannel, @"text end editing");
 	[self.item setObject: textField.text forKey:kValueKey];
 	[self.item postChangedNotifications];
 }
 
 - (void) textFieldDone: (id) sender
 {
-	ECDebug(ECLabelValueEditorChannel, @"text field done");
+	ECDebug(ValueEditableCellChannel, @"text field done");
 	[sender resignFirstResponder];
 }
 

@@ -14,6 +14,8 @@
 
 @implementation ECLabelValueTableController
 
+ECDefineDebugChannel(LabelValueTableChannel);
+
 // --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
