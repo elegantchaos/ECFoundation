@@ -176,6 +176,8 @@
 		22A0BA1E12145CC200522D54 /* UIWindow+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BA1912145C1300522D54 /* UIWindow+ECUtilities.m */; };
 		22A7654A1209688A00FBE46C /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A765481209688900FBE46C /* ECListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22A7654C120968D100FBE46C /* ECListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7654B120968D100FBE46C /* ECListTableController.m */; };
+		22B731081227FB6D006A4EEE /* UIApplication+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B731061227FB6D006A4EEE /* UIApplication+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B731091227FB6D006A4EEE /* UIApplication+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B731071227FB6D006A4EEE /* UIApplication+ECUtilities.m */; };
 		22BD8F8612081FAA006DEA84 /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BD8F8712081FAA006DEA84 /* ECItemListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */; };
 		22BD8FA212082712006DEA84 /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8F9E12082712006DEA84 /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -420,6 +422,8 @@
 		22A7654B120968D100FBE46C /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECListTableController.m; path = controllers/ECListTableController.m; sourceTree = "<group>"; };
 		22B12E541200E9AB00F1D033 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECTouchAboutBoxController.h; path = controllers/ECTouchAboutBoxController.h; sourceTree = "<group>"; };
 		22B12E551200E9AB00F1D033 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECTouchAboutBoxController.m; path = controllers/ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22B731061227FB6D006A4EEE /* UIApplication+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ECUtilities.h"; path = "utilities/UIApplication+ECUtilities.h"; sourceTree = "<group>"; };
+		22B731071227FB6D006A4EEE /* UIApplication+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ECUtilities.m"; path = "utilities/UIApplication+ECUtilities.m"; sourceTree = "<group>"; };
 		22BD8F8412081FAA006DEA84 /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECItemListTableController.h; path = controllers/ECItemListTableController.h; sourceTree = "<group>"; };
 		22BD8F8512081FAA006DEA84 /* ECItemListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECItemListTableController.m; path = controllers/ECItemListTableController.m; sourceTree = "<group>"; };
 		22BD8F9E12082712006DEA84 /* ECValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECValueCell.h; path = controllers/ECValueCell.h; sourceTree = "<group>"; };
@@ -960,6 +964,8 @@
 		22BFA1481205F8F300343D91 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				22B731061227FB6D006A4EEE /* UIApplication+ECUtilities.h */,
+				22B731071227FB6D006A4EEE /* UIApplication+ECUtilities.m */,
 				22A0BA1812145C1300522D54 /* UIWindow+ECUtilities.h */,
 				22A0BA1912145C1300522D54 /* UIWindow+ECUtilities.m */,
 				22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */,
@@ -1032,6 +1038,7 @@
 				22A0BA1D12145CAE00522D54 /* UIWindow+ECUtilities.h in Headers */,
 				22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */,
 				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
+				22B731081227FB6D006A4EEE /* UIApplication+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1363,6 +1370,7 @@
 				2257F1B81212D274007BE593 /* ECGLLoader.m in Sources */,
 				22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */,
 				22FDE54E121D6337007741FB /* NSDate+ECUtilities.m in Sources */,
+				22B731091227FB6D006A4EEE /* UIApplication+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

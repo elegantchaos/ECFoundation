@@ -1,13 +1,14 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 16/01/2010
+//! @date 27/08/2010.
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECFoundationReleasePrefix.pch"
+@interface UIApplication(ECUtilities)
 
-#define EC_ADHOC 1
-#undef EC_CONFIGURATION_STRING
-#define EC_CONFIGURATION_STRING @"AdHoc"
-#define EC_CONFIGURATION_STRING_SHORT @"A"
+- (NSString*) aboutName;
+- (NSString*) aboutCopyright;
+- (NSString*) aboutVersion;
+
+@end
