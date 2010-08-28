@@ -193,6 +193,13 @@
 		22BD8FA512082712006DEA84 /* ECValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8FA112082712006DEA84 /* ECValueEditableCell.m */; };
 		22BD8FA812082773006DEA84 /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BD8FA612082773006DEA84 /* ECCellProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BD8FA912082773006DEA84 /* ECCellProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD8FA712082773006DEA84 /* ECCellProperties.m */; };
+		22BE6C94122949DE006F522B /* ECRootTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE6C92122949DE006F522B /* ECRootTabBarController.h */; };
+		22BE6C95122949DE006F522B /* ECRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE6C93122949DE006F522B /* ECRootTabBarController.m */; };
+		22BE6C96122949DE006F522B /* ECRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE6C93122949DE006F522B /* ECRootTabBarController.m */; };
+		22BE6CC712294FC7006F522B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE6CC512294FC7006F522B /* ECDebugViewController.h */; };
+		22BE6CC812294FC7006F522B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE6CC612294FC7006F522B /* ECDebugViewController.m */; };
+		22BE6CC912294FC7006F522B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE6CC612294FC7006F522B /* ECDebugViewController.m */; };
+		22BE6CE8122952BA006F522B /* debug.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BE6CE7122952BA006F522B /* debug.png */; };
 		22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BFA1471205F8EA00343D91 /* UIColor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */; };
 		22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -442,6 +449,11 @@
 		22BD8FA112082712006DEA84 /* ECValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECValueEditableCell.m; path = controllers/ECValueEditableCell.m; sourceTree = "<group>"; };
 		22BD8FA612082773006DEA84 /* ECCellProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCellProperties.h; path = controllers/ECCellProperties.h; sourceTree = "<group>"; };
 		22BD8FA712082773006DEA84 /* ECCellProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCellProperties.m; path = controllers/ECCellProperties.m; sourceTree = "<group>"; };
+		22BE6C92122949DE006F522B /* ECRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECRootTabBarController.h; path = controllers/ECRootTabBarController.h; sourceTree = "<group>"; };
+		22BE6C93122949DE006F522B /* ECRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECRootTabBarController.m; path = controllers/ECRootTabBarController.m; sourceTree = "<group>"; };
+		22BE6CC512294FC7006F522B /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECDebugViewController.h; path = controllers/ECDebugViewController.h; sourceTree = "<group>"; };
+		22BE6CC612294FC7006F522B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECDebugViewController.m; path = controllers/ECDebugViewController.m; sourceTree = "<group>"; };
+		22BE6CE7122952BA006F522B /* debug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = debug.png; path = resources/touch/debug.png; sourceTree = SOURCE_ROOT; };
 		22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+ECUtilities.h"; path = "utilities/UIColor+ECUtilities.h"; sourceTree = "<group>"; };
 		22BFA1451205F8EA00343D91 /* UIColor+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ECUtilities.m"; path = "utilities/UIColor+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
@@ -706,6 +718,7 @@
 			children = (
 				22F8C9DE1205D671009486B3 /* icon57.png */,
 				22F8C9DF1205D671009486B3 /* icon72.png */,
+				22BE6CE7122952BA006F522B /* debug.png */,
 				22F8C9D31205D633009486B3 /* about.png */,
 				22F8CA0B1205D774009486B3 /* Credits.txt */,
 				22F8C9D41205D633009486B3 /* test.png */,
@@ -730,6 +743,8 @@
 		22592EB411F5BBBE0056FF4B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22BE6C92122949DE006F522B /* ECRootTabBarController.h */,
+				22BE6C93122949DE006F522B /* ECRootTabBarController.m */,
 				22BD8FA612082773006DEA84 /* ECCellProperties.h */,
 				22BD8FA712082773006DEA84 /* ECCellProperties.m */,
 				22BD8F9E12082712006DEA84 /* ECValueCell.h */,
@@ -745,6 +760,8 @@
 				22859E1911FE0356008EBC30 /* ECTextItemEditorController.h */,
 				22859E1A11FE0356008EBC30 /* ECTextItemEditorController.m */,
 				223EFCFF11F883CA00CD6D19 /* ECDataDrivenView.h */,
+				22BE6CC512294FC7006F522B /* ECDebugViewController.h */,
+				22BE6CC612294FC7006F522B /* ECDebugViewController.m */,
 				224C9B6A1204A5FF005441CE /* ECDataDrivenTableCell.h */,
 				22A765481209688900FBE46C /* ECListTableController.h */,
 				22A7654B120968D100FBE46C /* ECListTableController.m */,
@@ -1052,6 +1069,8 @@
 				22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */,
 				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
 				2275EBEE12270AC30016F6AD /* ECLogChannel.h in Headers */,
+				22BE6C94122949DE006F522B /* ECRootTabBarController.h in Headers */,
+				22BE6CC712294FC7006F522B /* ECDebugViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,6 +1257,7 @@
 				22F8C9E01205D671009486B3 /* icon57.png in Resources */,
 				22F8C9E11205D671009486B3 /* icon72.png in Resources */,
 				22F8CA0C1205D774009486B3 /* Credits.txt in Resources */,
+				22BE6CE8122952BA006F522B /* debug.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1346,6 +1366,8 @@
 				22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 				227D28B0121ABE260093040C /* NSURL+ECMacTests.m in Sources */,
 				2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */,
+				22BE6C96122949DE006F522B /* ECRootTabBarController.m in Sources */,
+				22BE6CC912294FC7006F522B /* ECDebugViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,6 +1410,8 @@
 				22FDE54E121D6337007741FB /* NSDate+ECUtilities.m in Sources */,
 				2275EBF012270AC30016F6AD /* ECLogChannel.m in Sources */,
 				2275EBFA12270D2F0016F6AD /* ECLogging.m in Sources */,
+				22BE6C95122949DE006F522B /* ECRootTabBarController.m in Sources */,
+				22BE6CC812294FC7006F522B /* ECDebugViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
