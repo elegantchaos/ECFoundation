@@ -14,7 +14,7 @@
 //! Define the instance variable that will back a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyDefineVariable(name, type)		type _##name
+#define ECPropertyVariable(name, type)		type _##name
 
 // --------------------------------------------------------------------------
 //! Define a property.
@@ -60,7 +60,7 @@
 //! Return the raw instance variable backing a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyVariable(name)					_##name
+#define ECPropertyDirect(name)					_##name
 
 // --------------------------------------------------------------------------
 //! Release a property in a way that's safe to use in dealloc.

@@ -11,8 +11,8 @@
 
 @interface ECLogChannel : NSObject
 {
-	ECPropertyDefineVariable(enabled, BOOL);
-	ECPropertyDefineVariable(name, NSString*);
+	ECPropertyVariable(enabled, BOOL);
+	ECPropertyVariable(name, NSString*);
 }
 
 ECPropertyAssigned(enabled, BOOL);

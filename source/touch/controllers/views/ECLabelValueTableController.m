@@ -24,6 +24,30 @@ ECPropertySynthesize(data);
 ECPropertySynthesize(cellClass);
 
 // --------------------------------------------------------------------------
+//! Initialise
+// --------------------------------------------------------------------------
+
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
+{
+	if ((nibNameOrNil != nil) || (nibBundleOrNil != nil))
+	{
+		self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	}
+	else
+	{
+		self = [super initWithStyle: UITableViewStyleGrouped];
+	}
+	
+	if (self != nil)
+	{
+		self.data = data;
+		self.title = [data objectForKey: kLabelKey];
+	}
+	
+	return self;
+}
+
+// --------------------------------------------------------------------------
 //! Release references and clean up.
 // --------------------------------------------------------------------------
 
@@ -161,12 +185,13 @@ ECPropertySynthesize(cellClass);
 	{
 		cellClass = [ECLabelValueCell class];
 	}
+	NSDictionary* cellProperties = [item objectForKey: kCellPropertiesKey];
 	NSString* cellIdentifier = NSStringFromClass(cellClass);
 	
 	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[cellClass alloc] initForItem: item reuseIdentifier: cellIdentifier] autorelease];
+		cell = [[[cellClass alloc] initForItem: item properties: cellProperties reuseIdentifier: cellIdentifier] autorelease];
 	}
 	
 	[cell setupForItem: item];

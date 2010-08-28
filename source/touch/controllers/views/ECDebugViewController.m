@@ -6,10 +6,11 @@
 //  Copyright (c) 2010 Elegant Chaos. All rights reserved.
 //
 
-#import "ECDebugViewController.h"
-#import "ECLogManager.h"
-#import "ECLogChannel.h"
+#import "ECBooleanEditableCell.h"
 #import "ECDataItem.h"
+#import "ECDebugViewController.h"
+#import "ECLogChannel.h"
+#import "ECLogManager.h"
 #import "ECTickListTableController.h"
 
 @interface ECDebugViewController()
@@ -29,17 +30,18 @@ static NSString *const kChannelKey = @"Channel";
 	ECDataItem* channelsList = [ECDataItem item];
 	for (ECLogChannel* channel in [ECLogManager sharedInstance].channels)
 	{
-		ECDataItem* item = [ECDataItem itemWithObjectsAndKeys: channel.name, kValueKey, channel, kChannelKey, nil];
+		ECDataItem* item = [ECDataItem itemWithObjectsAndKeys: channel.name, kValueKey, [NSNumber numberWithBool: channel.enabled], @"enabled", channel, kChannelKey, nil];
 		[channelsList addItem: item];
 	}
-	
+	[channelsList setDefault: [ECBooleanEditableCell class] forKey: kCellClassKey];
+	[channelsList setDefault: [NSDictionary dictionaryWithObject: @"enabled" forKey: kValueKey] forKey: kCellPropertiesKey];
 	
 	ECDataItem* channelsSection = [ECDataItem item];
-	[channelsSection setObject: @"Channels" forKey: kLabelKey];
+	[channelsSection setObject: @"Channels" forKey: kValueKey];
 	[channelsSection setBooleanDefault: YES forKey: kSelectableKey];
 	[channelsSection addItem: channelsList];
 	
-	ECDataItem* loggingSection = [ECDataItem itemWithObjectsAndKeys: @"Logging", kHeaderKey, [ECTickListTableController class], kEditorKey, nil];
+	ECDataItem* loggingSection = [ECDataItem itemWithObjectsAndKeys: @"Logging", kHeaderKey, [ECLabelValueTableController class], kViewerKey, nil];
 	[loggingSection addItem: channelsSection];
 
 	[data addItem: loggingSection];

@@ -7,17 +7,20 @@
 
 #import "ECProperties.h"
 #import "ECDataItem.h"
+#import "ECDataDrivenView.h"
 
 #import <UIKit/UIKit.h>
 
-@interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ECLabelValueTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
 {
-	ECPropertyDefineVariable(data, ECDataItem*);
-	ECPropertyDefineVariable(cellClass, Class);
+	ECPropertyVariable(data, ECDataItem*);
+	ECPropertyVariable(cellClass, Class);
 }
 
 ECPropertyRetained(data, ECDataItem*);
 ECPropertyAssigned(cellClass, Class);
+
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 
 @end
 

@@ -10,8 +10,8 @@
 
 @interface ECValueEditableCell : ECLabelValueCell<UITextFieldDelegate> 
 {
-	ECPropertyDefineVariable(label, UILabel*);
-	ECPropertyDefineVariable(text, UITextField*);
+	ECPropertyVariable(label, UILabel*);
+	ECPropertyVariable(text, UITextField*);
 }
 
 ECPropertyRetained(label, UILabel*);
@@ -21,7 +21,7 @@ ECPropertyRetained(text, UITextField*);
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
 - (void) setupForItem:(ECDataItem *)item;
 
 @end

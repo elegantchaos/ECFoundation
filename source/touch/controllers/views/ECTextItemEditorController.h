@@ -11,9 +11,9 @@
 
 @interface ECTextItemEditorController : UIViewController<ECDataDrivenView, UITextFieldDelegate>
 {
-	ECPropertyDefineVariable(data, ECDataItem*);
-	ECPropertyDefineVariable(editor, UITextField*);
-	ECPropertyDefineVariable(label, UILabel*);
+	ECPropertyVariable(data, ECDataItem*);
+	ECPropertyVariable(editor, UITextField*);
+	ECPropertyVariable(label, UILabel*);
 }
 
 // --------------------------------------------------------------------------

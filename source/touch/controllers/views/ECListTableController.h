@@ -1,39 +1,45 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 31/07/2010
+//! @date 03/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
-#import "ECDataDrivenTableCell.h"
+#import "ECProperties.h"
+#import "ECDataDrivenView.h"
+
+#include <UIKit/UIKit.h>
 
 @class ECDataItem;
 
-@interface ECLabelValueCell : UITableViewCell<ECDataDrivenTableCell> 
+@interface ECListTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, ECDataDrivenView>
+
+// --------------------------------------------------------------------------
+// Instance Variables
+// --------------------------------------------------------------------------
+
 {
-	ECPropertyDefineVariable(item, ECDataItem*);
+	ECDataItem*						mSelection;		//!< The selected item.
+	BOOL							mEditable;		//!< Are the items editable?
+	BOOL							mExtensible;	//!< Can we add new items?
+	UIBarButtonItem*				mAddButton;		
+	BOOL							mIgnoreNextNotification;
+	
+	ECPropertyVariable(data, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
-// Public Properties.
+// Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(item, ECDataItem*);
+ECPropertyRetained(data, ECDataItem*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
-- (void) setupForItem:(ECDataItem *)item;
-
-// --------------------------------------------------------------------------
-// Internal Methods
-// --------------------------------------------------------------------------
-
-- (void) setupLabel;
-- (void) setupDetail;
-- (void) setupAccessory;
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
 
 @end
+
+

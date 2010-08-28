@@ -9,11 +9,11 @@
 
 @interface ECTouchAboutBoxController : UIViewController 
 {
-    ECPropertyDefineVariable(application, UILabel*);
-    ECPropertyDefineVariable(version, UILabel*);
-    ECPropertyDefineVariable(about, UITextField*);
-    ECPropertyDefineVariable(copyright, UILabel*);
-    ECPropertyDefineVariable(logo, UIImageView*);
+    ECPropertyVariable(application, UILabel*);
+    ECPropertyVariable(version, UILabel*);
+    ECPropertyVariable(about, UITextField*);
+    ECPropertyVariable(copyright, UILabel*);
+    ECPropertyVariable(logo, UIImageView*);
 }
 
 ECPropertyRetained(application, IBOutlet UILabel*);

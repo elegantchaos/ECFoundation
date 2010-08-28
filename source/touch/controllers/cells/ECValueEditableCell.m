@@ -5,25 +5,23 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECLabelValueEditableCell.h"
+#import "ECValueEditableCell.h"
 #import "ECDataItem.h"
 #import "UIColor+ECUtilities.h"
 #import "ECCellProperties.h"
-#import "ECLogging.h"
 
-@implementation ECLabelValueEditableCell
+@implementation ECValueEditableCell
+
+ECDefineDebugChannel(ValueEditableCellChannel);
 
 static const CGFloat kVerticalInset = 11.0f;
 static const CGFloat kHorizontalInset = 32.0f;
-static const CGFloat kHorizontalOffset = 32.0f;
 
 enum
 {
 	kLabelTag,
 	kTextTag
 };
-
-ECDefineLogChannel(ECLabelValueEditorChannel);
 
 ECPropertySynthesize(label);
 ECPropertySynthesize(text);
@@ -32,17 +30,15 @@ ECPropertySynthesize(text);
 //! Initialise the cell.
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier
 {
-	if ((self = [super initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: identifier]) != nil)
+	if ((self = [super initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifier]) != nil)
 	{
 		CGRect rect = CGRectInset(self.bounds, kHorizontalInset, kVerticalInset);
-		rect.origin.x += kHorizontalOffset;
-		rect.size.width -= kHorizontalOffset;
 
 		UITextField* textField = [[UITextField alloc] initWithFrame: rect];
 		textField.clearsOnBeginEditing = NO;
-		textField.textAlignment = UITextAlignmentRight;
+		textField.textAlignment = UITextAlignmentLeft;
 		textField.textColor = [UIColor blueTextColor];
         textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		[textField setDelegate:self];
@@ -62,8 +58,6 @@ ECPropertySynthesize(text);
 {
 	self.item = item;
 	
-	[self setupLabel];
-	
 	self.text.text = [item objectForKey: kValueKey];
 	self.text.secureTextEntry = [item boolForKey: kSecureKey];
 	self.text.autocapitalizationType = [item intForKey: kAutocapitalizationTypeKey orDefault: UITextAutocapitalizationTypeNone];
@@ -82,7 +76,7 @@ ECPropertySynthesize(text);
 {
 	for (UIView* view in self.contentView.subviews)
 	{
-		ECDebug(ECLabelValueEditorChannel, @"view %@", view);
+		ECDebug(ValueEditableCellChannel, @"view %@", view);
 	}
 }
 
@@ -92,14 +86,14 @@ ECPropertySynthesize(text);
 
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
-	ECDebug(ECLabelValueEditorChannel, @"text end editing");
+	ECDebug(ValueEditableCellChannel, @"text end editing");
 	[self.item setObject: textField.text forKey:kValueKey];
 	[self.item postChangedNotifications];
 }
 
 - (void) textFieldDone: (id) sender
 {
-	ECDebug(ECLabelValueEditorChannel, @"text field done");
+	ECDebug(ValueEditableCellChannel, @"text field done");
 	[sender resignFirstResponder];
 }
 

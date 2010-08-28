@@ -9,10 +9,10 @@
 
 @interface ECDataItem : NSObject 
 {
-	ECPropertyDefineVariable(data, NSMutableDictionary*);
-	ECPropertyDefineVariable(defaults, NSMutableDictionary*);
-	ECPropertyDefineVariable(parent, ECDataItem*);
-	ECPropertyDefineVariable(items, NSMutableArray*);
+	ECPropertyVariable(data, NSMutableDictionary*);
+	ECPropertyVariable(defaults, NSMutableDictionary*);
+	ECPropertyVariable(parent, ECDataItem*);
+	ECPropertyVariable(items, NSMutableArray*);
 	
 	NSUInteger	mCachedSection;
 	NSUInteger	mCachedRow;
@@ -90,6 +90,7 @@ ECPropertyRetained(items, NSMutableArray*);
 
 extern NSString *const kAccessoryKey;
 extern NSString *const kCellClassKey;
+extern NSString *const kCellPropertiesKey;
 extern NSString *const kDefaultsKey;
 extern NSString *const kDeletableKey;
 extern NSString *const kEditableKey;

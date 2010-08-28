@@ -13,6 +13,7 @@
 
 NSString *const kAccessoryKey = @"Accessory";
 NSString *const kCellClassKey = @"CellClass";
+NSString *const kCellPropertiesKey = @"CellProperties";
 NSString *const kDefaultsKey = @"Defaults";
 NSString *const kDeletableKey = @"Deletable";
 NSString *const kEditableKey = @"Editable";

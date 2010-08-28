@@ -231,7 +231,7 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	UITableViewCell<ECDataDrivenTableCell>* cell = [view dequeueReusableCellWithIdentifier: cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[cellClass alloc] initForItem: item reuseIdentifier: cellIdentifier] autorelease];
+		cell = [[[cellClass alloc] initForItem: item properties: nil reuseIdentifier: cellIdentifier] autorelease];
 	}
 
 	[cell setupForItem: item];

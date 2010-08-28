@@ -1,42 +1,51 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 31/07/2010
+//! @date 28/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECValueCell.h"
+#import "ECBooleanEditableCell.h"
 #import "ECDataItem.h"
+#import "UIColor+ECUtilities.h"
+#import "ECCellProperties.h"
 
-@implementation ECValueCell
+@implementation ECBooleanEditableCell
+
+ECDefineDebugChannel(BooleanEditableCellChannel);
+
+ECPropertySynthesize(key);
 
 // --------------------------------------------------------------------------
-// Properties
+//! Initialise the cell.
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(item);
-
-// --------------------------------------------------------------------------
-//! Initialise with a data item.
-// --------------------------------------------------------------------------
-
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier
 {
 	if ((self = [super initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifier]) != nil)
 	{
+		UISwitch* control = [[UISwitch alloc] init];
+		self.accessoryView = control;
+		[control release];
+
+		// which item property should we display the value of?
+		self.key = [properties objectForKey: kValueKey];
 	}
 	
 	return self;
 }
 
 // --------------------------------------------------------------------------
-//! Setup the item.
+//! Setup the cell.
 // --------------------------------------------------------------------------
 
 - (void) setupForItem: (ECDataItem*) item
 {
-	self.item = item;
-	self.textLabel.text = [item objectForKey: kValueKey];
+	[super setupForItem: item];
+	
+	BOOL value = [item boolForKey: self.key];
+	UISwitch* control = (UISwitch*) self.accessoryView;
+	control.on = value;
 }
 
 @end

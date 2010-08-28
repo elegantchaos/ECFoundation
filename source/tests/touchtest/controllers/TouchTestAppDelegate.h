@@ -15,8 +15,8 @@
 	UIWindow*				window;
 	UITabBarController*		tabBarController;
 
-	ECPropertyDefineVariable(name, ECDataItem*);
-	ECPropertyDefineVariable(password, ECDataItem*);
+	ECPropertyVariable(name, ECDataItem*);
+	ECPropertyVariable(password, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------

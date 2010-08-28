@@ -12,7 +12,7 @@
 
 @interface ECValueCell : UITableViewCell<ECDataDrivenTableCell> 
 {
-	ECPropertyDefineVariable(item, ECDataItem*);
+	ECPropertyVariable(item, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
@@ -25,7 +25,7 @@ ECPropertyRetained(item, ECDataItem*);
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
 - (void) setupForItem:(ECDataItem *)item;
 
 @end

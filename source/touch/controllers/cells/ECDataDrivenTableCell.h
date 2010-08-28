@@ -11,7 +11,7 @@
 
 @protocol ECDataDrivenTableCell
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
 - (void) setupForItem: (ECDataItem*) item;
 
 @end
