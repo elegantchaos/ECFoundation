@@ -32,7 +32,7 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(data, ECDataItem*);
+ECPropertyRetained(data, ECDataItem*);
 
 // --------------------------------------------------------------------------
 // Public Methods

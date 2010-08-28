@@ -16,8 +16,8 @@
 	ECPropertyDefineVariable(cellClass, Class);
 }
 
-ECPropertyDefineRN(data, ECDataItem*);
-ECPropertyDefineAN(cellClass, Class);
+ECPropertyRetained(data, ECDataItem*);
+ECPropertyAssigned(cellClass, Class);
 
 @end
 

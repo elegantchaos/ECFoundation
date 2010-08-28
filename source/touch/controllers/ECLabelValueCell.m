@@ -71,7 +71,7 @@ ECPropertySynthesize(item);
 			{
 				detail = [NSString stringWithFormat: @"%@, %@, …", [[list itemAtIndex: 0] objectForKey: kValueKey], [[list itemAtIndex: 1] objectForKey: kValueKey]];
 			}
-			else
+			else if (count > 0)
 			{
 				detail = [NSString stringWithFormat: @"%@, …", [[list itemAtIndex: 0] objectForKey: kValueKey]];
 			}

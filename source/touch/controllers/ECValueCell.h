@@ -19,7 +19,7 @@
 // Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(item, ECDataItem*);
+ECPropertyRetained(item, ECDataItem*);
 
 // --------------------------------------------------------------------------
 // Public Methods

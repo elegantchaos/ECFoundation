@@ -20,10 +20,10 @@
 	ECDataItem* mCachedRowData;
 }
 
-ECPropertyDefineRN(data, NSMutableDictionary*);
-ECPropertyDefineRN(defaults, NSMutableDictionary*);
-ECPropertyDefineRN(parent, ECDataItem*);
-ECPropertyDefineRN(items, NSMutableArray*);
+ECPropertyRetained(data, NSMutableDictionary*);
+ECPropertyRetained(defaults, NSMutableDictionary*);
+ECPropertyRetained(parent, ECDataItem*);
+ECPropertyRetained(items, NSMutableArray*);
 
 + (ECDataItem*)		item;
 + (ECDataItem*)		itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;

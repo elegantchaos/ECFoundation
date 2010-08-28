@@ -23,13 +23,13 @@ static const NSInteger kDebugTabTag = 0;
 
 - (void) addDebugTab
 {
-	ECLabelValueTableController* debugController = [[ECDebugViewController alloc] initWithNibName: nil bundle: nil];
+	ECDebugViewController* debugController = [[ECDebugViewController alloc] initWithStyle: UITableViewStyleGrouped];
 	
 	ECNavigationController* debugNavigation = [[ECNavigationController alloc] initWithNibName: nil bundle: nil];
 	debugNavigation.initialView = debugController;
 	debugNavigation.title = @"Debug";
 	
-	UIImage* image = [UIImage imageNamed: @"debug"];
+	UIImage* image = [UIImage imageNamed: @"debug.png"];
 	UITabBarItem* debugItem = [[UITabBarItem alloc] initWithTitle: @"Debug" image: image tag: kDebugTabTag];
 	debugNavigation.tabBarItem = debugItem;
 	

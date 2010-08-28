@@ -20,9 +20,9 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(data, ECDataItem*);
-ECPropertyDefineRN(editor, IBOutlet UITextField*);
-ECPropertyDefineRN(label, IBOutlet UILabel*);
+ECPropertyRetained(data, ECDataItem*);
+ECPropertyRetained(editor, IBOutlet UITextField*);
+ECPropertyRetained(label, IBOutlet UILabel*);
 
 // --------------------------------------------------------------------------
 // Outlets

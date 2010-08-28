@@ -12,8 +12,10 @@
 
 @interface ECLogManager : NSObject
 {
-	
+	ECPropertyDefineVariable(channels, NSMutableArray*);
 }
+
+ECPropertyRetained(channels, NSMutableArray*);
 
 + (ECLogManager*) sharedInstance;
 

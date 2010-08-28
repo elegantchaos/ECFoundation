@@ -15,8 +15,8 @@
 	ECPropertyDefineVariable(name, NSString*);
 }
 
-ECPropertyDefineAN(enabled, BOOL);
-ECPropertyDefineRN(name, NSString*);
+ECPropertyAssigned(enabled, BOOL);
+ECPropertyRetained(name, NSString*);
 
 - (void) logWithFormat: (NSString*) format arguments: (va_list) arguments;
 

@@ -14,8 +14,8 @@
 	ECPropertyDefineVariable(text, UITextField*);
 }
 
-ECPropertyDefineRN(label, UILabel*);
-ECPropertyDefineRN(text, UITextField*);
+ECPropertyRetained(label, UILabel*);
+ECPropertyRetained(text, UITextField*);
 
 // --------------------------------------------------------------------------
 // Public Methods

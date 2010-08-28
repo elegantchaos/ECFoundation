@@ -119,6 +119,8 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 			[formatter setDateFormat: @"yyyy"];
 			result = [formatter stringFromDate:self];
 		}
+
+		[formatter release];
 	}
 	
 	return result;

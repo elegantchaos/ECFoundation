@@ -16,10 +16,10 @@
     ECPropertyDefineVariable(logo, UIImageView*);
 }
 
-ECPropertyDefineRN(application, IBOutlet UILabel*);
-ECPropertyDefineRN(version, IBOutlet UILabel*);
-ECPropertyDefineRN(about, IBOutlet UITextField*);
-ECPropertyDefineRN(copyright, IBOutlet UILabel*);
-ECPropertyDefineRN(logo, IBOutlet UIImageView*);
+ECPropertyRetained(application, IBOutlet UILabel*);
+ECPropertyRetained(version, IBOutlet UILabel*);
+ECPropertyRetained(about, IBOutlet UITextField*);
+ECPropertyRetained(copyright, IBOutlet UILabel*);
+ECPropertyRetained(logo, IBOutlet UIImageView*);
 
 @end
