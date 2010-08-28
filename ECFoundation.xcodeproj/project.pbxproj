@@ -87,6 +87,14 @@
 		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		2235875512299C5A0083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBE512270AB10016F6AD /* ECLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223587C61229B4EB0083284E /* ECLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 223587C41229B4EB0083284E /* ECLogHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223587C71229B4EB0083284E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223587C51229B4EB0083284E /* ECLogHandler.m */; };
+		223587C81229B4EB0083284E /* ECLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 223587C41229B4EB0083284E /* ECLogHandler.h */; };
+		223587C91229B4EB0083284E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223587C51229B4EB0083284E /* ECLogHandler.m */; };
+		223587CC1229B5340083284E /* ECDefaultLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 223587CA1229B5340083284E /* ECDefaultLogHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223587CD1229B5340083284E /* ECDefaultLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223587CB1229B5340083284E /* ECDefaultLogHandler.m */; };
+		223587CE1229B5340083284E /* ECDefaultLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 223587CA1229B5340083284E /* ECDefaultLogHandler.h */; };
+		223587CF1229B5340083284E /* ECDefaultLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223587CB1229B5340083284E /* ECDefaultLogHandler.m */; };
 		223CBABB1205C4180008A641 /* libECFoundationTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */; };
 		223CBAD21205C4FB0008A641 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBACC1205C4FB0008A641 /* FirstViewController.m */; };
 		223CBAD41205C4FB0008A641 /* TouchTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */; };
@@ -381,6 +389,10 @@
 		2232B68311FA02BB001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItem.m; sourceTree = "<group>"; };
 		2232B68811FA02E6001846FC /* ECDataItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItemTests.h; sourceTree = "<group>"; };
 		2232B68911FA02E6001846FC /* ECDataItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItemTests.m; sourceTree = "<group>"; };
+		223587C41229B4EB0083284E /* ECLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandler.h; sourceTree = "<group>"; };
+		223587C51229B4EB0083284E /* ECLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandler.m; sourceTree = "<group>"; };
+		223587CA1229B5340083284E /* ECDefaultLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDefaultLogHandler.h; sourceTree = "<group>"; };
+		223587CB1229B5340083284E /* ECDefaultLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDefaultLogHandler.m; sourceTree = "<group>"; };
 		223CBAB01205C3330008A641 /* AdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdHocPrefix.pch; sourceTree = "<group>"; };
 		223CBAB11205C3330008A641 /* DebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugPrefix.pch; sourceTree = "<group>"; };
 		223CBAB21205C3330008A641 /* ReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePrefix.pch; sourceTree = "<group>"; };
@@ -989,6 +1001,10 @@
 				2275EBF812270D2F0016F6AD /* ECLogging.m */,
 				2275EBEB12270AC30016F6AD /* ECLogChannel.h */,
 				2275EBEC12270AC30016F6AD /* ECLogChannel.m */,
+				223587C41229B4EB0083284E /* ECLogHandler.h */,
+				223587C51229B4EB0083284E /* ECLogHandler.m */,
+				223587CA1229B5340083284E /* ECDefaultLogHandler.h */,
+				223587CB1229B5340083284E /* ECDefaultLogHandler.m */,
 				2275EBE512270AB10016F6AD /* ECLogManager.h */,
 				2275EBE612270AB10016F6AD /* ECLogManager.m */,
 				226E1FAD11F8D0A300603F71 /* ECMacros.h */,
@@ -1129,6 +1145,8 @@
 				22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */,
 				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
 				22A0BA1D12145CAE00522D54 /* UIWindow+ECUtilities.h in Headers */,
+				223587C61229B4EB0083284E /* ECLogHandler.h in Headers */,
+				223587CC1229B5340083284E /* ECDefaultLogHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1189,8 @@
 				22FDE571121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
 				2275EBE712270AB10016F6AD /* ECLogManager.h in Headers */,
 				2275EBED12270AC30016F6AD /* ECLogChannel.h in Headers */,
+				223587C81229B4EB0083284E /* ECLogHandler.h in Headers */,
+				223587CE1229B5340083284E /* ECDefaultLogHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,6 +1520,8 @@
 				2286AE6112298A2E00CCC25F /* ECTextItemEditorController.m in Sources */,
 				2286AE6212298A2E00CCC25F /* ECTickListTableController.m in Sources */,
 				2286AE6312298A2E00CCC25F /* ECTouchAboutBoxController.m in Sources */,
+				223587C71229B4EB0083284E /* ECLogHandler.m in Sources */,
+				223587CD1229B5340083284E /* ECDefaultLogHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1528,6 +1550,8 @@
 				2275EBE812270AB10016F6AD /* ECLogManager.m in Sources */,
 				2275EBEF12270AC30016F6AD /* ECLogChannel.m in Sources */,
 				2275EBF912270D2F0016F6AD /* ECLogging.m in Sources */,
+				223587C91229B4EB0083284E /* ECLogHandler.m in Sources */,
+				223587CF1229B5340083284E /* ECDefaultLogHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

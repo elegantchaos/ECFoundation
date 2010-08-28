@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 01/08/2010
 //
-//  ECLogChannel.h
-//  ECFoundation
-//
-//  Created by Sam Deane on 26/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
 
@@ -17,8 +16,6 @@
 
 ECPropertyAssigned(enabled, BOOL);
 ECPropertyRetained(name, NSString*);
-
-- (void) logWithFormat: (NSString*) format arguments: (va_list) arguments;
 
 @end
 

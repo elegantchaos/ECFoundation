@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @class ECLogChannel;
+@class ECLogHandler;
 
 // --------------------------------------------------------------------------
 //! Manager which keeps track of all the log channels.
@@ -16,6 +17,7 @@
 @interface ECLogManager : NSObject
 {
 	ECPropertyVariable(channels, NSMutableArray*);
+	ECPropertyVariable(handler, NSMutableArray*);
 }
 
 // --------------------------------------------------------------------------
@@ -23,6 +25,7 @@
 // --------------------------------------------------------------------------
 
 ECPropertyRetained(channels, NSMutableArray*);
+ECPropertyRetained(handlers, NSMutableArray*);
 
 // --------------------------------------------------------------------------
 // Public Methods
@@ -31,7 +34,10 @@ ECPropertyRetained(channels, NSMutableArray*);
 + (ECLogManager*) sharedInstance;
 
 - (void) registerChannel: (ECLogChannel*) channel;
+- (void) registerHandler: (ECLogHandler*) handler;
+- (void) registerDefaultHandler;
 - (void) shutdown;
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
 
 @end
 

@@ -5,19 +5,11 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECLogChannel.h"
-
-
-@implementation ECLogChannel
-
-ECPropertySynthesize(enabled);
-ECPropertySynthesize(name);
-
-- (void) dealloc
+@interface ECLogHandler : NSObject 
 {
-	ECPropertyDealloc(name);
-	
-	[super dealloc];
+
 }
+
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
 
 @end

@@ -32,6 +32,6 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...)
 {
 	va_list args;
 	va_start(args, format);
-	[channel logWithFormat: format arguments: args]; 
+	[[ECLogManager sharedInstance] logFromChannel: channel withFormat:format arguments:args];
 	va_end(args);
 }

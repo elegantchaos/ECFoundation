@@ -7,6 +7,7 @@
 
 #import "ECLogManager.h"
 #import "ECLogChannel.h"
+#import "ECDefaultLogHandler.h"
 
 // --------------------------------------------------------------------------
 // Private Methods
@@ -36,6 +37,7 @@ NSString *const kLogChannelSettings = @"LogChannels";
 // --------------------------------------------------------------------------
 
 ECPropertySynthesize(channels);
+ECPropertySynthesize(handlers);
 
 // --------------------------------------------------------------------------
 // Globals
@@ -83,6 +85,26 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Regist a channel with the log manager.
+// --------------------------------------------------------------------------
+
+- (void) registerHandler: (ECLogHandler*) handler
+{
+	[self.handlers addObject: handler];
+}
+
+// --------------------------------------------------------------------------
+//! Regist the default log handler which just does an NSLog for each item.
+// --------------------------------------------------------------------------
+
+- (void) registerDefaultHandler
+{
+	ECLogHandler* handler = [[ECDefaultLogHandler alloc] init];
+	[self registerHandler: handler];
+	[handler release];
+}
+
+// --------------------------------------------------------------------------
 //! Initialise the log manager.
 // --------------------------------------------------------------------------
 
@@ -93,6 +115,10 @@ static ECLogManager* gSharedInstance = nil;
 		NSMutableArray* array = [[NSMutableArray alloc] init];
 		self.channels = array;
 		[array release];
+		array = [[NSMutableArray alloc] init];
+		self.handlers = array;
+		[array release];
+		
 	}
 	
 	return self;
@@ -137,4 +163,17 @@ static ECLogManager* gSharedInstance = nil;
 	[allSettings release];
 
 }
+
+// --------------------------------------------------------------------------
+//! Log to all handlers
+// --------------------------------------------------------------------------
+
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
+{
+	for (ECLogHandler* handler in self.handlers)
+	{
+		[handler logFromChannel: channel withFormat: format arguments: arguments];
+	}
+}
+
 @end

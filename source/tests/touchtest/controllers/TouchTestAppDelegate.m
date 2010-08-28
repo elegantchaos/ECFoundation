@@ -2,7 +2,7 @@
 //! @author Sam Deane
 //! @date 01/08/2010
 //
-//  Copyright 2010 sam, Elegant Chaos. All rights reserved.
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import "TouchTestAppDelegate.h"
@@ -37,6 +37,8 @@ ECPropertySynthesize(password);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
+	[[ECLogManager sharedInstance] registerDefaultHandler];
+
 	NSString* pointlessString = @"blah";
 	[pointlessString splitWordsIntoInts];
 	
