@@ -9,6 +9,7 @@
 
 #import <ECFoundation/ECDataItem.h>
 #import <ECFoundation/NSString+ECUtilities.h>
+#import <ECFoundation/ECLogManager.h>
 
 // --------------------------------------------------------------------------
 // Constants
@@ -63,6 +64,8 @@ ECPropertySynthesize(password);
 	[defaults setValue: [self.name objectForKey: kValueKey] forKey: kNameSetting];
 	[defaults setValue: [self.password objectForKey: kValueKey] forKey: kPasswordSetting];
 	[defaults synchronize];
+	
+	[[ECLogManager sharedInstance] shutdown];
 }
 
 // --------------------------------------------------------------------------

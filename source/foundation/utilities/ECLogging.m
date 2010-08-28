@@ -21,7 +21,7 @@ ECLogChannel* makeNewChannel(const char* name)
 {
 	ECLogChannel* channel = [[ECLogChannel alloc] init];
 	channel.name = [NSString stringWithUTF8String: name];
-	channel.enabled = YES;
+	channel.enabled = NO;
 	
 	[[ECLogManager sharedInstance] registerChannel: channel];
 	

@@ -20,6 +20,7 @@
 - (void) channelSelected: (NSNotification*) notification;
 - (void) channelsChanged: (NSNotification*) notification;
 - (void) rebuildChannelsList;
+- (void) updateChannelsFromList;
 @end
 
 
@@ -87,8 +88,7 @@ static void* kChannelsContext;
 
 - (void) channelSelected: (NSNotification*) notification
 {
-	ECDebug(DebugViewChannel, @"channel selected");
-	
+	[self updateChannelsFromList];
 }
 
 // --------------------------------------------------------------------------
@@ -97,7 +97,6 @@ static void* kChannelsContext;
 
 - (void) channelsChanged: (NSNotification*) notification
 {
-	ECDebug(DebugViewChannel, @"channels changed");
 	[self rebuildChannelsList];
 	[self.tableView reloadData];
 }
@@ -118,6 +117,22 @@ static void* kChannelsContext;
 	}	
 }
 
+// --------------------------------------------------------------------------
+//! Rebuild the list of log channels.
+// --------------------------------------------------------------------------
+
+- (void) updateChannelsFromList
+{
+	ECDataItem* channelsList = self.channels;
+	for (ECDataItem* channelItem in channelsList.items)
+	{
+		ECLogChannel* channel = [channelItem objectForKey: kChannelKey];
+		if (channel)
+		{
+			channel.enabled = [[channelItem objectForKey: kEnabledKey] boolValue];
+		}
+	}	
+}
 
 
 @end

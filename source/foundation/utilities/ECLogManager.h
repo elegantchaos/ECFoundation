@@ -9,16 +9,29 @@
 
 @class ECLogChannel;
 
+// --------------------------------------------------------------------------
+//! Manager which keeps track of all the log channels.
+// --------------------------------------------------------------------------
+
 @interface ECLogManager : NSObject
 {
 	ECPropertyVariable(channels, NSMutableArray*);
 }
 
+// --------------------------------------------------------------------------
+// Public Properties
+// --------------------------------------------------------------------------
+
 ECPropertyRetained(channels, NSMutableArray*);
+
+// --------------------------------------------------------------------------
+// Public Methods
+// --------------------------------------------------------------------------
 
 + (ECLogManager*) sharedInstance;
 
 - (void) registerChannel: (ECLogChannel*) channel;
+- (void) shutdown;
 
 @end
 

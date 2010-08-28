@@ -75,7 +75,7 @@
 		220A2DEA1229860B00A50007 /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCC1229860B00A50007 /* ECTickListTableController.m */; };
 		220A2DEB1229860B00A50007 /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCE1229860B00A50007 /* ECTouchAboutBoxController.m */; };
 		220A2DEC1229860B00A50007 /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCE1229860B00A50007 /* ECTouchAboutBoxController.m */; };
-		220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DED1229868300A50007 /* ECBooleanEditableCell.h */; };
+		220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DED1229868300A50007 /* ECBooleanEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220A2DF01229868300A50007 /* ECBooleanEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DEE1229868300A50007 /* ECBooleanEditableCell.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
 		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
@@ -86,6 +86,7 @@
 		2232B68711FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
 		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
+		2235875512299C5A0083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBE512270AB10016F6AD /* ECLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CBABB1205C4180008A641 /* libECFoundationTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */; };
 		223CBAD21205C4FB0008A641 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBACC1205C4FB0008A641 /* FirstViewController.m */; };
 		223CBAD41205C4FB0008A641 /* TouchTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */; };
@@ -133,7 +134,7 @@
 		2275EBE712270AB10016F6AD /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBE512270AB10016F6AD /* ECLogManager.h */; };
 		2275EBE812270AB10016F6AD /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275EBE612270AB10016F6AD /* ECLogManager.m */; };
 		2275EBED12270AC30016F6AD /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBEB12270AC30016F6AD /* ECLogChannel.h */; };
-		2275EBEE12270AC30016F6AD /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBEB12270AC30016F6AD /* ECLogChannel.h */; };
+		2275EBEE12270AC30016F6AD /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2275EBEB12270AC30016F6AD /* ECLogChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2275EBEF12270AC30016F6AD /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275EBEC12270AC30016F6AD /* ECLogChannel.m */; };
 		2275EBF012270AC30016F6AD /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275EBEC12270AC30016F6AD /* ECLogChannel.m */; };
 		2275EBF912270D2F0016F6AD /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275EBF812270D2F0016F6AD /* ECLogging.m */; };
@@ -196,22 +197,22 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DAF1229860B00A50007 /* ECCellProperties.h */; };
-		2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB11229860B00A50007 /* ECDataDrivenTableCell.h */; };
-		2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB21229860B00A50007 /* ECLabelValueCell.h */; };
-		2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB41229860B00A50007 /* ECLabelValueEditableCell.h */; };
-		2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB61229860B00A50007 /* ECValueCell.h */; };
-		2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB81229860B00A50007 /* ECValueEditableCell.h */; };
-		2286AE3F122989DB00CCC25F /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBB1229860B00A50007 /* ECDataDrivenView.h */; };
-		2286AE40122989DB00CCC25F /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBD1229860B00A50007 /* ECDebugViewController.h */; };
-		2286AE41122989DB00CCC25F /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBF1229860B00A50007 /* ECItemListTableController.h */; };
-		2286AE42122989DB00CCC25F /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC11229860B00A50007 /* ECLabelValueTableController.h */; };
-		2286AE43122989DB00CCC25F /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC31229860B00A50007 /* ECListTableController.h */; };
-		2286AE44122989DB00CCC25F /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC51229860B00A50007 /* ECNavigationController.h */; };
-		2286AE45122989DB00CCC25F /* ECRootTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC71229860B00A50007 /* ECRootTabBarController.h */; };
-		2286AE46122989DB00CCC25F /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC91229860B00A50007 /* ECTextItemEditorController.h */; };
-		2286AE47122989DB00CCC25F /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCB1229860B00A50007 /* ECTickListTableController.h */; };
-		2286AE48122989DB00CCC25F /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCD1229860B00A50007 /* ECTouchAboutBoxController.h */; };
+		2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DAF1229860B00A50007 /* ECCellProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB11229860B00A50007 /* ECDataDrivenTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB21229860B00A50007 /* ECLabelValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB41229860B00A50007 /* ECLabelValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB61229860B00A50007 /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB81229860B00A50007 /* ECValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE3F122989DB00CCC25F /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBB1229860B00A50007 /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE40122989DB00CCC25F /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBD1229860B00A50007 /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE41122989DB00CCC25F /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBF1229860B00A50007 /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE42122989DB00CCC25F /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC11229860B00A50007 /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE43122989DB00CCC25F /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC31229860B00A50007 /* ECListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE44122989DB00CCC25F /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC51229860B00A50007 /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE45122989DB00CCC25F /* ECRootTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC71229860B00A50007 /* ECRootTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE46122989DB00CCC25F /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC91229860B00A50007 /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE47122989DB00CCC25F /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCB1229860B00A50007 /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2286AE48122989DB00CCC25F /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCD1229860B00A50007 /* ECTouchAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286AE5512298A2800CCC25F /* ECCellProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB01229860B00A50007 /* ECCellProperties.m */; };
 		2286AE5612298A2800CCC25F /* ECLabelValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB31229860B00A50007 /* ECLabelValueCell.m */; };
 		2286AE5712298A2800CCC25F /* ECLabelValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB51229860B00A50007 /* ECLabelValueEditableCell.m */; };
@@ -1076,57 +1077,58 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
+				220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */,
+				2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */,
+				2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */,
 				2286AE3F122989DB00CCC25F /* ECDataDrivenView.h in Headers */,
+				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
 				2286AE40122989DB00CCC25F /* ECDebugViewController.h in Headers */,
+				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
+				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
+				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
+				228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */,
+				228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */,
+				2209879C1212C7C4003EDD48 /* ECGLAttribute.h in Headers */,
+				2209879E1212C7C4003EDD48 /* ECGLCommon.h in Headers */,
+				2209879F1212C7C4003EDD48 /* ECGLFragmentShader.h in Headers */,
+				2257F1B71212D274007BE593 /* ECGLLoader.h in Headers */,
+				220987A11212C7C4003EDD48 /* ECGLMesh.h in Headers */,
+				220987A31212C7C4003EDD48 /* ECGLShader.h in Headers */,
+				220987A51212C7C4003EDD48 /* ECGLShaderProgram.h in Headers */,
+				220987A71212C7C4003EDD48 /* ECGLTexture.h in Headers */,
+				220987A91212C7C4003EDD48 /* ECGLTextureLink.h in Headers */,
+				220987AB1212C7C4003EDD48 /* ECGLVertexShader.h in Headers */,
+				220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */,
 				2286AE41122989DB00CCC25F /* ECItemListTableController.h in Headers */,
+				2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */,
+				2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */,
 				2286AE42122989DB00CCC25F /* ECLabelValueTableController.h in Headers */,
 				2286AE43122989DB00CCC25F /* ECListTableController.h in Headers */,
+				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
+				2275EBEE12270AC30016F6AD /* ECLogChannel.h in Headers */,
+				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
+				2235875512299C5A0083284E /* ECLogManager.h in Headers */,
+				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
 				2286AE44122989DB00CCC25F /* ECNavigationController.h in Headers */,
+				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
 				2286AE45122989DB00CCC25F /* ECRootTabBarController.h in Headers */,
 				2286AE46122989DB00CCC25F /* ECTextItemEditorController.h in Headers */,
 				2286AE47122989DB00CCC25F /* ECTickListTableController.h in Headers */,
 				2286AE48122989DB00CCC25F /* ECTouchAboutBoxController.h in Headers */,
-				220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */,
-				2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */,
-				2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */,
-				2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */,
-				2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */,
-				2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */,
-				2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */,
-				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
-				228630C511E32DD900654739 /* ECFoundationReleasePrefix.pch in Headers */,
-				228630C611E32DD900654739 /* ECFoundationSharedPrefix.pch in Headers */,
+				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
 				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
 				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
 				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
-				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
-				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
+				2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */,
+				2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */,
+				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
-				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
-				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
-				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
-				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
-				226E1FA011F8D03E00603F71 /* ECLogging.h in Headers */,
-				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
-				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
-				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
-				2209879C1212C7C4003EDD48 /* ECGLAttribute.h in Headers */,
-				2209879E1212C7C4003EDD48 /* ECGLCommon.h in Headers */,
-				2209879F1212C7C4003EDD48 /* ECGLFragmentShader.h in Headers */,
-				220987A11212C7C4003EDD48 /* ECGLMesh.h in Headers */,
-				220987A51212C7C4003EDD48 /* ECGLShaderProgram.h in Headers */,
-				220987A31212C7C4003EDD48 /* ECGLShader.h in Headers */,
-				220987A71212C7C4003EDD48 /* ECGLTexture.h in Headers */,
-				220987A91212C7C4003EDD48 /* ECGLTextureLink.h in Headers */,
-				220987AB1212C7C4003EDD48 /* ECGLVertexShader.h in Headers */,
-				2257F1B71212D274007BE593 /* ECGLLoader.h in Headers */,
-				220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */,
 				22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */,
-				22A0BA1D12145CAE00522D54 /* UIWindow+ECUtilities.h in Headers */,
 				22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */,
-				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
-				2275EBEE12270AC30016F6AD /* ECLogChannel.h in Headers */,
+				22BFA1461205F8EA00343D91 /* UIColor+ECUtilities.h in Headers */,
+				22A0BA1D12145CAE00522D54 /* UIWindow+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

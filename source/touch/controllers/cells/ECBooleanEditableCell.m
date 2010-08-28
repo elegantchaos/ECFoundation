@@ -59,6 +59,7 @@ ECPropertySynthesize(key);
 	 UISwitch* control = (UISwitch*) self.accessoryView;
 	 BOOL value = control.isOn;
 	[self.item setBoolean: value forKey: self.key];
+	[self.item postChangedNotifications];
  }
 
 @end
