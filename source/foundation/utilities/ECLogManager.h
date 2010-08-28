@@ -1,10 +1,9 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 26/08/2010
 //
-//  ECLogManager.h
-//  ECFoundation
-//
-//  Created by Sam Deane on 26/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
 
@@ -22,3 +21,9 @@ ECPropertyRetained(channels, NSMutableArray*);
 - (void) registerChannel: (ECLogChannel*) channel;
 
 @end
+
+// --------------------------------------------------------------------------
+// Notifications
+// --------------------------------------------------------------------------
+
+extern NSString *const LogChannelsChanged;

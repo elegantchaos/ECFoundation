@@ -1,17 +1,27 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 26/08/2010
 //
-//  ECLogManager.m
-//  ECFoundation
-//
-//  Created by Sam Deane on 26/08/2010.
-//  Copyright (c) 2010 Elegant Chaos. All rights reserved.
-//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
 
 #import "ECLogManager.h"
 #import "ECLogChannel.h"
 
 @implementation ECLogManager
 
+// --------------------------------------------------------------------------
+// Notifications
+// --------------------------------------------------------------------------
+
+NSString *const LogChannelsChanged = @"LogChannelsChanged";
+
+// --------------------------------------------------------------------------
+// Properties
+// --------------------------------------------------------------------------
+
 ECPropertySynthesize(channels);
+
 
 + (ECLogManager*) sharedInstance
 {
@@ -29,6 +39,7 @@ ECPropertySynthesize(channels);
 {
 	NSLog(@"added log channel: %@", channel.name);
 	[self.channels addObject: channel];
+	[[NSNotificationCenter defaultCenter] postNotificationName: LogChannelsChanged object: self];
 }
 
 - (id) init

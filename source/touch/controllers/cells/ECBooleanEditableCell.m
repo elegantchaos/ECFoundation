@@ -30,6 +30,8 @@ ECPropertySynthesize(key);
 
 		// which item property should we display the value of?
 		self.key = [properties objectForKey: kValueKey];
+		
+		[control addTarget: self action: @selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
 	}
 	
 	return self;
@@ -47,5 +49,16 @@ ECPropertySynthesize(key);
 	UISwitch* control = (UISwitch*) self.accessoryView;
 	control.on = value;
 }
+
+// --------------------------------------------------------------------------
+//! Respond to the user changing value of the switch.
+// --------------------------------------------------------------------------
+
+ - (void) valueChanged: (id) sender
+ {
+	 UISwitch* control = (UISwitch*) self.accessoryView;
+	 BOOL value = control.isOn;
+	[self.item setBoolean: value forKey: self.key];
+ }
 
 @end
