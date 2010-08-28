@@ -19,8 +19,7 @@ BOOL channelEnabled(ECLogChannel* channel)
 
 ECLogChannel* makeNewChannel(const char* name)
 {
-	ECLogChannel* channel = [[ECLogChannel alloc] init];
-	channel.name = [NSString stringWithUTF8String: name];
+	ECLogChannel* channel = [[ECLogChannel alloc] initWithRawName: name];
 	channel.enabled = NO;
 	
 	[[ECLogManager sharedInstance] registerChannel: channel];

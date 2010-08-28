@@ -14,8 +14,19 @@
 	ECPropertyVariable(name, NSString*);
 }
 
+// --------------------------------------------------------------------------
+// Public Properties
+// --------------------------------------------------------------------------
+
 ECPropertyAssigned(enabled, BOOL);
 ECPropertyRetained(name, NSString*);
+
+// --------------------------------------------------------------------------
+// Public Methods
+// --------------------------------------------------------------------------
+
+- (id) initWithRawName: (const char*) name;
+- (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
 
 @end
 

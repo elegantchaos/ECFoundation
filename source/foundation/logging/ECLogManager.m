@@ -70,7 +70,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void) registerChannel: (ECLogChannel*) channel
 {
 	[self.channels addObject: channel];
-	[[NSNotificationCenter defaultCenter] postNotificationName: LogChannelsChanged object: self];
+	[self.channels sortUsingSelector: @selector(caseInsensitiveCompare:)];
 	
 	NSDictionary* allSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
 	NSDictionary* channelSettings = [allSettings objectForKey: channel.name];
@@ -82,6 +82,8 @@ static ECLogManager* gSharedInstance = nil;
 			channel.enabled = [number boolValue];
 		}
 	}
+
+	[[NSNotificationCenter defaultCenter] postNotificationName: LogChannelsChanged object: self];
 }
 
 // --------------------------------------------------------------------------
