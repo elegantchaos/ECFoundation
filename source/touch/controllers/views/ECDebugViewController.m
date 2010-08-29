@@ -19,6 +19,9 @@
 @interface ECDebugViewController()
 - (void) channelSelected: (NSNotification*) notification;
 - (void) channelsChanged: (NSNotification*) notification;
+- (void) enableAllChannels: (NSNotification*) notification;
+- (void) disableAllChannels: (NSNotification*) notification;
+- (void) setChannel: (ECLogChannel*) channel enabled: (BOOL) enabled;
 - (void) rebuildChannelsList;
 - (void) updateChannelsFromList;
 @end
@@ -63,12 +66,19 @@ static void* kChannelsContext;
 	[channelsList setDefault: [ECBooleanEditableCell class] forKey: kCellClassKey];
 	[channelsList setDefault: [NSDictionary dictionaryWithObject: kEnabledKey forKey: kValueKey] forKey: kCellPropertiesKey];
 	ECDataItem* channelsSection = [ECDataItem item];
-	[channelsSection setObject: @"Channels" forKey: kValueKey];
+	[channelsSection setObject: @"Enable Channels" forKey: kValueKey];
+	[channelsSection setObject: [ECLabelValueTableController class] forKey: kViewerKey];
 	[channelsSection setBooleanDefault: YES forKey: kSelectableKey];
 	[channelsSection addItem: channelsList];
 	
-	ECDataItem* loggingSection = [ECDataItem itemWithObjectsAndKeys: @"Logging", kHeaderKey, [ECLabelValueTableController class], kViewerKey, nil];
+	ECDataItem* loggingSection = [ECDataItem itemWithObjectsAndKeys: @"Logging", kHeaderKey, nil];
 	[loggingSection addItem: channelsSection];
+	
+	ECDataItem* enableAllItem = [ECDataItem itemWithObjectsAndKeys: @"Enable All", kValueKey, nil];
+	[loggingSection addItem: enableAllItem];
+	
+	ECDataItem* disableAllItem = [ECDataItem itemWithObjectsAndKeys: @"Disable All", kValueKey, nil];
+	[loggingSection addItem: disableAllItem];
 
 	[data addItem: loggingSection];
 	
@@ -79,6 +89,8 @@ static void* kChannelsContext;
 	
 	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver: self selector: @selector(channelSelected:) name: DataItemChildChanged object: channelsList];
+	[nc addObserver: self selector: @selector(enableAllChannels:) name: DataItemSelected object: enableAllItem];
+	[nc addObserver: self selector: @selector(disableAllChannels:) name: DataItemSelected object: disableAllItem];
 	[nc addObserver: self selector: @selector(channelsChanged:) name: LogChannelsChanged object: nil];
 }
 
@@ -101,6 +113,31 @@ static void* kChannelsContext;
 	[self.tableView reloadData];
 }
 
+// --------------------------------------------------------------------------
+//! Respond to a channel being selected.
+// --------------------------------------------------------------------------
+
+- (void) enableAllChannels: (NSNotification*) notification
+{
+	for (ECLogChannel* channel in [ECLogManager sharedInstance].channels)
+	{
+		[self setChannel: channel enabled: YES];
+	}
+	[self rebuildChannelsList];
+}
+
+// --------------------------------------------------------------------------
+//! Respond to a channel being selected.
+// --------------------------------------------------------------------------
+
+- (void) disableAllChannels: (NSNotification*) notification
+{
+	for (ECLogChannel* channel in [ECLogManager sharedInstance].channels)
+	{
+		[self setChannel: channel enabled: NO];
+	}
+	[self rebuildChannelsList];
+}
 
 // --------------------------------------------------------------------------
 //! Rebuild the list of log channels.
@@ -129,10 +166,31 @@ static void* kChannelsContext;
 		ECLogChannel* channel = [channelItem objectForKey: kChannelKey];
 		if (channel)
 		{
-			channel.enabled = [[channelItem objectForKey: kEnabledKey] boolValue];
+			[self setChannel: channel enabled:[[channelItem objectForKey: kEnabledKey] boolValue]];
 		}
 	}	
 }
 
+// --------------------------------------------------------------------------
+//! Change the enabled state of a channel
+// --------------------------------------------------------------------------
+
+- (void) setChannel: (ECLogChannel*) channel enabled: (BOOL) newEnabled
+{
+	BOOL oldEnabled = channel.enabled;
+	if (oldEnabled != newEnabled)
+	{
+		if (oldEnabled)
+		{
+			logToChannel(channel, @"disabled channel");
+		}
+		channel.enabled = newEnabled;
+		if (newEnabled)
+		{
+			logToChannel(channel, @"enabled channel");
+		}
+	}
+	
+}
 
 @end

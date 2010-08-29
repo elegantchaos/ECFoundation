@@ -77,6 +77,7 @@ ECPropertyRetained(items, NSMutableArray*);
 
 - (void)			updateParentLinks;
 - (void)			postChangedNotifications;
+- (void)			postSelectedNotification;
 - (void)			postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer;
 
 - (NSDictionary*)	asNestedDictionary;
@@ -117,5 +118,6 @@ extern NSString *const kViewerNibKey;
 // --------------------------------------------------------------------------
 
 extern NSString *const DataItemChanged;
+extern NSString *const DataItemSelected;
 extern NSString *const DataItemChildChanged;
 

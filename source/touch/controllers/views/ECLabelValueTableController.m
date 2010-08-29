@@ -238,14 +238,20 @@ ECPropertySynthesize(cellClass);
 	BOOL subviewOpened = NO;
 	ECDataItem* item = [self.data itemAtIndexPath: path];
 	
-	// open a subview?
+	// open a subview for the item?
 	ECNavigationController* navigation = [ECNavigationController currentController];
 	if (navigation)
 	{
 		subviewOpened = [navigation openSubviewForItem: item];
 	}
 
-	// reset the selection?
+	// select the item?
+	if (!subviewOpened)
+	{
+		[item postSelectedNotification];
+	}
+	
+	// reset the hilight on the item?
 	if (!subviewOpened && ![item boolForKey:kSelectableKey])
 	{
 		[table deselectRowAtIndexPath: path animated: YES];

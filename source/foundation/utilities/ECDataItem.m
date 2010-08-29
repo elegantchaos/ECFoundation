@@ -41,6 +41,7 @@ NSString *const kViewerNibKey = @"ViewerNib";
 
 NSString *const DataItemChanged = @"ECDataItemChanged";
 NSString *const DataItemChildChanged = @"ECDataItemChildChanged";
+NSString *const DataItemSelected = @"ECDataItemSelected";
 
 // --------------------------------------------------------------------------
 // Private Methods
@@ -564,6 +565,14 @@ ECPropertySynthesize(parent);
 
 // --------------------------------------------------------------------------
 
+- (void) postSelectedNotification
+{
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName: DataItemSelected object:self];
+}
+
+// --------------------------------------------------------------------------
+
 - (void) postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer
 {
 	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
@@ -580,8 +589,10 @@ ECPropertySynthesize(parent);
 
 - (void) selectItemAtIndex: (NSUInteger) index
 {
-	[self setObject: [self.items objectAtIndex: index] forKey: kSelectionKey];
+	ECDataItem* item = [self.items objectAtIndex: index];
+	[self setObject: item forKey: kSelectionKey];
 	[self postChangedNotifications];
+	[item postSelectedNotification];
 }
 
 // --------------------------------------------------------------------------
@@ -591,8 +602,10 @@ ECPropertySynthesize(parent);
 - (void) selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section
 {
 	ECDataItem* sectionData = [self.items objectAtIndex: section];
-	[self setObject: [sectionData.items objectAtIndex: index] forKey: kSelectionKey];
+	ECDataItem* item = [sectionData.items objectAtIndex: index];
+	[self setObject: item forKey: kSelectionKey];
 	[self postChangedNotifications];
+	[item postSelectedNotification];
 }
 
 // --------------------------------------------------------------------------
