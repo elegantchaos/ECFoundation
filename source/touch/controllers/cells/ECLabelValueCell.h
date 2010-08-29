@@ -5,38 +5,35 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECValueCell.h"
-#import "ECDataItem.h"
+#import <Foundation/Foundation.h>
+#import "ECDataDrivenTableCell.h"
 
-@implementation ECValueCell
+@class ECDataItem;
 
-// --------------------------------------------------------------------------
-// Properties
-// --------------------------------------------------------------------------
-
-ECPropertySynthesize(item);
-
-// --------------------------------------------------------------------------
-//! Initialise with a data item.
-// --------------------------------------------------------------------------
-
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
+@interface ECLabelValueCell : UITableViewCell<ECDataDrivenTableCell> 
 {
-	if ((self = [super initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifier]) != nil)
-	{
-	}
-	
-	return self;
+	ECPropertyVariable(item, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
-//! Setup the item.
+// Public Properties.
 // --------------------------------------------------------------------------
 
-- (void) setupForItem: (ECDataItem*) item
-{
-	self.item = item;
-	self.textLabel.text = [item objectForKey: kValueKey];
-}
+ECPropertyRetained(item, ECDataItem*);
+
+// --------------------------------------------------------------------------
+// Public Methods
+// --------------------------------------------------------------------------
+
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
+- (void) setupForItem:(ECDataItem *)item;
+
+// --------------------------------------------------------------------------
+// Internal Methods
+// --------------------------------------------------------------------------
+
+- (void) setupLabel;
+- (void) setupDetail;
+- (void) setupAccessory;
 
 @end

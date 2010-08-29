@@ -9,6 +9,7 @@
 #import "ECDataItem.h"
 #import "UIColor+ECUtilities.h"
 #import "ECCellProperties.h"
+#import "ECLogging.h"
 
 @implementation ECLabelValueEditableCell
 
@@ -22,6 +23,8 @@ enum
 	kTextTag
 };
 
+ECDefineLogChannel(ECLabelValueEditorChannel);
+
 ECPropertySynthesize(label);
 ECPropertySynthesize(text);
 
@@ -29,7 +32,7 @@ ECPropertySynthesize(text);
 //! Initialise the cell.
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier
 {
 	if ((self = [super initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: identifier]) != nil)
 	{

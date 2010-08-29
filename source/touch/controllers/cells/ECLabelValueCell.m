@@ -20,7 +20,7 @@ ECPropertySynthesize(item);
 //! Initialise with a data item.
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier
 {
 	if ((self = [super initWithStyle: UITableViewCellStyleValue1 reuseIdentifier: identifier]) != nil)
 	{
@@ -35,7 +35,12 @@ ECPropertySynthesize(item);
 
 - (void) setupLabel
 {
-	self.textLabel.text = [self.item objectForKey: kLabelKey];
+	NSString* text = [self.item objectForKey: kLabelKey];
+	if (!text)
+	{
+		text = [self.item objectForKey: kValueKey];
+	}
+	self.textLabel.text = text;
 }
 
 // --------------------------------------------------------------------------
@@ -44,40 +49,43 @@ ECPropertySynthesize(item);
 
 - (void) setupDetail
 {
-	ECDataItem* item = self.item;
-	NSString* detail;
-	if ([item boolForKey: kSecureKey])
+	if ([self.item objectForKey: kLabelKey])
 	{
-		detail = @"••••";
-	}
-	else
-	{
-		ECDataItem* detailItem = [item objectForKey: kSelectionKey];
-		if (!detailItem)
+		ECDataItem* item = self.item;
+		NSString* detail;
+		if ([item boolForKey: kSecureKey])
 		{
-			detailItem = item;
+			detail = @"••••";
 		}
-		detail = [detailItem objectForKey: kValueKey];
-	}
-	
-	if ((detail == nil) && (item.items != nil))
-	{
-		NSUInteger count = [item.items count];
-		if (count > 0)
+		else
 		{
-			ECDataItem* list = [item itemAtIndex: 0];
-			count = [list.items count];
-			if (count > 1)
+			ECDataItem* detailItem = [item objectForKey: kSelectionKey];
+			if (!detailItem)
 			{
-				detail = [NSString stringWithFormat: @"%@, %@, …", [[list itemAtIndex: 0] objectForKey: kValueKey], [[list itemAtIndex: 1] objectForKey: kValueKey]];
+				detailItem = item;
 			}
-			else
+			detail = [detailItem objectForKey: kValueKey];
+		}
+		
+		if ((detail == nil) && (item.items != nil))
+		{
+			NSUInteger count = [item.items count];
+			if (count > 0)
 			{
-				detail = [NSString stringWithFormat: @"%@, …", [[list itemAtIndex: 0] objectForKey: kValueKey]];
+				ECDataItem* list = [item itemAtIndex: 0];
+				count = [list.items count];
+				if (count > 1)
+				{
+					detail = [NSString stringWithFormat: @"%@, %@, …", [[list itemAtIndex: 0] objectForKey: kValueKey], [[list itemAtIndex: 1] objectForKey: kValueKey]];
+				}
+				else if (count > 0)
+				{
+					detail = [NSString stringWithFormat: @"%@, …", [[list itemAtIndex: 0] objectForKey: kValueKey]];
+				}
 			}
 		}
+		self.detailTextLabel.text = detail;
 	}
-	self.detailTextLabel.text = detail;
 }
 
 // --------------------------------------------------------------------------

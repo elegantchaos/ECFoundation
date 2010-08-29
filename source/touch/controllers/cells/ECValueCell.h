@@ -1,35 +1,31 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 26/07/2010
+//! @date 31/07/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "ECDataDrivenTableCell.h"
 
-#import "ECDataDrivenView.h"
+@class ECDataItem;
 
-@interface ECTextItemEditorController : UIViewController<ECDataDrivenView, UITextFieldDelegate>
+@interface ECValueCell : UITableViewCell<ECDataDrivenTableCell> 
 {
-	ECPropertyDefineVariable(data, ECDataItem*);
-	ECPropertyDefineVariable(editor, UITextField*);
-	ECPropertyDefineVariable(label, UILabel*);
+	ECPropertyVariable(item, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
-// Public Properties
+// Public Properties.
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(data, ECDataItem*);
-ECPropertyDefineRN(editor, IBOutlet UITextField*);
-ECPropertyDefineRN(label, IBOutlet UILabel*);
+ECPropertyRetained(item, ECDataItem*);
 
 // --------------------------------------------------------------------------
-// Outlets
+// Public Methods
 // --------------------------------------------------------------------------
 
-#ifndef __OBJC__
-@property () IBOutlet UITextField* editor;
-#endif
+- (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
+- (void) setupForItem:(ECDataItem *)item;
 
 @end

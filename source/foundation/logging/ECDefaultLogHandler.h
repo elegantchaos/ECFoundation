@@ -1,13 +1,17 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 22/07/2010
-//
-//! @file:
-//! Logging utilities.
+//! @date 01/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#define ECDeclareLogChannel(channel)
-#define ECDefineLogChannel(channel)
-#define ECLog(channel, ...) NSLog(@"«%s» %@", #channel, [NSString stringWithFormat: __VA_ARGS__])
+#import "ECLogHandler.h"
+
+@interface ECDefaultLogHandler : ECLogHandler 
+{
+
+}
+
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+
+@end

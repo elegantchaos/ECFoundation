@@ -9,10 +9,10 @@
 
 @interface ECDataItem : NSObject 
 {
-	ECPropertyDefineVariable(data, NSMutableDictionary*);
-	ECPropertyDefineVariable(defaults, NSMutableDictionary*);
-	ECPropertyDefineVariable(parent, ECDataItem*);
-	ECPropertyDefineVariable(items, NSMutableArray*);
+	ECPropertyVariable(data, NSMutableDictionary*);
+	ECPropertyVariable(defaults, NSMutableDictionary*);
+	ECPropertyVariable(parent, ECDataItem*);
+	ECPropertyVariable(items, NSMutableArray*);
 	
 	NSUInteger	mCachedSection;
 	NSUInteger	mCachedRow;
@@ -20,10 +20,10 @@
 	ECDataItem* mCachedRowData;
 }
 
-ECPropertyDefineRN(data, NSMutableDictionary*);
-ECPropertyDefineRN(defaults, NSMutableDictionary*);
-ECPropertyDefineRN(parent, ECDataItem*);
-ECPropertyDefineRN(items, NSMutableArray*);
+ECPropertyRetained(data, NSMutableDictionary*);
+ECPropertyRetained(defaults, NSMutableDictionary*);
+ECPropertyRetained(parent, ECDataItem*);
+ECPropertyRetained(items, NSMutableArray*);
 
 + (ECDataItem*)		item;
 + (ECDataItem*)		itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
@@ -77,6 +77,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 
 - (void)			updateParentLinks;
 - (void)			postChangedNotifications;
+- (void)			postSelectedNotification;
 - (void)			postMovedNotificationsFromOldContainer: (ECDataItem*) oldContainer toNewContainer: (ECDataItem*) newContainer;
 
 - (NSDictionary*)	asNestedDictionary;
@@ -90,6 +91,7 @@ ECPropertyDefineRN(items, NSMutableArray*);
 
 extern NSString *const kAccessoryKey;
 extern NSString *const kCellClassKey;
+extern NSString *const kCellPropertiesKey;
 extern NSString *const kDefaultsKey;
 extern NSString *const kDeletableKey;
 extern NSString *const kEditableKey;
@@ -116,5 +118,6 @@ extern NSString *const kViewerNibKey;
 // --------------------------------------------------------------------------
 
 extern NSString *const DataItemChanged;
+extern NSString *const DataItemSelected;
 extern NSString *const DataItemChildChanged;
 

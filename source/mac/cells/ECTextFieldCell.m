@@ -13,6 +13,8 @@
 
 @implementation ECTextFieldCell
 
+ECDefineDebugChannel(ECTextFieldChannel);
+
 - (id)initTextCell:(NSString *)aString
 {
 	return [super initTextCell:@"blah"];

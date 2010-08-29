@@ -1,17 +1,18 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 31/07/2010
+//! @date 01/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import "ECLogHandler.h"
 
-@class ECDataItem;
 
-@protocol ECDataDrivenTableCell
+@implementation ECLogHandler
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
-- (void) setupForItem: (ECDataItem*) item;
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
+{
+	ECAssertShouldntBeHere();
+}
 
 @end

@@ -9,6 +9,8 @@
 #import "ECDataItem.h"
 #import "ECDataDrivenView.h"
 
+ECDefineDebugChannel(ECNavigationControllerChannel);
+
 @implementation ECNavigationController
 
 static ECNavigationController* gCurrentController = nil;
@@ -162,11 +164,11 @@ static ECNavigationController* gCurrentController = nil;
 	{
 		if (class)
 		{
-			ECDebug(ECLabelValueTableChannel, @"%@ class %@ for item %@ is not a UIViewController", classKey, item, class);
+			ECDebug(ECNavigationControllerChannel, @"%@ class %@ for item %@ is not a UIViewController", classKey, item, class);
 		}
 		else
 		{
-			ECDebug(ECLabelValueTableChannel, @"%@ class not set for item %@", classKey, item);
+			ECDebug(ECNavigationControllerChannel, @"%@ class not set for item %@", classKey, item);
 		}
 
 	}

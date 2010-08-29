@@ -2,13 +2,14 @@
 //! @author Sam Deane
 //! @date 01/08/2010
 //
-//  Copyright 2010 sam, Elegant Chaos. All rights reserved.
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import "TouchTestAppDelegate.h"
 
 #import <ECFoundation/ECDataItem.h>
 #import <ECFoundation/NSString+ECUtilities.h>
+#import <ECFoundation/ECLogManager.h>
 
 // --------------------------------------------------------------------------
 // Constants
@@ -36,6 +37,8 @@ ECPropertySynthesize(password);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {
+	[[ECLogManager sharedInstance] registerDefaultHandler];
+
 	NSString* pointlessString = @"blah";
 	[pointlessString splitWordsIntoInts];
 	
@@ -63,6 +66,8 @@ ECPropertySynthesize(password);
 	[defaults setValue: [self.name objectForKey: kValueKey] forKey: kNameSetting];
 	[defaults setValue: [self.password objectForKey: kValueKey] forKey: kPasswordSetting];
 	[defaults synchronize];
+	
+	[[ECLogManager sharedInstance] shutdown];
 }
 
 // --------------------------------------------------------------------------

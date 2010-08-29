@@ -39,4 +39,24 @@
 	return [data autorelease];
 }
 
+- (NSString*) stringBySplittingMixedCaps
+{
+	NSUInteger count = [self length];
+	NSMutableString* result = [[NSMutableString alloc] init];
+	BOOL wasLower = NO;
+	for (NSUInteger n = 0; n < count; ++n)
+	{
+		UniChar c = [self characterAtIndex: n];
+		BOOL isLower = islower(c);
+		if (wasLower && !isLower)
+		{
+			[result appendString: @" "];
+		}
+		[result appendString: [NSString stringWithCharacters: &c length:1]];
+		wasLower = isLower;
+	}
+	
+	return [result autorelease];
+}
+
 @end

@@ -13,5 +13,6 @@
 
 - (NSData*) splitWordsIntoInts;
 - (NSData*) splitWordsIntoFloats;
+- (NSString*) stringBySplittingMixedCaps;
 
 @end

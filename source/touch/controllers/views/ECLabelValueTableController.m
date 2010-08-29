@@ -14,12 +14,38 @@
 
 @implementation ECLabelValueTableController
 
+ECDefineDebugChannel(LabelValueTableChannel);
+
 // --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
 
 ECPropertySynthesize(data);
 ECPropertySynthesize(cellClass);
+
+// --------------------------------------------------------------------------
+//! Initialise
+// --------------------------------------------------------------------------
+
+- (id) initWithNibName: (NSString*) nibNameOrNil bundle:(NSBundle *)nibBundleOrNil data: (ECDataItem*) data;
+{
+	if ((nibNameOrNil != nil) || (nibBundleOrNil != nil))
+	{
+		self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	}
+	else
+	{
+		self = [super initWithStyle: UITableViewStyleGrouped];
+	}
+	
+	if (self != nil)
+	{
+		self.data = data;
+		self.title = [data objectForKey: kLabelKey];
+	}
+	
+	return self;
+}
 
 // --------------------------------------------------------------------------
 //! Release references and clean up.
@@ -159,12 +185,13 @@ ECPropertySynthesize(cellClass);
 	{
 		cellClass = [ECLabelValueCell class];
 	}
+	NSDictionary* cellProperties = [item objectForKey: kCellPropertiesKey];
 	NSString* cellIdentifier = NSStringFromClass(cellClass);
 	
 	UITableViewCell<ECDataDrivenTableCell>* cell = [tableView dequeueReusableCellWithIdentifier: cellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[cellClass alloc] initForItem: item reuseIdentifier: cellIdentifier] autorelease];
+		cell = [[[cellClass alloc] initForItem: item properties: cellProperties reuseIdentifier: cellIdentifier] autorelease];
 	}
 	
 	[cell setupForItem: item];
@@ -211,14 +238,20 @@ ECPropertySynthesize(cellClass);
 	BOOL subviewOpened = NO;
 	ECDataItem* item = [self.data itemAtIndexPath: path];
 	
-	// open a subview?
+	// open a subview for the item?
 	ECNavigationController* navigation = [ECNavigationController currentController];
 	if (navigation)
 	{
 		subviewOpened = [navigation openSubviewForItem: item];
 	}
 
-	// reset the selection?
+	// select the item?
+	if (!subviewOpened)
+	{
+		[item postSelectedNotification];
+	}
+	
+	// reset the hilight on the item?
 	if (!subviewOpened && ![item boolForKey:kSelectableKey])
 	{
 		[table deselectRowAtIndexPath: path animated: YES];

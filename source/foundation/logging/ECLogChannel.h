@@ -1,31 +1,32 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 31/07/2010
+//! @date 01/08/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
-#import "ECDataDrivenTableCell.h"
 
-@class ECDataItem;
 
-@interface ECValueCell : UITableViewCell<ECDataDrivenTableCell> 
+@interface ECLogChannel : NSObject
 {
-	ECPropertyDefineVariable(item, ECDataItem*);
+	ECPropertyVariable(enabled, BOOL);
+	ECPropertyVariable(name, NSString*);
 }
 
 // --------------------------------------------------------------------------
-// Public Properties.
+// Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyDefineRN(item, ECDataItem*);
+ECPropertyAssigned(enabled, BOOL);
+ECPropertyRetained(name, NSString*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initForItem: (ECDataItem*) item reuseIdentifier: (NSString*) identifier;
-- (void) setupForItem:(ECDataItem *)item;
+- (id) initWithRawName: (const char*) name;
+- (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
 
 @end
+

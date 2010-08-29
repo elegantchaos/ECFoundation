@@ -14,6 +14,8 @@
 
 @implementation NSApplication (DockIcon)
 
+ECDefineDebugChannel(NSApplicationChannel);
+
 -(void) bringToFront
 {
 	ProcessSerialNumber psn = { 0, kCurrentProcess };

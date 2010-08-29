@@ -14,7 +14,7 @@
 //! Define the instance variable that will back a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyDefineVariable(name, type)		type _##name
+#define ECPropertyVariable(name, type)		type _##name
 
 // --------------------------------------------------------------------------
 //! Define a property.
@@ -23,9 +23,9 @@
 #define ECPropertyDefine(name, type, ...)		@property (__VA_ARGS__) type name
 
 // some convenient abbreviatations for common cases
-#define ECPropertyDefineRN(name, type)	ECPropertyDefine(name, type, retain, nonatomic)
-#define ECPropertyDefineAN(name, type)	ECPropertyDefine(name, type, assign, nonatomic)
-#define ECPropertyDefineCN(name, type)	ECPropertyDefine(name, type, copy, nonatomic)
+#define ECPropertyRetained(name, type)			ECPropertyDefine(name, type, retain, nonatomic)
+#define ECPropertyAssigned(name, type)			ECPropertyDefine(name, type, assign, nonatomic)
+#define ECPropertyCopy(name, type)				ECPropertyDefine(name, type, copy, nonatomic)
 
 // --------------------------------------------------------------------------
 //! Define a lazy property.
@@ -36,9 +36,9 @@
 @property (__VA_ARGS__) type name; \
 - (type) name##LazyInit
 
-#define ECPropertyDefineLazyRN(name, type)	ECPropertyDefineLazy(name, type, retain, nonatomic)
-#define ECPropertyDefineLazyAN(name, type)	ECPropertyDefineLazy(name, type, assign, nonatomic)
-#define ECPropertyDefineLazyCN(name, type)	ECPropertyDefineLazy(name, type, copy, nonatomic)
+#define ECPropertyDefineLazyRN(name, type)		ECPropertyDefineLazy(name, type, retain, nonatomic)
+#define ECPropertyDefineLazyAN(name, type)		ECPropertyDefineLazy(name, type, assign, nonatomic)
+#define ECPropertyDefineLazyCN(name, type)		ECPropertyDefineLazy(name, type, copy, nonatomic)
 
 // --------------------------------------------------------------------------
 //! Synthesize a property.
@@ -60,7 +60,7 @@
 //! Return the raw instance variable backing a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyVariable(name)					_##name
+#define ECPropertyDirect(name)					_##name
 
 // --------------------------------------------------------------------------
 //! Release a property in a way that's safe to use in dealloc.

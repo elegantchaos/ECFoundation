@@ -15,8 +15,8 @@
 	UIWindow*				window;
 	UITabBarController*		tabBarController;
 
-	ECPropertyDefineVariable(name, ECDataItem*);
-	ECPropertyDefineVariable(password, ECDataItem*);
+	ECPropertyVariable(name, ECDataItem*);
+	ECPropertyVariable(password, ECDataItem*);
 }
 
 // --------------------------------------------------------------------------
@@ -26,8 +26,8 @@
 @property (nonatomic, retain) IBOutlet UIWindow*			window;
 @property (nonatomic, retain) IBOutlet UITabBarController*	tabBarController;
 
-ECPropertyDefineRN(name, ECDataItem*);
-ECPropertyDefineRN(password, ECDataItem*);
+ECPropertyRetained(name, ECDataItem*);
+ECPropertyRetained(password, ECDataItem*);
 
 @end
 

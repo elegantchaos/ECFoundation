@@ -13,6 +13,8 @@
 
 @implementation ECGLLoader
 
+ECDefineDebugChannel(LoaderChannel);
+
 - (ECGLMesh*) loadMeshFromResourceNamed:(NSString *)name
 {
 	ECGLMesh* mesh = nil;
