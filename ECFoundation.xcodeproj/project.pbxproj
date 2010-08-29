@@ -76,6 +76,8 @@
 		223588571229B9E00083284E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588431229B9E00083284E /* ECLogHandler.m */; };
 		223588581229B9E00083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588441229B9E00083284E /* ECLogManager.h */; };
 		223588591229B9E00083284E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
+		22358A29122A072A0083284E /* UIApplication+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22358A27122A072A0083284E /* UIApplication+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22358A2A122A072A0083284E /* UIApplication+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22358A28122A072A0083284E /* UIApplication+ECUtilities.m */; };
 		223CBABB1205C4180008A641 /* libECFoundationTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */; };
 		223CBAD21205C4FB0008A641 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBACC1205C4FB0008A641 /* FirstViewController.m */; };
 		223CBAD41205C4FB0008A641 /* TouchTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD01205C4FB0008A641 /* TouchTestAppDelegate.m */; };
@@ -369,6 +371,8 @@
 		223588431229B9E00083284E /* ECLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandler.m; sourceTree = "<group>"; };
 		223588441229B9E00083284E /* ECLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogManager.h; sourceTree = "<group>"; };
 		223588451229B9E00083284E /* ECLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogManager.m; sourceTree = "<group>"; };
+		22358A27122A072A0083284E /* UIApplication+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+ECUtilities.h"; path = "utilities/UIApplication+ECUtilities.h"; sourceTree = "<group>"; };
+		22358A28122A072A0083284E /* UIApplication+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+ECUtilities.m"; path = "utilities/UIApplication+ECUtilities.m"; sourceTree = "<group>"; };
 		223CBAB01205C3330008A641 /* AdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdHocPrefix.pch; sourceTree = "<group>"; };
 		223CBAB11205C3330008A641 /* DebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugPrefix.pch; sourceTree = "<group>"; };
 		223CBAB21205C3330008A641 /* ReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePrefix.pch; sourceTree = "<group>"; };
@@ -1046,6 +1050,8 @@
 		22BFA1481205F8F300343D91 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				22358A27122A072A0083284E /* UIApplication+ECUtilities.h */,
+				22358A28122A072A0083284E /* UIApplication+ECUtilities.m */,
 				22A0BA1812145C1300522D54 /* UIWindow+ECUtilities.h */,
 				22A0BA1912145C1300522D54 /* UIWindow+ECUtilities.m */,
 				22BFA1441205F8EA00343D91 /* UIColor+ECUtilities.h */,
@@ -1125,6 +1131,7 @@
 				2235884A1229B9E00083284E /* ECLogging.h in Headers */,
 				2235884C1229B9E00083284E /* ECLogHandler.h in Headers */,
 				2235884E1229B9E00083284E /* ECLogManager.h in Headers */,
+				22358A29122A072A0083284E /* UIApplication+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,6 +1477,7 @@
 				2235884B1229B9E00083284E /* ECLogging.m in Sources */,
 				2235884D1229B9E00083284E /* ECLogHandler.m in Sources */,
 				2235884F1229B9E00083284E /* ECLogManager.m in Sources */,
+				22358A2A122A072A0083284E /* UIApplication+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
