@@ -83,7 +83,10 @@ static ECLogManager* gSharedInstance = nil;
 		}
 	}
 
-	[[NSNotificationCenter defaultCenter] postNotificationName: LogChannelsChanged object: self];
+	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
+	// in an infinite loop if the notification causes another notification to be posted
+	NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+	[[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
 }
 
 // --------------------------------------------------------------------------
