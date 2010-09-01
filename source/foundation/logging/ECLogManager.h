@@ -17,7 +17,7 @@
 @interface ECLogManager : NSObject
 {
 	ECPropertyVariable(channels, NSMutableArray*);
-	ECPropertyVariable(handler, NSMutableArray*);
+	ECPropertyVariable(handlers, NSMutableArray*);
 }
 
 // --------------------------------------------------------------------------
