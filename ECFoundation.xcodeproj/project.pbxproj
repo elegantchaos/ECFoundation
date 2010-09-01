@@ -1671,16 +1671,12 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Debug;
 		};
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Release;
 		};
@@ -1826,8 +1822,6 @@
 		2274C8E811FF841B00E5C351 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = AdHoc;
 		};
