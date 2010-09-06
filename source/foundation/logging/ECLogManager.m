@@ -83,7 +83,8 @@ static ECLogManager* gSharedInstance = nil;
 		}
 	}
 
-	[[NSNotificationCenter defaultCenter] postNotificationName: LogChannelsChanged object: self];
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName: LogChannelsChanged object: self];
 }
 
 // --------------------------------------------------------------------------

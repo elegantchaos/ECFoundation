@@ -42,6 +42,7 @@
 // --------------------------------------------------------------------------
 
 - (void) showAboutBox;
+- (IBAction) alternatePerformClose: (id) sender;
 
 @end
 

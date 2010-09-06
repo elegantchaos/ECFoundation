@@ -66,12 +66,14 @@
 		self.applicationCreditsFile = [mainURL URLByAppendingPathComponent: @"Contents/Resources/English.lproj/Credits.rtf"];
 	}
 	
+#if 0
 	if (mClickToHide)
 	{
 		NSWindow* window = [self window];
 		NSButton* closeButton = [window standardWindowButton: NSWindowCloseButton];
 		[closeButton setEnabled: NO];
 	}
+#endif
 }
 
 // --------------------------------------------------------------------------
@@ -216,6 +218,15 @@
 	{
 		[self hideAboutBox];
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Close the window.
+// --------------------------------------------------------------------------
+
+- (IBAction) alternatePerformClose: (id) sender
+{
+	[self.window performClose: sender];
 }
 
 @end
