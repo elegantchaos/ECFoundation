@@ -92,6 +92,10 @@
 		22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		22463388121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22463389121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
+		22464B271237DFF7006D5813 /* ECLaunchServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 22464B251237DFF7006D5813 /* ECLaunchServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22464B281237DFF7006D5813 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 22464B261237DFF7006D5813 /* ECLaunchServices.m */; };
+		22464B3A1237E0EA006D5813 /* NSApplication+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22464B381237E0EA006D5813 /* NSApplication+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22464B3B1237E0EA006D5813 /* NSApplication+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22464B391237E0EA006D5813 /* NSApplication+ECUtilities.m */; };
 		2257F1B71212D274007BE593 /* ECGLLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2257F1B51212D274007BE593 /* ECGLLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2257F1B81212D274007BE593 /* ECGLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2257F1B61212D274007BE593 /* ECGLLoader.m */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
@@ -133,8 +137,6 @@
 		227EEB4A11A6BC66009420F7 /* ECTouchSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB4111A6BC66009420F7 /* ECTouchSharedSettings.xcconfig */; };
 		227EEB6B11A6BCC4009420F7 /* ECAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB4F11A6BCC4009420F7 /* ECAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227EEB6C11A6BCC4009420F7 /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */; };
-		227EEB6D11A6BCC4009420F7 /* NSApplication+DockIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		227EEB6E11A6BCC4009420F7 /* NSApplication+DockIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */; };
 		227EEB6F11A6BCC4009420F7 /* ECTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5511A6BCC4009420F7 /* ECTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227EEB7011A6BCC4009420F7 /* ECTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB5611A6BCC4009420F7 /* ECTextFieldCell.m */; };
 		227EEB7111A6BCC4009420F7 /* ECLegalFilenameFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB5811A6BCC4009420F7 /* ECLegalFilenameFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -399,6 +401,10 @@
 		2246337D121A8726000ECB30 /* NSURL+ECMac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECMac.m"; sourceTree = "<group>"; };
 		22463384121A8756000ECB30 /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
 		22463385121A8756000ECB30 /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
+		22464B251237DFF7006D5813 /* ECLaunchServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLaunchServices.h; sourceTree = "<group>"; };
+		22464B261237DFF7006D5813 /* ECLaunchServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchServices.m; sourceTree = "<group>"; };
+		22464B381237E0EA006D5813 /* NSApplication+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+ECUtilities.h"; sourceTree = "<group>"; };
+		22464B391237E0EA006D5813 /* NSApplication+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+ECUtilities.m"; sourceTree = "<group>"; };
 		224C9BA91205BFE0005441CE /* ECFoundation TouchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECFoundation TouchTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2257F1B51212D274007BE593 /* ECGLLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLLoader.h; sourceTree = "<group>"; };
 		2257F1B61212D274007BE593 /* ECGLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLLoader.m; sourceTree = "<group>"; };
@@ -435,8 +441,6 @@
 		227EEB4111A6BC66009420F7 /* ECTouchSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECTouchSharedSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4F11A6BCC4009420F7 /* ECAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAboutBoxController.h; sourceTree = "<group>"; };
 		227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAboutBoxController.m; sourceTree = "<group>"; };
-		227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+DockIcon.h"; sourceTree = "<group>"; };
-		227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+DockIcon.m"; sourceTree = "<group>"; };
 		227EEB5511A6BCC4009420F7 /* ECTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTextFieldCell.h; sourceTree = "<group>"; };
 		227EEB5611A6BCC4009420F7 /* ECTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTextFieldCell.m; sourceTree = "<group>"; };
 		227EEB5811A6BCC4009420F7 /* ECLegalFilenameFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLegalFilenameFormatter.h; sourceTree = "<group>"; };
@@ -880,7 +884,6 @@
 			isa = PBXGroup;
 			children = (
 				227EEB4E11A6BCC4009420F7 /* aboutbox */,
-				227EEB5111A6BCC4009420F7 /* application */,
 				227EEB5411A6BCC4009420F7 /* cells */,
 				227EEB5711A6BCC4009420F7 /* formatting */,
 				227EEB5A11A6BCC4009420F7 /* preferences */,
@@ -899,15 +902,6 @@
 				227EEB5011A6BCC4009420F7 /* ECAboutBoxController.m */,
 			);
 			path = aboutbox;
-			sourceTree = "<group>";
-		};
-		227EEB5111A6BCC4009420F7 /* application */ = {
-			isa = PBXGroup;
-			children = (
-				227EEB5211A6BCC4009420F7 /* NSApplication+DockIcon.h */,
-				227EEB5311A6BCC4009420F7 /* NSApplication+DockIcon.m */,
-			);
-			path = application;
 			sourceTree = "<group>";
 		};
 		227EEB5411A6BCC4009420F7 /* cells */ = {
@@ -943,8 +937,12 @@
 		227EEB6011A6BCC4009420F7 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				22464B251237DFF7006D5813 /* ECLaunchServices.h */,
+				22464B261237DFF7006D5813 /* ECLaunchServices.m */,
 				22822E5F11ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.h */,
 				22822E6011ED32EA00D84612 /* NSAppleEventDescriptor+ECUtilities.m */,
+				22464B381237E0EA006D5813 /* NSApplication+ECUtilities.h */,
+				22464B391237E0EA006D5813 /* NSApplication+ECUtilities.m */,
 				2246337C121A8726000ECB30 /* NSURL+ECMac.h */,
 				2246337D121A8726000ECB30 /* NSURL+ECMac.m */,
 				227EEB6311A6BCC4009420F7 /* NSWorkspace+ECUtilities.h */,
@@ -1142,7 +1140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				227EEB6B11A6BCC4009420F7 /* ECAboutBoxController.h in Headers */,
-				227EEB6D11A6BCC4009420F7 /* NSApplication+DockIcon.h in Headers */,
 				227EEB6F11A6BCC4009420F7 /* ECTextFieldCell.h in Headers */,
 				227EEB7111A6BCC4009420F7 /* ECLegalFilenameFormatter.h in Headers */,
 				227EEB7311A6BCC4009420F7 /* ECPreferencePanel.h in Headers */,
@@ -1180,6 +1177,8 @@
 				223588581229B9E00083284E /* ECLogManager.h in Headers */,
 				22F06DD6122E8B060058DB57 /* ECProperties.h in Headers */,
 				22F06DD8122E8B0D0058DB57 /* NSString+ECUtilities.h in Headers */,
+				22464B271237DFF7006D5813 /* ECLaunchServices.h in Headers */,
+				22464B3A1237E0EA006D5813 /* NSApplication+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1489,7 +1488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				227EEB6C11A6BCC4009420F7 /* ECAboutBoxController.m in Sources */,
-				227EEB6E11A6BCC4009420F7 /* NSApplication+DockIcon.m in Sources */,
 				227EEB7011A6BCC4009420F7 /* ECTextFieldCell.m in Sources */,
 				227EEB7211A6BCC4009420F7 /* ECLegalFilenameFormatter.m in Sources */,
 				227EEB7411A6BCC4009420F7 /* ECPreferencePanel.m in Sources */,
@@ -1511,6 +1509,8 @@
 				223588551229B9E00083284E /* ECLogging.m in Sources */,
 				223588571229B9E00083284E /* ECLogHandler.m in Sources */,
 				223588591229B9E00083284E /* ECLogManager.m in Sources */,
+				22464B281237DFF7006D5813 /* ECLaunchServices.m in Sources */,
+				22464B3B1237E0EA006D5813 /* NSApplication+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

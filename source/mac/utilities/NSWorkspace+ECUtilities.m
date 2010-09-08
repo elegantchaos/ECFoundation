@@ -100,4 +100,24 @@
 }
 
 
+- (void)enableLoginItemWithURL:(NSURL *)itemURL
+{
+	LSSharedFileListRef loginListRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+	
+	if (loginListRef) {
+		// Insert the item at the bottom of Login Items list.
+		LSSharedFileListItemRef loginItemRef = LSSharedFileListInsertItemURL(loginListRef, 
+																			 kLSSharedFileListItemLast, 
+																			 NULL, 
+																			 NULL,
+																			 (CFURLRef)itemURL, 
+																			 NULL, 
+																			 NULL);             
+		if (loginItemRef) {
+			CFRelease(loginItemRef);
+		}
+		CFRelease(loginListRef);
+	}
+}
+
 @end
