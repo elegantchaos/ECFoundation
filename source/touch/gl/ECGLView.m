@@ -97,9 +97,6 @@
 
 - (BOOL)createFramebuffer 
 {
-    CGRect frame = self.frame;
-	frame = frame;
-	
     glGenFramebuffersOES(1, &viewFramebuffer);
     glGenRenderbuffersOES(1, &viewRenderbuffer);
     
