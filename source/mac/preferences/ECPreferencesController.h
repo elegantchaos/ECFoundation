@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ECPreferencesController : NSObject<NSToolbarDelegate>
+@interface ECPreferencesController : NSObject<NSToolbarDelegate, NSWindowDelegate>
 {
     NSWindow *prefsWindow;
     NSMutableDictionary *preferencePanes;

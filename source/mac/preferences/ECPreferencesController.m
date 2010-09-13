@@ -175,6 +175,7 @@
                                                 backing:NSBackingStoreBuffered
                                                   defer:NO];
     
+	prefsWindow.delegate = self;
     [prefsWindow setReleasedWhenClosed:NO];
     [prefsWindow setTitle:@"Preferences"]; // initial default title
     
@@ -603,5 +604,14 @@ float ToolbarHeightForWindow(NSWindow *window)
     alwaysOpensCentered = newAlwaysOpensCentered;
 }
 
+
+// --------------------------------------------------------------------------
+//! Close the window.
+// --------------------------------------------------------------------------
+
+- (IBAction) alternatePerformClose: (id) sender
+{
+	[self.preferencesWindow performClose: sender];
+}
 
 @end
