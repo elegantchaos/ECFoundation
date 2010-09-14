@@ -98,8 +98,8 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 			mAddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
 		}
 
-		[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
 	}
+	[[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(childChanged:) name:DataItemChildChanged object:nil];
 }
 
 // --------------------------------------------------------------------------

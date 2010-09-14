@@ -83,6 +83,8 @@ ECPropertyRetained(items, NSMutableArray*);
 - (NSDictionary*)	asNestedDictionary;
 - (BOOL)			writeToURL:(NSURL*) url atomically:(BOOL)atomically; // the atomically flag is ignored if url of a type that cannot be written atomically.
 
+- (NSComparisonResult)	compareByValueAlphabetical: (ECDataItem*) other;
+
 @end
 
 // --------------------------------------------------------------------------
