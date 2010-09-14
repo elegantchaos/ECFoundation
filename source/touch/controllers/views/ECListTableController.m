@@ -239,6 +239,39 @@ static NSString *const kEditButtonDoneTitle = @"Done";
 	return cell;
 }
 
+// --------------------------------------------------------------------------
+//! Return the header title for a section.
+// --------------------------------------------------------------------------
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* result = [data objectForKey: kHeaderKey];
+	if (result)
+	{
+		ECDebug(ECListTableControllerChannel, @"header for section %d: %@", section, result);
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the footer title for a section.
+// --------------------------------------------------------------------------
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* result = [data objectForKey: kFooterKey];
+	
+	if (result)
+	{
+		ECDebug(ECListTableControllerChannel, @"footer for section %d: %@", section, result);
+	}
+	
+	return result;
+}
+
 #pragma mark UITableViewDelegate methods
 
 // --------------------------------------------------------------------------
