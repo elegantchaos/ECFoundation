@@ -10,3 +10,4 @@
 
 #define ECUnused(v)	(void) (v)
 
+#define EC_HINT_UNUSED __attribute__((__unused__))

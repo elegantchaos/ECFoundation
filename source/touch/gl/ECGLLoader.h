@@ -11,7 +11,7 @@
 
 @class ECGLMesh;
 
-@interface ECGLLoader : NSObject
+@interface ECGLLoader : NSObject<NSXMLParserDelegate>
 {
 	NSXMLParser*			mParser;
 	NSMutableString*		mContent;
