@@ -33,6 +33,7 @@
 @synthesize applicationVersion = mApplicationVersion;
 @synthesize applicationCopyright = mApplicationCopyright;
 @synthesize applicationCreditsFile = mApplicationCreditsFile;
+@synthesize applicationStatus = mApplicationStatus;
 
 // --------------------------------------------------------------------------
 //! Clean up
@@ -65,12 +66,14 @@
 		self.applicationCreditsFile = [mainURL URLByAppendingPathComponent: @"Contents/Resources/English.lproj/Credits.rtf"];
 	}
 	
+#if 0
 	if (mClickToHide)
 	{
 		NSWindow* window = [self window];
 		NSButton* closeButton = [window standardWindowButton: NSWindowCloseButton];
 		[closeButton setEnabled: NO];
 	}
+#endif
 }
 
 // --------------------------------------------------------------------------
@@ -92,16 +95,57 @@
 {
 	NSDictionary *infoDict = [bundle infoDictionary];
 	
-    NSString *mainString = [infoDict valueForKey:@"CFBundleShortVersionString"];
-    NSString *subString = [infoDict valueForKey:@"CFBundleVersion"];
-	
-    self.applicationVersion = [NSString stringWithFormat:@"Version %@ (%@)", mainString, subString];
-	self.applicationCopyright = [infoDict valueForKey:@"NSHumanReadableCopyright"];
-	self.applicationName = [infoDict valueForKey:@"CFBundleName"];
 	
 	[infoDict valueForKey: @"ECAboutBoxClickToHide" intoBool: &mClickToHide];
 	[infoDict valueForKey: @"ECAboutBoxAnimateFrame" intoBool: &mAnimateFrame];
 	[infoDict valueForKey: @"ECAboutBoxAnimationDuration" intoDouble: &mAnimationDuration];
+	
+	NSString* status = nil;
+	NSString* version = nil;
+	NSString* copyright = nil;
+	NSString* name = nil;
+	
+	// try to get the relevant values from the application delegate
+	// if it supports the ECAboutBoxInfoProvider it can supply overrides for these values.
+	id app = [NSApplication sharedApplication].delegate;
+	if ([app conformsToProtocol: @protocol(ECAboutBoxInfoProvider)])
+	{
+		id<ECAboutBoxInfoProvider> infoProvider = app;
+		status = [infoProvider aboutBox: self getValueForKey: @"status"];
+		name = [infoProvider aboutBox: self getValueForKey: @"name"];
+		version = [infoProvider aboutBox: self getValueForKey: @"version"];
+		copyright = [infoProvider aboutBox: self getValueForKey: @"copyright"];
+	}
+	
+	// fill in missing values with defaults
+	
+	if (!status)
+	{
+		status = @"test status";
+	}
+
+	if (!version)
+	{
+		NSString *mainString = [infoDict valueForKey:@"CFBundleShortVersionString"];
+		NSString *subString = [infoDict valueForKey:@"CFBundleVersion"];
+		version = [NSString stringWithFormat:@"Version %@ (%@)", mainString, subString];
+	}
+	
+	if (!copyright)
+	{
+		copyright = [infoDict valueForKey:@"NSHumanReadableCopyright"];
+	}
+	
+	if (!name)
+	{
+		name = [infoDict valueForKey:@"CFBundleName"];
+	}
+
+	// store final versions
+	self.applicationStatus = status;
+    self.applicationVersion = version;
+	self.applicationCopyright = copyright;
+	self.applicationName = name;
 }
 
 // --------------------------------------------------------------------------
@@ -174,6 +218,15 @@
 	{
 		[self hideAboutBox];
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Close the window.
+// --------------------------------------------------------------------------
+
+- (IBAction) alternatePerformClose: (id) sender
+{
+	[self.window performClose: sender];
 }
 
 @end

@@ -51,6 +51,13 @@
 	
 }
 
+- (NSString*) paneName
+{
+	NSString* name = [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey: @"CFBundleName"];
+	
+    return name;
+}
+
 // --------------------------------------------------------------------------
 // These methods must be overriden by the subclasses
 // --------------------------------------------------------------------------
@@ -60,10 +67,6 @@
     return nil;
 }
 
-- (NSString*) paneName
-{
-    return @"";
-}
 
 - (NSString*) paneToolTip
 {

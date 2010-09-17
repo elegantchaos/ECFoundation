@@ -20,6 +20,7 @@ typedef void ECLogChannel;
 
 #endif
 
+extern void enableChannel(ECLogChannel* channel);
 extern BOOL channelEnabled(ECLogChannel* channel);
 extern ECLogChannel* makeNewChannel(const char* name);
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
@@ -37,4 +38,6 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 	}
 
 #define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { logToChannel(c, __VA_ARGS__); } } while (0)
+
+#define ECGetChannel(channel) getChannel##channel()
 

@@ -12,6 +12,11 @@
 #import "ECLogChannel.h"
 #import "ECLogManager.h"
 
+void enableChannel(ECLogChannel* channel)
+{
+	channel.enabled = YES;
+}
+
 BOOL channelEnabled(ECLogChannel* channel)
 {
 	return channel.enabled;

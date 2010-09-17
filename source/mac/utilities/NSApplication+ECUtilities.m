@@ -1,18 +1,17 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 25/02/2010
+//! @date 08/09/2010
 //
-// Borrowed from sample code by Matt Gemmell, who appears to have borrowed
-// it in turn from Tony Arnold.
+//! @file Additional methods for the NSApplication class.
 //
-// See http://codesorcery.net/2008/02/06/feature-requests-versus-the-right-way-to-do-it
-// for more information.
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Cocoa/Cocoa.h>
-#import <Carbon/Carbon.h>
+#import "NSApplication+ECUtilities.h"
+#import "ECLaunchServices.h"
 
-@implementation NSApplication (DockIcon)
+@implementation NSApplication(ECUtilities)
+
 
 ECDefineDebugChannel(NSApplicationChannel);
 
@@ -29,7 +28,7 @@ ECDefineDebugChannel(NSApplicationChannel);
 	SetFrontProcess(&psnx);
 }
 
-- (void)setShowsDockIcon:(BOOL)flag 
+- (void)setShowsDockIcon: (BOOL)flag 
 {
 	NSApplicationActivationPolicy currentPolicy = [NSApp activationPolicy];
 	if (flag && (currentPolicy == NSApplicationActivationPolicyAccessory)) 
@@ -60,5 +59,35 @@ ECDefineDebugChannel(NSApplicationChannel);
 	}
 }
 
+// --------------------------------------------------------------------------
+//! Return the URL for the application.
+// --------------------------------------------------------------------------
+
+- (NSURL*) applicationURL
+{
+    NSURL* applicationURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+
+	return applicationURL;
+}
+
+// --------------------------------------------------------------------------
+//! Return whether or not the application is set to start at login.
+// --------------------------------------------------------------------------
+
+- (BOOL) willStartAtLogin
+{
+    return [ECLaunchServices willOpenAtLogin: [self applicationURL]];
+}
+
+// --------------------------------------------------------------------------
+//! Set whether or not the application will start at login.
+// --------------------------------------------------------------------------
+
+- (void) setWillStartAtLogin: (BOOL) enabled
+{
+	[self willChangeValueForKey:@"willStartAtLogin"];
+    [ECLaunchServices setOpenAtLogin:[self applicationURL] enabled: enabled];
+    [self didChangeValueForKey:@"willStartAtLogin"];
+}
 
 @end

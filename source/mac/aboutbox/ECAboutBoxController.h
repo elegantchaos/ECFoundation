@@ -20,6 +20,7 @@
 	NSString*		mApplicationVersion;
 	NSString*		mApplicationName;
 	NSString*		mApplicationCopyright;
+	NSString*		mApplicationStatus;
 	NSURL*			mApplicationCreditsFile;
 	NSTimeInterval	mAnimationDuration;
 	BOOL			mAnimateFrame;
@@ -33,6 +34,7 @@
 @property (retain, nonatomic) IBOutlet NSString*	applicationName;
 @property (retain, nonatomic) IBOutlet NSString*	applicationVersion;
 @property (retain, nonatomic) IBOutlet NSString*	applicationCopyright;
+@property (retain, nonatomic) IBOutlet NSString*	applicationStatus;
 @property (retain, nonatomic) IBOutlet NSURL*		applicationCreditsFile;
 
 // --------------------------------------------------------------------------
@@ -40,5 +42,17 @@
 // --------------------------------------------------------------------------
 
 - (void) showAboutBox;
+- (IBAction) alternatePerformClose: (id) sender;
 
+@end
+
+// --------------------------------------------------------------------------
+//! Application Info Provider Protocol
+//!
+//! The application delegate should implement this to provide
+//! extra information to the about box.
+// --------------------------------------------------------------------------
+
+@protocol ECAboutBoxInfoProvider
+	- (NSString*) aboutBox: (ECAboutBoxController*) aboutBox getValueForKey: (NSString*) key;
 @end

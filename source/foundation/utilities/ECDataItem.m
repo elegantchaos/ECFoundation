@@ -505,7 +505,8 @@ ECPropertySynthesize(parent);
 {
 	[self.items removeObjectAtIndex: index];
 	[self invalidateCaches];
-	[[NSNotificationCenter defaultCenter] postNotificationName: DataItemChildChanged object:self];
+	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	[nc postNotificationName: DataItemChildChanged object:self];
 }
 
 // --------------------------------------------------------------------------
