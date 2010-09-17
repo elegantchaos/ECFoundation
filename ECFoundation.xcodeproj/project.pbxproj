@@ -45,9 +45,44 @@
 		220987AC1212C7C4003EDD48 /* ECGLVertexShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 220987991212C7C4003EDD48 /* ECGLVertexShader.m */; };
 		220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2209879A1212C7C4003EDD48 /* ECGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220987AE1212C7C4003EDD48 /* ECGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209879B1212C7C4003EDD48 /* ECGLView.m */; };
-		220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DED1229868300A50007 /* ECBooleanEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		220A2DF01229868300A50007 /* ECBooleanEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DEE1229868300A50007 /* ECBooleanEditableCell.m */; };
 		2210B6211152E695006C6CCA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2210B6201152E695006C6CCA /* Carbon.framework */; };
+		22219F1912439FF200EEEFDC /* ECBooleanEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EF212439FF200EEEFDC /* ECBooleanEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F1A12439FF200EEEFDC /* ECBooleanEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EF312439FF200EEEFDC /* ECBooleanEditableCell.m */; };
+		22219F1B12439FF200EEEFDC /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EF412439FF200EEEFDC /* ECCellProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F1C12439FF200EEEFDC /* ECCellProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EF512439FF200EEEFDC /* ECCellProperties.m */; };
+		22219F1D12439FF200EEEFDC /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EF612439FF200EEEFDC /* ECDataDrivenTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F1E12439FF200EEEFDC /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EF712439FF200EEEFDC /* ECLabelValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F1F12439FF200EEEFDC /* ECLabelValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EF812439FF200EEEFDC /* ECLabelValueCell.m */; };
+		22219F2012439FF200EEEFDC /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EF912439FF200EEEFDC /* ECLabelValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2112439FF200EEEFDC /* ECLabelValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EFA12439FF200EEEFDC /* ECLabelValueEditableCell.m */; };
+		22219F2212439FF200EEEFDC /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EFB12439FF200EEEFDC /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2312439FF200EEEFDC /* ECValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EFC12439FF200EEEFDC /* ECValueCell.m */; };
+		22219F2412439FF200EEEFDC /* ECValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219EFD12439FF200EEEFDC /* ECValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2512439FF200EEEFDC /* ECValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219EFE12439FF200EEEFDC /* ECValueEditableCell.m */; };
+		22219F2612439FF200EEEFDC /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0012439FF200EEEFDC /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2712439FF200EEEFDC /* ECDataDrivenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0112439FF200EEEFDC /* ECDataDrivenView.m */; };
+		22219F2812439FF200EEEFDC /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0212439FF200EEEFDC /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2912439FF200EEEFDC /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0312439FF200EEEFDC /* ECDebugViewController.m */; };
+		22219F2A12439FF200EEEFDC /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0412439FF200EEEFDC /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2B12439FF200EEEFDC /* ECItemListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0512439FF200EEEFDC /* ECItemListTableController.m */; };
+		22219F2C12439FF200EEEFDC /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0612439FF200EEEFDC /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2D12439FF200EEEFDC /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0712439FF200EEEFDC /* ECLabelValueTableController.m */; };
+		22219F2E12439FF200EEEFDC /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0812439FF200EEEFDC /* ECListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F2F12439FF200EEEFDC /* ECListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0912439FF200EEEFDC /* ECListTableController.m */; };
+		22219F3012439FF200EEEFDC /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0A12439FF200EEEFDC /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3112439FF200EEEFDC /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0B12439FF200EEEFDC /* ECNavigationController.m */; };
+		22219F3212439FF200EEEFDC /* ECRootTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0C12439FF200EEEFDC /* ECRootTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3312439FF200EEEFDC /* ECRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0D12439FF200EEEFDC /* ECRootTabBarController.m */; };
+		22219F3412439FF200EEEFDC /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F0E12439FF200EEEFDC /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3512439FF200EEEFDC /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F0F12439FF200EEEFDC /* ECTextItemEditorController.m */; };
+		22219F3612439FF200EEEFDC /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F1012439FF200EEEFDC /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3712439FF200EEEFDC /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F1112439FF200EEEFDC /* ECTickListTableController.m */; };
+		22219F3812439FF200EEEFDC /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F1212439FF200EEEFDC /* ECTouchAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3912439FF200EEEFDC /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F1312439FF200EEEFDC /* ECTouchAboutBoxController.m */; };
+		22219F3A12439FF200EEEFDC /* ECGradientButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F1512439FF200EEEFDC /* ECGradientButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3B12439FF200EEEFDC /* ECGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F1612439FF200EEEFDC /* ECGradientButton.m */; };
+		22219F3C12439FF200EEEFDC /* ECGradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22219F1712439FF200EEEFDC /* ECGradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22219F3D12439FF200EEEFDC /* ECGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22219F1812439FF200EEEFDC /* ECGradientView.m */; };
 		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,7 +134,7 @@
 		2257F1B71212D274007BE593 /* ECGLLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2257F1B51212D274007BE593 /* ECGLLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2257F1B81212D274007BE593 /* ECGLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2257F1B61212D274007BE593 /* ECGLLoader.m */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
-		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
+		225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -111,7 +146,7 @@
 		227272791205CDBB009CB32F /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272711205CDBB009CB32F /* FirstView.xib */; };
 		2272727A1205CDBB009CB32F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227272731205CDBB009CB32F /* InfoPlist.strings */; };
 		2272727B1205CDBB009CB32F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227272751205CDBB009CB32F /* MainWindow.xib */; };
-		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
+		227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
 		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		2273344811EBC1CB00695FB4 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2273344711EBC1CB00695FB4 /* ECTestCase.m */; };
@@ -179,37 +214,6 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DAF1229860B00A50007 /* ECCellProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB11229860B00A50007 /* ECDataDrivenTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB21229860B00A50007 /* ECLabelValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB41229860B00A50007 /* ECLabelValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB61229860B00A50007 /* ECValueCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DB81229860B00A50007 /* ECValueEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE3F122989DB00CCC25F /* ECDataDrivenView.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBB1229860B00A50007 /* ECDataDrivenView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE40122989DB00CCC25F /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBD1229860B00A50007 /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE41122989DB00CCC25F /* ECItemListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DBF1229860B00A50007 /* ECItemListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE42122989DB00CCC25F /* ECLabelValueTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC11229860B00A50007 /* ECLabelValueTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE43122989DB00CCC25F /* ECListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC31229860B00A50007 /* ECListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE44122989DB00CCC25F /* ECNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC51229860B00A50007 /* ECNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE45122989DB00CCC25F /* ECRootTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC71229860B00A50007 /* ECRootTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE46122989DB00CCC25F /* ECTextItemEditorController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DC91229860B00A50007 /* ECTextItemEditorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE47122989DB00CCC25F /* ECTickListTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCB1229860B00A50007 /* ECTickListTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE48122989DB00CCC25F /* ECTouchAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A2DCD1229860B00A50007 /* ECTouchAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286AE5512298A2800CCC25F /* ECCellProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB01229860B00A50007 /* ECCellProperties.m */; };
-		2286AE5612298A2800CCC25F /* ECLabelValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB31229860B00A50007 /* ECLabelValueCell.m */; };
-		2286AE5712298A2800CCC25F /* ECLabelValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB51229860B00A50007 /* ECLabelValueEditableCell.m */; };
-		2286AE5812298A2800CCC25F /* ECValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB71229860B00A50007 /* ECValueCell.m */; };
-		2286AE5912298A2800CCC25F /* ECValueEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DB91229860B00A50007 /* ECValueEditableCell.m */; };
-		2286AE5A12298A2E00CCC25F /* ECDataDrivenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DBC1229860B00A50007 /* ECDataDrivenView.m */; };
-		2286AE5B12298A2E00CCC25F /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DBE1229860B00A50007 /* ECDebugViewController.m */; };
-		2286AE5C12298A2E00CCC25F /* ECItemListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DC01229860B00A50007 /* ECItemListTableController.m */; };
-		2286AE5D12298A2E00CCC25F /* ECLabelValueTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DC21229860B00A50007 /* ECLabelValueTableController.m */; };
-		2286AE5E12298A2E00CCC25F /* ECListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DC41229860B00A50007 /* ECListTableController.m */; };
-		2286AE5F12298A2E00CCC25F /* ECNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DC61229860B00A50007 /* ECNavigationController.m */; };
-		2286AE6012298A2E00CCC25F /* ECRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DC81229860B00A50007 /* ECRootTabBarController.m */; };
-		2286AE6112298A2E00CCC25F /* ECTextItemEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCA1229860B00A50007 /* ECTextItemEditorController.m */; };
-		2286AE6212298A2E00CCC25F /* ECTickListTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCC1229860B00A50007 /* ECTickListTableController.m */; };
-		2286AE6312298A2E00CCC25F /* ECTouchAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A2DCE1229860B00A50007 /* ECTouchAboutBoxController.m */; };
 		22A0BA1A12145C1300522D54 /* UIWindow+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BA1912145C1300522D54 /* UIWindow+ECUtilities.m */; };
 		22A0BA1D12145CAE00522D54 /* UIWindow+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A0BA1812145C1300522D54 /* UIWindow+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22A0BA1E12145CC200522D54 /* UIWindow+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BA1912145C1300522D54 /* UIWindow+ECUtilities.m */; };
@@ -325,40 +329,44 @@
 		220987991212C7C4003EDD48 /* ECGLVertexShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLVertexShader.m; sourceTree = "<group>"; };
 		2209879A1212C7C4003EDD48 /* ECGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGLView.h; sourceTree = "<group>"; };
 		2209879B1212C7C4003EDD48 /* ECGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGLView.m; sourceTree = "<group>"; };
-		220A2DAF1229860B00A50007 /* ECCellProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCellProperties.h; sourceTree = "<group>"; };
-		220A2DB01229860B00A50007 /* ECCellProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCellProperties.m; sourceTree = "<group>"; };
-		220A2DB11229860B00A50007 /* ECDataDrivenTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenTableCell.h; sourceTree = "<group>"; };
-		220A2DB21229860B00A50007 /* ECLabelValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueCell.h; sourceTree = "<group>"; };
-		220A2DB31229860B00A50007 /* ECLabelValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueCell.m; sourceTree = "<group>"; };
-		220A2DB41229860B00A50007 /* ECLabelValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueEditableCell.h; sourceTree = "<group>"; };
-		220A2DB51229860B00A50007 /* ECLabelValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueEditableCell.m; sourceTree = "<group>"; };
-		220A2DB61229860B00A50007 /* ECValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueCell.h; sourceTree = "<group>"; };
-		220A2DB71229860B00A50007 /* ECValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueCell.m; sourceTree = "<group>"; };
-		220A2DB81229860B00A50007 /* ECValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueEditableCell.h; sourceTree = "<group>"; };
-		220A2DB91229860B00A50007 /* ECValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueEditableCell.m; sourceTree = "<group>"; };
-		220A2DBB1229860B00A50007 /* ECDataDrivenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenView.h; sourceTree = "<group>"; };
-		220A2DBC1229860B00A50007 /* ECDataDrivenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataDrivenView.m; sourceTree = "<group>"; };
-		220A2DBD1229860B00A50007 /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
-		220A2DBE1229860B00A50007 /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
-		220A2DBF1229860B00A50007 /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECItemListTableController.h; sourceTree = "<group>"; };
-		220A2DC01229860B00A50007 /* ECItemListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECItemListTableController.m; sourceTree = "<group>"; };
-		220A2DC11229860B00A50007 /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueTableController.h; sourceTree = "<group>"; };
-		220A2DC21229860B00A50007 /* ECLabelValueTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueTableController.m; sourceTree = "<group>"; };
-		220A2DC31229860B00A50007 /* ECListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECListTableController.h; sourceTree = "<group>"; };
-		220A2DC41229860B00A50007 /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECListTableController.m; sourceTree = "<group>"; };
-		220A2DC51229860B00A50007 /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNavigationController.h; sourceTree = "<group>"; };
-		220A2DC61229860B00A50007 /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNavigationController.m; sourceTree = "<group>"; };
-		220A2DC71229860B00A50007 /* ECRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRootTabBarController.h; sourceTree = "<group>"; };
-		220A2DC81229860B00A50007 /* ECRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRootTabBarController.m; sourceTree = "<group>"; };
-		220A2DC91229860B00A50007 /* ECTextItemEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTextItemEditorController.h; sourceTree = "<group>"; };
-		220A2DCA1229860B00A50007 /* ECTextItemEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTextItemEditorController.m; sourceTree = "<group>"; };
-		220A2DCB1229860B00A50007 /* ECTickListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTickListTableController.h; sourceTree = "<group>"; };
-		220A2DCC1229860B00A50007 /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTickListTableController.m; sourceTree = "<group>"; };
-		220A2DCD1229860B00A50007 /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchAboutBoxController.h; sourceTree = "<group>"; };
-		220A2DCE1229860B00A50007 /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTouchAboutBoxController.m; sourceTree = "<group>"; };
-		220A2DED1229868300A50007 /* ECBooleanEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBooleanEditableCell.h; sourceTree = "<group>"; };
-		220A2DEE1229868300A50007 /* ECBooleanEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBooleanEditableCell.m; sourceTree = "<group>"; };
 		2210B6201152E695006C6CCA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		22219EF212439FF200EEEFDC /* ECBooleanEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBooleanEditableCell.h; sourceTree = "<group>"; };
+		22219EF312439FF200EEEFDC /* ECBooleanEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBooleanEditableCell.m; sourceTree = "<group>"; };
+		22219EF412439FF200EEEFDC /* ECCellProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCellProperties.h; sourceTree = "<group>"; };
+		22219EF512439FF200EEEFDC /* ECCellProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCellProperties.m; sourceTree = "<group>"; };
+		22219EF612439FF200EEEFDC /* ECDataDrivenTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenTableCell.h; sourceTree = "<group>"; };
+		22219EF712439FF200EEEFDC /* ECLabelValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueCell.h; sourceTree = "<group>"; };
+		22219EF812439FF200EEEFDC /* ECLabelValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueCell.m; sourceTree = "<group>"; };
+		22219EF912439FF200EEEFDC /* ECLabelValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueEditableCell.h; sourceTree = "<group>"; };
+		22219EFA12439FF200EEEFDC /* ECLabelValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueEditableCell.m; sourceTree = "<group>"; };
+		22219EFB12439FF200EEEFDC /* ECValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueCell.h; sourceTree = "<group>"; };
+		22219EFC12439FF200EEEFDC /* ECValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueCell.m; sourceTree = "<group>"; };
+		22219EFD12439FF200EEEFDC /* ECValueEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECValueEditableCell.h; sourceTree = "<group>"; };
+		22219EFE12439FF200EEEFDC /* ECValueEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECValueEditableCell.m; sourceTree = "<group>"; };
+		22219F0012439FF200EEEFDC /* ECDataDrivenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataDrivenView.h; sourceTree = "<group>"; };
+		22219F0112439FF200EEEFDC /* ECDataDrivenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataDrivenView.m; sourceTree = "<group>"; };
+		22219F0212439FF200EEEFDC /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
+		22219F0312439FF200EEEFDC /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
+		22219F0412439FF200EEEFDC /* ECItemListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECItemListTableController.h; sourceTree = "<group>"; };
+		22219F0512439FF200EEEFDC /* ECItemListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECItemListTableController.m; sourceTree = "<group>"; };
+		22219F0612439FF200EEEFDC /* ECLabelValueTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLabelValueTableController.h; sourceTree = "<group>"; };
+		22219F0712439FF200EEEFDC /* ECLabelValueTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLabelValueTableController.m; sourceTree = "<group>"; };
+		22219F0812439FF200EEEFDC /* ECListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECListTableController.h; sourceTree = "<group>"; };
+		22219F0912439FF200EEEFDC /* ECListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECListTableController.m; sourceTree = "<group>"; };
+		22219F0A12439FF200EEEFDC /* ECNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECNavigationController.h; sourceTree = "<group>"; };
+		22219F0B12439FF200EEEFDC /* ECNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECNavigationController.m; sourceTree = "<group>"; };
+		22219F0C12439FF200EEEFDC /* ECRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRootTabBarController.h; sourceTree = "<group>"; };
+		22219F0D12439FF200EEEFDC /* ECRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRootTabBarController.m; sourceTree = "<group>"; };
+		22219F0E12439FF200EEEFDC /* ECTextItemEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTextItemEditorController.h; sourceTree = "<group>"; };
+		22219F0F12439FF200EEEFDC /* ECTextItemEditorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTextItemEditorController.m; sourceTree = "<group>"; };
+		22219F1012439FF200EEEFDC /* ECTickListTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTickListTableController.h; sourceTree = "<group>"; };
+		22219F1112439FF200EEEFDC /* ECTickListTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTickListTableController.m; sourceTree = "<group>"; };
+		22219F1212439FF200EEEFDC /* ECTouchAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTouchAboutBoxController.h; sourceTree = "<group>"; };
+		22219F1312439FF200EEEFDC /* ECTouchAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTouchAboutBoxController.m; sourceTree = "<group>"; };
+		22219F1512439FF200EEEFDC /* ECGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGradientButton.h; sourceTree = "<group>"; };
+		22219F1612439FF200EEEFDC /* ECGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGradientButton.m; sourceTree = "<group>"; };
+		22219F1712439FF200EEEFDC /* ECGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGradientView.h; sourceTree = "<group>"; };
+		22219F1812439FF200EEEFDC /* ECGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGradientView.m; sourceTree = "<group>"; };
 		2224D5BE121D974200C51C31 /* NSDate+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		2232B68211FA02BB001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItem.h; sourceTree = "<group>"; };
@@ -497,7 +505,7 @@
 		22FD5E131214490C0009DD71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilities.m"; sourceTree = "<group>"; };
 		22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilities.h"; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* ECFoundation */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = ECFoundation; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -519,7 +527,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */,
+				225EC6AB11EBAF4900A97AEA /* ECFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +535,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */,
+				227333B511EBBA2800695FB4 /* ECFoundation in Frameworks */,
 				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +562,7 @@
 		034768DFFF38A50411DB9C8B /* products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
+				8DC2EF5B0486A6940098B216 /* ECFoundation */,
 				22FBFE6711DD0D9400578A66 /* libECFoundationTouch.a */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
 				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
@@ -657,55 +665,6 @@
 			path = gl;
 			sourceTree = "<group>";
 		};
-		220A2DAE1229860A00A50007 /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				220A2DED1229868300A50007 /* ECBooleanEditableCell.h */,
-				220A2DEE1229868300A50007 /* ECBooleanEditableCell.m */,
-				220A2DAF1229860B00A50007 /* ECCellProperties.h */,
-				220A2DB01229860B00A50007 /* ECCellProperties.m */,
-				220A2DB11229860B00A50007 /* ECDataDrivenTableCell.h */,
-				220A2DB21229860B00A50007 /* ECLabelValueCell.h */,
-				220A2DB31229860B00A50007 /* ECLabelValueCell.m */,
-				220A2DB41229860B00A50007 /* ECLabelValueEditableCell.h */,
-				220A2DB51229860B00A50007 /* ECLabelValueEditableCell.m */,
-				220A2DB61229860B00A50007 /* ECValueCell.h */,
-				220A2DB71229860B00A50007 /* ECValueCell.m */,
-				220A2DB81229860B00A50007 /* ECValueEditableCell.h */,
-				220A2DB91229860B00A50007 /* ECValueEditableCell.m */,
-			);
-			name = cells;
-			path = controllers/cells;
-			sourceTree = "<group>";
-		};
-		220A2DBA1229860B00A50007 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				220A2DBB1229860B00A50007 /* ECDataDrivenView.h */,
-				220A2DBC1229860B00A50007 /* ECDataDrivenView.m */,
-				220A2DBD1229860B00A50007 /* ECDebugViewController.h */,
-				220A2DBE1229860B00A50007 /* ECDebugViewController.m */,
-				220A2DBF1229860B00A50007 /* ECItemListTableController.h */,
-				220A2DC01229860B00A50007 /* ECItemListTableController.m */,
-				220A2DC11229860B00A50007 /* ECLabelValueTableController.h */,
-				220A2DC21229860B00A50007 /* ECLabelValueTableController.m */,
-				220A2DC31229860B00A50007 /* ECListTableController.h */,
-				220A2DC41229860B00A50007 /* ECListTableController.m */,
-				220A2DC51229860B00A50007 /* ECNavigationController.h */,
-				220A2DC61229860B00A50007 /* ECNavigationController.m */,
-				220A2DC71229860B00A50007 /* ECRootTabBarController.h */,
-				220A2DC81229860B00A50007 /* ECRootTabBarController.m */,
-				220A2DC91229860B00A50007 /* ECTextItemEditorController.h */,
-				220A2DCA1229860B00A50007 /* ECTextItemEditorController.m */,
-				220A2DCB1229860B00A50007 /* ECTickListTableController.h */,
-				220A2DCC1229860B00A50007 /* ECTickListTableController.m */,
-				220A2DCD1229860B00A50007 /* ECTouchAboutBoxController.h */,
-				220A2DCE1229860B00A50007 /* ECTouchAboutBoxController.m */,
-			);
-			name = views;
-			path = controllers/views;
-			sourceTree = "<group>";
-		};
 		2210B5D41152E630006C6CCA /* configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +682,74 @@
 			);
 			name = configuration;
 			path = source/configuration;
+			sourceTree = "<group>";
+		};
+		22219EF012439FF200EEEFDC /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				22219EF112439FF200EEEFDC /* cells */,
+				22219EFF12439FF200EEEFDC /* controllers */,
+				22219F1412439FF200EEEFDC /* views */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		22219EF112439FF200EEEFDC /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				22219EF212439FF200EEEFDC /* ECBooleanEditableCell.h */,
+				22219EF312439FF200EEEFDC /* ECBooleanEditableCell.m */,
+				22219EF412439FF200EEEFDC /* ECCellProperties.h */,
+				22219EF512439FF200EEEFDC /* ECCellProperties.m */,
+				22219EF612439FF200EEEFDC /* ECDataDrivenTableCell.h */,
+				22219EF712439FF200EEEFDC /* ECLabelValueCell.h */,
+				22219EF812439FF200EEEFDC /* ECLabelValueCell.m */,
+				22219EF912439FF200EEEFDC /* ECLabelValueEditableCell.h */,
+				22219EFA12439FF200EEEFDC /* ECLabelValueEditableCell.m */,
+				22219EFB12439FF200EEEFDC /* ECValueCell.h */,
+				22219EFC12439FF200EEEFDC /* ECValueCell.m */,
+				22219EFD12439FF200EEEFDC /* ECValueEditableCell.h */,
+				22219EFE12439FF200EEEFDC /* ECValueEditableCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		22219EFF12439FF200EEEFDC /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22219F0012439FF200EEEFDC /* ECDataDrivenView.h */,
+				22219F0112439FF200EEEFDC /* ECDataDrivenView.m */,
+				22219F0212439FF200EEEFDC /* ECDebugViewController.h */,
+				22219F0312439FF200EEEFDC /* ECDebugViewController.m */,
+				22219F0412439FF200EEEFDC /* ECItemListTableController.h */,
+				22219F0512439FF200EEEFDC /* ECItemListTableController.m */,
+				22219F0612439FF200EEEFDC /* ECLabelValueTableController.h */,
+				22219F0712439FF200EEEFDC /* ECLabelValueTableController.m */,
+				22219F0812439FF200EEEFDC /* ECListTableController.h */,
+				22219F0912439FF200EEEFDC /* ECListTableController.m */,
+				22219F0A12439FF200EEEFDC /* ECNavigationController.h */,
+				22219F0B12439FF200EEEFDC /* ECNavigationController.m */,
+				22219F0C12439FF200EEEFDC /* ECRootTabBarController.h */,
+				22219F0D12439FF200EEEFDC /* ECRootTabBarController.m */,
+				22219F0E12439FF200EEEFDC /* ECTextItemEditorController.h */,
+				22219F0F12439FF200EEEFDC /* ECTextItemEditorController.m */,
+				22219F1012439FF200EEEFDC /* ECTickListTableController.h */,
+				22219F1112439FF200EEEFDC /* ECTickListTableController.m */,
+				22219F1212439FF200EEEFDC /* ECTouchAboutBoxController.h */,
+				22219F1312439FF200EEEFDC /* ECTouchAboutBoxController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		22219F1412439FF200EEEFDC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				22219F1512439FF200EEEFDC /* ECGradientButton.h */,
+				22219F1612439FF200EEEFDC /* ECGradientButton.m */,
+				22219F1712439FF200EEEFDC /* ECGradientView.h */,
+				22219F1812439FF200EEEFDC /* ECGradientView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		2235883B1229B9E00083284E /* logging */ = {
@@ -831,15 +858,6 @@
 				223CBAAF1205C3330008A641 /* prefix */,
 			);
 			path = touchtest;
-			sourceTree = "<group>";
-		};
-		22592EB411F5BBBE0056FF4B /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				220A2DAE1229860A00A50007 /* cells */,
-				220A2DBA1229860B00A50007 /* views */,
-			);
-			name = controllers;
 			sourceTree = "<group>";
 		};
 		225EC68111EBAC1500A97AEA /* tests */ = {
@@ -1031,8 +1049,8 @@
 			children = (
 				220987881212C7C4003EDD48 /* gl */,
 				22BFA1481205F8F300343D91 /* utilities */,
-				22592EB411F5BBBE0056FF4B /* controllers */,
 				2286307411E32AA800654739 /* animation */,
+				22219EF012439FF200EEEFDC /* ui */,
 			);
 			name = touch;
 			path = source/touch;
@@ -1078,12 +1096,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
-				220A2DEF1229868300A50007 /* ECBooleanEditableCell.h in Headers */,
-				2286AE39122989C800CCC25F /* ECCellProperties.h in Headers */,
-				2286AE3A122989C800CCC25F /* ECDataDrivenTableCell.h in Headers */,
-				2286AE3F122989DB00CCC25F /* ECDataDrivenView.h in Headers */,
 				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
-				2286AE40122989DB00CCC25F /* ECDebugViewController.h in Headers */,
 				227271CE1205C98B009CB32F /* ECDropAllViewsAnimation.h in Headers */,
 				2274C8CF11FF83D300E5C351 /* ECFoundationAdHocPrefix.pch in Headers */,
 				228630C411E32DD900654739 /* ECFoundationDebugPrefix.pch in Headers */,
@@ -1100,25 +1113,13 @@
 				220987A91212C7C4003EDD48 /* ECGLTextureLink.h in Headers */,
 				220987AB1212C7C4003EDD48 /* ECGLVertexShader.h in Headers */,
 				220987AD1212C7C4003EDD48 /* ECGLView.h in Headers */,
-				2286AE41122989DB00CCC25F /* ECItemListTableController.h in Headers */,
-				2286AE3B122989C800CCC25F /* ECLabelValueCell.h in Headers */,
-				2286AE3C122989C800CCC25F /* ECLabelValueEditableCell.h in Headers */,
-				2286AE42122989DB00CCC25F /* ECLabelValueTableController.h in Headers */,
-				2286AE43122989DB00CCC25F /* ECListTableController.h in Headers */,
 				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
 				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
-				2286AE44122989DB00CCC25F /* ECNavigationController.h in Headers */,
 				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
-				2286AE45122989DB00CCC25F /* ECRootTabBarController.h in Headers */,
-				2286AE46122989DB00CCC25F /* ECTextItemEditorController.h in Headers */,
-				2286AE47122989DB00CCC25F /* ECTickListTableController.h in Headers */,
-				2286AE48122989DB00CCC25F /* ECTouchAboutBoxController.h in Headers */,
 				2274C8D011FF83D300E5C351 /* ECTouchAdHocPrefix.pch in Headers */,
 				228630CA11E32DD900654739 /* ECTouchDebugPrefix.pch in Headers */,
 				228630CB11E32DD900654739 /* ECTouchReleasePrefix.pch in Headers */,
 				228630CC11E32DD900654739 /* ECTouchSharedPrefix.pch in Headers */,
-				2286AE3D122989C800CCC25F /* ECValueCell.h in Headers */,
-				2286AE3E122989C800CCC25F /* ECValueEditableCell.h in Headers */,
 				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
 				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
 				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
@@ -1132,6 +1133,25 @@
 				2235884C1229B9E00083284E /* ECLogHandler.h in Headers */,
 				2235884E1229B9E00083284E /* ECLogManager.h in Headers */,
 				22358A29122A072A0083284E /* UIApplication+ECUtilities.h in Headers */,
+				22219F1912439FF200EEEFDC /* ECBooleanEditableCell.h in Headers */,
+				22219F1B12439FF200EEEFDC /* ECCellProperties.h in Headers */,
+				22219F1D12439FF200EEEFDC /* ECDataDrivenTableCell.h in Headers */,
+				22219F1E12439FF200EEEFDC /* ECLabelValueCell.h in Headers */,
+				22219F2012439FF200EEEFDC /* ECLabelValueEditableCell.h in Headers */,
+				22219F2212439FF200EEEFDC /* ECValueCell.h in Headers */,
+				22219F2412439FF200EEEFDC /* ECValueEditableCell.h in Headers */,
+				22219F2612439FF200EEEFDC /* ECDataDrivenView.h in Headers */,
+				22219F2812439FF200EEEFDC /* ECDebugViewController.h in Headers */,
+				22219F2A12439FF200EEEFDC /* ECItemListTableController.h in Headers */,
+				22219F2C12439FF200EEEFDC /* ECLabelValueTableController.h in Headers */,
+				22219F2E12439FF200EEEFDC /* ECListTableController.h in Headers */,
+				22219F3012439FF200EEEFDC /* ECNavigationController.h in Headers */,
+				22219F3212439FF200EEEFDC /* ECRootTabBarController.h in Headers */,
+				22219F3412439FF200EEEFDC /* ECTextItemEditorController.h in Headers */,
+				22219F3612439FF200EEEFDC /* ECTickListTableController.h in Headers */,
+				22219F3812439FF200EEEFDC /* ECTouchAboutBoxController.h in Headers */,
+				22219F3A12439FF200EEEFDC /* ECGradientButton.h in Headers */,
+				22219F3C12439FF200EEEFDC /* ECGradientView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1274,7 +1294,7 @@
 			name = ECFoundation;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = ECFoundation;
-			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */;
+			productReference = 8DC2EF5B0486A6940098B216 /* ECFoundation */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1284,6 +1304,7 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECFoundation" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1458,28 +1479,30 @@
 				2257F1B81212D274007BE593 /* ECGLLoader.m in Sources */,
 				22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */,
 				22FDE54E121D6337007741FB /* NSDate+ECUtilities.m in Sources */,
-				220A2DF01229868300A50007 /* ECBooleanEditableCell.m in Sources */,
-				2286AE5512298A2800CCC25F /* ECCellProperties.m in Sources */,
-				2286AE5612298A2800CCC25F /* ECLabelValueCell.m in Sources */,
-				2286AE5712298A2800CCC25F /* ECLabelValueEditableCell.m in Sources */,
-				2286AE5812298A2800CCC25F /* ECValueCell.m in Sources */,
-				2286AE5912298A2800CCC25F /* ECValueEditableCell.m in Sources */,
-				2286AE5A12298A2E00CCC25F /* ECDataDrivenView.m in Sources */,
-				2286AE5B12298A2E00CCC25F /* ECDebugViewController.m in Sources */,
-				2286AE5C12298A2E00CCC25F /* ECItemListTableController.m in Sources */,
-				2286AE5D12298A2E00CCC25F /* ECLabelValueTableController.m in Sources */,
-				2286AE5E12298A2E00CCC25F /* ECListTableController.m in Sources */,
-				2286AE5F12298A2E00CCC25F /* ECNavigationController.m in Sources */,
-				2286AE6012298A2E00CCC25F /* ECRootTabBarController.m in Sources */,
-				2286AE6112298A2E00CCC25F /* ECTextItemEditorController.m in Sources */,
-				2286AE6212298A2E00CCC25F /* ECTickListTableController.m in Sources */,
-				2286AE6312298A2E00CCC25F /* ECTouchAboutBoxController.m in Sources */,
 				223588471229B9E00083284E /* ECDefaultLogHandler.m in Sources */,
 				223588491229B9E00083284E /* ECLogChannel.m in Sources */,
 				2235884B1229B9E00083284E /* ECLogging.m in Sources */,
 				2235884D1229B9E00083284E /* ECLogHandler.m in Sources */,
 				2235884F1229B9E00083284E /* ECLogManager.m in Sources */,
 				22358A2A122A072A0083284E /* UIApplication+ECUtilities.m in Sources */,
+				22219F1A12439FF200EEEFDC /* ECBooleanEditableCell.m in Sources */,
+				22219F1C12439FF200EEEFDC /* ECCellProperties.m in Sources */,
+				22219F1F12439FF200EEEFDC /* ECLabelValueCell.m in Sources */,
+				22219F2112439FF200EEEFDC /* ECLabelValueEditableCell.m in Sources */,
+				22219F2312439FF200EEEFDC /* ECValueCell.m in Sources */,
+				22219F2512439FF200EEEFDC /* ECValueEditableCell.m in Sources */,
+				22219F2712439FF200EEEFDC /* ECDataDrivenView.m in Sources */,
+				22219F2912439FF200EEEFDC /* ECDebugViewController.m in Sources */,
+				22219F2B12439FF200EEEFDC /* ECItemListTableController.m in Sources */,
+				22219F2D12439FF200EEEFDC /* ECLabelValueTableController.m in Sources */,
+				22219F2F12439FF200EEEFDC /* ECListTableController.m in Sources */,
+				22219F3112439FF200EEEFDC /* ECNavigationController.m in Sources */,
+				22219F3312439FF200EEEFDC /* ECRootTabBarController.m in Sources */,
+				22219F3512439FF200EEEFDC /* ECTextItemEditorController.m in Sources */,
+				22219F3712439FF200EEEFDC /* ECTickListTableController.m in Sources */,
+				22219F3912439FF200EEEFDC /* ECTouchAboutBoxController.m in Sources */,
+				22219F3B12439FF200EEEFDC /* ECGradientButton.m in Sources */,
+				22219F3D12439FF200EEEFDC /* ECGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
