@@ -56,10 +56,14 @@ ECPropertySynthesize(key);
 
  - (void) valueChanged: (id) sender
  {
-	 UISwitch* control = (UISwitch*) self.accessoryView;
-	 BOOL value = control.isOn;
-	[self.item setBoolean: value forKey: self.key];
-	[self.item postChangedNotifications];
+	 NSString* key = self.key;
+	 if (key)
+	 {
+		 UISwitch* control = (UISwitch*) self.accessoryView;
+		 BOOL value = control.isOn;
+		 [self.item setBoolean: value forKey: self.key];
+		 [self.item postChangedNotifications];
+	 }
  }
 
 @end
