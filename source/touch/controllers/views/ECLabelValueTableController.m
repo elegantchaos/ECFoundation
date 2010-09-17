@@ -11,6 +11,7 @@
 #import "ECDataItem.h"
 #import "ECLabelValueEditableCell.h"
 #import "ECLabelValueCell.h"
+#import "ECCellProperties.h"
 
 @implementation ECLabelValueTableController
 
@@ -171,6 +172,15 @@ ECPropertySynthesize(cellClass);
 	ECDebug(LabelValueTableChannel, @"number of rows for section %d: %d", section, count);
 
 	return count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ECDataItem* item = [self.data itemAtIndexPath: indexPath];
+	NSNumber* value = [item objectForKey: kRowHeightKey];
+	CGFloat height = value ? [value floatValue] : tableView.rowHeight;
+	
+	return height;
 }
 
 // --------------------------------------------------------------------------

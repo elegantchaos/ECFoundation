@@ -7,14 +7,9 @@
 
 #import "ECLabelValueCell.h"
 #import "ECDataItem.h"
+#import "ECCellProperties.h"
 
 @implementation ECLabelValueCell
-
-// --------------------------------------------------------------------------
-// Properties
-// --------------------------------------------------------------------------
-
-ECPropertySynthesize(item);
 
 // --------------------------------------------------------------------------
 //! Initialise with a data item.
@@ -35,6 +30,8 @@ ECPropertySynthesize(item);
 
 - (void) setupLabel
 {
+	[self setupStyleOfLabel: self.textLabel fontKey: kLabelFontKey sizeKey: kLabelSizeKey];
+
 	NSString* text = [self.item objectForKey: kLabelKey];
 	if (!text)
 	{
@@ -49,6 +46,8 @@ ECPropertySynthesize(item);
 
 - (void) setupDetail
 {
+	[self setupStyleOfLabel: self.detailTextLabel fontKey: kValueFontKey sizeKey: kValueSizeKey];
+	
 	if ([self.item objectForKey: kLabelKey])
 	{
 		ECDataItem* item = self.item;

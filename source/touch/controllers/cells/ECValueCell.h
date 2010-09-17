@@ -27,5 +27,6 @@ ECPropertyRetained(item, ECDataItem*);
 
 - (id) initForItem: (ECDataItem*) item properties: (NSDictionary*) properties reuseIdentifier: (NSString*) identifier;
 - (void) setupForItem:(ECDataItem *)item;
+- (void) setupStyleOfLabel: (UILabel*) label fontKey: (NSString*) fontKey sizeKey: (NSString*) sizeKey;
 
 @end

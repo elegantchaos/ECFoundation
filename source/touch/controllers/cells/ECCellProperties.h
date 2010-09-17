@@ -17,3 +17,8 @@ extern NSString *const kKeyboardTypeKey;
 extern NSString *const kKeyboardAppearanceKey;
 extern NSString *const kReturnKeyTypeKey;
 extern NSString *const kEnablesReturnKeyAutomaticallyKey;
+extern NSString *const kLabelFontKey;
+extern NSString *const kLabelSizeKey;
+extern NSString *const kValueFontKey;
+extern NSString *const kValueSizeKey;
+extern NSString *const kRowHeightKey;
