@@ -127,6 +127,75 @@ ECPropertySynthesize(cellClass);
 	return count;
 }
 
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	UIView* view = nil;
+	
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* font = [data objectForKey: kLabelFontKey];
+	NSNumber* sizeValue = [data objectForKey: kLabelSizeKey];
+	if (font || sizeValue)
+	{
+		CGRect rect = CGRectZero;
+		rect.origin.x = 20;
+		rect.size.width = tableView.bounds.size.width - 20;
+		rect.size.height = 44;
+		
+		view = [[[UIView alloc] initWithFrame: rect] autorelease];
+		NSString* title = [data objectForKey: kHeaderKey];
+		UILabel* label = [[UILabel alloc] initWithFrame: rect];
+		label.text = title;
+		CGFloat size;
+		if (sizeValue)
+		{
+			size = [sizeValue floatValue];
+		}
+		else
+		{
+			size = label.font.pointSize;
+		}
+
+		UIFont* newFont;
+		if (font)
+		{
+			newFont = [UIFont fontWithName: font size: size];
+		}
+		else
+		{
+			newFont = [label.font fontWithSize: size];
+		}
+
+		label.font = newFont;
+		label.opaque = NO;
+		label.backgroundColor = [UIColor clearColor];
+		
+		[view addSubview: label];
+		[label release];
+	}
+	
+	return view;
+}
+
+// --------------------------------------------------------------------------
+//! Return custom height for table header.
+// --------------------------------------------------------------------------
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	CGFloat height = 44;
+	
+	ECDataItem* data = [self.data itemAtIndex: section];
+	NSString* font = [data objectForKey: kLabelFontKey];
+	NSNumber* sizeValue = [data objectForKey: kLabelSizeKey];
+	if (font || sizeValue)
+	{
+		height = 44;
+	}
+	
+	return height;
+}
+
 // --------------------------------------------------------------------------
 //! Return the header title for a section.
 // --------------------------------------------------------------------------
