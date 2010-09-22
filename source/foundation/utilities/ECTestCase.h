@@ -33,9 +33,4 @@
 
 #endif
 
-@interface ECTestCase : ECTestCaseBase
-{
-	
-}
-
-@end
+typedef ECTestCaseBase ECTestCase;

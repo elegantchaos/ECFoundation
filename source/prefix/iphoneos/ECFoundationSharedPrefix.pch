@@ -10,4 +10,4 @@
 	#import <UIKit/UIKit.h>
 #endif
 
-#define EC_TOUCH 1
+#define EC_PLATFORM_IOS 1

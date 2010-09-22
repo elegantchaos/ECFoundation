@@ -9,4 +9,4 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
-#define EC_MAC 1
+#define EC_PLATFORM_MAC 1
