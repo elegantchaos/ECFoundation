@@ -1,0 +1,13 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 21/05/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+#endif
+
+#define EC_TOUCH 1

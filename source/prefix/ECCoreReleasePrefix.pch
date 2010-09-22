@@ -1,0 +1,18 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 16/01/2010
+//
+//  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
+// --------------------------------------------------------------------------
+
+#import "ECCoreSharedPrefix.pch"
+
+#define EC_RELEASE 1
+#define EC_CONFIGURATION_STRING @"Release"
+#define EC_CONFIGURATION_STRING_SHORT @"R"
+
+#define ECUnusedInDebug(v)
+#define ECUnusedInRelease(v) ECUnused(v)
+
+#define ECDebug(...) 
+#define ECDefineDebugChannel(...)
