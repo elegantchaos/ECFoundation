@@ -6,4 +6,4 @@
 // --------------------------------------------------------------------------
 
 #import "ECCoreAdHocPrefix.pch"
-#import "ECFoundationReleasePrefix.pch"
+#import "ECFoundationSharedPrefix.pch"
