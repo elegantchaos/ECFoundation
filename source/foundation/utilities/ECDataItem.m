@@ -713,5 +713,15 @@ ECPropertySynthesize(parent);
 	}
 }
 
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+- (NSComparisonResult)	compareByValueAlphabetical: (ECDataItem*) other
+{	
+	NSString* value1 = [self.data objectForKey: kValueKey];
+	NSString* value2 = [other.data objectForKey: kValueKey];
+	return [value1 compare: value2];
+}
+
 @end
 
