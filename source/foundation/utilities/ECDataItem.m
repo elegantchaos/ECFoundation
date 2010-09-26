@@ -380,6 +380,34 @@ ECPropertySynthesize(parent);
 }
 
 // --------------------------------------------------------------------------
+//! Return the first item where a particular key matches a given value.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*)	itemWithValue: (id) value forKey: (NSString*) key
+{
+	ECDataItem* result;
+	
+	if ([[self objectForKey: key] isEqual: value])
+	{
+		result = self;
+	}
+	else
+	{
+		result = nil;
+		for (ECDataItem* subitem in self.items)
+		{
+			result = [subitem itemWithValue: value forKey: key];
+			if (result)
+			{
+				break;
+			}
+		}
+	}
+
+	return result;
+}
+
+// --------------------------------------------------------------------------
 //! Return a given item.
 // --------------------------------------------------------------------------
 
@@ -584,6 +612,44 @@ ECPropertySynthesize(parent);
 		[nc postNotificationName: DataItemChildChanged object: newContainer];
 	}
 }
+
+// --------------------------------------------------------------------------
+//! Does this item contain another item?
+// --------------------------------------------------------------------------
+
+- (BOOL) containsItem: (ECDataItem*) item
+{
+	BOOL containsItem = [self.items containsObject: item];
+	if (!containsItem)
+	{
+		for (ECDataItem* subitem in self.items)
+		{
+			containsItem = [subitem containsItem: item];
+			if (containsItem)
+			{
+				break;
+			}
+		}
+	}
+	
+	return containsItem;
+}
+
+// --------------------------------------------------------------------------
+//! Set the kSelectionKey property to point at the given item,
+//! if it is in our list or one of our child lists.
+// --------------------------------------------------------------------------
+
+- (void) selectItem: (ECDataItem*) item
+{
+	BOOL containsItem = [self containsItem: item];
+	if (containsItem)
+	{
+		[self setObject: item forKey: kSelectionKey];
+		[self postChangedNotifications];
+		[item postSelectedNotification];
+	}
+}
 // --------------------------------------------------------------------------
 //! Set the kSelectionKey property to one of our items.
 // --------------------------------------------------------------------------
@@ -655,6 +721,17 @@ ECPropertySynthesize(parent);
 {
 	NSDictionary* data = [self asNestedDictionary];
 	return [data writeToURL: url atomically:atomically];
+}
+
+// --------------------------------------------------------------------------
+//! Return the selected object, or nil if there is none.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*) selectedItem
+{
+	ECDataItem* selection = [self.data objectForKey: kSelectionKey];
+	
+	return selection;
 }
 
 // --------------------------------------------------------------------------

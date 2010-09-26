@@ -67,13 +67,18 @@ ECPropertyRetained(items, NSMutableArray*);
 - (ECDataItem*)		itemAtIndex: (NSUInteger) index;
 - (ECDataItem*)		itemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
 - (ECDataItem*)		itemAtIndexPath: (NSIndexPath*) path;
+- (ECDataItem*)		itemWithValue: (id) value forKey: (NSString*) key;
 
+- (void)			selectItem: (ECDataItem*) item;
 - (void)			selectItemAtIndex: (NSUInteger) index;
 - (void)			selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
 - (void)			selectItemAtIndexPath: (NSIndexPath*) path;
 
+- (ECDataItem*)		selectedItem;
 - (NSUInteger)		selectedItemIndex;
 - (NSIndexPath*)	selectedItemIndexPath;
+
+- (BOOL) containsItem: (ECDataItem*) item;
 
 - (void)			updateParentLinks;
 - (void)			postChangedNotifications;
