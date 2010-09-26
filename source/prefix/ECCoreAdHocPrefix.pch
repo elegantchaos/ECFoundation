@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECCoreSharedPrefix.pch"
+#import "ECCoreReleasePrefix.pch"
 
 #define EC_ADHOC 1
 #undef EC_CONFIGURATION_STRING
