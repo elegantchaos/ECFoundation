@@ -413,7 +413,13 @@ ECPropertySynthesize(parent);
 
 - (ECDataItem*) itemAtIndex:(NSUInteger)index
 {
-	return [self.items objectAtIndex: index];
+	ECDataItem* result = nil;
+	if (index < [self.items count])
+	{
+		result = [self.items objectAtIndex: index];
+	}
+
+	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -422,7 +428,13 @@ ECPropertySynthesize(parent);
 
 - (ECDataItem*) itemAtIndex:(NSUInteger)index inSection: (NSUInteger) section
 {
-	return [[self itemAtIndex: section] itemAtIndex: index];
+	ECDataItem* result = [self itemAtIndex: section];
+	if (result)
+	{
+		result = [result itemAtIndex: index];
+	}
+	
+	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -668,11 +680,17 @@ ECPropertySynthesize(parent);
 
 - (void) selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section
 {
-	ECDataItem* sectionData = [self.items objectAtIndex: section];
-	ECDataItem* item = [sectionData.items objectAtIndex: index];
-	[self setObject: item forKey: kSelectionKey];
-	[self postChangedNotifications];
-	[item postSelectedNotification];
+	if (section < [self.items count])
+	{
+		ECDataItem* sectionData = [self.items objectAtIndex: section];
+		if (index < [sectionData count])
+		{
+			ECDataItem* item = [sectionData.items objectAtIndex: index];
+			[self setObject: item forKey: kSelectionKey];
+			[self postChangedNotifications];
+			[item postSelectedNotification];
+		}
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -798,6 +816,15 @@ ECPropertySynthesize(parent);
 	NSString* value1 = [self.data objectForKey: kValueKey];
 	NSString* value2 = [other.data objectForKey: kValueKey];
 	return [value1 compare: value2];
+}
+
+// --------------------------------------------------------------------------
+//! Output text description of this item.
+// --------------------------------------------------------------------------
+
+- (NSString*) description
+{
+	return [NSString stringWithFormat: @"Data Item: %@\nSub Items: %@", self.data, self.items];
 }
 
 @end
