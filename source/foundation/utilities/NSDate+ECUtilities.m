@@ -61,7 +61,7 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 
 - (NSString *) formattedRelativeTo: (NSDate*) date
 {
-	NSTimeInterval interval = [date timeIntervalSinceDate: self];
+	NSTimeInterval interval = date ? [date timeIntervalSinceDate: self] : -[self timeIntervalSinceNow];
 	return [NSDate formattedRelativeToInterval: interval];
 }
 
@@ -111,7 +111,7 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 		}
 		else if (dayDiff < 365)
 		{
-			[formatter setDateFormat: @"MMMM"];
+			[formatter setDateFormat: @"MMMM d"];
 			result = [formatter stringFromDate:self];
 		}
 		else
