@@ -114,6 +114,10 @@
 		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		229D80A2125A960D00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
+		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
+		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EA44D01212FB7C00EFDD11 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
 		22F06DD6122E8B060058DB57 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -248,6 +252,8 @@
 		227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECUtilities.m"; sourceTree = "<group>"; };
 		228630F611E32E8E00654739 /* ECLocationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLocationUtilities.h; sourceTree = "<group>"; };
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
+		229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
+		229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
 		22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilities.m"; sourceTree = "<group>"; };
 		22FBFE6711DD0D9400578A66 /* libECFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,6 +524,8 @@
 			isa = PBXGroup;
 			children = (
 				225EC68111EBAC1500A97AEA /* tests */,
+				229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */,
+				229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */,
 				226890AB124FFEC400424BD0 /* ECCommonKeys.h */,
 				226890AC124FFEC400424BD0 /* ECCommonKeys.m */,
 				2232B68211FA02BB001846FC /* ECDataItem.h */,
@@ -578,6 +586,7 @@
 				22728DB6124A348A00A9881F /* ECCoreSharedPrefix.pch in Headers */,
 				2272908C124A4B4B00A9881F /* ECTestCase.h in Headers */,
 				226890B3124FFF2200424BD0 /* ECCommonKeys.h in Headers */,
+				229D80A2125A960D00E03D5A /* CLLocation+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +619,7 @@
 				22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */,
 				2272908B124A4B4A00A9881F /* ECTestCase.h in Headers */,
 				226890AD124FFEC400424BD0 /* ECCommonKeys.h in Headers */,
+				229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +838,7 @@
 				2235884D1229B9E00083284E /* ECLogHandler.m in Sources */,
 				2235884F1229B9E00083284E /* ECLogManager.m in Sources */,
 				226890CA124FFF6A00424BD0 /* ECCommonKeys.m in Sources */,
+				229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,6 +859,7 @@
 				223588571229B9E00083284E /* ECLogHandler.m in Sources */,
 				223588591229B9E00083284E /* ECLogManager.m in Sources */,
 				226890AE124FFEC400424BD0 /* ECCommonKeys.m in Sources */,
+				229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

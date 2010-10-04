@@ -7,6 +7,11 @@
 
 #import "ECLocationUtilities.h"
 
+BOOL CoordinatesEqual(CLLocationCoordinate2D value1, CLLocationCoordinate2D value2)
+{
+	return (value1.latitude == value2.latitude) && (value1.longitude == value2.longitude);
+}
+
 // --------------------------------------------------------------------------
 //! Clamp a coordinate between a minimum and maximum value.
 // --------------------------------------------------------------------------
