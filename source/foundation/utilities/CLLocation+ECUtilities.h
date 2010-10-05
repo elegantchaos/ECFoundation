@@ -8,9 +8,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface CLLocation(ECUtilities)
-{
-
-}
 
 // --------------------------------------------------------------------------
 // Public Properties
