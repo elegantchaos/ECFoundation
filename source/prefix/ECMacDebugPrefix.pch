@@ -5,5 +5,5 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECFoundationDebugPrefix.pch"
 #import "ECMacSharedPrefix.pch"
+#import "ECFoundationDebugPrefix.pch"

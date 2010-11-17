@@ -10,8 +10,6 @@
 
 #ifdef __OBJC__
 
-#import <Foundation/Foundation.h>
-
 @class ECLogChannel;
 
 #else
