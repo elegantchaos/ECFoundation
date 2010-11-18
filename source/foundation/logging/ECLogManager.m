@@ -181,4 +181,28 @@ static ECLogManager* gSharedInstance = nil;
 	}
 }
 
+// --------------------------------------------------------------------------
+//! Turn on every channel.
+// --------------------------------------------------------------------------
+
+- (void) enableAllChannels
+{
+	for (ECLogChannel* channel in self.channels)
+	{
+		channel.enabled = YES;
+	}
+}
+
+// --------------------------------------------------------------------------
+//! Turn off every channel.
+// --------------------------------------------------------------------------
+
+- (void) disableAllChannels
+{
+	for (ECLogChannel* channel in self.channels)
+	{
+		channel.enabled = NO;
+	}
+}
+
 @end
