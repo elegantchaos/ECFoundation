@@ -60,7 +60,7 @@
 //! Return the raw instance variable backing a property.
 // --------------------------------------------------------------------------
 
-#define ECPropertyDirect(name)					_##name
+#define ECPropertyInstance(name)				_##name
 
 // --------------------------------------------------------------------------
 //! Release a property in a way that's safe to use in dealloc.
