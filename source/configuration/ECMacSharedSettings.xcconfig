@@ -22,7 +22,8 @@ INSTALL_PATH = $(HOME)/Applications
 // --------------------------------------------------------------------------
 
 ARCHS = $(ARCHS_STANDARD_32_64_BIT)
-SDKROOT = macosx10.6
+SDKROOT = macosx
+MACOSX_DEPLOYMENT_TARGET = 10.5
 
 
 // --------------------------------------------------------------------------
