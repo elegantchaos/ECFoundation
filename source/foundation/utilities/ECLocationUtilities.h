@@ -7,6 +7,8 @@
 
 #include <CoreLocation/CoreLocation.h>
 
+BOOL CoordinatesEqual(CLLocationCoordinate2D value1, CLLocationCoordinate2D value2);
+
 CLLocationCoordinate2D CoordinateClamp(CLLocationCoordinate2D value, CLLocationCoordinate2D min, CLLocationCoordinate2D max);
 CLLocationCoordinate2D CoordinateMinimum(CLLocationCoordinate2D c1, CLLocationCoordinate2D c2);
 CLLocationCoordinate2D CoordinateMaximum(CLLocationCoordinate2D c1, CLLocationCoordinate2D c2);

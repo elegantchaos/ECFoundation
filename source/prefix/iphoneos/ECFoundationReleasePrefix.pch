@@ -1,13 +1,9 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 22/07/2010
-//
-//! @file:
-//! Miscellaneous macros.
+//! @date 21/05/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#define ECUnused(v)	(void) (v)
-
-#define EC_HINT_UNUSED __attribute__((__unused__))
+#import "ECCoreReleasePrefix.pch"
+#import "ECFoundationSharedPrefix.pch"

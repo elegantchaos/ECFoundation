@@ -93,7 +93,7 @@
 	ECTestAssertTrue([formatted isEqualToString: @"3 days ago"], @"more than 2 days - should return 3 days, string was %@", formatted);
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/01/1970 23.59.45"]];
-	ECTestAssertTrue([formatted isEqualToString: @"November"], @"more than a month - should return the month, string was %@", formatted);
+	ECTestAssertTrue([formatted isEqualToString: @"November 12"], @"more than a month - should return the month and day, string was %@", formatted);
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/01/1971 23.59.45"]];
 	ECTestAssertTrue([formatted isEqualToString: @"1969"], @"more than a year - should return the year, string was %@", formatted);

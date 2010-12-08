@@ -1,13 +1,13 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 22/07/2010
-//
-//! @file:
-//! Miscellaneous macros.
+//! @date 21/05/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#define ECUnused(v)	(void) (v)
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <UIKit/UIKit.h>
+#endif
 
-#define EC_HINT_UNUSED __attribute__((__unused__))
+#define EC_PLATFORM_IOS 1

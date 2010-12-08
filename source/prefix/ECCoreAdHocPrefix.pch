@@ -1,13 +1,14 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 22/07/2010
-//
-//! @file:
-//! Miscellaneous macros.
+//! @date 16/01/2010
 //
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#define ECUnused(v)	(void) (v)
+#import "ECCoreReleasePrefix.pch"
 
-#define EC_HINT_UNUSED __attribute__((__unused__))
+#define EC_ADHOC 1
+#undef EC_CONFIGURATION_STRING
+#undef EC_CONFIGURATION_STRING_SHORT
+#define EC_CONFIGURATION_STRING @"AdHoc"
+#define EC_CONFIGURATION_STRING_SHORT @"A"

@@ -5,7 +5,7 @@
 //  Copyright 2010 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECCommonKeys.h"
 
 @interface ECDataItem : NSObject 
 {
@@ -67,13 +67,18 @@ ECPropertyRetained(items, NSMutableArray*);
 - (ECDataItem*)		itemAtIndex: (NSUInteger) index;
 - (ECDataItem*)		itemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
 - (ECDataItem*)		itemAtIndexPath: (NSIndexPath*) path;
+- (ECDataItem*)		itemWithValue: (id) value forKey: (NSString*) key;
 
+- (void)			selectItem: (ECDataItem*) item;
 - (void)			selectItemAtIndex: (NSUInteger) index;
 - (void)			selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section;
 - (void)			selectItemAtIndexPath: (NSIndexPath*) path;
 
+- (ECDataItem*)		selectedItem;
 - (NSUInteger)		selectedItemIndex;
 - (NSIndexPath*)	selectedItemIndexPath;
+
+- (BOOL) containsItem: (ECDataItem*) item;
 
 - (void)			updateParentLinks;
 - (void)			postChangedNotifications;
@@ -83,35 +88,9 @@ ECPropertyRetained(items, NSMutableArray*);
 - (NSDictionary*)	asNestedDictionary;
 - (BOOL)			writeToURL:(NSURL*) url atomically:(BOOL)atomically; // the atomically flag is ignored if url of a type that cannot be written atomically.
 
+- (NSComparisonResult)	compareByValueAlphabetical: (ECDataItem*) other;
+
 @end
-
-// --------------------------------------------------------------------------
-// Data Key Constants
-// --------------------------------------------------------------------------
-
-extern NSString *const kAccessoryKey;
-extern NSString *const kCellClassKey;
-extern NSString *const kCellPropertiesKey;
-extern NSString *const kDefaultsKey;
-extern NSString *const kDeletableKey;
-extern NSString *const kEditableKey;
-extern NSString *const kEditorKey;
-extern NSString *const kEditorNibKey;
-extern NSString *const kExtensibleKey;
-extern NSString *const kFooterKey;
-extern NSString *const kHeaderKey;
-extern NSString *const kItemsKey;
-extern NSString *const kLabelKey;
-extern NSString *const kMoveableKey;
-extern NSString *const kNewValueKey;
-extern NSString *const kParentKey;
-extern NSString *const kPropertiesKey;
-extern NSString *const kSecureKey;
-extern NSString *const kSelectableKey;
-extern NSString *const kSelectionKey;
-extern NSString *const kValueKey;
-extern NSString *const kViewerKey;
-extern NSString *const kViewerNibKey;
 
 // --------------------------------------------------------------------------
 // Notifications

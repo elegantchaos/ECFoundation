@@ -7,33 +7,6 @@
 
 #import "ECDataItem.h"
 
-// --------------------------------------------------------------------------
-// Data Key Constants
-// --------------------------------------------------------------------------
-
-NSString *const kAccessoryKey = @"Accessory";
-NSString *const kCellClassKey = @"CellClass";
-NSString *const kCellPropertiesKey = @"CellProperties";
-NSString *const kDefaultsKey = @"Defaults";
-NSString *const kDeletableKey = @"Deletable";
-NSString *const kEditableKey = @"Editable";
-NSString *const kEditorKey = @"Editor";
-NSString *const kEditorNibKey = @"EditorNib";
-NSString *const kExtensibleKey = @"Extensible";
-NSString *const kFooterKey = @"Footer";
-NSString *const kHeaderKey = @"Header";
-NSString *const kItemsKey = @"Items";
-NSString *const kLabelKey = @"Label";
-NSString *const kMoveableKey = @"Moveable";
-NSString *const kNewValueKey = @"NewValue";
-NSString *const kParentKey = @"Parent";
-NSString *const kPropertiesKey = @"Properties";
-NSString *const kSecureKey = @"Secure";
-NSString *const kSelectableKey = @"Selectable";
-NSString *const kSelectionKey = @"Selection";
-NSString *const kValueKey = @"Value";
-NSString *const kViewerKey = @"Viewer";
-NSString *const kViewerNibKey = @"ViewerNib";
 
 // --------------------------------------------------------------------------
 // Notifications
@@ -380,12 +353,46 @@ ECPropertySynthesize(parent);
 }
 
 // --------------------------------------------------------------------------
+//! Return the first item where a particular key matches a given value.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*)	itemWithValue: (id) value forKey: (NSString*) key
+{
+	ECDataItem* result;
+	
+	if ([[self objectForKey: key] isEqual: value])
+	{
+		result = self;
+	}
+	else
+	{
+		result = nil;
+		for (ECDataItem* subitem in self.items)
+		{
+			result = [subitem itemWithValue: value forKey: key];
+			if (result)
+			{
+				break;
+			}
+		}
+	}
+
+	return result;
+}
+
+// --------------------------------------------------------------------------
 //! Return a given item.
 // --------------------------------------------------------------------------
 
 - (ECDataItem*) itemAtIndex:(NSUInteger)index
 {
-	return [self.items objectAtIndex: index];
+	ECDataItem* result = nil;
+	if (index < [self.items count])
+	{
+		result = [self.items objectAtIndex: index];
+	}
+
+	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -394,7 +401,13 @@ ECPropertySynthesize(parent);
 
 - (ECDataItem*) itemAtIndex:(NSUInteger)index inSection: (NSUInteger) section
 {
-	return [[self itemAtIndex: section] itemAtIndex: index];
+	ECDataItem* result = [self itemAtIndex: section];
+	if (result)
+	{
+		result = [result itemAtIndex: index];
+	}
+	
+	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -584,6 +597,44 @@ ECPropertySynthesize(parent);
 		[nc postNotificationName: DataItemChildChanged object: newContainer];
 	}
 }
+
+// --------------------------------------------------------------------------
+//! Does this item contain another item?
+// --------------------------------------------------------------------------
+
+- (BOOL) containsItem: (ECDataItem*) item
+{
+	BOOL containsItem = [self.items containsObject: item];
+	if (!containsItem)
+	{
+		for (ECDataItem* subitem in self.items)
+		{
+			containsItem = [subitem containsItem: item];
+			if (containsItem)
+			{
+				break;
+			}
+		}
+	}
+	
+	return containsItem;
+}
+
+// --------------------------------------------------------------------------
+//! Set the kSelectionKey property to point at the given item,
+//! if it is in our list or one of our child lists.
+// --------------------------------------------------------------------------
+
+- (void) selectItem: (ECDataItem*) item
+{
+	BOOL containsItem = [self containsItem: item];
+	if (containsItem)
+	{
+		[self setObject: item forKey: kSelectionKey];
+		[self postChangedNotifications];
+		[item postSelectedNotification];
+	}
+}
 // --------------------------------------------------------------------------
 //! Set the kSelectionKey property to one of our items.
 // --------------------------------------------------------------------------
@@ -602,11 +653,17 @@ ECPropertySynthesize(parent);
 
 - (void) selectItemAtIndex: (NSUInteger) index inSection: (NSUInteger) section
 {
-	ECDataItem* sectionData = [self.items objectAtIndex: section];
-	ECDataItem* item = [sectionData.items objectAtIndex: index];
-	[self setObject: item forKey: kSelectionKey];
-	[self postChangedNotifications];
-	[item postSelectedNotification];
+	if (section < [self.items count])
+	{
+		ECDataItem* sectionData = [self.items objectAtIndex: section];
+		if (index < [sectionData count])
+		{
+			ECDataItem* item = [sectionData.items objectAtIndex: index];
+			[self setObject: item forKey: kSelectionKey];
+			[self postChangedNotifications];
+			[item postSelectedNotification];
+		}
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -655,6 +712,17 @@ ECPropertySynthesize(parent);
 {
 	NSDictionary* data = [self asNestedDictionary];
 	return [data writeToURL: url atomically:atomically];
+}
+
+// --------------------------------------------------------------------------
+//! Return the selected object, or nil if there is none.
+// --------------------------------------------------------------------------
+
+- (ECDataItem*) selectedItem
+{
+	ECDataItem* selection = [self.data objectForKey: kSelectionKey];
+	
+	return selection;
 }
 
 // --------------------------------------------------------------------------
@@ -711,6 +779,25 @@ ECPropertySynthesize(parent);
 		item.parent = self;
 		[item updateParentLinks];
 	}
+}
+
+// --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+- (NSComparisonResult)	compareByValueAlphabetical: (ECDataItem*) other
+{	
+	NSString* value1 = [self.data objectForKey: kValueKey];
+	NSString* value2 = [other.data objectForKey: kValueKey];
+	return [value1 compare: value2];
+}
+
+// --------------------------------------------------------------------------
+//! Output text description of this item.
+// --------------------------------------------------------------------------
+
+- (NSString*) description
+{
+	return [NSString stringWithFormat: @"Data Item: %@\nSub Items: %@", self.data, self.items];
 }
 
 @end

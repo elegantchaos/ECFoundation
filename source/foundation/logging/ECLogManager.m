@@ -83,8 +83,10 @@ static ECLogManager* gSharedInstance = nil;
 		}
 	}
 
-	NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-	[nc postNotificationName: LogChannelsChanged object: self];
+	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
+	// in an infinite loop if the notification causes another notification to be posted
+	NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+	[[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
 }
 
 // --------------------------------------------------------------------------
@@ -176,6 +178,30 @@ static ECLogManager* gSharedInstance = nil;
 	for (ECLogHandler* handler in self.handlers)
 	{
 		[handler logFromChannel: channel withFormat: format arguments: arguments];
+	}
+}
+
+// --------------------------------------------------------------------------
+//! Turn on every channel.
+// --------------------------------------------------------------------------
+
+- (void) enableAllChannels
+{
+	for (ECLogChannel* channel in self.channels)
+	{
+		channel.enabled = YES;
+	}
+}
+
+// --------------------------------------------------------------------------
+//! Turn off every channel.
+// --------------------------------------------------------------------------
+
+- (void) disableAllChannels
+{
+	for (ECLogChannel* channel in self.channels)
+	{
+		channel.enabled = NO;
 	}
 }
 
