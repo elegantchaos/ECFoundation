@@ -40,6 +40,7 @@ ECPropertyRetained(handlers, NSMutableArray*);
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
 - (void) enableAllChannels;
 - (void) disableAllChannels;
+- (void) saveChannelSettings;
 
 @end
 
