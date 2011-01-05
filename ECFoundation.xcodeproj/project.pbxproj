@@ -58,6 +58,7 @@
 		22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		22463388121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22463389121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
+		2254282412C37FB3001BA426 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2254282312C37FB3001BA426 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
@@ -68,7 +69,6 @@
 		226890AE124FFEC400424BD0 /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
 		226890B3124FFF2200424BD0 /* ECCommonKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 226890AB124FFEC400424BD0 /* ECCommonKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226890CA124FFF6A00424BD0 /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
-		226AE7E7125B426200FFEDBA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226AE7E6125B426200FFEDBA /* CoreLocation.framework */; };
 		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA111F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1FAD11F8D0A300603F71 /* ECMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -209,6 +209,7 @@
 		223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation SenTest.plist"; sourceTree = "<group>"; };
 		22463384121A8756000ECB30 /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
 		22463385121A8756000ECB30 /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
+		2254282312C37FB3001BA426 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
@@ -298,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
-				226AE7E7125B426200FFEDBA /* CoreLocation.framework in Frameworks */,
+				2254282412C37FB3001BA426 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +326,7 @@
 				0867D69AFE84028FC02AAC07 /* frameworks */,
 				034768DFFF38A50411DB9C8B /* products */,
 				226AE7E6125B426200FFEDBA /* CoreLocation.framework */,
+				2254282312C37FB3001BA426 /* CoreLocation.framework */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
