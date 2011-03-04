@@ -9,8 +9,10 @@
 
 @interface ECLogHandler : NSObject 
 {
-
+    ECPropertyVariable(name, NSString*);
 }
+
+ECPropertyRetained(name, NSString*);
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
 

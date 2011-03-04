@@ -11,12 +11,22 @@
 #import "ECLogChannel.h"
 #import "ECDefaultLogHandler.h"
 
+
+@interface ECLogManager()
+
+// --------------------------------------------------------------------------
+// Private Properties
+// --------------------------------------------------------------------------
+
+ECPropertyRetained(settings, NSMutableDictionary*);
+
 // --------------------------------------------------------------------------
 // Private Methods
 // --------------------------------------------------------------------------
 
-@interface ECLogManager()
+- (void) loadChannelSettings;
 - (void) saveChannelSettings;
+
 @end
 
 
@@ -32,7 +42,7 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 // Constants
 // --------------------------------------------------------------------------
 
-NSString *const kLogChannelSettings = @"LogChannels";
+NSString *const kLogChannelSettings = @"Log Channels";
 
 // --------------------------------------------------------------------------
 // Properties
@@ -40,6 +50,7 @@ NSString *const kLogChannelSettings = @"LogChannels";
 
 ECPropertySynthesize(channels);
 ECPropertySynthesize(handlers);
+ECPropertySynthesize(settings);
 
 // --------------------------------------------------------------------------
 // Globals
@@ -66,16 +77,43 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
-//! Regist a channel with the log manager.
+//! Return the channel with a given name, making it first if necessary.
+//! If the channel was created, we register it.
+// --------------------------------------------------------------------------
+
+- (ECLogChannel*) registerChannelWithRawName: (const char*) rawName;
+{
+    NSString* name = [ECLogChannel cleanName:rawName];
+    return [self registerChannelWithName:name];
+}
+
+// --------------------------------------------------------------------------
+//! Return the channel with a given name, making it first if necessary.
+//! If the channel was created, we register it.
+// --------------------------------------------------------------------------
+
+- (ECLogChannel*) registerChannelWithName: (NSString*) name;
+{
+    ECLogChannel* channel = [self.channels objectForKey:name];
+    if (!channel)
+    {
+        channel = [[ECLogChannel alloc] initWithName: name];
+        channel.enabled = NO;
+        [self registerChannel:channel];
+    }
+
+    return channel;
+}
+
+// --------------------------------------------------------------------------
+//! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
 - (void) registerChannel: (ECLogChannel*) channel
 {
-	[self.channels addObject: channel];
-	[self.channels sortUsingSelector: @selector(caseInsensitiveCompare:)];
+	[self.channels setObject: channel forKey: channel.name];
 	
-	NSDictionary* allSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
-	NSDictionary* channelSettings = [allSettings objectForKey: channel.name];
+	NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
 	if (channelSettings)
 	{
 		NSNumber* number = [channelSettings objectForKey: @"enabled"];
@@ -97,7 +135,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) registerHandler: (ECLogHandler*) handler
 {
-	[self.handlers addObject: handler];
+	[self.handlers setObject: handler forKey:handler.name];
 }
 
 // --------------------------------------------------------------------------
@@ -107,6 +145,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void) registerDefaultHandler
 {
 	ECLogHandler* handler = [[ECDefaultLogHandler alloc] init];
+    handler.name = @"Default";
 	[self registerHandler: handler];
 	[handler release];
 }
@@ -119,12 +158,14 @@ static ECLogManager* gSharedInstance = nil;
 {
 	if ((self = [super init]) != nil)
 	{
-		NSMutableArray* array = [[NSMutableArray alloc] init];
-		self.channels = array;
-		[array release];
-		array = [[NSMutableArray alloc] init];
-		self.handlers = array;
-		[array release];
+		NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
+		self.channels = dictionary;
+		[dictionary release];
+		dictionary = [[NSMutableDictionary alloc] init];
+		self.handlers = dictionary;
+		[dictionary release];
+        
+        [self loadChannelSettings];
 		
 	}
 	
@@ -150,6 +191,25 @@ static ECLogManager* gSharedInstance = nil;
 {
 	[self saveChannelSettings];
 	self.channels = nil;
+    self.handlers = nil;
+    self.settings = nil;
+}
+
+// --------------------------------------------------------------------------
+//! Load saved channel details.
+//! We make and register any channel found in the settings.
+// --------------------------------------------------------------------------
+
+- (void) loadChannelSettings
+{
+    NSDictionary* settings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
+
+    for (NSString* channel in [settings allKeys])
+    {
+        [self registerChannelWithName:channel];
+    }
+         
+    self.settings = [settings mutableCopy];
 }
 
 // --------------------------------------------------------------------------
@@ -159,7 +219,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void) saveChannelSettings
 {
 	NSMutableDictionary* allSettings = [[NSMutableDictionary alloc] init];
-	for (ECLogChannel* channel in self.channels)
+	for (ECLogChannel* channel in [self.channels allValues])
 	{
 		NSDictionary* channelSettings = [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithBool: channel.enabled], @"enabled", nil];
 		[allSettings setObject: channelSettings forKey: channel.name];
@@ -189,7 +249,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) enableAllChannels
 {
-	for (ECLogChannel* channel in self.channels)
+	for (ECLogChannel* channel in [self.channels allValues])
 	{
 		channel.enabled = YES;
 	}
@@ -201,10 +261,22 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) disableAllChannels
 {
-	for (ECLogChannel* channel in self.channels)
+	for (ECLogChannel* channel in [self.channels allValues])
 	{
 		channel.enabled = NO;
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Return an array of channels sorted by name.
+// --------------------------------------------------------------------------
+
+- (NSArray*)channelsSortedByName
+{
+    NSArray* channels = [self.channels allValues];
+    NSArray* sorted = [channels sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    
+    return sorted;
 }
 
 @end

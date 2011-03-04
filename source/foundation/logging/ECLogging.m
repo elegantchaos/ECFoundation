@@ -14,25 +14,48 @@
 #import "ECLogChannel.h"
 #import "ECLogManager.h"
 
+// --------------------------------------------------------------------------
+//! C style routine to enable a channel.
+// --------------------------------------------------------------------------
+
 void enableChannel(ECLogChannel* channel)
 {
 	channel.enabled = YES;
 }
+
+// --------------------------------------------------------------------------
+//! C style routine to disable a channel.
+// --------------------------------------------------------------------------
+
+void  disableChannel(ECLogChannel* channel)
+{
+	channel.enabled = NO;
+}
+
+// --------------------------------------------------------------------------
+//! C style routine reporting whether a channel is enabled.
+// --------------------------------------------------------------------------
 
 BOOL channelEnabled(ECLogChannel* channel)
 {
 	return channel.enabled;
 }
 
-ECLogChannel* makeNewChannel(const char* name)
+// --------------------------------------------------------------------------
+//! Create a new channel and register it. If a channel with the same name has
+//! already been registered, it is simply returned.
+// --------------------------------------------------------------------------
+
+ECLogChannel* registerChannel(const char* name)
 {
-	ECLogChannel* channel = [[ECLogChannel alloc] initWithRawName: name];
-	channel.enabled = NO;
-	
-	[[ECLogManager sharedInstance] registerChannel: channel];
+	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName: name];
 	
 	return channel;
 }
+
+// --------------------------------------------------------------------------
+//! C style routine to log to a channel.
+// --------------------------------------------------------------------------
 
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...)
 {

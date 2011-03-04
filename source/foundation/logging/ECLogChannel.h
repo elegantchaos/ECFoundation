@@ -27,8 +27,10 @@ ECPropertyRetained(name, NSString*);
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id) initWithRawName: (const char*) name;
+- (id) initWithName: (NSString*) name;
 - (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
+
++ (NSString*) cleanName:(const char *) name;
 
 @end
 

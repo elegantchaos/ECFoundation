@@ -18,31 +18,35 @@
 
 @interface ECLogManager : NSObject
 {
-	ECPropertyVariable(channels, NSMutableArray*);
-	ECPropertyVariable(handlers, NSMutableArray*);
+	ECPropertyVariable(channels, NSMutableDictionary*);
+	ECPropertyVariable(handlers, NSMutableDictionary*);
+	ECPropertyVariable(settings, NSMutableDictionary*);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(channels, NSMutableArray*);
-ECPropertyRetained(handlers, NSMutableArray*);
+ECPropertyRetained(channels, NSMutableDictionary*);
+ECPropertyRetained(handlers, NSMutableDictionary*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-+ (ECLogManager*) sharedInstance;
++ (ECLogManager*)   sharedInstance;
 
-- (void) registerChannel: (ECLogChannel*) channel;
-- (void) registerHandler: (ECLogHandler*) handler;
-- (void) registerDefaultHandler;
-- (void) shutdown;
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
-- (void) enableAllChannels;
-- (void) disableAllChannels;
-- (void) saveChannelSettings;
+- (ECLogChannel*)   registerChannelWithRawName: (const char*) rawName;
+- (ECLogChannel*)   registerChannelWithName: (NSString*) name;
+- (void)            registerChannel: (ECLogChannel*) channel;
+- (void)            registerHandler: (ECLogHandler*) handler;
+- (void)            registerDefaultHandler;
+- (void)            shutdown;
+- (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+- (void)            enableAllChannels;
+- (void)            disableAllChannels;
+- (void)            saveChannelSettings;
+- (NSArray*)        channelsSortedByName;
 
 @end
 

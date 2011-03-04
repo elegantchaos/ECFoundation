@@ -12,6 +12,8 @@
 
 @implementation ECLogHandler
 
+ECPropertySynthesize(name);
+
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
 {
 	ECAssertShouldntBeHere();

@@ -21,8 +21,9 @@ typedef void ECLogChannel;
 #endif
 
 extern void enableChannel(ECLogChannel* channel);
+extern void disableChannel(ECLogChannel* channel);
 extern BOOL channelEnabled(ECLogChannel* channel);
-extern ECLogChannel* makeNewChannel(const char* name);
+extern ECLogChannel* registerChannel(const char* name);
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 
 #define ECDeclareLogChannel(channel) \
@@ -33,7 +34,7 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 	ECLogChannel* getChannel##channel(void) \
 	{ \
 		static ECLogChannel* instance = nil; \
-		if (!instance) { instance = makeNewChannel(#channel); } \
+		if (!instance) { instance = registerChannel(#channel); } \
 		return instance; \
 	}
 
@@ -41,3 +42,6 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 
 #define ECGetChannel(channel) getChannel##channel()
 
+#define ECEnableChannel(channel) enableChannel(getChannel##channel())
+
+#define ECDisableChannel(channel) disableChannel(getChannel##channel())

@@ -17,7 +17,6 @@ static NSString *const kSuffixToStrip = @"Channel";
 // --------------------------------------------------------------------------
 
 @interface ECLogChannel()
-- (NSString*) cleanName: (const char*) name;
 @end
 
 @implementation ECLogChannel
@@ -29,11 +28,11 @@ ECPropertySynthesize(name);
 //! Initialse a channel.
 // --------------------------------------------------------------------------
 
-- (id) initWithRawName:(const char *)name
+- (id) initWithName:(NSString*)name
 {
 	if ((self = [super init]) != nil)
 	{
-		self.name = [self cleanName: name];
+		self.name = name;
 	}
 	
 	return self;
@@ -43,7 +42,7 @@ ECPropertySynthesize(name);
 //! Return a cleaned up version of a raw channel name.
 // --------------------------------------------------------------------------
 
-- (NSString*) cleanName:(const char *) name;
++ (NSString*) cleanName:(const char *) name;
 {
 	NSString* temp = [NSString stringWithUTF8String: name];
 
