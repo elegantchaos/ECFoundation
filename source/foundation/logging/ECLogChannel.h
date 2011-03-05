@@ -14,8 +14,9 @@
 @interface ECLogChannel : NSObject
 {
 	ECPropertyVariable(enabled, BOOL);
+	ECPropertyVariable(setup, BOOL);
 	ECPropertyVariable(name, NSString*);
-    ECPropertyVariable(handlers, NSMutableArray*);
+    ECPropertyVariable(handlers, NSMutableSet*);
 }
 
 // --------------------------------------------------------------------------
@@ -23,8 +24,9 @@
 // --------------------------------------------------------------------------
 
 ECPropertyAssigned(enabled, BOOL);
+ECPropertyAssigned(setup, BOOL);
 ECPropertyRetained(name, NSString*);
-ECPropertyRetained(handlers, NSMutableArray*);
+ECPropertyRetained(handlers, NSMutableSet*);
 
 // --------------------------------------------------------------------------
 // Public Methods
@@ -32,6 +34,9 @@ ECPropertyRetained(handlers, NSMutableArray*);
 
 - (id) initWithName: (NSString*) name;
 - (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
+- (void) enableHandler: (ECLogHandler*) handler;
+- (void) disableHandler: (ECLogHandler*) handler;
+- (BOOL) isHandlerEnabled:( ECLogHandler*) handler;
 
 + (NSString*) cleanName:(const char *) name;
 

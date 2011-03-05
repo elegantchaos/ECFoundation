@@ -8,6 +8,9 @@
 // --------------------------------------------------------------------------
 
 #import "ECLogChannel.h"
+#import "ECLogHandler.h"
+#import "ECLogging.h"
+
 #import "NSString+ECUtilities.h"
 
 static NSString *const kSuffixToStrip = @"Channel";
@@ -22,6 +25,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 @implementation ECLogChannel
 
 ECPropertySynthesize(enabled);
+ECPropertySynthesize(setup);
 ECPropertySynthesize(name);
 ECPropertySynthesize(handlers);
 
@@ -36,7 +40,7 @@ ECPropertySynthesize(handlers);
 	if ((self = [super init]) != nil)
 	{
 		self.name = name;
-        self.handlers = [NSMutableArray array];
+        self.handlers = [NSMutableSet set];
 	}
 	
 	return self;
@@ -53,6 +57,38 @@ ECPropertySynthesize(handlers);
     
 	[super dealloc];
 }
+
+#pragma mark - Handlers
+
+// --------------------------------------------------------------------------
+//! Add a handler to the set of handlers we're logging to.
+// --------------------------------------------------------------------------
+
+- (void) enableHandler: (ECLogHandler*) handler
+{
+    [self.handlers addObject:handler];
+    logToChannel(self, @"Enabled handler %@", handler.name);
+}
+
+// --------------------------------------------------------------------------
+//! Remove a handler from the set of handlers we're logging to.
+// --------------------------------------------------------------------------
+
+- (void) disableHandler: (ECLogHandler*) handler
+{
+    logToChannel(self, @"Disabled handler %@", handler.name);
+    [self.handlers removeObject:handler];
+}
+
+// --------------------------------------------------------------------------
+//! Is a handler in the set of handlers we're logging to.
+// --------------------------------------------------------------------------
+
+- (BOOL) isHandlerEnabled:( ECLogHandler*) handler
+{
+    return [self.handlers containsObject: handler];
+}
+
 
 #pragma mark - Utilities
 

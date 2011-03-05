@@ -14,6 +14,14 @@
 
 @interface ECLogManager()
 
+#define LOG_MANAGER_DEBUGGING 1
+
+#if LOG_MANAGER_DEBUGGING
+#define LogManagerLog NSLog
+#else
+#define LogManagerLog(...)
+#endif
+
 // --------------------------------------------------------------------------
 // Private Properties
 // --------------------------------------------------------------------------
@@ -66,6 +74,7 @@ static ECLogManager* gSharedInstance = nil;
 
 + (void) initialize
 {
+    LogManagerLog(@"created log manager");
 	gSharedInstance = [[ECLogManager alloc] init];
 }
 
@@ -85,6 +94,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (ECLogChannel*) registerChannelWithRawName: (const char*) rawName;
 {
+    LogManagerLog(@"registering raw channel with name %s", rawName);
     NSString* name = [ECLogChannel cleanName:rawName];
     return [self registerChannelWithName:name];
 }
@@ -96,14 +106,19 @@ static ECLogManager* gSharedInstance = nil;
 
 - (ECLogChannel*) registerChannelWithName: (NSString*) name;
 {
+    LogManagerLog(@"registering channel with name %@", name);
     ECLogChannel* channel = [self.channels objectForKey:name];
     if (!channel)
     {
-        channel = [[ECLogChannel alloc] initWithName: name];
+        channel = [[[ECLogChannel alloc] initWithName: name] autorelease];
         channel.enabled = NO;
-        [self registerChannel:channel];
     }
 
+    if (!channel.setup)
+    {
+        [self registerChannel:channel];
+    }
+    
     return channel;
 }
 
@@ -113,32 +128,36 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) registerChannel: (ECLogChannel*) channel
 {
+    LogManagerLog(@"adding channel %@", channel.name);
 	[self.channels setObject: channel forKey: channel.name];
 	
-	NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
-	if (channelSettings)
-	{
-		NSNumber* number = [channelSettings objectForKey: kEnabledSetting];
-		if (number)
-		{
-			channel.enabled = [number boolValue];
-		}
-        
-        NSArray* handlerNames = [channelSettings objectForKey: kHandlersSetting];
-        for (NSString* handlerName in handlerNames)
+    if (self.settings)
+    {
+        NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
+        if (channelSettings)
         {
-            ECLogHandler* handler = [self.handlers objectForKey:handlerName];
-            if (handler)
+            channel.enabled = [[channelSettings objectForKey: kEnabledSetting] boolValue];
+            LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
+            
+            NSArray* handlerNames = [channelSettings objectForKey: kHandlersSetting];
+            for (NSString* handlerName in handlerNames)
             {
-                [channel.handlers addObject: handler];
+                ECLogHandler* handler = [self.handlers objectForKey:handlerName];
+                if (handler)
+                {
+                    LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
+                    [channel.handlers addObject: handler];
+                }
             }
         }
-	}
-
-	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
-	// in an infinite loop if the notification causes another notification to be posted
-	NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
-	[[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
+        
+        channel.setup = YES;
+        
+        // post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
+        // in an infinite loop if the notification causes another notification to be posted
+        NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+        [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
+    }
 }
 
 // --------------------------------------------------------------------------
@@ -148,6 +167,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void) registerHandler: (ECLogHandler*) handler
 {
 	[self.handlers setObject: handler forKey:handler.name];
+    LogManagerLog(@"registered handler %@", handler.name);
 }
 
 // --------------------------------------------------------------------------
@@ -170,15 +190,14 @@ static ECLogManager* gSharedInstance = nil;
 {
 	if ((self = [super init]) != nil)
 	{
+        LogManagerLog(@"initialised log manager");
+        
 		NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
 		self.channels = dictionary;
 		[dictionary release];
 		dictionary = [[NSMutableDictionary alloc] init];
 		self.handlers = dictionary;
 		[dictionary release];
-        
-        [self loadChannelSettings];
-		
 	}
 	
 	return self;
@@ -202,6 +221,8 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) startup
 {
+    LogManagerLog(@"log manager startup");
+    
     [self loadChannelSettings];
 }
 
@@ -215,6 +236,8 @@ static ECLogManager* gSharedInstance = nil;
 	self.channels = nil;
     self.handlers = nil;
     self.settings = nil;
+
+    LogManagerLog(@"log manager shutdown");
 }
 
 // --------------------------------------------------------------------------
@@ -224,6 +247,8 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) loadChannelSettings
 {
+    LogManagerLog(@"log manager loading settings");
+
     NSDictionary* settings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
 
     for (NSString* channel in [settings allKeys])
@@ -240,10 +265,12 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) saveChannelSettings
 {
+    LogManagerLog(@"log manager saving settings");
+    
 	NSMutableDictionary* allSettings = [[NSMutableDictionary alloc] init];
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-        NSArray* handlers = channel.handlers;
+        NSSet* handlers = channel.handlers;
         NSMutableArray* handlerNames = [NSMutableArray arrayWithCapacity:[channel.handlers count]];
         for (ECLogHandler* handler in handlers)
         {
@@ -255,6 +282,8 @@ static ECLogManager* gSharedInstance = nil;
                                          handlerNames, kHandlersSetting,
                                          nil];
         
+        LogManagerLog(@"settings for channel %@:%@", channel.name, channelSettings);
+
 		[allSettings setObject: channelSettings forKey: channel.name];
 		[channelSettings release];
 	}
@@ -282,9 +311,12 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) enableAllChannels
 {
+    LogManagerLog(@"enabling all channels");
+    
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
 		channel.enabled = YES;
+        logToChannel(channel, @"enabled channel");
 	}
 }
 
@@ -296,6 +328,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
+        logToChannel(channel, @"disabled channel");
 		channel.enabled = NO;
 	}
 }
