@@ -41,12 +41,15 @@ ECPropertyRetained(handlers, NSMutableDictionary*);
 - (void)            registerChannel: (ECLogChannel*) channel;
 - (void)            registerHandler: (ECLogHandler*) handler;
 - (void)            registerDefaultHandler;
+- (void)            startup;
 - (void)            shutdown;
 - (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
 - (void)            enableAllChannels;
 - (void)            disableAllChannels;
 - (void)            saveChannelSettings;
+
 - (NSArray*)        channelsSortedByName;
+- (NSArray*)        handlersSortedByName;
 
 @end
 

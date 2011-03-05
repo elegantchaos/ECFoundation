@@ -15,5 +15,6 @@
 ECPropertyRetained(name, NSString*);
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
 
 @end

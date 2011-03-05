@@ -9,11 +9,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class ECLogHandler;
 
 @interface ECLogChannel : NSObject
 {
 	ECPropertyVariable(enabled, BOOL);
 	ECPropertyVariable(name, NSString*);
+    ECPropertyVariable(handlers, NSMutableArray*);
 }
 
 // --------------------------------------------------------------------------
@@ -22,6 +24,7 @@
 
 ECPropertyAssigned(enabled, BOOL);
 ECPropertyRetained(name, NSString*);
+ECPropertyRetained(handlers, NSMutableArray*);
 
 // --------------------------------------------------------------------------
 // Public Methods

@@ -23,6 +23,9 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 ECPropertySynthesize(enabled);
 ECPropertySynthesize(name);
+ECPropertySynthesize(handlers);
+
+#pragma mark - Lifecycle
 
 // --------------------------------------------------------------------------
 //! Initialse a channel.
@@ -33,10 +36,25 @@ ECPropertySynthesize(name);
 	if ((self = [super init]) != nil)
 	{
 		self.name = name;
+        self.handlers = [NSMutableArray array];
 	}
 	
 	return self;
 }
+
+// --------------------------------------------------------------------------
+//! Clean up and release retained objects.
+// --------------------------------------------------------------------------
+
+- (void) dealloc
+{
+	ECPropertyDealloc(name);
+	ECPropertyDealloc(handlers);
+    
+	[super dealloc];
+}
+
+#pragma mark - Utilities
 
 // --------------------------------------------------------------------------
 //! Return a cleaned up version of a raw channel name.
@@ -52,16 +70,6 @@ ECPropertySynthesize(name);
 	}
 	
 	return [temp stringBySplittingMixedCaps];
-}
-// --------------------------------------------------------------------------
-//! Clean up and release retained objects.
-// --------------------------------------------------------------------------
-
-- (void) dealloc
-{
-	ECPropertyDealloc(name);
-	
-	[super dealloc];
 }
 
 // --------------------------------------------------------------------------

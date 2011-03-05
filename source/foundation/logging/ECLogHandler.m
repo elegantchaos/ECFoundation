@@ -19,4 +19,13 @@ ECPropertySynthesize(name);
 	ECAssertShouldntBeHere();
 }
 
+// --------------------------------------------------------------------------
+//! Comparison function for sorting alphabetically by name.
+// --------------------------------------------------------------------------
+
+- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other
+{
+	return [self.name caseInsensitiveCompare: other.name];
+}
+
 @end

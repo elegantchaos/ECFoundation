@@ -43,6 +43,8 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 // --------------------------------------------------------------------------
 
 NSString *const kLogChannelSettings = @"Log Channels";
+NSString *const kEnabledSetting = @"Enabled";
+NSString *const kHandlersSetting = @"Handlers";
 
 // --------------------------------------------------------------------------
 // Properties
@@ -116,11 +118,21 @@ static ECLogManager* gSharedInstance = nil;
 	NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
 	if (channelSettings)
 	{
-		NSNumber* number = [channelSettings objectForKey: @"enabled"];
+		NSNumber* number = [channelSettings objectForKey: kEnabledSetting];
 		if (number)
 		{
 			channel.enabled = [number boolValue];
 		}
+        
+        NSArray* handlerNames = [channelSettings objectForKey: kHandlersSetting];
+        for (NSString* handlerName in handlerNames)
+        {
+            ECLogHandler* handler = [self.handlers objectForKey:handlerName];
+            if (handler)
+            {
+                [channel.handlers addObject: handler];
+            }
+        }
 	}
 
 	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
@@ -184,6 +196,16 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Start the log manager.
+//! This should be called after handlers have been registered.
+// --------------------------------------------------------------------------
+
+- (void) startup
+{
+    [self loadChannelSettings];
+}
+
+// --------------------------------------------------------------------------
 //! Cleanup and shut down.
 // --------------------------------------------------------------------------
 
@@ -221,7 +243,18 @@ static ECLogManager* gSharedInstance = nil;
 	NSMutableDictionary* allSettings = [[NSMutableDictionary alloc] init];
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-		NSDictionary* channelSettings = [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithBool: channel.enabled], @"enabled", nil];
+        NSArray* handlers = channel.handlers;
+        NSMutableArray* handlerNames = [NSMutableArray arrayWithCapacity:[channel.handlers count]];
+        for (ECLogHandler* handler in handlers)
+        {
+            [handlerNames addObject:handler.name];
+        }
+        
+		NSDictionary* channelSettings = [[NSDictionary alloc] initWithObjectsAndKeys: 
+                                         [NSNumber numberWithBool: channel.enabled], kEnabledSetting, 
+                                         handlerNames, kHandlersSetting,
+                                         nil];
+        
 		[allSettings setObject: channelSettings forKey: channel.name];
 		[channelSettings release];
 	}
@@ -237,7 +270,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
 {
-	for (ECLogHandler* handler in self.handlers)
+	for (ECLogHandler* handler in channel.handlers)
 	{
 		[handler logFromChannel: channel withFormat: format arguments: arguments];
 	}
@@ -275,6 +308,18 @@ static ECLogManager* gSharedInstance = nil;
 {
     NSArray* channels = [self.channels allValues];
     NSArray* sorted = [channels sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    
+    return sorted;
+}
+
+// --------------------------------------------------------------------------
+//! Return an array of handlers sorted by name.
+// --------------------------------------------------------------------------
+
+- (NSArray*)handlersSortedByName
+{
+    NSArray* handlers = [self.handlers allValues];
+    NSArray* sorted = [handlers sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     
     return sorted;
 }
