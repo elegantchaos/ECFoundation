@@ -9,12 +9,13 @@
 
 #import "ECLogManager.h"
 #import "ECLogChannel.h"
-#import "ECDefaultLogHandler.h"
+#import "ECLogHandlerNSLog.h"
 
 
 @interface ECLogManager()
 
-#define LOG_MANAGER_DEBUGGING 1
+// Turn this setting on to output debug message on the log manager itself, using NSLog
+#define LOG_MANAGER_DEBUGGING 0
 
 #if LOG_MANAGER_DEBUGGING
 #define LogManagerLog NSLog
@@ -176,8 +177,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) registerDefaultHandler
 {
-	ECLogHandler* handler = [[ECDefaultLogHandler alloc] init];
-    handler.name = @"Default";
+	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
 	[self registerHandler: handler];
 	[handler release];
 }

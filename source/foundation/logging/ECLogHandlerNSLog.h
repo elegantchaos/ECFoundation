@@ -9,7 +9,7 @@
 
 #import "ECLogHandler.h"
 
-@interface ECDefaultLogHandler : ECLogHandler 
+@interface ECLogHandlerNSLog : ECLogHandler 
 {
 
 }

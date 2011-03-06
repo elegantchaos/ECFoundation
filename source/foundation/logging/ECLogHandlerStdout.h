@@ -7,15 +7,13 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECDefaultLogHandler.h"
-#import "ECLogChannel.h"
+#import "ECLogHandler.h"
 
-@implementation ECDefaultLogHandler
-
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
+@interface ECLogHandlerStdout : ECLogHandler 
 {
-	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
-	NSLog(@"«%@» %@", channel.name, body);
-	[body release];	
+
 }
+
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+
 @end
