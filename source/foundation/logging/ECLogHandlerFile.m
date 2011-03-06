@@ -7,12 +7,12 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECLogHandlerStderr.h"
+#import "ECLogHandlerFile.h"
 #import "ECLogChannel.h"
 
 #include <stdio.h>
 
-@implementation ECLogHandlerStderr
+@implementation ECLogHandlerFile
 
 #pragma mark - Lifecycle
 
