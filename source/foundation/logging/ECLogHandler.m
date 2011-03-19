@@ -14,10 +14,35 @@
 
 ECPropertySynthesize(name);
 
+#pragma mark - Properties
+
+ECPropertySynthesize(name);
+
+#pragma mark - Lifecycle
+
+// --------------------------------------------------------------------------
+//! Clean up.
+// --------------------------------------------------------------------------
+
+- (void)dealloc {
+    ECPropertyDealloc(name);
+    
+    [super dealloc];
+}
+
+#pragma mark - Logging
+
+// --------------------------------------------------------------------------
+//! Log.
+// --------------------------------------------------------------------------
+
+
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
 {
 	ECAssertShouldntBeHere();
 }
+
+#pragma mark - Sorting
 
 // --------------------------------------------------------------------------
 //! Comparison function for sorting alphabetically by name.

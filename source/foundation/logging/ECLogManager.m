@@ -9,12 +9,13 @@
 
 #import "ECLogManager.h"
 #import "ECLogChannel.h"
-#import "ECDefaultLogHandler.h"
+#import "ECLogHandlerNSLog.h"
 
 
 @interface ECLogManager()
 
-#define LOG_MANAGER_DEBUGGING 1
+// Turn this setting on to output debug message on the log manager itself, using NSLog
+#define LOG_MANAGER_DEBUGGING 0
 
 #if LOG_MANAGER_DEBUGGING
 #define LogManagerLog NSLog
@@ -50,7 +51,7 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 // Constants
 // --------------------------------------------------------------------------
 
-NSString *const kLogChannelSettings = @"Log Channels";
+NSString *const kLogChannelSettings = @"LogChannels";
 NSString *const kEnabledSetting = @"Enabled";
 NSString *const kHandlersSetting = @"Handlers";
 
@@ -134,8 +135,8 @@ static ECLogManager* gSharedInstance = nil;
     if (self.settings)
     {
         NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
-        if (channelSettings)
-        {
+	if (channelSettings)
+	{
             channel.enabled = [[channelSettings objectForKey: kEnabledSetting] boolValue];
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
             
@@ -144,20 +145,20 @@ static ECLogManager* gSharedInstance = nil;
             {
                 ECLogHandler* handler = [self.handlers objectForKey:handlerName];
                 if (handler)
-                {
+		{
                     LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
                     [channel.handlers addObject: handler];
                 }
-            }
-        }
-        
+		}
+	}
+
         channel.setup = YES;
         
-        // post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
-        // in an infinite loop if the notification causes another notification to be posted
-        NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
-        [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
-    }
+	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
+	// in an infinite loop if the notification causes another notification to be posted
+	NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+	[[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
+}
 }
 
 // --------------------------------------------------------------------------
@@ -176,8 +177,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) registerDefaultHandler
 {
-	ECLogHandler* handler = [[ECDefaultLogHandler alloc] init];
-    handler.name = @"Default";
+	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
 	[self registerHandler: handler];
 	[handler release];
 }
@@ -191,7 +191,7 @@ static ECLogManager* gSharedInstance = nil;
 	if ((self = [super init]) != nil)
 	{
         LogManagerLog(@"initialised log manager");
-        
+		
 		NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
 		self.channels = dictionary;
 		[dictionary release];
@@ -273,7 +273,7 @@ static ECLogManager* gSharedInstance = nil;
         NSSet* handlers = channel.handlers;
         NSMutableArray* handlerNames = [NSMutableArray arrayWithCapacity:[channel.handlers count]];
         for (ECLogHandler* handler in handlers)
-        {
+	{
             [handlerNames addObject:handler.name];
         }
         
