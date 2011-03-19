@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		22FDC6C2120615F900011C6F /* Everything */ = {
+		22FDC6C2120615F900011C6F /* ECFoundation Everything */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */;
+			buildConfigurationList = 22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */;
 			buildPhases = (
 			);
 			dependencies = (
@@ -18,7 +18,7 @@
 				22FDC6CB120615FF00011C6F /* PBXTargetDependency */,
 				22FDC6CD120615FF00011C6F /* PBXTargetDependency */,
 			);
-			name = Everything;
+			name = "ECFoundation Everything";
 			productName = Everything;
 		};
 /* End PBXAggregateTarget section */
@@ -798,7 +798,7 @@
 				22FBFE6611DD0D9400578A66 /* ECFoundation iOS */,
 				225EC67111EBAA4800A97AEA /* ECFoundation SenTest */,
 				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
-				22FDC6C2120615F900011C6F /* Everything */,
+				22FDC6C2120615F900011C6F /* ECFoundation Everything */,
 			);
 		};
 /* End PBXProject section */
@@ -1316,7 +1316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "Everything" */ = {
+		22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22FDC6C3120615FA00011C6F /* Debug */,
