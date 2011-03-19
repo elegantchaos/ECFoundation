@@ -12,8 +12,6 @@
 
 @implementation ECLogHandler
 
-ECPropertySynthesize(name);
-
 #pragma mark - Properties
 
 ECPropertySynthesize(name);
