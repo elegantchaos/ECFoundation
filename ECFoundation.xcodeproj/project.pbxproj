@@ -133,6 +133,10 @@
 		229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
+		22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
 		22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EA44D01212FB7C00EFDD11 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
 		22F06DD6122E8B060058DB57 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -279,6 +283,8 @@
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
 		229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
 		229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
+		22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECUtilities.h"; sourceTree = "<group>"; };
+		22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
 		22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilities.m"; sourceTree = "<group>"; };
 		22F568D713211C39003E8EE8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
@@ -590,6 +596,8 @@
 				226E1F9D11F8D03E00603F71 /* ECAssertion.h */,
 				226E1FAD11F8D0A300603F71 /* ECMacros.h */,
 				2206CC6511F853B000CDD442 /* ECProperties.h */,
+				22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */,
+				22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */,
 				22639D6512A57DC100780869 /* NSData+ECUtilities.h */,
 				22639D6612A57DC100780869 /* NSData+ECUtilities.m */,
 				22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */,
@@ -647,6 +655,7 @@
 				22672DAF13230CA300CD8BC7 /* ECLogHandlerStderr.h in Headers */,
 				22672DB313230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */,
 				22672DB91323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
+				22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +694,7 @@
 				22672DB213230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */,
 				22672DB81323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
 				22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */,
+				22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +917,7 @@
 				22672DB113230CA300CD8BC7 /* ECLogHandlerStderr.m in Sources */,
 				22672DB513230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */,
 				22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
+				22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +943,7 @@
 				22672DB013230CA300CD8BC7 /* ECLogHandlerStderr.m in Sources */,
 				22672DB413230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */,
 				22672DBA1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
+				22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
