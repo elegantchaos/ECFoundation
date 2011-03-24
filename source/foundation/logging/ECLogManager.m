@@ -52,7 +52,7 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 // Constants
 // --------------------------------------------------------------------------
 
-NSString *const kLogChannelSettings = @"Log Channels";
+NSString *const kLogChannelSettings = @"LogChannels";
 NSString *const kEnabledSetting = @"Enabled";
 NSString *const kHandlersSetting = @"Handlers";
 
@@ -173,7 +173,7 @@ static ECLogManager* gSharedInstance = nil;
         
         channel.setup = YES;
     }
-        
+    
     [self postUpdateNotification];    
 }
 
@@ -208,7 +208,7 @@ static ECLogManager* gSharedInstance = nil;
 	if ((self = [super init]) != nil)
 	{
         LogManagerLog(@"initialised log manager");
-        
+		
 		NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
 		self.channels = dictionary;
 		[dictionary release];
@@ -290,7 +290,7 @@ static ECLogManager* gSharedInstance = nil;
         NSSet* handlers = channel.handlers;
         NSMutableArray* handlerNames = [NSMutableArray arrayWithCapacity:[channel.handlers count]];
         for (ECLogHandler* handler in handlers)
-        {
+	{
             [handlerNames addObject:handler.name];
         }
         

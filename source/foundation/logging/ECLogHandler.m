@@ -34,6 +34,7 @@ ECPropertySynthesize(name);
 //! Log.
 // --------------------------------------------------------------------------
 
+
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
 {
 	ECAssertShouldntBeHere();
