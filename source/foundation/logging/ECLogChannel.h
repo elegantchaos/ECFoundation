@@ -32,6 +32,8 @@ ECPropertyRetained(handlers, NSMutableSet*);
 // Public Methods
 // --------------------------------------------------------------------------
 
+- (void) enable;
+- (void) disable;
 - (id) initWithName: (NSString*) name;
 - (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
 - (void) enableHandler: (ECLogHandler*) handler;

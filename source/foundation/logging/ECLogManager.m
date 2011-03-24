@@ -35,6 +35,7 @@ ECPropertyRetained(settings, NSMutableDictionary*);
 
 - (void) loadChannelSettings;
 - (void) saveChannelSettings;
+- (void) postUpdateNotification;
 
 @end
 
@@ -125,6 +126,19 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Post a notification to the default queue to say that the channel list has changed.
+//! Make sure that it only gets processed on idle, so that we don't get stuck
+//! in an infinite loop if the notification causes another notification to be posted
+// --------------------------------------------------------------------------
+
+- (void) postUpdateNotification
+{
+    NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+    [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
+    
+}
+
+// --------------------------------------------------------------------------
 //! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
@@ -158,12 +172,9 @@ static ECLogManager* gSharedInstance = nil;
         }
         
         channel.setup = YES;
-        
-        // post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
-        // in an infinite loop if the notification causes another notification to be posted
-        NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
-        [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
     }
+        
+    [self postUpdateNotification];    
 }
 
 // --------------------------------------------------------------------------
@@ -321,8 +332,7 @@ static ECLogManager* gSharedInstance = nil;
     
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-		channel.enabled = YES;
-        logToChannel(channel, @"enabled channel");
+        [channel enable];
 	}
 }
 
@@ -334,8 +344,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-        logToChannel(channel, @"disabled channel");
-		channel.enabled = NO;
+        [channel disable];
 	}
 }
 
