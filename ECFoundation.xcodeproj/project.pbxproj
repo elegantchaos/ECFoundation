@@ -27,6 +27,10 @@
 		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
+		22308754133B7E030093868C /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22308752133B7E030093868C /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22308755133B7E030093868C /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22308752133B7E030093868C /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22308756133B7E030093868C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
+		22308757133B7E030093868C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
@@ -206,6 +210,8 @@
 		2206CC6511F853B000CDD442 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ECProperties.h; sourceTree = "<group>"; };
 		2224D5BE121D974200C51C31 /* NSDate+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilitiesTests.m"; sourceTree = "<group>"; };
+		22308752133B7E030093868C /* ECErrorReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorReporter.h; sourceTree = "<group>"; };
+		22308753133B7E030093868C /* ECErrorReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorReporter.m; sourceTree = "<group>"; };
 		2232B68211FA02BB001846FC /* ECDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItem.h; sourceTree = "<group>"; };
 		2232B68311FA02BB001846FC /* ECDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItem.m; sourceTree = "<group>"; };
 		2232B68811FA02E6001846FC /* ECDataItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDataItemTests.h; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 		2235883B1229B9E00083284E /* logging */ = {
 			isa = PBXGroup;
 			children = (
+				22308752133B7E030093868C /* ECErrorReporter.h */,
+				22308753133B7E030093868C /* ECErrorReporter.m */,
 				22672DBC1323139F00CD8BC7 /* handlers */,
 				2235883E1229B9E00083284E /* ECLogChannel.h */,
 				2235883F1229B9E00083284E /* ECLogChannel.m */,
@@ -656,6 +664,7 @@
 				22672DB313230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */,
 				22672DB91323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
 				22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */,
+				22308755133B7E030093868C /* ECErrorReporter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +704,7 @@
 				22672DB81323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
 				22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */,
 				22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */,
+				22308754133B7E030093868C /* ECErrorReporter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +928,7 @@
 				22672DB513230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */,
 				22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
 				22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */,
+				22308757133B7E030093868C /* ECErrorReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +955,7 @@
 				22672DB413230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */,
 				22672DBA1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
 				22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */,
+				22308756133B7E030093868C /* ECErrorReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

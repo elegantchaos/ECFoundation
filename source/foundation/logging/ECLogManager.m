@@ -62,6 +62,7 @@ NSString *const kHandlersSetting = @"Handlers";
 ECPropertySynthesize(channels);
 ECPropertySynthesize(handlers);
 ECPropertySynthesize(settings);
+ECPropertySynthesize(defaultHandler);
 
 // --------------------------------------------------------------------------
 // Globals
@@ -151,6 +152,10 @@ static ECLogManager* gSharedInstance = nil;
                 }
             }
         }
+        else
+        {
+            [channel.handlers addObject:self.defaultHandler];
+        }
         
         channel.setup = YES;
         
@@ -179,6 +184,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
 	[self registerHandler: handler];
+    self.defaultHandler = handler;
 	[handler release];
 }
 
