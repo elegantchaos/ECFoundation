@@ -8,7 +8,7 @@
 // Build Options
 // --------------------------------------------------------------------------
 
-PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO
+PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES
 
 // --------------------------------------------------------------------------
 // Compiler Version
