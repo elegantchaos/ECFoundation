@@ -29,6 +29,7 @@
 
 ECPropertyRetained(channels, NSMutableDictionary*);
 ECPropertyRetained(handlers, NSMutableDictionary*);
+ECPropertyRetained(defaultHandler, ECLogHandler*);
 
 // --------------------------------------------------------------------------
 // Public Methods

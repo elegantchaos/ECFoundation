@@ -10,6 +10,7 @@
 #import "ECLogChannel.h"
 #import "ECLogHandler.h"
 #import "ECLogging.h"
+#import "ECLogManager.h"
 
 #import "NSString+ECUtilities.h"
 
@@ -56,6 +57,42 @@ ECPropertySynthesize(handlers);
 	ECPropertyDealloc(handlers);
     
 	[super dealloc];
+}
+
+#pragma mark - Enable/Disable
+
+// --------------------------------------------------------------------------
+//! Enable the channel.
+//! If it has no handlers enabled, we enable the default one so that it has
+//! something to output to.
+// --------------------------------------------------------------------------
+
+- (void) enable
+{
+    if (!self.enabled)
+    {
+        self.enabled = YES;
+        
+        if ([self.handlers count] == 0)
+        {
+            [self enableHandler: [ECLogManager sharedInstance].defaultHandler];
+        }
+        
+        logToChannel(self, @"enabled channel");
+    }
+}
+
+// --------------------------------------------------------------------------
+//! Disable the channel.
+// --------------------------------------------------------------------------
+
+- (void) disable
+{
+    if (self.enabled)
+    {
+        logToChannel(self, @"disabled channel");
+        self.enabled = NO;
+    }
 }
 
 #pragma mark - Handlers
