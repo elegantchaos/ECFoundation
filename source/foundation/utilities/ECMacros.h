@@ -13,3 +13,5 @@
 #define ECUnused(v)	(void) (v)
 
 #define EC_HINT_UNUSED __attribute__((__unused__))
+
+#define EC_EXPORTED __attribute__((visibility("default"))) 
