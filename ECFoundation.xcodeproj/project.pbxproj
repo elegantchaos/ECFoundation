@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		22FDC6C2120615F900011C6F /* ECFoundation Everything */ = {
+		22552BB3134B9D8400B8894E /* ECFoundation Everything */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */;
+			buildConfigurationList = 22552BB4134B9D8500B8894E /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */;
 			buildPhases = (
 			);
 			dependencies = (
-				22FDC6C7120615FF00011C6F /* PBXTargetDependency */,
-				22FDC6C9120615FF00011C6F /* PBXTargetDependency */,
-				22FDC6CB120615FF00011C6F /* PBXTargetDependency */,
-				22FDC6CD120615FF00011C6F /* PBXTargetDependency */,
+				22552C19134BA20B00B8894E /* PBXTargetDependency */,
+				22552BBF134B9DC400B8894E /* PBXTargetDependency */,
+				22552BBD134B9DA200B8894E /* PBXTargetDependency */,
+				22552BBB134B9D9A00B8894E /* PBXTargetDependency */,
+				22552BB9134B9D9000B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation Everything";
-			productName = Everything;
+			productName = All;
 		};
 /* End PBXAggregateTarget section */
 
@@ -58,8 +59,58 @@
 		22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		22463388121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22463389121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
+		22552BC8134B9E5300B8894E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BC7134B9E5300B8894E /* UIKit.framework */; };
+		22552BCA134B9E5300B8894E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BC9134B9E5300B8894E /* Foundation.framework */; };
+		22552BCC134B9E5300B8894E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BCB134B9E5300B8894E /* CoreGraphics.framework */; };
+		22552BDF134BA04800B8894E /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
+		22552BE0134BA04A00B8894E /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
+		22552BE1134BA04E00B8894E /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
+		22552BE2134BA05200B8894E /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
+		22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BE6134BA0C900B8894E /* CoreLocation.framework */; };
+		22552BE8134BA10B00B8894E /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
+		22552BE9134BA10E00B8894E /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
+		22552BEA134BA11B00B8894E /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
+		22552BEB134BA11B00B8894E /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22552BEC134BA11B00B8894E /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
+		22552BED134BA11B00B8894E /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
+		22552BEE134BA11B00B8894E /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */; };
+		22552BEF134BA11B00B8894E /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
+		22552BF0134BA11B00B8894E /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
+		22552BF1134BA11B00B8894E /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */; };
+		22552BF2134BA11B00B8894E /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
+		22552BF3134BA11B00B8894E /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
+		22552BF4134BA11C00B8894E /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
+		22552BF5134BA11C00B8894E /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
+		22552BF6134BA11C00B8894E /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
+		22552BF7134BA11C00B8894E /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
+		22552BF8134BA11C00B8894E /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */; };
+		22552BF9134BA11C00B8894E /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
+		22552BFA134BA11C00B8894E /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
+		22552BFB134BA11C00B8894E /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */; };
+		22552BFC134BA11C00B8894E /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
+		22552BFD134BA11C00B8894E /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
+		22552BFE134BA12100B8894E /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
+		22552BFF134BA12400B8894E /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
+		22552C00134BA14900B8894E /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
+		22552C01134BA14900B8894E /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235883F1229B9E00083284E /* ECLogChannel.m */; };
+		22552C02134BA14900B8894E /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588411229B9E00083284E /* ECLogging.m */; };
+		22552C03134BA14900B8894E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588431229B9E00083284E /* ECLogHandler.m */; };
+		22552C04134BA14900B8894E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
+		22552C05134BA14900B8894E /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
+		22552C06134BA14900B8894E /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235883F1229B9E00083284E /* ECLogChannel.m */; };
+		22552C07134BA14900B8894E /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588411229B9E00083284E /* ECLogging.m */; };
+		22552C08134BA14900B8894E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588431229B9E00083284E /* ECLogHandler.m */; };
+		22552C09134BA14900B8894E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
+		22552C0A134BA15100B8894E /* ECLogHandlerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DB71323139500CD8BC7 /* ECLogHandlerFile.m */; };
+		22552C0B134BA15100B8894E /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAB13230C9E00CD8BC7 /* ECLogHandlerStderr.m */; };
+		22552C0C134BA15100B8894E /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAD13230CA100CD8BC7 /* ECLogHandlerStdout.m */; };
+		22552C0D134BA15100B8894E /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DA513230B8500CD8BC7 /* ECLogHandlerNSLog.m */; };
+		22552C0E134BA15100B8894E /* ECLogHandlerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DB71323139500CD8BC7 /* ECLogHandlerFile.m */; };
+		22552C0F134BA15100B8894E /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAB13230C9E00CD8BC7 /* ECLogHandlerStderr.m */; };
+		22552C10134BA15100B8894E /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAD13230CA100CD8BC7 /* ECLogHandlerStdout.m */; };
+		22552C11134BA15100B8894E /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DA513230B8500CD8BC7 /* ECLogHandlerNSLog.m */; };
+		22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552C12134BA18A00B8894E /* CoreLocation.framework */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
-		225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22639D6712A57DC100780869 /* NSData+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22639D6512A57DC100780869 /* NSData+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,10 +188,9 @@
 		229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22B105201347867E007064CE /* NSGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* NSGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22B105211347867E007064CE /* NSGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* NSGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22B105221347867E007064CE /* NSGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* NSGeometry+ECUtilities.m */; };
-		22B105231347867E007064CE /* NSGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* NSGeometry+ECUtilities.m */; };
+		22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B105211347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B105221347867E007064CE /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */; };
 		22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
 		22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -164,12 +214,54 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		225EC67911EBAB8100A97AEA /* PBXContainerItemProxy */ = {
+		22552BB8134B9D9000B8894E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = ECFoundation;
+			remoteInfo = "ECFoundation Mac";
+		};
+		22552BBA134B9D9A00B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
+			remoteInfo = "ECFoundation iOS";
+		};
+		22552BBC134B9DA200B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227333A311EBBA0800695FB4;
+			remoteInfo = "ECFoundation GHUnit";
+		};
+		22552BBE134B9DC400B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
+			remoteInfo = "ECFoundation SenTest Mac";
+		};
+		22552C14134BA1F600B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
+			remoteInfo = "ECFoundation Test Mac";
+		};
+		22552C16134BA1FC00B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22552BC4134B9E5300B8894E;
+			remoteInfo = "ECFoundation Test iOS";
+		};
+		22552C18134BA20B00B8894E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22552BC4134B9E5300B8894E;
+			remoteInfo = "ECFoundation Test iOS";
 		};
 		227333B311EBBA2300695FB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -177,34 +269,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ECFoundation;
-		};
-		22FDC6C6120615FF00011C6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = ECFoundation;
-		};
-		22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
-			remoteInfo = "ECFoundation Touch";
-		};
-		22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
-			remoteInfo = "ECFoundation SenTest";
-		};
-		22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 227333A311EBBA0800695FB4;
-			remoteInfo = "ECFoundation GHUnit";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -234,7 +298,13 @@
 		223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation SenTest.plist"; sourceTree = "<group>"; };
 		22463384121A8756000ECB30 /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
 		22463385121A8756000ECB30 /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
-		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22552BC7134B9E5300B8894E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22552BC9134B9E5300B8894E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22552BCB134B9E5300B8894E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22552BE6134BA0C900B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		22552C12134BA18A00B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests Mac.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		225EC68211EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilitiesTests.h"; sourceTree = "<group>"; };
@@ -293,8 +363,8 @@
 		228630F711E32E8E00654739 /* ECLocationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLocationUtilities.m; sourceTree = "<group>"; };
 		229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
 		229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
-		22B1051E1347867E007064CE /* NSGeometry+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGeometry+ECUtilities.h"; sourceTree = "<group>"; };
-		22B1051F1347867E007064CE /* NSGeometry+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGeometry+ECUtilities.m"; sourceTree = "<group>"; };
+		22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECUtilities.h"; sourceTree = "<group>"; };
+		22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECUtilities.m"; sourceTree = "<group>"; };
 		22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECUtilities.h"; sourceTree = "<group>"; };
 		22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
@@ -309,11 +379,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		22552BC1134B9E5300B8894E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */,
+				22552BC8134B9E5300B8894E /* UIKit.framework in Frameworks */,
+				22552BCA134B9E5300B8894E /* Foundation.framework in Frameworks */,
+				22552BCC134B9E5300B8894E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		225EC66F11EBAA4800A97AEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225EC6AB11EBAF4900A97AEA /* ECFoundation.framework in Frameworks */,
+				22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +429,11 @@
 		034768DFFF38A50411DB9C8B /* products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
 				22FBFE6711DD0D9400578A66 /* libECFoundation.a */,
-				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */,
+				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
+				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */,
 				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
+				22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */,
 			);
 			name = products;
 			sourceTree = "<group>";
@@ -366,6 +448,7 @@
 				089C1665FE841158C02AAC07 /* resources */,
 				0867D69AFE84028FC02AAC07 /* frameworks */,
 				034768DFFF38A50411DB9C8B /* products */,
+				22552BC6134B9E5300B8894E /* Frameworks */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
@@ -402,6 +485,7 @@
 		1058C7B0FEA5585E11CA2CBB /* MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				22552C12134BA18A00B8894E /* CoreLocation.framework */,
 				22FAC46C132149E900103630 /* CoreLocation.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
@@ -465,6 +549,7 @@
 		223CBAE11205C5930008A641 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				22552BE6134BA0C900B8894E /* CoreLocation.framework */,
 				223CBAE61205C6380008A641 /* Foundation.framework */,
 			);
 			name = iOS;
@@ -478,6 +563,16 @@
 			);
 			name = tests;
 			path = resources/tests;
+			sourceTree = "<group>";
+		};
+		22552BC6134B9E5300B8894E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22552BC7134B9E5300B8894E /* UIKit.framework */,
+				22552BC9134B9E5300B8894E /* Foundation.framework */,
+				22552BCB134B9E5300B8894E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		225EC68111EBAC1500A97AEA /* tests */ = {
@@ -620,8 +715,8 @@
 				227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */,
 				227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */,
 				227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */,
-				22B1051E1347867E007064CE /* NSGeometry+ECUtilities.h */,
-				22B1051F1347867E007064CE /* NSGeometry+ECUtilities.m */,
+				22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */,
+				22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */,
 				22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */,
 				22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */,
 				22463384121A8756000ECB30 /* NSURL+ECUtilities.h */,
@@ -673,7 +768,7 @@
 				22672DB91323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
 				22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */,
 				22308755133B7E030093868C /* ECErrorReporter.h in Headers */,
-				22B105211347867E007064CE /* NSGeometry+ECUtilities.h in Headers */,
+				22B105211347867E007064CE /* CGGeometry+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,16 +809,34 @@
 				22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */,
 				22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */,
 				22308754133B7E030093868C /* ECErrorReporter.h in Headers */,
-				22B105201347867E007064CE /* NSGeometry+ECUtilities.h in Headers */,
+				22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		225EC67111EBAA4800A97AEA /* ECFoundation SenTest */ = {
+		22552BC4134B9E5300B8894E /* ECFoundation Test iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation SenTest" */;
+			buildConfigurationList = 22552BD8134B9E5300B8894E /* Build configuration list for PBXNativeTarget "ECFoundation Test iOS" */;
+			buildPhases = (
+				22552BC0134B9E5300B8894E /* Sources */,
+				22552BC1134B9E5300B8894E /* Frameworks */,
+				22552BC2134B9E5300B8894E /* Resources */,
+				22552BC3134B9E5300B8894E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ECFoundation Test iOS";
+			productName = "ECFoundation Test iOS";
+			productReference = 22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation Test Mac" */;
 			buildPhases = (
 				225EC66D11EBAA4800A97AEA /* Resources */,
 				225EC66E11EBAA4800A97AEA /* Sources */,
@@ -733,11 +846,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				225EC67A11EBAB8100A97AEA /* PBXTargetDependency */,
 			);
-			name = "ECFoundation SenTest";
+			name = "ECFoundation Test Mac";
 			productName = "EC Foundation Unit Tests";
-			productReference = 225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests.octest */;
+			productReference = 225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		227333A311EBBA0800695FB4 /* ECFoundation GHUnit */ = {
@@ -770,6 +882,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22552C17134BA1FC00B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation iOS";
 			productName = "ECFoundation Touch";
@@ -788,6 +901,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22552C15134BA1F600B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation Mac";
 			productInstallPath = "$(HOME)/Library/Frameworks";
@@ -818,14 +932,22 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ECFoundation Mac */,
 				22FBFE6611DD0D9400578A66 /* ECFoundation iOS */,
-				225EC67111EBAA4800A97AEA /* ECFoundation SenTest */,
+				225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */,
+				22552BC4134B9E5300B8894E /* ECFoundation Test iOS */,
 				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
-				22FDC6C2120615F900011C6F /* ECFoundation Everything */,
+				22552BB3134B9D8400B8894E /* ECFoundation Everything */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		22552BC2134B9E5300B8894E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		225EC66D11EBAA4800A97AEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -862,6 +984,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22552BC3134B9E5300B8894E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		2255AE6811ECBF4100423A95 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -893,6 +1028,38 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		22552BC0134B9E5300B8894E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22552BDF134BA04800B8894E /* NSDate+ECUtilitiesTests.m in Sources */,
+				22552BE0134BA04A00B8894E /* NSString+ECUtilitiesTests.m in Sources */,
+				22552BE1134BA04E00B8894E /* ECDataItemTests.m in Sources */,
+				22552BE2134BA05200B8894E /* NSDictionary+ECUtilitiesTests.m in Sources */,
+				22552BE8134BA10B00B8894E /* CLLocation+ECUtilities.m in Sources */,
+				22552BE9134BA10E00B8894E /* ECCommonKeys.m in Sources */,
+				22552BEA134BA11B00B8894E /* ECDataItem.m in Sources */,
+				22552BEB134BA11B00B8894E /* ECLocationUtilities.m in Sources */,
+				22552BEC134BA11B00B8894E /* NSBundle+ECUtilities.m in Sources */,
+				22552BED134BA11B00B8894E /* NSData+ECUtilities.m in Sources */,
+				22552BEE134BA11B00B8894E /* NSDate+ECUtilities.m in Sources */,
+				22552BEF134BA11B00B8894E /* NSDictionary+ECUtilities.m in Sources */,
+				22552BF0134BA11B00B8894E /* NSFileManager+ECUtilities.m in Sources */,
+				22552BF1134BA11B00B8894E /* CGGeometry+ECUtilities.m in Sources */,
+				22552BF2134BA11B00B8894E /* NSString+ECUtilities.m in Sources */,
+				22552BF3134BA11B00B8894E /* NSURL+ECUtilities.m in Sources */,
+				22552C05134BA14900B8894E /* ECErrorReporter.m in Sources */,
+				22552C06134BA14900B8894E /* ECLogChannel.m in Sources */,
+				22552C07134BA14900B8894E /* ECLogging.m in Sources */,
+				22552C08134BA14900B8894E /* ECLogHandler.m in Sources */,
+				22552C09134BA14900B8894E /* ECLogManager.m in Sources */,
+				22552C0E134BA15100B8894E /* ECLogHandlerFile.m in Sources */,
+				22552C0F134BA15100B8894E /* ECLogHandlerStderr.m in Sources */,
+				22552C10134BA15100B8894E /* ECLogHandlerStdout.m in Sources */,
+				22552C11134BA15100B8894E /* ECLogHandlerNSLog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		225EC66E11EBAA4800A97AEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -901,6 +1068,27 @@
 				2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */,
 				22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
 				2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */,
+				22552BF4134BA11C00B8894E /* ECDataItem.m in Sources */,
+				22552BF5134BA11C00B8894E /* ECLocationUtilities.m in Sources */,
+				22552BF6134BA11C00B8894E /* NSBundle+ECUtilities.m in Sources */,
+				22552BF7134BA11C00B8894E /* NSData+ECUtilities.m in Sources */,
+				22552BF8134BA11C00B8894E /* NSDate+ECUtilities.m in Sources */,
+				22552BF9134BA11C00B8894E /* NSDictionary+ECUtilities.m in Sources */,
+				22552BFA134BA11C00B8894E /* NSFileManager+ECUtilities.m in Sources */,
+				22552BFB134BA11C00B8894E /* CGGeometry+ECUtilities.m in Sources */,
+				22552BFC134BA11C00B8894E /* NSString+ECUtilities.m in Sources */,
+				22552BFD134BA11C00B8894E /* NSURL+ECUtilities.m in Sources */,
+				22552BFE134BA12100B8894E /* CLLocation+ECUtilities.m in Sources */,
+				22552BFF134BA12400B8894E /* ECCommonKeys.m in Sources */,
+				22552C00134BA14900B8894E /* ECErrorReporter.m in Sources */,
+				22552C01134BA14900B8894E /* ECLogChannel.m in Sources */,
+				22552C02134BA14900B8894E /* ECLogging.m in Sources */,
+				22552C03134BA14900B8894E /* ECLogHandler.m in Sources */,
+				22552C04134BA14900B8894E /* ECLogManager.m in Sources */,
+				22552C0A134BA15100B8894E /* ECLogHandlerFile.m in Sources */,
+				22552C0B134BA15100B8894E /* ECLogHandlerStderr.m in Sources */,
+				22552C0C134BA15100B8894E /* ECLogHandlerStdout.m in Sources */,
+				22552C0D134BA15100B8894E /* ECLogHandlerNSLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,7 +1127,6 @@
 				22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
 				22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */,
 				22308757133B7E030093868C /* ECErrorReporter.m in Sources */,
-				22B105231347867E007064CE /* NSGeometry+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,42 +1154,52 @@
 				22672DBA1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
 				22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */,
 				22308756133B7E030093868C /* ECErrorReporter.m in Sources */,
-				22B105221347867E007064CE /* NSGeometry+ECUtilities.m in Sources */,
+				22B105221347867E007064CE /* CGGeometry+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		225EC67A11EBAB8100A97AEA /* PBXTargetDependency */ = {
+		22552BB9134B9D9000B8894E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
-			targetProxy = 225EC67911EBAB8100A97AEA /* PBXContainerItemProxy */;
+			targetProxy = 22552BB8134B9D9000B8894E /* PBXContainerItemProxy */;
+		};
+		22552BBB134B9D9A00B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22FBFE6611DD0D9400578A66 /* ECFoundation iOS */;
+			targetProxy = 22552BBA134B9D9A00B8894E /* PBXContainerItemProxy */;
+		};
+		22552BBD134B9DA200B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
+			targetProxy = 22552BBC134B9DA200B8894E /* PBXContainerItemProxy */;
+		};
+		22552BBF134B9DC400B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
+			targetProxy = 22552BBE134B9DC400B8894E /* PBXContainerItemProxy */;
+		};
+		22552C15134BA1F600B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
+			targetProxy = 22552C14134BA1F600B8894E /* PBXContainerItemProxy */;
+		};
+		22552C17134BA1FC00B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22552BC4134B9E5300B8894E /* ECFoundation Test iOS */;
+			targetProxy = 22552C16134BA1FC00B8894E /* PBXContainerItemProxy */;
+		};
+		22552C19134BA20B00B8894E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22552BC4134B9E5300B8894E /* ECFoundation Test iOS */;
+			targetProxy = 22552C18134BA20B00B8894E /* PBXContainerItemProxy */;
 		};
 		227333B411EBBA2300695FB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
 			targetProxy = 227333B311EBBA2300695FB4 /* PBXContainerItemProxy */;
-		};
-		22FDC6C7120615FF00011C6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
-			targetProxy = 22FDC6C6120615FF00011C6F /* PBXContainerItemProxy */;
-		};
-		22FDC6C9120615FF00011C6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22FBFE6611DD0D9400578A66 /* ECFoundation iOS */;
-			targetProxy = 22FDC6C8120615FF00011C6F /* PBXContainerItemProxy */;
-		};
-		22FDC6CB120615FF00011C6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 225EC67111EBAA4800A97AEA /* ECFoundation SenTest */;
-			targetProxy = 22FDC6CA120615FF00011C6F /* PBXContainerItemProxy */;
-		};
-		22FDC6CD120615FF00011C6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
-			targetProxy = 22FDC6CC120615FF00011C6F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1060,6 +1257,110 @@
 			};
 			name = Release;
 		};
+		22552BB5134B9D8500B8894E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		22552BB6134B9D8500B8894E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		22552BB7134B9D8500B8894E /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = AdHoc;
+		};
+		22552BD9134B9E5300B8894E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "EC Foundation Unit Tests iOS";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		22552BDA134B9E5300B8894E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "EC Foundation Unit Tests iOS";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		22552BDB134B9E5300B8894E /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "EC Foundation Unit Tests iOS";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = AdHoc;
+		};
 		225EC67411EBAA4800A97AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */;
@@ -1076,7 +1377,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1084,7 +1384,7 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "EC Foundation Unit Tests";
+				PRODUCT_NAME = "EC Foundation Unit Tests Mac";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1104,7 +1404,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1112,7 +1411,7 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "EC Foundation Unit Tests";
+				PRODUCT_NAME = "EC Foundation Unit Tests Mac";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1179,6 +1478,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1200,7 +1500,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				INFOPLIST_FILE = "resources/tests/ECFoundation SenTest.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
@@ -1208,7 +1507,7 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "EC Foundation Unit Tests";
+				PRODUCT_NAME = "EC Foundation Unit Tests Mac";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = AdHoc;
@@ -1237,6 +1536,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
@@ -1249,39 +1549,12 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				GENERATE_MASTER_OBJECT_FILE = YES;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
 			};
 			name = Release;
-		};
-		22FDC6C3120615FA00011C6F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = Everything;
-			};
-			name = Debug;
-		};
-		22FDC6C4120615FA00011C6F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = Everything;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		22FDC6C5120615FA00011C6F /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = Everything;
-			};
-			name = AdHoc;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1306,7 +1579,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation SenTest" */ = {
+		22552BB4134B9D8500B8894E /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22552BB5134B9D8500B8894E /* Debug */,
+				22552BB6134B9D8500B8894E /* Release */,
+				22552BB7134B9D8500B8894E /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22552BD8134B9E5300B8894E /* Build configuration list for PBXNativeTarget "ECFoundation Test iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22552BD9134B9E5300B8894E /* Debug */,
+				22552BDA134B9E5300B8894E /* Release */,
+				22552BDB134B9E5300B8894E /* AdHoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		225EC67611EBAA4800A97AEA /* Build configuration list for PBXNativeTarget "ECFoundation Test Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				225EC67411EBAA4800A97AEA /* Debug */,
@@ -1332,16 +1625,6 @@
 				22FBFE6811DD0D9400578A66 /* Debug */,
 				22FBFE6911DD0D9400578A66 /* Release */,
 				2274C8EA11FF841B00E5C351 /* AdHoc */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		22FDC6DA1206161700011C6F /* Build configuration list for PBXAggregateTarget "ECFoundation Everything" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				22FDC6C3120615FA00011C6F /* Debug */,
-				22FDC6C4120615FA00011C6F /* Release */,
-				22FDC6C5120615FA00011C6F /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

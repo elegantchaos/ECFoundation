@@ -7,15 +7,4 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-NS_INLINE CGPoint NSCentre(NSRect aRect) {
-    CGPoint centre = CGPointMake(NSMidX(aRect), NSMidY(aRect));
-    return centre;
-}
-
-NS_INLINE NSRect NSSetCentre(NSRect aRect, CGPoint centre) {
-    aRect.origin.x = centre.x - (aRect.size.width * 0.5f);
-    aRect.origin.y = centre.y - (aRect.size.height * 0.5f);
-    
-    return aRect;
-}
-
+#import "CGGeometry+ECUtilities.h"
