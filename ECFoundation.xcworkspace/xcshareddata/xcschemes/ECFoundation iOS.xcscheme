@@ -32,7 +32,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22552BC4134B9E5300B8894E"
-               BuildableName = "EC Foundation Unit Tests.octest"
+               BuildableName = "EC Foundation Unit Tests iOS.octest"
                BlueprintName = "ECFoundation Test iOS"
                ReferencedContainer = "container:ECFoundation.xcodeproj">
             </BuildableReference>
