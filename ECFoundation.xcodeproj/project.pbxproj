@@ -1016,7 +1016,6 @@
 				INFOPLIST_FILE = resources/mac/ECFoundation.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = ECFoundation;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1031,7 +1030,6 @@
 				INFOPLIST_FILE = resources/mac/ECFoundation.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = ECFoundation;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1159,7 +1157,6 @@
 				INFOPLIST_FILE = resources/mac/ECFoundation.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = ECFoundation;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = AdHoc;
