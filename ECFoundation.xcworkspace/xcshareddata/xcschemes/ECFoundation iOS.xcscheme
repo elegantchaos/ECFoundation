@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22FDC6C2120615F900011C6F"
-               BuildableName = "ECFoundation Everything"
-               BlueprintName = "ECFoundation Everything"
+               BlueprintIdentifier = "22FBFE6611DD0D9400578A66"
+               BuildableName = "libECFoundation.a"
+               BlueprintName = "ECFoundation iOS"
                ReferencedContainer = "container:ECFoundation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,6 +27,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "22552BC4134B9E5300B8894E"
+               BuildableName = "EC Foundation Unit Tests.octest"
+               BlueprintName = "ECFoundation Test iOS"
+               ReferencedContainer = "container:ECFoundation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

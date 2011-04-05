@@ -21,6 +21,7 @@
 	ECPropertyVariable(channels, NSMutableDictionary*);
 	ECPropertyVariable(handlers, NSMutableDictionary*);
 	ECPropertyVariable(settings, NSMutableDictionary*);
+    ECPropertyVariable(defaultHandler, ECLogHandler*);
 }
 
 // --------------------------------------------------------------------------
