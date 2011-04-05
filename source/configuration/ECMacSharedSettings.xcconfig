@@ -6,12 +6,6 @@
 
 
 // --------------------------------------------------------------------------
-// Build Options
-// --------------------------------------------------------------------------
-
-PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO
-
-// --------------------------------------------------------------------------
 // Deployment
 // --------------------------------------------------------------------------
 
@@ -30,5 +24,6 @@ MACOSX_DEPLOYMENT_TARGET = 10.5
 // Code Generation
 // --------------------------------------------------------------------------
 
-GCC_VERSION = com.apple.compilers.llvm.clang.1_0
+GCC_VERSION = com.apple.compilers.llvmgcc42 // temporarily use gcc because of xcode 4 problem
 GCC_MODEL_TUNING = G5
+
