@@ -42,4 +42,23 @@
 	return value;
 }
 
+// --------------------------------------------------------------------------
+//! Return a dictionary identical to this except without a given key.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*)dictionaryWithoutKey:(NSString*)key
+{
+    id object = [self objectForKey:key];
+    if (object)
+    {
+        NSMutableDictionary* copy = [[self mutableCopy] autorelease];
+        [copy removeObjectForKey:key];
+        return copy;
+    }
+    else
+    {
+        return self;
+    }
+}
+
 @end

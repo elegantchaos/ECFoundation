@@ -14,4 +14,6 @@
 - (id) valueForKey: (NSString*) key intoBool: (BOOL*) valueOut;
 - (id) valueForKey: (NSString*) key intoDouble: (double*) valueOut;
 
+- (NSDictionary*)dictionaryWithoutKey:(NSString*)key;
+
 @end
