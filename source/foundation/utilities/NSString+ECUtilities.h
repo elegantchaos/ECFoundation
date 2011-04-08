@@ -16,5 +16,5 @@
 - (NSData*) splitWordsIntoInts;
 - (NSData*) splitWordsIntoFloats;
 - (NSString*) stringBySplittingMixedCaps;
-
++ (NSString*)stringWithNewUUID;
 @end
