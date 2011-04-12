@@ -1121,7 +1121,6 @@
 				22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
 				22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */,
 				22308757133B7E030093868C /* ECErrorReporter.m in Sources */,
-				22B105231347867E007064CE /* NSGeometry+ECUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,6 +1274,7 @@
 		};
 		22552BD9134B9E5300B8894E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -1304,6 +1304,7 @@
 		};
 		22552BDA134B9E5300B8894E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -1331,6 +1332,7 @@
 		};
 		22552BDB134B9E5300B8894E /* AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
