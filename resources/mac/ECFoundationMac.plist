@@ -19,10 +19,28 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
-	<string>ECfd</string>
+	<string>ECfo</string>
 	<key>CFBundleVersion</key>
-	<string>217</string>
-	<key>NSPrincipalClass</key>
+	<string>1</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<string>MyFactoryFunction</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<array>
+			<string>00000000-0000-0000-0000-000000000000</string>
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2011 Elegant Chaos. All rights reserved.</string>
 </dict>
 </plist>
