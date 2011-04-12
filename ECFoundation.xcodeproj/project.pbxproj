@@ -16,7 +16,6 @@
 				22552C19134BA20B00B8894E /* PBXTargetDependency */,
 				22552BBF134B9DC400B8894E /* PBXTargetDependency */,
 				22552BBD134B9DA200B8894E /* PBXTargetDependency */,
-				22552BBB134B9D9A00B8894E /* PBXTargetDependency */,
 				22552BB9134B9D9000B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation Everything";
@@ -25,28 +24,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2206CC6711F853B000CDD442 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2229676B1354F39E005F42E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 222967691354F39D005F42E7 /* InfoPlist.strings */; };
 		22308754133B7E030093868C /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22308752133B7E030093868C /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22308755133B7E030093868C /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22308752133B7E030093868C /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22308756133B7E030093868C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
-		22308757133B7E030093868C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2232B68511FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
-		2232B68711FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
 		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
-		223588481229B9E00083284E /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2235883E1229B9E00083284E /* ECLogChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		223588491229B9E00083284E /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235883F1229B9E00083284E /* ECLogChannel.m */; };
-		2235884A1229B9E00083284E /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588401229B9E00083284E /* ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2235884B1229B9E00083284E /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588411229B9E00083284E /* ECLogging.m */; };
-		2235884C1229B9E00083284E /* ECLogHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588421229B9E00083284E /* ECLogHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2235884D1229B9E00083284E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588431229B9E00083284E /* ECLogHandler.m */; };
-		2235884E1229B9E00083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588441229B9E00083284E /* ECLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2235884F1229B9E00083284E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
 		223588521229B9E00083284E /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2235883E1229B9E00083284E /* ECLogChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223588531229B9E00083284E /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235883F1229B9E00083284E /* ECLogChannel.m */; };
 		223588541229B9E00083284E /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588401229B9E00083284E /* ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,8 +42,6 @@
 		223588581229B9E00083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588441229B9E00083284E /* ECLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223588591229B9E00083284E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
 		223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD71205C51F0008A641 /* GHUnitTestMain.m */; };
-		22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		22463388121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22463389121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		225409351354F15000DC8205 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -168,51 +152,26 @@
 		22639D6712A57DC100780869 /* NSData+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22639D6512A57DC100780869 /* NSData+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22639D6812A57DC100780869 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
 		22672DA613230B8500CD8BC7 /* ECLogHandlerNSLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DA413230B8500CD8BC7 /* ECLogHandlerNSLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22672DA713230B8500CD8BC7 /* ECLogHandlerNSLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DA413230B8500CD8BC7 /* ECLogHandlerNSLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22672DA813230B8500CD8BC7 /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DA513230B8500CD8BC7 /* ECLogHandlerNSLog.m */; };
-		22672DA913230B8500CD8BC7 /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DA513230B8500CD8BC7 /* ECLogHandlerNSLog.m */; };
 		22672DAE13230CA300CD8BC7 /* ECLogHandlerStderr.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DAA13230C9E00CD8BC7 /* ECLogHandlerStderr.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22672DAF13230CA300CD8BC7 /* ECLogHandlerStderr.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DAA13230C9E00CD8BC7 /* ECLogHandlerStderr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22672DB013230CA300CD8BC7 /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAB13230C9E00CD8BC7 /* ECLogHandlerStderr.m */; };
-		22672DB113230CA300CD8BC7 /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAB13230C9E00CD8BC7 /* ECLogHandlerStderr.m */; };
 		22672DB213230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DAC13230CA000CD8BC7 /* ECLogHandlerStdout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22672DB313230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DAC13230CA000CD8BC7 /* ECLogHandlerStdout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22672DB413230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAD13230CA100CD8BC7 /* ECLogHandlerStdout.m */; };
-		22672DB513230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DAD13230CA100CD8BC7 /* ECLogHandlerStdout.m */; };
 		22672DB81323139900CD8BC7 /* ECLogHandlerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DB61323139300CD8BC7 /* ECLogHandlerFile.h */; };
-		22672DB91323139900CD8BC7 /* ECLogHandlerFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DB61323139300CD8BC7 /* ECLogHandlerFile.h */; };
 		22672DBA1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DB71323139500CD8BC7 /* ECLogHandlerFile.m */; };
-		22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DB71323139500CD8BC7 /* ECLogHandlerFile.m */; };
 		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; };
 		226890AD124FFEC400424BD0 /* ECCommonKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 226890AB124FFEC400424BD0 /* ECCommonKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226890AE124FFEC400424BD0 /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
-		226890B3124FFF2200424BD0 /* ECCommonKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 226890AB124FFEC400424BD0 /* ECCommonKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		226890CA124FFF6A00424BD0 /* ECCommonKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226890AC124FFEC400424BD0 /* ECCommonKeys.m */; };
-		226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FA111F8D03E00603F71 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1FAD11F8D0A300603F71 /* ECMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226E1FAF11F8D0A300603F71 /* ECMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1FAD11F8D0A300603F71 /* ECMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728ACA124A26A500A9881F /* ECFoundationAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AC6124A269A00A9881F /* ECFoundationAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728ACB124A26A500A9881F /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AC7124A269A00A9881F /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728ACC124A26A500A9881F /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AC8124A269A00A9881F /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728ACD124A26A500A9881F /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AC9124A269A00A9881F /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728ACE124A26A900A9881F /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AB0124A257E00A9881F /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728ACF124A26A900A9881F /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AB1124A257E00A9881F /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728AD0124A26A900A9881F /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AB2124A257E00A9881F /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728B7D124A29C200A9881F /* ECFoundationAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728B79124A29C200A9881F /* ECFoundationAdHocPrefix.pch */; settings = {ATTRIBUTES = (); }; };
-		22728B7E124A29C200A9881F /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728B7A124A29C200A9881F /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (); }; };
-		22728B7F124A29C200A9881F /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728B7B124A29C200A9881F /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (); }; };
-		22728B80124A29C200A9881F /* ECFoundationSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728B7C124A29C200A9881F /* ECFoundationSharedPrefix.pch */; settings = {ATTRIBUTES = (); }; };
-		22728DB3124A348800A9881F /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728DB4124A348900A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728DB5124A348A00A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		22728DB6124A348A00A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB7124A349F00A9881F /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		2272908B124A4B4A00A9881F /* ECTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2273344611EBC1CB00695FB4 /* ECTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2272908C124A4B4B00A9881F /* ECTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2273344611EBC1CB00695FB4 /* ECTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227290B0124A4CC200A9881F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227290AD124A4CC200A9881F /* InfoPlist.strings */; };
 		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
 		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
@@ -232,35 +191,20 @@
 		227EEB8B11A6BCCD009420F7 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
 		227EEB8C11A6BCCD009420F7 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227EEB8D11A6BCCD009420F7 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
-		2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
 		2286310A11E32E8E00654739 /* ECLocationUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 228630F611E32E8E00654739 /* ECLocationUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2286310B11E32E8E00654739 /* ECLocationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 228630F711E32E8E00654739 /* ECLocationUtilities.m */; };
-		229D80A2125A960D00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22B105211347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105221347867E007064CE /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */; };
 		22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
-		22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
-		22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22EA44D01212FB7C00EFDD11 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
 		22F06DD6122E8B060058DB57 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F06DD8122E8B0D0058DB57 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F76C471214234B006BC0F8 /* NSString+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F76C5512142381006BC0F8 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */; };
 		22FAC46D132149E900103630 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FAC46C132149E900103630 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8411A6BCCD009420F7 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8511A6BCCD009420F7 /* NSDictionary+ECUtilities.m */; };
-		22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 227EEB8611A6BCCD009420F7 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 227EEB8711A6BCCD009420F7 /* NSFileManager+ECUtilities.m */; };
-		22FDE54E121D6337007741FB /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */; };
 		22FDE54F121D6337007741FB /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */; };
-		22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22FDE571121D6377007741FB /* NSDate+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -272,13 +216,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = "ECFoundation Mac";
-		};
-		22552BBA134B9D9A00B8894E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22FBFE6611DD0D9400578A66;
-			remoteInfo = "ECFoundation iOS";
 		};
 		22552BBC134B9DA200B8894E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -300,13 +237,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
 			remoteInfo = "ECFoundation Test Mac";
-		};
-		22552C16134BA1FC00B8894E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22552BC4134B9E5300B8894E;
-			remoteInfo = "ECFoundation Test iOS";
 		};
 		22552C18134BA20B00B8894E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -429,7 +359,6 @@
 		22F568D713211C39003E8EE8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		22F568D813211C39003E8EE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22FAC46C132149E900103630 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		22FBFE6711DD0D9400578A66 /* libECFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FDE54D121D6337007741FB /* NSDate+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilities.m"; sourceTree = "<group>"; };
 		22FDE56F121D6377007741FB /* NSDate+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilities.h"; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -471,13 +400,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22FBFE6511DD0D9400578A66 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,7 +415,6 @@
 		034768DFFF38A50411DB9C8B /* products */ = {
 			isa = PBXGroup;
 			children = (
-				22FBFE6711DD0D9400578A66 /* libECFoundation.a */,
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */,
 				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
@@ -845,49 +766,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22FBFE6311DD0D9400578A66 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				226E1F9F11F8D03E00603F71 /* ECAssertion.h in Headers */,
-				2232B68511FA02BB001846FC /* ECDataItem.h in Headers */,
-				2286310011E32E8E00654739 /* ECLocationUtilities.h in Headers */,
-				226E1FAE11F8D0A300603F71 /* ECMacros.h in Headers */,
-				2206CC6711F853B000CDD442 /* ECProperties.h in Headers */,
-				22FDE570121D6377007741FB /* NSDate+ECUtilities.h in Headers */,
-				22FBFE7411DD0DD800578A66 /* NSDictionary+ECUtilities.h in Headers */,
-				22FBFE7611DD0DD800578A66 /* NSFileManager+ECUtilities.h in Headers */,
-				22EA44CF1212FB7C00EFDD11 /* NSString+ECUtilities.h in Headers */,
-				22463386121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */,
-				223588481229B9E00083284E /* ECLogChannel.h in Headers */,
-				2235884A1229B9E00083284E /* ECLogging.h in Headers */,
-				2235884C1229B9E00083284E /* ECLogHandler.h in Headers */,
-				2235884E1229B9E00083284E /* ECLogManager.h in Headers */,
-				22728ACA124A26A500A9881F /* ECFoundationAdHocPrefix.pch in Headers */,
-				22728ACB124A26A500A9881F /* ECFoundationDebugPrefix.pch in Headers */,
-				22728ACC124A26A500A9881F /* ECFoundationReleasePrefix.pch in Headers */,
-				22728ACD124A26A500A9881F /* ECFoundationSharedPrefix.pch in Headers */,
-				22728B7D124A29C200A9881F /* ECFoundationAdHocPrefix.pch in Headers */,
-				22728B7E124A29C200A9881F /* ECFoundationDebugPrefix.pch in Headers */,
-				22728B7F124A29C200A9881F /* ECFoundationReleasePrefix.pch in Headers */,
-				22728B80124A29C200A9881F /* ECFoundationSharedPrefix.pch in Headers */,
-				22728DB3124A348800A9881F /* ECCoreAdHocPrefix.pch in Headers */,
-				22728DB4124A348900A9881F /* ECCoreDebugPrefix.pch in Headers */,
-				22728DB5124A348A00A9881F /* ECCoreReleasePrefix.pch in Headers */,
-				22728DB6124A348A00A9881F /* ECCoreSharedPrefix.pch in Headers */,
-				2272908C124A4B4B00A9881F /* ECTestCase.h in Headers */,
-				226890B3124FFF2200424BD0 /* ECCommonKeys.h in Headers */,
-				229D80A2125A960D00E03D5A /* CLLocation+ECUtilities.h in Headers */,
-				22672DA713230B8500CD8BC7 /* ECLogHandlerNSLog.h in Headers */,
-				22672DAF13230CA300CD8BC7 /* ECLogHandlerStderr.h in Headers */,
-				22672DB313230CA300CD8BC7 /* ECLogHandlerStdout.h in Headers */,
-				22672DB91323139900CD8BC7 /* ECLogHandlerFile.h in Headers */,
-				22C76343132D8EAC0027CE22 /* NSBundle+ECUtilities.h in Headers */,
-				22308755133B7E030093868C /* ECErrorReporter.h in Headers */,
-				22B105211347867E007064CE /* CGGeometry+ECUtilities.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -932,9 +810,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		225409251354F05C00DC8205 /* ECFoundation iOS Bundle */ = {
+		225409251354F05C00DC8205 /* ECFoundation iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2254092B1354F05C00DC8205 /* Build configuration list for PBXNativeTarget "ECFoundation iOS Bundle" */;
+			buildConfigurationList = 2254092B1354F05C00DC8205 /* Build configuration list for PBXNativeTarget "ECFoundation iOS" */;
 			buildPhases = (
 				225409741354F17700DC8205 /* Headers */,
 				225409221354F05C00DC8205 /* Resources */,
@@ -945,7 +823,7 @@
 			);
 			dependencies = (
 			);
-			name = "ECFoundation iOS Bundle";
+			name = "ECFoundation iOS";
 			productName = "ECFoundation iOS Bundle";
 			productReference = 225409261354F05C00DC8205 /* ECFoundation.framework */;
 			productType = "com.apple.product-type.bundle";
@@ -1005,24 +883,6 @@
 			productReference = 227333A411EBBA0800695FB4 /* GHUnit Tests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22FBFE6611DD0D9400578A66 /* ECFoundation iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation iOS" */;
-			buildPhases = (
-				22FBFE6311DD0D9400578A66 /* Headers */,
-				22FBFE6411DD0D9400578A66 /* Sources */,
-				22FBFE6511DD0D9400578A66 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				22552C17134BA1FC00B8894E /* PBXTargetDependency */,
-			);
-			name = "ECFoundation iOS";
-			productName = "ECFoundation Touch";
-			productReference = 22FBFE6711DD0D9400578A66 /* libECFoundation.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		8DC2EF4F0486A6940098B216 /* ECFoundation Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "ECFoundation Mac" */;
@@ -1065,8 +925,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ECFoundation Mac */,
-				22FBFE6611DD0D9400578A66 /* ECFoundation iOS */,
-				225409251354F05C00DC8205 /* ECFoundation iOS Bundle */,
+				225409251354F05C00DC8205 /* ECFoundation iOS */,
 				225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */,
 				22552BC4134B9E5300B8894E /* ECFoundation Test iOS */,
 				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
@@ -1273,32 +1132,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22FBFE6411DD0D9400578A66 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22EA44D01212FB7C00EFDD11 /* NSString+ECUtilities.m in Sources */,
-				22FBFE7511DD0DD800578A66 /* NSDictionary+ECUtilities.m in Sources */,
-				22FBFE7711DD0DD800578A66 /* NSFileManager+ECUtilities.m in Sources */,
-				2286310111E32E8E00654739 /* ECLocationUtilities.m in Sources */,
-				2232B68711FA02BB001846FC /* ECDataItem.m in Sources */,
-				22463387121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */,
-				22FDE54E121D6337007741FB /* NSDate+ECUtilities.m in Sources */,
-				223588491229B9E00083284E /* ECLogChannel.m in Sources */,
-				2235884B1229B9E00083284E /* ECLogging.m in Sources */,
-				2235884D1229B9E00083284E /* ECLogHandler.m in Sources */,
-				2235884F1229B9E00083284E /* ECLogManager.m in Sources */,
-				226890CA124FFF6A00424BD0 /* ECCommonKeys.m in Sources */,
-				229D80A3125A960D00E03D5A /* CLLocation+ECUtilities.m in Sources */,
-				22672DA913230B8500CD8BC7 /* ECLogHandlerNSLog.m in Sources */,
-				22672DB113230CA300CD8BC7 /* ECLogHandlerStderr.m in Sources */,
-				22672DB513230CA300CD8BC7 /* ECLogHandlerStdout.m in Sources */,
-				22672DBB1323139900CD8BC7 /* ECLogHandlerFile.m in Sources */,
-				22C76344132D8EAC0027CE22 /* NSBundle+ECUtilities.m in Sources */,
-				22308757133B7E030093868C /* ECErrorReporter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1335,11 +1168,6 @@
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
 			targetProxy = 22552BB8134B9D9000B8894E /* PBXContainerItemProxy */;
 		};
-		22552BBB134B9D9A00B8894E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22FBFE6611DD0D9400578A66 /* ECFoundation iOS */;
-			targetProxy = 22552BBA134B9D9A00B8894E /* PBXContainerItemProxy */;
-		};
 		22552BBD134B9DA200B8894E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
@@ -1354,11 +1182,6 @@
 			isa = PBXTargetDependency;
 			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
 			targetProxy = 22552C14134BA1F600B8894E /* PBXContainerItemProxy */;
-		};
-		22552C17134BA1FC00B8894E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22552BC4134B9E5300B8894E /* ECFoundation Test iOS */;
-			targetProxy = 22552C16134BA1FC00B8894E /* PBXContainerItemProxy */;
 		};
 		22552C19134BA20B00B8894E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1438,21 +1261,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = resources/ios/ECFoundation.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
-				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				WRAPPER_EXTENSION = framework;
@@ -1463,23 +1277,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = resources/ios/ECFoundation.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
-				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				WRAPPER_EXTENSION = framework;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1487,18 +1293,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEAD_CODE_STRIPPING = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
 				INFOPLIST_FILE = resources/ios/ECFoundation.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
-				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				WRAPPER_EXTENSION = framework;
@@ -1723,19 +1523,6 @@
 			};
 			name = AdHoc;
 		};
-		2274C8EA11FF841B00E5C351 /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				DEAD_CODE_STRIPPING = NO;
-				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
-				GENERATE_MASTER_OBJECT_FILE = YES;
-				PRODUCT_NAME = ECFoundation;
-				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
-			};
-			name = AdHoc;
-		};
 		2274C8EB11FF841B00E5C351 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
@@ -1781,32 +1568,6 @@
 			};
 			name = AdHoc;
 		};
-		22FBFE6811DD0D9400578A66 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				DEAD_CODE_STRIPPING = NO;
-				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
-				GENERATE_MASTER_OBJECT_FILE = YES;
-				PRODUCT_NAME = ECFoundation;
-				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
-			};
-			name = Debug;
-		};
-		22FBFE6911DD0D9400578A66 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				DEAD_CODE_STRIPPING = NO;
-				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
-				GENERATE_MASTER_OBJECT_FILE = YES;
-				PRODUCT_NAME = ECFoundation;
-				PUBLIC_HEADERS_FOLDER_PATH = include/ECFoundation;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1830,7 +1591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2254092B1354F05C00DC8205 /* Build configuration list for PBXNativeTarget "ECFoundation iOS Bundle" */ = {
+		2254092B1354F05C00DC8205 /* Build configuration list for PBXNativeTarget "ECFoundation iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				225409281354F05C00DC8205 /* Debug */,
@@ -1876,16 +1637,6 @@
 				227333B011EBBA0800695FB4 /* Debug */,
 				227333B111EBBA0800695FB4 /* Release */,
 				2274C8EC11FF841B00E5C351 /* AdHoc */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		22FBFE7B11DD0E0000578A66 /* Build configuration list for PBXNativeTarget "ECFoundation iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				22FBFE6811DD0D9400578A66 /* Debug */,
-				22FBFE6911DD0D9400578A66 /* Release */,
-				2274C8EA11FF841B00E5C351 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
