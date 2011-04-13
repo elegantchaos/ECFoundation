@@ -15,18 +15,23 @@
 @implementation TestDictionaryBackedObject
 
 // --------------------------------------------------------------------------
-//! Set up before each test.
+//! Return the dictionary key to use when looking up object IDs for this class.
+//! Subclasses should override this to return a relevant value.
 // --------------------------------------------------------------------------
 
++ (NSString*)objectIDKey
+{
+    return @"TestID"; // subclasses should override this
+}
 
-// --------------------------------------------------------------------------
-//! Tear down after each test.
-// --------------------------------------------------------------------------
+- (NSString*)name
+{
+    return [self.data objectForKey:@"TestName"];
+}
 
-
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
-
+- (NSString*)text
+{
+    return [self.data objectForKey:@"TestText"];
+}
 
 @end

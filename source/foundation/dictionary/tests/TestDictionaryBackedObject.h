@@ -15,4 +15,7 @@
 
 @interface TestDictionaryBackedObject : ECDictionaryBackedObject
 
+- (NSString*)name;
+- (NSString*)text;
+
 @end

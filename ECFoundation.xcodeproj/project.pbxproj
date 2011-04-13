@@ -208,6 +208,7 @@
 		2298A46E1355283F00217C2B /* ECDictionaryBackedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45A1355264A00217C2B /* ECDictionaryBackedObject.m */; };
 		2298A46F1355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45C1355264A00217C2B /* ECDictionaryBackedObjectCache.m */; };
 		2298A4701355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45C1355264A00217C2B /* ECDictionaryBackedObjectCache.m */; };
+		2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */; };
 		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1141,6 +1142,7 @@
 				2298A46C1355280100217C2B /* TestDictionaryBackedObject.m in Sources */,
 				2298A46E1355283F00217C2B /* ECDictionaryBackedObject.m in Sources */,
 				2298A4701355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */,
+				2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
