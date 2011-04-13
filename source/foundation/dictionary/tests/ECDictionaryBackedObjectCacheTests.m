@@ -100,10 +100,10 @@
 }   
 
 // --------------------------------------------------------------------------
-//! Test objectWithDictionary
+//! Test objectsWithArray
 // --------------------------------------------------------------------------
 
-- (void) testUpdateWithDictionary
+- (void) testObjectsWithArray
 {
     NSArray* objects = [self.testCache objectsWithArray:self.testArray]; 
     ECTestAssertNotNil(objects, @"objects valid");
@@ -115,5 +115,6 @@
     TestDictionaryBackedObject* object2 = [objects objectAtIndex:1];
     [self checkObject2:object2];
 }
+
 
 @end
