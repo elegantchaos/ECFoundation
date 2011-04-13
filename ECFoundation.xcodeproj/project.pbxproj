@@ -209,6 +209,8 @@
 		2298A46F1355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45C1355264A00217C2B /* ECDictionaryBackedObjectCache.m */; };
 		2298A4701355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45C1355264A00217C2B /* ECDictionaryBackedObjectCache.m */; };
 		2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */; };
+		2298A47413552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
+		2298A47513552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
 		229D80B5125A96BA00E03D5A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */; };
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -372,6 +374,8 @@
 		2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectTests.m; sourceTree = "<group>"; };
 		2298A4691355280000217C2B /* TestDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDictionaryBackedObject.h; sourceTree = "<group>"; };
 		2298A46A1355280000217C2B /* TestDictionaryBackedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDictionaryBackedObject.m; sourceTree = "<group>"; };
+		2298A47213552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObjectCacheTests.h; sourceTree = "<group>"; };
+		2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectCacheTests.m; sourceTree = "<group>"; };
 		229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
 		229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
 		22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECUtilities.h"; sourceTree = "<group>"; };
@@ -768,6 +772,8 @@
 				2298A46A1355280000217C2B /* TestDictionaryBackedObject.m */,
 				2298A4661355278200217C2B /* ECDictionaryBackedObjectTests.h */,
 				2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */,
+				2298A47213552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.h */,
+				2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -1143,6 +1149,7 @@
 				2298A46E1355283F00217C2B /* ECDictionaryBackedObject.m in Sources */,
 				2298A4701355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */,
 				2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */,
+				2298A47513552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1179,6 +1186,7 @@
 				2298A46B1355280100217C2B /* TestDictionaryBackedObject.m in Sources */,
 				2298A46D1355283F00217C2B /* ECDictionaryBackedObject.m in Sources */,
 				2298A46F1355284200217C2B /* ECDictionaryBackedObjectCache.m in Sources */,
+				2298A47413552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
