@@ -35,8 +35,8 @@
 - (ECDictionaryBackedObject*)objectWithDictionary:(NSDictionary*)dictionary;
 - (NSArray*)objectsWithArray:(NSArray*)array;
 - (NSArray*)allObjects;
-- (void)loadObjectsFromFile:(NSString*)path;
-- (void)saveObjectsToFile:(NSString*)path;
+- (void)loadObjectsFromURL:(NSURL*)path;
+- (void)saveObjectsToURL:(NSURL*)path;
 
 - (void)removeObjectsOlderThanDate:(NSDate*)date;
 

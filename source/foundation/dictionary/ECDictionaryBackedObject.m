@@ -173,9 +173,9 @@ NSString *const kObjectUpdateDateKey = @"ECDictionaryBackedObjectObjectUpdateDat
 //! even if the plist contained multiple copies.
 // --------------------------------------------------------------------------
 
-+ (void)loadObjectsFromFile:(NSString*)path intoDictionary:(NSMutableDictionary*)dictionary
++ (void)loadObjectsFromURL:(NSURL*)url intoDictionary:(NSMutableDictionary*)dictionary
 {
-    NSArray* savedObjects = [NSArray arrayWithContentsOfFile:path];
+    NSArray* savedObjects = [NSArray arrayWithContentsOfURL:url];
     if (savedObjects)
     {
         Class class = [self class];
@@ -199,14 +199,14 @@ NSString *const kObjectUpdateDateKey = @"ECDictionaryBackedObjectObjectUpdateDat
 //! The objects are written into a plist as an array of dictionaries.
 // --------------------------------------------------------------------------
 
-+ (void)saveObjectsToFile:(NSString*)path fromDictionary:(NSDictionary*)dictionary
++ (void)saveObjectsToURL:(NSURL*)url fromDictionary:(NSDictionary*)dictionary
 {
     NSMutableArray* objectsToSave = [NSMutableArray arrayWithCapacity:dictionary.count];
     for (ECDictionaryBackedObject* object in [dictionary allValues])
     {
         [objectsToSave addObject:[object asDictionary]];
     }
-    [objectsToSave writeToFile:path atomically:YES];
+    [objectsToSave writeToURL:url atomically:YES];
 
     ECDebug(DictionaryBackedObjectChannel, @"cached %@s %@", [self class], [dictionary allKeys]);
 }

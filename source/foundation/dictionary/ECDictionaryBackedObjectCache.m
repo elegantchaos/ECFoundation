@@ -121,18 +121,18 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 //! The plist file should contain an array of dictionaries.
 // --------------------------------------------------------------------------
 
-- (void)loadObjectsFromFile:(NSString*)path
+- (void)loadObjectsFromURL:(NSURL*)url
 {
-    [class loadObjectsFromFile:path intoDictionary:self.data];
+    [class loadObjectsFromURL:url intoDictionary:self.data];
 }
 
 // --------------------------------------------------------------------------
 //! Save the cache to a plist file as an array of dictionaries.
 // --------------------------------------------------------------------------
 
-- (void)saveObjectsToFile:(NSString*)path
+- (void)saveObjectsToURL:(NSURL*)url
 {
-    [class saveObjectsToFile:path fromDictionary:self.data];
+    [class saveObjectsToURL:url fromDictionary:self.data];
 }
 
 // --------------------------------------------------------------------------

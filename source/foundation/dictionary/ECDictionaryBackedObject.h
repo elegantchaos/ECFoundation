@@ -34,6 +34,6 @@
 - (NSDate*)objectUpdateDate;
 - (void)rememberUpdate;
 
-+ (void)loadObjectsFromFile:(NSString*)path intoDictionary:(NSMutableDictionary*)dictionary;
-+ (void)saveObjectsToFile:(NSString*)path fromDictionary:(NSDictionary*)dictionary;
++ (void)loadObjectsFromURL:(NSURL*)url intoDictionary:(NSMutableDictionary*)dictionary;
++ (void)saveObjectsToURL:(NSURL*)url fromDictionary:(NSDictionary*)dictionary;
 @end
