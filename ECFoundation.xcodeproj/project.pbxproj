@@ -463,14 +463,15 @@
 				0867D69AFE84028FC02AAC07 /* frameworks */,
 				034768DFFF38A50411DB9C8B /* products */,
 				22552CCA134BAE0D00B8894E /* scripts */,
-				2229674E1354EDC5005F42E7 /* Frameworks */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		0867D69AFE84028FC02AAC07 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
 				223CBAE11205C5930008A641 /* iOS */,
 				1058C7B0FEA5585E11CA2CBB /* MacOS */,
 				1058C7B2FEA5585E11CA2CBB /* Testing */,
@@ -534,14 +535,6 @@
 			);
 			name = configuration;
 			path = source/configuration;
-			sourceTree = "<group>";
-		};
-		2229674E1354EDC5005F42E7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2235883B1229B9E00083284E /* logging */ = {
@@ -966,6 +959,9 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Elegant Chaos";
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECFoundation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
