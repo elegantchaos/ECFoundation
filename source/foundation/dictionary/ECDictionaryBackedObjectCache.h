@@ -34,7 +34,7 @@
 - (ECDictionaryBackedObject*)objectWithID:(NSString*)objectID;
 - (ECDictionaryBackedObject*)objectWithDictionary:(NSDictionary*)dictionary;
 - (NSArray*)objectsWithArray:(NSArray*)array;
-
+- (NSArray*)allObjects;
 - (void)loadObjectsFromFile:(NSString*)path;
 - (void)saveObjectsToFile:(NSString*)path;
 

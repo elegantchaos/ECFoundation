@@ -164,4 +164,14 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
     [objectIDsToRemove release];
 }
 
+// --------------------------------------------------------------------------
+//! Return every object in the cache.
+// --------------------------------------------------------------------------
+
+- (NSArray*)allObjects
+{
+	return [self.data allValues];
+}
+
+
 @end
