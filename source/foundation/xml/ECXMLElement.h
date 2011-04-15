@@ -5,7 +5,7 @@
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+@class ECXMLParser;
 
 @interface ECXMLElement : NSObject 
 {
@@ -27,8 +27,7 @@
 - (id) initWithName: (NSString*) name attributes: (NSDictionary*) attributes;
 - (void) addElement: (ECXMLElement*) element;
 - (void) addText: (NSString*) text;
-- (void) collapseElementsUsingIndexKey: (NSString*) indexKey withElementName: (BOOL) addElementName;
-- (void) collapseElementsByNameUsingIndexKey: (NSString*) indexKey withElementName: (BOOL) addElementName;
+- (void) collapseElementsForParser:(ECXMLParser*)parser;
 - (NSString*) description;
 
 @end

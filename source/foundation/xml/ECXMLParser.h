@@ -22,6 +22,10 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
+ECPropertyRetained(indexKey, NSString*);
+ECPropertyRetained(nameKey, NSString*);
+ECPropertyRetained(valueKey, NSString*);
+ECPropertyRetained(arrayElements, NSDictionary*);
 
 // --------------------------------------------------------------------------
 // Public Methods

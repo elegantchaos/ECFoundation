@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECXMLElement.h"
-
+#import "ECXMLParser.h"
 
 @implementation ECXMLElement
 
@@ -60,7 +60,7 @@
 	[mText appendString: text];
 }
 
-- (void) collapseElementsUsingIndexKey: (NSString*) indexKey withElementName: (BOOL) addElementName
+- (void) collapseElementsForParser:(ECXMLParser *)parser
 {
 	// add any attributes to the properties dictionary for the element
 	self.properties = [NSMutableDictionary dictionaryWithDictionary: mAttributes];
@@ -70,9 +70,9 @@
 	{
 		// try to get a key for the sub-element
 		NSString* elementKey = nil;
-		if (indexKey != nil)
+		if (parser.indexKey != nil)
 		{
-			elementKey = [element.properties valueForKey: indexKey];
+			elementKey = [element.properties valueForKey: parser.indexKey];
 		}
 		if (!elementKey)
 		{
@@ -84,13 +84,13 @@
 		BOOL gotProperties = [element.properties count] > 0;
 		if (gotProperties)
 		{
-			if (addElementName)
+			if (parser.nameKey)
 			{
-				[element.properties setValue: element.name forKey: @"element-name"];
+				[element.properties setValue: element.name forKey:parser.nameKey];
 			}
-			if (element.text)
+			if (element.text && parser.valueKey)
 			{
-				[element.properties setValue: element.text forKey: @"element-value"];
+				[element.properties setValue: element.text forKey:parser.valueKey];
 			}
 		}
 
@@ -120,7 +120,32 @@
 		{
 			if (gotProperties)
 			{
-				[mProperties setValue: element.properties forKey: elementKey];
+				// if it has just one property and it matches an item in the arrayElements array
+				// we just store the property value as an array, and skip a level of element names
+				BOOL treatedAsArray = NO;
+				if ([element.properties count] == 1)
+				{
+					NSString* arrayKey = [parser.arrayElements objectForKey:element.name];
+					if (arrayKey)
+					{
+						NSObject* value = [element.properties objectForKey:arrayKey];
+						if (value)
+						{
+							if (![value isKindOfClass:[NSArray class]])
+							{
+								value = [NSArray arrayWithObject:value];
+							}
+
+							[mProperties setValue:value forKey:elementKey];
+							treatedAsArray = YES;
+						}
+					}
+				}
+				
+				if (!treatedAsArray)
+				{
+					[mProperties setValue: element.properties forKey: elementKey];
+				}
 			}
 			else
 			{
@@ -131,54 +156,9 @@
 
 	}
 	self.elements = nil;
+	
 }
 
-- (void) collapseElementsByNameUsingIndexKey: (NSString*) indexKey withElementName: (BOOL) addElementName
-{
-	self.properties = [NSMutableDictionary dictionaryWithDictionary: mAttributes];
-	for (ECXMLElement* element in mElements)
-	{
-		NSString* elementKey = nil;
-		if (indexKey != nil)
-		{
-			elementKey = [element.properties valueForKey: indexKey];
-		}
-
-		if (elementKey)
-		{
-			NSMutableDictionary* kindDictionary = [mProperties objectForKey: element.name];
-			if (!kindDictionary)
-			{
-				kindDictionary = [NSMutableDictionary dictionary];
-				[mProperties setObject: kindDictionary forKey: element.name];
-			}
-			
-			if ([element.properties count] > 0)
-			{
-				if (addElementName)
-				{
-					[element.properties setValue: element.name forKey: @"element-name"];
-				}
-				if (element.text)
-				{
-					[element.properties setValue: element.text forKey: @"element-value"];
-				}
-				[kindDictionary setValue: element.properties forKey: elementKey];
-			}
-			else
-			{
-				[kindDictionary setValue: element.text forKey: elementKey];
-			}
-		}
-		else
-		{
-			[self collapseElementsUsingIndexKey:indexKey withElementName: addElementName];
-		}
-
-		
-	}
-	self.elements = nil;
-}
 
 - (NSString*) description
 {

@@ -10,24 +10,27 @@
 
 #import <ECFoundation/NSURL+ECUtilities.h>
 
+#pragma mark - Private Interface
+
 @interface ECXMLParser()
 
 ECPropertyRetained(rootElement, ECXMLElement*);
-
 @end
 
 @implementation ECXMLParser
 
+
+#pragma mark - Debug Channels
+
 ECDefineDebugChannel(ParsingChannel);
+ECDefineDebugChannel(ParsingDetailChannel);
 
-// --------------------------------------------------------------------------
-// Constants
-// --------------------------------------------------------------------------
+#pragma mark - Properties
 
-// --------------------------------------------------------------------------
-// Synthesized properties.
-// --------------------------------------------------------------------------
-
+ECPropertySynthesize(arrayElements);
+ECPropertySynthesize(indexKey);
+ECPropertySynthesize(nameKey);
+ECPropertySynthesize(valueKey);
 ECPropertySynthesize(rootElement);
 
 // --------------------------------------------------------------------------
@@ -36,6 +39,10 @@ ECPropertySynthesize(rootElement);
 
 - (void) dealloc
 {
+	ECPropertyDealloc(arrayElements);
+	ECPropertyDealloc(indexKey);
+	ECPropertyDealloc(nameKey);
+	ECPropertyDealloc(valueKey);
 	ECPropertyDealloc(rootElement);
 	
 	[super dealloc];
@@ -60,7 +67,9 @@ ECPropertySynthesize(rootElement);
 	BOOL ok = [parser parse];
 	if (ok)
 	{
-		[rootElement collapseElementsUsingIndexKey: nil withElementName: NO];
+		ECDebug(ParsingChannel, @"parsing succeeded");
+		ECDebug(ParsingDetailChannel, @"parsing result: %@", rootElement.properties);
+		[rootElement collapseElementsForParser:self];
 	}
 	else
 	{
@@ -76,6 +85,7 @@ ECPropertySynthesize(rootElement);
 
 - (NSDictionary*)parseData:(NSData*)data;
 {
+	ECDebug(ParsingChannel, @"parsing data");
 	NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
 	NSDictionary* result = [self parseWithParser:parser];
 	[parser release];
@@ -90,6 +100,7 @@ ECPropertySynthesize(rootElement);
 
 - (NSDictionary*)parseContentsOfURL:(NSURL*)url;
 {
+	ECDebug(ParsingChannel, @"parsing from URL %@", url);
 	NSXMLParser* parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
 	NSDictionary* result = [self parseWithParser:parser];
 	[parser release];
@@ -105,7 +116,7 @@ ECPropertySynthesize(rootElement);
 
 - (void)parser:(NSXMLParser*)parser didStartElement:(NSString*)elementName namespaceURI:(NSString*)namespaceURI qualifiedName:(NSString*)qName attributes:(NSDictionary*)attributeDict
 {
-	ECDebug(ParsingChannel, @"start element %@", elementName);
+	ECDebug(ParsingDetailChannel, @"start element %@", elementName);
 	ECXMLElement* element = [[ECXMLElement alloc] initWithName:elementName attributes:attributeDict];
 	[mCurrentElement addElement: element];
 	mCurrentElement = element;
@@ -119,7 +130,7 @@ ECPropertySynthesize(rootElement);
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-	ECDebug(ParsingChannel, @"found chars %@", string);
+	ECDebug(ParsingDetailChannel, @"found chars %@", string);
 	[mCurrentElement addText: string];
 }
 
@@ -131,8 +142,8 @@ ECPropertySynthesize(rootElement);
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-	ECDebug(ParsingChannel, @"end element %@", elementName);
-	[mCurrentElement collapseElementsUsingIndexKey: nil withElementName: YES];
+	ECDebug(ParsingDetailChannel, @"end element %@", elementName);
+	[mCurrentElement collapseElementsForParser:self];
 	mCurrentElement = mCurrentElement.parent;
 }
 
