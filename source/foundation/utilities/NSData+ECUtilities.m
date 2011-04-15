@@ -14,18 +14,14 @@
 
 @implementation NSData(ECUtilities)
 
+#pragma mark - Prototypes
+
 static unsigned char nibbleToHexChar(unsigned char nibble);
 
-// --------------------------------------------------------------------------
-// Properties
-// --------------------------------------------------------------------------
+#pragma mark - Internal Utilities
 
 // --------------------------------------------------------------------------
-// Constants
-// --------------------------------------------------------------------------
-
-// --------------------------------------------------------------------------
-// Methods
+//! Return a hex character (0-9 / A-F), given a nibble
 // --------------------------------------------------------------------------
 
 unsigned char nibbleToHexChar(unsigned char nibble)
@@ -40,6 +36,12 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 	}
 
 }
+
+#pragma mark - Public Methods
+
+// --------------------------------------------------------------------------
+//! Return a hex encoded string of the data.
+// --------------------------------------------------------------------------
 
 - (NSString*) hexString
 {
@@ -56,6 +58,10 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 	return string;
 }
 
+// --------------------------------------------------------------------------
+//! Return a SHA1 hash of the data.
+// --------------------------------------------------------------------------
+
 - (NSString*)sha1Digest
 {
 	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
@@ -69,7 +75,7 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 	}
 	
 	NSString *output = [outputHolder copy];
-	MCRelease(outputHolder);
+	[outputHolder release];
 	
 	return [output autorelease];
 }
