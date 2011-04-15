@@ -9,6 +9,7 @@
 
 #import "NSData+ECUtilities.h"
 
+#import <CommonCrypto/CommonDigest.h>
 
 
 @implementation NSData(ECUtilities)
@@ -53,6 +54,24 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 	}
 	
 	return string;
+}
+
+- (NSString*)sha1Digest
+{
+	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+	
+	CC_SHA1([self bytes], [self length], digest);
+	
+	NSMutableString* outputHolder = [[NSMutableString alloc] initWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+	
+	for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
+		[outputHolder appendFormat:@"%02x", digest[i]];
+	}
+	
+	NSString *output = [outputHolder copy];
+	MCRelease(outputHolder);
+	
+	return [output autorelease];
 }
 
 @end
