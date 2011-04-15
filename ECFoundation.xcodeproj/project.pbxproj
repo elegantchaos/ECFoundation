@@ -226,6 +226,12 @@
 		22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
 		22EC409B13588DFE005C1F1A /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
+		22EC40A213589DD5005C1F1A /* ECReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EC40A013589DD5005C1F1A /* ECReachability.h */; };
+		22EC40A313589DD5005C1F1A /* ECReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EC40A013589DD5005C1F1A /* ECReachability.h */; };
+		22EC40A413589DD5005C1F1A /* ECReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC40A113589DD5005C1F1A /* ECReachability.m */; };
+		22EC40A513589DD5005C1F1A /* ECReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC40A113589DD5005C1F1A /* ECReachability.m */; };
+		22EC40A81358A17A005C1F1A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */; };
+		22EC40A91358A185005C1F1A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		22F06DD6122E8B060058DB57 /* ECProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206CC6511F853B000CDD442 /* ECProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F06DD8122E8B0D0058DB57 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F76C471214234B006BC0F8 /* NSString+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22607A1D12141A8200CEDA1C /* NSString+ECUtilitiesTests.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -397,6 +403,9 @@
 		22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
 		22EA44CE1212FB7C00EFDD11 /* NSString+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilities.m"; sourceTree = "<group>"; };
+		22EC40A013589DD5005C1F1A /* ECReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECReachability.h; sourceTree = "<group>"; };
+		22EC40A113589DD5005C1F1A /* ECReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECReachability.m; sourceTree = "<group>"; };
+		22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		22F568D713211C39003E8EE8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		22F568D813211C39003E8EE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22FAC46C132149E900103630 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
@@ -429,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */,
+				22EC40A81358A17A005C1F1A /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +457,7 @@
 			files = (
 				22FAC46D132149E900103630 /* CoreLocation.framework in Frameworks */,
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				22EC40A91358A185005C1F1A /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +526,7 @@
 		1058C7B0FEA5585E11CA2CBB /* MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */,
 				22552C12134BA18A00B8894E /* CoreLocation.framework */,
 				22FAC46C132149E900103630 /* CoreLocation.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
@@ -714,6 +726,7 @@
 		227EEB8011A6BCCD009420F7 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
+				22EC409F13589DD5005C1F1A /* networking */,
 				22886F441357B9F800828B95 /* xml */,
 				2298A4581355264A00217C2B /* dictionary */,
 				22672DC3132321BA00CD8BC7 /* compiler */,
@@ -796,6 +809,15 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		22EC409F13589DD5005C1F1A /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				22EC40A013589DD5005C1F1A /* ECReachability.h */,
+				22EC40A113589DD5005C1F1A /* ECReachability.m */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -839,6 +861,7 @@
 				2298A4621355264A00217C2B /* ECDictionaryBackedObjectCache.h in Headers */,
 				22886F4A1357B9F800828B95 /* ECXMLElement.h in Headers */,
 				22886F4E1357B9F800828B95 /* ECXMLParser.h in Headers */,
+				22EC40A313589DD5005C1F1A /* ECReachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,6 +907,7 @@
 				2298A4611355264A00217C2B /* ECDictionaryBackedObjectCache.h in Headers */,
 				22886F491357B9F800828B95 /* ECXMLElement.h in Headers */,
 				22886F4D1357B9F800828B95 /* ECXMLParser.h in Headers */,
+				22EC40A213589DD5005C1F1A /* ECReachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1165,7 @@
 				22886F4C1357B9F800828B95 /* ECXMLElement.m in Sources */,
 				22886F501357B9F800828B95 /* ECXMLParser.m in Sources */,
 				22EC409B13588DFE005C1F1A /* NSData+ECUtilities.m in Sources */,
+				22EC40A513589DD5005C1F1A /* ECReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,6 +1284,7 @@
 				2298A4631355264A00217C2B /* ECDictionaryBackedObjectCache.m in Sources */,
 				22886F4B1357B9F800828B95 /* ECXMLElement.m in Sources */,
 				22886F4F1357B9F800828B95 /* ECXMLParser.m in Sources */,
+				22EC40A413589DD5005C1F1A /* ECReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

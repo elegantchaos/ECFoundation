@@ -66,7 +66,7 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 {
 	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 	
-	CC_SHA1([self bytes], [self length], digest);
+	CC_SHA1([self bytes], (CC_LONG) [self length], digest);
 	
 	NSMutableString* outputHolder = [[NSMutableString alloc] initWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 	
