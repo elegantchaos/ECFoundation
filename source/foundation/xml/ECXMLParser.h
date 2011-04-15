@@ -27,6 +27,7 @@
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (NSDictionary*)parse:(NSData*)xml;
+- (NSDictionary*)parseData:(NSData*)data;
+- (NSDictionary*)parseContentsOfURL:(NSURL*)url;
 
 @end

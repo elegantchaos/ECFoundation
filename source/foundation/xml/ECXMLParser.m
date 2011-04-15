@@ -42,18 +42,19 @@ ECPropertySynthesize(rootElement);
 }
 
 // --------------------------------------------------------------------------
-//! Parse xml and get list of treasure from it.
+//! Parse with the supplied NSXMLParser object.
 // --------------------------------------------------------------------------
 
-- (NSDictionary*)parse:(NSData*)data;
+- (NSDictionary*)parseWithParser:(NSXMLParser*)parser
 {
-	NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
 	parser.delegate = self;
-	
 	NSMutableDictionary* rootAttributes = [[NSMutableDictionary alloc] init];
-	ECXMLElement* rootElement = [[ECXMLElement alloc] initWithName: @"root" attributes: rootAttributes];
+	ECXMLElement* rootElement = [[ECXMLElement alloc] initWithName: @"root" attributes:rootAttributes];
+	[rootAttributes release];
+	
 	self.rootElement = rootElement;
 	[rootElement release];
+
 	mCurrentElement = rootElement;
 	
 	BOOL ok = [parser parse];
@@ -61,14 +62,39 @@ ECPropertySynthesize(rootElement);
 	{
 		[rootElement collapseElementsUsingIndexKey: nil withElementName: NO];
 	}
-	if (!ok)
+	else
 	{
-		ECDebug(ParsingChannel, @"parsing failed");
+		ECDebug(ParsingChannel, @"parsing failed with error %@", [parser parserError]);
 	}
 	
-	[parser release];
+	return rootElement.properties;
+}
 
-	return [rootAttributes autorelease];
+// --------------------------------------------------------------------------
+//! Parse xml and get list of treasure from it.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*)parseData:(NSData*)data;
+{
+	NSXMLParser* parser = [[NSXMLParser alloc] initWithData:data];
+	NSDictionary* result = [self parseWithParser:parser];
+	[parser release];
+	
+	return result;
+}
+
+
+// --------------------------------------------------------------------------
+//! Parse xml and get list of treasure from it.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*)parseContentsOfURL:(NSURL*)url;
+{
+	NSXMLParser* parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+	NSDictionary* result = [self parseWithParser:parser];
+	[parser release];
+	
+	return result;
 }
 
 // --------------------------------------------------------------------------
