@@ -67,9 +67,9 @@ ECPropertySynthesize(rootElement);
 	BOOL ok = [parser parse];
 	if (ok)
 	{
+		[rootElement collapseElementsForParser:self];
 		ECDebug(ParsingChannel, @"parsing succeeded");
 		ECDebug(ParsingDetailChannel, @"parsing result: %@", rootElement.properties);
-		[rootElement collapseElementsForParser:self];
 	}
 	else
 	{
