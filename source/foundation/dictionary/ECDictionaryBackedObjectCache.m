@@ -17,6 +17,8 @@
 @property (nonatomic, assign) Class class;
 @property (nonatomic, retain) NSMutableDictionary* data;
 
+- (void)postUpdatedNotification;
+
 @end
 
 #pragma mark - Implementation
@@ -29,6 +31,10 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 
 @synthesize class;
 @synthesize data;
+
+#pragma mark - Notifications
+
+NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionaryBackedObjectCacheUpdatedNotification";
 
 #pragma mark - Object Lifecycle
 
@@ -94,6 +100,8 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
         [self.data setObject:object forKey:objectID];
     }
     
+	[self postUpdatedNotification];
+
     return object;
 }
 
@@ -106,12 +114,17 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 - (NSArray*)objectsWithArray:(NSArray*)array
 {
     NSMutableArray* results = [NSMutableArray arrayWithCapacity:[array count]];
-    for (NSDictionary* item in array)
-    {
-        ECDictionaryBackedObject* object = [self objectWithDictionary:item];
-        [results addObject:object];
-    }
-    
+	if (array.count > 0)
+	{
+		for (NSDictionary* item in array)
+		{
+			ECDictionaryBackedObject* object = [self objectWithDictionary:item];
+			[results addObject:object];
+		}
+		
+		[self postUpdatedNotification];
+	}
+
     return results;
  
 }
@@ -124,6 +137,7 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 - (void)loadObjectsFromURL:(NSURL*)url
 {
     [class loadObjectsFromURL:url intoDictionary:self.data];
+	[self postUpdatedNotification];
 }
 
 // --------------------------------------------------------------------------
@@ -162,6 +176,8 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
     
     ECDebug(DictionaryBackedObjectCacheChannel, @"removed old %@s %@", self.class, objectIDsToRemove);
     [objectIDsToRemove release];
+	
+	[self postUpdatedNotification];
 }
 
 // --------------------------------------------------------------------------
@@ -173,5 +189,16 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 	return [self.data allValues];
 }
 
+// --------------------------------------------------------------------------
+//! Post notification that the cache has been updated.
+// --------------------------------------------------------------------------
+
+- (void)postUpdatedNotification
+{
+	NSNotification* notification = [NSNotification notificationWithName:ECDictionaryBackedObjectCacheUpdatedNotification object:self];
+	NSNotificationQueue* nq = [NSNotificationQueue defaultQueue];
+	
+	[nq enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnSender forModes:nil];
+}
 
 @end

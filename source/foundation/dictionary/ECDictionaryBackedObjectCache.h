@@ -41,3 +41,5 @@
 - (void)removeObjectsOlderThanDate:(NSDate*)date;
 
 @end
+
+extern NSString* const ECDictionaryBackedObjectCacheUpdatedNotification;
