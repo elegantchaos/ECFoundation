@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------
 
 #include "ECFoundationAdHocSettings.xcconfig"
-#include "ECIOSSharedSettings.xcconfig"
+#include "ECIOSReleaseSettings.xcconfig"
 
 // --------------------------------------------------------------------------
 // Build Options
