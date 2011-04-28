@@ -1387,7 +1387,7 @@
 		};
 		225409281354F05C00DC8205 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */;
+			baseConfigurationReference = 227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */;
 			buildSettings = {
 				DEAD_CODE_STRIPPING = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
