@@ -7,8 +7,6 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECCoreSharedPrefix.pch"
-
 #define EC_RELEASE 1
 #define EC_CONFIGURATION_STRING @"Release"
 #define EC_CONFIGURATION_STRING_SHORT @"R"
@@ -16,5 +14,5 @@
 #define ECUnusedInDebug(v)
 #define ECUnusedInRelease(v) ECUnused(v)
 
-#define ECDebug(...) 
-#define ECDefineDebugChannel(...)
+#import "ECCoreSharedPrefix.pch"
+

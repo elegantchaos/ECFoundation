@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 01/08/2010
+//! @date 26/08/2010
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
@@ -9,38 +9,28 @@
 
 #import <Foundation/Foundation.h>
 
+@class ECLogChannel;
 @class ECLogHandler;
 
-@interface ECLogChannel : NSObject
+// --------------------------------------------------------------------------
+//! Manager which keeps track of all the log channels.
+// --------------------------------------------------------------------------
+
+@interface ECErrorReporter : NSObject
 {
-	ECPropertyVariable(enabled, BOOL);
-	ECPropertyVariable(setup, BOOL);
-	ECPropertyVariable(name, NSString*);
-    ECPropertyVariable(handlers, NSMutableSet*);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(enabled, BOOL);
-ECPropertyAssigned(setup, BOOL);
-ECPropertyRetained(name, NSString*);
-ECPropertyRetained(handlers, NSMutableSet*);
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (void) enable;
-- (void) disable;
-- (id) initWithName: (NSString*) name;
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other;
-- (void) enableHandler: (ECLogHandler*) handler;
-- (void) disableHandler: (ECLogHandler*) handler;
-- (BOOL) isHandlerEnabled:( ECLogHandler*) handler;
-
-+ (NSString*) cleanName:(const char *) name;
++ (void)reportResult:(BOOL)didSucceed error:(NSError*) error message:(NSString*)message, ... NS_FORMAT_FUNCTION(3,4);
++ (void)reportResult:(BOOL)didSucceed message:(NSString*)message, ... NS_FORMAT_FUNCTION(2,3);
++ (void)reportError:(NSError*) error message:(NSString*)message, ... NS_FORMAT_FUNCTION(2,3);
 
 @end
-

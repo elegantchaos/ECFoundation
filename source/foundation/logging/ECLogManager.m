@@ -35,6 +35,7 @@ ECPropertyRetained(settings, NSMutableDictionary*);
 
 - (void) loadChannelSettings;
 - (void) saveChannelSettings;
+- (void) postUpdateNotification;
 
 @end
 
@@ -62,6 +63,7 @@ NSString *const kHandlersSetting = @"Handlers";
 ECPropertySynthesize(channels);
 ECPropertySynthesize(handlers);
 ECPropertySynthesize(settings);
+ECPropertySynthesize(defaultHandler);
 
 // --------------------------------------------------------------------------
 // Globals
@@ -124,6 +126,19 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Post a notification to the default queue to say that the channel list has changed.
+//! Make sure that it only gets processed on idle, so that we don't get stuck
+//! in an infinite loop if the notification causes another notification to be posted
+// --------------------------------------------------------------------------
+
+- (void) postUpdateNotification
+{
+    NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
+    [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
+    
+}
+
+// --------------------------------------------------------------------------
 //! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
@@ -149,16 +164,17 @@ static ECLogManager* gSharedInstance = nil;
                     LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
                     [channel.handlers addObject: handler];
                 }
-		}
-	}
-
-        channel.setup = YES;
+            }
+        }
+        else
+        {
+            [channel.handlers addObject:self.defaultHandler];
+        }
         
-	// post a notification to the default queue - make sure that it only gets processed on idle, so that we don't get stuck
-	// in an infinite loop if the notification causes another notification to be posted
-	NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
-	[[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
-}
+        channel.setup = YES;
+    }
+    
+    [self postUpdateNotification];    
 }
 
 // --------------------------------------------------------------------------
@@ -179,6 +195,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
 	[self registerHandler: handler];
+    self.defaultHandler = handler;
 	[handler release];
 }
 
@@ -315,8 +332,7 @@ static ECLogManager* gSharedInstance = nil;
     
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-		channel.enabled = YES;
-        logToChannel(channel, @"enabled channel");
+        [channel enable];
 	}
 }
 
@@ -328,8 +344,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-        logToChannel(channel, @"disabled channel");
-		channel.enabled = NO;
+        [channel disable];
 	}
 }
 

@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSFileManager+ECUtilities.h"
-
+#import "ECErrorReporter.h"
 
 @implementation NSFileManager(ECUtilities)
 
@@ -37,8 +37,29 @@
 
 - (BOOL)createDirectoryAtURL:(NSURL *)url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error
 {
-	return [self createDirectoryAtPath: [url path] withIntermediateDirectories: createIntermediates attributes: attributes error: error];
+	BOOL result = [self createDirectoryAtPath: [url path] withIntermediateDirectories: createIntermediates attributes: attributes error: error];
+    if (!result)
+    {
+        [ECErrorReporter reportError:*error message:@"failed to create directory at @%", url];
+    }
+    
+    return result;
 }
 
+// --------------------------------------------------------------------------
+//! Return the URL for the user's desktop folder.
+// --------------------------------------------------------------------------
+
+- (NSURL*) URLForUserDesktop 
+{
+    NSError* error = nil;
+    NSURL* url = [self URLForDirectory:NSDesktopDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:&error];
+    if (!url)
+    {
+        [ECErrorReporter reportError:error message:@"couldn't get desktop folder location"];
+    }
+    
+    return url;
+}
 
 @end

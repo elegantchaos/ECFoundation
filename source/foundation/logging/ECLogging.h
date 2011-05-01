@@ -20,11 +20,17 @@ typedef void ECLogChannel;
 
 #endif
 
+#pragma mark - Plain C interface
+
+// These routines are used in some of the macros, and are generally not intended for public use.
+
 extern void enableChannel(ECLogChannel* channel);
 extern void disableChannel(ECLogChannel* channel);
 extern BOOL channelEnabled(ECLogChannel* channel);
 extern ECLogChannel* registerChannel(const char* name);
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
+
+#pragma mark - Channel Declaration Macros
 
 #define ECDeclareLogChannel(channel) \
 	extern ECLogChannel* getChannel##channel(void)
@@ -38,6 +44,8 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 		return instance; \
 	}
 
+#pragma mark - Logging Macros
+
 #define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { logToChannel(c, __VA_ARGS__); } } while (0)
 
 #define ECGetChannel(channel) getChannel##channel()
@@ -45,3 +53,17 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 #define ECEnableChannel(channel) enableChannel(getChannel##channel())
 
 #define ECDisableChannel(channel) disableChannel(getChannel##channel())
+
+#pragma mark - Debug Only Macros
+
+#if EC_DEBUG
+
+#define ECDebug ECLog
+#define ECDefineDebugChannel ECDefineLogChannel
+
+#else
+
+#define ECDebug(...) 
+#define ECDefineDebugChannel(...)
+
+#endif

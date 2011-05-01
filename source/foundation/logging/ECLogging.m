@@ -20,7 +20,7 @@
 
 void enableChannel(ECLogChannel* channel)
 {
-	channel.enabled = YES;
+    [channel enable];
 }
 
 // --------------------------------------------------------------------------
@@ -29,7 +29,7 @@ void enableChannel(ECLogChannel* channel)
 
 void  disableChannel(ECLogChannel* channel)
 {
-	channel.enabled = NO;
+    [channel disable];
 }
 
 // --------------------------------------------------------------------------
