@@ -150,8 +150,8 @@ static ECLogManager* gSharedInstance = nil;
     if (self.settings)
     {
         NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
-        if (channelSettings)
-        {
+	if (channelSettings)
+	{
             channel.enabled = [[channelSettings objectForKey: kEnabledSetting] boolValue];
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
             
@@ -160,7 +160,7 @@ static ECLogManager* gSharedInstance = nil;
             {
                 ECLogHandler* handler = [self.handlers objectForKey:handlerName];
                 if (handler)
-                {
+		{
                     LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
                     [channel.handlers addObject: handler];
                 }
