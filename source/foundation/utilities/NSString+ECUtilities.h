@@ -13,8 +13,10 @@
 
 @interface NSString(ECUtilities)
 
-- (NSData*) splitWordsIntoInts;
-- (NSData*) splitWordsIntoFloats;
-- (NSString*) stringBySplittingMixedCaps;
+- (NSData*)splitWordsIntoInts;
+- (NSData*)splitWordsIntoFloats;
+- (NSString*)stringBySplittingMixedCaps;
+
+- (NSString*)sha1Digest;
 
 @end

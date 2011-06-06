@@ -9,7 +9,7 @@
 //
 
 #import "NSString+ECUtilities.h"
-
+#import "NSData+ECUtilities.h"
 
 @implementation NSString(ECUtilities)
 
@@ -61,4 +61,20 @@
 	return [result autorelease];
 }
 
++ (NSString*)stringWithNewUUID
+{
+    // Create a new UUID
+    CFUUIDRef uuidObj = CFUUIDCreate(nil);
+    
+    // Get the string representation of the UUID
+    NSString *newUUID = (NSString*)CFUUIDCreateString(nil, uuidObj);
+    CFRelease(uuidObj);
+    return [newUUID autorelease];
+}
+
+- (NSString*)sha1Digest
+{
+	const char *cstr = [self cStringUsingEncoding:NSASCIIStringEncoding];
+	return [[NSData dataWithBytes:cstr length:strlen(cstr)] sha1Digest];
+}
 @end

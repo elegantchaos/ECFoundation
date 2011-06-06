@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 06/03/2010
+//! @date 12/04/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
@@ -13,5 +13,7 @@
 
 - (id) valueForKey: (NSString*) key intoBool: (BOOL*) valueOut;
 - (id) valueForKey: (NSString*) key intoDouble: (double*) valueOut;
+
+- (NSDictionary*)dictionaryWithoutKey:(NSString*)key;
 
 @end

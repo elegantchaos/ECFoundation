@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 22/07/2010
+//! @date 12/04/2011
 //
 //! @file:
 //! Assertion utilities.
@@ -15,8 +15,13 @@
 #define ECAssertNilBase(expression, imp)						imp((expression) == nil)
 #define ECAssertCountAtLeastBase(container, countMinimum, imp)	imp([container count] >= countMinimum)
 
+#if EC_DEBUG
 #define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
 #define ECAssertC(expression) assert(expression)
+#else
+#define ECAssert(expression)
+#define ECAssertC(expression)
+#endif
 
 #define ECAssertShouldntBeHere() ECAssertShouldntBeHereBase(ECAssert)
 #define ECAssertShouldntBeHereC() ECAssertShouldntBeHereBase(ECAssertC)

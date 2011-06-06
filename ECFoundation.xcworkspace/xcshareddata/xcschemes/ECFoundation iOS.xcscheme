@@ -13,8 +13,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22FBFE6611DD0D9400578A66"
-               BuildableName = "libECFoundation.a"
+               BlueprintIdentifier = "225409251354F05C00DC8205"
+               BuildableName = "ECFoundation.framework"
                BlueprintName = "ECFoundation iOS"
                ReferencedContainer = "container:ECFoundation.xcodeproj">
             </BuildableReference>

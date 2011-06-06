@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 06/03/2010
+//! @date 12/04/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
@@ -40,6 +40,25 @@
 	}
 	
 	return value;
+}
+
+// --------------------------------------------------------------------------
+//! Return a dictionary identical to this except without a given key.
+// --------------------------------------------------------------------------
+
+- (NSDictionary*)dictionaryWithoutKey:(NSString*)key
+{
+    id object = [self objectForKey:key];
+    if (object)
+    {
+        NSMutableDictionary* copy = [[self mutableCopy] autorelease];
+        [copy removeObjectForKey:key];
+        return copy;
+    }
+    else
+    {
+        return self;
+    }
 }
 
 @end
