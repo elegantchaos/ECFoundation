@@ -175,7 +175,7 @@ ECPropertySynthesize(parent);
 	if ((self = [super init]) != nil)
 	{
 		self.data = data;
-		self.items = [items mutableCopy];
+		self.items = [[items mutableCopy] autorelease];
 		self.parent = parent;
 	}
 	

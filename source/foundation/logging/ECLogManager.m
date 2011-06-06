@@ -273,7 +273,7 @@ static ECLogManager* gSharedInstance = nil;
         [self registerChannelWithName:channel];
     }
          
-    self.settings = [settings mutableCopy];
+    self.settings = [[settings mutableCopy] autorelease];
 }
 
 // --------------------------------------------------------------------------
