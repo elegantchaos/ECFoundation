@@ -29,8 +29,11 @@
 // Public Methods
 // --------------------------------------------------------------------------
 
++ (BOOL)checkStatus:(OSStatus)status;
+
 + (void)reportResult:(BOOL)didSucceed error:(NSError*) error message:(NSString*)message, ... NS_FORMAT_FUNCTION(3,4);
 + (void)reportResult:(BOOL)didSucceed message:(NSString*)message, ... NS_FORMAT_FUNCTION(2,3);
++ (void)reportStatus:(OSStatus)status message:(NSString*)message, ... NS_FORMAT_FUNCTION(2,3);
 + (void)reportError:(NSError*) error message:(NSString*)message, ... NS_FORMAT_FUNCTION(2,3);
 
 @end

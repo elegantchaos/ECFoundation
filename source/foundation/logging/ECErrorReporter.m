@@ -66,13 +66,30 @@ ECDefineDebugChannel(ErrorChannel);
 }
 
 // --------------------------------------------------------------------------
+//! Check if a status value is noErr, if not, log a generic error.
+// --------------------------------------------------------------------------
+
++ (BOOL)checkStatus:(OSStatus)status
+{
+	BOOL result = status == noErr;
+	if (!result)
+	{
+		[self reportStatus:status message:@"status wasn't noErr"];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
 //! Convenience method for global error reporting.
 //! Checks the success value first, and reports the error value if the success value was NO
 //! Asserts on failure in debug builds.
 // --------------------------------------------------------------------------
 
-+ (void)reportResult:(BOOL)didSucceed error:(NSError*) error message:(NSString*)message, ... {
-    if (!didSucceed) {
++ (void)reportResult:(BOOL)didSucceed error:(NSError*) error message:(NSString*)message, ... 
+{
+    if (!didSucceed) 
+	{
         va_list args;
         va_start(args, message);
         [self reportError:error format:message arguments:args assertInDebug:YES];
@@ -86,8 +103,27 @@ ECDefineDebugChannel(ErrorChannel);
 //! Asserts on failure in debug builds.
 // --------------------------------------------------------------------------
 
-+ (void)reportResult:(BOOL)didSucceed message:(NSString*)message, ... {
-    if (!didSucceed) {
++ (void)reportResult:(BOOL)didSucceed message:(NSString*)message, ... 
+{
+    if (!didSucceed) 
+	{
+        va_list args;
+        va_start(args, message);
+        [self reportError:nil format:message arguments:args assertInDebug:YES];
+        va_end(args);
+    }
+}
+
+// --------------------------------------------------------------------------
+//! Convenience method for global error reporting.
+//! Checks the success value, and reports a custom error if it was NO
+//! Asserts on failure in debug builds.
+// --------------------------------------------------------------------------
+
++ (void)reportStatus:(OSStatus)status message:(NSString*)message, ...
+{
+    if (status != noErr) 
+	{
         va_list args;
         va_start(args, message);
         [self reportError:nil format:message arguments:args assertInDebug:YES];
@@ -101,8 +137,10 @@ ECDefineDebugChannel(ErrorChannel);
 //! Asserts on failure in debug builds.
 // --------------------------------------------------------------------------
 
-+ (void)reportError:(NSError*) error message:(NSString*)message, ... {
-    if (error) {
++ (void)reportError:(NSError*) error message:(NSString*)message, ... 
+{
+    if (error) 
+	{
         va_list args;
         va_start(args, message);
         [self reportError:error format:message arguments:args assertInDebug:YES];
