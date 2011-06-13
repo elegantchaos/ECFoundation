@@ -19,7 +19,11 @@
 
 @interface ECDictionaryBackedObject : NSObject 
 
-@property (nonatomic, retain) NSMutableDictionary* data;
+{
+	ECPropertyVariable(data, NSMutableDictionary*);
+}
+
+ECPropertyRetained(data, NSMutableDictionary*);
 
 + (NSString*)objectIDFromDictionary:(NSDictionary*)dictionary;
 + (ECDictionaryBackedObject*)objectWithDictionary:(NSDictionary*)dictionary;

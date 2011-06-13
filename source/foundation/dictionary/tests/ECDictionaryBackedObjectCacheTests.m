@@ -17,19 +17,19 @@
 
 @interface ECDictionaryBackedObjectCacheTests()
 
-@property (nonatomic, retain) NSDictionary* test1;
-@property (nonatomic, retain) NSDictionary* test2;
-@property (nonatomic, retain) NSArray* testArray;
-@property (nonatomic, retain) ECDictionaryBackedObjectCache* testCache;
+ECPropertyRetained(test1, NSDictionary*);
+ECPropertyRetained(test2, NSDictionary*);
+ECPropertyRetained(testArray, NSArray*);
+ECPropertyRetained(testCache, ECDictionaryBackedObjectCache*);
 
 @end
 
 @implementation ECDictionaryBackedObjectCacheTests
 
-@synthesize test1;
-@synthesize test2;
-@synthesize testArray;
-@synthesize testCache;
+ECPropertySynthesize(test1);
+ECPropertySynthesize(test2);
+ECPropertySynthesize(testArray);
+ECPropertySynthesize(testCache);
 
 // --------------------------------------------------------------------------
 //! Set up before each test.
@@ -61,10 +61,10 @@
 
 - (void) tearDown
 {
-    self.test1 = nil;
-    self.test2 = nil;
-    self.testArray = nil;
-    self.testCache = nil;
+	ECPropertyDealloc(test1);
+	ECPropertyDealloc(test2);
+	ECPropertyDealloc(testArray);
+	ECPropertyDealloc(testCache);
 }
 
 - (void)checkObject1:(TestDictionaryBackedObject*)object1

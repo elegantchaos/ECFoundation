@@ -23,7 +23,7 @@ ECDefineDebugChannel(DictionaryBackedObjectChannel);
 
 #pragma mark - Properties
 
-@synthesize data;
+ECPropertySynthesize(data);
 
 #pragma mark - Constants
 
@@ -66,7 +66,7 @@ NSString *const kObjectUpdateDateKey = @"ECDictionaryBackedObjectObjectUpdateDat
 
 - (void)dealloc
 {
-    self.data = nil;
+	ECPropertyDealloc(data);
     
     [super dealloc];
 }

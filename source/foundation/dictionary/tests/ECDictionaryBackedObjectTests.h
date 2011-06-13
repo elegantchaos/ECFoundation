@@ -15,4 +15,8 @@
 
 @interface ECDictionaryBackedObjectTests : ECTestCase
 
+{
+	NSDictionary* testData;
+}
+
 @end

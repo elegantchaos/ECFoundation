@@ -13,6 +13,15 @@
 #import "ECTestCase.h"
 
 
+@class ECDictionaryBackedObjectCache;
+
 @interface ECDictionaryBackedObjectCacheTests : ECTestCase
+
+{
+	ECPropertyVariable(test1, NSDictionary*);
+	ECPropertyVariable(test2, NSDictionary*);
+	ECPropertyVariable(testArray, NSArray*);
+	ECPropertyVariable(testCache, ECDictionaryBackedObjectCache*);
+}
 
 @end

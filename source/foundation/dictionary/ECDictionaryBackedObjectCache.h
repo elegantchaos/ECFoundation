@@ -29,6 +29,11 @@
 
 @interface ECDictionaryBackedObjectCache : NSObject 
 
+{
+	ECPropertyVariable(class, Class);
+	ECPropertyVariable(data, NSMutableDictionary*);
+
+}
 - (id)initWithClass:(Class)class;
 
 - (ECDictionaryBackedObject*)objectWithID:(NSString*)objectID;
