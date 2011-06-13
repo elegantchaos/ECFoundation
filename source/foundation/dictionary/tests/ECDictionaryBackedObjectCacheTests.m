@@ -61,10 +61,10 @@ ECPropertySynthesize(testCache);
 
 - (void) tearDown
 {
-	ECPropertyDealloc(test1);
-	ECPropertyDealloc(test2);
-	ECPropertyDealloc(testArray);
-	ECPropertyDealloc(testCache);
+	self.test1 = nil;
+	self.test2 = nil;
+	self.testArray = nil;
+	self.testCache = nil;
 }
 
 - (void)checkObject1:(TestDictionaryBackedObject*)object1
@@ -81,7 +81,7 @@ ECPropertySynthesize(testCache);
     ECTestAssertNotNil(object2, @"object valid");
     
     ECTestAssertTrue([object2.name isEqualToString:@"Tom"], @"name wrong");
-    ECTestAssertTrue([object2.text isEqualToString:@"Different Text"], @"text wrong");
+    ECTestAssertTrue([object2.text isEqualToString:@"Other Text"], @"text wrong");
     ECTestAssertTrue([object2.objectID isEqualToString:@"2"], @"ID wrong");
     
     
