@@ -8,7 +8,8 @@
 // --------------------------------------------------------------------------
 
 #import "NSURL+ECUtilities.h"
-
+#import "NSData+ECUtilities.h"
+#import "NSString+ECUtilities.h"
 
 @implementation NSURL(ECUtilities)
 
@@ -30,6 +31,27 @@
 {
 	NSString* path = [[NSBundle mainBundle] pathForResource: name ofType: type];
 	return [self initFileURLWithPath: path isDirectory: NO];
+}
+
+// --------------------------------------------------------------------------
+//! Return sha1 digest for the file represented by the URL
+// --------------------------------------------------------------------------
+
+- (NSString*)sha1Digest
+{
+	NSString* result;
+	NSData* data = [NSData dataWithContentsOfURL:self];
+	if (data)
+	{
+		result = [data sha1Digest];
+	}
+	else // couldn't get contents, so return sha1 of the url itself
+	{
+		// TODO - handle directories properly 
+		result = [[self absoluteString] sha1Digest];
+	}
+	
+	return result;
 }
 
 @end

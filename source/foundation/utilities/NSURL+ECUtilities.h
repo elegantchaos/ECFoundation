@@ -13,5 +13,6 @@
 
 + (NSURL*) URLWithResourceNamed: (NSString*) name ofType: (NSString*) type;
 - (id) initWithResourceNamed: (NSString*) name ofType: (NSString*) type;
+- (NSString*)sha1Digest;
 
 @end
