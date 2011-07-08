@@ -1,0 +1,71 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 12/04/2011
+//
+//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
+
+#import <Foundation/Foundation.h>
+
+@class ECTBinding;
+@class ECTSectionDrivenTableController;
+
+extern NSString *const ECTCellClassKey;
+extern NSString *const ECTDisclosureClassKey;
+extern NSString *const ECTCanMoveKey;
+extern NSString *const ECTCanDeleteKey;
+extern NSString *const ECTDisclosureTitleKey;
+
+// --------------------------------------------------------------------------
+//! Controller for a section in a table.
+// --------------------------------------------------------------------------
+
+@interface ECTSection : NSObject
+
+@property (nonatomic, retain) NSString* addDisclosureTitle;
+@property (nonatomic, retain) NSString* cellIdentifier;
+@property (nonatomic, retain) NSString* header;
+@property (nonatomic, retain) NSString* footer;
+@property (nonatomic, assign) Class detailDisclosureClass;
+@property (nonatomic, assign) Class disclosureClass;
+@property (nonatomic, assign) Class cellClass;
+@property (nonatomic, assign) BOOL canDelete;
+@property (nonatomic, assign) BOOL canMove;
+@property (nonatomic, assign) ECTSectionDrivenTableController* table;
+@property (nonatomic, retain) NSArray* content;
+
+- (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
+
+- (BOOL)canEdit;
+- (void)reloadData;
+- (UITableView*)tableView;
+
+- (NSInteger)numberOfRowsInSection;
+- (NSString *)titleForHeaderInSection;
+- (NSString *)titleForFooterInSection;
+- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail;
+- (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail;
+- (id)bindingForRowAtIndexPath:(NSIndexPath*)indexPath;
+- (BOOL)canEditRowAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)canMoveRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath;
+- (void)moveRowFromSection:(ECTSection*)section atIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath ;
+- (void)commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
+@protocol ECTSectionDrivenTableCell <NSObject>
+- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
+- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
+- (BOOL)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
+- (BOOL)canDeleteInSection:(ECTSection*)section;
+- (BOOL)canMoveInSection:(ECTSection*)section;
+@end
+
+
