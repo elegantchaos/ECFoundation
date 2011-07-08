@@ -15,7 +15,6 @@
 			dependencies = (
 				22552C19134BA20B00B8894E /* PBXTargetDependency */,
 				22552BBF134B9DC400B8894E /* PBXTargetDependency */,
-				22552BBD134B9DA200B8894E /* PBXTargetDependency */,
 				22552BB9134B9D9000B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation Everything";
@@ -25,14 +24,12 @@
 
 /* Begin PBXBuildFile section */
 		2224D5C0121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
-		2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2224D5BF121D974200C51C31 /* NSDate+ECUtilitiesTests.m */; };
 		2229676B1354F39E005F42E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 222967691354F39D005F42E7 /* InfoPlist.strings */; };
 		22308754133B7E030093868C /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22308752133B7E030093868C /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22308756133B7E030093868C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22308753133B7E030093868C /* ECErrorReporter.m */; };
 		2232B68411FA02BB001846FC /* ECDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2232B68211FA02BB001846FC /* ECDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2232B68611FA02BB001846FC /* ECDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68311FA02BB001846FC /* ECDataItem.m */; };
 		2232B68A11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
-		2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232B68911FA02E6001846FC /* ECDataItemTests.m */; };
 		223588521229B9E00083284E /* ECLogChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2235883E1229B9E00083284E /* ECLogChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223588531229B9E00083284E /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235883F1229B9E00083284E /* ECLogChannel.m */; };
 		223588541229B9E00083284E /* ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588401229B9E00083284E /* ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,7 +38,6 @@
 		223588571229B9E00083284E /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588431229B9E00083284E /* ECLogHandler.m */; };
 		223588581229B9E00083284E /* ECLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 223588441229B9E00083284E /* ECLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223588591229B9E00083284E /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 223588451229B9E00083284E /* ECLogManager.m */; };
-		223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBAD71205C51F0008A641 /* GHUnitTestMain.m */; };
 		22463388121A8756000ECB30 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22463384121A8756000ECB30 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22463389121A8756000ECB30 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22463385121A8756000ECB30 /* NSURL+ECUtilities.m */; };
 		225409351354F15000DC8205 /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 226E1F9D11F8D03E00603F71 /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -147,7 +143,6 @@
 		22552C11134BA15100B8894E /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22672DA513230B8500CD8BC7 /* ECLogHandlerNSLog.m */; };
 		22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552C12134BA18A00B8894E /* CoreLocation.framework */; };
 		225EC68411EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
-		22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22607A2012141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22607A1E12141A8200CEDA1C /* NSString+ECUtilitiesTests.m */; };
 		22639D6712A57DC100780869 /* NSData+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22639D6512A57DC100780869 /* NSData+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22639D6812A57DC100780869 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
@@ -173,9 +168,6 @@
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		2272908B124A4B4A00A9881F /* ECTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2273344611EBC1CB00695FB4 /* ECTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		227290B0124A4CC200A9881F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227290AD124A4CC200A9881F /* InfoPlist.strings */; };
-		227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ECFoundation.framework */; };
-		227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227333B811EBBA3000695FB4 /* GHUnit.framework */; };
-		227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 225EC68311EBAC3D00A97AEA /* NSDictionary+ECUtilitiesTests.m */; };
 		2274C97F11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */; };
 		2274C98011FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */; };
 		227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */; };
@@ -250,13 +242,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = "ECFoundation Mac";
 		};
-		22552BBC134B9DA200B8894E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 227333A311EBBA0800695FB4;
-			remoteInfo = "ECFoundation GHUnit";
-		};
 		22552BBE134B9DC400B8894E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -277,13 +262,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 22552BC4134B9E5300B8894E;
 			remoteInfo = "ECFoundation Test iOS";
-		};
-		227333B311EBBA2300695FB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = ECFoundation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -361,7 +339,6 @@
 		22728B7C124A29C200A9881F /* ECFoundationSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationSharedPrefix.pch; sourceTree = "<group>"; };
 		227290AC124A4CC200A9881F /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundationIOS.plist; path = resources/ios/ECFoundationIOS.plist; sourceTree = "<group>"; };
 		227290AE124A4CC200A9881F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		227333A411EBBA0800695FB4 /* GHUnit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GHUnit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2273344611EBC1CB00695FB4 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
 		2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationAdHocSettings.xcconfig; sourceTree = "<group>"; };
@@ -442,15 +419,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		227333A211EBBA0800695FB4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				227333B511EBBA2800695FB4 /* ECFoundation.framework in Frameworks */,
-				227333B911EBBA3000695FB4 /* GHUnit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,7 +437,6 @@
 			children = (
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
 				225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */,
-				227333A411EBBA0800695FB4 /* GHUnit Tests.app */,
 				22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */,
 				225409261354F05C00DC8205 /* ECFoundation.framework */,
 			);
@@ -577,7 +544,8 @@
 				223588441229B9E00083284E /* ECLogManager.h */,
 				223588451229B9E00083284E /* ECLogManager.m */,
 			);
-			path = logging;
+			name = logging;
+			path = ECLogging;
 			sourceTree = "<group>";
 		};
 		223CBAD61205C51F0008A641 /* ghunit */ = {
@@ -968,25 +936,6 @@
 			productReference = 225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		227333A311EBBA0800695FB4 /* ECFoundation GHUnit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECFoundation GHUnit" */;
-			buildPhases = (
-				227333A011EBBA0800695FB4 /* Resources */,
-				227333A111EBBA0800695FB4 /* Sources */,
-				227333A211EBBA0800695FB4 /* Frameworks */,
-				2255AE6811ECBF4100423A95 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				227333B411EBBA2300695FB4 /* PBXTargetDependency */,
-			);
-			name = "ECFoundation GHUnit";
-			productName = "GHUnit Tests";
-			productReference = 227333A411EBBA0800695FB4 /* GHUnit Tests.app */;
-			productType = "com.apple.product-type.application";
-		};
 		8DC2EF4F0486A6940098B216 /* ECFoundation Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "ECFoundation Mac" */;
@@ -1035,7 +984,6 @@
 				225409251354F05C00DC8205 /* ECFoundation iOS */,
 				225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */,
 				22552BC4134B9E5300B8894E /* ECFoundation Test iOS */,
-				227333A311EBBA0800695FB4 /* ECFoundation GHUnit */,
 				22552BB3134B9D8400B8894E /* ECFoundation Everything */,
 			);
 		};
@@ -1058,13 +1006,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		225EC66D11EBAA4800A97AEA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		227333A011EBBA0800695FB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1105,20 +1046,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		2255AE6811ECBF4100423A95 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "scripts/run-tests.sh";
-			showEnvVarsInLog = 0;
 		};
 		225EC67011EBAA4800A97AEA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1243,18 +1170,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		227333A111EBBA0800695FB4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				227333C611EBBADD00695FB4 /* NSDictionary+ECUtilitiesTests.m in Sources */,
-				2232B68B11FA02E6001846FC /* ECDataItemTests.m in Sources */,
-				223CBAD81205C51F0008A641 /* GHUnitTestMain.m in Sources */,
-				22607A1F12141A8200CEDA1C /* NSString+ECUtilitiesTests.m in Sources */,
-				2224D5C1121D974200C51C31 /* NSDate+ECUtilitiesTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1296,11 +1211,6 @@
 			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
 			targetProxy = 22552BB8134B9D9000B8894E /* PBXContainerItemProxy */;
 		};
-		22552BBD134B9DA200B8894E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 227333A311EBBA0800695FB4 /* ECFoundation GHUnit */;
-			targetProxy = 22552BBC134B9DA200B8894E /* PBXContainerItemProxy */;
-		};
 		22552BBF134B9DC400B8894E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
@@ -1315,11 +1225,6 @@
 			isa = PBXTargetDependency;
 			target = 22552BC4134B9E5300B8894E /* ECFoundation Test iOS */;
 			targetProxy = 22552C18134BA20B00B8894E /* PBXContainerItemProxy */;
-		};
-		227333B411EBBA2300695FB4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* ECFoundation Mac */;
-			targetProxy = 227333B311EBBA2300695FB4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1595,41 +1500,6 @@
 			};
 			name = Release;
 		};
-		227333B011EBBA0800695FB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "resources/tests/ECFoundation GHUnit.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PRODUCT_NAME = "GHUnit Tests";
-			};
-			name = Debug;
-		};
-		227333B111EBBA0800695FB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				INFOPLIST_FILE = "resources/tests/ECFoundation GHUnit.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PRODUCT_NAME = "GHUnit Tests";
-			};
-			name = Release;
-		};
 		2274C8E811FF841B00E5C351 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1675,24 +1545,6 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = "EC Foundation Unit Tests Mac";
 				WRAPPER_EXTENSION = octest;
-			};
-			name = AdHoc;
-		};
-		2274C8EC11FF841B00E5C351 /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				INFOPLIST_FILE = "resources/tests/ECFoundation GHUnit.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PRODUCT_NAME = "GHUnit Tests";
 			};
 			name = AdHoc;
 		};
@@ -1755,16 +1607,6 @@
 				225EC67411EBAA4800A97AEA /* Debug */,
 				225EC67511EBAA4800A97AEA /* Release */,
 				2274C8EB11FF841B00E5C351 /* AdHoc */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		227333B211EBBA0800695FB4 /* Build configuration list for PBXNativeTarget "ECFoundation GHUnit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				227333B011EBBA0800695FB4 /* Debug */,
-				227333B111EBBA0800695FB4 /* Release */,
-				2274C8EC11FF841B00E5C351 /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
