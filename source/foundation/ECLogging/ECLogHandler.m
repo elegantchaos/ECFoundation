@@ -8,13 +8,13 @@
 // --------------------------------------------------------------------------
 
 #import "ECLogHandler.h"
-
+#import "ECAssertion.h"
 
 @implementation ECLogHandler
 
 #pragma mark - Properties
 
-ECPropertySynthesize(name);
+@synthesize name;
 
 #pragma mark - Lifecycle
 
@@ -22,8 +22,9 @@ ECPropertySynthesize(name);
 //! Clean up.
 // --------------------------------------------------------------------------
 
-- (void)dealloc {
-    ECPropertyDealloc(name);
+- (void)dealloc 
+{
+    [name release];
     
     [super dealloc];
 }

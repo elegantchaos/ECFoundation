@@ -8,11 +8,10 @@
 // --------------------------------------------------------------------------
 
 @class ECLogChannel;
-@interface ECLogHandler : NSObject 
 
-@property (nonatomic, retain) NSString* name;
+@interface ECDebugChannelViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
+@property( retain, nonatomic) ECLogChannel* channel;
+@property( retain, nonatomic) NSArray* handlers;
 
 @end

@@ -12,7 +12,7 @@
 #import "ECLogging.h"
 #import "ECLogManager.h"
 
-#import "NSString+ECUtilities.h"
+#import "NSString+ECLogging.h"
 
 static NSString *const kSuffixToStrip = @"Channel";
 
@@ -25,10 +25,10 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 @implementation ECLogChannel
 
-ECPropertySynthesize(enabled);
-ECPropertySynthesize(setup);
-ECPropertySynthesize(name);
-ECPropertySynthesize(handlers);
+@synthesize enabled;
+@synthesize setup;
+@synthesize name;
+@synthesize handlers;
 
 #pragma mark - Lifecycle
 
@@ -36,11 +36,11 @@ ECPropertySynthesize(handlers);
 //! Initialse a channel.
 // --------------------------------------------------------------------------
 
-- (id) initWithName:(NSString*)name
+- (id) initWithName:(NSString*)nameIn
 {
 	if ((self = [super init]) != nil)
 	{
-		self.name = name;
+		self.name = nameIn;
         self.handlers = [NSMutableSet set];
 	}
 	
@@ -53,8 +53,8 @@ ECPropertySynthesize(handlers);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(name);
-	ECPropertyDealloc(handlers);
+	[name release];
+	[handlers release];
     
 	[super dealloc];
 }

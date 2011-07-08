@@ -48,6 +48,8 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 
 #define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { logToChannel(c, __VA_ARGS__); } } while (0)
 
+#define ECLogIf(test, channel, ...) do { if (test) { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { logToChannel(c, __VA_ARGS__); } } } while (0)
+
 #define ECGetChannel(channel) getChannel##channel()
 
 #define ECEnableChannel(channel) enableChannel(getChannel##channel())
@@ -59,11 +61,13 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 #if EC_DEBUG
 
 #define ECDebug ECLog
+#define ECDebugIf ECLogIf
 #define ECDefineDebugChannel ECDefineLogChannel
 
 #else
 
 #define ECDebug(...) 
+#define ECDebugIf(...)
 #define ECDefineDebugChannel(...)
 
 #endif

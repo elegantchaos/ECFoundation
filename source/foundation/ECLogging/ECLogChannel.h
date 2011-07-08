@@ -12,21 +12,15 @@
 @class ECLogHandler;
 
 @interface ECLogChannel : NSObject
-{
-	ECPropertyVariable(enabled, BOOL);
-	ECPropertyVariable(setup, BOOL);
-	ECPropertyVariable(name, NSString*);
-    ECPropertyVariable(handlers, NSMutableSet*);
-}
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(enabled, BOOL);
-ECPropertyAssigned(setup, BOOL);
-ECPropertyRetained(name, NSString*);
-ECPropertyRetained(handlers, NSMutableSet*);
+@property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, assign) BOOL setup;
+@property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSMutableSet* handlers;
 
 // --------------------------------------------------------------------------
 // Public Methods

@@ -7,12 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECLogChannel;
-@interface ECLogHandler : NSObject 
-
-@property (nonatomic, retain) NSString* name;
-
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
+@interface ECDebugViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
+{
+}
 
 @end

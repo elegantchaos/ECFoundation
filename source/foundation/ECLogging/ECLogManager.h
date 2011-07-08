@@ -17,20 +17,14 @@
 // --------------------------------------------------------------------------
 
 @interface ECLogManager : NSObject
-{
-	ECPropertyVariable(channels, NSMutableDictionary*);
-	ECPropertyVariable(handlers, NSMutableDictionary*);
-	ECPropertyVariable(settings, NSMutableDictionary*);
-    ECPropertyVariable(defaultHandler, ECLogHandler*);
-}
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(channels, NSMutableDictionary*);
-ECPropertyRetained(handlers, NSMutableDictionary*);
-ECPropertyRetained(defaultHandler, ECLogHandler*);
+@property (nonatomic, retain) NSMutableDictionary* channels;
+@property (nonatomic, retain) NSMutableDictionary* handlers;
+@property (nonatomic, retain) ECLogHandler* defaultHandler;
 
 // --------------------------------------------------------------------------
 // Public Methods

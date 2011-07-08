@@ -27,7 +27,7 @@
 // Private Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(settings, NSMutableDictionary*);
+@property (nonatomic, retain) NSMutableDictionary* settings;
 
 // --------------------------------------------------------------------------
 // Private Methods
@@ -60,10 +60,10 @@ NSString *const kHandlersSetting = @"Handlers";
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(channels);
-ECPropertySynthesize(handlers);
-ECPropertySynthesize(settings);
-ECPropertySynthesize(defaultHandler);
+@synthesize channels;
+@synthesize handlers;
+@synthesize settings;
+@synthesize defaultHandler;
 
 // --------------------------------------------------------------------------
 // Globals
@@ -150,8 +150,8 @@ static ECLogManager* gSharedInstance = nil;
     if (self.settings)
     {
         NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
-	if (channelSettings)
-	{
+        if (channelSettings)
+        {
             channel.enabled = [[channelSettings objectForKey: kEnabledSetting] boolValue];
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
             
@@ -160,7 +160,7 @@ static ECLogManager* gSharedInstance = nil;
             {
                 ECLogHandler* handler = [self.handlers objectForKey:handlerName];
                 if (handler)
-		{
+                {
                     LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
                     [channel.handlers addObject: handler];
                 }
@@ -226,7 +226,7 @@ static ECLogManager* gSharedInstance = nil;
 
 - (void) dealloc
 {
-	ECPropertyDealloc(channels);
+	[channels release];
 	
 	[super dealloc];
 }
@@ -266,14 +266,14 @@ static ECLogManager* gSharedInstance = nil;
 {
     LogManagerLog(@"log manager loading settings");
 
-    NSDictionary* settings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
+    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
 
-    for (NSString* channel in [settings allKeys])
+    for (NSString* channel in [loadedSettings allKeys])
     {
         [self registerChannelWithName:channel];
     }
          
-    self.settings = [[settings mutableCopy] autorelease];
+    self.settings = [[loadedSettings mutableCopy] autorelease];
 }
 
 // --------------------------------------------------------------------------
@@ -287,9 +287,9 @@ static ECLogManager* gSharedInstance = nil;
 	NSMutableDictionary* allSettings = [[NSMutableDictionary alloc] init];
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
-        NSSet* handlers = channel.handlers;
+        NSSet* channelHandlers = channel.handlers;
         NSMutableArray* handlerNames = [NSMutableArray arrayWithCapacity:[channel.handlers count]];
-        for (ECLogHandler* handler in handlers)
+        for (ECLogHandler* handler in channelHandlers)
 	{
             [handlerNames addObject:handler.name];
         }
@@ -354,8 +354,8 @@ static ECLogManager* gSharedInstance = nil;
 
 - (NSArray*)channelsSortedByName
 {
-    NSArray* channels = [self.channels allValues];
-    NSArray* sorted = [channels sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    NSArray* channelObjects = [self.channels allValues];
+    NSArray* sorted = [channelObjects sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     
     return sorted;
 }
@@ -366,8 +366,8 @@ static ECLogManager* gSharedInstance = nil;
 
 - (NSArray*)handlersSortedByName
 {
-    NSArray* handlers = [self.handlers allValues];
-    NSArray* sorted = [handlers sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    NSArray* handlerObjects = [self.handlers allValues];
+    NSArray* sorted = [handlerObjects sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     
     return sorted;
 }

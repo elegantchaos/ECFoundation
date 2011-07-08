@@ -215,6 +215,24 @@
 		229D80C4125A971F00E03D5A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 229D80A0125A960D00E03D5A /* CLLocation+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105201347867E007064CE /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B105221347867E007064CE /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */; };
+		22B1272013C785400022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271713C785400022CC5B /* ECAssertion.h */; };
+		22B1272113C785400022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271713C785400022CC5B /* ECAssertion.h */; };
+		22B1272213C785400022CC5B /* ECDebugChannelsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271813C785400022CC5B /* ECDebugChannelsViewController.h */; };
+		22B1272313C785400022CC5B /* ECDebugChannelsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271813C785400022CC5B /* ECDebugChannelsViewController.h */; };
+		22B1272413C785400022CC5B /* ECDebugChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271913C785400022CC5B /* ECDebugChannelsViewController.m */; };
+		22B1272513C785400022CC5B /* ECDebugChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271913C785400022CC5B /* ECDebugChannelsViewController.m */; };
+		22B1272613C785400022CC5B /* ECDebugChannelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271A13C785400022CC5B /* ECDebugChannelViewController.h */; };
+		22B1272713C785400022CC5B /* ECDebugChannelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271A13C785400022CC5B /* ECDebugChannelViewController.h */; };
+		22B1272813C785400022CC5B /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271B13C785400022CC5B /* ECDebugChannelViewController.m */; };
+		22B1272913C785400022CC5B /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271B13C785400022CC5B /* ECDebugChannelViewController.m */; };
+		22B1272A13C785400022CC5B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271C13C785400022CC5B /* ECDebugViewController.h */; };
+		22B1272B13C785400022CC5B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271C13C785400022CC5B /* ECDebugViewController.h */; };
+		22B1272C13C785400022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271D13C785400022CC5B /* ECDebugViewController.m */; };
+		22B1272D13C785400022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271D13C785400022CC5B /* ECDebugViewController.m */; };
+		22B1272E13C785400022CC5B /* NSString+ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271E13C785400022CC5B /* NSString+ECLogging.h */; };
+		22B1272F13C785400022CC5B /* NSString+ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1271E13C785400022CC5B /* NSString+ECLogging.h */; };
+		22B1273013C785400022CC5B /* NSString+ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271F13C785400022CC5B /* NSString+ECLogging.m */; };
+		22B1273113C785400022CC5B /* NSString+ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1271F13C785400022CC5B /* NSString+ECLogging.m */; };
 		22C76341132D8E500027CE22 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C76342132D8E500027CE22 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */; };
 		22EC409B13588DFE005C1F1A /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22639D6612A57DC100780869 /* NSData+ECUtilities.m */; };
@@ -376,6 +394,15 @@
 		229D80A1125A960D00E03D5A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
 		22B1051E1347867E007064CE /* CGGeometry+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECUtilities.h"; sourceTree = "<group>"; };
 		22B1051F1347867E007064CE /* CGGeometry+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECUtilities.m"; sourceTree = "<group>"; };
+		22B1271713C785400022CC5B /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
+		22B1271813C785400022CC5B /* ECDebugChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugChannelsViewController.h; sourceTree = "<group>"; };
+		22B1271913C785400022CC5B /* ECDebugChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelsViewController.m; sourceTree = "<group>"; };
+		22B1271A13C785400022CC5B /* ECDebugChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugChannelViewController.h; sourceTree = "<group>"; };
+		22B1271B13C785400022CC5B /* ECDebugChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelViewController.m; sourceTree = "<group>"; };
+		22B1271C13C785400022CC5B /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
+		22B1271D13C785400022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
+		22B1271E13C785400022CC5B /* NSString+ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECLogging.h"; sourceTree = "<group>"; };
+		22B1271F13C785400022CC5B /* NSString+ECLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECLogging.m"; sourceTree = "<group>"; };
 		22C7633F132D8E4F0027CE22 /* NSBundle+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECUtilities.h"; sourceTree = "<group>"; };
 		22C76340132D8E4F0027CE22 /* NSBundle+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECUtilities.m"; sourceTree = "<group>"; };
 		22EA44CD1212FB7C00EFDD11 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
@@ -532,6 +559,15 @@
 		2235883B1229B9E00083284E /* logging */ = {
 			isa = PBXGroup;
 			children = (
+				22B1271713C785400022CC5B /* ECAssertion.h */,
+				22B1271813C785400022CC5B /* ECDebugChannelsViewController.h */,
+				22B1271913C785400022CC5B /* ECDebugChannelsViewController.m */,
+				22B1271A13C785400022CC5B /* ECDebugChannelViewController.h */,
+				22B1271B13C785400022CC5B /* ECDebugChannelViewController.m */,
+				22B1271C13C785400022CC5B /* ECDebugViewController.h */,
+				22B1271D13C785400022CC5B /* ECDebugViewController.m */,
+				22B1271E13C785400022CC5B /* NSString+ECLogging.h */,
+				22B1271F13C785400022CC5B /* NSString+ECLogging.m */,
 				22308752133B7E030093868C /* ECErrorReporter.h */,
 				22308753133B7E030093868C /* ECErrorReporter.m */,
 				22672DBC1323139F00CD8BC7 /* handlers */,
@@ -830,6 +866,11 @@
 				22886F4A1357B9F800828B95 /* ECXMLElement.h in Headers */,
 				22886F4E1357B9F800828B95 /* ECXMLParser.h in Headers */,
 				22EC40A313589DD5005C1F1A /* ECReachability.h in Headers */,
+				22B1272113C785400022CC5B /* ECAssertion.h in Headers */,
+				22B1272313C785400022CC5B /* ECDebugChannelsViewController.h in Headers */,
+				22B1272713C785400022CC5B /* ECDebugChannelViewController.h in Headers */,
+				22B1272B13C785400022CC5B /* ECDebugViewController.h in Headers */,
+				22B1272F13C785400022CC5B /* NSString+ECLogging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +917,11 @@
 				22886F491357B9F800828B95 /* ECXMLElement.h in Headers */,
 				22886F4D1357B9F800828B95 /* ECXMLParser.h in Headers */,
 				22EC40A213589DD5005C1F1A /* ECReachability.h in Headers */,
+				22B1272013C785400022CC5B /* ECAssertion.h in Headers */,
+				22B1272213C785400022CC5B /* ECDebugChannelsViewController.h in Headers */,
+				22B1272613C785400022CC5B /* ECDebugChannelViewController.h in Headers */,
+				22B1272A13C785400022CC5B /* ECDebugViewController.h in Headers */,
+				22B1272E13C785400022CC5B /* NSString+ECLogging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,6 +1139,10 @@
 				22886F501357B9F800828B95 /* ECXMLParser.m in Sources */,
 				22EC409B13588DFE005C1F1A /* NSData+ECUtilities.m in Sources */,
 				22EC40A513589DD5005C1F1A /* ECReachability.m in Sources */,
+				22B1272513C785400022CC5B /* ECDebugChannelsViewController.m in Sources */,
+				22B1272913C785400022CC5B /* ECDebugChannelViewController.m in Sources */,
+				22B1272D13C785400022CC5B /* ECDebugViewController.m in Sources */,
+				22B1273113C785400022CC5B /* NSString+ECLogging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,6 +1250,10 @@
 				22886F4B1357B9F800828B95 /* ECXMLElement.m in Sources */,
 				22886F4F1357B9F800828B95 /* ECXMLParser.m in Sources */,
 				22EC40A413589DD5005C1F1A /* ECReachability.m in Sources */,
+				22B1272413C785400022CC5B /* ECDebugChannelsViewController.m in Sources */,
+				22B1272813C785400022CC5B /* ECDebugChannelViewController.m in Sources */,
+				22B1272C13C785400022CC5B /* ECDebugViewController.m in Sources */,
+				22B1273013C785400022CC5B /* NSString+ECLogging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
