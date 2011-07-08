@@ -52,7 +52,7 @@
 
     self.testArray = [NSArray arrayWithObjects:self.test1, self.test2, nil];
     
-    self.testCache = [[ECDictionaryBackedObjectCache alloc] initWithClass:[TestDictionaryBackedObject class]];
+    self.testCache = [[[ECDictionaryBackedObjectCache alloc] initWithClass:[TestDictionaryBackedObject class]] autorelease];
 }
 
 // --------------------------------------------------------------------------
