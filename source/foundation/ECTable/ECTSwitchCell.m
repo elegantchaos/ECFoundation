@@ -14,6 +14,8 @@
 
 @property (nonatomic, retain) UISwitch* switchControl;
 
+- (IBAction)switched:(id)sender;
+
 @end
 
 @implementation ECTSwitchCell

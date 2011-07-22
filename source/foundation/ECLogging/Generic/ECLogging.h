@@ -24,11 +24,20 @@ typedef void ECLogChannel;
 
 // These routines are used in some of the macros, and are generally not intended for public use.
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 extern void enableChannel(ECLogChannel* channel);
 extern void disableChannel(ECLogChannel* channel);
 extern BOOL channelEnabled(ECLogChannel* channel);
 extern ECLogChannel* registerChannel(const char* name);
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
+
+#ifdef __cplusplus
+}
+#endif
 
 #pragma mark - Channel Declaration Macros
 
@@ -56,6 +65,8 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 
 #define ECDisableChannel(channel) disableChannel(getChannel##channel())
 
+#define ECChannelEnabled(channel) channelEnabled(getChannel##channel())
+
 #pragma mark - Debug Only Macros
 
 #if EC_DEBUG
@@ -63,11 +74,13 @@ extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 #define ECDebug ECLog
 #define ECDebugIf ECLogIf
 #define ECDefineDebugChannel ECDefineLogChannel
+#define ECDebugChannelEnabled ECChannelEnabled
 
 #else
 
 #define ECDebug(...) 
 #define ECDebugIf(...)
 #define ECDefineDebugChannel(...)
+#define ECDebugChannelEnabled(channel) (false)
 
 #endif

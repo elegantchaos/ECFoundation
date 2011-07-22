@@ -139,4 +139,70 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 	return [self formattedRelativeWithDayTo: nil];
 }
 
+- (DayOffset)dayOffsetFrom:(NSDate*)date
+{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* myComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
+    NSDateComponents* otherComponents = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:date];
+    
+    DayOffset result;
+    
+    if (myComponents.year < otherComponents.year)
+    {
+        result = EarlierDay;
+    }
+    else if (myComponents.year > otherComponents.year)
+    {
+        result = LaterDay;
+    }
+    else
+    {
+        if (myComponents.month < otherComponents.month)
+        {
+            result = EarlierDay;
+        }
+        else if (myComponents.month > otherComponents.month)
+        {
+            result = LaterDay;
+        }
+        else
+        {
+            if (myComponents.day < otherComponents.day)
+            {
+                result = EarlierDay;
+            }
+            else if (myComponents.day > otherComponents.day)
+            {
+                result = LaterDay;
+            }
+            else 
+            {
+                result = SameDay;
+            }
+        }
+    }
+    
+    return result;
+}
+
+- (BOOL)isEarlierDayThan:(NSDate*)date
+{
+    return [self dayOffsetFrom:date] == EarlierDay;
+}
+
+- (BOOL)isSameDayAs:(NSDate*)date
+{
+    return [self dayOffsetFrom:date] == SameDay;
+}
+
+- (BOOL)isLaterDayThan:(NSDate*)date
+{
+    return [self dayOffsetFrom:date] == LaterDay;
+}
+
+- (BOOL)isToday
+{
+    return [self isSameDayAs:[NSDate date]];
+}
+
 @end

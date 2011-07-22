@@ -11,6 +11,12 @@
 
 @interface NSDate(ECUtilities)
 
+typedef enum {
+    EarlierDay = -1,
+    SameDay = 0,
+    LaterDay = 1
+} DayOffset;
+
 + (NSString *) formattedRelativeToInterval: (NSTimeInterval) interval;
 
 - (NSString *) formattedRelativeTo: (NSDate*) date;
@@ -18,5 +24,11 @@
 
 - (NSString*) formattedRelativeWithDayTo: (NSDate*) date;
 - (NSString *) formattedRelativeWithDay;
+
+- (DayOffset)dayOffsetFrom:(NSDate*)date;
+- (BOOL)isEarlierDayThan:(NSDate*)date;
+- (BOOL)isSameDayAs:(NSDate*)date;
+- (BOOL)isLaterDayThan:(NSDate*)date;
+- (BOOL)isToday;
 
 @end

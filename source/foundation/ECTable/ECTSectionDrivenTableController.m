@@ -30,6 +30,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 #pragma mark - Properties
 
 @synthesize editable;
+@synthesize navigator;
 @synthesize sections;
 @synthesize representedObject;
 
@@ -83,7 +84,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 - (ECTSection*)sectionForIndexPath:(NSIndexPath*)indexPath
 {
     ECAssertNonNil(indexPath);
-    ECAssert(indexPath.section < [self.sections count]);
+    ECAssert((NSUInteger) indexPath.section < [self.sections count]);
     
     return [self.sections objectAtIndex:indexPath.section];
 }
@@ -108,9 +109,22 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
             [(id<ECTSectionDrivenTableDisclosureView>) view setupForBinding:binding];
         }
         
+        UINavigationController* navigation = self.navigator; // on iOS 4, we don't have child view controllers, so the navigation controller sometimes has to be set explicitly
+        if (!navigation)
+        {
+            navigation = self.navigationController; // we can infer the navigation controller automatically if we're on it, or (iOS 5 only) a child of a controller on it
+        }
+        
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        [self.navigationController pushViewController:view animated:YES];
-        ECDebug(ECTSectionDrivenTableControllerChannel, @"pushed %@ into navigation stack for %@", view, self.navigationController);
+        if (navigation)
+        {
+            [navigation pushViewController:view animated:YES];
+            ECDebug(ECTSectionDrivenTableControllerChannel, @"pushed %@ into navigation stack for %@", view, self.navigationController);
+        }
+        else
+        {
+            ECDebug(ECTSectionDrivenTableControllerChannel, @"couldn't get navigation controller - is the navigator property set?");
+        }
     }
 }
 
@@ -146,10 +160,22 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     return [section titleForFooterInSection];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ECTSection* section = [self sectionForIndexPath:indexPath];
+    return [section heightForRowAtIndexPath:indexPath];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ECTSection* section = [self sectionForIndexPath:indexPath];
     return [section cellForRowAtIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ECTSection* section = [self sectionForIndexPath:indexPath];
+    return [section willDisplayCell:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

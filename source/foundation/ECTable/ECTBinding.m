@@ -136,6 +136,11 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return [[[self.cellClass alloc] initWithBinding:self section:section reuseIdentifier:identifier] autorelease];
 }
 
+- (CGFloat)heightForSection:(ECTSection*)section
+{
+    return [self.cellClass heightForBinding:self section:section];
+}
+
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail
 {
     return detail ? self.detailDisclosureClass : self.disclosureClass;

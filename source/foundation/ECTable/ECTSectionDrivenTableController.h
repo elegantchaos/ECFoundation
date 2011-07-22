@@ -30,6 +30,7 @@
 
 @property (nonatomic, retain, readonly) NSMutableArray* sections;
 @property (nonatomic, retain) ECTBinding* representedObject;
+@property (nonatomic, assign) UINavigationController* navigator;
 
 - (void)clearSections;
 - (void)addSection:(ECTSection*)section;

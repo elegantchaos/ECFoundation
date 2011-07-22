@@ -38,6 +38,7 @@
 - (NSString*)identifierForSection:(ECTSection*)section;
 - (id)valueForSection:(ECTSection*)section;
 - (id)cellForSection:(ECTSection*)section;
+- (CGFloat)heightForSection:(ECTSection*)section;
 - (NSString*)disclosureTitleForSection:(ECTSection*)section;
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail;
 - (NSString*)labelForSection:(ECTSection*)section;

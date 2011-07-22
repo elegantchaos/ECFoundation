@@ -33,6 +33,7 @@ extern NSString *const ECTDisclosureTitleKey;
 @property (nonatomic, assign) Class cellClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
+@property (nonatomic, assign) BOOL variableRowHeight;
 @property (nonatomic, assign) ECTSectionDrivenTableController* table;
 @property (nonatomic, retain) NSArray* content;
 
@@ -48,6 +49,7 @@ extern NSString *const ECTDisclosureTitleKey;
 - (NSString *)titleForHeaderInSection;
 - (NSString *)titleForFooterInSection;
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)willDisplayCell:(NSIndexPath *)indexPath;
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail;
 - (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail;
@@ -57,12 +59,16 @@ extern NSString *const ECTDisclosureTitleKey;
 - (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath;
 - (void)moveRowFromSection:(ECTSection*)section atIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath ;
 - (void)commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 @protocol ECTSectionDrivenTableCell <NSObject>
++ (CGFloat)heightForBinding:(ECTBinding*)binding section:(ECTSection*)section;
+
 - (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
+- (void)willDisplayForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (BOOL)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;

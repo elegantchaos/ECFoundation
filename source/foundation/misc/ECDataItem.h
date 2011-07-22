@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECCommonKeys.h"
+#import "ECProperties.h"
 
 @interface ECDataItem : NSObject 
 {

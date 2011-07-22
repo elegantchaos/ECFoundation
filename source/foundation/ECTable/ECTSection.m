@@ -39,6 +39,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize disclosureClass;
 @synthesize source;
 @synthesize table;
+@synthesize variableRowHeight;
 
 #pragma mark - Constants
 
@@ -141,7 +142,7 @@ NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
 {
     id result;
     
-    if (self.addCell && (indexPath.row == [self.content count]))
+    if (self.addCell && ((NSUInteger) indexPath.row == [self.content count]))
     {
         result = self.addCell;
     }
@@ -174,6 +175,22 @@ NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
     return self.footer;
 }
 
+- (void)willDisplayCell:(NSIndexPath *)indexPath
+{
+    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
+    
+    NSString* identifier = [binding identifierForSection:self];
+    
+    UITableViewCell<ECTSectionDrivenTableCell>* cell = [[self tableView] dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) 
+    {
+        cell = [binding cellForSection:self];
+    }
+    
+    [cell willDisplayForBinding:binding section:self];
+}
+
+
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
@@ -191,6 +208,18 @@ NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
     return cell;
 }
 
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat result = self.tableView.rowHeight;
+    
+    if (self.variableRowHeight)
+    {
+        ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
+        result = [binding heightForSection:self];
+    }
+    
+    return result;
+}
 
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {

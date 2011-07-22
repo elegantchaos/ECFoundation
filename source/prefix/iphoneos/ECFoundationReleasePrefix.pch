@@ -8,4 +8,4 @@
 // --------------------------------------------------------------------------
 
 #import "ECFoundationSharedPrefix.pch"
-#import "ECCoreReleasePrefix.pch"
+#import "../ECCoreReleasePrefix.pch"

@@ -5,6 +5,8 @@
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
+#import "ECProperties.h"
+
 @class ECXMLElement;
 
 

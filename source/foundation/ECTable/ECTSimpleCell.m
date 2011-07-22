@@ -69,6 +69,11 @@
     self.representedObject = binding;
 }
 
+- (void)willDisplayForBinding:(ECTBinding *)binding section:(ECTSection *)section
+{
+    
+}
+
 - (BOOL)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection *)section
 {
     return NO;
@@ -82,6 +87,11 @@
 - (BOOL)canMoveInSection:(ECTSection*)section
 {
     return self.canMove;
+}
+
++ (CGFloat)heightForBinding:(ECTBinding*)binding section:(ECTSection*)section
+{
+    return section.tableView.rowHeight;
 }
 
 @end
