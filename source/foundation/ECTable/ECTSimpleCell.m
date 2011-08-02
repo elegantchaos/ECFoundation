@@ -60,12 +60,14 @@
     self.canMove = [binding canMoveInSection:section];
     self.canDelete = [binding canDeleteInSection:section];
     
+    self.selectionStyle = binding.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
     if (![label isKindOfClass:[NSString class]])
     {
         label = [label description];
     }
     
     self.textLabel.text = label;
+    self.textLabel.enabled = binding.enabled;
     self.representedObject = binding;
 }
 
@@ -74,9 +76,9 @@
     
 }
 
-- (BOOL)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection *)section
+- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection *)section
 {
-    return NO;
+    return SelectIfSelectable;
 }
 
 - (BOOL)canDeleteInSection:(ECTSection*)section

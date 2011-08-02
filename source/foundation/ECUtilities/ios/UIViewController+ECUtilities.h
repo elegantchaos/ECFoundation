@@ -7,13 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTSimpleCell.h"
+@interface UIViewController(ECUtilities)
 
-// --------------------------------------------------------------------------
-//! Switch based cell conforming to the ECTSectionDrivenTableCell protocol.
-// --------------------------------------------------------------------------
-
-@interface ECTSwitchCell : ECTSimpleCell
+- (BOOL) willGoAway;
 
 @end
-

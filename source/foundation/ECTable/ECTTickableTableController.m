@@ -47,12 +47,12 @@ ECDefineDebugChannel(ECTTickableTableControllerChannel);
 - (BOOL)isSelectedForCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding
 {
     id currentValue = self.representedObject.objectValue;
-    return currentValue == binding.object;
+    return [currentValue isEqual:binding.object];
 }
 
 - (void)selectCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding
 {
-    ECDebug(ECTTickableTableControllerChannel, @"cell selected");
+    ECDebug(ECTTickableTableControllerChannel, @"cell selected %@ %@", binding, binding.object);
     self.representedObject.objectValue = binding.object;
     [section reloadData];
 }

@@ -1,19 +1,20 @@
 // --------------------------------------------------------------------------
-//! @author Sam Deane
+//! @author sam
 //! @date 12/04/2011
+//
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTSimpleCell.h"
+#import <Availability.h>
 
-// --------------------------------------------------------------------------
-//! Switch based cell conforming to the ECTSectionDrivenTableCell protocol.
-// --------------------------------------------------------------------------
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
 
-@interface ECTSwitchCell : ECTSimpleCell
-
-@end
-
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif

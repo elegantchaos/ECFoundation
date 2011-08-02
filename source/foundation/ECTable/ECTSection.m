@@ -31,6 +31,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize content;
 @synthesize canDelete;
 @synthesize canMove;
+@synthesize canSelect;
 @synthesize cellIdentifier;
 @synthesize footer;
 @synthesize header;
@@ -43,11 +44,14 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 #pragma mark - Constants
 
+NSString *const ECTActionKey = @"actionName";
 NSString *const ECTCellClassKey = @"cellClass";
 NSString *const ECTCanDeleteKey = @"canDelete";
 NSString *const ECTCanMoveKey = @"canMove";
 NSString *const ECTDisclosureClassKey = @"disclosureClass";
 NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
+NSString *const ECTEnabledKey = @"enabled";
+NSString *const ECTTargetKey = @"target";
 
 #pragma mark - Object lifecycle
 
@@ -259,8 +263,13 @@ NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
     if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
     {
         ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        BOOL keepSelected = [(id<ECTSectionDrivenTableCell>)cell didSelectWithBinding:binding section:self];
-        if (!keepSelected)
+        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelectWithBinding:binding section:self];
+        BOOL keepSelected = (selectionMode == SelectAlways) || ((selectionMode == SelectIfSelectable) && self.canSelect);
+        if (keepSelected)
+        {
+            // TODO update selection binding here so that something knows what the selection is?
+        }
+        else
         {
             [[self tableView] deselectRowAtIndexPath:indexPath animated:YES];
         }

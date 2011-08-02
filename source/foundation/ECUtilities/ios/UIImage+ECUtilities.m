@@ -96,7 +96,7 @@
 {
     CGFloat horizontalRatio = bounds.width / self.size.width;
     CGFloat verticalRatio = bounds.height / self.size.height;
-    CGFloat ratio;
+    CGFloat ratio=0.0f;
     
     switch (contentMode) {
         case UIViewContentModeScaleAspectFill:

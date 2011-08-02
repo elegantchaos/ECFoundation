@@ -42,13 +42,13 @@
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
-- (BOOL)didSelectWithBinding:(id)binding section:(ECTSection *)section
+- (SelectionMode)didSelectWithBinding:(id)binding section:(ECTSection *)section
 {
     // we've been clicked
     id<ECTTickSectionCellDelegate> delegate = [self selectionDelegateForSection:section binding:binding];
     [delegate selectCell:self section:section binding:binding];
 
-     return NO;
+     return SelectNever;
 }
 
 @end

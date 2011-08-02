@@ -24,6 +24,9 @@
 @property (nonatomic, assign) Class detailDisclosureClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
+@property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, assign) SEL action;
+@property (nonatomic, assign) id target;
 
 + (NSArray*)controllersWithObjects:(NSArray*)objects key:(NSString*)key properties:(NSDictionary*)properties;
 
@@ -46,4 +49,6 @@
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell;
 
+- (NSString*)actionName;
+- (void)setActionName:(NSString*)actionName;
 @end

@@ -7,13 +7,25 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTSimpleCell.h"
+#import "UIViewController+ECUtilities.h"
+
+
+@implementation UIViewController(ECUtilities)
 
 // --------------------------------------------------------------------------
-//! Switch based cell conforming to the ECTSectionDrivenTableCell protocol.
+//! Is this view going away?
+//! Returns NO if it's still in the navigation stack.
 // --------------------------------------------------------------------------
 
-@interface ECTSwitchCell : ECTSimpleCell
+- (BOOL)willGoAway
+{
+    BOOL result = YES;
+    if (self.navigationController)
+    {
+        result = ![self.navigationController.viewControllers containsObject:self];
+    }
+    
+    return result;
+}
 
 @end
-

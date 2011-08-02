@@ -19,4 +19,6 @@
 
 - (NSString*)sha1Digest;
 
++ (NSString*)stringWithOrdinal:(NSInteger)ordinal;
+
 @end

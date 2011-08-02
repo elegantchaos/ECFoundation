@@ -13,6 +13,24 @@
 
 @implementation NSString(ECUtilities)
 
+
++ (NSString*)stringWithOrdinal:(NSInteger)ordinal
+{
+    NSString* suffix;
+    if (((ordinal >= 4) && (ordinal <= 20)) || ((ordinal >= 24) && (ordinal <= 30)))
+    {
+        suffix = @"th";
+    }
+    else
+    {
+        NSString* suffixes[] = { @"st", @"nd", @"rd" };
+        suffix = suffixes[(ordinal % 10) - 1];
+    }
+    
+    NSString* result = [NSString stringWithFormat:@"%d%@", ordinal, suffix];
+    return result;
+}
+
 - (NSData*) splitWordsIntoInts
 {
 	NSArray* numbers = [self componentsSeparatedByString: @" "];

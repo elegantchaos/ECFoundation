@@ -180,17 +180,20 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator)
+    ECTSection* section = [self sectionForIndexPath:indexPath];
+    ECAssert([section tableView] == tableView);
+    ECTBinding* binding = [section bindingForRowAtIndexPath:indexPath];
+    if (binding.enabled)
     {
-        [self pushSubviewForTableView:tableView atIndexPath:indexPath detail:NO];
-    }
-    else
-    {
-        ECTSection* section = [self sectionForIndexPath:indexPath];
-        ECAssert([section tableView] == tableView);
-
-        [section didSelectRowAtIndexPath:indexPath];
+        UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator)
+        {
+            [self pushSubviewForTableView:tableView atIndexPath:indexPath detail:NO];
+        }
+        else
+        {
+            [section didSelectRowAtIndexPath:indexPath];
+        }
     }
 }
 

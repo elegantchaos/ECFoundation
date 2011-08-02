@@ -21,15 +21,18 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 #pragma mark - Properties
 
-@synthesize label;
-@synthesize object;
-@synthesize key;
+@synthesize action;
+@synthesize canDelete;
+@synthesize canMove;
 @synthesize cellClass;
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize disclosureTitle;
-@synthesize canDelete;
-@synthesize canMove;
+@synthesize enabled;
+@synthesize label;
+@synthesize object;
+@synthesize key;
+@synthesize target;
 
 #pragma mark - Object lifecycle
 
@@ -70,6 +73,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
         self.cellClass = [ECTSimpleCell class];
         self.object = objectIn;
         self.key = keyIn;
+        self.enabled = YES;
     }
     
     return self;
@@ -89,7 +93,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (NSString*)identifierForSection:(ECTSection*)section
 {
-    return NSStringFromClass([self class]);
+    return NSStringFromClass([self cellClass]);
 }
 
 - (id)valueForSection:(ECTSection*)section
@@ -98,7 +102,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     
     if (self.key)
     {
-        result = [self.object valueForKey:self.key];
+        result = [self.object valueForKeyPath:self.key];
     }
     else
     {
@@ -148,12 +152,22 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (id)objectValue
 {
-    return [self.object valueForKey:self.key];
+    id result;
+    if (self.key)
+    {
+        result = [self.object valueForKeyPath:self.key];
+    }
+    else
+    {
+        result = self.object;
+    }
+    
+    return result;
 }
 
 - (void)setObjectValue:(id)value
 {
-    [self.object setValue:value forKey:self.key];
+    [self.object setValue:value forKeyPath:self.key];
 }
 
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell
@@ -171,6 +185,16 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 - (BOOL)canMoveInSection:(ECTSection*)section
 {
     return self.canMove;
+}
+
+- (NSString*)actionName
+{
+    return NSStringFromSelector(self.action);
+}
+
+- (void)setActionName:(NSString*)actionName
+{
+    self.action = NSSelectorFromString(actionName);
 }
 
 @end

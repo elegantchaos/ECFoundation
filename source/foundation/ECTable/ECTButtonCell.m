@@ -7,26 +7,23 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTSwitchCell.h"
+#import "ECTButtonCell.h"
 #import "ECTBinding.h"
 
-@interface ECTSwitchCell()
+@interface ECTButtonCell()
 
-@property (nonatomic, retain) UISwitch* switchControl;
-
-- (IBAction)switched:(id)sender;
 
 @end
 
-@implementation ECTSwitchCell
+@implementation ECTButtonCell
 
 #pragma mark - Debug channels
 
-ECDefineDebugChannel(ECTSwitchSectionCellChannel);
+ECDefineDebugChannel(ECTButtonCellChannel);
 
 #pragma mark - Properties
 
-@synthesize switchControl;
+@synthesize buttonControl;
 
 #pragma mark - Object lifecycle
 
@@ -34,11 +31,12 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) != nil)
     {
-        UISwitch* view = [[UISwitch alloc] initWithFrame:CGRectZero];
-        [view addTarget:self action:@selector(switched:) forControlEvents:UIControlEventValueChanged];
-        self.accessoryView = view;
-        self.switchControl = view;
-        [view release];
+        UIButton* button = [UIButton buttonWithType:[self buttonType]];
+        [button addTarget:binding.target action:binding.action forControlEvents:UIControlEventTouchUpInside];
+        button.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
+        [self.contentView addSubview:button];
+        button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.buttonControl = button;
     }
     
     return self;
@@ -46,7 +44,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 - (void)dealloc
 {
-    [switchControl release];
+    [buttonControl release];
     
     [super dealloc];
 }
@@ -55,18 +53,17 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
 {
-    [super setupForBinding:binding section:section];
-    NSNumber* value = (NSNumber*)[binding valueForSection:section];
-    self.switchControl.on = [value boolValue];
+    self.representedObject = binding;
+    NSString* label = [binding labelForSection:section];
+    [self.buttonControl setTitle:label forState:UIControlStateNormal];
 }
 
-#pragma mark - Actions
+#pragma mark - Internal
 
-- (IBAction)switched:(id)sender
+- (UIButtonType)buttonType
 {
-    ECDebug(ECTSwitchSectionCellChannel, @"switch %@ to %d", self.switchControl, switchControl.on); 
-    
-    [self.representedObject didSetValue:[NSNumber numberWithBool:switchControl.on] forCell:self];
+    return UIButtonTypeRoundedRect;
 }
+
 
 @end

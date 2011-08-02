@@ -12,11 +12,21 @@
 @class ECTBinding;
 @class ECTSectionDrivenTableController;
 
+typedef enum
+{
+    SelectNever,
+    SelectAlways,
+    SelectIfSelectable
+} SelectionMode;
+
+extern NSString *const ECTActionKey;
 extern NSString *const ECTCellClassKey;
 extern NSString *const ECTDisclosureClassKey;
 extern NSString *const ECTCanMoveKey;
 extern NSString *const ECTCanDeleteKey;
 extern NSString *const ECTDisclosureTitleKey;
+extern NSString *const ECTEnabledKey;
+extern NSString *const ECTTargetKey;
 
 // --------------------------------------------------------------------------
 //! Controller for a section in a table.
@@ -33,6 +43,7 @@ extern NSString *const ECTDisclosureTitleKey;
 @property (nonatomic, assign) Class cellClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
+@property (nonatomic, assign) BOOL canSelect;
 @property (nonatomic, assign) BOOL variableRowHeight;
 @property (nonatomic, assign) ECTSectionDrivenTableController* table;
 @property (nonatomic, retain) NSArray* content;
@@ -69,7 +80,7 @@ extern NSString *const ECTDisclosureTitleKey;
 - (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (void)willDisplayForBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (BOOL)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
+- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;
 @end

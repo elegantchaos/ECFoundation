@@ -10,10 +10,14 @@
 #import "ECTSimpleCell.h"
 
 // --------------------------------------------------------------------------
-//! Switch based cell conforming to the ECTSectionDrivenTableCell protocol.
+//! Button based cell conforming to the ECTSectionDrivenTableCell protocol.
 // --------------------------------------------------------------------------
 
-@interface ECTSwitchCell : ECTSimpleCell
+@interface ECTButtonCell : ECTSimpleCell
+
+@property (nonatomic, retain) UIButton* buttonControl;
+
+- (UIButtonType)buttonType;
 
 @end
 
