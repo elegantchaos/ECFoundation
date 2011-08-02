@@ -10,7 +10,6 @@
 		226FB43C13E1EA7200BF258D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43B13E1EA7200BF258D /* UIKit.framework */; };
 		226FB43E13E1EA7200BF258D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43D13E1EA7200BF258D /* Foundation.framework */; };
 		226FB44013E1EA7200BF258D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43F13E1EA7200BF258D /* CoreGraphics.framework */; };
-		226FB47313E1EB0B00BF258D /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46113E1EB0B00BF258D /* info.plist */; };
 		226FB47413E1EB0B00BF258D /* ECLoggingSampleViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46213E1EB0B00BF258D /* ECLoggingSampleViewController_iPad.xib */; };
 		226FB47513E1EB0B00BF258D /* ECLoggingSampleViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46413E1EB0B00BF258D /* ECLoggingSampleViewController_iPhone.xib */; };
 		226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46613E1EB0B00BF258D /* InfoPlist.strings */; };
@@ -370,7 +369,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226FB47313E1EB0B00BF258D /* info.plist in Resources */,
 				226FB47413E1EB0B00BF258D /* ECLoggingSampleViewController_iPad.xib in Resources */,
 				226FB47513E1EB0B00BF258D /* ECLoggingSampleViewController_iPhone.xib in Resources */,
 				226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */,
@@ -452,7 +450,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -463,11 +461,11 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -478,15 +476,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,7 +495,6 @@
 		226FB45913E1EA7200BF258D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
 				HEADER_SEARCH_PATHS = "../../../source/prefix/$(PLATFORM_NAME)/";
@@ -510,7 +507,6 @@
 		226FB45A13E1EA7200BF258D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
 				HEADER_SEARCH_PATHS = "../../../source/prefix/$(PLATFORM_NAME)/";

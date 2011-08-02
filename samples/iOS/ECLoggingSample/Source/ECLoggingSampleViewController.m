@@ -21,6 +21,7 @@
 #pragma mark - Properties
 
 @synthesize debugController;
+@synthesize logView;
 
 - (void)dealloc 
 {

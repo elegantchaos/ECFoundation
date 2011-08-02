@@ -8,9 +8,12 @@
 
 #import "ECLogHandler.h"
 
+@class ECLogViewController;
+
 @interface ECLogViewHandler : ECLogHandler
 
 @property (nonatomic, retain) NSMutableArray* items;
+@property (nonatomic, retain) ECLogViewController* view;
 
 + (ECLogViewHandler*)sharedInstance;
 

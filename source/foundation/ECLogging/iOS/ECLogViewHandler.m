@@ -7,11 +7,14 @@
 //
 
 #import "ECLogViewHandler.h"
+#import "ECLogViewController.h"
 #import "ECLogViewHandlerItem.h"
+#import "ECLogManager.h"
 
 @implementation ECLogViewHandler
 
 @synthesize items;
+@synthesize view;
 
 // --------------------------------------------------------------------------
 //! Singleton instance.
@@ -23,9 +26,28 @@
     if (!gInstance)
     {
         gInstance = [[ECLogViewHandler alloc] init];
+        [[ECLogManager sharedInstance] registerHandler:gInstance];
     }
     
     return gInstance;
+}
+
+- (id)init 
+{
+    if ((self = [super init]) != nil) 
+    {
+        self.name = @"View";
+    }
+    
+    return self;
+}
+
+- (void)dealloc 
+{
+    [items release];
+    [view release];
+    
+    [super dealloc];
 }
 
 // --------------------------------------------------------------------------
@@ -48,6 +70,11 @@
     
     [itemList addObject:item];
     [item release];
+    
+    if (self.view)
+    {
+        [self.view.tableView reloadData];
+    }
 }
 
 @end

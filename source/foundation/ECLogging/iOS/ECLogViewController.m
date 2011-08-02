@@ -34,6 +34,9 @@
 
 - (void)viewDidLoad
 {
+    ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
+    lh.view = self;
+
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -52,16 +55,23 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
+    lh.view = self;
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
+    lh.view = nil;
+
     [super viewWillDisappear:animated];
 }
 
