@@ -55,7 +55,7 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 		[string appendString: [NSString stringWithFormat: @"%c%c", nibbleToHexChar(digit >> 4), nibbleToHexChar(digit & 0xF)]];
 	}
 	
-	return string;
+	return [string autorelease];
 }
 
 // --------------------------------------------------------------------------
