@@ -41,6 +41,9 @@
 		226FB4DC13E2902000BF258D /* UIColor+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB4C713E2902000BF258D /* UIColor+ECUtilities.m */; };
 		226FB4DD13E2902000BF258D /* UIImage+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB4C913E2902000BF258D /* UIImage+ECUtilities.m */; };
 		226FB4DE13E2902000BF258D /* UIViewController+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB4CB13E2902000BF258D /* UIViewController+ECUtilities.m */; };
+		22B8290913E8684D00BF47CC /* ECLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B8290813E8684D00BF47CC /* ECLogViewController.m */; };
+		22B8290D13E868DF00BF47CC /* ECLogViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B8290C13E868DF00BF47CC /* ECLogViewHandler.m */; };
+		22B8291013E869E400BF47CC /* ECLogViewHandlerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B8290F13E869E400BF47CC /* ECLogViewHandlerItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,12 @@
 		226FB4C913E2902000BF258D /* UIImage+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ECUtilities.m"; sourceTree = "<group>"; };
 		226FB4CA13E2902000BF258D /* UIViewController+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECUtilities.h"; sourceTree = "<group>"; };
 		226FB4CB13E2902000BF258D /* UIViewController+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECUtilities.m"; sourceTree = "<group>"; };
+		22B8290713E8684D00BF47CC /* ECLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewController.h; sourceTree = "<group>"; };
+		22B8290813E8684D00BF47CC /* ECLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewController.m; sourceTree = "<group>"; };
+		22B8290B13E868DF00BF47CC /* ECLogViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewHandler.h; sourceTree = "<group>"; };
+		22B8290C13E868DF00BF47CC /* ECLogViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandler.m; sourceTree = "<group>"; };
+		22B8290E13E869E400BF47CC /* ECLogViewHandlerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewHandlerItem.h; sourceTree = "<group>"; };
+		22B8290F13E869E400BF47CC /* ECLogViewHandlerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandlerItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +253,12 @@
 				226FB49913E28F2A00BF258D /* ECDebugChannelViewController.m */,
 				226FB49A13E28F2A00BF258D /* ECDebugViewController.h */,
 				226FB49B13E28F2A00BF258D /* ECDebugViewController.m */,
+				22B8290713E8684D00BF47CC /* ECLogViewController.h */,
+				22B8290813E8684D00BF47CC /* ECLogViewController.m */,
+				22B8290B13E868DF00BF47CC /* ECLogViewHandler.h */,
+				22B8290C13E868DF00BF47CC /* ECLogViewHandler.m */,
+				22B8290E13E869E400BF47CC /* ECLogViewHandlerItem.h */,
+				22B8290F13E869E400BF47CC /* ECLogViewHandlerItem.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -396,6 +411,9 @@
 				226FB4DC13E2902000BF258D /* UIColor+ECUtilities.m in Sources */,
 				226FB4DD13E2902000BF258D /* UIImage+ECUtilities.m in Sources */,
 				226FB4DE13E2902000BF258D /* UIViewController+ECUtilities.m in Sources */,
+				22B8290913E8684D00BF47CC /* ECLogViewController.m in Sources */,
+				22B8290D13E868DF00BF47CC /* ECLogViewHandler.m in Sources */,
+				22B8291013E869E400BF47CC /* ECLogViewHandlerItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
