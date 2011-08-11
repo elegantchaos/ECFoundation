@@ -38,7 +38,7 @@
 - (BOOL)createDirectoryAtURL:(NSURL *)url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error
 {
 	BOOL result = [self createDirectoryAtPath: [url path] withIntermediateDirectories: createIntermediates attributes: attributes error: error];
-    if (!result)
+    if (!result && error)
     {
         [ECErrorReporter reportError:*error message:@"failed to create directory at @%", url];
     }
