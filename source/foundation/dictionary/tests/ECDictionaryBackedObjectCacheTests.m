@@ -81,7 +81,7 @@
     ECTestAssertNotNil(object2, @"object valid");
     
     ECTestAssertTrue([object2.name isEqualToString:@"Tom"], @"name wrong");
-    ECTestAssertTrue([object2.text isEqualToString:@"Different Text"], @"text wrong");
+    ECTestAssertTrue([object2.text isEqualToString:@"Other Text"], @"text wrong");
     ECTestAssertTrue([object2.objectID isEqualToString:@"2"], @"ID wrong");
     
     
