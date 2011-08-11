@@ -12,4 +12,4 @@
 // GCC 4.2 Language
 // --------------------------------------------------------------------------
 
-OTHER_CFLAGS = -DNS_BLOCK_ASSERTIONS=1
+//OTHER_CFLAGS = -DNS_BLOCK_ASSERTIONS=1
