@@ -18,6 +18,13 @@
 @interface ECXMLParser : NSObject<NSXMLParserDelegate>
 {
 	ECXMLElement*			mCurrentElement;
+
+	ECPropertyVariable(indexKey, NSString*);
+	ECPropertyVariable(nameKey, NSString*);
+	ECPropertyVariable(valueKey, NSString*);
+	ECPropertyVariable(arrayElements, NSDictionary*);
+	ECPropertyVariable(rootElement, ECXMLElement*);
+
 }
 
 // --------------------------------------------------------------------------

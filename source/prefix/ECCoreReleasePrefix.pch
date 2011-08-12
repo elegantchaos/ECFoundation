@@ -11,8 +11,5 @@
 #define EC_CONFIGURATION_STRING @"Release"
 #define EC_CONFIGURATION_STRING_SHORT @"R"
 
-#define ECUnusedInDebug(v)
-#define ECUnusedInRelease(v) ECUnused(v)
-
 #import "ECCoreSharedPrefix.pch"
 

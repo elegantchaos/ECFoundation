@@ -18,6 +18,10 @@
 // --------------------------------------------------------------------------
 
 @interface ECDictionaryBackedObject : NSObject 
+{
+@private
+	NSMutableDictionary* data;
+}
 
 @property (nonatomic, retain) NSMutableDictionary* data;
 

@@ -12,6 +12,13 @@
 @class ECLogHandler;
 
 @interface ECLogChannel : NSObject
+{
+@private
+	BOOL enabled;
+	BOOL setup;
+	NSString* name;
+	NSMutableSet* handlers;
+}
 
 // --------------------------------------------------------------------------
 // Public Properties

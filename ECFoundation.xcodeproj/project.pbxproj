@@ -293,13 +293,6 @@
 			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
 			remoteInfo = "ECFoundation SenTest Mac";
 		};
-		22552C14134BA1F600B8894E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 225EC67111EBAA4800A97AEA;
-			remoteInfo = "ECFoundation Test Mac";
-		};
 		22552C18134BA20B00B8894E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -1133,7 +1126,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				22552C15134BA1F600B8894E /* PBXTargetDependency */,
 			);
 			name = "ECFoundation Mac";
 			productInstallPath = "$(HOME)/Library/Frameworks";
@@ -1423,11 +1415,6 @@
 			isa = PBXTargetDependency;
 			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
 			targetProxy = 22552BBE134B9DC400B8894E /* PBXContainerItemProxy */;
-		};
-		22552C15134BA1F600B8894E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 225EC67111EBAA4800A97AEA /* ECFoundation Test Mac */;
-			targetProxy = 22552C14134BA1F600B8894E /* PBXContainerItemProxy */;
 		};
 		22552C19134BA20B00B8894E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

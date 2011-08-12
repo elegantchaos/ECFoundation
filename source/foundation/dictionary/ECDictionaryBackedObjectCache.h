@@ -28,6 +28,11 @@
 // --------------------------------------------------------------------------
 
 @interface ECDictionaryBackedObjectCache : NSObject 
+{
+@private
+	Class class;
+	NSMutableDictionary* data;
+}
 
 - (id)initWithClass:(Class)class;
 
