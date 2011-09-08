@@ -15,9 +15,13 @@
 
 @interface ECTBinding : NSObject
 
+@property (nonatomic, retain) NSString* detail;
 @property (nonatomic, retain) NSString* label;
+@property (nonatomic, retain) NSString* detailKey;
 @property (nonatomic, retain) NSString* key;
 @property (nonatomic, retain) NSString* disclosureTitle;
+@property (nonatomic, retain) NSMutableDictionary* properties;
+
 @property (nonatomic, retain) id object;
 @property (nonatomic, assign) Class cellClass;
 @property (nonatomic, assign) Class disclosureClass;
@@ -45,10 +49,15 @@
 - (NSString*)disclosureTitleForSection:(ECTSection*)section;
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail;
 - (NSString*)labelForSection:(ECTSection*)section;
+- (NSString*)detailForSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell;
 
 - (NSString*)actionName;
 - (void)setActionName:(NSString*)actionName;
+
+- (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options;
+- (void)removeValueObserver:(id)observer;
+
 @end

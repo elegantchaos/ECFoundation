@@ -1,20 +1,22 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 05/07/2011
+//! @date 12/04/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+@interface NSArray(ECUtilities)
+
 // --------------------------------------------------------------------------
-//! UIScrollView with some extra properties
+// Public Properties
 // --------------------------------------------------------------------------
 
-@interface ECScrollView : UIScrollView
+// --------------------------------------------------------------------------
+// Public Methods
+// --------------------------------------------------------------------------
 
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) SEL action;
-@property (nonatomic, assign) id target;
+- (id)firstObject;
 
 @end

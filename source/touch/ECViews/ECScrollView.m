@@ -20,14 +20,26 @@ ECDefineDebugChannel(ECScrollViewChannel);
 
 #pragma mark - Properties
 
+@synthesize action;
 @synthesize swallowTouches;
+@synthesize target;
 
 -(void) touchesEnded: (NSSet *) touches withEvent: (UIEvent *) event 
 {	
-    if (!self.swallowTouches && !self.dragging)
+    if (!self.dragging)
     {
-		[self.nextResponder touchesEnded: touches withEvent:event]; 
-	}		
+        // drop the touchesEnded call through to the responder chain?
+        if (!self.swallowTouches)
+        {
+            [self.nextResponder touchesEnded: touches withEvent:event]; 
+        }		
+        
+        // perform custom action?
+        if (self.target && self.action)
+        {
+            [self.target performSelector:self.action withObject:event];
+        }
+    }
     
 	[super touchesEnded: touches withEvent: event];
 }
