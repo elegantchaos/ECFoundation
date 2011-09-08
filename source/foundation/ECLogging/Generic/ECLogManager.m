@@ -311,12 +311,19 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
-//! Log to all handlers
+//! Log to all valid handlers for a channel
 // --------------------------------------------------------------------------
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
 {
-	for (ECLogHandler* handler in channel.handlers)
+    // if no handlers specified, use them all
+    NSArray* handlersToUse = [channel.handlers allObjects];
+    if (!handlersToUse)
+    {
+        handlersToUse = [self.handlers allValues];
+    }
+    
+	for (ECLogHandler* handler in handlersToUse)
 	{
 		[handler logFromChannel: channel withFormat: format arguments: arguments];
 	}

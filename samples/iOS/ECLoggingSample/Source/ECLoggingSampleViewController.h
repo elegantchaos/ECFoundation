@@ -15,5 +15,6 @@
 @property (nonatomic, retain) IBOutlet ECLogViewController* logView;
 
 - (IBAction)tappedShowDebugView:(id)sender;
+- (IBAction)tappedTestOutput:(id)sender;
 
 @end

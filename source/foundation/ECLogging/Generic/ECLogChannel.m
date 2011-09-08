@@ -41,7 +41,6 @@ static NSString *const kSuffixToStrip = @"Channel";
 	if ((self = [super init]) != nil)
 	{
 		self.name = nameIn;
-        self.handlers = [NSMutableSet set];
 	}
 	
 	return self;
@@ -72,12 +71,6 @@ static NSString *const kSuffixToStrip = @"Channel";
     if (!self.enabled)
     {
         self.enabled = YES;
-        
-        if ([self.handlers count] == 0)
-        {
-            [self enableHandler: [ECLogManager sharedInstance].defaultHandler];
-        }
-        
         logToChannel(self, @"enabled channel");
     }
 }
@@ -103,6 +96,11 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 - (void) enableHandler: (ECLogHandler*) handler
 {
+    if (!self.handlers)
+    {
+        self.handlers = [NSMutableSet setWithCapacity:1];
+    }
+    
     [self.handlers addObject:handler];
     logToChannel(self, @"Enabled handler %@", handler.name);
 }
@@ -114,6 +112,12 @@ static NSString *const kSuffixToStrip = @"Channel";
 - (void) disableHandler: (ECLogHandler*) handler
 {
     logToChannel(self, @"Disabled handler %@", handler.name);
+    if (!self.handlers)
+    {
+        ECLogManager* lm = [ECLogManager sharedInstance];
+        self.handlers = [NSMutableSet setWithArray:[lm.handlers allValues]];
+    }
+
     [self.handlers removeObject:handler];
 }
 
@@ -123,7 +127,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 - (BOOL) isHandlerEnabled:( ECLogHandler*) handler
 {
-    return [self.handlers containsObject: handler];
+    return !self.handlers || [self.handlers containsObject: handler];
 }
 
 

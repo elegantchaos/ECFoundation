@@ -113,8 +113,8 @@
     // Configure the cell...
     ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
     ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.channel.name;
-    cell.detailTextLabel.text = item.message;
+    cell.textLabel.text = item.message;
+    cell.detailTextLabel.text = item.channel.name;
     
     return cell;
 }

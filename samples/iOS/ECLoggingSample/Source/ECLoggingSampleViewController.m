@@ -18,6 +18,10 @@
 
 @implementation ECLoggingSampleViewController
 
+#pragma mark - Channels
+
+ECDefineDebugChannel(LoggingSampleViewControllerChannel);
+
 #pragma mark - Properties
 
 @synthesize debugController;
@@ -84,6 +88,12 @@
 - (IBAction)tappedShowDebugView:(id)sender
 {
     [self.navigationController pushViewController:self.debugController animated:YES];
+}
+
+- (IBAction)tappedTestOutput:(id)sender
+{
+    ECDebug(LoggingSampleViewControllerChannel, @"some test output");
+    ECDebug(LoggingSampleViewControllerChannel, @"some more output");
 }
 
 @end
