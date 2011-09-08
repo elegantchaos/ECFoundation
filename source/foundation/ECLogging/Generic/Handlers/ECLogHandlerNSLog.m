@@ -31,7 +31,7 @@
 
 #pragma mark - Logging
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
 	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
 	NSLog(@"«%@» %@", channel.name, body);

@@ -12,7 +12,7 @@
 
 @property (nonatomic, retain) NSString* name;
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+- (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext*)context;
 - (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
 
 @end

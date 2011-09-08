@@ -144,15 +144,16 @@ NSString *const kSections[] = { @"Settings", @"Handlers" };
 {
     if (path.section == kSettingsSection)
     {
+        ECMakeContext();
         if (self.channel.enabled)
         {
-            logToChannel(self.channel, @"disabled channel");
+            logToChannel(self.channel, &context, @"disabled channel");
             self.channel.enabled = NO;
         }
         else
         {
             self.channel.enabled = YES;
-            logToChannel(self.channel, @"enabled channel");
+            logToChannel(self.channel, &context, @"enabled channel");
         }
     }
     else

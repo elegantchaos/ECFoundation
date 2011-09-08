@@ -136,18 +136,14 @@
     ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
     ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
     
-    CGSize constraint = CGSizeMake(tableView.frame.size.width, 10000.0);
-    CGSize messageSize = [item.message sizeWithFont:self.messageFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    CGSize contextSize = [item.channel.name sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-
     cell.textLabel.text = item.message;
     cell.textLabel.font = self.messageFont;
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.frame = CGRectMake(0, 0, messageSize.width, messageSize.height);
     
-    cell.detailTextLabel.text = item.channel.name;
+    cell.detailTextLabel.text = item.context;
     cell.detailTextLabel.font = self.contextFont;
-    cell.textLabel.frame = CGRectMake(0, messageSize.height, contextSize.width, contextSize.height);
+    cell.detailTextLabel.numberOfLines = 0;
+    //    cell.detailTextLabel.textAlignment = UITextAlignmentRight;
     
     return cell;
 }
@@ -159,49 +155,10 @@
 
     CGSize constraint = CGSizeMake(tableView.frame.size.width, 10000.0);
     CGSize messageSize = [item.message sizeWithFont:self.messageFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    CGSize contextSize = [item.channel.name sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contextSize = [item.context sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     
     return messageSize.height + contextSize.height;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
