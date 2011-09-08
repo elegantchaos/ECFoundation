@@ -11,14 +11,25 @@
 #import "ECLogViewHandlerItem.h"
 #import "ECLogChannel.h"
 
+@interface ECLogViewController()
+
+@property (nonatomic, retain) UIFont* messageFont;
+@property (nonatomic, retain) UIFont* contextFont;
+
+@end
+
 @implementation ECLogViewController
+
+@synthesize messageFont;
+@synthesize contextFont;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    
+    if ((self = [super initWithStyle:style]) != nil) 
+    {
     }
+    
     return self;
 }
 
@@ -30,6 +41,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc
+{
+    [messageFont release];
+    [contextFont release];
+    
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -38,6 +57,9 @@
     lh.view = self;
 
     [super viewDidLoad];
+
+    self.messageFont = [UIFont systemFontOfSize:14];
+    self.contextFont = [UIFont systemFontOfSize:10];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -113,10 +135,33 @@
     // Configure the cell...
     ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
     ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
+    
+    CGSize constraint = CGSizeMake(tableView.frame.size.width, 10000.0);
+    CGSize messageSize = [item.message sizeWithFont:self.messageFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contextSize = [item.channel.name sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+
     cell.textLabel.text = item.message;
+    cell.textLabel.font = self.messageFont;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.frame = CGRectMake(0, 0, messageSize.width, messageSize.height);
+    
     cell.detailTextLabel.text = item.channel.name;
+    cell.detailTextLabel.font = self.contextFont;
+    cell.textLabel.frame = CGRectMake(0, messageSize.height, contextSize.width, contextSize.height);
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
+    ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
+
+    CGSize constraint = CGSizeMake(tableView.frame.size.width, 10000.0);
+    CGSize messageSize = [item.message sizeWithFont:self.messageFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contextSize = [item.channel.name sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    
+    return messageSize.height + contextSize.height;
 }
 
 /*
