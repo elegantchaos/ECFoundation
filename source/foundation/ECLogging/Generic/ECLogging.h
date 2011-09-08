@@ -34,10 +34,10 @@ extern "C"
         const char* file;
         unsigned int line;
         const char* date;
-        
+        const char* function;
     } ECLogContext;
     
-    extern void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date);
+    extern void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date, const char* function);
     extern void enableChannel(ECLogChannel* channel);
     extern void disableChannel(ECLogChannel* channel);
     extern BOOL channelEnabled(ECLogChannel* channel);
@@ -64,7 +64,7 @@ extern "C"
 
 #pragma mark - Logging Macros
 
-#define ECMakeContext() ECLogContext context; makeContext(&context, __FILE__, __LINE__, __DATE__)
+#define ECMakeContext() ECLogContext context; makeContext(&context, __FILE__, __LINE__, __DATE__, __PRETTY_FUNCTION__)
 
 #define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { ECMakeContext(); logToChannel(c, &context, __VA_ARGS__); } } while (0)
 

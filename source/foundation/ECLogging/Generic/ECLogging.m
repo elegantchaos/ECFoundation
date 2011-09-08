@@ -14,11 +14,12 @@
 #import "ECLogChannel.h"
 #import "ECLogManager.h"
 
-void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date)
+void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date, const char* function)
 {
     context->file = file;
     context->line = line;
     context->date = date;
+    context->function = function;
 }
 
 // --------------------------------------------------------------------------

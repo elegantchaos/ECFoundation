@@ -69,7 +69,7 @@
     item.message = [[[NSString alloc] initWithFormat:format arguments:arguments] autorelease];
     
     NSString* file = [NSString stringWithCString:context->file encoding:NSUTF8StringEncoding];
-    item.context = [NSString stringWithFormat:@"%@ (%@, %d)", channel.name, [file lastPathComponent], context->line];
+    item.context = [NSString stringWithFormat:@"%@ (%@, %d)\n%s", channel.name, [file lastPathComponent], context->line, context->function];
     
     [itemList addObject:item];
     [item release];
