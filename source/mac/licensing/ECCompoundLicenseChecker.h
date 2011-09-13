@@ -15,7 +15,6 @@
 
 @property (nonatomic, retain) NSMutableArray* checkers;
 
-
 - (BOOL)            isValid;
 - (NSDictionary*)   info;
 - (NSString*)       user;
