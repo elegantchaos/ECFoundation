@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "SparklePreferences";
+CFBundleShortVersionString = "SparklePreferences version 1.0.0d1";
+CFBundleGetInfoString = "SparklePreferences version 1.0.0d1, Copyright (c) 2011 Elegant Chaos.";
+NSHumanReadableCopyright = "Copyright (c) 2011 Elegant Chaos.";
