@@ -25,13 +25,16 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 @synthesize canDelete;
 @synthesize canMove;
 @synthesize cellClass;
+@synthesize detail;
 @synthesize detailDisclosureClass;
+@synthesize detailKey;
 @synthesize disclosureClass;
 @synthesize disclosureTitle;
 @synthesize enabled;
 @synthesize label;
-@synthesize object;
 @synthesize key;
+@synthesize object;
+@synthesize properties;
 @synthesize target;
 
 #pragma mark - Object lifecycle
@@ -81,12 +84,32 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)dealloc
 {
+    [detail release];
+    [detailKey release];
     [disclosureTitle release];
     [label release];
     [object release];
+    [properties release];
     [key release];
     
     [super dealloc];
+}
+
+- (id)valueForUndefinedKey:(NSString *)undefinedKey
+{
+    return [self.properties objectForKey:undefinedKey];
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)undefinedKey
+{
+    if (!self.properties)
+    {
+        self.properties = [NSMutableDictionary dictionaryWithObject:value forKey:undefinedKey];
+    }
+    else
+    {
+        [self.properties setValue:value forKey:undefinedKey];
+    }
 }
 
 #pragma mark - ECSectionDrivenTableObject methods
@@ -123,6 +146,28 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
+- (NSString*)detailForSection:(ECTSection*)section
+{
+    // if we've got a fixed string, use it
+    NSString* result = self.detail;
+    if (!result)
+    {
+        // if we've got a key set, use that to look up a value on the object
+        if (self.detailKey)
+        {
+            result = [self.object valueForKeyPath:self.detailKey];
+        }
+    }
+    
+    // fall back to using the object value, as long as it's not already used for the label
+    if (!result && self.label)
+    {
+        result = [[self valueForSection:section] description];
+    }
+    
+    return result;
+}
+
 - (NSString*)disclosureTitleForSection:(ECTSection*)section
 {
     NSString* result = self.disclosureTitle;
@@ -145,9 +190,9 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return [self.cellClass heightForBinding:self section:section];
 }
 
-- (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail
+- (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)useDetail
 {
-    return detail ? self.detailDisclosureClass : self.disclosureClass;
+    return useDetail ? self.detailDisclosureClass : self.disclosureClass;
 }
 
 - (id)objectValue
@@ -195,6 +240,24 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 - (void)setActionName:(NSString*)actionName
 {
     self.action = NSSelectorFromString(actionName);
+}
+
+- (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options
+{
+    NSString* keyToObserve = self.key;
+    if (keyToObserve)
+    {
+        [self.object addObserver:observer forKeyPath:keyToObserve options:options context:self];
+    }
+}
+
+- (void)removeValueObserver:(id)observer
+{
+    NSString* keyToObserve = self.key;
+    if (keyToObserve)
+    {
+        [self.object removeObserver:observer forKeyPath:keyToObserve];
+    }
 }
 
 @end

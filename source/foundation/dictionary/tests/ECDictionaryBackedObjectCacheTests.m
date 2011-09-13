@@ -61,10 +61,10 @@
 
 - (void) tearDown
 {
-    self.test1 = nil;
-    self.test2 = nil;
-    self.testArray = nil;
-    self.testCache = nil;
+	self.test1 = nil;
+	self.test2 = nil;
+	self.testArray = nil;
+	self.testCache = nil;
 }
 
 - (void)checkObject1:(TestDictionaryBackedObject*)object1

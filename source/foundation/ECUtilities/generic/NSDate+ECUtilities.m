@@ -139,6 +139,25 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 	return [self formattedRelativeWithDayTo: nil];
 }
 
+// --------------------------------------------------------------------------
+//! Return a date representing local midnight at the beginning of the given date.
+// --------------------------------------------------------------------------
+
+- (NSDate*)startOfDay
+{
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
+    NSDate* result = [calendar dateFromComponents:components];
+    
+    return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the relative position of one date from another in terms of days.
+//! Is it an earlier day, the same day, or a later day?
+//! Ignores time components.
+// --------------------------------------------------------------------------
+
 - (DayOffset)dayOffsetFrom:(NSDate*)date
 {
     NSCalendar* calendar = [NSCalendar currentCalendar];
@@ -203,6 +222,38 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 - (BOOL)isToday
 {
     return [self isSameDayAs:[NSDate date]];
+}
+
++ (NSDate*)dateWithTimeIntervalSinceStartOfToday:(NSTimeInterval)interval
+{
+    NSDate* today = [NSDate date];
+    NSDate* result = [today dateByAddingTimeIntervalSinceStartOfDay:interval];
+    
+    return result;
+}
+
+- (NSTimeInterval)timeIntervalSinceStartOfDay
+{
+    NSDate* startOfDay = [self startOfDay];
+    NSTimeInterval result = [self timeIntervalSinceDate:startOfDay];
+    
+    return result;
+}
+
+- (NSDate*)dateByAddingTimeIntervalSinceStartOfDay:(NSTimeInterval)interval
+{
+    NSDate* startOfDay = [self startOfDay];
+    NSDate* result = [startOfDay dateByAddingTimeInterval:interval];
+    
+    return result;
+}
+
+- (NSDate*)dateByChangingTimeToNow
+{
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceStartOfDay];
+    NSDate* result = [self dateByAddingTimeIntervalSinceStartOfDay:interval];
+    
+    return result;
 }
 
 @end

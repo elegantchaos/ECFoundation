@@ -16,6 +16,8 @@
 - (NSData*)splitWordsIntoInts;
 - (NSData*)splitWordsIntoFloats;
 - (NSString*)stringBySplittingMixedCaps;
++ (NSString*)stringByFormattingCount:(NSUInteger)count singularFormat:(NSString*)singularFormat pluralFormat:(NSString*)pluralFormat;
+
 + (NSString*)stringWithNewUUID;
 
 - (NSString*)sha1Digest;

@@ -14,6 +14,14 @@
 #import "ECLogChannel.h"
 #import "ECLogManager.h"
 
+void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date, const char* function)
+{
+    context->file = file;
+    context->line = line;
+    context->date = date;
+    context->function = function;
+}
+
 // --------------------------------------------------------------------------
 //! C style routine to enable a channel.
 // --------------------------------------------------------------------------
@@ -57,10 +65,10 @@ ECLogChannel* registerChannel(const char* name)
 //! C style routine to log to a channel.
 // --------------------------------------------------------------------------
 
-extern void	logToChannel(ECLogChannel* channel, NSString* format, ...)
+extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...)
 {
 	va_list args;
 	va_start(args, format);
-	[[ECLogManager sharedInstance] logFromChannel: channel withFormat:format arguments:args];
+	[[ECLogManager sharedInstance] logFromChannel: channel withFormat:format arguments:args context:context];
 	va_end(args);
 }

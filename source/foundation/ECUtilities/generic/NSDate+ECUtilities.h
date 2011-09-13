@@ -17,6 +17,8 @@ typedef enum {
     LaterDay = 1
 } DayOffset;
 
++ (NSDate*)dateWithTimeIntervalSinceStartOfToday:(NSTimeInterval)interval;
+
 + (NSString *) formattedRelativeToInterval: (NSTimeInterval) interval;
 
 - (NSString *) formattedRelativeTo: (NSDate*) date;
@@ -30,5 +32,10 @@ typedef enum {
 - (BOOL)isSameDayAs:(NSDate*)date;
 - (BOOL)isLaterDayThan:(NSDate*)date;
 - (BOOL)isToday;
+
+- (NSDate*)startOfDay;
+- (NSTimeInterval)timeIntervalSinceStartOfDay;
+- (NSDate*)dateByAddingTimeIntervalSinceStartOfDay:(NSTimeInterval)interval;
+- (NSDate*)dateByChangingTimeToNow;
 
 @end

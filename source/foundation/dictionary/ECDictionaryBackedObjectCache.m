@@ -88,7 +88,7 @@ NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionar
 
 - (ECDictionaryBackedObject*)objectWithDictionary:(NSDictionary*)dictionary
 {
-    NSString* objectID = [class objectIDFromDictionary:dictionary];
+    NSString* objectID = [self.class objectIDFromDictionary:dictionary];
     ECDictionaryBackedObject* object = [self.data objectForKey:objectID];
     if (object)
     {
@@ -96,7 +96,7 @@ NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionar
     }
     else
     {
-        object = [class objectWithDictionary:dictionary];
+        object = [self.class objectWithDictionary:dictionary];
         [self.data setObject:object forKey:objectID];
     }
     
@@ -136,7 +136,7 @@ NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionar
 
 - (void)loadObjectsFromURL:(NSURL*)url
 {
-    [class loadObjectsFromURL:url intoDictionary:self.data];
+    [self.class loadObjectsFromURL:url intoDictionary:self.data];
 	[self postUpdatedNotification];
 }
 
@@ -146,7 +146,7 @@ NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionar
 
 - (void)saveObjectsToURL:(NSURL*)url
 {
-    [class saveObjectsToURL:url fromDictionary:self.data];
+    [self.class saveObjectsToURL:url fromDictionary:self.data];
 }
 
 // --------------------------------------------------------------------------

@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECDictionaryBackedObject.h"
+#import "ECProperties.h"
 
 #pragma mark - Private Interface
 
@@ -66,7 +67,7 @@ NSString *const kObjectUpdateDateKey = @"ECDictionaryBackedObjectObjectUpdateDat
 
 - (void)dealloc
 {
-    self.data = nil;
+	[data release];
     
     [super dealloc];
 }

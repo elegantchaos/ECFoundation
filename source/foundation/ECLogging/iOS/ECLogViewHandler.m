@@ -10,6 +10,7 @@
 #import "ECLogViewController.h"
 #import "ECLogViewHandlerItem.h"
 #import "ECLogManager.h"
+#import "ECLogChannel.h"
 
 @implementation ECLogViewHandler
 
@@ -55,7 +56,7 @@
 // --------------------------------------------------------------------------
 
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments
+- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
     NSMutableArray* itemList = self.items;
     if (!itemList)
@@ -66,7 +67,9 @@
     
     ECLogViewHandlerItem* item = [[ECLogViewHandlerItem alloc] init];
     item.message = [[[NSString alloc] initWithFormat:format arguments:arguments] autorelease];
-    item.channel = channel;
+    
+    NSString* file = [NSString stringWithCString:context->file encoding:NSUTF8StringEncoding];
+    item.context = [NSString stringWithFormat:@"%@ (%@, %d)\n%s", channel.name, [file lastPathComponent], context->line, context->function];
     
     [itemList addObject:item];
     [item release];

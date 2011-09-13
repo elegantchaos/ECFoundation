@@ -30,3 +30,4 @@ MACOSX_DEPLOYMENT_TARGET = 10.5
 
 //GCC_VERSION = com.apple.compilers.llvmgcc42 // temporarily use gcc because of xcode 4 problem
 GCC_MODEL_TUNING = G5
+

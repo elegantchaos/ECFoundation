@@ -25,6 +25,11 @@ ECDefineDebugChannel(ECTButtonCellChannel);
 
 @synthesize buttonControl;
 
+#pragma mark - Constants
+
+static CGFloat kHorizontalInset = 0;    // TODO make these properties?
+static CGFloat kVerticalInset = 0;
+
 #pragma mark - Object lifecycle
 
 - (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier
@@ -33,7 +38,7 @@ ECDefineDebugChannel(ECTButtonCellChannel);
     {
         UIButton* button = [UIButton buttonWithType:[self buttonType]];
         [button addTarget:binding.target action:binding.action forControlEvents:UIControlEventTouchUpInside];
-        button.frame = CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
+        button.frame = CGRectMake(kHorizontalInset, kVerticalInset, self.contentView.frame.size.width - (2 * kHorizontalInset), self.contentView.frame.size.height - (2 * kVerticalInset));
         [self.contentView addSubview:button];
         button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.buttonControl = button;

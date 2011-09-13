@@ -14,7 +14,8 @@
 
 @interface ECXMLParser()
 
-ECPropertyRetained(rootElement, ECXMLElement*);
+@property (nonatomic, retain) ECXMLElement* rootElement;
+
 @end
 
 @implementation ECXMLParser
@@ -27,11 +28,11 @@ ECDefineDebugChannel(ParsingDetailChannel);
 
 #pragma mark - Properties
 
-ECPropertySynthesize(arrayElements);
-ECPropertySynthesize(indexKey);
-ECPropertySynthesize(nameKey);
-ECPropertySynthesize(valueKey);
-ECPropertySynthesize(rootElement);
+@synthesize arrayElements;
+@synthesize indexKey;
+@synthesize nameKey;
+@synthesize valueKey;
+@synthesize rootElement;
 
 // --------------------------------------------------------------------------
 //! Release retained objects and clean up.
@@ -39,11 +40,11 @@ ECPropertySynthesize(rootElement);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(arrayElements);
-	ECPropertyDealloc(indexKey);
-	ECPropertyDealloc(nameKey);
-	ECPropertyDealloc(valueKey);
-	ECPropertyDealloc(rootElement);
+	[arrayElements release];
+	[indexKey release];
+	[nameKey release];
+	[valueKey release];
+	[rootElement release];
 	
 	[super dealloc];
 }
@@ -56,11 +57,11 @@ ECPropertySynthesize(rootElement);
 {
 	parser.delegate = self;
 	NSMutableDictionary* rootAttributes = [[NSMutableDictionary alloc] init];
-	ECXMLElement* rootElement = [[ECXMLElement alloc] initWithName: @"root" attributes:rootAttributes];
+	ECXMLElement* root = [[ECXMLElement alloc] initWithName: @"root" attributes:rootAttributes];
 	[rootAttributes release];
 	
-	self.rootElement = rootElement;
-	[rootElement release];
+	self.rootElement = root;
+	[root release];
 
 	mCurrentElement = rootElement;
 	
@@ -76,7 +77,7 @@ ECPropertySynthesize(rootElement);
 		ECDebug(ParsingChannel, @"parsing failed with error %@", [parser parserError]);
 	}
 	
-	return rootElement.properties;
+	return root.properties;
 }
 
 // --------------------------------------------------------------------------

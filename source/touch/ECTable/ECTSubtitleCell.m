@@ -1,23 +1,21 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 12/04/2011
+//! @date 07/09/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECLogChannel;
-@interface ECLogHandler : NSObject 
+#import "ECTSubtitleCell.h"
 
+@implementation ECTSubtitleCell
+
+#pragma mark - Object lifecycle
+
+- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn reuseIdentifier:(NSString *)reuseIdentifier
 {
-@private
-	NSString* name;
+    return [self initWithStyle:UITableViewCellStyleSubtitle binding:binding section:sectionIn reuseIdentifier:reuseIdentifier];
 }
-
-@property (nonatomic, retain) NSString* name;
-
-- (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext*)context;
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
 
 @end

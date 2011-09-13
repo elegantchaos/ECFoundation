@@ -47,7 +47,7 @@
 - (void)            registerDefaultHandler;
 - (void)            startup;
 - (void)            shutdown;
-- (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments;
+- (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext*)context;
 - (void)            enableAllChannels;
 - (void)            disableAllChannels;
 - (void)            saveChannelSettings;

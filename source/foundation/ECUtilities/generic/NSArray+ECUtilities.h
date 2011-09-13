@@ -7,34 +7,16 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECLogHandlerNSLog.h"
-#import "ECLogChannel.h"
-
-@implementation ECLogHandlerNSLog
-
-#pragma mark - Lifecycle
+@interface NSArray(ECUtilities)
 
 // --------------------------------------------------------------------------
-//! Initialise.
+// Public Properties
 // --------------------------------------------------------------------------
 
-- (id) init 
-{
-    if ((self = [super init]) != nil) 
-    {
-        self.name = @"NSLog";
-    }
-    
-    return self;
-}
+// --------------------------------------------------------------------------
+// Public Methods
+// --------------------------------------------------------------------------
 
+- (id)firstObject;
 
-#pragma mark - Logging
-
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
-{
-	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
-	NSLog(@"«%@» %@", channel.name, body);
-	[body release];	
-}
 @end

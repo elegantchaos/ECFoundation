@@ -7,15 +7,16 @@
 //
 
 #import "ECLogViewHandlerItem.h"
+#import "ECLogChannel.h"
 
 @implementation ECLogViewHandlerItem
 
-@synthesize channel;
+@synthesize context;
 @synthesize message;
 
 - (void)dealloc 
 {
-    [channel release];
+    [context release];
     [message release];
     
     [super dealloc];

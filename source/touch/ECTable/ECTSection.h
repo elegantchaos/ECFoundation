@@ -20,12 +20,15 @@ typedef enum
 } SelectionMode;
 
 extern NSString *const ECTActionKey;
-extern NSString *const ECTCellClassKey;
-extern NSString *const ECTDisclosureClassKey;
 extern NSString *const ECTCanMoveKey;
 extern NSString *const ECTCanDeleteKey;
+extern NSString *const ECTCellClassKey;
+extern NSString *const ECTDetailKey;
+extern NSString *const ECTDetailKeyKey;
+extern NSString *const ECTDisclosureClassKey;
 extern NSString *const ECTDisclosureTitleKey;
 extern NSString *const ECTEnabledKey;
+extern NSString *const ECTLabelKey;
 extern NSString *const ECTTargetKey;
 
 // --------------------------------------------------------------------------
@@ -51,6 +54,7 @@ extern NSString *const ECTTargetKey;
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)sourceChanged;
 
 - (BOOL)canEdit;
 - (void)reloadData;

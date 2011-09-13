@@ -11,14 +11,25 @@
 #import "ECLogViewHandlerItem.h"
 #import "ECLogChannel.h"
 
+@interface ECLogViewController()
+
+@property (nonatomic, retain) UIFont* messageFont;
+@property (nonatomic, retain) UIFont* contextFont;
+
+@end
+
 @implementation ECLogViewController
+
+@synthesize messageFont;
+@synthesize contextFont;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    
+    if ((self = [super initWithStyle:style]) != nil) 
+    {
     }
+    
     return self;
 }
 
@@ -30,6 +41,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc
+{
+    [messageFont release];
+    [contextFont release];
+    
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -38,6 +57,9 @@
     lh.view = self;
 
     [super viewDidLoad];
+
+    self.messageFont = [UIFont systemFontOfSize:14];
+    self.contextFont = [UIFont systemFontOfSize:10];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -113,50 +135,30 @@
     // Configure the cell...
     ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
     ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.channel.name;
-    cell.detailTextLabel.text = item.message;
+    
+    cell.textLabel.text = item.message;
+    cell.textLabel.font = self.messageFont;
+    cell.textLabel.numberOfLines = 0;
+    
+    cell.detailTextLabel.text = item.context;
+    cell.detailTextLabel.font = self.contextFont;
+    cell.detailTextLabel.numberOfLines = 0;
+    //    cell.detailTextLabel.textAlignment = UITextAlignmentRight;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    ECLogViewHandler* lh = [ECLogViewHandler sharedInstance];
+    ECLogViewHandlerItem* item = [lh.items objectAtIndex:indexPath.row];
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    CGSize constraint = CGSizeMake(tableView.frame.size.width, 10000.0);
+    CGSize messageSize = [item.message sizeWithFont:self.messageFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contextSize = [item.context sizeWithFont:self.contextFont constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    
+    return messageSize.height + contextSize.height;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

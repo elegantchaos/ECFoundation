@@ -10,7 +10,7 @@
 
 @interface ECLogViewHandlerItem : NSObject
 
-@property (nonatomic, retain) ECLogChannel* channel;
 @property (nonatomic, retain) NSString* message;
+@property (nonatomic, retain) NSString* context;
 
 @end

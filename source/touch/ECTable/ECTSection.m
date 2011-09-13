@@ -14,6 +14,8 @@
 
 @interface ECTSection()
 @property (nonatomic, retain) NSArray* source;
+@property (nonatomic, retain) NSString* sourceKey;
+@property (nonatomic, retain) NSDictionary* sourceProperties;
 @property (nonatomic, retain) ECTBinding* addCell;
 
 @end
@@ -39,18 +41,23 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize source;
+@synthesize sourceKey;
+@synthesize sourceProperties;
 @synthesize table;
 @synthesize variableRowHeight;
 
 #pragma mark - Constants
 
 NSString *const ECTActionKey = @"actionName";
-NSString *const ECTCellClassKey = @"cellClass";
 NSString *const ECTCanDeleteKey = @"canDelete";
 NSString *const ECTCanMoveKey = @"canMove";
+NSString *const ECTCellClassKey = @"cellClass";
+NSString *const ECTDetailKey = @"detail";
+NSString *const ECTDetailKeyKey = @"detailKey";
 NSString *const ECTDisclosureClassKey = @"disclosureClass";
 NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
 NSString *const ECTEnabledKey = @"enabled";
+NSString *const ECTLabelKey = @"label";
 NSString *const ECTTargetKey = @"target";
 
 #pragma mark - Object lifecycle
@@ -75,6 +82,8 @@ NSString *const ECTTargetKey = @"target";
     [header release];
     [footer release];
     [source release];
+    [sourceKey release];
+    [sourceProperties release];
     
     [super dealloc];
 }
@@ -91,7 +100,15 @@ NSString *const ECTTargetKey = @"target";
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
 {
     self.source = sourceIn;
+    self.sourceKey = key;
+    self.sourceProperties = properties;
     self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:sourceIn key:key properties:properties]];
+}
+
+- (void)sourceChanged
+{
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source key:self.sourceKey properties:self.sourceProperties]];
+    [self reloadData];
 }
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
@@ -249,7 +266,7 @@ NSString *const ECTTargetKey = @"target";
     }
     else
     {
-        view = [[class alloc] initWithFrame:CGRectZero];
+        view = [[class alloc] initWithNibName:nil bundle:nil];
     }
     
     ECDebug(ECTSectionControllerChannel, @"made disclosure view of class %@ for path %@", nib, indexPath);

@@ -7,17 +7,25 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECLogChannel;
-@interface ECLogHandler : NSObject 
+#import "NSArray+ECUtilities.h"
 
+
+@implementation NSArray(ECUtilities)
+
+- (id)firstObject
 {
-@private
-	NSString* name;
+    id result;
+    
+    if ([self count])
+    {
+        result = [self objectAtIndex:0];
+    }
+    else
+    {
+        result = nil;
+    }
+    
+    return result;
 }
-
-@property (nonatomic, retain) NSString* name;
-
-- (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext*)context;
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other;
 
 @end

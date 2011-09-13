@@ -7,6 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#import "ECProperties.h"
+
 // --------------------------------------------------------------------------
 //! Objects inheriting from this can be created / updated from a dictionary.
 //! The dictionary is expected to always contain at least one value, which represents
