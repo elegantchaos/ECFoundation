@@ -12,14 +12,17 @@
 #import "ECAboutBoxController.h"
 #import "ECLicenseChecker.h"
 #import "ECMacStore.h"
+#import "ECMacStoreExact.h"
+#import "ECMacStoreTest.h"
+#import "ECCompoundLicenseChecker.h"
 
 #import "NSApplication+ECAppKit.h"
 
-#import <ECFoundation/ECLogging.h>
-#import <ECFoundation/ECLogManager.h>
-#import <ECFoundation/ECLogHandlerNSLog.h>
-#import <ECFoundation/ECLogHandlerStdout.h>
-#import <ECFoundation/ECLogHandlerStderr.h>
+#import "ECLogging.h"
+#import "ECLogManager.h"
+#import "ECLogHandlerNSLog.h"
+#import "ECLogHandlerStdout.h"
+#import "ECLogHandlerStderr.h"
 
 // ==============================================
 // Private Methods
@@ -328,11 +331,22 @@ ECPropertySynthesize(licenseChecker);
 	[self stripElegantChaosStoreItemsFromMenu: mDockMenu];
 	[self stripSparkleItemsFromMenu: mStatusMenu];
 	
-    ECMacStore* appStoreChecker = [[ECMacStore alloc] init];
-    self.licenseChecker = appStoreChecker;
-    [appStoreChecker release];
+    ECCompoundLicenseChecker* compoundChecker = [[ECCompoundLicenseChecker alloc] init];
     
-	return [appStoreChecker isValid];
+    ECMacStoreExact* exactChecker = [[ECMacStoreExact alloc] init];
+    [compoundChecker addChecker: exactChecker];
+    [exactChecker release];
+    
+#if CHECK_FOR_TEST_RECEIPT
+    ECMacStoreTest* testChecker = [[ECMacStoreTest alloc] init];
+    [compoundChecker addChecker: testChecker];
+    [testChecker release];
+#endif
+    
+	self.licenseChecker = compoundChecker;
+	[compoundChecker release];
+	
+	return [compoundChecker isValid];
 }
 
 @end

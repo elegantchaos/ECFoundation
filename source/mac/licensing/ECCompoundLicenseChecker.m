@@ -11,7 +11,7 @@
 
 @implementation ECCompoundLicenseChecker
 
-ECPropertySynthesize(checkers);
+@synthesize checkers;
 
 - (id) init 
 {
@@ -25,7 +25,7 @@ ECPropertySynthesize(checkers);
 
 - (void) dealloc
 {
-    ECPropertyDealloc(checkers);
+	[checkers release];
     
     [super dealloc];
 }
@@ -90,7 +90,7 @@ ECPropertySynthesize(checkers);
         }
     }
     
-    return nil;
+    return @"Trial Version - Unregistered";
 }
 
 - (BOOL) importLicenseFromURL: (NSURL*) url;

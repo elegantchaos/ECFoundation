@@ -11,5 +11,7 @@
 #define EC_CONFIGURATION_STRING @"Debug"
 #define EC_CONFIGURATION_STRING_SHORT @"D"
 
+#define CHECK_FOR_TEST_RECEIPT 1
+
 #import "ECCoreSharedPrefix.pch"
 

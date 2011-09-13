@@ -1,24 +1,14 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 17/11/2010
+//! @date 02/08/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECLicenseChecker.h"
-
-@class ECMacStoreReceipt;
-
-@interface ECMacStore : ECLicenseChecker
+@interface ECMacStoreReceipt : NSObject
 {
 @private
-    
-    // --------------------------------------------------------------------------
-    // Member Variables
-    // --------------------------------------------------------------------------
-
-    ECMacStoreReceipt* receipt;
-    NSString* status;
+    NSDictionary* info;
 
 }
 
@@ -26,18 +16,15 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
-@property (nonatomic, retain) ECMacStoreReceipt* receipt;
-@property (nonatomic, retain) NSString* status;
+@property (nonatomic, retain) NSDictionary* info;
 
 // --------------------------------------------------------------------------
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (BOOL)            isValid;
-- (NSDictionary*)   info;
+- (id)initWithURL:(NSURL*)url;
 
-+ (NSURL*) defaultReceiptURL;
-+ (NSURL*) savedReceiptURLForGuid:(NSData*)guid;
-
+- (BOOL)isValidForGuid:(NSData*)guid identifier:(NSString*)identifier version:(NSString*)version;
+- (BOOL)isValidForGuid:(NSData*)guid identifier:(NSString*)identifier;
 
 @end

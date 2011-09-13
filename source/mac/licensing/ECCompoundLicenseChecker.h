@@ -8,14 +8,13 @@
 
 #import "ECLicenseChecker.h"
 
-#import <ECFoundation/ECProperties.h>
-
 @interface ECCompoundLicenseChecker : ECLicenseChecker 
 {
-    ECPropertyVariable(checkers, NSMutableArray*);
+	NSMutableArray* checkers;
 }
 
-ECPropertyRetained(checkers, NSMutableArray*);
+@property (nonatomic, retain) NSMutableArray* checkers;
+
 
 - (BOOL)            isValid;
 - (NSDictionary*)   info;
