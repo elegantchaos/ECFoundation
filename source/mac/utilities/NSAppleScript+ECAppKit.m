@@ -13,7 +13,7 @@
 #import "NSAppleEventDescriptor+ECAppKit.h"
 #import "ECAppDelegate.h"
 
-#import <ECFoundation/ECErrorReporter.h>
+#import "ECErrorReporter.h"
 
 #import <Carbon/Carbon.h>
 

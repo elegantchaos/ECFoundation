@@ -10,9 +10,9 @@
 #import "ECDebugMenu.h"
 #import "NSMenu+ECAppKit.h"
 
-#import <ECFoundation/ECLogManager.h>
-#import <ECFoundation/ECLogChannel.h>
-#import <ECFoundation/ECLogHandler.h>
+#import "ECLogManager.h"
+#import "ECLogChannel.h"
+#import "ECLogHandler.h"
 
 // --------------------------------------------------------------------------
 // Private Methods

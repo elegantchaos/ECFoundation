@@ -9,7 +9,7 @@
 
 #import "ECDraggableArrayController.h"
 
-#import <ECFoundation/ECLogging.h>
+#import "ECLogging.h"
 
 #pragma mark - Private Methods
 

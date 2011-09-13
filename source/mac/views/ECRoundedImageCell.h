@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <ECFoundation/ECProperties.h>
+#import "ECProperties.h"
 
 @interface ECRoundedImageCell : NSImageCell 
 {

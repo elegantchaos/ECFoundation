@@ -202,7 +202,7 @@ NSString *const ECTTargetKey = @"target";
     
     NSString* identifier = [binding identifierForSection:self];
     
-    UITableViewCell<ECTSectionDrivenTableCell>* cell = [[self tableView] dequeueReusableCellWithIdentifier:identifier];
+    UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
         cell = [binding cellForSection:self];
@@ -218,7 +218,7 @@ NSString *const ECTTargetKey = @"target";
 
     NSString* identifier = [binding identifierForSection:self];
     
-    UITableViewCell<ECTSectionDrivenTableCell>* cell = [[self tableView] dequeueReusableCellWithIdentifier:identifier];
+    UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
         cell = [binding cellForSection:self];

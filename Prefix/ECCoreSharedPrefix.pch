@@ -1,0 +1,58 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 12/04/2011
+//
+//! @file:
+//! Common includes for all architectures and configurations.
+//
+//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
+
+
+#ifdef __OBJC__
+
+// --------------------------------------------------------------------------
+// Shared Settings
+// --------------------------------------------------------------------------
+
+#import <TargetConditionals.h>
+
+#define EC_FOUNDATION 1
+
+// --------------------------------------------------------------------------
+// iOS Settings
+// --------------------------------------------------------------------------
+
+#if TARGET_OS_IPHONE
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#define EC_PLATFORM_IOS 1
+
+
+// --------------------------------------------------------------------------
+// Mac Settings
+// --------------------------------------------------------------------------
+
+#elif TARGET_OS_MAC
+
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+
+#define EC_PLATFORM_MAC 1
+
+#endif
+
+
+// --------------------------------------------------------------------------
+// Standard Includes
+// --------------------------------------------------------------------------
+
+#import "ECAssertion.h"
+#import "ECLogging.h"
+
+#endif
+

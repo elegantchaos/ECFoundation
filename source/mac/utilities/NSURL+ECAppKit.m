@@ -9,10 +9,10 @@
 
 #import "NSURL+ECAppKit.h"
 
-#import <ECFoundation/ECLogging.h>
-#import <ECFoundation/ECMacros.h>
-#import <ECFoundation/ECErrorReporter.h>
-#import <ECFoundation/ECAssertion.h>
+#import "ECLogging.h"
+#import "ECMacros.h"
+#import "ECErrorReporter.h"
+#import "ECAssertion.h"
 
 #import <CoreFoundation/CoreFoundation.h>
 

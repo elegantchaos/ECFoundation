@@ -13,8 +13,8 @@
 #import "NSAppleScript+ECAppKit.h"
 #import "NSURL+ECAppKit.h"
 
-#import <ECFoundation/ECErrorReporter.h>
-#import <ECFoundation/NSFileManager+ECUtilities.h>
+#import "ECErrorReporter.h"
+#import "NSFileManager+ECUtilities.h"
 
 @interface NSWorkspace(ECAppKitPrivate)
 @end

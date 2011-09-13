@@ -10,7 +10,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <ECFoundation/ECTestCase.h>
+#import "ECTestCase.h"
 
 
 @interface NSURL_ECUtilitiesTests : ECTestCase
