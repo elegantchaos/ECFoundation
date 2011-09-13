@@ -18,6 +18,14 @@
 
 @interface ECLogManager : NSObject
 
+{
+@private
+	NSMutableDictionary* channels;
+	NSMutableDictionary* handlers;
+	ECLogHandler* defaultHandler;
+	NSMutableDictionary* settings;
+}
+
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------

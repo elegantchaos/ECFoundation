@@ -12,7 +12,15 @@
 
 #import "ECTestCase.h"
 
-
+@class ECDictionaryBackedObjectCache;
 @interface ECDictionaryBackedObjectCacheTests : ECTestCase
+
+{
+@private
+	NSDictionary* test1;
+	NSDictionary* test2;
+	NSArray* testArray;
+	ECDictionaryBackedObjectCache* testCache;
+}
 
 @end

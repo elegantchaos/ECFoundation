@@ -10,6 +10,11 @@
 @class ECLogChannel;
 @interface ECLogHandler : NSObject 
 
+{
+@private
+	NSString* name;
+}
+
 @property (nonatomic, retain) NSString* name;
 
 - (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext*)context;

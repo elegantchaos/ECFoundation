@@ -14,5 +14,9 @@
 
 
 @interface ECDictionaryBackedObjectTests : ECTestCase
+{
+@private
+	NSDictionary* testData;
+}
 
 @end

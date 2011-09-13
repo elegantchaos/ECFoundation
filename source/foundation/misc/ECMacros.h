@@ -15,3 +15,16 @@
 #define EC_HINT_UNUSED __attribute__((__unused__))
 
 #define EC_EXPORTED __attribute__((visibility("default"))) 
+
+#if EC_DEBUG
+
+#define ECUnusedInDebug(v) ECUnused(v)
+#define ECUnusedInRelease(v)
+
+
+#else
+
+#define ECUnusedInDebug(v)
+#define ECUnusedInRelease(v) ECUnused(v)
+
+#endif
