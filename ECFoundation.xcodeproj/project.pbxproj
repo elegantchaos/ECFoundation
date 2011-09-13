@@ -24,6 +24,21 @@
 
 /* Begin PBXBuildFile section */
 		2229676B1354F39E005F42E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 222967691354F39D005F42E7 /* InfoPlist.strings */; };
+		223E0837141F96E900DD8795 /* ECMacStoreDifferentVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */; };
+		223E0838141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
+		223E0839141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
+		223E083A141F96E900DD8795 /* ECMacStoreExact.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082F141F96E900DD8795 /* ECMacStoreExact.h */; };
+		223E083B141F96E900DD8795 /* ECMacStoreExact.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0830141F96E900DD8795 /* ECMacStoreExact.m */; };
+		223E083C141F96E900DD8795 /* ECMacStoreExact.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0830141F96E900DD8795 /* ECMacStoreExact.m */; };
+		223E083D141F96E900DD8795 /* ECMacStoreReceipt.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0831141F96E900DD8795 /* ECMacStoreReceipt.h */; };
+		223E083E141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */; };
+		223E083F141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */; };
+		223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0833141F96E900DD8795 /* ECMacStoreSaved.h */; };
+		223E0841141F96E900DD8795 /* ECMacStoreSaved.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0834141F96E900DD8795 /* ECMacStoreSaved.m */; };
+		223E0842141F96E900DD8795 /* ECMacStoreSaved.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0834141F96E900DD8795 /* ECMacStoreSaved.m */; };
+		223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0835141F96E900DD8795 /* ECMacStoreTest.h */; };
+		223E0844141F96E900DD8795 /* ECMacStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0836141F96E900DD8795 /* ECMacStoreTest.m */; };
+		223E0845141F96E900DD8795 /* ECMacStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0836141F96E900DD8795 /* ECMacStoreTest.m */; };
 		2248BB5213C7869400E13577 /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1273613C785CA0022CC5B /* ECErrorReporter.m */; };
 		2248BB5313C7869400E13577 /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1273813C785CA0022CC5B /* ECLogChannel.m */; };
 		2248BB5413C7869400E13577 /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1273A13C785CA0022CC5B /* ECLogging.m */; };
@@ -419,6 +434,16 @@
 		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		223CBAFC1205C7680008A641 /* ECFoundation GHUnit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation GHUnit.plist"; sourceTree = "<group>"; };
 		223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation SenTest.plist"; sourceTree = "<group>"; };
+		223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStoreDifferentVersion.h; sourceTree = "<group>"; };
+		223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStoreDifferentVersion.m; sourceTree = "<group>"; };
+		223E082F141F96E900DD8795 /* ECMacStoreExact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStoreExact.h; sourceTree = "<group>"; };
+		223E0830141F96E900DD8795 /* ECMacStoreExact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStoreExact.m; sourceTree = "<group>"; };
+		223E0831141F96E900DD8795 /* ECMacStoreReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStoreReceipt.h; sourceTree = "<group>"; };
+		223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStoreReceipt.m; sourceTree = "<group>"; };
+		223E0833141F96E900DD8795 /* ECMacStoreSaved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStoreSaved.h; sourceTree = "<group>"; };
+		223E0834141F96E900DD8795 /* ECMacStoreSaved.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStoreSaved.m; sourceTree = "<group>"; };
+		223E0835141F96E900DD8795 /* ECMacStoreTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStoreTest.h; sourceTree = "<group>"; };
+		223E0836141F96E900DD8795 /* ECMacStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStoreTest.m; sourceTree = "<group>"; };
 		2248BBFD13C7948F00E13577 /* ECTBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTBinding.h; sourceTree = "<group>"; };
 		2248BBFE13C7948F00E13577 /* ECTBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTBinding.m; sourceTree = "<group>"; };
 		2248BBFF13C7948F00E13577 /* ECTSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSection.h; sourceTree = "<group>"; };
@@ -930,6 +955,16 @@
 		2260217A141F86F30044644C /* licensing */ = {
 			isa = PBXGroup;
 			children = (
+				223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */,
+				223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */,
+				223E082F141F96E900DD8795 /* ECMacStoreExact.h */,
+				223E0830141F96E900DD8795 /* ECMacStoreExact.m */,
+				223E0831141F96E900DD8795 /* ECMacStoreReceipt.h */,
+				223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */,
+				223E0833141F96E900DD8795 /* ECMacStoreSaved.h */,
+				223E0834141F96E900DD8795 /* ECMacStoreSaved.m */,
+				223E0835141F96E900DD8795 /* ECMacStoreTest.h */,
+				223E0836141F96E900DD8795 /* ECMacStoreTest.m */,
 				2260217B141F86F30044644C /* ECAquaticPrime.h */,
 				2260217C141F86F30044644C /* ECAquaticPrime.m */,
 				2260217D141F86F30044644C /* ECCompoundLicenseChecker.h */,
@@ -1467,6 +1502,11 @@
 				2260226A141F8DC70044644C /* ECLicenseChecker.h in Headers */,
 				2260226B141F8DC70044644C /* ECMacStore.h in Headers */,
 				2260226C141F8DDF0044644C /* ECAquaticPrime.h in Headers */,
+				223E0837141F96E900DD8795 /* ECMacStoreDifferentVersion.h in Headers */,
+				223E083A141F96E900DD8795 /* ECMacStoreExact.h in Headers */,
+				223E083D141F96E900DD8795 /* ECMacStoreReceipt.h in Headers */,
+				223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */,
+				223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1815,6 +1855,11 @@
 				2260222D141F89B70044644C /* ECCompoundLicenseChecker.m in Sources */,
 				2260222E141F89B70044644C /* ECLicenseChecker.m in Sources */,
 				2260222F141F89B70044644C /* ECMacStore.m in Sources */,
+				223E0839141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */,
+				223E083C141F96E900DD8795 /* ECMacStoreExact.m in Sources */,
+				223E083F141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */,
+				223E0842141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
+				223E0845141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1880,6 +1925,11 @@
 				2260222A141F89B50044644C /* ECCompoundLicenseChecker.m in Sources */,
 				2260222B141F89B50044644C /* ECLicenseChecker.m in Sources */,
 				2260222C141F89B50044644C /* ECMacStore.m in Sources */,
+				223E0838141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */,
+				223E083B141F96E900DD8795 /* ECMacStoreExact.m in Sources */,
+				223E083E141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */,
+				223E0841141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
+				223E0844141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
