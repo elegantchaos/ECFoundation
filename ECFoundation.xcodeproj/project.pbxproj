@@ -743,8 +743,8 @@
 			children = (
 				22728A64124A240500A9881F /* prefix */,
 				227EEB8011A6BCCD009420F7 /* foundation */,
-				227333BC11EBBAA400695FB4 /* tests */,
 				22602168141F86F30044644C /* mac */,
+				227333BC11EBBAA400695FB4 /* tests */,
 			);
 			name = source;
 			sourceTree = "<group>";
