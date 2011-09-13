@@ -13,14 +13,14 @@
 #import "ECTestCase.h"
 
 @class ECDictionaryBackedObjectCache;
-@interface ECDictionaryBackedObjectCacheTests : ECTestCase
 
+@interface ECDictionaryBackedObjectCacheTests : ECTestCase
 {
 @private
-	NSDictionary* test1;
-	NSDictionary* test2;
-	NSArray* testArray;
-	ECDictionaryBackedObjectCache* testCache;
+	NSDictionary* _test1;
+	NSDictionary* _test2;
+	NSArray* _testArray;
+	ECDictionaryBackedObjectCache* _testCache;
 }
 
 @end

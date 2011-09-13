@@ -30,8 +30,8 @@
 @interface ECDictionaryBackedObjectCache : NSObject 
 {
 @private
-	Class class;
-	NSMutableDictionary* data;
+	Class _class;
+	NSMutableDictionary* _data;
 }
 
 - (id)initWithClass:(Class)class;

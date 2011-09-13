@@ -1475,6 +1475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
 			name = Debug;
 		};
@@ -1482,6 +1483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
 			name = Release;
 		};
@@ -1637,7 +1639,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1686,6 +1688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "source/prefix/$(PLATFORM_NAME)/ECFoundation$(CONFIGURATION)Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
 			name = AdHoc;
 		};
