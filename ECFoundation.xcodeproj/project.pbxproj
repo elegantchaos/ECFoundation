@@ -202,6 +202,7 @@
 		2260223C141F8A8D0044644C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22602238141F8A460044644C /* Security.framework */; };
 		2260223D141F8A980044644C /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260223A141F8A4E0044644C /* libcrypto.dylib */; };
 		2260223E141F8AA40044644C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22602236141F8A230044644C /* IOKit.framework */; };
+		22602255141F8BFD0044644C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22602253141F8BFD0044644C /* InfoPlist.strings */; };
 		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; };
 		22728ACE124A26A900A9881F /* ECFoundationDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AB0124A257E00A9881F /* ECFoundationDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728ACF124A26A900A9881F /* ECFoundationReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728AB1124A257E00A9881F /* ECFoundationReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -210,7 +211,6 @@
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		227290B0124A4CC200A9881F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 227290AD124A4CC200A9881F /* InfoPlist.strings */; };
 		2274C97F11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */; };
 		2274C98011FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */; };
 		227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */; };
@@ -524,6 +524,7 @@
 		22602236141F8A230044644C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
 		22602238141F8A460044644C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
+		22602254141F8BFD0044644C /* ec */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ec; path = ec.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22672DBF132321AA00CD8BC7 /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECClang.h; path = compiler/ECClang.h; sourceTree = "<group>"; };
 		22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreAdHocPrefix.pch; sourceTree = "<group>"; };
 		22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDebugPrefix.pch; sourceTree = "<group>"; };
@@ -541,7 +542,6 @@
 		22728B7B124A29C200A9881F /* ECFoundationReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationReleasePrefix.pch; sourceTree = "<group>"; };
 		22728B7C124A29C200A9881F /* ECFoundationSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoundationSharedPrefix.pch; sourceTree = "<group>"; };
 		227290AC124A4CC200A9881F /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundationIOS.plist; path = resources/ios/ECFoundationIOS.plist; sourceTree = "<group>"; };
-		227290AE124A4CC200A9881F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationAdHocSettings.xcconfig; sourceTree = "<group>"; };
 		2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSAdHocSettings.xcconfig; sourceTree = "<group>"; };
@@ -696,10 +696,6 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				2260223A141F8A4E0044644C /* libcrypto.dylib */,
-				22602238141F8A460044644C /* Security.framework */,
-				22602236141F8A230044644C /* IOKit.framework */,
-				22602234141F8A160044644C /* Carbon.framework */,
 				22F568D813211C39003E8EE8 /* README.md */,
 				22F568D713211C39003E8EE8 /* LICENSE.md */,
 				2210B5D41152E630006C6CCA /* configuration */,
@@ -716,6 +712,10 @@
 		0867D69AFE84028FC02AAC07 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2260223A141F8A4E0044644C /* libcrypto.dylib */,
+				22602238141F8A460044644C /* Security.framework */,
+				22602236141F8A230044644C /* IOKit.framework */,
+				22602234141F8A160044644C /* Carbon.framework */,
 				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
 				223CBAE11205C5930008A641 /* iOS */,
 				1058C7B0FEA5585E11CA2CBB /* MacOS */,
@@ -1104,8 +1104,8 @@
 		227290AB124A4CC200A9881F /* mac */ = {
 			isa = PBXGroup;
 			children = (
+				22602253141F8BFD0044644C /* InfoPlist.strings */,
 				222967631354F38B005F42E7 /* ECFoundationMac.plist */,
-				227290AD124A4CC200A9881F /* InfoPlist.strings */,
 			);
 			name = mac;
 			path = resources/mac;
@@ -1556,6 +1556,7 @@
 				French,
 				German,
 				en,
+				ec,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* ECFoundation */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* products */;
@@ -1609,7 +1610,7 @@
 				227EEB4A11A6BC66009420F7 /* ECIOSSharedSettings.xcconfig in Resources */,
 				2274C97F11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig in Resources */,
 				2274C98011FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig in Resources */,
-				227290B0124A4CC200A9881F /* InfoPlist.strings in Resources */,
+				22602255141F8BFD0044644C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1901,10 +1902,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		227290AD124A4CC200A9881F /* InfoPlist.strings */ = {
+		22602253141F8BFD0044644C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				227290AE124A4CC200A9881F /* English */,
+				22602254141F8BFD0044644C /* ec */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
