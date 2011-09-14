@@ -306,12 +306,12 @@
 		22B1277F13C785CA0022CC5B /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */; };
 		22B1278113C785CA0022CC5B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1274D13C785CA0022CC5B /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1278313C785CA0022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274E13C785CA0022CC5B /* ECDebugViewController.m */; };
-		22C02E11141FE3CB004B159A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECUtilities.h */; };
-		22C02E12141FE3CB004B159A /* CLLocation+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECUtilities.h */; };
-		22C02E13141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
-		22C02E14141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
-		22C02E15141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
-		22C02E16141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
+		22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
+		22C02E14141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
+		22C02E15141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
+		22C02E16141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
 		22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
@@ -609,8 +609,8 @@
 		22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelViewController.m; sourceTree = "<group>"; };
 		22B1274D13C785CA0022CC5B /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
-		22C02E0C141FE3CB004B159A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
-		22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
+		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
+		22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECLocation.m"; sourceTree = "<group>"; };
 		22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
 		22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
 		22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
@@ -1206,8 +1206,8 @@
 		22C02E0B141FE3CB004B159A /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				22C02E0C141FE3CB004B159A /* CLLocation+ECUtilities.h */,
-				22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */,
+				22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */,
+				22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */,
 				22C02E0E141FE3CB004B159A /* tests */,
 			);
 			path = Generic;
@@ -1378,7 +1378,7 @@
 				22CA55CB13DA09FF007E89E2 /* UIApplication+ECCore.h in Headers */,
 				22CA55D113DA09FF007E89E2 /* UIColor+ECCore.h in Headers */,
 				22CA55D713DA09FF007E89E2 /* UIImage+ECCore.h in Headers */,
-				22C02E12141FE3CB004B159A /* CLLocation+ECUtilities.h in Headers */,
+				22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,7 +1462,7 @@
 				223E083D141F96E900DD8795 /* ECMacStoreReceipt.h in Headers */,
 				223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */,
 				223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */,
-				22C02E11141FE3CB004B159A /* CLLocation+ECUtilities.h in Headers */,
+				22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1700,7 +1700,7 @@
 				22CA55CD13DA09FF007E89E2 /* UIApplication+ECCore.m in Sources */,
 				22CA55D313DA09FF007E89E2 /* UIColor+ECCore.m in Sources */,
 				22CA55D913DA09FF007E89E2 /* UIImage+ECCore.m in Sources */,
-				22C02E14141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */,
+				22C02E14141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1742,7 +1742,7 @@
 				22CA55CF13DA09FF007E89E2 /* UIApplication+ECCore.m in Sources */,
 				22CA55D513DA09FF007E89E2 /* UIColor+ECCore.m in Sources */,
 				22CA55DB13DA09FF007E89E2 /* UIImage+ECCore.m in Sources */,
-				22C02E16141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */,
+				22C02E16141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1817,7 +1817,7 @@
 				223E083F141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */,
 				223E0842141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
 				223E0845141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
-				22C02E15141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */,
+				22C02E15141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1885,7 +1885,7 @@
 				223E083E141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */,
 				223E0841141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
 				223E0844141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
-				22C02E13141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */,
+				22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

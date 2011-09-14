@@ -2,50 +2,25 @@
 //! @author Sam Deane
 //! @date 12/04/2011
 //
-//! @file:
-//! Common includes for all architectures and configurations.
-//
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#import <CoreLocation/CoreLocation.h>
 
-#ifdef __OBJC__
-
-// --------------------------------------------------------------------------
-// Shared Settings
-// --------------------------------------------------------------------------
-
-#import <CoreFoundation/CoreFoundation.h>
-
-#define EC_FOUNDATION 1
+@interface CLLocation(ECLocation)
 
 // --------------------------------------------------------------------------
-// iOS Settings
+// Public Properties
 // --------------------------------------------------------------------------
 
-#if TARGET_OS_IPHONE
-
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
-#define EC_PLATFORM_IOS 1
-
-
 // --------------------------------------------------------------------------
-// Mac Settings
+// Public Methods
 // --------------------------------------------------------------------------
 
-#elif TARGET_OS_MAC
+- (NSString*)	stringValue;
+- (NSURL*)		urlForLocationInMap;
+- (NSURL*)		urlForDirectionsFrom: (CLLocation*) from;
 
-#import <Foundation/Foundation.h>
-#import <AppKit/AppKit.h>
-
-#define EC_PLATFORM_MAC 1
-
-#endif
-
-
-#endif
-
+@end
