@@ -10,6 +10,12 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#ifndef EC_DEBUG
+#ifndef EC_RELEASE
+#error You must define either EC_DEBUG or EC_RELEASE
+#endif
+#endif
+
 #define ECUnused(v)	(void) (v)
 
 #define EC_HINT_UNUSED __attribute__((__unused__))

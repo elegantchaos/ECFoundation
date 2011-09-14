@@ -10,6 +10,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#import "ECMacros.h"
+
 #ifdef __OBJC__
 
 @class ECLogChannel;

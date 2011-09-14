@@ -553,7 +553,7 @@
 		22602236141F8A230044644C /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
 		22602238141F8A460044644C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
-		22672DBF132321AA00CD8BC7 /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECClang.h; path = compiler/ECClang.h; sourceTree = "<group>"; };
+		22672DBF132321AA00CD8BC7 /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECClang.h; sourceTree = "<group>"; };
 		22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreAdHocPrefix.pch; sourceTree = "<group>"; };
 		22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDebugPrefix.pch; sourceTree = "<group>"; };
 		22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreReleasePrefix.pch; sourceTree = "<group>"; };
@@ -772,7 +772,6 @@
 				22EC409F13589DD5005C1F1A /* networking */,
 				22886F441357B9F800828B95 /* xml */,
 				2298A4581355264A00217C2B /* dictionary */,
-				22672DC3132321BA00CD8BC7 /* compiler */,
 				2248BC1913C7949E00E13577 /* misc */,
 			);
 			path = ECUtilities;
@@ -848,9 +847,6 @@
 				2248BC1D13C7949E00E13577 /* ECDataItem.m */,
 				2248BC1E13C7949E00E13577 /* ECDataItemTests.h */,
 				2248BC1F13C7949E00E13577 /* ECDataItemTests.m */,
-				2248BC2213C7949E00E13577 /* ECMacros.h */,
-				2248BC2313C7949E00E13577 /* ECProperties.h */,
-				2248BC2413C7949E00E13577 /* ECTestCase.h */,
 			);
 			path = misc;
 			sourceTree = "<group>";
@@ -1038,14 +1034,6 @@
 				226021BD141F86F30044644C /* ECTransparentWindow.m */,
 			);
 			path = windows;
-			sourceTree = "<group>";
-		};
-		22672DC3132321BA00CD8BC7 /* compiler */ = {
-			isa = PBXGroup;
-			children = (
-				22672DBF132321AA00CD8BC7 /* ECClang.h */,
-			);
-			name = compiler;
 			sourceTree = "<group>";
 		};
 		22728A64124A240500A9881F /* Prefix */ = {
@@ -1249,6 +1237,10 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				2248BC2213C7949E00E13577 /* ECMacros.h */,
+				2248BC2313C7949E00E13577 /* ECProperties.h */,
+				2248BC2413C7949E00E13577 /* ECTestCase.h */,
+				22672DBF132321AA00CD8BC7 /* ECClang.h */,
 				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
 				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
 				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
