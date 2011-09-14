@@ -5,8 +5,8 @@
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
-#import "ECPreferencePanel.h"
+#import <ECFoundation/ECProperties.h>
+#import <ECFoundation/ECPreferencePanel.h>
 
 @interface ECSparklePreferenceController : ECPreferencePanel
 {
