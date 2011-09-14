@@ -8,6 +8,8 @@
 // --------------------------------------------------------------------------
 
 #import "NSURL+ECCore.h"
+#import "NSString+ECCore.h"
+#import "NSData+ECCore.h"
 #import "ECLogging.h"
 
 
@@ -35,6 +37,27 @@ ECDefineDebugChannel(NSURLChannel);
 	return [self initFileURLWithPath: path isDirectory: NO];
 }
 
+
+// --------------------------------------------------------------------------
+//! Return sha1 digest for the file represented by the URL
+// --------------------------------------------------------------------------
+
+- (NSString*)sha1Digest
+{
+	NSString* result;
+	NSData* data = [NSData dataWithContentsOfURL:self];
+	if (data)
+	{
+		result = [data sha1Digest];
+	}
+	else // couldn't get contents, so return sha1 of the url itself
+	{
+		// TODO - handle directories properly 
+		result = [[self absoluteString] sha1Digest];
+	}
+	
+	return result;
+}
 
 // --------------------------------------------------------------------------
 //! Get a unique name to use for a file in a folder, using the default
