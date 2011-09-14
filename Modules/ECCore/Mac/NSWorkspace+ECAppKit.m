@@ -14,7 +14,7 @@
 #import "NSURL+ECAppKit.h"
 
 #import "ECErrorReporter.h"
-#import "NSFileManager+ECUtilities.h"
+#import "NSFileManager+ECCore.h"
 
 @interface NSWorkspace(ECAppKitPrivate)
 @end

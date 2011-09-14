@@ -12,7 +12,7 @@
 #import "NSApplication+ECAppKit.h"
 #import "ECLaunchServices.h"
 
-#import "NSBundle+ECUtilities.h"
+#import "NSBundle+ECCore.h"
 
 @implementation NSApplication(ECAppKit)
 

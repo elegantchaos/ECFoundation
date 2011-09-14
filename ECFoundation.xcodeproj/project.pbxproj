@@ -312,66 +312,66 @@
 		22C02E14141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
 		22C02E15141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
 		22C02E16141FE3CB004B159A /* CLLocation+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */; };
-		22CA558213DA09FF007E89E2 /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA558313DA09FF007E89E2 /* CGGeometry+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA558413DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */; };
-		22CA558513DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */; };
-		22CA558613DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */; };
-		22CA558713DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */; };
-		22CA558E13DA09FF007E89E2 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556313DA09FF007E89E2 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA558F13DA09FF007E89E2 /* NSBundle+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556313DA09FF007E89E2 /* NSBundle+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA559013DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */; };
-		22CA559113DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */; };
-		22CA559213DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */; };
-		22CA559313DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */; };
-		22CA559413DA09FF007E89E2 /* NSData+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556513DA09FF007E89E2 /* NSData+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA559513DA09FF007E89E2 /* NSData+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556513DA09FF007E89E2 /* NSData+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA559613DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */; };
-		22CA559713DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */; };
-		22CA559813DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */; };
-		22CA559913DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */; };
-		22CA559A13DA09FF007E89E2 /* NSDate+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556713DA09FF007E89E2 /* NSDate+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA559B13DA09FF007E89E2 /* NSDate+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556713DA09FF007E89E2 /* NSDate+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA559C13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */; };
-		22CA559D13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */; };
-		22CA559E13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */; };
-		22CA559F13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */; };
-		22CA55A013DA09FF007E89E2 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556913DA09FF007E89E2 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55A113DA09FF007E89E2 /* NSDictionary+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556913DA09FF007E89E2 /* NSDictionary+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55A213DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */; };
-		22CA55A313DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */; };
-		22CA55A413DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */; };
-		22CA55A513DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */; };
-		22CA55A613DA09FF007E89E2 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556B13DA09FF007E89E2 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55A713DA09FF007E89E2 /* NSFileManager+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556B13DA09FF007E89E2 /* NSFileManager+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55A813DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */; };
-		22CA55A913DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */; };
-		22CA55AA13DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */; };
-		22CA55AB13DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */; };
-		22CA55AC13DA09FF007E89E2 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556D13DA09FF007E89E2 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55AD13DA09FF007E89E2 /* NSString+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556D13DA09FF007E89E2 /* NSString+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55AE13DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */; };
-		22CA55AF13DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */; };
-		22CA55B013DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */; };
-		22CA55B113DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */; };
-		22CA55B213DA09FF007E89E2 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556F13DA09FF007E89E2 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55B313DA09FF007E89E2 /* NSURL+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556F13DA09FF007E89E2 /* NSURL+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CA55B413DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */; };
-		22CA55B513DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */; };
-		22CA55B613DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */; };
-		22CA55B713DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */; };
-		22CA55B813DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557213DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h */; };
-		22CA55B913DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557213DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h */; };
-		22CA55BC13DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557313DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m */; };
-		22CA55BD13DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557313DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m */; };
-		22CA55BE13DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557413DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h */; };
-		22CA55BF13DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557413DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h */; };
-		22CA55C213DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557513DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m */; };
-		22CA55C313DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557513DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m */; };
-		22CA55C413DA09FF007E89E2 /* NSString+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557613DA09FF007E89E2 /* NSString+ECUtilitiesTests.h */; };
-		22CA55C513DA09FF007E89E2 /* NSString+ECUtilitiesTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557613DA09FF007E89E2 /* NSString+ECUtilitiesTests.h */; };
-		22CA55C813DA09FF007E89E2 /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557713DA09FF007E89E2 /* NSString+ECUtilitiesTests.m */; };
-		22CA55C913DA09FF007E89E2 /* NSString+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557713DA09FF007E89E2 /* NSString+ECUtilitiesTests.m */; };
+		22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
+		22CA558513DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
+		22CA558613DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
+		22CA558713DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
+		22CA558E13DA09FF007E89E2 /* NSBundle+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA558F13DA09FF007E89E2 /* NSBundle+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA559013DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */; };
+		22CA559113DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */; };
+		22CA559213DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */; };
+		22CA559313DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */; };
+		22CA559413DA09FF007E89E2 /* NSData+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556513DA09FF007E89E2 /* NSData+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA559513DA09FF007E89E2 /* NSData+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556513DA09FF007E89E2 /* NSData+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA559613DA09FF007E89E2 /* NSData+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECCore.m */; };
+		22CA559713DA09FF007E89E2 /* NSData+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECCore.m */; };
+		22CA559813DA09FF007E89E2 /* NSData+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECCore.m */; };
+		22CA559913DA09FF007E89E2 /* NSData+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556613DA09FF007E89E2 /* NSData+ECCore.m */; };
+		22CA559A13DA09FF007E89E2 /* NSDate+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556713DA09FF007E89E2 /* NSDate+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA559B13DA09FF007E89E2 /* NSDate+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556713DA09FF007E89E2 /* NSDate+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA559C13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */; };
+		22CA559D13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */; };
+		22CA559E13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */; };
+		22CA559F13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */; };
+		22CA55A013DA09FF007E89E2 /* NSDictionary+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556913DA09FF007E89E2 /* NSDictionary+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55A113DA09FF007E89E2 /* NSDictionary+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556913DA09FF007E89E2 /* NSDictionary+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55A213DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */; };
+		22CA55A313DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */; };
+		22CA55A413DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */; };
+		22CA55A513DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */; };
+		22CA55A613DA09FF007E89E2 /* NSFileManager+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55A713DA09FF007E89E2 /* NSFileManager+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55A813DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */; };
+		22CA55A913DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */; };
+		22CA55AA13DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */; };
+		22CA55AB13DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */; };
+		22CA55AC13DA09FF007E89E2 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556D13DA09FF007E89E2 /* NSString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55AD13DA09FF007E89E2 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556D13DA09FF007E89E2 /* NSString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55AE13DA09FF007E89E2 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */; };
+		22CA55AF13DA09FF007E89E2 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */; };
+		22CA55B013DA09FF007E89E2 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */; };
+		22CA55B113DA09FF007E89E2 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */; };
+		22CA55B213DA09FF007E89E2 /* NSURL+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55B313DA09FF007E89E2 /* NSURL+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CA55B413DA09FF007E89E2 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */; };
+		22CA55B513DA09FF007E89E2 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */; };
+		22CA55B613DA09FF007E89E2 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */; };
+		22CA55B713DA09FF007E89E2 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */; };
+		22CA55B813DA09FF007E89E2 /* NSDate+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557213DA09FF007E89E2 /* NSDate+ECCoreTests.h */; };
+		22CA55B913DA09FF007E89E2 /* NSDate+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557213DA09FF007E89E2 /* NSDate+ECCoreTests.h */; };
+		22CA55BC13DA09FF007E89E2 /* NSDate+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */; };
+		22CA55BD13DA09FF007E89E2 /* NSDate+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */; };
+		22CA55BE13DA09FF007E89E2 /* NSDictionary+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557413DA09FF007E89E2 /* NSDictionary+ECCoreTests.h */; };
+		22CA55BF13DA09FF007E89E2 /* NSDictionary+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557413DA09FF007E89E2 /* NSDictionary+ECCoreTests.h */; };
+		22CA55C213DA09FF007E89E2 /* NSDictionary+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557513DA09FF007E89E2 /* NSDictionary+ECCoreTests.m */; };
+		22CA55C313DA09FF007E89E2 /* NSDictionary+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557513DA09FF007E89E2 /* NSDictionary+ECCoreTests.m */; };
+		22CA55C413DA09FF007E89E2 /* NSString+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557613DA09FF007E89E2 /* NSString+ECCoreTests.h */; };
+		22CA55C513DA09FF007E89E2 /* NSString+ECCoreTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557613DA09FF007E89E2 /* NSString+ECCoreTests.h */; };
+		22CA55C813DA09FF007E89E2 /* NSString+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557713DA09FF007E89E2 /* NSString+ECCoreTests.m */; };
+		22CA55C913DA09FF007E89E2 /* NSString+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557713DA09FF007E89E2 /* NSString+ECCoreTests.m */; };
 		22CA55CB13DA09FF007E89E2 /* UIApplication+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557913DA09FF007E89E2 /* UIApplication+ECUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA55CD13DA09FF007E89E2 /* UIApplication+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557A13DA09FF007E89E2 /* UIApplication+ECUtilities.m */; };
 		22CA55CF13DA09FF007E89E2 /* UIApplication+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557A13DA09FF007E89E2 /* UIApplication+ECUtilities.m */; };
@@ -614,28 +614,28 @@
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECUtilities.h"; sourceTree = "<group>"; };
 		22C02E0D141FE3CB004B159A /* CLLocation+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA555F13DA09FF007E89E2 /* CGGeometry+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556313DA09FF007E89E2 /* NSBundle+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556513DA09FF007E89E2 /* NSData+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556713DA09FF007E89E2 /* NSDate+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556913DA09FF007E89E2 /* NSDictionary+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556B13DA09FF007E89E2 /* NSFileManager+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556D13DA09FF007E89E2 /* NSString+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA556F13DA09FF007E89E2 /* NSURL+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECUtilities.h"; sourceTree = "<group>"; };
-		22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECUtilities.m"; sourceTree = "<group>"; };
-		22CA557213DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECUtilitiesTests.h"; sourceTree = "<group>"; };
-		22CA557313DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECUtilitiesTests.m"; sourceTree = "<group>"; };
-		22CA557413DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECUtilitiesTests.h"; sourceTree = "<group>"; };
-		22CA557513DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECUtilitiesTests.m"; sourceTree = "<group>"; };
-		22CA557613DA09FF007E89E2 /* NSString+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECUtilitiesTests.h"; sourceTree = "<group>"; };
-		22CA557713DA09FF007E89E2 /* NSString+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECUtilitiesTests.m"; sourceTree = "<group>"; };
+		22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
+		22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
+		22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
+		22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECCore.m"; sourceTree = "<group>"; };
+		22CA556513DA09FF007E89E2 /* NSData+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ECCore.h"; sourceTree = "<group>"; };
+		22CA556613DA09FF007E89E2 /* NSData+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ECCore.m"; sourceTree = "<group>"; };
+		22CA556713DA09FF007E89E2 /* NSDate+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECCore.h"; sourceTree = "<group>"; };
+		22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECCore.m"; sourceTree = "<group>"; };
+		22CA556913DA09FF007E89E2 /* NSDictionary+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECCore.h"; sourceTree = "<group>"; };
+		22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECCore.m"; sourceTree = "<group>"; };
+		22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECCore.h"; sourceTree = "<group>"; };
+		22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECCore.m"; sourceTree = "<group>"; };
+		22CA556D13DA09FF007E89E2 /* NSString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCore.h"; sourceTree = "<group>"; };
+		22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCore.m"; sourceTree = "<group>"; };
+		22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECCore.h"; sourceTree = "<group>"; };
+		22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECCore.m"; sourceTree = "<group>"; };
+		22CA557213DA09FF007E89E2 /* NSDate+ECCoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECCoreTests.h"; sourceTree = "<group>"; };
+		22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECCoreTests.m"; sourceTree = "<group>"; };
+		22CA557413DA09FF007E89E2 /* NSDictionary+ECCoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECCoreTests.h"; sourceTree = "<group>"; };
+		22CA557513DA09FF007E89E2 /* NSDictionary+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECCoreTests.m"; sourceTree = "<group>"; };
+		22CA557613DA09FF007E89E2 /* NSString+ECCoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCoreTests.h"; sourceTree = "<group>"; };
+		22CA557713DA09FF007E89E2 /* NSString+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCoreTests.m"; sourceTree = "<group>"; };
 		22CA557913DA09FF007E89E2 /* UIApplication+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ECUtilities.h"; sourceTree = "<group>"; };
 		22CA557A13DA09FF007E89E2 /* UIApplication+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ECUtilities.m"; sourceTree = "<group>"; };
 		22CA557B13DA09FF007E89E2 /* UIColor+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ECUtilities.h"; sourceTree = "<group>"; };
@@ -1254,22 +1254,22 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				22CA555F13DA09FF007E89E2 /* CGGeometry+ECUtilities.h */,
-				22CA556013DA09FF007E89E2 /* CGGeometry+ECUtilities.m */,
-				22CA556313DA09FF007E89E2 /* NSBundle+ECUtilities.h */,
-				22CA556413DA09FF007E89E2 /* NSBundle+ECUtilities.m */,
-				22CA556513DA09FF007E89E2 /* NSData+ECUtilities.h */,
-				22CA556613DA09FF007E89E2 /* NSData+ECUtilities.m */,
-				22CA556713DA09FF007E89E2 /* NSDate+ECUtilities.h */,
-				22CA556813DA09FF007E89E2 /* NSDate+ECUtilities.m */,
-				22CA556913DA09FF007E89E2 /* NSDictionary+ECUtilities.h */,
-				22CA556A13DA09FF007E89E2 /* NSDictionary+ECUtilities.m */,
-				22CA556B13DA09FF007E89E2 /* NSFileManager+ECUtilities.h */,
-				22CA556C13DA09FF007E89E2 /* NSFileManager+ECUtilities.m */,
-				22CA556D13DA09FF007E89E2 /* NSString+ECUtilities.h */,
-				22CA556E13DA09FF007E89E2 /* NSString+ECUtilities.m */,
-				22CA556F13DA09FF007E89E2 /* NSURL+ECUtilities.h */,
-				22CA557013DA09FF007E89E2 /* NSURL+ECUtilities.m */,
+				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
+				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
+				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
+				22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */,
+				22CA556513DA09FF007E89E2 /* NSData+ECCore.h */,
+				22CA556613DA09FF007E89E2 /* NSData+ECCore.m */,
+				22CA556713DA09FF007E89E2 /* NSDate+ECCore.h */,
+				22CA556813DA09FF007E89E2 /* NSDate+ECCore.m */,
+				22CA556913DA09FF007E89E2 /* NSDictionary+ECCore.h */,
+				22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */,
+				22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */,
+				22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */,
+				22CA556D13DA09FF007E89E2 /* NSString+ECCore.h */,
+				22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */,
+				22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */,
+				22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */,
 				22CA557113DA09FF007E89E2 /* tests */,
 			);
 			path = Generic;
@@ -1278,12 +1278,12 @@
 		22CA557113DA09FF007E89E2 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				22CA557213DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h */,
-				22CA557313DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m */,
-				22CA557413DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h */,
-				22CA557513DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m */,
-				22CA557613DA09FF007E89E2 /* NSString+ECUtilitiesTests.h */,
-				22CA557713DA09FF007E89E2 /* NSString+ECUtilitiesTests.m */,
+				22CA557213DA09FF007E89E2 /* NSDate+ECCoreTests.h */,
+				22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */,
+				22CA557413DA09FF007E89E2 /* NSDictionary+ECCoreTests.h */,
+				22CA557513DA09FF007E89E2 /* NSDictionary+ECCoreTests.m */,
+				22CA557613DA09FF007E89E2 /* NSString+ECCoreTests.h */,
+				22CA557713DA09FF007E89E2 /* NSString+ECCoreTests.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -1379,17 +1379,17 @@
 				2248BC4B13C794CE00E13577 /* ECTSwitchCell.h in Headers */,
 				2248BC4D13C794CE00E13577 /* ECTTickableTableController.h in Headers */,
 				2248BC4F13C794CE00E13577 /* ECTTickCell.h in Headers */,
-				22CA558313DA09FF007E89E2 /* CGGeometry+ECUtilities.h in Headers */,
-				22CA558F13DA09FF007E89E2 /* NSBundle+ECUtilities.h in Headers */,
-				22CA559513DA09FF007E89E2 /* NSData+ECUtilities.h in Headers */,
-				22CA559B13DA09FF007E89E2 /* NSDate+ECUtilities.h in Headers */,
-				22CA55A113DA09FF007E89E2 /* NSDictionary+ECUtilities.h in Headers */,
-				22CA55A713DA09FF007E89E2 /* NSFileManager+ECUtilities.h in Headers */,
-				22CA55AD13DA09FF007E89E2 /* NSString+ECUtilities.h in Headers */,
-				22CA55B313DA09FF007E89E2 /* NSURL+ECUtilities.h in Headers */,
-				22CA55B913DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h in Headers */,
-				22CA55BF13DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h in Headers */,
-				22CA55C513DA09FF007E89E2 /* NSString+ECUtilitiesTests.h in Headers */,
+				22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */,
+				22CA558F13DA09FF007E89E2 /* NSBundle+ECCore.h in Headers */,
+				22CA559513DA09FF007E89E2 /* NSData+ECCore.h in Headers */,
+				22CA559B13DA09FF007E89E2 /* NSDate+ECCore.h in Headers */,
+				22CA55A113DA09FF007E89E2 /* NSDictionary+ECCore.h in Headers */,
+				22CA55A713DA09FF007E89E2 /* NSFileManager+ECCore.h in Headers */,
+				22CA55AD13DA09FF007E89E2 /* NSString+ECCore.h in Headers */,
+				22CA55B313DA09FF007E89E2 /* NSURL+ECCore.h in Headers */,
+				22CA55B913DA09FF007E89E2 /* NSDate+ECCoreTests.h in Headers */,
+				22CA55BF13DA09FF007E89E2 /* NSDictionary+ECCoreTests.h in Headers */,
+				22CA55C513DA09FF007E89E2 /* NSString+ECCoreTests.h in Headers */,
 				22CA55CB13DA09FF007E89E2 /* UIApplication+ECUtilities.h in Headers */,
 				22CA55D113DA09FF007E89E2 /* UIColor+ECUtilities.h in Headers */,
 				22CA55D713DA09FF007E89E2 /* UIImage+ECUtilities.h in Headers */,
@@ -1427,17 +1427,17 @@
 				2248BC3D13C7949E00E13577 /* ECMacros.h in Headers */,
 				2248BC3F13C7949E00E13577 /* ECProperties.h in Headers */,
 				2248BC4113C7949E00E13577 /* ECTestCase.h in Headers */,
-				22CA558213DA09FF007E89E2 /* CGGeometry+ECUtilities.h in Headers */,
-				22CA558E13DA09FF007E89E2 /* NSBundle+ECUtilities.h in Headers */,
-				22CA559413DA09FF007E89E2 /* NSData+ECUtilities.h in Headers */,
-				22CA559A13DA09FF007E89E2 /* NSDate+ECUtilities.h in Headers */,
-				22CA55A013DA09FF007E89E2 /* NSDictionary+ECUtilities.h in Headers */,
-				22CA55A613DA09FF007E89E2 /* NSFileManager+ECUtilities.h in Headers */,
-				22CA55AC13DA09FF007E89E2 /* NSString+ECUtilities.h in Headers */,
-				22CA55B213DA09FF007E89E2 /* NSURL+ECUtilities.h in Headers */,
-				22CA55B813DA09FF007E89E2 /* NSDate+ECUtilitiesTests.h in Headers */,
-				22CA55BE13DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.h in Headers */,
-				22CA55C413DA09FF007E89E2 /* NSString+ECUtilitiesTests.h in Headers */,
+				22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */,
+				22CA558E13DA09FF007E89E2 /* NSBundle+ECCore.h in Headers */,
+				22CA559413DA09FF007E89E2 /* NSData+ECCore.h in Headers */,
+				22CA559A13DA09FF007E89E2 /* NSDate+ECCore.h in Headers */,
+				22CA55A013DA09FF007E89E2 /* NSDictionary+ECCore.h in Headers */,
+				22CA55A613DA09FF007E89E2 /* NSFileManager+ECCore.h in Headers */,
+				22CA55AC13DA09FF007E89E2 /* NSString+ECCore.h in Headers */,
+				22CA55B213DA09FF007E89E2 /* NSURL+ECCore.h in Headers */,
+				22CA55B813DA09FF007E89E2 /* NSDate+ECCoreTests.h in Headers */,
+				22CA55BE13DA09FF007E89E2 /* NSDictionary+ECCoreTests.h in Headers */,
+				22CA55C413DA09FF007E89E2 /* NSString+ECCoreTests.h in Headers */,
 				22CA55DC13DA09FF007E89E2 /* NSGeometry+ECUtilities.h in Headers */,
 				226021BE141F86F30044644C /* ECAboutBoxController.h in Headers */,
 				226021C1141F86F30044644C /* ECAboutBoxInfoProvider.h in Headers */,
@@ -1705,14 +1705,14 @@
 				2248BC4C13C794CE00E13577 /* ECTSwitchCell.m in Sources */,
 				2248BC4E13C794CE00E13577 /* ECTTickableTableController.m in Sources */,
 				2248BC5013C794CE00E13577 /* ECTTickCell.m in Sources */,
-				22CA558513DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */,
-				22CA559113DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */,
-				22CA559713DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */,
-				22CA559D13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */,
-				22CA55A313DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */,
-				22CA55A913DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */,
-				22CA55AF13DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */,
-				22CA55B513DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */,
+				22CA558513DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */,
+				22CA559113DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */,
+				22CA559713DA09FF007E89E2 /* NSData+ECCore.m in Sources */,
+				22CA559D13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */,
+				22CA55A313DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */,
+				22CA55A913DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */,
+				22CA55AF13DA09FF007E89E2 /* NSString+ECCore.m in Sources */,
+				22CA55B513DA09FF007E89E2 /* NSURL+ECCore.m in Sources */,
 				22CA55CD13DA09FF007E89E2 /* UIApplication+ECUtilities.m in Sources */,
 				22CA55D313DA09FF007E89E2 /* UIColor+ECUtilities.m in Sources */,
 				22CA55D913DA09FF007E89E2 /* UIImage+ECUtilities.m in Sources */,
@@ -1744,17 +1744,17 @@
 				2248BC2A13C7949E00E13577 /* ECCommonKeys.m in Sources */,
 				2248BC3013C7949E00E13577 /* ECDataItem.m in Sources */,
 				2248BC3613C7949E00E13577 /* ECDataItemTests.m in Sources */,
-				22CA558713DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */,
-				22CA559313DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */,
-				22CA559913DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */,
-				22CA559F13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */,
-				22CA55A513DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */,
-				22CA55AB13DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */,
-				22CA55B113DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */,
-				22CA55B713DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */,
-				22CA55BD13DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m in Sources */,
-				22CA55C313DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m in Sources */,
-				22CA55C913DA09FF007E89E2 /* NSString+ECUtilitiesTests.m in Sources */,
+				22CA558713DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */,
+				22CA559313DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */,
+				22CA559913DA09FF007E89E2 /* NSData+ECCore.m in Sources */,
+				22CA559F13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */,
+				22CA55A513DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */,
+				22CA55AB13DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */,
+				22CA55B113DA09FF007E89E2 /* NSString+ECCore.m in Sources */,
+				22CA55B713DA09FF007E89E2 /* NSURL+ECCore.m in Sources */,
+				22CA55BD13DA09FF007E89E2 /* NSDate+ECCoreTests.m in Sources */,
+				22CA55C313DA09FF007E89E2 /* NSDictionary+ECCoreTests.m in Sources */,
+				22CA55C913DA09FF007E89E2 /* NSString+ECCoreTests.m in Sources */,
 				22CA55CF13DA09FF007E89E2 /* UIApplication+ECUtilities.m in Sources */,
 				22CA55D513DA09FF007E89E2 /* UIColor+ECUtilities.m in Sources */,
 				22CA55DB13DA09FF007E89E2 /* UIImage+ECUtilities.m in Sources */,
@@ -1783,17 +1783,17 @@
 				2248BC2913C7949E00E13577 /* ECCommonKeys.m in Sources */,
 				2248BC2F13C7949E00E13577 /* ECDataItem.m in Sources */,
 				2248BC3513C7949E00E13577 /* ECDataItemTests.m in Sources */,
-				22CA558613DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */,
-				22CA559213DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */,
-				22CA559813DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */,
-				22CA559E13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */,
-				22CA55A413DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */,
-				22CA55AA13DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */,
-				22CA55B013DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */,
-				22CA55B613DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */,
-				22CA55BC13DA09FF007E89E2 /* NSDate+ECUtilitiesTests.m in Sources */,
-				22CA55C213DA09FF007E89E2 /* NSDictionary+ECUtilitiesTests.m in Sources */,
-				22CA55C813DA09FF007E89E2 /* NSString+ECUtilitiesTests.m in Sources */,
+				22CA558613DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */,
+				22CA559213DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */,
+				22CA559813DA09FF007E89E2 /* NSData+ECCore.m in Sources */,
+				22CA559E13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */,
+				22CA55A413DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */,
+				22CA55AA13DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */,
+				22CA55B013DA09FF007E89E2 /* NSString+ECCore.m in Sources */,
+				22CA55B613DA09FF007E89E2 /* NSURL+ECCore.m in Sources */,
+				22CA55BC13DA09FF007E89E2 /* NSDate+ECCoreTests.m in Sources */,
+				22CA55C213DA09FF007E89E2 /* NSDictionary+ECCoreTests.m in Sources */,
+				22CA55C813DA09FF007E89E2 /* NSString+ECCoreTests.m in Sources */,
 				22CA55E013DA09FF007E89E2 /* NSGeometry+ECUtilities.m in Sources */,
 				226021C0141F86F30044644C /* ECAboutBoxController.m in Sources */,
 				226021C4141F86F30044644C /* ECAppDelegate.m in Sources */,
@@ -1858,14 +1858,14 @@
 				22B1277613C785CA0022CC5B /* ECLogHandlerStdout.m in Sources */,
 				2248BC2713C7949E00E13577 /* ECCommonKeys.m in Sources */,
 				2248BC2D13C7949E00E13577 /* ECDataItem.m in Sources */,
-				22CA558413DA09FF007E89E2 /* CGGeometry+ECUtilities.m in Sources */,
-				22CA559013DA09FF007E89E2 /* NSBundle+ECUtilities.m in Sources */,
-				22CA559613DA09FF007E89E2 /* NSData+ECUtilities.m in Sources */,
-				22CA559C13DA09FF007E89E2 /* NSDate+ECUtilities.m in Sources */,
-				22CA55A213DA09FF007E89E2 /* NSDictionary+ECUtilities.m in Sources */,
-				22CA55A813DA09FF007E89E2 /* NSFileManager+ECUtilities.m in Sources */,
-				22CA55AE13DA09FF007E89E2 /* NSString+ECUtilities.m in Sources */,
-				22CA55B413DA09FF007E89E2 /* NSURL+ECUtilities.m in Sources */,
+				22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */,
+				22CA559013DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */,
+				22CA559613DA09FF007E89E2 /* NSData+ECCore.m in Sources */,
+				22CA559C13DA09FF007E89E2 /* NSDate+ECCore.m in Sources */,
+				22CA55A213DA09FF007E89E2 /* NSDictionary+ECCore.m in Sources */,
+				22CA55A813DA09FF007E89E2 /* NSFileManager+ECCore.m in Sources */,
+				22CA55AE13DA09FF007E89E2 /* NSString+ECCore.m in Sources */,
+				22CA55B413DA09FF007E89E2 /* NSURL+ECCore.m in Sources */,
 				22CA55DE13DA09FF007E89E2 /* NSGeometry+ECUtilities.m in Sources */,
 				226021BF141F86F30044644C /* ECAboutBoxController.m in Sources */,
 				226021C3141F86F30044644C /* ECAppDelegate.m in Sources */,

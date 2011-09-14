@@ -9,7 +9,7 @@
 
 #import "ECMachine.h"
 
-#import "NSData+ECUtilities.h"
+#import "NSData+ECCore.h"
 
 static CFDataRef copyMacAddress(void);
 
