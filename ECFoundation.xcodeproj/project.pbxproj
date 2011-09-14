@@ -696,7 +696,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		034768DFFF38A50411DB9C8B /* products */ = {
+		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* ECFoundation.framework */,
@@ -704,7 +704,7 @@
 				22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */,
 				225409261354F05C00DC8205 /* ECFoundation.framework */,
 			);
-			name = products;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
@@ -713,27 +713,22 @@
 				22F568D813211C39003E8EE8 /* README.md */,
 				22F568D713211C39003E8EE8 /* LICENSE.md */,
 				22C02E09141FE33C004B159A /* Modules */,
-				0867D69AFE84028FC02AAC07 /* frameworks */,
-				034768DFFF38A50411DB9C8B /* products */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
 				22552CCA134BAE0D00B8894E /* Scripts */,
 			);
 			name = ECFoundation;
 			sourceTree = "<group>";
 			usesTabs = 1;
 		};
-		0867D69AFE84028FC02AAC07 /* frameworks */ = {
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2260223A141F8A4E0044644C /* libcrypto.dylib */,
-				22602238141F8A460044644C /* Security.framework */,
-				22602236141F8A230044644C /* IOKit.framework */,
-				22602234141F8A160044644C /* Carbon.framework */,
-				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
 				223CBAE11205C5930008A641 /* iOS */,
 				1058C7B0FEA5585E11CA2CBB /* MacOS */,
 				1058C7B2FEA5585E11CA2CBB /* Testing */,
 			);
-			name = frameworks;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		089C1665FE841158C02AAC07 /* Resources */ = {
@@ -749,6 +744,11 @@
 		1058C7B0FEA5585E11CA2CBB /* MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				2260223A141F8A4E0044644C /* libcrypto.dylib */,
+				22602238141F8A460044644C /* Security.framework */,
+				22602236141F8A230044644C /* IOKit.framework */,
+				22602234141F8A160044644C /* Carbon.framework */,
+				2229674F1354EDC5005F42E7 /* CoreFoundation.framework */,
 				22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */,
 				22552C12134BA18A00B8894E /* CoreLocation.framework */,
 				22FAC46C132149E900103630 /* CoreLocation.framework */,
@@ -1564,7 +1564,7 @@
 				ec,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* ECFoundation */;
-			productRefGroup = 034768DFFF38A50411DB9C8B /* products */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
