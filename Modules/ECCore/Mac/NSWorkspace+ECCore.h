@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 
-@interface NSWorkspace(ECAppKit)
+@interface NSWorkspace(ECCore)
 
 - (BOOL)		selectURL:(NSURL*)fullPath inFileViewerRootedAtURL:(NSURL*)rootFullPath;
 - (BOOL)		selectURLOnDesktop:(NSURL*)fullPath;

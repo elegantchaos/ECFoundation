@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSApplication(ECAppKit)
+@interface NSApplication(ECCore)
 
 - (BOOL) willStartAtLogin;
 - (void) setWillStartAtLogin: (BOOL) enabled;

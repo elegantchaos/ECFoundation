@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NSMenu(ECAppKit)
+@interface NSMenu(ECCore)
 
 - (void) removeAllItemsEC;
 

@@ -12,7 +12,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NSAppleScript(ECAppKit)
+@interface NSAppleScript(ECCore)
 
 + (NSAppleScript*) scriptNamed:(NSString*)name;
 + (NSAppleScript*) scriptNamed:(NSString*)name fromBundle:(NSBundle*)bundle;

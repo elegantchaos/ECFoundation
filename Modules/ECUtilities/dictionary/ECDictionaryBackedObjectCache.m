@@ -15,8 +15,8 @@
 
 @interface ECDictionaryBackedObjectCache()
 
-ECPropertyAssigned(class, Class);
-ECPropertyRetained(data, NSMutableDictionary*);
+@property (nonatomic, assign) Class class;
+@property (nonatomic, retain) NSMutableDictionary* data;
 
 - (void)postUpdatedNotification;
 
@@ -30,8 +30,8 @@ ECDefineDebugChannel(DictionaryBackedObjectCacheChannel);
 
 #pragma mark - Properties
 
-ECPropertySynthesize(class);
-ECPropertySynthesize(data);
+@synthesize class;
+@synthesize data;
 
 #pragma mark - Notifications
 
@@ -61,7 +61,7 @@ NSString* const ECDictionaryBackedObjectCacheUpdatedNotification = @"ECDictionar
 
 - (void)dealloc
 {
-    self.data = nil;
+	[data release];
     
     [super dealloc];
 }

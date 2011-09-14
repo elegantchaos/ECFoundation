@@ -1,5 +1,5 @@
 //
-//  NSString+ECUtilities.m
+//  NSString+ECCore.m
 //  ECFoundation
 //
 //  Created by Sam Deane on 11/08/2010.

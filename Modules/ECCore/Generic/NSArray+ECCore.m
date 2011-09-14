@@ -7,16 +7,25 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface NSArray(ECUtilities)
+#import "NSArray+ECCore.h"
 
-// --------------------------------------------------------------------------
-// Public Properties
-// --------------------------------------------------------------------------
 
-// --------------------------------------------------------------------------
-// Public Methods
-// --------------------------------------------------------------------------
+@implementation NSArray(ECCore)
 
-- (id)firstObject;
+- (id)firstObject
+{
+    id result;
+    
+    if ([self count])
+    {
+        result = [self objectAtIndex:0];
+    }
+    else
+    {
+        result = nil;
+    }
+    
+    return result;
+}
 
 @end

@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSWindow(ECAppKit)
+@interface NSWindow(ECCore)
 
 - (NSRect)frameCentredOnCurrentScreen;
 - (NSRect)frameCentredOnMainScreen;

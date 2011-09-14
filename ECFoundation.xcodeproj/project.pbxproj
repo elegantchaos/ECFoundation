@@ -113,6 +113,12 @@
 		22552BCC134B9E5300B8894E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BCB134B9E5300B8894E /* CoreGraphics.framework */; };
 		22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BE6134BA0C900B8894E /* CoreLocation.framework */; };
 		22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552C12134BA18A00B8894E /* CoreLocation.framework */; };
+		2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
+		2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
+		2256928114210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
+		2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
+		2256928314210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
+		2256928414210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		226021BE141F86F30044644C /* ECAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260216A141F86F30044644C /* ECAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226021BF141F86F30044644C /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260216B141F86F30044644C /* ECAboutBoxController.m */; };
 		226021C0141F86F30044644C /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260216B141F86F30044644C /* ECAboutBoxController.m */; };
@@ -476,6 +482,8 @@
 		22552BE6134BA0C900B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		22552C12134BA18A00B8894E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		22552CCA134BAE0D00B8894E /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = Extras/Scripts; sourceTree = "<group>"; };
+		2256927D14210BE000C4F852 /* NSArray+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ECCore.h"; sourceTree = "<group>"; };
+		2256927E14210BE000C4F852 /* NSArray+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ECCore.m"; sourceTree = "<group>"; };
 		225EC67211EBAA4800A97AEA /* EC Foundation Unit Tests Mac.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests Mac.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2260216A141F86F30044644C /* ECAboutBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAboutBoxController.h; sourceTree = "<group>"; };
 		2260216B141F86F30044644C /* ECAboutBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ECAboutBoxController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1237,6 +1245,8 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
+				2256927E14210BE000C4F852 /* NSArray+ECCore.m */,
 				2248BC2213C7949E00E13577 /* ECMacros.h */,
 				2248BC2313C7949E00E13577 /* ECProperties.h */,
 				2248BC2413C7949E00E13577 /* ECTestCase.h */,
@@ -1379,6 +1389,7 @@
 				22CA55D113DA09FF007E89E2 /* UIColor+ECCore.h in Headers */,
 				22CA55D713DA09FF007E89E2 /* UIImage+ECCore.h in Headers */,
 				22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
+				2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1463,6 +1474,7 @@
 				223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */,
 				223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */,
 				22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
+				2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1701,6 +1713,7 @@
 				22CA55D313DA09FF007E89E2 /* UIColor+ECCore.m in Sources */,
 				22CA55D913DA09FF007E89E2 /* UIImage+ECCore.m in Sources */,
 				22C02E14141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
+				2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1743,6 +1756,7 @@
 				22CA55D513DA09FF007E89E2 /* UIColor+ECCore.m in Sources */,
 				22CA55DB13DA09FF007E89E2 /* UIImage+ECCore.m in Sources */,
 				22C02E16141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
+				2256928414210BE000C4F852 /* NSArray+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1818,6 +1832,7 @@
 				223E0842141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
 				223E0845141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
 				22C02E15141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
+				2256928314210BE000C4F852 /* NSArray+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1886,6 +1901,7 @@
 				223E0841141F96E900DD8795 /* ECMacStoreSaved.m in Sources */,
 				223E0844141F96E900DD8795 /* ECMacStoreTest.m in Sources */,
 				22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
+				2256928114210BE000C4F852 /* NSArray+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

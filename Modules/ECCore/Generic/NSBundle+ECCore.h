@@ -1,5 +1,5 @@
 //
-//  NSBundle+ECUtilities.h
+//  NSBundle+ECCore.h
 //  ECFoundation
 //
 //  Created by Sam Deane on 13/03/2011.

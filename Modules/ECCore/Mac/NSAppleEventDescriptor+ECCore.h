@@ -12,7 +12,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NSAppleEventDescriptor(ECAppKit)
+@interface NSAppleEventDescriptor(ECCore)
 
 - (NSURL*)urlValue;
 - (NSArray*)stringArrayValue;

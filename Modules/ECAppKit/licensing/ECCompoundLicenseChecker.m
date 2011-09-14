@@ -1,6 +1,6 @@
 //
 //  ECCompoundLicenseChecker.m
-//  ECAppKit
+//  <ECFoundation/
 //
 //  Created by Sam Deane on 13/03/2011.
 //  Copyright 2011 Elegant Chaos. All rights reserved.

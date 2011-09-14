@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface NSUserDefaults(ECAppKit)
+@interface NSUserDefaults(ECCore)
 
 // --------------------------------------------------------------------------
 // Public Methods

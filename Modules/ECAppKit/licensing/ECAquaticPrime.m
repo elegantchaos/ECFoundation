@@ -4,7 +4,7 @@
 //
 //! @file Licensing support for ECAquaticPrime
 //!
-//! NB this file isn't included directly in the ECAppKit framework,
+//! NB this file isn't included directly in the <ECFoundation/ framework,
 //!    to prevent us depending on Aquatic Prime.
 //!    To use this class, add ECAquaticPrime.m to your project.
 //

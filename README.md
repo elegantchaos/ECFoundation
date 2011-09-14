@@ -11,11 +11,11 @@ That said, I'm open sourcing them in case anyone finds them useful.
 Note: Reorganisation In Progress
 --------------------------------
 
-Recently I've decided to merge my Mac and iOS libraries (ECAppKit and ECTouch) into ECFoundation, 
+Recently I've decided to merge my Mac and iOS libraries (<ECFoundation/ and ECTouch) into ECFoundation, 
 and re-organise the source code around the idea of functional modules. Managing three separate frameworks
 was too much work for something that is still a relatively small codebase. 
 
-The current status of this merge is that the ECAppKit code has moved, but not all of the ECTouch code has yet. 
+The current status of this merge is that the <ECFoundation/ code has moved, but not all of the ECTouch code has yet. 
 In addition, the reorganisation into modules hasn't happened yet.
 
 For More Information
