@@ -9,6 +9,7 @@
 
 #import "ECDictionaryBackedObjectCache.h"
 #import "ECDictionaryBackedObject.h"
+#import "ECLogging.h"
 
 #pragma mark - Private Interface
 

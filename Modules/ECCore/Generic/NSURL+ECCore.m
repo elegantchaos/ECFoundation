@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSURL+ECCore.h"
+#import "ECLogging.h"
 
 
 @implementation NSURL(ECCore)

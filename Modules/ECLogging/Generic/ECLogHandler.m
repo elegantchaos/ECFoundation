@@ -9,6 +9,7 @@
 
 #import "ECLogHandler.h"
 #import "ECAssertion.h"
+#import "ECLogging.h"
 
 @implementation ECLogHandler
 

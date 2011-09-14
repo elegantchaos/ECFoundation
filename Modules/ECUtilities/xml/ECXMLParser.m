@@ -8,7 +8,8 @@
 #import "ECXMLParser.h"
 #import "ECXMLElement.h"
 
-#import "ECFoundation/NSURL+ECUtilities.h"
+#import "ECLogging.h"
+#import "NSURL+ECCore.h"
 
 #pragma mark - Private Interface
 

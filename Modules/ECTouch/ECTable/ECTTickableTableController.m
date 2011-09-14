@@ -11,6 +11,7 @@
 #import "ECTSection.h"
 #import "ECTBinding.h"
 #import "ECTTickCell.h"
+#import "ECLogging.h"
 
 #pragma mark - Private Interface
 

@@ -19,6 +19,8 @@
 #import <CoreFoundation/CoreFoundation.h>
 
 #import "ECReachability.h"
+#import "ECLogging.h"
+#import "ECAssertion.h"
 
 ECDefineDebugChannel(ReachabilityChannel);
 

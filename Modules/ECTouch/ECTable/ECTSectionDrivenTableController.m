@@ -10,6 +10,8 @@
 #import "ECTSectionDrivenTableController.h"
 #import "ECTBinding.h"
 #import "ECTSection.h"
+#import "ECLogging.h"
+#import "ECAssertion.h"
 
 @interface ECTSectionDrivenTableController()
 

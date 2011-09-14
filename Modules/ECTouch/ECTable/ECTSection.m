@@ -11,6 +11,8 @@
 #import "ECTSimpleCell.h"
 #import "ECTSectionDrivenTableController.h"
 #import "ECTBinding.h"
+#import "ECLogging.h"
+#import "ECAssertion.h"
 
 @interface ECTSection()
 @property (nonatomic, retain) NSArray* source;

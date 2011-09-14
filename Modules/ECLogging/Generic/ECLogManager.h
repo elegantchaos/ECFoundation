@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECLogging.h"
 
 @class ECLogChannel;
 @class ECLogHandler;

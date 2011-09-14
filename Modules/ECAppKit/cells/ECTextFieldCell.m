@@ -10,6 +10,7 @@
 //
 
 #import "ECTextFieldCell.h"
+#import "ECLogging.h"
 
 
 @implementation ECTextFieldCell

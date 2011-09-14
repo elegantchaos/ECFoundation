@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECCompletionTextView.h"
+#import "ECLogging.h"
 
 @interface ECCompletionTextView()
 

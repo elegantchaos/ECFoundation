@@ -9,6 +9,7 @@
 
 #import "ECTBinding.h"
 #import "ECTSimpleCell.h"
+#import "ECLogging.h"
 
 #pragma mark - Constants
 

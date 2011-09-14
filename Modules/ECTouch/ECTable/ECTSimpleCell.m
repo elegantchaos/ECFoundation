@@ -10,6 +10,7 @@
 #import "ECTSimpleCell.h"
 #import "ECTSection.h"
 #import "ECTBinding.h"
+#import "ECAssertion.h"
 
 @interface ECTSimpleCell()
 

@@ -13,6 +13,7 @@
 #import "ECLaunchServices.h"
 
 #import "NSBundle+ECCore.h"
+#import "ECLogging.h"
 
 @implementation NSApplication(ECCore)
 
