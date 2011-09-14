@@ -7,4 +7,10 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "CGGeometry+ECUtilities.h"
+@interface UIApplication(ECCore)
+
+- (NSString*) aboutName;
+- (NSString*) aboutCopyright;
+- (NSString*) aboutVersion;
+
+@end

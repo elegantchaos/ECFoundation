@@ -11,7 +11,13 @@
 
 @interface NSURL(ECCore)
 
+ECDeclareDebugChannel(NSURLChannel);
+
 + (NSURL*) URLWithResourceNamed: (NSString*) name ofType: (NSString*) type;
 - (id) initWithResourceNamed: (NSString*) name ofType: (NSString*) type;
+
+- (NSURL*)getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension;
+- (NSURL*)getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension usingManager:(NSFileManager*)fileManager;
+
 
 @end

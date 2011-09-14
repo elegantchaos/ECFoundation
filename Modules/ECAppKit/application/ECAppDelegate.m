@@ -16,7 +16,7 @@
 #import "ECMacStoreTest.h"
 #import "ECCompoundLicenseChecker.h"
 
-#import "NSApplication+ECAppKit.h"
+#import "NSApplication+ECCore.h"
 
 #import "ECLogging.h"
 #import "ECLogManager.h"

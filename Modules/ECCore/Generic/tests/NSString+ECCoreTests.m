@@ -13,7 +13,7 @@
 #import "NSString+ECCoreTests.h"
 #import "NSString+ECCore.h"
 
-@implementation NSStringECCoreTests
+@implementation NSString_ECCoreTests
 
 // --------------------------------------------------------------------------
 //! Set up before each test.

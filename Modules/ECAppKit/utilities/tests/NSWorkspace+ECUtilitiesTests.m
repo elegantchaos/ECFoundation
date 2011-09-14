@@ -11,7 +11,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSWorkspace+ECUtilitiesTests.h"
-#import "NSWorkspace+ECAppKit.h"
+#import "NSWorkspace+ECCore.h"
 
 @implementation NSWorkspace_ECUtilitiesTests
 

@@ -8,7 +8,7 @@
 #import "ECMacStore.h"
 #import "ECMacStoreReceipt.h"
 
-#import "NSApplication+ECAppKit.h"
+#import "NSApplication+ECCore.h"
 #import "ECMachine.h"
 #import "ECKeychain.h"
 #import "NSFileManager+ECCore.h"

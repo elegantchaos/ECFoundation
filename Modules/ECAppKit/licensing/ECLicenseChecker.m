@@ -7,7 +7,7 @@
 
 #import "ECLicenseChecker.h"
 
-#import "NSApplication+ECAppKit.h"
+#import "NSApplication+ECCore.h"
 
 @implementation ECLicenseChecker
 

@@ -11,7 +11,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSAppleEventDescriptor+ECUtilitiesTests.h"
-#import "NSAppleEventDescriptor+ECAppKit.h"
+#import "NSAppleEventDescriptor+ECCore.h"
 
 @implementation NSAppleEventDescriptor_ECUtilitiesTests
 

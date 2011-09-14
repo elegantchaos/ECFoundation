@@ -12,6 +12,8 @@
 
 @implementation NSURL(ECCore)
 
+ECDefineDebugChannel(NSURLChannel);
+
 // --------------------------------------------------------------------------
 //! Get a URL that points at a resource file.
 // --------------------------------------------------------------------------
@@ -30,6 +32,44 @@
 {
 	NSString* path = [[NSBundle mainBundle] pathForResource: name ofType: type];
 	return [self initFileURLWithPath: path isDirectory: NO];
+}
+
+
+// --------------------------------------------------------------------------
+//! Get a unique name to use for a file in a folder, using the default
+//! file manager.
+// --------------------------------------------------------------------------
+
+- (NSURL*) getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension
+{
+	return [self getUniqueFileWithName: name andExtension: extension usingManager: [NSFileManager defaultManager]];
+}
+
+// --------------------------------------------------------------------------
+//! Get a unique name to use for a file in a folder.
+//! If the file "name.extension" doesn't exist, we just use it. Otherwise
+//! we try "name 1.extension", "name 2.extension" and so on, until we find
+//! one that doesn't exist.
+// --------------------------------------------------------------------------
+
+- (NSURL*) getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension usingManager:(NSFileManager*)fileManager
+{
+    BOOL useExension = [extension length] > 0;
+	NSInteger iteration = 0;
+	NSURL* result;
+	NSString* newName = name;
+	do
+	{
+        result = [self URLByAppendingPathComponent:newName];
+        if (useExension)
+        {
+            result = [result URLByAppendingPathExtension: extension];
+        }
+		newName = [NSString stringWithFormat: @"%@ %d", name, ++iteration];
+	} while ([fileManager fileExistsAtPath: [result path]]);
+	
+	ECDebug(NSURLChannel, @"got unique filename %@ for file %@", result, name);
+	return result;
 }
 
 @end

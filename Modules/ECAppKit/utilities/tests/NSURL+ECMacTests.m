@@ -11,7 +11,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSURL+ECMacTests.h"
-#import "NSURL+ECAppKit.h"
+#import "NSURL+ECCoreMac.h"
 
 @implementation NSURL_ECUtilitiesTests
 
