@@ -24,6 +24,8 @@
 
 @implementation ECDebugViewController
 
+@synthesize navController;
+
 // --------------------------------------------------------------------------
 // Log Channels
 // --------------------------------------------------------------------------
@@ -71,6 +73,13 @@ Item kItems[] =
     return self;
 }
 
+- (void)dealloc 
+{
+    [navController release];
+    
+    [super dealloc];
+}
+
 // --------------------------------------------------------------------------
 //! Finish setting up the view.
 // --------------------------------------------------------------------------
@@ -88,7 +97,14 @@ Item kItems[] =
 {
     ECDebugChannelsViewController* controller = [[ECDebugChannelsViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.title = @"Log Channels";
-    [self.navigationController pushViewController:controller animated:TRUE];
+    
+    UINavigationController* nav = self.navController;
+    if (!nav)
+    {
+        nav = self.navigationController;
+    }
+    
+    [nav pushViewController:controller animated:TRUE];
     [controller release];
 }
 
@@ -167,6 +183,5 @@ Item kItems[] =
     
     [table deselectRowAtIndexPath: path animated: YES];
 }
-
 
 @end

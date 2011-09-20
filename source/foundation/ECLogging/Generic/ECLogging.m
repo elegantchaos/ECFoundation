@@ -36,9 +36,9 @@ void  disableChannel(ECLogChannel* channel)
 //! C style routine reporting whether a channel is enabled.
 // --------------------------------------------------------------------------
 
-BOOL channelEnabled(ECLogChannel* channel)
+bool channelEnabled(ECLogChannel* channel)
 {
-	return channel.enabled;
+	return channel.enabled != NO;
 }
 
 // --------------------------------------------------------------------------

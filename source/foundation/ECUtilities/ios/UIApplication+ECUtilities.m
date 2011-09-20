@@ -59,7 +59,7 @@
 		[formatter release];
 	}
 
-	NSString* result = [NSString stringWithFormat: @"Version %@ (%@%@, %@)", [info objectForKey:@"CFBundleShortVersion"], EC_CONFIGURATION_STRING_SHORT, [info objectForKey:@"CFBundleVersion"], date];
+	NSString* result = [NSString stringWithFormat: @"Version %@ (%@%@, %@)", [info objectForKey:@"CFBundleShortVersionString"], EC_CONFIGURATION_STRING_SHORT, [info objectForKey:@"CFBundleVersion"], date];
 	
 	return result;
 }

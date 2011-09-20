@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 @interface ECDebugViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
-{
-}
+
+@property (nonatomic, retain) UINavigationController* navController;
 
 @end

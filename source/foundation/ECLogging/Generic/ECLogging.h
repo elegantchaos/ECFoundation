@@ -31,7 +31,7 @@ extern "C"
 
 extern void enableChannel(ECLogChannel* channel);
 extern void disableChannel(ECLogChannel* channel);
-extern BOOL channelEnabled(ECLogChannel* channel);
+extern bool channelEnabled(ECLogChannel* channel);
 extern ECLogChannel* registerChannel(const char* name);
 extern void	logToChannel(ECLogChannel* channel, NSString* format, ...);
 
