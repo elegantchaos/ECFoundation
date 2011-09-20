@@ -42,7 +42,7 @@ extern "C"
     extern void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date, const char* function);
     extern void enableChannel(ECLogChannel* channel);
     extern void disableChannel(ECLogChannel* channel);
-    extern BOOL channelEnabled(ECLogChannel* channel);
+    extern bool channelEnabled(ECLogChannel* channel);
     extern ECLogChannel* registerChannel(const char* name);
     extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...);
 
@@ -66,11 +66,11 @@ extern "C"
 
 #pragma mark - Logging Macros
 
-#define ECMakeContext() ECLogContext context; makeContext(&context, __FILE__, __LINE__, __DATE__, __PRETTY_FUNCTION__)
+#define ECMakeContext() ECLogContext ecLogContext; makeContext(&ecLogContext, __FILE__, __LINE__, __DATE__, __PRETTY_FUNCTION__)
 
-#define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { ECMakeContext(); logToChannel(c, &context, __VA_ARGS__); } } while (0)
+#define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { ECMakeContext(); logToChannel(c, &ecLogContext, __VA_ARGS__); } } while (0)
 
-#define ECLogIf(test, channel, ...) do { if (test) { ECLogChannel* c = getChannel##channel(); ECMakeContext(); if (channelEnabled(c)) { logToChannel(c, &context, __VA_ARGS__); } } } while (0)
+#define ECLogIf(test, channel, ...) do { if (test) { ECLogChannel* c = getChannel##channel(); ECMakeContext(); if (channelEnabled(c)) { logToChannel(c, &ecLogContext, __VA_ARGS__); } } } while (0)
 
 #define ECGetChannel(channel) getChannel##channel()
 
