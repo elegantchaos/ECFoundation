@@ -149,8 +149,6 @@
 		226021E5141F86F30044644C /* ECPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260218B141F86F30044644C /* ECPreferencesController.m */; };
 		226021E6141F86F30044644C /* ECPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260218B141F86F30044644C /* ECPreferencesController.m */; };
 		226021E7141F86F30044644C /* ECSparklePreferenceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260218D141F86F30044644C /* ECSparklePreferenceController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		226021E8141F86F30044644C /* ECSparklePreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260218E141F86F30044644C /* ECSparklePreferenceController.m */; };
-		226021E9141F86F30044644C /* ECSparklePreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260218E141F86F30044644C /* ECSparklePreferenceController.m */; };
 		226021EA141F86F30044644C /* ECDraggableArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602190141F86F30044644C /* ECDraggableArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226021EB141F86F30044644C /* ECDraggableArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602191141F86F30044644C /* ECDraggableArrayController.m */; };
 		226021EC141F86F30044644C /* ECDraggableArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602191141F86F30044644C /* ECDraggableArrayController.m */; };
@@ -1809,7 +1807,6 @@
 				226021DF141F86F30044644C /* ECDebugMenu.m in Sources */,
 				226021E2141F86F30044644C /* ECPreferencePanel.m in Sources */,
 				226021E6141F86F30044644C /* ECPreferencesController.m in Sources */,
-				226021E9141F86F30044644C /* ECSparklePreferenceController.m in Sources */,
 				226021EC141F86F30044644C /* ECDraggableArrayController.m in Sources */,
 				226021EF141F86F30044644C /* ECKeychain.m in Sources */,
 				226021F2141F86F30044644C /* ECLaunchServices.m in Sources */,
@@ -1882,7 +1879,6 @@
 				226021DE141F86F30044644C /* ECDebugMenu.m in Sources */,
 				226021E1141F86F30044644C /* ECPreferencePanel.m in Sources */,
 				226021E5141F86F30044644C /* ECPreferencesController.m in Sources */,
-				226021E8141F86F30044644C /* ECSparklePreferenceController.m in Sources */,
 				226021EB141F86F30044644C /* ECDraggableArrayController.m in Sources */,
 				226021EE141F86F30044644C /* ECKeychain.m in Sources */,
 				226021F1141F86F30044644C /* ECLaunchServices.m in Sources */,
