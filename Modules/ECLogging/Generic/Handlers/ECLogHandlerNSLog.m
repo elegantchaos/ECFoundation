@@ -38,10 +38,33 @@
     if (channel.context)
     {
         NSMutableString* contextString = [[NSMutableString alloc] init];
+
         if ([channel showContext:ECLogContextName])
         {
-            [contextString appendString:channel.name];
+            [contextString appendString:[NSString stringWithFormat:@"%@ ", channel.name]];
         }
+
+        if ([channel showContext:ECLogContextFile])
+        {
+            [contextString appendString:[NSString stringWithFormat:@"%s ", context->file]];
+        }
+
+        if ([channel showContext:ECLogContextLine])
+        {
+            [contextString appendString:[NSString stringWithFormat:@"%d ", context->line]];
+        }
+
+        if ([channel showContext:ECLogContextFunction])
+        {
+            [contextString appendString:[NSString stringWithFormat:@"%s ", context->function]];
+        }
+
+        NSUInteger length = [contextString length];
+        if (length > 0)
+        {
+            [contextString deleteCharactersInRange:NSMakeRange(length - 1, 1)]; 
+        }
+        
         NSLog(@"«%@» %@", contextString, body);
         [contextString release];
     }

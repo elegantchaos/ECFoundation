@@ -31,7 +31,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 @synthesize name;
 @synthesize handlers;
 
-static const ECLogContextFlags kDefaultContextFlags = ECLogContextName;
+static const ECLogContextFlags kDefaultContextFlags = ECLogContextName | ECLogContextFile | ECLogContextLine | ECLogContextFunction;
 
 #pragma mark - Lifecycle
 
