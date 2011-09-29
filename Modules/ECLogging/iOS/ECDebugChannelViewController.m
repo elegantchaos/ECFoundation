@@ -114,7 +114,7 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else if (section == kHandlersSection)
     {
-        return [self.handlers count];
+        return [self.handlers count] + 1;
     }
     else
     {
@@ -146,9 +146,17 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else if (path.section == kHandlersSection)
     {
-        ECLogHandler* handler = [self.handlers objectAtIndex: path.row];
-        label = handler.name;
-        ticked = [self.channel isHandlerEnabled:handler];
+        if (path.row == 0)
+        {
+            label = @"Use Defaults";
+            ticked = self.channel.handlers == nil;
+        }
+        else
+        {
+            ECLogHandler* handler = [self.handlers objectAtIndex:path.row - 1];
+            label = handler.name;
+            ticked = self.channel.handlers && [self.channel isHandlerEnabled:handler];
+        }
     }
     else
     {
@@ -193,14 +201,21 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else if (path.section == kHandlersSection)
     {
-        ECLogHandler* handler = [self.handlers objectAtIndex: path.row];
-        if ([self.channel isHandlerEnabled:handler]) 
+        if (path.row == 0)
         {
-            [self.channel disableHandler:handler];
+            self.channel.handlers = nil;
         }
         else
         {
-            [self.channel enableHandler:handler];
+            ECLogHandler* handler = [self.handlers objectAtIndex:path.row - 1];
+            if (self.channel.handlers && [self.channel isHandlerEnabled:handler]) 
+            {
+                [self.channel disableHandler:handler];
+            }
+            else
+            {
+                [self.channel enableHandler:handler];
+            }
         }
     }
     else
