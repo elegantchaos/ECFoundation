@@ -8,5 +8,5 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <ECFoundationDebugPrefix.pch>
-
+#import "ECCoreDebugPrefix.pch"
+#import "SharedPrefix.pch"
