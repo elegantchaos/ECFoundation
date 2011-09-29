@@ -12,6 +12,7 @@
 #import "ECLogChannel.h"
 #import "ECLogHandler.h"
 #import "ECLogManager.h"
+#import "ECLogContext.h"
 
 // --------------------------------------------------------------------------
 // Private Methods
@@ -37,10 +38,28 @@
 enum
 {
     kSettingsSection,
-    kHandlersSection
+    kHandlersSection,
+    kContextSection
 };
 
-NSString *const kSections[] = { @"Settings", @"Handlers" };
+typedef struct 
+{
+    ECLogContextFlags flag;
+    NSString* name;
+} ContextFlagInfo;
+
+NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
+
+const ContextFlagInfo kContextFlagInfo[] = 
+{
+    { ECLogContextFile, @"File" },
+    { ECLogContextLine, @"Line"},
+    { ECLogContextDate, @"Date"},
+    { ECLogContextFunction, @"Function"}, 
+    { ECLogContextMessage, @"Message"},
+    { ECLogContextName, @"Name"},
+    { ECLogContextDefault, @"Use Defaults"}
+};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -94,9 +113,13 @@ NSString *const kSections[] = { @"Settings", @"Handlers" };
     {
         return 1;
     }
-    else
+    else if (section == kHandlersSection)
     {
         return [self.handlers count];
+    }
+    else
+    {
+        return sizeof(kContextFlagInfo) / sizeof(ContextFlagInfo);
     }
 }
 
@@ -122,11 +145,17 @@ NSString *const kSections[] = { @"Settings", @"Handlers" };
         label = @"Enabled";
         ticked = self.channel.enabled; 
     }
-    else
+    else if (path.section == kHandlersSection)
     {
         ECLogHandler* handler = [self.handlers objectAtIndex: path.row];
         label = handler.name;
         ticked = [self.channel isHandlerEnabled:handler];
+    }
+    else
+    {
+        const ContextFlagInfo* info = &kContextFlagInfo[path.row];
+        label = info->name;
+        ticked = [self.channel showContext:info->flag];
     }
     
     cell.textLabel.text = label;
@@ -156,7 +185,7 @@ NSString *const kSections[] = { @"Settings", @"Handlers" };
             logToChannel(self.channel, &ecLogContext, @"enabled channel");
         }
     }
-    else
+    else if (path.section == kHandlersSection)
     {
         ECLogHandler* handler = [self.handlers objectAtIndex: path.row];
         if ([self.channel isHandlerEnabled:handler]) 
@@ -166,6 +195,18 @@ NSString *const kSections[] = { @"Settings", @"Handlers" };
         else
         {
             [self.channel enableHandler:handler];
+        }
+    }
+    else
+    {
+        const ContextFlagInfo* info = &kContextFlagInfo[path.row];
+        if ([self.channel showContext:info->flag])
+        {
+            self.channel.context &= ~info->flag;
+        }
+        else
+        {
+            self.channel.context |= info->flag;
         }
     }
 
