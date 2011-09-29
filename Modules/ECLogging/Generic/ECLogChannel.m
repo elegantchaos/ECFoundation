@@ -31,8 +31,6 @@ static NSString *const kSuffixToStrip = @"Channel";
 @synthesize name;
 @synthesize handlers;
 
-static const ECLogContextFlags kDefaultContextFlags = ECLogContextName | ECLogContextFile | ECLogContextLine | ECLogContextFunction;
-
 #pragma mark - Lifecycle
 
 // --------------------------------------------------------------------------
@@ -174,7 +172,7 @@ static const ECLogContextFlags kDefaultContextFlags = ECLogContextName | ECLogCo
     ECLogContextFlags flagsSet = self.context;
     if (flagsSet == ECLogContextDefault)
     {
-        flagsSet = kDefaultContextFlags;
+        flagsSet = [[ECLogManager sharedInstance] defaultContextFlags];
     }
     
     return (flagsToTest & flagsSet) == flagsToTest;

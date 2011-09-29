@@ -62,6 +62,7 @@ NSString *const LogChannelSettings = @"LogChannels";
 // --------------------------------------------------------------------------
 
 @synthesize channels;
+@synthesize defaultContextFlags;
 @synthesize handlers;
 @synthesize settings;
 @synthesize defaultHandler;
@@ -222,6 +223,7 @@ static ECLogManager* gSharedInstance = nil;
 		dictionary = [[NSMutableDictionary alloc] init];
 		self.handlers = dictionary;
 		[dictionary release];
+        self.defaultContextFlags = ECLogContextName;
 	}
 	
 	return self;
@@ -296,7 +298,8 @@ static ECLogManager* gSharedInstance = nil;
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
         NSMutableDictionary* channelSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys: 
-                                                [NSNumber numberWithBool: channel.enabled], EnabledSetting, 
+                                                [NSNumber numberWithBool: channel.enabled], EnabledSetting,
+                                                [NSNumber numberWithInteger: channel.context], ContextSetting,
                                                 nil];
         
         NSSet* channelHandlers = channel.handlers;

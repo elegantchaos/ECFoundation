@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECLogging.h"
+#import "ECLogContext.h"
 
 @class ECLogChannel;
 @class ECLogHandler;
@@ -24,6 +25,7 @@
 	NSMutableDictionary* handlers;
 	ECLogHandler* defaultHandler;
 	NSMutableDictionary* settings;
+    ECLogContextFlags defaultContextFlags;
 }
 
 // --------------------------------------------------------------------------
@@ -33,6 +35,7 @@
 @property (nonatomic, retain) NSMutableDictionary* channels;
 @property (nonatomic, retain) NSMutableDictionary* handlers;
 @property (nonatomic, retain) ECLogHandler* defaultHandler;
+@property (nonatomic, assign) ECLogContextFlags defaultContextFlags;
 
 // --------------------------------------------------------------------------
 // Public Methods
