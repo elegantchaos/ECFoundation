@@ -155,7 +155,14 @@ const ContextFlagInfo kContextFlagInfo[] =
     {
         const ContextFlagInfo* info = &kContextFlagInfo[path.row];
         label = info->name;
-        ticked = [self.channel showContext:info->flag];
+        if (channel.context == ECLogContextDefault)
+        {
+            ticked = info->flag == ECLogContextDefault;
+        }
+        else
+        {
+            ticked = [self.channel showContext:info->flag];
+        }
     }
     
     cell.textLabel.text = label;
@@ -200,14 +207,20 @@ const ContextFlagInfo kContextFlagInfo[] =
     else
     {
         const ContextFlagInfo* info = &kContextFlagInfo[path.row];
-        if ([self.channel showContext:info->flag])
+        
+        // if it's the default flag we're playing with, then we want to clear out all
+        // other flags; if it's any other flag, we want to clear out the default flag
+        if (info->flag == ECLogContextDefault)
         {
-            self.channel.context &= ~info->flag;
+            self.channel.context &= ECLogContextDefault;
         }
         else
         {
-            self.channel.context |= info->flag;
+            self.channel.context &= ~ECLogContextDefault;
         }
+
+        // toggle the flag that was actually selected
+        self.channel.context ^= info->flag;
     }
 
     [[ECLogManager sharedInstance] saveChannelSettings];
