@@ -11,44 +11,13 @@
 // --------------------------------------------------------------------------
 
 #import "ECMacros.h"
+#import "ECLogContext.h"
 
-#ifdef __OBJC__
-
-@class ECLogChannel;
-
-#else
-
-typedef void ECLogChannel;
-
-#endif
 
 #pragma mark - Plain C interface
 
 // These routines are used in some of the macros, and are generally not intended for public use.
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-    typedef struct 
-    {
-        const char* file;
-        unsigned int line;
-        const char* date;
-        const char* function;
-    } ECLogContext;
-    
-    extern void makeContext(ECLogContext* context, const char* file, unsigned int line, const char* date, const char* function);
-    extern void enableChannel(ECLogChannel* channel);
-    extern void disableChannel(ECLogChannel* channel);
-    extern bool channelEnabled(ECLogChannel* channel);
-    extern ECLogChannel* registerChannel(const char* name);
-    extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...);
-
-#ifdef __cplusplus
-}
-#endif
 
 #pragma mark - Channel Declaration Macros
 
@@ -65,8 +34,6 @@ extern "C"
 	}
 
 #pragma mark - Logging Macros
-
-#define ECMakeContext() ECLogContext ecLogContext; makeContext(&ecLogContext, __FILE__, __LINE__, __DATE__, __PRETTY_FUNCTION__)
 
 #define ECLog(channel, ...) do { ECLogChannel* c = getChannel##channel(); if (channelEnabled(c)) { ECMakeContext(); logToChannel(c, &ecLogContext, __VA_ARGS__); } } while (0)
 

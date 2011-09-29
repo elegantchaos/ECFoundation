@@ -52,9 +52,10 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 // Constants
 // --------------------------------------------------------------------------
 
-NSString *const kLogChannelSettings = @"LogChannels";
-NSString *const kEnabledSetting = @"Enabled";
-NSString *const kHandlersSetting = @"Handlers";
+NSString *const ContextSetting = @"Context";
+NSString *const EnabledSetting = @"Enabled";
+NSString *const HandlersSetting = @"Handlers";
+NSString *const LogChannelSettings = @"LogChannels";
 
 // --------------------------------------------------------------------------
 // Properties
@@ -152,10 +153,12 @@ static ECLogManager* gSharedInstance = nil;
         NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
         if (channelSettings)
         {
-            channel.enabled = [[channelSettings objectForKey: kEnabledSetting] boolValue];
+            channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
+            NSNumber* contextValue = [channelSettings objectForKey: ContextSetting];
+            channel.context = contextValue ? [contextValue integerValue] : ECLogContextDefault;
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
             
-            NSArray* handlerNames = [channelSettings objectForKey: kHandlersSetting];
+            NSArray* handlerNames = [channelSettings objectForKey: HandlersSetting];
             if (handlerNames)
             {
                 for (NSString* handlerName in handlerNames)
@@ -172,6 +175,7 @@ static ECLogManager* gSharedInstance = nil;
         else
         {
             [channel.handlers addObject:self.defaultHandler];
+            channel.context = ECLogContextDefault;
         }
         
         channel.setup = YES;
@@ -269,7 +273,7 @@ static ECLogManager* gSharedInstance = nil;
 {
     LogManagerLog(@"log manager loading settings");
 
-    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: kLogChannelSettings];
+    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: LogChannelSettings];
 
     for (NSString* channel in [loadedSettings allKeys])
     {
@@ -292,7 +296,7 @@ static ECLogManager* gSharedInstance = nil;
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
         NSMutableDictionary* channelSettings = [[NSMutableDictionary alloc] initWithObjectsAndKeys: 
-                                                [NSNumber numberWithBool: channel.enabled], kEnabledSetting, 
+                                                [NSNumber numberWithBool: channel.enabled], EnabledSetting, 
                                                 nil];
         
         NSSet* channelHandlers = channel.handlers;
@@ -303,7 +307,7 @@ static ECLogManager* gSharedInstance = nil;
             {
                 [handlerNames addObject:handler.name];
             }
-            [channelSettings setObject:handlerNames forKey:kHandlersSetting];
+            [channelSettings setObject:handlerNames forKey:HandlersSetting];
         }
         
         LogManagerLog(@"settings for channel %@:%@", channel.name, channelSettings);
@@ -312,7 +316,7 @@ static ECLogManager* gSharedInstance = nil;
 		[channelSettings release];
 	}
 	
-	[[NSUserDefaults standardUserDefaults] setObject: allSettings forKey: kLogChannelSettings];
+	[[NSUserDefaults standardUserDefaults] setObject: allSettings forKey: LogChannelSettings];
 	[allSettings release];
 
 }

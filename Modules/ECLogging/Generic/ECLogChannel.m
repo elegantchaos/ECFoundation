@@ -25,10 +25,13 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 @implementation ECLogChannel
 
+@synthesize context;
 @synthesize enabled;
 @synthesize setup;
 @synthesize name;
 @synthesize handlers;
+
+static const ECLogContextFlags kDefaultContextFlags = ECLogContextName;
 
 #pragma mark - Lifecycle
 
@@ -160,6 +163,21 @@ static NSString *const kSuffixToStrip = @"Channel";
 - (NSComparisonResult) caseInsensitiveCompare: (ECLogChannel*) other
 {
 	return [self.name caseInsensitiveCompare: other.name];
+}
+
+// --------------------------------------------------------------------------
+//! Should we show the given context item(s) in this channel?
+// --------------------------------------------------------------------------
+
+- (BOOL)showContext:(ECLogContextFlags)flagsToTest
+{
+    ECLogContextFlags flagsSet = self.context;
+    if (flagsSet == ECLogContextDefault)
+    {
+        flagsSet = kDefaultContextFlags;
+    }
+    
+    return (flagsToTest & flagsSet) == flagsToTest;
 }
 
 @end

@@ -34,7 +34,21 @@
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
 	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
-	NSLog(@"«%@» %@", channel.name, body);
+    
+    if (channel.context)
+    {
+        NSMutableString* contextString = [[NSMutableString alloc] init];
+        if ([channel showContext:ECLogContextName])
+        {
+            [contextString appendString:channel.name];
+        }
+        NSLog(@"«%@» %@", contextString, body);
+        [contextString release];
+    }
+    else
+    {
+        NSLog(@"%@", body);
+    }
 	[body release];	
 }
 @end

@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECLogContext.h"
 
 @class ECLogHandler;
 
@@ -18,12 +18,14 @@
 	BOOL setup;
 	NSString* name;
 	NSMutableSet* handlers;
+    ECLogContextFlags context;
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
+@property (nonatomic, assign) ECLogContextFlags context;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, assign) BOOL setup;
 @property (nonatomic, retain) NSString* name;
@@ -40,6 +42,7 @@
 - (void) enableHandler: (ECLogHandler*) handler;
 - (void) disableHandler: (ECLogHandler*) handler;
 - (BOOL) isHandlerEnabled:( ECLogHandler*) handler;
+- (BOOL) showContext:(ECLogContextFlags)flags;
 
 + (NSString*) cleanName:(const char *) name;
 

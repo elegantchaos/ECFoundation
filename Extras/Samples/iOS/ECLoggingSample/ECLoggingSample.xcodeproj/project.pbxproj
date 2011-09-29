@@ -132,6 +132,7 @@
 		22E6BDEC1434B82B0049E222 /* ECCoreSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreSharedPrefix.pch; sourceTree = "<group>"; };
 		22E6BDEF1434B82B0049E222 /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECFoundationIOS.plist; sourceTree = "<group>"; };
 		22E6BDF11434B82B0049E222 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22E6BE3A1434B9590049E222 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +233,7 @@
 				226FB48313E28F2A00BF258D /* ECErrorReporter.m */,
 				226FB48413E28F2A00BF258D /* ECLogChannel.h */,
 				226FB48513E28F2A00BF258D /* ECLogChannel.m */,
+				22E6BE3A1434B9590049E222 /* ECLogContext.h */,
 				226FB48613E28F2A00BF258D /* ECLogging.h */,
 				226FB48713E28F2A00BF258D /* ECLogging.m */,
 				226FB48813E28F2A00BF258D /* ECLogHandler.h */,
