@@ -26,12 +26,12 @@ extern "C"
     {
         ECLogContextNone        = 0x0000,
         ECLogContextFile        = 0x0001,
-        ECLogContextLine        = 0x0002,
-        ECLogContextDate        = 0x0004,
-        ECLogContextFunction    = 0x0008,
-        ECLogContextMessage     = 0x0010,
-        ECLogContextName        = 0x0020,
+        ECLogContextDate        = 0x0002,
+        ECLogContextFunction    = 0x0004,
+        ECLogContextMessage     = 0x0008,
+        ECLogContextName        = 0x0010,
         
+        ECLogContextFullPath    = 0x1000,
         ECLogContextDefault     = 0x8000
     } ECLogContextFlags;
     

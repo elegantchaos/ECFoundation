@@ -68,8 +68,7 @@
     ECLogViewHandlerItem* item = [[ECLogViewHandlerItem alloc] init];
     item.message = [[[NSString alloc] initWithFormat:format arguments:arguments] autorelease];
     
-    NSString* file = [NSString stringWithCString:context->file encoding:NSUTF8StringEncoding];
-    item.context = [NSString stringWithFormat:@"%@ (%@, %d)\n%s", channel.name, [file lastPathComponent], context->line, context->function];
+    item.context = [channel stringFromContext:context];
     
     [itemList addObject:item];
     [item release];

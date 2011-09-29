@@ -33,45 +33,27 @@
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
-	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
-    
-    if (channel.context)
+    NSString* contextString = [channel stringFromContext:context];
+
+    if (![channel showContext:ECLogContextMessage])
     {
-        NSMutableString* contextString = [[NSMutableString alloc] init];
-
-        if ([channel showContext:ECLogContextName])
-        {
-            [contextString appendString:[NSString stringWithFormat:@"%@ ", channel.name]];
-        }
-
-        if ([channel showContext:ECLogContextFile])
-        {
-            [contextString appendString:[NSString stringWithFormat:@"%s ", context->file]];
-        }
-
-        if ([channel showContext:ECLogContextLine])
-        {
-            [contextString appendString:[NSString stringWithFormat:@"%d ", context->line]];
-        }
-
-        if ([channel showContext:ECLogContextFunction])
-        {
-            [contextString appendString:[NSString stringWithFormat:@"%s ", context->function]];
-        }
-
-        NSUInteger length = [contextString length];
-        if (length > 0)
-        {
-            [contextString deleteCharactersInRange:NSMakeRange(length - 1, 1)]; 
-        }
-        
-        NSLog(@"«%@» %@", contextString, body);
-        [contextString release];
+        // just log the context
+        NSLog(@"%@", contextString);
     }
     else
     {
-        NSLog(@"%@", body);
+        // log the message, possibly with a context appended
+        NSString* bodyString = [[NSString alloc] initWithFormat: format arguments: arguments];
+        if ([contextString length])
+        {
+            NSLog(@"%@ «%@»", bodyString, contextString);
+        }
+        else
+        {
+            NSLog(@"%@", bodyString);
+        }
+        [bodyString release];
     }
-	[body release];	
 }
+
 @end

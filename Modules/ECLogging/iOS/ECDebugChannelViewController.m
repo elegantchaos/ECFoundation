@@ -52,13 +52,12 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
 
 const ContextFlagInfo kContextFlagInfo[] = 
 {
+    { ECLogContextDefault, @"Use Defaults"},
     { ECLogContextFile, @"File" },
-    { ECLogContextLine, @"Line"},
     { ECLogContextDate, @"Date"},
     { ECLogContextFunction, @"Function"}, 
     { ECLogContextMessage, @"Message"},
-    { ECLogContextName, @"Name"},
-    { ECLogContextDefault, @"Use Defaults"}
+    { ECLogContextName, @"Name"}
 };
 
 - (id)initWithStyle:(UITableViewStyle)style

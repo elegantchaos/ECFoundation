@@ -178,4 +178,62 @@ static NSString *const kSuffixToStrip = @"Channel";
     return (flagsToTest & flagsSet) == flagsToTest;
 }
 
+// --------------------------------------------------------------------------
+//! Return a formatted string giving the file name and line number from a 
+//! context structure.
+// --------------------------------------------------------------------------
+
+- (NSString*) fileFromContext:(ECLogContext*)contextIn
+{
+    NSString* file = [NSString stringWithCString:contextIn->file encoding:NSUTF8StringEncoding];
+    if (![self showContext:ECLogContextFullPath])
+    {
+        file = [file lastPathComponent];
+    }
+    
+    return [NSString stringWithFormat:@"%@, %d", file, contextIn->line];
+}
+
+// --------------------------------------------------------------------------
+//! Return a formatted string describing a context structure, based on our
+//! context flags.
+// --------------------------------------------------------------------------
+
+- (NSString*)stringFromContext:(ECLogContext *)contextIn
+{
+    NSString* result;
+    if (self.context)
+    {
+        NSMutableString* string = [[[NSMutableString alloc] init] autorelease];
+        
+        if ([self showContext:ECLogContextName])
+        {
+            [string appendString:[NSString stringWithFormat:@"%@ ", self.name]];
+        }
+        
+        if ([self showContext:ECLogContextFile])
+        {
+            [string appendString:[NSString stringWithFormat:@"%@ ", [self fileFromContext:contextIn]]];
+        }
+        
+        if ([self showContext:ECLogContextFunction])
+        {
+            [string appendString:[NSString stringWithFormat:@"%s ", contextIn->function]];
+        }
+        
+        NSUInteger length = [string length];
+        if (length > 0)
+        {
+            [string deleteCharactersInRange:NSMakeRange(length - 1, 1)]; 
+        }
+        result = string;
+    }
+    else
+    {
+        result = @"";
+    }
+
+    return result;
+}
+
 @end

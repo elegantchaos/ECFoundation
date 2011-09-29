@@ -43,7 +43,8 @@
 - (void) disableHandler: (ECLogHandler*) handler;
 - (BOOL) isHandlerEnabled:( ECLogHandler*) handler;
 - (BOOL) showContext:(ECLogContextFlags)flags;
-
+- (NSString*) fileFromContext:(ECLogContext*)context;
+- (NSString*) stringFromContext:(ECLogContext*)context;
 + (NSString*) cleanName:(const char *) name;
 
 @end
