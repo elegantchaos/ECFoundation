@@ -11,7 +11,6 @@
 
 #import "NSAppleScript+ECCore.h"
 #import "NSAppleEventDescriptor+ECCore.h"
-#import "ECAppDelegate.h"
 
 #import "ECErrorReporter.h"
 
