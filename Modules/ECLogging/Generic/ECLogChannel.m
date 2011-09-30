@@ -236,4 +236,51 @@ static NSString *const kSuffixToStrip = @"Channel";
     return result;
 }
 
+// --------------------------------------------------------------------------
+//! UI helper - should we tick a menu item for a given flag index?
+// --------------------------------------------------------------------------
+
+- (BOOL)tickFlagWithIndex:(NSUInteger)index
+{
+    BOOL ticked;
+    ECLogManager* lm = [ECLogManager sharedInstance];
+    ECLogContextFlags rowFlag = [lm contextFlagValueForIndex:index];
+    if (self.context == ECLogContextDefault)
+    {
+        ticked = rowFlag == ECLogContextDefault;
+    }
+    else
+    {
+        ticked = [self showContext:rowFlag];
+    }
+    
+    return ticked;
+}
+
+// --------------------------------------------------------------------------
+//! UI helper - respond to a context flag being selected.
+// --------------------------------------------------------------------------
+
+- (void)selectFlagWithIndex:(NSUInteger)index
+{
+    ECLogManager* lm = [ECLogManager sharedInstance];
+    ECLogContextFlags selectedFlag = [lm contextFlagValueForIndex:index];
+    
+    // if it's the default flag we're playing with, then we want to clear out all
+    // other flags; if it's any other flag, we want to clear out the default flag
+    if (selectedFlag == ECLogContextDefault)
+    {
+        self.context &= ECLogContextDefault;
+    }
+    else
+    {
+        self.context &= ~ECLogContextDefault;
+    }
+    
+    // toggle the flag that was actually selected
+    self.context ^= selectedFlag;
+
+    [lm saveChannelSettings];
+}
+
 @end

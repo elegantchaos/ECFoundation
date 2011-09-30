@@ -150,15 +150,7 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     else
     {
         label = [self.logManager contextFlagNameForIndex:path.row];
-        ECLogContextFlags rowFlag = [self.logManager contextFlagValueForIndex:path.row];
-        if (channel.context == ECLogContextDefault)
-        {
-            ticked = rowFlag == ECLogContextDefault;
-        }
-        else
-        {
-            ticked = [self.channel showContext:rowFlag];
-        }
+        ticked = [self.channel tickFlagWithIndex:path.row];
     }
     
     cell.textLabel.text = label;
@@ -209,21 +201,7 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     }
     else
     {
-        ECLogContextFlags selectedFlag = [self.logManager contextFlagValueForIndex:path.row];
-        
-        // if it's the default flag we're playing with, then we want to clear out all
-        // other flags; if it's any other flag, we want to clear out the default flag
-        if (selectedFlag == ECLogContextDefault)
-        {
-            self.channel.context &= ECLogContextDefault;
-        }
-        else
-        {
-            self.channel.context &= ~ECLogContextDefault;
-        }
-
-        // toggle the flag that was actually selected
-        self.channel.context ^= selectedFlag;
+        [self.channel selectFlagWithIndex:path.row];
     }
 
     [self.logManager saveChannelSettings];

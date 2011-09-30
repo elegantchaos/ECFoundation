@@ -104,7 +104,7 @@
     item.representedObject = channel;
     [menu addItem: item];
     [item release];
-   
+    
     [menu addItem: [NSMenuItem separatorItem]];
 	
     NSArray* handlers = [mLogManager handlersSortedByName];
@@ -116,10 +116,24 @@
         item.representedObject = handler;
         [menu addItem: item];
         [item release];
-       
+        
     }
+    
+    [menu addItem: [NSMenuItem separatorItem]];
+    
+    NSUInteger count = [mLogManager contextFlagCount];
+    for (NSUInteger n = 0; n < count; ++n)
+    {
+        NSString* name = [mLogManager contextFlagNameForIndex:n];
+		NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:name action: @selector(contextMenuSelected:) keyEquivalent: @""];
+		item.target = self;
+        item.tag = n;
+		[menu addItem: item];
+		[item release];
+    }
+    
     return [menu autorelease];
-	}
+}
 
 // --------------------------------------------------------------------------
 //! Build the channels menu.
@@ -130,19 +144,19 @@
 {
 #if EC_DEBUG
     [self removeAllItemsEC];
-
+    
     NSMenuItem* enableAllItem = [[NSMenuItem alloc] initWithTitle: @"Enable All Channels" action: @selector(enableAllSelected:) keyEquivalent: @""];
     enableAllItem.target = self;
     [self addItem: enableAllItem];
     [enableAllItem release];
-
+    
     NSMenuItem* disableAllItem = [[NSMenuItem alloc] initWithTitle: @"Disable All Channels" action: @selector(disableAllSelected:) keyEquivalent: @""];
     disableAllItem.target = self;
     [self addItem: disableAllItem];
     [disableAllItem release];
-
+    
     [self addItem: [NSMenuItem separatorItem]];
-
+    
 	for (ECLogChannel* channel in mLogManager.channelsSortedByName)
 	{
 		NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: channel.name action: @selector(channelMenuSelected:) keyEquivalent: @""];
@@ -174,6 +188,17 @@
 //! We enabled/disable the channel.
 // --------------------------------------------------------------------------
 
+- (IBAction) contextMenuSelected: (NSMenuItem*) item
+{
+    ECLogChannel* channel = [item parentItem].representedObject;
+    [channel selectFlagWithIndex:item.tag];
+}
+
+// --------------------------------------------------------------------------
+//! Respond to a channel menu item being selected.
+//! We enabled/disable the channel.
+// --------------------------------------------------------------------------
+
 - (IBAction) channelSelected: (NSMenuItem*) item
 {
 	ECLogChannel* channel = item.representedObject;
@@ -190,12 +215,12 @@
 {
 	ECLogHandler* handler = item.representedObject;
     ECLogChannel* channel = [item parentItem].representedObject;
-
+    
     BOOL currentlyEnabled = [channel.handlers containsObject: handler];
     BOOL newEnabled = !currentlyEnabled;
     
     if (newEnabled)
-{
+    {
         [channel enableHandler: handler];
     }
     else
@@ -204,8 +229,8 @@
     }
     
 	[mLogManager saveChannelSettings];
-	}
-	
+}
+
 // --------------------------------------------------------------------------
 //! Disable all channels.
 // --------------------------------------------------------------------------
@@ -227,7 +252,7 @@
 // --------------------------------------------------------------------------
 //! Respond to change notification by rebuilding all items.
 // --------------------------------------------------------------------------
-	
+
 - (void) channelsChanged: (NSNotification*) notification
 {
 	[self buildMenu];
@@ -241,17 +266,25 @@
 - (BOOL) validateMenuItem: (NSMenuItem*) item
 {
     if ((item.action == @selector(channelSelected:)) || (item.action == @selector(channelMenuSelected:)))
-{
-	ECLogChannel* channel = item.representedObject;
-	item.state = channel.enabled ? NSOnState : NSOffState;
-}
-
+    {
+        ECLogChannel* channel = item.representedObject;
+        item.state = channel.enabled ? NSOnState : NSOffState;
+    }
+    
     else if (item.action == @selector(handlerSelected:))
-{
+    {
         ECLogHandler* handler = item.representedObject;
         ECLogChannel* channel = [item parentItem].representedObject;
         
         BOOL currentlyEnabled = [channel.handlers containsObject: handler];
+        item.state = currentlyEnabled ? NSOnState : NSOffState;
+    }
+    
+    else if (item.action == @selector(contextMenuSelected:))
+    {
+        ECLogChannel* channel = [item parentItem].representedObject;
+
+        BOOL currentlyEnabled = [channel tickFlagWithIndex:item.tag];
         item.state = currentlyEnabled ? NSOnState : NSOffState;
     }
     

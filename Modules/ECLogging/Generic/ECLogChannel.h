@@ -45,6 +45,8 @@
 - (BOOL) showContext:(ECLogContextFlags)flags;
 - (NSString*) fileFromContext:(ECLogContext*)context;
 - (NSString*) stringFromContext:(ECLogContext*)context;
+- (BOOL)tickFlagWithIndex:(NSUInteger)index;
+- (void)selectFlagWithIndex:(NSUInteger)index;
 + (NSString*) cleanName:(const char *) name;
 
 @end
