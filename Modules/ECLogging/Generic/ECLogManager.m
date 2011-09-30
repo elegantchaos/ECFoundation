@@ -55,7 +55,9 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 NSString *const ContextSetting = @"Context";
 NSString *const EnabledSetting = @"Enabled";
 NSString *const HandlersSetting = @"Handlers";
-NSString *const LogChannelSettings = @"LogChannels";
+NSString *const LogManagerSettings = @"LogManager";
+NSString *const ChannelsSetting = @"Channels";
+NSString *const DefaultsSetting = @"Defaults";
 
 typedef struct 
 {
@@ -81,7 +83,7 @@ const ContextFlagInfo kContextFlagInfo[] =
 @synthesize defaultContextFlags;
 @synthesize handlers;
 @synthesize settings;
-@synthesize defaultHandler;
+@synthesize defaultHandlers;
 
 // --------------------------------------------------------------------------
 // Globals
@@ -167,7 +169,8 @@ static ECLogManager* gSharedInstance = nil;
 	
     if (self.settings)
     {
-        NSDictionary* channelSettings = [self.settings objectForKey: channel.name];
+        NSDictionary* allChannels = [self.settings objectForKey:ChannelsSetting];
+        NSDictionary* channelSettings = [allChannels objectForKey: channel.name];
         if (channelSettings)
         {
             channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
@@ -191,7 +194,7 @@ static ECLogManager* gSharedInstance = nil;
         }
         else
         {
-            [channel.handlers addObject:self.defaultHandler];
+            [channel.handlers addObjectsFromArray:self.defaultHandlers];
             channel.context = ECLogContextDefault;
         }
         
@@ -205,9 +208,18 @@ static ECLogManager* gSharedInstance = nil;
 //! Regist a channel with the log manager.
 // --------------------------------------------------------------------------
 
-- (void) registerHandler: (ECLogHandler*) handler
+- (void)registerHandler:(ECLogHandler*)handler
 {
-	[self.handlers setObject: handler forKey:handler.name];
+	[self.handlers setObject:handler forKey:handler.name];
+
+    // if this handler is in the list of defaults, add it to the defaults array
+    // (if the list is empty and this is the first handler we've registered, we make it the default automatically)
+    NSArray* defaultHandlerSettings = [[self.settings objectForKey:HandlersSetting] objectForKey:DefaultsSetting];
+    if (([defaultHandlerSettings containsObject:handler.name]) || ((defaultHandlerSettings == nil) && ([self.defaultHandlers count] == 0)))
+    {
+        [self.defaultHandlers addObject:handler];
+    }
+    
     LogManagerLog(@"registered handler %@", handler.name);
 }
 
@@ -219,7 +231,7 @@ static ECLogManager* gSharedInstance = nil;
 {
 	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
 	[self registerHandler: handler];
-    self.defaultHandler = handler;
+    [self.defaultHandlers addObject:handler];
 	[handler release];
 }
 
@@ -239,6 +251,9 @@ static ECLogManager* gSharedInstance = nil;
 		dictionary = [[NSMutableDictionary alloc] init];
 		self.handlers = dictionary;
 		[dictionary release];
+        NSMutableArray* array = [[NSMutableArray alloc] init];
+        self.defaultHandlers = array;
+        [array release];
         self.defaultContextFlags = ECLogContextName | ECLogContextMessage;
 	}
 	
@@ -291,9 +306,9 @@ static ECLogManager* gSharedInstance = nil;
 {
     LogManagerLog(@"log manager loading settings");
 
-    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: LogChannelSettings];
-
-    for (NSString* channel in [loadedSettings allKeys])
+    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: LogManagerSettings];
+    NSDictionary* channelSettings = [loadedSettings objectForKey:ChannelsSetting];
+    for (NSString* channel in [channelSettings allKeys])
     {
         [self registerChannelWithName:channel];
     }
@@ -309,7 +324,7 @@ static ECLogManager* gSharedInstance = nil;
 {
     LogManagerLog(@"log manager saving settings");
     
-	NSMutableDictionary* allSettings = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary* allChannelSettings = [[NSMutableDictionary alloc] init];
 
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
@@ -331,11 +346,28 @@ static ECLogManager* gSharedInstance = nil;
         
         LogManagerLog(@"settings for channel %@:%@", channel.name, channelSettings);
 
-		[allSettings setObject: channelSettings forKey: channel.name];
+		[allChannelSettings setObject: channelSettings forKey: channel.name];
 		[channelSettings release];
 	}
 	
-	[[NSUserDefaults standardUserDefaults] setObject: allSettings forKey: LogChannelSettings];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray* defaultHandlerNames = [NSMutableArray arrayWithCapacity:[self.defaultHandlers count]];
+    for (ECLogHandler* handler in self.defaultHandlers)
+    {
+        [defaultHandlerNames addObject:handler.name];
+    }
+
+    NSDictionary* allHandlerSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        defaultHandlerNames, DefaultsSetting,
+                                        nil];
+    
+    NSDictionary* allSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 allChannelSettings, ChannelsSetting,
+                                 allHandlerSettings, HandlersSetting,
+                                 nil];
+    [defaults setObject:allSettings forKey:LogManagerSettings];
+    
 	[allSettings release];
 
 }

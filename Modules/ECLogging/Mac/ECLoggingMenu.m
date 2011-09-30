@@ -136,6 +136,28 @@
 }
 
 // --------------------------------------------------------------------------
+//! Build a channel submenu.
+// --------------------------------------------------------------------------
+
+- (NSMenu*)buildDefaultHandlersMenu
+{
+    NSMenu* menu = [[NSMenu alloc] initWithTitle:@"Default Handlers"];
+    
+    NSArray* handlers = [mLogManager handlersSortedByName];
+    for (ECLogHandler* handler in handlers)
+	{
+        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: handler.name action: @selector(defaultHandlerSelected:) keyEquivalent: @""];
+        item.target = self;
+        item.representedObject = handler;
+        [menu addItem:item];
+        [item release];
+        
+    }
+
+    return [menu autorelease];
+}
+
+// --------------------------------------------------------------------------
 //! Build the channels menu.
 //! We make some global items, then a submenu for each registered channel.
 // --------------------------------------------------------------------------
@@ -155,8 +177,16 @@
     [self addItem: disableAllItem];
     [disableAllItem release];
     
-    [self addItem: [NSMenuItem separatorItem]];
+    [self addItem:[NSMenuItem separatorItem]];
+
+    NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:@"Default Handlers" action:nil keyEquivalent: @""];
+    item.submenu = [self buildDefaultHandlersMenu];
+    item.target = self;
+    [self addItem: item];
+    [item release];
     
+    [self addItem:[NSMenuItem separatorItem]];
+
 	for (ECLogChannel* channel in mLogManager.channelsSortedByName)
 	{
 		NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: channel.name action: @selector(channelMenuSelected:) keyEquivalent: @""];
@@ -232,6 +262,30 @@
 }
 
 // --------------------------------------------------------------------------
+//! Respond to a default handler menu item being selected.
+//! We add/remove the handler from the default handlers array
+// --------------------------------------------------------------------------
+
+- (IBAction)defaultHandlerSelected:(NSMenuItem*)item
+{
+	ECLogHandler* handler = item.representedObject;
+    
+    BOOL currentlyEnabled = [mLogManager.defaultHandlers containsObject:handler];
+    BOOL newEnabled = !currentlyEnabled;
+    
+    if (newEnabled)
+    {
+        [mLogManager.defaultHandlers addObject:handler];
+    }
+    else
+	{
+        [mLogManager.defaultHandlers removeObject:handler];
+    }
+    
+	[mLogManager saveChannelSettings];
+}
+
+// --------------------------------------------------------------------------
 //! Disable all channels.
 // --------------------------------------------------------------------------
 
@@ -285,6 +339,14 @@
         ECLogChannel* channel = [item parentItem].representedObject;
 
         BOOL currentlyEnabled = [channel tickFlagWithIndex:item.tag];
+        item.state = currentlyEnabled ? NSOnState : NSOffState;
+    }
+    
+    else if (item.action == @selector(defaultHandlerSelected:))
+    {
+        ECLogHandler* handler = item.representedObject;
+        
+        BOOL currentlyEnabled = [mLogManager.defaultHandlers containsObject:handler];
         item.state = currentlyEnabled ? NSOnState : NSOffState;
     }
     

@@ -24,7 +24,7 @@
 {
     if ((self = [super init]) != nil) 
     {
-        self.name = @"Stderr";
+        self.name = @"File";
     }
     
     return self;
@@ -35,12 +35,14 @@
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
+#if 0
 	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
     NSString* output = [[NSString alloc] initWithFormat:@"«%@» %@", channel.name, body];
 	[body release];	
 
     fprintf(stderr, "%s\n", [output UTF8String]);
     [output release];
+#endif
 }
 
 @end

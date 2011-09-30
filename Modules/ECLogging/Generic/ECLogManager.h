@@ -23,7 +23,7 @@
 @private
 	NSMutableDictionary* channels;
 	NSMutableDictionary* handlers;
-	ECLogHandler* defaultHandler;
+	NSMutableArray* defaultHandlers;
 	NSMutableDictionary* settings;
     ECLogContextFlags defaultContextFlags;
 }
@@ -34,7 +34,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary* channels;
 @property (nonatomic, retain) NSMutableDictionary* handlers;
-@property (nonatomic, retain) ECLogHandler* defaultHandler;
+@property (nonatomic, retain) NSMutableArray* defaultHandlers;
 @property (nonatomic, assign) ECLogContextFlags defaultContextFlags;
 
 // --------------------------------------------------------------------------

@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 
 #import "ECLogManager.h"
+#import "ECLogHandlerNSLog.h"
+#import "ECLogHandlerFile.h"
+#import "ECLogHandlerStdout.h"
+#import "ECLogHandlerStderr.h"
 
 @implementation AppDelegate
 
@@ -35,7 +39,12 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     // initialise log manager
     ECLogManager* lm = [ECLogManager sharedInstance];
     [lm startup];
-    [lm registerDefaultHandler];
+    
+    // install some handlers
+    [lm registerHandler:[[[ECLogHandlerNSLog alloc] init] autorelease]];
+    //    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
 
     ECDebug(ApplicationChannel, @"will finish launching");
 }

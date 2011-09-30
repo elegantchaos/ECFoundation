@@ -42,6 +42,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 	if ((self = [super init]) != nil)
 	{
 		self.name = nameIn;
+        self.context = ECLogContextDefault;
 	}
 	
 	return self;
