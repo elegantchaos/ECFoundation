@@ -19,6 +19,9 @@
 // --------------------------------------------------------------------------
 
 @interface ECDebugChannelViewController()
+
+@property (nonatomic, assign) ECLogManager* logManager;
+
 @end
 
 
@@ -30,6 +33,7 @@
 
 @synthesize channel;
 @synthesize handlers;
+@synthesize logManager;
 
 // --------------------------------------------------------------------------
 // Constants
@@ -42,29 +46,14 @@ enum
     kContextSection
 };
 
-typedef struct 
-{
-    ECLogContextFlags flag;
-    NSString* name;
-} ContextFlagInfo;
-
 NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
-
-const ContextFlagInfo kContextFlagInfo[] = 
-{
-    { ECLogContextDefault, @"Use Defaults"},
-    { ECLogContextFile, @"File" },
-    { ECLogContextDate, @"Date"},
-    { ECLogContextFunction, @"Function"}, 
-    { ECLogContextMessage, @"Message"},
-    { ECLogContextName, @"Name"}
-};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     if ((self = [super initWithStyle:style]) != nil)
     {
-        self.handlers = [[ECLogManager sharedInstance] handlersSortedByName];
+        self.logManager = [ECLogManager sharedInstance];
+        self.handlers = [self.logManager handlersSortedByName];
     }
     
     return self;
@@ -118,7 +107,7 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else
     {
-        return sizeof(kContextFlagInfo) / sizeof(ContextFlagInfo);
+        return [self.logManager contextFlagCount];
     }
 }
 
@@ -160,15 +149,15 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else
     {
-        const ContextFlagInfo* info = &kContextFlagInfo[path.row];
-        label = info->name;
+        label = [self.logManager contextFlagNameForIndex:path.row];
+        ECLogContextFlags rowFlag = [self.logManager contextFlagValueForIndex:path.row];
         if (channel.context == ECLogContextDefault)
         {
-            ticked = info->flag == ECLogContextDefault;
+            ticked = rowFlag == ECLogContextDefault;
         }
         else
         {
-            ticked = [self.channel showContext:info->flag];
+            ticked = [self.channel showContext:rowFlag];
         }
     }
     
@@ -220,11 +209,11 @@ const ContextFlagInfo kContextFlagInfo[] =
     }
     else
     {
-        const ContextFlagInfo* info = &kContextFlagInfo[path.row];
+        ECLogContextFlags selectedFlag = [self.logManager contextFlagValueForIndex:path.row];
         
         // if it's the default flag we're playing with, then we want to clear out all
         // other flags; if it's any other flag, we want to clear out the default flag
-        if (info->flag == ECLogContextDefault)
+        if (selectedFlag == ECLogContextDefault)
         {
             self.channel.context &= ECLogContextDefault;
         }
@@ -234,10 +223,10 @@ const ContextFlagInfo kContextFlagInfo[] =
         }
 
         // toggle the flag that was actually selected
-        self.channel.context ^= info->flag;
+        self.channel.context ^= selectedFlag;
     }
 
-    [[ECLogManager sharedInstance] saveChannelSettings];
+    [self.logManager saveChannelSettings];
     
     [table deselectRowAtIndexPath: path animated: YES];
     [self.tableView reloadData];

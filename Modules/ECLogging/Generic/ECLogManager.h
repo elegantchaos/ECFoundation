@@ -58,6 +58,10 @@
 - (NSArray*)        channelsSortedByName;
 - (NSArray*)        handlersSortedByName;
 
+- (NSString*)           contextFlagNameForIndex:(NSUInteger)index;
+- (ECLogContextFlags)   contextFlagValueForIndex:(NSUInteger)index;
+- (NSUInteger)          contextFlagCount;
+
 @end
 
 // --------------------------------------------------------------------------

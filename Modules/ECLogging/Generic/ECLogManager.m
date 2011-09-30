@@ -57,6 +57,22 @@ NSString *const EnabledSetting = @"Enabled";
 NSString *const HandlersSetting = @"Handlers";
 NSString *const LogChannelSettings = @"LogChannels";
 
+typedef struct 
+{
+    ECLogContextFlags flag;
+    NSString* name;
+} ContextFlagInfo;
+
+const ContextFlagInfo kContextFlagInfo[] = 
+{
+    { ECLogContextDefault, @"Use Defaults"},
+    { ECLogContextFile, @"File" },
+    { ECLogContextDate, @"Date"},
+    { ECLogContextFunction, @"Function"}, 
+    { ECLogContextMessage, @"Message"},
+    { ECLogContextName, @"Name"}
+};
+
 // --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
@@ -391,6 +407,33 @@ static ECLogManager* gSharedInstance = nil;
     NSArray* sorted = [handlerObjects sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     
     return sorted;
+}
+
+// --------------------------------------------------------------------------
+//! Return a text label for a context info flag.
+// --------------------------------------------------------------------------
+
+- (NSString*)contextFlagNameForIndex:(NSUInteger)index
+{
+    return kContextFlagInfo[index].name;
+}
+
+// --------------------------------------------------------------------------
+//! Return a context info flag.
+// --------------------------------------------------------------------------
+
+- (ECLogContextFlags)contextFlagValueForIndex:(NSUInteger)index
+{
+    return kContextFlagInfo[index].flag;
+}
+
+// --------------------------------------------------------------------------
+//! Return the number of named context info flags.
+// --------------------------------------------------------------------------
+
+- (NSUInteger)contextFlagCount
+{
+    return sizeof(kContextFlagInfo) / sizeof(ContextFlagInfo);
 }
 
 @end
