@@ -156,7 +156,7 @@ static ECLogManager* gSharedInstance = nil;
         {
             channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
             NSNumber* contextValue = [channelSettings objectForKey: ContextSetting];
-            channel.context = contextValue ? [contextValue integerValue] : ECLogContextDefault;
+            channel.context = contextValue ? ((ECLogContextFlags) [contextValue integerValue]) : ECLogContextDefault;
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
             
             NSArray* handlerNames = [channelSettings objectForKey: HandlersSetting];

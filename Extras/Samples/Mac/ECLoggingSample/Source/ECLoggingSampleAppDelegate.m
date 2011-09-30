@@ -33,39 +33,6 @@ ECDefineDebugChannel(ApplicationChannel);
 
 #pragma mark - App Delegate Methods
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    ECLogManager* lm = [ECLogManager sharedInstance];
-    [lm startup];
-    [lm registerDefaultHandler];
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // Override point for customization after application launch.
-    ECLoggingSampleViewController* view;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) 
-    {
-        view = [[ECLoggingSampleViewController alloc] initWithNibName:@"ECLoggingSampleViewController_iPhone" bundle:nil]; 
-    }
-    else 
-    {
-        view = [[ECLoggingSampleViewController alloc] initWithNibName:@"ECLoggingSampleViewController_iPad" bundle:nil]; 
-    }
-    
-    self.viewController = view;
-    
-    UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:view];
-    navigation.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController = navigation;
-
-    self.window.rootViewController = navigation;
-    [self.window makeKeyAndVisible];
-
-    [view release];
-    [navigationController release];
-
-    return YES;
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

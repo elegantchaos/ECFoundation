@@ -20,6 +20,8 @@
 		22A7236C1435E29200889A06 /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB49013E28F2A00BF258D /* ECLogHandlerNSLog.m */; };
 		22A7236D1435E29200889A06 /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB49213E28F2A00BF258D /* ECLogHandlerStderr.m */; };
 		22A7236E1435E29200889A06 /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB49413E28F2A00BF258D /* ECLogHandlerStdout.m */; };
+		22A7236F1435E39000889A06 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46113E1EB0B00BF258D /* info.plist */; };
+		22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A723721435E4FD00889A06 /* ECLoggingMenu.m */; };
 		22E51FBB1434E04F008F8D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E51FBA1434E04F008F8D41 /* Cocoa.framework */; };
 		22E51FD81434E0F0008F8D41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E51FD71434E0F0008F8D41 /* AppDelegate.m */; };
 		22E51FD91434E117008F8D41 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDAE1434B82B0049E222 /* CGGeometry+ECCore.m */; };
@@ -89,6 +91,8 @@
 		22A7235C1435DE0F00889A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		22A7235F1435E1C800889A06 /* ECLaunchServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLaunchServices.h; sourceTree = "<group>"; };
 		22A723601435E1C800889A06 /* ECLaunchServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchServices.m; sourceTree = "<group>"; };
+		22A723711435E4FD00889A06 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
+		22A723721435E4FD00889A06 /* ECLoggingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLoggingMenu.m; sourceTree = "<group>"; };
 		22E51FB81434E04F008F8D41 /* ECLoggingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECLoggingSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E51FBA1434E04F008F8D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		22E51FBD1434E04F008F8D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				226FB48013E28F2A00BF258D /* Generic */,
+				22A723701435E4FC00889A06 /* Mac */,
 			);
 			name = ECLogging;
 			path = ../../../../../Modules/ECLogging;
@@ -286,6 +291,15 @@
 				226FB47F13E28F2A00BF258D /* ECLogging */,
 			);
 			name = ECFoundation;
+			sourceTree = "<group>";
+		};
+		22A723701435E4FC00889A06 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				22A723711435E4FD00889A06 /* ECLoggingMenu.h */,
+				22A723721435E4FD00889A06 /* ECLoggingMenu.m */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		22E51FBC1434E04F008F8D41 /* Other Frameworks */ = {
@@ -488,6 +502,7 @@
 				22E51FFD1434E140008F8D41 /* ECAppKitSenTest.plist in Resources */,
 				22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */,
 				22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */,
+				22A7236F1435E39000889A06 /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +543,7 @@
 				22A7236C1435E29200889A06 /* ECLogHandlerNSLog.m in Sources */,
 				22A7236D1435E29200889A06 /* ECLogHandlerStderr.m in Sources */,
 				22A7236E1435E29200889A06 /* ECLogHandlerStdout.m in Sources */,
+				22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
