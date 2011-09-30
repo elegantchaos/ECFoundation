@@ -15,6 +15,7 @@
 #pragma mark - Channels
 
 ECDefineDebugChannel(ApplicationChannel);
+ECDefineDebugChannel(ApplicationUpdateChannel);
 
 #pragma mark - Properties
 
@@ -29,14 +30,73 @@ ECDefineDebugChannel(ApplicationChannel);
 
 #pragma mark - Application Lifecycle
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationWillFinishLaunching:(NSNotification *)notification
 {
-    // Insert code here to initialize your application
+    // initialise log manager
     ECLogManager* lm = [ECLogManager sharedInstance];
     [lm startup];
     [lm registerDefaultHandler];
+
+    ECDebug(ApplicationChannel, @"will finish launching");
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    ECDebug(ApplicationChannel, @"did finish launching");
+}
+
+- (void)applicationWillHide:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"will hide");
+}
+
+- (void)applicationDidHide:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"did hide");
+}
+
+- (void)applicationWillUnhide:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"will unhide");
+}
+
+- (void)applicationDidUnhide:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"did unhide");
+}
+
+- (void)applicationWillBecomeActive:(NSNotification *)notification
+
+{
+    ECDebug(ApplicationChannel, @"will become active");
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"did become active");
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"will resign active");
     
-    ECDebug(ApplicationChannel, @"launched");
+    // save current log channels state
+    [[ECLogManager sharedInstance] saveChannelSettings];
+}
+
+- (void)applicationDidResignActive:(NSNotification *)notification
+{
+    ECDebug(ApplicationChannel, @"did resign active");
+}
+
+- (void)applicationWillUpdate:(NSNotification *)notification
+{
+    ECDebug(ApplicationUpdateChannel, @"will update");
+}
+
+- (void)applicationDidUpdate:(NSNotification *)notification
+{
+    ECDebug(ApplicationUpdateChannel, @"did update");
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
@@ -46,11 +106,11 @@ ECDefineDebugChannel(ApplicationChannel);
     [[ECLogManager sharedInstance] shutdown];
 }
 
-- (void)applicationWillResignActive:(NSNotification *)notification
+- (void)applicationDidChangeScreenParameters:(NSNotification *)notification
 {
-    ECDebug(ApplicationChannel, @"will resign active");
-
-    [[ECLogManager sharedInstance] saveChannelSettings];
+    ECDebug(ApplicationChannel, @"did change screen parameters");
 }
+
+
 
 @end

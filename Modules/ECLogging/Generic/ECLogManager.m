@@ -223,7 +223,7 @@ static ECLogManager* gSharedInstance = nil;
 		dictionary = [[NSMutableDictionary alloc] init];
 		self.handlers = dictionary;
 		[dictionary release];
-        self.defaultContextFlags = ECLogContextName;
+        self.defaultContextFlags = ECLogContextName | ECLogContextMessage;
 	}
 	
 	return self;

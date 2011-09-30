@@ -60,10 +60,6 @@
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		226FB46113E1EB0B00BF258D /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		226FB46713E1EB0B00BF258D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		226FB46A13E1EB0B00BF258D /* ECLoggingSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingSampleAppDelegate.h; sourceTree = "<group>"; };
-		226FB46B13E1EB0B00BF258D /* ECLoggingSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLoggingSampleAppDelegate.m; sourceTree = "<group>"; };
-		226FB46C13E1EB0B00BF258D /* ECLoggingSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingSampleViewController.h; sourceTree = "<group>"; };
-		226FB46D13E1EB0B00BF258D /* ECLoggingSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLoggingSampleViewController.m; sourceTree = "<group>"; };
 		226FB46E13E1EB0B00BF258D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226FB47013E1EB0B00BF258D /* SharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPrefix.pch; sourceTree = "<group>"; };
 		226FB47113E1EB0B00BF258D /* DebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugPrefix.pch; sourceTree = "<group>"; };
@@ -216,10 +212,6 @@
 			children = (
 				22E51FD61434E0F0008F8D41 /* AppDelegate.h */,
 				22E51FD71434E0F0008F8D41 /* AppDelegate.m */,
-				226FB46A13E1EB0B00BF258D /* ECLoggingSampleAppDelegate.h */,
-				226FB46B13E1EB0B00BF258D /* ECLoggingSampleAppDelegate.m */,
-				226FB46C13E1EB0B00BF258D /* ECLoggingSampleViewController.h */,
-				226FB46D13E1EB0B00BF258D /* ECLoggingSampleViewController.m */,
 				226FB46E13E1EB0B00BF258D /* main.m */,
 				226FB4E013E2914900BF258D /* ECFoundation */,
 				226FB46F13E1EB0B00BF258D /* Prefix */,

@@ -39,8 +39,7 @@
 
 #elif TARGET_OS_MAC
 
-#import <Foundation/Foundation.h>
-#import <AppKit/AppKit.h>
+#import <Cocoa/Cocoa.h>
 
 #define EC_PLATFORM_MAC 1
 
