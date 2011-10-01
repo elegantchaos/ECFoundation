@@ -214,7 +214,8 @@ static ECLogManager* gSharedInstance = nil;
 
     // if this handler is in the list of defaults, add it to the defaults array
     // (if the list is empty and this is the first handler we've registered, we make it the default automatically)
-    NSArray* defaultHandlerSettings = [[self.settings objectForKey:HandlersSetting] objectForKey:DefaultsSetting];
+	NSDictionary* allHandlersSettings = [self.settings objectForKey:HandlersSetting];
+    NSArray* defaultHandlerSettings = [allHandlersSettings objectForKey:DefaultsSetting];
     if (([defaultHandlerSettings containsObject:handler.name]) || ((defaultHandlerSettings == nil) && ([self.defaultHandlers count] == 0)))
     {
         [self.defaultHandlers addObject:handler];

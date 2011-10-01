@@ -32,6 +32,8 @@
 		220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220375E0141FF4E60040E740 /* ECAboutBox.xib */; };
 		220375E6141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
 		220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
+		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E0837141F96E900DD8795 /* ECMacStoreDifferentVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */; };
 		223E0838141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
 		223E0839141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
@@ -439,6 +441,7 @@
 		220375E1141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/ECAboutBox.xib; sourceTree = SOURCE_ROOT; };
 		220375E3141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		223CB89E14373230003F6D01 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 		223CBAE61205C6380008A641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		223CBAFC1205C7680008A641 /* ECFoundation GHUnit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation GHUnit.plist"; sourceTree = "<group>"; };
 		223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECFoundation SenTest.plist"; sourceTree = "<group>"; };
@@ -1140,6 +1143,7 @@
 		22B1273313C785CA0022CC5B /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				223CB89E14373230003F6D01 /* ECLogContext.h */,
 				22B1273413C785CA0022CC5B /* ECAssertion.h */,
 				22B1273513C785CA0022CC5B /* ECErrorReporter.h */,
 				22B1273613C785CA0022CC5B /* ECErrorReporter.m */,
@@ -1395,6 +1399,7 @@
 				22CA55D713DA09FF007E89E2 /* UIImage+ECCore.h in Headers */,
 				22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
 				2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */,
+				223CB8A014373230003F6D01 /* ECLogContext.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1481,6 +1486,7 @@
 				22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
 				2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */,
 				22CEFD591421391600565841 /* NSColor+ECCore.h in Headers */,
+				223CB89F14373230003F6D01 /* ECLogContext.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

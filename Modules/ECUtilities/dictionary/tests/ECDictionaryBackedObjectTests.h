@@ -19,8 +19,4 @@
 	NSDictionary* testData;
 }
 
-{
-	NSDictionary* testData;
-}
-
 @end
