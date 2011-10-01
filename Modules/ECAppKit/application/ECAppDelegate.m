@@ -124,8 +124,6 @@ ECPropertySynthesize(licenseChecker);
     ECLogHandler* stderrHandler = [[ECLogHandlerStderr alloc] init];
 	[lm registerHandler: stderrHandler];
 	[stderrHandler release];
-    
-    lm.defaultHandler = nslogHandler;
 }
 
 // --------------------------------------------------------------------------

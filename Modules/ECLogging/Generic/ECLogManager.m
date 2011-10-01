@@ -369,7 +369,7 @@ static ECLogManager* gSharedInstance = nil;
                                  nil];
     [defaults setObject:allSettings forKey:LogManagerSettings];
     
-	[allSettings release];
+	[allChannelSettings release];
 
 }
 
