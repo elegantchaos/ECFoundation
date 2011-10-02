@@ -107,21 +107,19 @@
     
     [menu addItem: [NSMenuItem separatorItem]];
 	
-    NSArray* handlers = [mLogManager handlersSortedByName];
-    for (ECLogHandler* handler in handlers)
+    NSUInteger count = [mLogManager handlerCount];
+    for (NSUInteger n = 0; n < count; ++n)
 	{
-        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: handler.name action: @selector(handlerSelected:) keyEquivalent: @""];
+        NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: [mLogManager handlerNameForIndex:n] action: @selector(handlerSelected:) keyEquivalent: @""];
         item.target = self;
-        item.state = [channel isHandlerEnabled: handler] ? NSOnState : NSOffState;
-        item.representedObject = handler;
+        item.tag = n;
         [menu addItem: item];
         [item release];
-        
     }
     
     [menu addItem: [NSMenuItem separatorItem]];
     
-    NSUInteger count = [mLogManager contextFlagCount];
+    count = [mLogManager contextFlagCount];
     for (NSUInteger n = 0; n < count; ++n)
     {
         NSString* name = [mLogManager contextFlagNameForIndex:n];
@@ -143,9 +141,10 @@
 {
     NSMenu* menu = [[NSMenu alloc] initWithTitle:@"Default Handlers"];
     
-    NSArray* handlers = [mLogManager handlersSortedByName];
-    for (ECLogHandler* handler in handlers)
+    NSUInteger count = [mLogManager handlerCount];
+    for (NSUInteger n = 1; n < count; ++n)
 	{
+        ECLogHandler* handler = [mLogManager handlerForIndex:n];
         NSMenuItem* item = [[NSMenuItem alloc] initWithTitle: handler.name action: @selector(defaultHandlerSelected:) keyEquivalent: @""];
         item.target = self;
         item.representedObject = handler;
@@ -243,22 +242,8 @@
 
 - (IBAction) handlerSelected: (NSMenuItem*) item
 {
-	ECLogHandler* handler = item.representedObject;
     ECLogChannel* channel = [item parentItem].representedObject;
-    
-    BOOL currentlyEnabled = [channel.handlers containsObject: handler];
-    BOOL newEnabled = !currentlyEnabled;
-    
-    if (newEnabled)
-    {
-        [channel enableHandler: handler];
-    }
-    else
-	{
-        [channel disableHandler: handler];
-    }
-    
-	[mLogManager saveChannelSettings];
+    [channel selectHandlerWithIndex:item.tag];
 }
 
 // --------------------------------------------------------------------------
@@ -327,10 +312,9 @@
     
     else if (item.action == @selector(handlerSelected:))
     {
-        ECLogHandler* handler = item.representedObject;
         ECLogChannel* channel = [item parentItem].representedObject;
         
-        BOOL currentlyEnabled = [channel.handlers containsObject: handler];
+        BOOL currentlyEnabled = [channel tickHandlerWithIndex:item.tag];
         item.state = currentlyEnabled ? NSOnState : NSOffState;
     }
     
