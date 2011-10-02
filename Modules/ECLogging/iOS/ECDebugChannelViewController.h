@@ -12,6 +12,5 @@
 @interface ECDebugChannelViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
 
 @property( retain, nonatomic) ECLogChannel* channel;
-@property( retain, nonatomic) NSArray* handlers;
 
 @end

@@ -47,6 +47,8 @@
 - (NSString*) stringFromContext:(ECLogContext*)context;
 - (BOOL)tickFlagWithIndex:(NSUInteger)index;
 - (void)selectFlagWithIndex:(NSUInteger)index;
+- (BOOL)tickHandlerWithIndex:(NSUInteger)index;
+- (void)selectHandlerWithIndex:(NSUInteger)index;
 + (NSString*) cleanName:(const char *) name;
 
 @end

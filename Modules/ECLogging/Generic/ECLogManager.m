@@ -28,6 +28,7 @@
 // --------------------------------------------------------------------------
 
 @property (nonatomic, retain) NSMutableDictionary* settings;
+@property (nonatomic, retain) NSArray* handlersSorted;
 
 // --------------------------------------------------------------------------
 // Private Methods
@@ -82,6 +83,7 @@ const ContextFlagInfo kContextFlagInfo[] =
 @synthesize channels;
 @synthesize defaultContextFlags;
 @synthesize handlers;
+@synthesize handlersSorted;
 @synthesize settings;
 @synthesize defaultHandlers;
 
@@ -211,6 +213,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void)registerHandler:(ECLogHandler*)handler
 {
 	[self.handlers setObject:handler forKey:handler.name];
+    self.handlersSorted = [[self.handlers allValues] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 
     // if this handler is in the list of defaults, add it to the defaults array
     // (if the list is empty and this is the first handler we've registered, we make it the default automatically)
@@ -431,18 +434,6 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
-//! Return an array of handlers sorted by name.
-// --------------------------------------------------------------------------
-
-- (NSArray*)handlersSortedByName
-{
-    NSArray* handlerObjects = [self.handlers allValues];
-    NSArray* sorted = [handlerObjects sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
-    
-    return sorted;
-}
-
-// --------------------------------------------------------------------------
 //! Return a text label for a context info flag.
 // --------------------------------------------------------------------------
 
@@ -467,6 +458,59 @@ static ECLogManager* gSharedInstance = nil;
 - (NSUInteger)contextFlagCount
 {
     return sizeof(kContextFlagInfo) / sizeof(ContextFlagInfo);
+}
+
+// --------------------------------------------------------------------------
+//! Return the handler for a given index.
+//! Index 0 represents the Default Handlers, and returns nil.
+// --------------------------------------------------------------------------
+
+- (ECLogHandler*)handlerForIndex:(NSUInteger)index
+{
+    ECLogHandler* result;
+    if (index == 0)
+    {
+        result = nil;
+    }
+    else
+    {
+        result = [self.handlersSorted objectAtIndex:index - 1];
+    }
+    
+    return result;
+}
+
+
+// --------------------------------------------------------------------------
+//! Return the name of a given handler index.
+//! Index 0 represents the Default Handlers, and returns "Use Defaults".
+// --------------------------------------------------------------------------
+
+- (NSString*)handlerNameForIndex:(NSUInteger)index
+{
+    NSString* result;
+    if (index == 0)
+    {
+        result = @"Use Defaults";
+    }
+    else
+    {
+        ECLogHandler* handler = [self.handlersSorted objectAtIndex:index - 1];
+        result = handler.name;
+    }
+    
+    return result;
+}
+
+
+// --------------------------------------------------------------------------
+//! Return the number of handler indexes.
+//! This is the number of handlers, plus one (or the "Use Defaults" label).
+// --------------------------------------------------------------------------
+
+- (NSUInteger)handlerCount
+{
+    return [self.handlers count] + 1;
 }
 
 @end

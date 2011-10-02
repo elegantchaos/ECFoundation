@@ -56,11 +56,14 @@
 - (void)            saveChannelSettings;
 
 - (NSArray*)        channelsSortedByName;
-- (NSArray*)        handlersSortedByName;
 
 - (NSString*)           contextFlagNameForIndex:(NSUInteger)index;
 - (ECLogContextFlags)   contextFlagValueForIndex:(NSUInteger)index;
 - (NSUInteger)          contextFlagCount;
+
+- (NSString*)           handlerNameForIndex:(NSUInteger)index;
+- (ECLogHandler*)       handlerForIndex:(NSUInteger)index;
+- (NSUInteger)          handlerCount;
 
 @end
 

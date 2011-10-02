@@ -98,14 +98,17 @@ static NSString *const kSuffixToStrip = @"Channel";
 //! Add a handler to the set of handlers we're logging to.
 // --------------------------------------------------------------------------
 
-- (void) enableHandler: (ECLogHandler*) handler
+- (void) enableHandler: (ECLogHandler*)handler
 {
     if (!self.handlers)
     {
-        self.handlers = [NSMutableSet setWithCapacity:1];
+        self.handlers = [NSMutableSet setWithObject:handler];
+    }
+    else
+    {
+        [self.handlers addObject:handler];
     }
     
-    [self.handlers addObject:handler];
     ECMakeContext();
     logToChannel(self, &ecLogContext, @"Enabled handler %@", handler.name);
 }
@@ -281,6 +284,54 @@ static NSString *const kSuffixToStrip = @"Channel";
     // toggle the flag that was actually selected
     self.context ^= selectedFlag;
 
+    [lm saveChannelSettings];
+}
+
+// --------------------------------------------------------------------------
+//! UI helper - should we tick a menu item for a given handler index?
+// --------------------------------------------------------------------------
+
+- (BOOL)tickHandlerWithIndex:(NSUInteger)index
+{
+    BOOL ticked;
+    if (index == 0)
+    {
+        ticked = self.handlers == nil;
+    }
+    else
+    {
+        ECLogManager* lm = [ECLogManager sharedInstance];
+        ECLogHandler* handler = [lm handlerForIndex:index];
+        ticked = self.handlers && [self isHandlerEnabled:handler];
+    }
+    
+    return ticked;
+}
+
+// --------------------------------------------------------------------------
+//! UI helper - respond to a handler being selected.
+// --------------------------------------------------------------------------
+
+- (void)selectHandlerWithIndex:(NSUInteger)index
+{
+    ECLogManager* lm = [ECLogManager sharedInstance];
+    if (index == 0)
+    {
+        self.handlers = nil;
+    }
+    else
+    {
+        ECLogHandler* handler = [lm handlerForIndex:index];
+        if (self.handlers && [self isHandlerEnabled:handler]) 
+        {
+            [self disableHandler:handler];
+        }
+        else
+        {
+            [self enableHandler:handler];
+        }
+    }
+    
     [lm saveChannelSettings];
 }
 

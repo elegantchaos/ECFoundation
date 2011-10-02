@@ -32,7 +32,6 @@
 // --------------------------------------------------------------------------
 
 @synthesize channel;
-@synthesize handlers;
 @synthesize logManager;
 
 // --------------------------------------------------------------------------
@@ -53,7 +52,6 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     if ((self = [super initWithStyle:style]) != nil)
     {
         self.logManager = [ECLogManager sharedInstance];
-        self.handlers = [self.logManager handlersSortedByName];
     }
     
     return self;
@@ -66,7 +64,6 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
 - (void)dealloc
 {
     [channel release];
-    [handlers release];
     
     [super dealloc];
 }
@@ -103,7 +100,7 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     }
     else if (section == kHandlersSection)
     {
-        return [self.handlers count] + 1;
+        return [self.logManager handlerCount];
     }
     else
     {
@@ -135,17 +132,8 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     }
     else if (path.section == kHandlersSection)
     {
-        if (path.row == 0)
-        {
-            label = @"Use Defaults";
-            ticked = self.channel.handlers == nil;
-        }
-        else
-        {
-            ECLogHandler* handler = [self.handlers objectAtIndex:path.row - 1];
-            label = handler.name;
-            ticked = self.channel.handlers && [self.channel isHandlerEnabled:handler];
-        }
+        label = [self.logManager handlerNameForIndex:path.row];
+        ticked = [self.channel tickHandlerWithIndex:path.row];
     }
     else
     {
@@ -179,32 +167,17 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
             self.channel.enabled = YES;
             logToChannel(self.channel, &ecLogContext, @"enabled channel");
         }
+        [self.logManager saveChannelSettings];
     }
     else if (path.section == kHandlersSection)
     {
-        if (path.row == 0)
-        {
-            self.channel.handlers = nil;
-        }
-        else
-        {
-            ECLogHandler* handler = [self.handlers objectAtIndex:path.row - 1];
-            if (self.channel.handlers && [self.channel isHandlerEnabled:handler]) 
-            {
-                [self.channel disableHandler:handler];
-            }
-            else
-            {
-                [self.channel enableHandler:handler];
-            }
-        }
+        [self.channel selectHandlerWithIndex:path.row];
     }
     else
     {
         [self.channel selectFlagWithIndex:path.row];
     }
 
-    [self.logManager saveChannelSettings];
     
     [table deselectRowAtIndexPath: path animated: YES];
     [self.tableView reloadData];
