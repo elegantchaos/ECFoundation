@@ -14,6 +14,18 @@
 - (id) valueForKey: (NSString*) key intoBool: (BOOL*) valueOut;
 - (id) valueForKey: (NSString*) key intoDouble: (double*) valueOut;
 
+- (CGPoint)pointForKey:(NSString*)key;
+- (CGSize)sizeForKey:(NSString*)key;
+- (CGRect)rectForKey:(NSString*)key;
+
 - (NSDictionary*)dictionaryWithoutKey:(NSString*)key;
+
+@end
+
+@interface NSMutableDictionary (ECCore)
+
+- (void)setPoint:(CGPoint)point forKey:(NSString*)key;
+- (void)setSize:(CGSize)size forKey:(NSString*)key;
+- (void)setRect:(CGRect)rect forKey:(NSString*)key;
 
 @end
