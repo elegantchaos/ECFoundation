@@ -95,7 +95,7 @@ extern "C"
 #define ECDebug(...) 
 #define ECDebugIf(...)
 #define ECDefineDebugChannel(...)
-#define ECDeclareLogChannel(...)
+#define ECDeclareDebugChannel(...)
 #define ECDebugChannelEnabled(channel) (false)
 
 #endif
