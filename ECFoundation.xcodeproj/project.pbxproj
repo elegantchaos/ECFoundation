@@ -146,9 +146,6 @@
 		226021CE141F86F30044644C /* ECLegalFilenameFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602178141F86F30044644C /* ECLegalFilenameFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226021CF141F86F30044644C /* ECLegalFilenameFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602179141F86F30044644C /* ECLegalFilenameFormatter.m */; };
 		226021D0141F86F30044644C /* ECLegalFilenameFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602179141F86F30044644C /* ECLegalFilenameFormatter.m */; };
-		226021DD141F86F30044644C /* ECDebugMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602184141F86F30044644C /* ECDebugMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		226021DE141F86F30044644C /* ECDebugMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602185141F86F30044644C /* ECDebugMenu.m */; };
-		226021DF141F86F30044644C /* ECDebugMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602185141F86F30044644C /* ECDebugMenu.m */; };
 		226021E0141F86F30044644C /* ECPreferencePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602187141F86F30044644C /* ECPreferencePanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226021E1141F86F30044644C /* ECPreferencePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602188141F86F30044644C /* ECPreferencePanel.m */; };
 		226021E2141F86F30044644C /* ECPreferencePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22602188141F86F30044644C /* ECPreferencePanel.m */; };
@@ -514,8 +511,6 @@
 		22602180141F86F30044644C /* ECLicenseChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLicenseChecker.m; sourceTree = "<group>"; };
 		22602181141F86F30044644C /* ECMacStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacStore.h; sourceTree = "<group>"; };
 		22602182141F86F30044644C /* ECMacStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMacStore.m; sourceTree = "<group>"; };
-		22602184141F86F30044644C /* ECDebugMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugMenu.h; sourceTree = "<group>"; };
-		22602185141F86F30044644C /* ECDebugMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugMenu.m; sourceTree = "<group>"; };
 		22602187141F86F30044644C /* ECPreferencePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPreferencePanel.h; sourceTree = "<group>"; };
 		22602188141F86F30044644C /* ECPreferencePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPreferencePanel.m; sourceTree = "<group>"; };
 		22602189141F86F30044644C /* ECPreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPreferencePaneProtocol.h; sourceTree = "<group>"; };
@@ -962,8 +957,6 @@
 		22602183141F86F30044644C /* menus */ = {
 			isa = PBXGroup;
 			children = (
-				22602184141F86F30044644C /* ECDebugMenu.h */,
-				22602185141F86F30044644C /* ECDebugMenu.m */,
 			);
 			path = menus;
 			sourceTree = "<group>";
@@ -1451,7 +1444,6 @@
 				226021C8141F86F30044644C /* ECWhiteBorderButtonCell.h in Headers */,
 				226021CB141F86F30044644C /* ECIsValueTransformer.h in Headers */,
 				226021CE141F86F30044644C /* ECLegalFilenameFormatter.h in Headers */,
-				226021DD141F86F30044644C /* ECDebugMenu.h in Headers */,
 				226021E0141F86F30044644C /* ECPreferencePanel.h in Headers */,
 				226021E3141F86F30044644C /* ECPreferencePaneProtocol.h in Headers */,
 				226021E4141F86F30044644C /* ECPreferencesController.h in Headers */,
@@ -1810,7 +1802,6 @@
 				226021CA141F86F30044644C /* ECWhiteBorderButtonCell.m in Sources */,
 				226021CD141F86F30044644C /* ECIsValueTransformer.m in Sources */,
 				226021D0141F86F30044644C /* ECLegalFilenameFormatter.m in Sources */,
-				226021DF141F86F30044644C /* ECDebugMenu.m in Sources */,
 				226021E2141F86F30044644C /* ECPreferencePanel.m in Sources */,
 				226021E6141F86F30044644C /* ECPreferencesController.m in Sources */,
 				226021EC141F86F30044644C /* ECDraggableArrayController.m in Sources */,
@@ -1882,7 +1873,6 @@
 				226021C9141F86F30044644C /* ECWhiteBorderButtonCell.m in Sources */,
 				226021CC141F86F30044644C /* ECIsValueTransformer.m in Sources */,
 				226021CF141F86F30044644C /* ECLegalFilenameFormatter.m in Sources */,
-				226021DE141F86F30044644C /* ECDebugMenu.m in Sources */,
 				226021E1141F86F30044644C /* ECPreferencePanel.m in Sources */,
 				226021E5141F86F30044644C /* ECPreferencesController.m in Sources */,
 				226021EB141F86F30044644C /* ECDraggableArrayController.m in Sources */,
