@@ -9,7 +9,7 @@
 
 #import "ECTEditableCell.h"
 #import "ECTBinding.h"
-#import "UIColor+ECUtilities.h"
+#import "UIColor+ECCore.h"
 
 #pragma mark - Private Interface
 

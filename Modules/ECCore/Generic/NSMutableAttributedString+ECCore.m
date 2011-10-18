@@ -1,5 +1,5 @@
 //
-//  NSString+ECUtilities.m
+//  NSString+ECCore.m
 //  ECFoundation
 //
 //  Created by Sam Deane on 11/08/2010.
@@ -8,10 +8,10 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 //
 
-#import "NSMutableAttributedString+ECUtilities.h"
-#import "NSData+ECUtilities.h"
+#import "NSMutableAttributedString+ECCore.h"
+#import "NSData+ECCore.h"
 
-@implementation NSMutableAttributedString(ECUtilities)
+@implementation NSMutableAttributedString(ECCore)
 
 
 - (void)matchExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options reversed:(BOOL)reversed action:(MatchAction)block
