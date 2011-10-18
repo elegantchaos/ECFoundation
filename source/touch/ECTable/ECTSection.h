@@ -28,6 +28,8 @@ extern NSString *const ECTDetailKeyKey;
 extern NSString *const ECTDisclosureClassKey;
 extern NSString *const ECTDisclosureTitleKey;
 extern NSString *const ECTEnabledKey;
+extern NSString *const ECTImageKey;
+extern NSString *const ECTImageKeyKey;
 extern NSString *const ECTLabelKey;
 extern NSString *const ECTTargetKey;
 

@@ -50,6 +50,7 @@
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail;
 - (NSString*)labelForSection:(ECTSection*)section;
 - (NSString*)detailForSection:(ECTSection*)section;
+- (UIImage*)imageForSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell;

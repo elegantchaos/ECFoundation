@@ -35,5 +35,6 @@
 - (void)clearSections;
 - (void)addSection:(ECTSection*)section;
 - (void)setupForBinding:(ECTBinding*)binding;
+- (void)deselectAllRowsAnimated:(BOOL)animated;
 
 @end

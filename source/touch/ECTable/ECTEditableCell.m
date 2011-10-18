@@ -15,12 +15,18 @@
 
 @interface ECTEditableCell()
 
+@property (nonatomic, retain) UIGestureRecognizer* recognizer;
+@property (nonatomic, assign) BOOL tapOutsideDismisses;
+
 - (void)textFieldDone:(id)sender;
+- (void)installGesture;
+- (void)removeGesture;
 
 @end
 
 
 @implementation ECTEditableCell
+
 
 static const CGFloat kVerticalInset = 11.0f;
 static const CGFloat kHorizontalInset = 32.0f;
@@ -44,6 +50,8 @@ ECDefineLogChannel(ItemCellChannel);
 #pragma mark Properties
 
 @synthesize label;
+@synthesize recognizer;
+@synthesize tapOutsideDismisses;
 @synthesize text;
 
 // --------------------------------------------------------------------------
@@ -68,15 +76,25 @@ ECDefineLogChannel(ItemCellChannel);
 		textField.textAlignment = UITextAlignmentRight;
 		textField.textColor = [UIColor blueTextColor];
         textField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        textField.returnKeyType = UIReturnKeyDone;
 		[textField setDelegate:self];
 		[textField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
 		self.text = textField;
 		[self.contentView addSubview:textField];
+        
+        self.tapOutsideDismisses = YES;
 	}
     
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeGesture];
+    [recognizer release];
+    
+    [super dealloc];
+}
 
 - (void)updateUIForEvent:(UpdateEvent)event
 {
@@ -122,6 +140,31 @@ ECDefineLogChannel(ItemCellChannel);
     //	self.text.enablesReturnKeyAutomatically = [self itemIntForKey: kEnablesReturnKeyAutomaticallyKey orDefault: NO];
 }
 
+- (void)installGesture
+{
+    if (self.tapOutsideDismisses)
+    {
+        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldDone:)];
+        [self.superview.superview.superview addGestureRecognizer:tap];
+        self.recognizer = tap;
+        [tap release];
+    }
+}
+
+- (void)removeGesture
+{
+    if (self.recognizer)
+    {
+        [self.superview.superview.superview removeGestureRecognizer:self.recognizer];
+        self.recognizer = nil;
+    }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self installGesture];
+}
+
 // --------------------------------------------------------------------------
 //! Handle the end of editing to save the new value of the item.
 // --------------------------------------------------------------------------
@@ -131,6 +174,7 @@ ECDefineLogChannel(ItemCellChannel);
 	ECDebug(ItemCellChannel, @"text end editing");
     
     [self.representedObject didSetValue:textField.text forCell:self];
+    [self removeGesture];
 }
 
 // --------------------------------------------------------------------------
@@ -140,7 +184,8 @@ ECDefineLogChannel(ItemCellChannel);
 - (void) textFieldDone: (id) sender
 {
 	ECDebug(ItemCellChannel, @"text field done");
-	[sender resignFirstResponder];
+	[self.text resignFirstResponder];
+    [self removeGesture];
 }
 
 @end
