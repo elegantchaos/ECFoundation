@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECRandom.h"
+#import "ECAssertion.h"
 
 @implementation ECRandom
 
@@ -33,7 +34,7 @@
 
 + (NSInteger)randomIntegerFromZeroTo:(NSInteger)to
 {
-    NSInteger result = arc4random_uniform(to + 1);
+    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
     
     ECAssert(result >= 0);
     ECAssert(result <= to);
@@ -43,10 +44,10 @@
 
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size
 {
-    NSInteger result = arc4random_uniform(size);
+    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
     
     ECAssert(result >= 0);
-    ECAssert(result < size);
+    ECAssert(result < (NSInteger) size);
     
     return result;
 }
@@ -77,7 +78,7 @@
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to
 {
     NSInteger range = to - from;
-    NSInteger rand = arc4random_uniform(range + 1);
+    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
     NSInteger result = from + rand;
     
     ECAssert(result >= from);
