@@ -1,0 +1,350 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 28/11/2010
+//
+//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
+
+#import "ECAppDelegate.h"
+#import "ECPreferencesController.h"
+#import "ECAboutBoxController.h"
+#import "ECLicenseChecker.h"
+#import "ECMacStore.h"
+#import "ECMacStoreExact.h"
+#import "ECMacStoreTest.h"
+#import "ECCompoundLicenseChecker.h"
+
+#import "NSApplication+ECCore.h"
+
+#import "ECLogging.h"
+#import "ECLogManager.h"
+#import "ECLogHandlerNSLog.h"
+#import "ECLogHandlerStdout.h"
+#import "ECLogHandlerStderr.h"
+
+// ==============================================
+// Private Methods
+// ==============================================
+
+@interface ECAppDelegate()
+@end
+
+
+@implementation ECAppDelegate
+
+ECDefineLogChannel(ECAppDelegateChannel);
+
+// ==============================================
+// Properties
+// ==============================================
+
+ECPropertySynthesize(aboutController);
+ECPropertySynthesize(preferencesController);
+ECPropertySynthesize(licenseChecker);
+
+@synthesize dockMenu = mDockMenu;
+@synthesize statusMenu = mStatusMenu;
+
+#pragma mark - Lifecycle
+
+- (void) dealloc
+{
+    ECPropertyDealloc(aboutController);
+    ECPropertyDealloc(preferencesController);
+    ECPropertyDealloc(licenseChecker);
+
+    [super dealloc];
+}
+
+// ==============================================
+// Application Lifecycle
+// ==============================================
+
+#pragma mark - NSApplicationDelegate
+
+// --------------------------------------------------------------------------
+//! Finish setting up the application.
+// --------------------------------------------------------------------------
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
+{
+    ECLogManager* lm = [ECLogManager sharedInstance];
+	[self installLogHandlers];
+    [lm startup];
+}
+
+// --------------------------------------------------------------------------
+//! Clean up before the application dies.
+// --------------------------------------------------------------------------
+
+-(void)applicationWillTerminate:(NSNotification *)notification
+{
+	[[ECLogManager sharedInstance] shutdown];
+	
+}
+
+// --------------------------------------------------------------------------
+//! Handle the user opening a license file.
+// --------------------------------------------------------------------------
+
+- (BOOL)application:(NSApplication *)sender openFile:(NSString*) filename
+{
+    ECDebug(ECAppDelegateChannel, @"Request to open file: %@", filename);
+
+    NSString* licenseFileType = [[NSApplication sharedApplication] licenseFileType];
+    if (licenseFileType && [[filename pathExtension] isEqualToString: licenseFileType])
+    {
+        NSURL* licenseURL = [NSURL fileURLWithPath: filename];
+        [self.licenseChecker registerLicenseFile: licenseURL];
+    }
+	
+	return YES;
+}
+
+#pragma mark - Logging
+
+// --------------------------------------------------------------------------
+//! Install Standard Log Handlers.
+// --------------------------------------------------------------------------
+
+- (void) installLogHandlers
+{
+    ECLogManager* lm = [ECLogManager sharedInstance];
+
+	ECLogHandler* nslogHandler = [[ECLogHandlerNSLog alloc] init];
+	[lm registerHandler: nslogHandler];
+	[nslogHandler release];
+    
+	ECLogHandler* stdoutHandler = [[ECLogHandlerStdout alloc] init];
+	[lm registerHandler: stdoutHandler];
+	[stdoutHandler release];
+
+    ECLogHandler* stderrHandler = [[ECLogHandlerStderr alloc] init];
+	[lm registerHandler: stderrHandler];
+	[stderrHandler release];
+}
+
+// --------------------------------------------------------------------------
+//! Open the main product website.
+// --------------------------------------------------------------------------
+
+- (IBAction) openWebsite: (id) sender
+{
+	NSString* urlString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ECApplicationURL"];
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: urlString]];
+}
+
+// --------------------------------------------------------------------------
+//! Open the online store for purchasing Neu
+// --------------------------------------------------------------------------
+
+- (IBAction) openStore: (id) sender;
+{
+	NSString* urlString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ECApplicationStoreURL"];
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: urlString]];
+}
+
+// --------------------------------------------------------------------------
+//! Open the product release notes.
+// --------------------------------------------------------------------------
+
+- (IBAction) openReleaseNotes: (id) sender
+{
+	NSString* format = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ECApplicationReleaseNotesURL"];
+	NSString* appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+	NSString* urlString = [NSString stringWithFormat: format, appVersion];
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: urlString]];	
+}
+
+// --------------------------------------------------------------------------
+//! Open the product release notes.
+// --------------------------------------------------------------------------
+
+- (IBAction) openSupport: (id) sender
+{
+	NSString* urlString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ECApplicationSupportURL"];
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: urlString]];
+}
+
+// --------------------------------------------------------------------------
+//! Open the help page.
+// --------------------------------------------------------------------------
+
+- (IBAction) showHelp: (id) sender
+{
+	NSString* urlString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"ECApplicationHelpURL"];
+	[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: urlString]];
+}
+
+// --------------------------------------------------------------------------
+//! Display the preferences dialog.
+// --------------------------------------------------------------------------
+
+- (IBAction)showPreferences:(id)sender
+{
+    ECPreferencesController* prefs = [self getCachedPreferencesController];
+	[NSApp activateIgnoringOtherApps:YES];
+    [prefs showPreferencesWindow];
+}
+
+// --------------------------------------------------------------------------
+//! Show the templates folder in the finder.
+// --------------------------------------------------------------------------
+
+- (IBAction) showAboutBox: (id) sender
+{
+	ECAboutBoxController* about = self.aboutController;
+	if (!about)
+	{
+		about = [[ECAboutBoxController alloc] initWithWindowNibName: @"ECAboutBox"];
+		self.aboutController = about;
+		[about release];
+	}
+	
+	[NSApp activateIgnoringOtherApps:YES];
+	[about showAboutBox];
+}
+
+
+// --------------------------------------------------------------------------
+//! Get the preferences controller - make it if necessary.
+// --------------------------------------------------------------------------
+
+- (ECPreferencesController*) getCachedPreferencesController
+{
+	ECPreferencesController* prefs = self.preferencesController;
+    if (!prefs) 
+	{
+        // Determine path to the sample preference panes
+        NSString *pathToPanes = [[NSString stringWithFormat:@"%@/Contents/PlugIns/", [[NSBundle mainBundle] bundlePath]] stringByStandardizingPath];
+        
+		prefs = [[ECPreferencesController alloc] initWithPanesSearchPath:pathToPanes];
+        self.preferencesController = prefs;
+		[prefs release];
+        
+        // Set which panes are included, and their order.
+		NSArray* panes = [self getPreferencePanes];
+		if (panes)
+		{
+			[prefs setPanesOrder: panes];
+		}
+    }
+	
+	return prefs;
+}
+
+// --------------------------------------------------------------------------
+//! Return a list of the preference panes to display.
+// --------------------------------------------------------------------------
+
+- (NSArray*) getPreferencePanes
+{       
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    NSArray* panes = [info objectForKey:@"ECPreferencePanes"];
+    
+    return panes;
+}
+
+
+#pragma mark -
+#pragma mark ECAboutBoxInfoProvider methods
+
+// --------------------------------------------------------------------------
+//! Return information for use by the about box controller.
+// --------------------------------------------------------------------------
+
+- (NSString*) aboutBox:(ECAboutBoxController *)aboutBox getValueForKey:(NSString *)key
+{
+	NSString* value = nil;
+	
+	if ([key isEqualToString: @"status"])
+	{
+		value = [self.licenseChecker status];
+	}
+    
+	return value;
+}
+
+#pragma mark -
+#pragma mark Licensing
+
+// --------------------------------------------------------------------------
+//! Register the application.
+// --------------------------------------------------------------------------
+
+- (IBAction) openLicenseFile: (id) sender;
+{
+    [self.licenseChecker chooseLicenseFile];
+}
+
+#pragma mark -
+#pragma mark Elegant Chaos Store Support
+
+// --------------------------------------------------------------------------
+//! Remove standard Elegant Chaos store menu items.
+// --------------------------------------------------------------------------
+
+- (void) stripElegantChaosStoreItemsFromMenu: (NSMenu*) menu
+{
+	NSMenuItem* item = [menu itemWithTag: 100];
+	if (item)
+	{
+		[menu removeItem: item];
+	}
+	item = [menu itemWithTag: 101];
+	if (item)
+	{
+		[menu removeItem: item];
+	}
+}
+
+// --------------------------------------------------------------------------
+//! Remove "Check For Updates" menu items.
+// --------------------------------------------------------------------------
+
+- (void) stripSparkleItemsFromMenu: (NSMenu*) menu
+{
+	NSMenuItem* item = [menu itemWithTag: 102];
+	if (item)
+	{
+		[menu removeItem: item];
+	}
+}
+
+#pragma mark -
+#pragma mark Mac App Store Support
+
+// --------------------------------------------------------------------------
+//! Set things up for the Mac Store version of the app.
+// --------------------------------------------------------------------------
+
+- (BOOL) setupMacStore
+{
+	[self stripElegantChaosStoreItemsFromMenu: mApplicationMenu];
+	[self stripSparkleItemsFromMenu: mDockMenu];
+	[self stripElegantChaosStoreItemsFromMenu: mStatusMenu];
+	[self stripSparkleItemsFromMenu: mApplicationMenu];
+	[self stripElegantChaosStoreItemsFromMenu: mDockMenu];
+	[self stripSparkleItemsFromMenu: mStatusMenu];
+	
+    ECCompoundLicenseChecker* compoundChecker = [[ECCompoundLicenseChecker alloc] init];
+    
+    ECMacStoreExact* exactChecker = [[ECMacStoreExact alloc] init];
+    [compoundChecker addChecker: exactChecker];
+    [exactChecker release];
+    
+#if CHECK_FOR_TEST_RECEIPT
+    ECMacStoreTest* testChecker = [[ECMacStoreTest alloc] init];
+    [compoundChecker addChecker: testChecker];
+    [testChecker release];
+#endif
+    
+	self.licenseChecker = compoundChecker;
+	[compoundChecker release];
+	
+	return [compoundChecker isValid];
+}
+
+@end
