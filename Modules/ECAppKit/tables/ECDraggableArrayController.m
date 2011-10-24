@@ -248,6 +248,8 @@ ECPropertySynthesize(canCopy);
 
 - (NSDragOperation)tableView:(NSTableView*)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(int)row proposedDropOperation:(NSTableViewDropOperation)op
 {
+	ECDebug(ECDraggableArrayControllerChannel, @"validate drop");
+
     // by default we do a copy
     BOOL isCopy = [self dragIsCopyForTableView:tableView info:info];
     NSDragOperation dragOp = isCopy ? NSDragOperationCopy : NSDragOperationMove;
@@ -264,6 +266,8 @@ ECPropertySynthesize(canCopy);
 
 - (BOOL)tableView:(NSTableView*)tableView acceptDrop:(id <NSDraggingInfo>)info row:(int)row dropOperation:(NSTableViewDropOperation)op
 {
+	ECDebug(ECDraggableArrayControllerChannel, @"accept drop");
+
     if (row < 0) 
     {
 		row = 0;
@@ -284,39 +288,10 @@ ECPropertySynthesize(canCopy);
     }
 }
 
-
 @end
 
 
 
-/*
- Implementation of NSIndexSet utility category
- */
-@implementation NSIndexSet (CountOfIndexesInRange)
-
--(NSUInteger)countOfIndexesInRange:(NSRange)range
-{
-	NSUInteger start, end, count;
-	
-	if ((range.location == 0) && (range.length == 0))
-	{
-		return 0;	
-	}
-	
-	start	= range.location;
-	end		= start + range.length;
-	count	= 0;
-	
-	NSUInteger currentIndex = [self indexGreaterThanOrEqualToIndex:start];
-	
-	while ((currentIndex != NSNotFound) && (currentIndex < end))
-	{
-		count++;
-		currentIndex = [self indexGreaterThanIndex:currentIndex];
-	}
-	
-	return count;
-}
 
 
 @end
