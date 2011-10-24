@@ -8,9 +8,10 @@
 // --------------------------------------------------------------------------
 
 #import "ECDraggableArrayController.h"
-
 #import "ECLogging.h"
 #import "ECAssertion.h"
+
+#import "NSIndexSet+ECCore.h"
 
 #pragma mark - Private Methods
 
@@ -27,18 +28,6 @@
 #pragma mark - Constants
 
 NSString *const RowIndexesType = @"com.elegantchaos.ecappkit.rowindexes";
-
-
-
-
-/*
- Utility method to retrieve the number of indexes in a given range
- */
-@interface NSIndexSet (CountOfIndexesInRange)
--(NSUInteger)countOfIndexesInRange:(NSRange)range;
-@end
-
-
 
 @implementation ECDraggableArrayController
 
@@ -289,11 +278,4 @@ ECPropertySynthesize(canCopy);
 }
 
 @end
-
-
-
-
-
-@end
-
 
