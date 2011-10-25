@@ -37,9 +37,10 @@ ECDefineDebugChannel(ECDraggableArrayControllerChannel);
 
 #pragma mark - Properties
 
-ECPropertySynthesize(supportedTypes);
-ECPropertySynthesize(table);
-ECPropertySynthesize(canCopy);
+@synthesize canCopy;
+@synthesize collection;
+@synthesize supportedTypes;
+@synthesize table;
 
 #pragma mark - Lifecycle
 
@@ -49,15 +50,26 @@ ECPropertySynthesize(canCopy);
 
 - (void)awakeFromNib
 {
-    ECAssertNonNil(self.table);
-    
-    // setup masks
-	[self.table setDraggingSourceOperationMask:[self remoteSourceMaskToUse] forLocal:NO];
-	[self.table setDraggingSourceOperationMask:[self localSourceMaskToUse] forLocal:YES];
+    ECAssert((self.table != nil) || (self.collection != nil));
+    ECAssert((self.table == nil) || (self.collection == nil));
 
-    // register types
-    self.supportedTypes = [self typesToRegister];
-	[self.table registerForDraggedTypes:self.supportedTypes];
+	NSArray* types = [self typesToRegister];
+	NSDragOperation remoteMask = [self remoteSourceMaskToUse];
+	NSDragOperation localMask = [self localSourceMaskToUse];
+	
+    self.supportedTypes = types;
+	if (self.table)
+	{
+		[self.table setDraggingSourceOperationMask:remoteMask forLocal:NO];
+		[self.table setDraggingSourceOperationMask:localMask forLocal:YES];
+		[self.table registerForDraggedTypes:self.supportedTypes];
+	}
+	else if (self.collection)
+	{
+		[self.collection setDraggingSourceOperationMask:remoteMask forLocal:NO];
+		[self.collection setDraggingSourceOperationMask:localMask forLocal:YES];
+		[self.collection registerForDraggedTypes:self.supportedTypes];
+	}
 	
 	[super awakeFromNib];
 
@@ -70,8 +82,9 @@ ECPropertySynthesize(canCopy);
 
 - (void)dealloc
 {
-    ECPropertyDealloc(supportedTypes);
-    ECPropertyDealloc(table);
+	[collection release];
+	[supportedTypes release];
+	[table release];
     
     [super dealloc];
 }
@@ -137,13 +150,13 @@ ECPropertySynthesize(canCopy);
 //! Is a given drag a copy operation?
 // --------------------------------------------------------------------------
 
-- (BOOL)dragIsCopyForTableView:(NSTableView*)tableView info:(id <NSDraggingInfo>)info
+- (BOOL)dragIsCopyForView:(NSView*)view info:(id <NSDraggingInfo>)info
 {
     // by default we do a copy
     BOOL isCopy = YES;
     
     // if the move is internal, and the option key isn't pressed, we move instead
-    if ([info draggingSource] == tableView) 
+    if ([info draggingSource] == view) 
     {
 		NSEvent* currentEvent = [NSApp currentEvent];
 		BOOL optionKeyPressed = ([currentEvent modifierFlags] & NSAlternateKeyMask) != 0;
@@ -157,17 +170,17 @@ ECPropertySynthesize(canCopy);
 //! Perform a move of some rows.
 // --------------------------------------------------------------------------
 
-- (BOOL)performMoveToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard
+- (BOOL)performMoveToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard
 {
     NSData* rowsData = [pasteboard dataForType:RowIndexesType];
     NSIndexSet* indexSet = [NSKeyedUnarchiver unarchiveObjectWithData:rowsData];
 
-    NSIndexSet *destinationIndexes = [self moveObjectsInArrangedObjectsFromIndexes:indexSet toIndex:row];
+    NSIndexSet *destinationIndexes = [self moveObjectsInArrangedObjectsFromIndexes:indexSet toIndex:index];
 
     // set selected rows to those that were just moved
     [self setSelectionIndexes:destinationIndexes];
     
-    ECDebug(ECDraggableArrayControllerChannel, @"moved rows %@ to %@ for table %@", indexSet, destinationIndexes, self.table);
+    ECDebug(ECDraggableArrayControllerChannel, @"moved items %@ to %@", indexSet, destinationIndexes);
 
     return YES;
 }
@@ -176,9 +189,9 @@ ECPropertySynthesize(canCopy);
 //! Perform a local copy of some rows.
 // --------------------------------------------------------------------------
 
-- (BOOL)performLocalCopyToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard
+- (BOOL)performLocalCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard
 {
-    ECDebug(ECDraggableArrayControllerChannel, @"copied rows for table %@", self.table);
+    ECDebug(ECDraggableArrayControllerChannel, @"copied items");
 
     return NO;
 }
@@ -187,9 +200,9 @@ ECPropertySynthesize(canCopy);
 //! Perform a remote copy of some data from elsewhere.
 // --------------------------------------------------------------------------
 
-- (BOOL)performRemoteCopyToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard
+- (BOOL)performRemoteCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard
 {
-    ECDebug(ECDraggableArrayControllerChannel, @"accepted drop for table %@", self.table);
+    ECDebug(ECDraggableArrayControllerChannel, @"accepted drop for table");
 
     return NO;
 }
@@ -212,6 +225,45 @@ ECPropertySynthesize(canCopy);
 	return destinationIndexes;
 }
 
+// --------------------------------------------------------------------------
+//! Write some items to a pasteboard.
+// --------------------------------------------------------------------------
+
+- (BOOL)writeItemsWithIndexes:(NSIndexSet*)indexes toPasteboard:(NSPasteboard*)pasteboard
+{
+    NSArray* types = [self typesToDragForRows:indexes];
+    [pasteboard declareTypes:types owner:self];
+    for (NSString* type in types)
+    {
+        [self writeDataOfType:type toPasteboard:pasteboard forRows:indexes];
+    }
+    
+    return YES;
+}
+
+- (BOOL)view:(NSView*)view acceptDrop:(id <NSDraggingInfo>)info index:(NSInteger)index dropOperation:(NSTableViewDropOperation)op
+{
+	ECDebug(ECDraggableArrayControllerChannel, @"accept drop");
+	
+    if (index < 0) 
+    {
+		index = 0;
+	}
+    
+    NSPasteboard* pasteboard = [info draggingPasteboard];
+    if (![self dragIsCopyForView:view info:info])
+    {
+        return [self performMoveToIndex:index withPasteboard:pasteboard];
+    }
+    else if (view == [info draggingSource])
+    {
+        return [self performLocalCopyToIndex:index withPasteboard:pasteboard];
+    }
+    else
+    {
+        return [self performRemoteCopyToIndex:index withPasteboard:pasteboard];
+    }
+}
 
 #pragma mark - NSTableViewDataSource Drag & Drop Methods
 
@@ -219,16 +271,11 @@ ECPropertySynthesize(canCopy);
 //! Handle start of a drag.
 // --------------------------------------------------------------------------
 
-- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
+- (BOOL)tableView:(NSTableView*)view writeRowsWithIndexes:(NSIndexSet*)indexes toPasteboard:(NSPasteboard*)pasteboard
 {
-    NSArray* types = [self typesToDragForRows:rowIndexes];
-    [pboard declareTypes:types owner:self];
-    for (NSString* type in types)
-    {
-        [self writeDataOfType:type toPasteboard:pboard forRows:rowIndexes];
-    }
-    
-    return YES;
+	BOOL result = [self writeItemsWithIndexes:indexes toPasteboard:pasteboard];
+	
+	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -240,7 +287,7 @@ ECPropertySynthesize(canCopy);
 	ECDebug(ECDraggableArrayControllerChannel, @"validate drop");
 
     // by default we do a copy
-    BOOL isCopy = [self dragIsCopyForTableView:tableView info:info];
+    BOOL isCopy = [self dragIsCopyForView:tableView info:info];
     NSDragOperation dragOp = isCopy ? NSDragOperationCopy : NSDragOperationMove;
     
     // we want to put the object at, not over, the current row (contrast NSTableViewDropOn) 
@@ -255,27 +302,52 @@ ECPropertySynthesize(canCopy);
 
 - (BOOL)tableView:(NSTableView*)tableView acceptDrop:(id <NSDraggingInfo>)info row:(int)row dropOperation:(NSTableViewDropOperation)op
 {
-	ECDebug(ECDraggableArrayControllerChannel, @"accept drop");
-
-    if (row < 0) 
-    {
-		row = 0;
-	}
-    
-    NSPasteboard* pasteboard = [info draggingPasteboard];
-    if (![self dragIsCopyForTableView:tableView info:info])
-    {
-        return [self performMoveToRow:row withPasteboard:pasteboard];
-    }
-    else if (tableView == [info draggingSource])
-    {
-        return [self performLocalCopyToRow:row withPasteboard:pasteboard];
-    }
-    else
-    {
-        return [self performRemoteCopyToRow:row withPasteboard:pasteboard];
-    }
+	BOOL result = [self view:tableView acceptDrop:info index:row dropOperation:op];
+	
+	return result;
 }
+
+#pragma mark - NSCollectionViewDelegate Drag & Drop Methods
+
+- (NSDragOperation)collectionView:(NSCollectionView*)collectionView validateDrop:(id<NSDraggingInfo>)info proposedIndex:(NSInteger*)proposedDropIndex dropOperation:(NSCollectionViewDropOperation*)proposedDropOperation
+{
+	ECDebug(ECDraggableArrayControllerChannel, @"validate drop");
+	
+    // by default we do a copy
+    BOOL isCopy = [self dragIsCopyForView:collectionView info:info];
+    NSDragOperation dragOp = isCopy ? NSDragOperationCopy : NSDragOperationMove;
+    
+    // we want to put the object at, not over, the current row (contrast NSTableViewDropOn) 
+	//    [collectionView setDropRow:row dropOperation:NSTableViewDropAbove];
+	
+    return dragOp;
+
+}
+
+- (BOOL)collectionView:(NSCollectionView*)collectionView writeItemsAtIndexes:(NSIndexSet*)indexes toPasteboard:(NSPasteboard *)pasteboard
+{
+	BOOL result = [self writeItemsWithIndexes:indexes toPasteboard:pasteboard];
+    
+    return result;
+}
+
+- (BOOL)collectionView:(NSCollectionView *)collectionView acceptDrop:(id <NSDraggingInfo>)info index:(NSInteger)index dropOperation:(NSCollectionViewDropOperation)operation
+{
+	BOOL result = [self view:collectionView acceptDrop:info index:index dropOperation:operation];
+	
+	return result;
+}
+
+#if 0
+– collectionView:canDragItemsAtIndexes:withEvent:
+– collectionView:acceptDrop:index:dropOperation:
+{
+
+}
+– collectionView:draggingImageForItemsAtIndexes:withEvent:offset:
+– collectionView:namesOfPromisedFilesDroppedAtDestination:forDraggedItemsAtIndexes:
+– collectionView:writeItemsAtIndexes:toPasteboard:
+#endif
 
 @end
 

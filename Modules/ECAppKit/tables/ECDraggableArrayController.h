@@ -10,16 +10,12 @@
 
 #import "ECProperties.h"
 
-@interface ECDraggableArrayController : NSArrayController
-{
-    ECPropertyVariable(table, NSTableView*);
-    ECPropertyVariable(supportedTypes, NSArray*);
-    ECPropertyVariable(canCopy, BOOL);
-}
+@interface ECDraggableArrayController : NSArrayController<NSCollectionViewDelegate>
 
-ECPropertyRetained(table, NSTableView*);
-ECPropertyRetained(supportedTypes, NSArray*);
-ECPropertyAssigned(canCopy, BOOL);
+@property (nonatomic, assign) BOOL canCopy;
+@property (nonatomic, retain) IBOutlet NSCollectionView* collection;
+@property (nonatomic, retain) NSArray* supportedTypes;
+@property (nonatomic, retain) IBOutlet NSTableView* table;
 
 // --------------------------------------------------------------------------
 // Methods That Subclasses Can Extend (should call super)
@@ -30,9 +26,9 @@ ECPropertyAssigned(canCopy, BOOL);
 - (NSArray*)typesToRegister;
 - (NSArray*)typesToDragForRows:(NSIndexSet*)rowIndexes;
 - (void)writeDataOfType:(NSString*)type toPasteboard:(NSPasteboard*)pasteboard forRows:(NSIndexSet*)rowIndexes;
-- (BOOL)performMoveToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard;
-- (BOOL)performLocalCopyToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard;
-- (BOOL)performRemoteCopyToRow:(NSUInteger)row withPasteboard:(NSPasteboard*)pasteboard;
+- (BOOL)performMoveToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
+- (BOOL)performLocalCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
+- (BOOL)performRemoteCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
 
 #ifndef ECPropertyVariable
 @property () IBOutlet NSTableView* table;
