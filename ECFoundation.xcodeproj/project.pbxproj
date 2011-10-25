@@ -32,6 +32,9 @@
 		220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220375E0141FF4E60040E740 /* ECAboutBox.xib */; };
 		220375E6141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
 		220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
+		22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22181C071456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */; };
+		22181C081456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
@@ -446,6 +449,8 @@
 		220375DB141FF4DD0040E740 /* finder support.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = "finder support.scpt"; path = "Modules/ECCore/Resources/Mac/finder support.scpt"; sourceTree = SOURCE_ROOT; };
 		220375E1141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/ECAboutBox.xib; sourceTree = SOURCE_ROOT; };
 		220375E3141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDraggableFileArrayController.h; sourceTree = "<group>"; };
+		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		223CB89E14373230003F6D01 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 		223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
@@ -1003,6 +1008,8 @@
 			children = (
 				22602190141F86F30044644C /* ECDraggableArrayController.h */,
 				22602191141F86F30044644C /* ECDraggableArrayController.m */,
+				22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */,
+				22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */,
 			);
 			path = tables;
 			sourceTree = "<group>";
@@ -1504,6 +1511,7 @@
 				228BCFEB144DF3CE00D22ED5 /* ECRandom.h in Headers */,
 				228BCFF0144DF40900D22ED5 /* NSWorkspace+ECCore.h in Headers */,
 				225260E81455C01100061EDD /* NSIndexSet+ECCore.h in Headers */,
+				22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1863,6 +1871,7 @@
 				223CB8A6143732E0003F6D01 /* ECLoggingMenu.m in Sources */,
 				223CB8AB1437334D003F6D01 /* ECLaunchServices.m in Sources */,
 				228BCFF2144DF40F00D22ED5 /* NSWorkspace+ECCore.m in Sources */,
+				22181C081456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1934,6 +1943,7 @@
 				228BCFEC144DF3CE00D22ED5 /* ECRandom.m in Sources */,
 				228BCFF1144DF40900D22ED5 /* NSWorkspace+ECCore.m in Sources */,
 				225260EA1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */,
+				22181C071456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
