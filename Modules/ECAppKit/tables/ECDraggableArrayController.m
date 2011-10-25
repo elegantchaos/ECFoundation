@@ -345,7 +345,6 @@ ECDefineDebugChannel(ECDraggableArrayControllerChannel);
 
 }
 – collectionView:draggingImageForItemsAtIndexes:withEvent:offset:
-– collectionView:namesOfPromisedFilesDroppedAtDestination:forDraggedItemsAtIndexes:
 – collectionView:writeItemsAtIndexes:toPasteboard:
 #endif
 

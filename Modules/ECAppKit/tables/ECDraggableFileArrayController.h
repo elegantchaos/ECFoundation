@@ -12,7 +12,9 @@
 
 @interface ECDraggableFileArrayController : ECDraggableArrayController
 
+- (NSString*)typeOfItem:(id)item;
 - (NSString*)makeFileFromItem:(id)item atDestination:(NSURL*)url;
+- (BOOL)addFiles:(NSArray*)files atIndex:(NSInteger)index;
 
 @end
 

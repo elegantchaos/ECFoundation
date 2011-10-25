@@ -8,7 +8,9 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
+#import "ECLogging.h"
+
+ECDeclareDebugChannel(ECDraggableArrayControllerChannel);
 
 @interface ECDraggableArrayController : NSArrayController<NSCollectionViewDelegate>
 
@@ -29,10 +31,6 @@
 - (BOOL)performMoveToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
 - (BOOL)performLocalCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
 - (BOOL)performRemoteCopyToIndex:(NSUInteger)index withPasteboard:(NSPasteboard*)pasteboard;
-
-#ifndef ECPropertyVariable
-@property () IBOutlet NSTableView* table;
-#endif
 
 @end
 
