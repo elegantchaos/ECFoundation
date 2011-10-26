@@ -40,6 +40,8 @@
 		22198AB714580FAC006BE993 /* NSMutableAttributedString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22198AB814580FAC006BE993 /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
 		22198AB9145818B8006BE993 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198ABC14585B48006BE993 /* NSButton+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198ABA14585B48006BE993 /* NSButton+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198ABB14585B48006BE993 /* NSButton+ECCore.m */; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
@@ -458,6 +460,8 @@
 		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
 		22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ECCore.h"; sourceTree = "<group>"; };
 		22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ECCore.m"; sourceTree = "<group>"; };
+		22198ABA14585B48006BE993 /* NSButton+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+ECCore.h"; sourceTree = "<group>"; };
+		22198ABB14585B48006BE993 /* NSButton+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+ECCore.m"; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		223CB89E14373230003F6D01 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 		223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
@@ -1346,6 +1350,8 @@
 				2260219C141F86F30044644C /* NSAppleScript+ECCore.m */,
 				2260219D141F86F30044644C /* NSApplication+ECCore.h */,
 				2260219E141F86F30044644C /* NSApplication+ECCore.m */,
+				22198ABA14585B48006BE993 /* NSButton+ECCore.h */,
+				22198ABB14585B48006BE993 /* NSButton+ECCore.m */,
 				22CEFD571421391600565841 /* NSColor+ECCore.h */,
 				22CEFD581421391600565841 /* NSColor+ECCore.m */,
 				2260219F141F86F30044644C /* NSGeometry+ECCore.h */,
@@ -1524,6 +1530,7 @@
 				225260E81455C01100061EDD /* NSIndexSet+ECCore.h in Headers */,
 				22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */,
 				22198AB514580FA4006BE993 /* NSMutableAttributedString+ECCore.h in Headers */,
+				22198ABC14585B48006BE993 /* NSButton+ECCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1958,6 +1965,7 @@
 				225260EA1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */,
 				22181C071456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
 				22198AB614580FA4006BE993 /* NSMutableAttributedString+ECCore.m in Sources */,
+				22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
