@@ -39,6 +39,7 @@
 		22198AB614580FA4006BE993 /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
 		22198AB714580FAC006BE993 /* NSMutableAttributedString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22198AB814580FAC006BE993 /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
+		22198AB9145818B8006BE993 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
@@ -132,8 +133,8 @@
 		22552BCC134B9E5300B8894E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BCB134B9E5300B8894E /* CoreGraphics.framework */; };
 		22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BE6134BA0C900B8894E /* CoreLocation.framework */; };
 		22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552C12134BA18A00B8894E /* CoreLocation.framework */; };
-		2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
-		2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
+		2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2256928114210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928314210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
@@ -234,7 +235,7 @@
 		2260226A141F8DC70044644C /* ECLicenseChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260217F141F86F30044644C /* ECLicenseChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260226B141F8DC70044644C /* ECMacStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602181141F86F30044644C /* ECMacStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260226C141F8DDF0044644C /* ECAquaticPrime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260217B141F86F30044644C /* ECAquaticPrime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; };
+		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB7124A349F00A9881F /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1431,6 +1432,7 @@
 				223CB8A014373230003F6D01 /* ECLogContext.h in Headers */,
 				225260E91455C01100061EDD /* NSIndexSet+ECCore.h in Headers */,
 				22198AB714580FAC006BE993 /* NSMutableAttributedString+ECCore.h in Headers */,
+				22198AB9145818B8006BE993 /* ECClang.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
