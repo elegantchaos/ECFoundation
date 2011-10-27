@@ -9,16 +9,23 @@
 
 #import "ECRoundedView.h"
 
+@interface ECRoundedView()
+
+@property (nonatomic, retain) NSGradient* gradient;
+
+@end
+
 @implementation ECRoundedView
 
-ECPropertySynthesize(colour);
-ECPropertySynthesize(radius);
+@synthesize colour;
+@synthesize gradient;
+@synthesize radius;
 
 
 - (void) setupDefaults
 {
 	self.radius = 25.0f;
-	self.colour = [NSColor colorWithCalibratedWhite:0.0f alpha:0.75f];
+	self.colour = [NSColor colorWithCalibratedWhite:0.0f alpha:0.8f];
 }
 
 // --------------------------------------------------------------------------
@@ -51,10 +58,20 @@ ECPropertySynthesize(radius);
 
 - (void) drawRect: (NSRect) dirtyRect
 {
-	CGFloat radius = self.radius;
-    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect: [self frame] xRadius: radius yRadius: radius];
-    [self.colour set];
-    [path fill];
+	NSGradient* gr = self.gradient;
+	if (!gr)
+	{
+		NSColor* start = self.colour;
+		NSColor* end = [start colorWithAlphaComponent:0.65];
+		gr = [[NSGradient alloc] initWithStartingColor:start endingColor:end];
+		self.gradient = gr;
+		[gr release];
+	}
+	
+    NSBezierPath* path = [NSBezierPath bezierPathWithRoundedRect:[self frame] xRadius:self.radius yRadius:self.radius];
+	[gr drawInBezierPath:path angle:90.0];
+	//    [self.colour set];
+	//    [path fill];
 }
 
 

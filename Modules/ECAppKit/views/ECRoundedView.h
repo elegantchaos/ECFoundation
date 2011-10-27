@@ -7,23 +7,17 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
-
 // --------------------------------------------------------------------------
 //! A semi-transparent round-rectangular view.
 // --------------------------------------------------------------------------
 
 @interface ECRoundedView : NSView
-{
-	ECPropertyVariable(colour, NSColor*);
-	ECPropertyVariable(radius, CGFloat);
-}
 
 // --------------------------------------------------------------------------
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(colour, NSColor*);
-ECPropertyAssigned(radius, CGFloat);
+@property (nonatomic, retain) NSColor* colour;
+@property (nonatomic, assign) CGFloat radius;
 
 @end
