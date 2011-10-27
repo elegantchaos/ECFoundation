@@ -15,9 +15,14 @@
 
 - (NSData*)splitWordsIntoInts;
 - (NSData*)splitWordsIntoFloats;
-- (NSString*)stringBySplittingMixedCaps;
-+ (NSString*)stringByFormattingCount:(NSUInteger)count singularFormat:(NSString*)singularFormat pluralFormat:(NSString*)pluralFormat;
+- (NSArray*)componentsSeparatedByMixedCaps;
 
+- (NSString*)stringBySplittingMixedCaps;
+
++ (NSString*)stringByFormattingCount:(NSUInteger)count singularFormat:(NSString*)singularFormat pluralFormat:(NSString*)pluralFormat;
++ (NSString*)stringWithMixedCapsFromWords:(NSArray*)words initialCap:(BOOL)initialCap;
++ (NSString*)stringWithUppercaseFromWords:(NSArray*)words separator:(NSString*)separator;
++ (NSString*)stringWithLowercaseFromWords:(NSArray*)words separator:(NSString*)separator;
 + (NSString*)stringWithNewUUID;
 
 - (NSString*)sha1Digest;

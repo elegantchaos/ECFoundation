@@ -59,6 +59,34 @@
 	return [data autorelease];
 }
 
+- (NSArray*)componentsSeparatedByMixedCaps
+{
+	NSMutableArray* result = [NSMutableArray array];
+	NSUInteger count = [self length];
+	NSMutableString* word = [[NSMutableString alloc] init];
+	BOOL wasLower = NO;
+	for (NSUInteger n = 0; n < count; ++n)
+	{
+		UniChar c = [self characterAtIndex: n];
+		BOOL isLower = islower(c);
+		if (wasLower && !isLower)
+		{
+			[result addObject:[NSString stringWithString:word]];
+			[word deleteCharactersInRange:NSMakeRange(0, [word length])];
+		}
+		[word appendString:[NSString stringWithCharacters: &c length:1]];
+		wasLower = isLower;
+	}
+	if ([word length])
+	{
+		[result addObject:word];
+	}
+	[word release];
+	
+	return result;
+}
+
+
 - (NSString*) stringBySplittingMixedCaps
 {
 	NSUInteger count = [self length];
@@ -75,6 +103,55 @@
 		[result appendString: [NSString stringWithCharacters: &c length:1]];
 		wasLower = isLower;
 	}
+	
+	return [result autorelease];
+}
+
++ (NSString*)stringWithMixedCapsFromWords:(NSArray*)words initialCap:(BOOL)initialCap
+{
+	NSMutableString* result = [[NSMutableString alloc] init];
+	for (NSString* word in words)
+	{
+		if (initialCap)
+		{
+			[result appendString:[word capitalizedString]];
+		}
+		else
+		{
+			[result appendString:[word lowercaseString]];
+			initialCap = YES;
+		}
+	}
+	
+	return [result autorelease];
+}
+
++ (NSString*)stringWithUppercaseFromWords:(NSArray*)words separator:(NSString*)separator
+{
+	NSMutableString* result = [[NSMutableString alloc] init];
+	for (NSString* word in words)
+	{
+		[result appendString:[word uppercaseString]];
+		[result appendString:separator];
+	}
+	
+	NSUInteger separatorLength = [separator length];
+	[result deleteCharactersInRange:NSMakeRange([result length] - separatorLength, separatorLength)];
+	
+	return [result autorelease];
+}
+
++ (NSString*)stringWithLowercaseFromWords:(NSArray*)words separator:(NSString*)separator
+{
+	NSMutableString* result = [[NSMutableString alloc] init];
+	for (NSString* word in words)
+	{
+		[result appendString:[word lowercaseString]];
+		[result appendString:separator];
+	}
+	
+	NSUInteger separatorLength = [separator length];
+	[result deleteCharactersInRange:NSMakeRange([result length] - separatorLength, separatorLength)];
 	
 	return [result autorelease];
 }
