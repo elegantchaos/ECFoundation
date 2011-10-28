@@ -73,7 +73,7 @@
 - (NSURL*)URLForApplicationDataPath:(NSString*)path
 {
 	NSURL* result = nil;
-	NSArray* paths = [self URLsForApplicationDataPath:path inDomain:NSUserDomainMask create:YES];
+	NSArray* paths = [self URLsForApplicationDataPath:path inDomain:NSUserDomainMask mode:MakeMissingItems];
 	if ([paths count])
 	{
 		result = [paths objectAtIndex:0];
@@ -86,8 +86,11 @@
 //! Return the URL for the application's data.
 // --------------------------------------------------------------------------
 
-- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomain:(NSSearchPathDomainMask)domain create:(BOOL)create
+- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomain:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode
 {
+	BOOL makeMissing = mode == MakeMissingItems;
+	BOOL includeMissing = mode == IncludeMissingItems;
+	
 	NSError* error = nil;
 	NSArray* roots = [self URLsForDirectory:NSApplicationSupportDirectory inDomains:domain];
 	NSMutableArray* result = [NSMutableArray array];
@@ -97,12 +100,12 @@
 		NSURL* data = [[root URLByAppendingPathComponent:appId] URLByResolvingLinksAndAliases];
 		NSURL* folder = [[data URLByAppendingPathComponent:path] URLByResolvingLinksAndAliases];
 		BOOL exists = [self fileExistsAtURL:folder];
-		if (create && !exists)
+		if (makeMissing && !exists)
 		{
 			exists = [self createDirectoryAtURL:folder withIntermediateDirectories:YES attributes:nil error:&error];
 		}
 		
-		if (exists)
+		if (exists || includeMissing)
 		{
 			[result addObject:folder];
 		}
