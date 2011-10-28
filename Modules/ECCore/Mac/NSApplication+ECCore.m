@@ -13,6 +13,7 @@
 #import "ECLaunchServices.h"
 
 #import "NSBundle+ECCore.h"
+#import "NSFileManager+ECCore.h"
 #import "ECLogging.h"
 
 @implementation NSApplication(ECCore)
@@ -113,16 +114,6 @@ ECDefineDebugChannel(NSApplicationChannel);
 	}
 }
 
-// --------------------------------------------------------------------------
-//! Return the URL for the application.
-// --------------------------------------------------------------------------
-
-- (NSURL*) applicationURL
-{
-    NSURL* applicationURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-
-	return applicationURL;
-}
 
 // --------------------------------------------------------------------------
 //! Return whether or not the application is set to start at login.
@@ -130,7 +121,8 @@ ECDefineDebugChannel(NSApplicationChannel);
 
 - (BOOL) willStartAtLogin
 {
-    return [ECLaunchServices willOpenAtLogin: [self applicationURL]];
+	NSURL* url = [[NSFileManager defaultManager] URLForApplication];
+    return [ECLaunchServices willOpenAtLogin:url];
 }
 
 // --------------------------------------------------------------------------
@@ -140,7 +132,8 @@ ECDefineDebugChannel(NSApplicationChannel);
 - (void) setWillStartAtLogin: (BOOL) enabled
 {
 	[self willChangeValueForKey:@"willStartAtLogin"];
-    [ECLaunchServices setOpenAtLogin:[self applicationURL] enabled: enabled];
+	NSURL* url = [[NSFileManager defaultManager] URLForApplication];
+    [ECLaunchServices setOpenAtLogin:url enabled: enabled];
     [self didChangeValueForKey:@"willStartAtLogin"];
 }
 

@@ -8,6 +8,9 @@
 // --------------------------------------------------------------------------
 
 #import "NSFileManager+ECCore.h"
+
+#import "NSURL+ECCore.h"
+#import "NSURL+ECCoreMac.h"
 #import "ECErrorReporter.h"
 
 @implementation NSFileManager(ECCore)
@@ -60,6 +63,63 @@
     }
     
     return url;
+}
+
+// --------------------------------------------------------------------------
+//! Return the URL for some application data.
+//! It will always create the folder if it doesn't exist.
+// --------------------------------------------------------------------------
+
+- (NSURL*)URLForApplicationDataPath:(NSString*)path
+{
+	NSURL* result = nil;
+	NSArray* paths = [self URLsForApplicationDataPath:path inDomain:NSUserDomainMask create:YES];
+	if ([paths count])
+	{
+		result = [paths objectAtIndex:0];
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the URL for the application's data.
+// --------------------------------------------------------------------------
+
+- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomain:(NSSearchPathDomainMask)domain create:(BOOL)create
+{
+	NSError* error = nil;
+	NSArray* roots = [self URLsForDirectory:NSApplicationSupportDirectory inDomains:domain];
+	NSMutableArray* result = [NSMutableArray array];
+	for (NSURL* root in roots)
+	{
+		NSString* appId = [[NSBundle mainBundle] bundleIdentifier];
+		NSURL* data = [[root URLByAppendingPathComponent:appId] URLByResolvingLinksAndAliases];
+		NSURL* folder = [[data URLByAppendingPathComponent:path] URLByResolvingLinksAndAliases];
+		BOOL exists = [self fileExistsAtURL:folder];
+		if (create && !exists)
+		{
+			exists = [self createDirectoryAtURL:folder withIntermediateDirectories:YES attributes:nil error:&error];
+		}
+		
+		if (exists)
+		{
+			[result addObject:folder];
+		}
+	}
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the URL for the application.
+// --------------------------------------------------------------------------
+
+- (NSURL*)URLForApplication
+{
+	NSURL* applicationURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+	
+	return applicationURL;
 }
 
 @end

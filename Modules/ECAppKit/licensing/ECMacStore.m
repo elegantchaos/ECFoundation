@@ -80,12 +80,7 @@
 + (NSURL*) savedReceiptURLForGuid:(NSData*)guid;
 {
     NSFileManager* fm = [NSFileManager defaultManager];
-    NSError* error = nil;
-    NSURL* appSupportFolder = [fm URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
-    NSString* appID = [[NSApplication sharedApplication] applicationID];
-    NSURL* ourFolder = [appSupportFolder URLByAppendingPathComponent: appID];
-    NSURL* receiptsFolder = [ourFolder URLByAppendingPathComponent: @"Receipts"];
-    [fm createDirectoryAtPath:[receiptsFolder path] withIntermediateDirectories:YES attributes:nil error:&error];
+    NSURL* receiptsFolder = [fm URLForApplicationDataPath:@"Receipts"];
 
     NSString* guidHex = [guid hexString];
     NSURL* receiptURL = [receiptsFolder URLByAppendingPathComponent: guidHex];

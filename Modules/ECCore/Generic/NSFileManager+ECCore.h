@@ -20,6 +20,9 @@
 
 - (BOOL) createDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;
 
-- (NSURL*) URLForUserDesktop;
+- (NSURL*)URLForApplication;
+- (NSURL*)URLForUserDesktop;
+- (NSURL*)URLForApplicationDataPath:(NSString*)path;
+- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomain:(NSSearchPathDomainMask)domain create:(BOOL)create;
 
 @end

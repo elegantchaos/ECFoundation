@@ -14,6 +14,4 @@
 - (BOOL)asFSRef:(FSRef*)ref;
 + (NSURL*)URLWithFSRef:(FSRef*)ref;
 
-- (NSURL*)URLByResolvingLinksAndAliases;
-
 @end

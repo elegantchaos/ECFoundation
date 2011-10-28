@@ -19,5 +19,10 @@ ECDeclareDebugChannel(NSURLChannel);
 - (NSURL*)getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension;
 - (NSURL*)getUniqueFileWithName:(NSString*)name andExtension:(NSString*)extension usingManager:(NSFileManager*)fileManager;
 
+@end
 
+// These routines are implemented differently on each platform.
+// The implementations can be found in NSURL+ECCoreMac.h or NSURL+ECCoreIOS.h
+@interface NSURL(ECCorePlatform)
+- (NSURL*)URLByResolvingLinksAndAliases;
 @end
