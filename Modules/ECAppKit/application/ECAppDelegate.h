@@ -15,26 +15,18 @@
 @class ECLicenseChecker;
 
 @interface ECAppDelegate : NSObject <NSApplicationDelegate, ECAboutBoxInfoProvider> 
-{
-	ECPropertyVariable(aboutController, ECAboutBoxController*);
-	ECPropertyVariable(preferencesController, ECPreferencesController*);
-	ECPropertyVariable(licenseChecker, ECLicenseChecker*);
-    
-    IBOutlet NSMenu*             mDockMenu;
-    IBOutlet NSMenu*             mStatusMenu;
-    IBOutlet NSMenu*             mApplicationMenu;
-}
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(aboutController, ECAboutBoxController*);
-ECPropertyRetained(preferencesController, ECPreferencesController*);
-ECPropertyRetained(licenseChecker, ECLicenseChecker*);
-
-@property (assign, nonatomic)	IBOutlet NSMenu*						statusMenu;
-@property (assign, nonatomic)	IBOutlet NSMenu*						dockMenu;
+@property (nonatomic, retain) ECAboutBoxController* aboutController;
+@property (nonatomic, assign) IBOutlet NSMenu* applicationMenu;
+@property (nonatomic, assign) IBOutlet NSMenu* dockMenu;
+@property (nonatomic, assign) NSFileManager* fileManager;
+@property (nonatomic, retain) ECLicenseChecker* licenseChecker;
+@property (nonatomic, retain) ECPreferencesController* preferencesController;
+@property (nonatomic, assign) IBOutlet NSMenu* statusMenu;
 
 // --------------------------------------------------------------------------
 // Public Methods
@@ -59,5 +51,6 @@ ECPropertyRetained(licenseChecker, ECLicenseChecker*);
 - (IBAction)	showAboutBox:						(id) sender;
 - (IBAction)	showPreferences:					(id) sender;
 - (IBAction)    openLicenseFile:                    (id) sender;
+- (IBAction)    showUserGuide:                      (id) sender;
 
 @end
