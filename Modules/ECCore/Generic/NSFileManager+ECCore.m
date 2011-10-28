@@ -9,8 +9,8 @@
 
 #import "NSFileManager+ECCore.h"
 
+#import "NSArray+ECCore.h"
 #import "NSURL+ECCore.h"
-#import "NSURL+ECCoreMac.h"
 #import "ECErrorReporter.h"
 
 @implementation NSFileManager(ECCore)
@@ -72,33 +72,64 @@
 
 - (NSURL*)URLForApplicationDataPath:(NSString*)path
 {
-	NSURL* result = nil;
-	NSArray* paths = [self URLsForApplicationDataPath:path inDomain:NSUserDomainMask mode:MakeMissingItems];
-	if ([paths count])
-	{
-		result = [paths objectAtIndex:0];
-	}
+	NSArray* paths = [self URLsForApplicationDataPath:path inDomains:NSUserDomainMask mode:MakeMissingItems];
+	NSURL* result = [paths firstObjectOrNil];
 	
 	return result;
 }
 
 // --------------------------------------------------------------------------
-//! Return the URL for the application's data.
+//! Return the URL for some application data.
+//! It will always create the folder if it doesn't exist.
 // --------------------------------------------------------------------------
 
-- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomain:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode
+- (NSURL*)URLForCachedDataPath:(NSString *)path
+{
+	NSArray* paths = [self URLsForCachedDataPath:path inDomains:NSUserDomainMask mode:MakeMissingItems];
+	NSURL* result = [paths firstObjectOrNil];
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return all URLs for the application's data.
+// --------------------------------------------------------------------------
+
+- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domains mode:(URLsForApplicationDataPathMode)mode
+{
+	return [self URLsForDirectory:NSApplicationSupportDirectory inDomains:domains path:path mode:mode];
+}
+
+// --------------------------------------------------------------------------
+//! Return all URLs for the application's cache data.
+// --------------------------------------------------------------------------
+
+- (NSArray*)URLsForCachedDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domains mode:(URLsForApplicationDataPathMode)mode
+{
+	return [self URLsForDirectory:NSCachesDirectory inDomains:domains path:path mode:mode];
+}
+
+// --------------------------------------------------------------------------
+//! Return all URLs for a subfolder belonging to the application.
+// --------------------------------------------------------------------------
+
+- (NSArray*)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domains path:(NSString*)path mode:(URLsForApplicationDataPathMode)mode
 {
 	BOOL makeMissing = mode == MakeMissingItems;
 	BOOL includeMissing = mode == IncludeMissingItems;
 	
 	NSError* error = nil;
-	NSArray* roots = [self URLsForDirectory:NSApplicationSupportDirectory inDomains:domain];
+	NSArray* roots = [self URLsForDirectory:directory inDomains:domains];
 	NSMutableArray* result = [NSMutableArray array];
 	for (NSURL* root in roots)
 	{
 		NSString* appId = [[NSBundle mainBundle] bundleIdentifier];
-		NSURL* data = [[root URLByAppendingPathComponent:appId] URLByResolvingLinksAndAliases];
-		NSURL* folder = [[data URLByAppendingPathComponent:path] URLByResolvingLinksAndAliases];
+		NSURL* folder = [[root URLByAppendingPathComponent:appId] URLByResolvingLinksAndAliases];
+		if (path)
+		{
+			folder = [[folder URLByAppendingPathComponent:path] URLByResolvingLinksAndAliases];
+		}
+
 		BOOL exists = [self fileExistsAtURL:folder];
 		if (makeMissing && !exists)
 		{
