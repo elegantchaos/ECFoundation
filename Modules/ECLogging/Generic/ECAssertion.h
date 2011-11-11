@@ -31,3 +31,6 @@
 
 #define ECAssertCountAtLeast(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssert)
 #define ECAssertCountAtLeastC(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssertC)
+
+#define ECAssertIsKindOfClass(o, c) ECAssert([o isKindOfClass:[c class]])
+#define ECAssertIsMemberOfClass(o, c) ECAssert([o isMemberOfClass:[c class]])
