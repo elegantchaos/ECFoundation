@@ -27,8 +27,9 @@ static const CGFloat kDefaultResizeRectSize = 32;
         [self setBackgroundColor: [NSColor clearColor]];
         [self setAlphaValue:1.0f];
         [self setOpaque:NO];
-        [self setHasShadow:NO];
+        [self setHasShadow:YES];
 		[self setShowsResizeIndicator: YES];
+		[self setMovableByWindowBackground:YES];
     }
     
 	return self;
@@ -86,8 +87,45 @@ static const CGFloat kDefaultResizeRectSize = 32;
     [self setFrameOrigin:windowFrame.origin];
 }
 #endif
-// --------------------------------------------------------------------------
 
+- (NSPoint)getEventLocation:(NSEvent*)event isResize:(BOOL*)isResize
+{
+    NSRect windowFrame = [self frame];
+    
+    // Get mouse location in global coordinates
+    mClickLocation = [self convertBaseToScreen:[event locationInWindow]];
+    mClickLocation.x -= windowFrame.origin.x;
+    mClickLocation.y -= windowFrame.origin.y;
+	
+	NSPoint pointInView = [event locationInWindow];
+	
+	NSRect resizeRect = NSMakeRect(self.frame.size.width - mResizeRectSize, 0, mResizeRectSize, mResizeRectSize);	
+	*isResize = mResizable && NSPointInRect(pointInView, resizeRect);
+	
+	NSPoint originalMouseLocation = [self convertBaseToScreen:[event locationInWindow]];
+
+	return originalMouseLocation;
+}
+
+#if 0
+- (void)mouseMoved:(NSEvent*)event
+{
+	[super mouseMoved:event];
+
+	BOOL resize;
+	[self getEventLocation:event isResize:&resize];
+	if (resize)
+	{
+		[[NSCursor resizeDownCursor] set];
+	}
+	else
+	{
+		[[NSCursor pointingHandCursor] set];
+	}
+}
+#endif
+
+// --------------------------------------------------------------------------
 //
 // mouseDown:
 //
@@ -97,19 +135,8 @@ static const CGFloat kDefaultResizeRectSize = 32;
 //
 - (void)mouseDown:(NSEvent *)event
 {
-    NSRect windowFrame = [self frame];
-    
-    // Get mouse location in global coordinates
-    mClickLocation = [self convertBaseToScreen:[event locationInWindow]];
-    mClickLocation.x -= windowFrame.origin.x;
-    mClickLocation.y -= windowFrame.origin.y;
-
-	NSPoint pointInView = [event locationInWindow];
-	
-	NSRect resizeRect = NSMakeRect(self.frame.size.width - mResizeRectSize, 0, mResizeRectSize, mResizeRectSize);	
-	BOOL resize = mResizable && NSPointInRect(pointInView, resizeRect);
-	
-	NSPoint originalMouseLocation = [self convertBaseToScreen:[event locationInWindow]];
+	BOOL resize;
+	NSPoint originalMouseLocation = [self getEventLocation:event isResize:&resize];
 	NSRect originalFrame = [self frame];
 	
     while (YES)
