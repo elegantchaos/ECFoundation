@@ -9,7 +9,17 @@
 
 #import "ECTransparentWindow.h"
 
+#import "NSApplication+ECCore.h"
+
+@interface ECTransparentWindow()
+
+@property (nonatomic, assign) BOOL isLion;
+
+@end
+
 @implementation ECTransparentWindow
+
+@synthesize isLion;
 
 static const CGFloat kDefaultResizeRectSize = 32;
 
@@ -18,7 +28,15 @@ static const CGFloat kDefaultResizeRectSize = 32;
                    backing:(NSBackingStoreType)bufferingType 
                      defer:(BOOL)flag 
 {
-    if ((self = [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:bufferingType defer:flag]) != nil) 
+	self.isLion = [NSApplication isLionOrGreater];
+	
+	NSUInteger mask = NSBorderlessWindowMask;
+	if (self.isLion && (aStyle & NSResizableWindowMask))
+	{
+		mask |= NSResizableWindowMask;
+	}
+	
+    if ((self = [super initWithContentRect:contentRect styleMask:mask backing:bufferingType defer:flag]) != nil) 
 	{
 		mResizeRectSize = kDefaultResizeRectSize;
 		mResizable = (aStyle & NSResizableWindowMask) != 0;
@@ -135,78 +153,85 @@ static const CGFloat kDefaultResizeRectSize = 32;
 //
 - (void)mouseDown:(NSEvent *)event
 {
-	BOOL resize;
-	NSPoint originalMouseLocation = [self getEventLocation:event isResize:&resize];
-	NSRect originalFrame = [self frame];
-	
-    while (YES)
+	if (self.isLion)
 	{
-		//
-		// Lock focus and take all the dragged and mouse up events until we
-		// receive a mouse up.
-		//
-        NSEvent *newEvent = [self
-							 nextEventMatchingMask:(NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
+		[super mouseDown:event];
+	}
+	else
+	{
+		BOOL resize;
+		NSPoint originalMouseLocation = [self getEventLocation:event isResize:&resize];
+		NSRect originalFrame = [self frame];
 		
-        if ([newEvent type] == NSLeftMouseUp)
-		{
-			break;
-		}
-		
-		//
-		// Work out how much the mouse has moved
-		//
-		NSPoint newMouseLocation = [self convertBaseToScreen:[newEvent locationInWindow]];
-		NSPoint delta = NSMakePoint(
-									newMouseLocation.x - originalMouseLocation.x,
-									newMouseLocation.y - originalMouseLocation.y);
-		
-		NSRect newFrame = originalFrame;
-		
-		if (!resize)
+		while (YES)
 		{
 			//
-			// Alter the frame for a drag
+			// Lock focus and take all the dragged and mouse up events until we
+			// receive a mouse up.
 			//
-			newFrame.origin.x += delta.x;
-			newFrame.origin.y += delta.y;
-		}
-		else
-		{
-			//
-			// Alter the frame for a resize
-			//
-			newFrame.size.width += delta.x;
-			newFrame.size.height -= delta.y;
-			newFrame.origin.y += delta.y;
+			NSEvent *newEvent = [self
+								 nextEventMatchingMask:(NSLeftMouseDraggedMask | NSLeftMouseUpMask)];
+			
+			if ([newEvent type] == NSLeftMouseUp)
+			{
+				break;
+			}
 			
 			//
-			// Constrain to the window's min and max size
+			// Work out how much the mouse has moved
 			//
-			NSRect newContentRect = [self contentRectForFrameRect:newFrame];
-			NSSize maxSize = [self maxSize];
-			NSSize minSize = [self minSize];
-			if (newContentRect.size.width > maxSize.width)
+			NSPoint newMouseLocation = [self convertBaseToScreen:[newEvent locationInWindow]];
+			NSPoint delta = NSMakePoint(
+										newMouseLocation.x - originalMouseLocation.x,
+										newMouseLocation.y - originalMouseLocation.y);
+			
+			NSRect newFrame = originalFrame;
+			
+			if (!resize)
 			{
-				newFrame.size.width -= newContentRect.size.width - maxSize.width;
+				//
+				// Alter the frame for a drag
+				//
+				newFrame.origin.x += delta.x;
+				newFrame.origin.y += delta.y;
 			}
-			else if (newContentRect.size.width < minSize.width)
+			else
 			{
-				newFrame.size.width += minSize.width - newContentRect.size.width;
+				//
+				// Alter the frame for a resize
+				//
+				newFrame.size.width += delta.x;
+				newFrame.size.height -= delta.y;
+				newFrame.origin.y += delta.y;
+				
+				//
+				// Constrain to the window's min and max size
+				//
+				NSRect newContentRect = [self contentRectForFrameRect:newFrame];
+				NSSize maxSize = [self maxSize];
+				NSSize minSize = [self minSize];
+				if (newContentRect.size.width > maxSize.width)
+				{
+					newFrame.size.width -= newContentRect.size.width - maxSize.width;
+				}
+				else if (newContentRect.size.width < minSize.width)
+				{
+					newFrame.size.width += minSize.width - newContentRect.size.width;
+				}
+				if (newContentRect.size.height > maxSize.height)
+				{
+					newFrame.size.height -= newContentRect.size.height - maxSize.height;
+					newFrame.origin.y += newContentRect.size.height - maxSize.height;
+				}
+				else if (newContentRect.size.height < minSize.height)
+				{
+					newFrame.size.height += minSize.height - newContentRect.size.height;
+					newFrame.origin.y -= minSize.height - newContentRect.size.height;
+				}
 			}
-			if (newContentRect.size.height > maxSize.height)
-			{
-				newFrame.size.height -= newContentRect.size.height - maxSize.height;
-				newFrame.origin.y += newContentRect.size.height - maxSize.height;
-			}
-			else if (newContentRect.size.height < minSize.height)
-			{
-				newFrame.size.height += minSize.height - newContentRect.size.height;
-				newFrame.origin.y -= minSize.height - newContentRect.size.height;
-			}
+			
+			[self setFrame:newFrame display:YES animate:NO];
 		}
-		
-		[self setFrame:newFrame display:YES animate:NO];
 	}
 }
 

@@ -23,5 +23,6 @@
 - (NSString*)applicationCopyright;
 - (NSString*)applicationFullVersion;
 - (NSString*)licenseFileType;
++ (BOOL)isLionOrGreater;
 
 @end
