@@ -17,4 +17,7 @@
 + (double)randomDoubleFrom:(double)from to:(double)to resolution:(double)resolution;
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to;
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size;
+
++ (BOOL)randomChance:(double)chance;
+
 @end

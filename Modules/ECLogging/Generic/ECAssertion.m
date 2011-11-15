@@ -7,11 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECDebugViewController;
+#include "ECAssertion.h"
 
-@interface ECDebugChannelsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
+ECDefineDebugChannel(AssertionChannel);
 
-@property (nonatomic, retain) NSArray* channels;
-@property (nonatomic, retain) ECDebugViewController* debugViewController;
+@implementation ECAssertion
+
++ (void)failAssertion:(const char*)expression
+{
+    [NSException raise:@"ECAssertion failed" format:@"Expression:%s", expression, nil];
+}
 
 @end
