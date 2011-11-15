@@ -40,6 +40,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 
 - (void)dealloc
 {
+    [representedObject release];
     [sections release];
     
     [super dealloc];

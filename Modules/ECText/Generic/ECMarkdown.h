@@ -1,19 +1,19 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 10/10/2011
+//! @date 18/10/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+@class ECMarkdownStyles;
 
+@interface ECMarkdown : NSObject
 
-@interface NSMutableAttributedString(ECCore)
-
-typedef void(^MatchAction)(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match);
-
-- (void)matchExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options reversed:(BOOL)reversed action:(MatchAction)block;
++ (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown styles:(ECMarkdownStyles*)styles;
 
 @end
+
+
+@class ECStyledLabel;

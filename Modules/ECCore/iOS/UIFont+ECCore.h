@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 10/10/2011
+//! @date 18/10/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
@@ -9,11 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import <UIKit/UIKit.h>
 
-@interface NSMutableAttributedString(ECCore)
 
-typedef void(^MatchAction)(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match);
+@interface UIFont(ECCore)
 
-- (void)matchExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options reversed:(BOOL)reversed action:(MatchAction)block;
+- (UIFont*)boldVariant;
 
 @end

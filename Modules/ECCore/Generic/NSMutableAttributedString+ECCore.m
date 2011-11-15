@@ -1,12 +1,11 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 10/10/2011
 //
-//  NSString+ECCore.m
-//  ECFoundation
-//
-//  Created by Sam Deane on 11/08/2010.
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
-//
+// --------------------------------------------------------------------------
 
 #import "NSMutableAttributedString+ECCore.h"
 #import "NSData+ECCore.h"

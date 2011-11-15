@@ -89,9 +89,9 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     [detailKey release];
     [disclosureTitle release];
     [label release];
+    [key release];
     [object release];
     [properties release];
-    [key release];
     
     [super dealloc];
 }
