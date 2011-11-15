@@ -6,6 +6,7 @@
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
+
 #import "ECAnalyticsEvent.h"
 #import "ECAnalyticsLogging.h"
 
@@ -45,25 +46,30 @@
 }
 
 // Update/append the values of some properties
-- (void) updateParameters:(NSDictionary *)updates {
+- (void) updateParameters:(NSDictionary *)updates 
+{
     NSMutableDictionary* updated = [self.parameters mutableCopy];
     [updated addEntriesFromDictionary:updates];
     self.parameters = updated;
+    [updated release];
 }
 
 // Clear out all the parameters
-- (void) resetParameters {
+- (void) resetParameters 
+{
 	self.parameters = [NSDictionary dictionary];
 }
 
 // Return the time elapsed since this event was created
-- (NSTimeInterval) elapsedTimeSinceStart {
+- (NSTimeInterval) elapsedTimeSinceStart 
+{
     return -[self.start timeIntervalSinceNow];
 }
 
 // Return the time elapsed, quantised into one of a number of fixed values:
 // "< 30 Seconds", "1 Minute", "2 Minutes", "4 Minutes", "8 Minutes", etc
-- (NSString*) elapsedTimeSinceStartQuantised {
+- (NSString*) elapsedTimeSinceStartQuantised 
+{
     NSString* result;
     
     double minutes = [self elapsedTimeSinceStart] / 60.0;

@@ -6,7 +6,11 @@
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
-#import "ECAnalyticsStandardParameters.h"
+
+#import "ECAnalyticsStandardKeys.h"
+
+NSString *const ECAnalyticsMediaEvent = @"Media";
+NSString *const ECAnalyticsViewEvent = @"View";
 
 NSString *const ECAnalyticsDurationParameter = @"Duration";
 NSString *const ECAnalyticsIDParameter = @"ID";

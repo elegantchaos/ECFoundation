@@ -13,7 +13,7 @@
 #import "ECAnalyticsEvent.h"
 #import "ECAnalyticsLogging.h"
 #import "ECAnalyticsEventTarget.h"
-#import "ECAnalyticsStandardParameters.h"
+#import "ECAnalyticsStandardKeys.h"
 
 // A note about event encoding:
 // This mechanism is provided so that externally an analytics event can always be represented as
@@ -30,10 +30,6 @@
 
 #pragma mark - Globals
 
-#ifndef TEST_EXCEPTION_REPORTING
-#define TEST_EXCEPTION_REPORTING 0
-#endif
-
 static ECAnalyticsEngine* gExceptionAnalyticsEngine = nil;
 static NSUncaughtExceptionHandler* gPreviousExceptionHandler = nil;
 
@@ -42,15 +38,20 @@ static NSUncaughtExceptionHandler* gPreviousExceptionHandler = nil;
 static void uncaughtExceptionHandler(NSException *exception);
 
 
-#pragma mark - Private Interface
 
 @interface ECAnalyticsEngine()
+
+#pragma mark - Private Properties
 
 @property (retain, nonatomic) NSMutableSet* events;
 @property (retain, nonatomic) NSMutableDictionary* eventNameMappings;
 @property (retain, nonatomic) ECAnalyticsBackEnd* backEnd;
 
+#pragma mark - Private Methods
+
 - (NSString*)encodedEventForName:(NSString*)unmappedName parameters:(NSDictionary*)parameters;
+- (void)installDefaultExceptionHandler;
+- (void)uninstallDefaultExceptionHandler;
 
 @end
 
@@ -66,6 +67,10 @@ static void uncaughtExceptionHandler(NSException *exception);
 
 #pragma mark - Lifecycle
 
+// --------------------------------------------------------------------------
+//! Set up using the supplied back end.
+// --------------------------------------------------------------------------
+
 - (id)initWithBackEnd:(ECAnalyticsBackEnd*)backEndIn
 {
     if ((self = [super init]) != nil)
@@ -77,12 +82,20 @@ static void uncaughtExceptionHandler(NSException *exception);
     return self;
 }
 
+// --------------------------------------------------------------------------
+//! Set up using a new back end of the supplied class.
+// --------------------------------------------------------------------------
+
 - (id)initWithBackEndClass:(Class)backEndClass
 {
     ECAnalyticsBackEnd* newBackEnd = [[[backEndClass alloc] init] autorelease];
     
     return [self initWithBackEnd:newBackEnd];
 }
+
+// --------------------------------------------------------------------------
+//! Set up using a new back end of the named class.
+// --------------------------------------------------------------------------
 
 - (id)initWithBackEndNamed:(NSString*)backEndClassName
 {
@@ -99,7 +112,10 @@ static void uncaughtExceptionHandler(NSException *exception);
 }
 
 
-// Clean up and release retained objects.
+// --------------------------------------------------------------------------
+//! Clean up and release retained objects.
+// --------------------------------------------------------------------------
+
 - (void)dealloc
 {
     [backEnd release];
@@ -111,21 +127,25 @@ static void uncaughtExceptionHandler(NSException *exception);
 
 #pragma mark - Management
 
-// Perform one-time initialisation of the engine.
-- (void)startup
+// --------------------------------------------------------------------------
+//! Perform one-time initialisation of the engine.
+// --------------------------------------------------------------------------
+
+- (void)startupInstallingExceptionHandler:(BOOL)instalExceptionHandler
 {
 	[self.backEnd startupWithEngine:self];
 	self.events = [[[NSMutableSet alloc] init] autorelease];
     
-#if TEST_EXCEPTION_REPORTING
-    // test the exception reporting, without actually throwing an exception
-    NSException* test = [NSException exceptionWithName:@"name" reason:@"reason" userInfo:[NSDictionary dictionaryWithObject:@"value" forKey:@"key"]];
-    [self.backEnd exception:test];
-#endif
-    
-}
+    if (instalExceptionHandler && (![self.backEnd hasOwnExceptionHandler]))
+    {
+        [self installDefaultExceptionHandler];
+    }
+ }
 
-// Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+//! Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+
 - (void)shutdown
 {
 	[self.backEnd shutdown];
@@ -135,17 +155,28 @@ static void uncaughtExceptionHandler(NSException *exception);
 		ECDebug(AnalyticsChannel, @"events still being tracked - all events should be finished by now");
 	}
 	
+    if (![backEnd hasOwnExceptionHandler])
+    {
+        [self uninstallDefaultExceptionHandler];
+    }
+    
 	self.events = nil;
     self.backEnd = nil;
 }
 
-// Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+//! Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+
 - (void)suspend
 {
     [self.backEnd suspend];
 }
 
-// Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+//! Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+
 - (void)resume
 {
     [self.backEnd resume];
@@ -153,8 +184,12 @@ static void uncaughtExceptionHandler(NSException *exception);
 
 #pragma mark - Event name encoding
 
-// Return the encoded name to use for a given event.
-- (NSString*)encodedEventForName:(NSString*)unmappedName parameters:(NSDictionary*)parameters {
+// --------------------------------------------------------------------------
+//! Return the encoded name to use for a given event.
+// --------------------------------------------------------------------------
+
+- (NSString*)encodedEventForName:(NSString*)unmappedName parameters:(NSDictionary*)parameters 
+{
     NSString* result;
     NSArray* mappings = [self.eventNameMappings objectForKey:unmappedName];
     if (mappings) {
@@ -174,9 +209,13 @@ static void uncaughtExceptionHandler(NSException *exception);
     return result;
 }
 
-// Set the list of parameters to encode into a given event name.
-// See above for an explanation of event encoding.
-- (void)setEncodingParameters:(NSArray*)parameters forEventName:(NSString*)eventName {
+// --------------------------------------------------------------------------
+//! Set the list of parameters to encode into a given event name.
+//! See above for an explanation of event encoding.
+// --------------------------------------------------------------------------
+
+- (void)setEncodingParameters:(NSArray*)parameters forEventName:(NSString*)eventName 
+{
     NSMutableDictionary* mappings = self.eventNameMappings;
     if (!mappings)
     {
@@ -189,28 +228,37 @@ static void uncaughtExceptionHandler(NSException *exception);
 
 #pragma mark - Logging Interface
 
-// Given an object, return the event parameters for it.
-- (NSMutableDictionary*)parametersForObject:(NSObject*)object forEvent:(NSString*)eventName {
+// --------------------------------------------------------------------------
+//! Given an object, return the event parameters for it.
+// --------------------------------------------------------------------------
+
+- (NSMutableDictionary*)parametersForObject:(NSObject*)object forEvent:(NSString*)eventName 
+{
     NSMutableDictionary* parameters = nil;
     
     BOOL gotDefaults = [object respondsToSelector:@selector(analyticsAddDefaultParametersForEvent:toDictionary:)];
     BOOL gotDynamics = [object respondsToSelector:@selector(analyticsAddDynamicParametersForEvent:toDictionary:)];
-    if (gotDefaults || gotDynamics) {
+    if (gotDefaults || gotDynamics) 
+    {
         NSObject<ECAnalyticsEventTarget>* target = (NSObject<ECAnalyticsEventTarget>*) object;
         parameters = [NSMutableDictionary dictionary];
-        if (gotDefaults) {
+        if (gotDefaults) 
+        {
             [target analyticsAddDefaultParametersForEvent:eventName toDictionary:parameters];
         }
-        if (gotDynamics) {
+        if (gotDynamics) 
+        {
             [target analyticsAddDynamicParametersForEvent:eventName toDictionary:parameters];
         }
     }
                       
-    else if ([object isKindOfClass:[NSDictionary class]]) {
+    else if ([object isKindOfClass:[NSDictionary class]]) 
+    {
         parameters = [[(NSDictionary*) object mutableCopy] autorelease];
     }
 
-    else {
+    else
+    {
         parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                       [object description], ECAnalyticsNameParameter,
                       nil];
@@ -218,7 +266,10 @@ static void uncaughtExceptionHandler(NSException *exception);
     return parameters;
 }
 
-// Log an un-timed event.
+// --------------------------------------------------------------------------
+//! Log an un-timed event.
+// --------------------------------------------------------------------------
+
 - (void)logUntimedEvent:(NSString*)eventName forObject:(id)object
 {
     NSMutableDictionary* parameters = [self parametersForObject:object forEvent:eventName];
@@ -226,7 +277,10 @@ static void uncaughtExceptionHandler(NSException *exception);
 	[self.backEnd untimedEvent:encodedEvent forObject:object parameters:parameters];
 }
 
-// Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+//! Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+
 - (ECAnalyticsEvent*)logTimedEventStart:(NSString*)eventName forObject:(id)object
 {
     NSMutableDictionary* parameters = [self parametersForObject:object forEvent:eventName];
@@ -237,7 +291,10 @@ static void uncaughtExceptionHandler(NSException *exception);
 	return event;
 }
 
-// Finish logging a timed event.
+// --------------------------------------------------------------------------
+//! Finish logging a timed event.
+// --------------------------------------------------------------------------
+
 - (void)logTimedEventEnd:(ECAnalyticsEvent*)event
 {
     // add duration parameter
@@ -253,26 +310,36 @@ static void uncaughtExceptionHandler(NSException *exception);
 	[self.events removeObject: event];
 }
 
-// Log an NSError.
+// --------------------------------------------------------------------------
+//! Log an NSError.
+// --------------------------------------------------------------------------
+
 - (void)logError:(NSError*)errorOrNil message:(NSString*)messageOrNil
 {
-    if (!messageOrNil) {
-        if (errorOrNil) {
+    if (!messageOrNil) 
+    {
+        if (errorOrNil) 
+        {
             messageOrNil = [NSString stringWithFormat:@"%@ (%d): %@", [errorOrNil domain], [errorOrNil code], [errorOrNil localizedDescription]];
         }
-        else {
+        else 
+        {
             messageOrNil = [NSString stringWithFormat:@"%@ (%d)", [errorOrNil domain], [errorOrNil code]];
         }
     }
     
-    if (!errorOrNil) {
+    if (!errorOrNil) 
+    {
         errorOrNil = [NSError errorWithDomain:@"Generic Error" code:1 userInfo:[NSDictionary dictionaryWithObject:messageOrNil forKey:@"Message"]];
     }
                       
     [self.backEnd error:errorOrNil message:messageOrNil];
 }
 
-// Log an exception.
+// --------------------------------------------------------------------------
+//! Log an exception.
+// --------------------------------------------------------------------------
+
 - (void)logException:(NSException*)exception
 {
 	[self.backEnd exception: exception];
@@ -280,8 +347,12 @@ static void uncaughtExceptionHandler(NSException *exception);
 
 #pragma mark - Exception Handling
 
+// --------------------------------------------------------------------------
+//! Called for uncaught exceptions.
+// --------------------------------------------------------------------------
 
-void uncaughtExceptionHandler(NSException *exception) {
+void uncaughtExceptionHandler(NSException *exception) 
+{
 	[gExceptionAnalyticsEngine logException:exception];
     if (gPreviousExceptionHandler)
     {
@@ -289,17 +360,31 @@ void uncaughtExceptionHandler(NSException *exception) {
     }
 }
 
-- (void)installExceptionHandler
+// --------------------------------------------------------------------------
+//! Install our default exception handler.
+// --------------------------------------------------------------------------
+
+- (void)installDefaultExceptionHandler
 {
-    gExceptionAnalyticsEngine = self;
-    gPreviousExceptionHandler = NSGetUncaughtExceptionHandler();
-	NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    if (gExceptionAnalyticsEngine == nil)
+    {
+        gExceptionAnalyticsEngine = self;
+        gPreviousExceptionHandler = NSGetUncaughtExceptionHandler();
+        NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    }
 }
 
-- (void)uninstallExceptionHandler
+// --------------------------------------------------------------------------
+//! Remove our default exception handler.
+// --------------------------------------------------------------------------
+
+- (void)uninstallDefaultExceptionHandler
 {
-	NSSetUncaughtExceptionHandler(gPreviousExceptionHandler);
-    gExceptionAnalyticsEngine = nil;
+    if (gExceptionAnalyticsEngine)
+    {
+        NSSetUncaughtExceptionHandler(gPreviousExceptionHandler);
+        gExceptionAnalyticsEngine = nil;
+    }
 }
 
 

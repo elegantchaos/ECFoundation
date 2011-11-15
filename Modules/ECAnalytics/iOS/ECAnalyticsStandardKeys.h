@@ -7,7 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
-
 extern NSString *const ECAnalyticsMediaEvent;
 extern NSString *const ECAnalyticsViewEvent;
+
+extern NSString *const ECAnalyticsDurationParameter;
+extern NSString *const ECAnalyticsIDParameter;
+extern NSString *const ECAnalyticsMediaEventParameter;
+extern NSString *const ECAnalyticsNameParameter;
+extern NSString *const ECAnalyticsPathParameter;
+extern NSString *const ECAnalyticsSectionParameter;
+extern NSString *const ECAnalyticsSubsectionParameter;
+extern NSString *const ECAnalyticsTypeParameter;
+extern NSString *const ECAnalyticsURLParameter;

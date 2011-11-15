@@ -7,9 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
-
-typedef enum {
+typedef enum 
+{
     DebugOutputOff,
     DebugOutputOn,
     DebugOutputVerbose
@@ -18,9 +17,11 @@ typedef enum {
 @class ECAnalyticsEvent;
 @class ECAnalyticsBackEnd;
 
-@interface ECAnalyticsEngine : NSObject {
-    
-}
+// --------------------------------------------------------------------------
+//! Public interface to the analytics system.
+// --------------------------------------------------------------------------
+
+@interface ECAnalyticsEngine : NSObject 
 
 @property (assign, nonatomic) DebugOutputLevel debugLevel;
 
@@ -29,14 +30,10 @@ typedef enum {
 - (id)initWithBackEndNamed:(NSString*)backEndClassName;
 
 // Engine management
-- (void)startup;
+- (void)startupInstallingExceptionHandler:(BOOL)installingExceptionHandler;
 - (void)shutdown;
 - (void)suspend;
 - (void)resume;
-
-// Exception support
-- (void)installExceptionHandler;
-- (void)uninstallExceptionHandler;
 
 // Event name encoding
 - (void)setEncodingParameters:(NSArray*)parameters forEventName:(NSString*)eventName;

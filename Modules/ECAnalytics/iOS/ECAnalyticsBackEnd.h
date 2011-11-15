@@ -31,10 +31,6 @@
 - (void)timedEventEnd:(ECAnalyticsEvent*)event;
 - (void)error:(NSError*)error message:(NSString*)message;
 - (void)exception:(NSException*)exception;
-
-
-// Exception Utilities
-- (NSString*)symbolicStackFromException:(NSException*)exception;
-- (NSString*)compactStackFromException:(NSException*)exception;
+- (BOOL)hasOwnExceptionHandler;
 
 @end
