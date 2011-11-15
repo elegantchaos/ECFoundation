@@ -147,6 +147,31 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
+- (UIImage*)imageForSection:(ECTSection*)section
+{
+    UIImage* result = nil;
+    id value = [self.properties valueForKey:ECTImageKeyKey];
+    if (value)
+    {
+        value = [self.object valueForKeyPath:value];
+    }
+    else
+    {
+        value = [self.properties valueForKey:ECTImageKey];
+    }
+    
+    if ([value isMemberOfClass:[NSString class]])
+    {
+        result = [UIImage imageNamed:value];
+    }
+    else
+    {
+        result = value;
+    }
+    
+    return result;
+}
+
 - (NSString*)detailForSection:(ECTSection*)section
 {
     // if we've got a fixed string, use it

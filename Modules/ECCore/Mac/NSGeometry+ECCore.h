@@ -7,12 +7,12 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-NS_INLINE NSPoint NSCentre(NSRect aRect) {
+NS_INLINE NSPoint NSRectCentre(NSRect aRect) {
     NSPoint centre = NSMakePoint(NSMidX(aRect), NSMidY(aRect));
     return centre;
 }
 
-NS_INLINE NSRect NSSetCentre(NSRect aRect, NSPoint centre) {
+NS_INLINE NSRect NSRectSetCentre(NSRect aRect, NSPoint centre) {
     aRect.origin.x = centre.x - (aRect.size.width * 0.5f);
     aRect.origin.y = centre.y - (aRect.size.height * 0.5f);
     

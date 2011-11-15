@@ -69,7 +69,7 @@
 - (CGPoint)pointForKey:(NSString*)key
 {
     NSArray* values = [self objectForKey:key];
-    CGPoint result = CGPointMake([[values objectAtIndex:0] doubleValue], [[values objectAtIndex:1] doubleValue]);
+    CGPoint result = CGPointMake((CGFloat)[[values objectAtIndex:0] doubleValue], (CGFloat)[[values objectAtIndex:1] doubleValue]);
 
     return result;
 }
@@ -82,7 +82,7 @@
 - (CGSize)sizeForKey:(NSString*)key
 {
     NSArray* values = [self objectForKey:key];
-    CGSize result = CGSizeMake([[values objectAtIndex:0] doubleValue], [[values objectAtIndex:1] doubleValue]);
+    CGSize result = CGSizeMake((CGFloat)[[values objectAtIndex:0] doubleValue], (CGFloat)[[values objectAtIndex:1] doubleValue]);
     
     return result;
 }
@@ -95,7 +95,7 @@
 - (CGRect)rectForKey:(NSString*)key
 {
     NSArray* values = [self objectForKey:key];
-    CGRect result = CGRectMake([[values objectAtIndex:0] doubleValue], [[values objectAtIndex:1] doubleValue], [[values objectAtIndex:2] doubleValue], [[values objectAtIndex:3] doubleValue]);
+    CGRect result = CGRectMake((CGFloat)[[values objectAtIndex:0] doubleValue], (CGFloat)[[values objectAtIndex:1] doubleValue], (CGFloat)[[values objectAtIndex:2] doubleValue], (CGFloat)[[values objectAtIndex:3] doubleValue]);
     
     return result;
 }

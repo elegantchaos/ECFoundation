@@ -73,6 +73,10 @@
 {
     ECTBinding* binding = self.representedObject;
     
+    // get image to use
+    UIImage* image = [binding imageForSection:self.section];
+    self.imageView.image = image;
+    
     // get text to use for label
     NSString* label = [binding labelForSection:self.section];
     if (![label isKindOfClass:[NSString class]])

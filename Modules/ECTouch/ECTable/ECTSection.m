@@ -59,6 +59,8 @@ NSString *const ECTDetailKeyKey = @"detailKey";
 NSString *const ECTDisclosureClassKey = @"disclosureClass";
 NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
 NSString *const ECTEnabledKey = @"enabled";
+NSString *const ECTImageKey = @"image";
+NSString *const ECTImageKeyKey = @"imageKey";
 NSString *const ECTLabelKey = @"label";
 NSString *const ECTTargetKey = @"target";
 
@@ -151,7 +153,7 @@ NSString *const ECTTargetKey = @"target";
 
 - (BOOL)canEdit
 {
-    return self.canMove || self.canDelete || (self.addCell != nil);
+    return self.canMove || self.canDelete; // - should add cell cause Edit button to show? || (self.addCell != nil);
 }
 
 - (void)reloadData

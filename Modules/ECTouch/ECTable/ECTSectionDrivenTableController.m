@@ -130,6 +130,17 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     }
 }
 
+#pragma mark - Table Utilities
+
+
+- (void)deselectAllRowsAnimated:(BOOL)animated
+{
+    NSIndexPath* selection = [self.tableView indexPathForSelectedRow];
+    if (selection)
+    {
+        [self.tableView deselectRowAtIndexPath:selection animated:animated];
+    }
+}
 
 #pragma mark - UITableViewDataSource methods
 

@@ -17,6 +17,6 @@
 // Public Methods
 // --------------------------------------------------------------------------
 
-- (id)firstObject;
+- (id)firstObjectOrNil;
 
 @end

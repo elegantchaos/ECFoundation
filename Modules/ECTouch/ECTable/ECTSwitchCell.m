@@ -52,6 +52,30 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
     [super dealloc];
 }
 
+#pragma mark - UITableViewCell
+
+// --------------------------------------------------------------------------
+//! Custom selection handling.
+// --------------------------------------------------------------------------
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    if (selected && self.switchControl.enabled)
+    {
+        [self.switchControl setOn:!self.switchControl.on animated:YES];
+        [self switched:self];
+    }
+}
+
+// --------------------------------------------------------------------------
+//! Custom hilight handling.
+// --------------------------------------------------------------------------
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    // we don't want the cell to highlight
+}
+
 #pragma mark - ECTSimpleSectionCell methods
 
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
@@ -59,6 +83,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
     [super setupForBinding:binding section:section];
     NSNumber* value = (NSNumber*)[binding valueForSection:section];
     self.switchControl.on = [value boolValue];
+    self.switchControl.enabled = binding.enabled;
 }
 
 #pragma mark - Actions

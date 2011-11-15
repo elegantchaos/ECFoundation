@@ -13,17 +13,15 @@
 
 @interface NSApplication(ECCore)
 
-- (BOOL) willStartAtLogin;
-- (void) setWillStartAtLogin: (BOOL) enabled;
-- (void) setShowsDockIcon: (BOOL) flag;
-- (NSURL*) applicationURL;
-- (NSString*) applicationID;
-- (NSString*) applicationName;
-- (NSString*) applicationVersion;
-- (NSString*) applicationBuild;
-- (NSString*) applicationCopyright;
-- (NSString*) applicationFullVersion;
-
-- (NSString*) licenseFileType;
+- (BOOL)willStartAtLogin;
+- (void)setWillStartAtLogin: (BOOL) enabled;
+- (void)setShowsDockIcon: (BOOL) flag;
+- (NSString*)applicationID;
+- (NSString*)applicationName;
+- (NSString*)applicationVersion;
+- (NSString*)applicationBuild;
+- (NSString*)applicationCopyright;
+- (NSString*)applicationFullVersion;
+- (NSString*)licenseFileType;
 
 @end
