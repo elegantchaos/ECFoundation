@@ -68,6 +68,15 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     [super dealloc];
 }
 
+// --------------------------------------------------------------------------
+//! Support any orientation.
+// --------------------------------------------------------------------------
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
 #pragma mark UITableViewDataSource methods
 
 // --------------------------------------------------------------------------

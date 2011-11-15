@@ -64,4 +64,13 @@
 	return result;
 }
 
+// --------------------------------------------------------------------------
+//! Are we running on iOS 5?
+// --------------------------------------------------------------------------
+
++(BOOL)isIOS5OrLater
+{
+    return [UIAlertView instancesRespondToSelector:@selector(alertViewStyle)];
+}
+
 @end

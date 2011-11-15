@@ -8,7 +8,9 @@
 // --------------------------------------------------------------------------
 
 #import "ECDebugChannelsViewController.h"
+
 #import "ECDebugChannelViewController.h"
+#import "ECDebugViewController.h"
 
 #import "ECLogChannel.h"
 #import "ECLogManager.h"
@@ -34,6 +36,7 @@ ECDefineDebugChannel(DebugChannelsViewChannel);
 // --------------------------------------------------------------------------
 
 @synthesize channels;
+@synthesize debugViewController;
 
 // --------------------------------------------------------------------------
 //! Clean up.
@@ -42,6 +45,7 @@ ECDefineDebugChannel(DebugChannelsViewChannel);
 - (void)dealloc
 {
     [channels release];
+    [debugViewController release];
     
     [super dealloc];
 }
@@ -55,6 +59,16 @@ ECDefineDebugChannel(DebugChannelsViewChannel);
 	ECDebug(DebugChannelsViewChannel, @"setting up view");
 
     self.channels = [[ECLogManager sharedInstance] channelsSortedByName];
+    [super viewDidLoad];
+}
+
+// --------------------------------------------------------------------------
+//! Support any orientation.
+// --------------------------------------------------------------------------
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
 }
 
 #pragma mark UITableViewDataSource methods
@@ -133,7 +147,7 @@ ECDefineDebugChannel(DebugChannelsViewChannel);
     ECDebugChannelViewController* controller = [[ECDebugChannelViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.title = channel.name;
     controller.channel = channel;
-    [self.navigationController pushViewController:controller animated:TRUE];
+    [self.debugViewController pushViewController:controller];
     [controller release];
 }
 

@@ -1,17 +1,17 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 12/04/2011
+//! @date 15/11/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECDebugViewController;
+#import "ECAnalyticsBackEnd.h"
 
-@interface ECDebugChannelsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
+// Null implementation of an ECAnalyticsEngine.
+// Does nothing with the events - doesn't even produce log output.
 
-@property (nonatomic, retain) NSArray* channels;
-@property (nonatomic, retain) ECDebugViewController* debugViewController;
+@interface ECAnalyticsBackEndNull : ECAnalyticsBackEnd 
 
 @end

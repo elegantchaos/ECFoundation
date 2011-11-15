@@ -97,7 +97,17 @@ Item kItems[] =
 {
     ECDebugChannelsViewController* controller = [[ECDebugChannelsViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.title = @"Log Channels";
-    
+    controller.debugViewController = self;
+    [self pushViewController:controller];
+    [controller release];
+}
+
+// --------------------------------------------------------------------------
+//! Push a controller to the right nav controller.
+// --------------------------------------------------------------------------
+
+- (void)pushViewController:(UIViewController *)controller;
+{
     UINavigationController* nav = self.navController;
     if (!nav)
     {
@@ -105,7 +115,6 @@ Item kItems[] =
     }
     
     [nav pushViewController:controller animated:TRUE];
-    [controller release];
 }
 
 #pragma mark UITableViewDataSource methods

@@ -12,8 +12,10 @@
 #define ECAssertNilBase(expression, imp)						imp((expression) == nil)
 #define ECAssertCountAtLeastBase(container, countMinimum, imp)	imp([container count] >= countMinimum)
 
+
 #if EC_DEBUG
-#define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
+ECDeclareDebugChannel(AssertionChannel);
+#define ECAssert(expression) do { if (!(expression)) { ECDebug(AssertionChannel, @"Expression %s was false", #expression); [ECAssertion failAssertion:#expression]; } } while(0)
 #define ECAssertC(expression) assert(expression)
 #else
 #define ECAssert(expression)
@@ -31,3 +33,9 @@
 
 #define ECAssertCountAtLeast(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssert)
 #define ECAssertCountAtLeastC(container, countMinimum) ECAssertCountAtLeastBase(container, countMinimum, ECAssertC)
+
+@interface ECAssertion : NSObject
+
++ (void)failAssertion:(const char*)expression;
+
+@end
