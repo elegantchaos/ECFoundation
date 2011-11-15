@@ -1,17 +1,18 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 17/03/2010
+//! @date 26/10/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSURL+ECCore.h"
+#import <Cocoa/Cocoa.h>
 
-@interface NSURL(ECCoreMac)
 
-- (BOOL)asFSRef:(FSRef*)ref;
-+ (NSURL*)URLWithFSRef:(FSRef*)ref;
+@interface NSButton (ECCore)
+
+- (NSColor*)textColour;
+- (void)setTextColour:(NSColor*)textColour;
 
 @end

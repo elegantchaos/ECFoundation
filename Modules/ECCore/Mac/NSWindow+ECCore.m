@@ -21,7 +21,7 @@
 
 - (NSRect)frameCentredOnCurrentScreen
 {
-    NSRect centredFrame = NSSetCentre(self.frame, NSCentre(self.screen.frame));
+    NSRect centredFrame = NSRectSetCentre(self.frame, NSRectCentre(self.screen.frame));
     return centredFrame;
 }
 
@@ -32,7 +32,7 @@
 
 - (NSRect)frameCentredOnMainScreen
 {
-    NSRect centredFrame = NSSetCentre(self.frame, NSCentre([NSScreen mainScreen].frame));
+    NSRect centredFrame = NSRectSetCentre(self.frame, NSRectCentre([NSScreen mainScreen].frame));
     return centredFrame;
 }
 
@@ -44,7 +44,7 @@
 - (NSRect)centreOnCurrentScreen
 {
     NSRect oldFrame = self.frame;
-    NSRect centredFrame = NSSetCentre(oldFrame, NSCentre(self.screen.frame));
+    NSRect centredFrame = NSRectSetCentre(oldFrame, NSRectCentre(self.screen.frame));
     
     [self setFrame:centredFrame display:YES animate:YES];
     return oldFrame;
@@ -58,7 +58,7 @@
 - (NSRect)centreOnMainScreen
 {
     NSRect oldFrame = self.frame;
-    NSRect centredFrame = NSSetCentre(oldFrame, NSCentre([NSScreen mainScreen].frame));
+    NSRect centredFrame = NSRectSetCentre(oldFrame, NSRectCentre([NSScreen mainScreen].frame));
     
     [self setFrame:centredFrame display:YES animate:YES];
     return oldFrame;

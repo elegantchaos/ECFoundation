@@ -9,6 +9,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum
+{
+	DontIncludeMissingItems,
+	IncludeMissingItems,
+	MakeMissingItems
+} URLsForApplicationDataPathMode;
+
 // --------------------------------------------------------------------------
 //! Elegant Chaos extensions to the NSFileManager class.
 // --------------------------------------------------------------------------
@@ -20,6 +27,12 @@
 
 - (BOOL) createDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;
 
-- (NSURL*) URLForUserDesktop;
+- (NSURL*)URLForApplication;
+- (NSURL*)URLForUserDesktop;
+- (NSURL*)URLForApplicationDataPath:(NSString*)path;
+- (NSURL*)URLForCachedDataPath:(NSString*)path;
+- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
+- (NSArray*)URLsForCachedDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
+- (NSArray*)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domain path:(NSString*)path mode:(URLsForApplicationDataPathMode)mode;
 
 @end

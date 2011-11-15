@@ -12,7 +12,7 @@
 
 @implementation NSArray(ECCore)
 
-- (id)firstObject
+- (id)firstObjectOrNil
 {
     id result;
     

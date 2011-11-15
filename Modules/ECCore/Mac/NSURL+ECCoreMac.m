@@ -43,6 +43,10 @@
     return [result autorelease];
 }
 
+@end
+
+@implementation NSURL(ECCorePlatform)
+
 // --------------------------------------------------------------------------
 //! Return a representation of this URL with any symbolic links and Finder
 //! aliases fully resolved.

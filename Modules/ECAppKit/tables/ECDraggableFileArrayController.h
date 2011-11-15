@@ -1,17 +1,21 @@
+
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 17/03/2010
+//! @date 16/06/11
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSURL+ECCore.h"
+#import "ECDraggableArrayController.h"
 
-@interface NSURL(ECCoreMac)
+@interface ECDraggableFileArrayController : ECDraggableArrayController
 
-- (BOOL)asFSRef:(FSRef*)ref;
-+ (NSURL*)URLWithFSRef:(FSRef*)ref;
+- (NSString*)typeOfItem:(id)item;
+- (NSString*)makeFileFromItem:(id)item atDestination:(NSURL*)url;
+- (BOOL)addFiles:(NSArray*)files atIndex:(NSInteger)index;
 
 @end
+
+

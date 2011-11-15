@@ -80,7 +80,7 @@ static NSAppleScript *const kInvalidScript = (NSAppleScript*) -1;
     }
     else
     {
-        result = [self selectURL:url inFileViewerRootedAtURL:parent];
+        result = [self selectURL:url inFileViewerRootedAtURL:nil];
     }
     
     return result;

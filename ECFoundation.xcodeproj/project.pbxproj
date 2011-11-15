@@ -32,6 +32,16 @@
 		220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220375E0141FF4E60040E740 /* ECAboutBox.xib */; };
 		220375E6141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
 		220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
+		22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22181C071456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */; };
+		22181C081456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */; };
+		22198AB514580FA4006BE993 /* NSMutableAttributedString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198AB614580FA4006BE993 /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
+		22198AB714580FAC006BE993 /* NSMutableAttributedString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198AB814580FAC006BE993 /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
+		22198AB9145818B8006BE993 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198ABC14585B48006BE993 /* NSButton+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22198ABA14585B48006BE993 /* NSButton+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198ABB14585B48006BE993 /* NSButton+ECCore.m */; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
@@ -40,19 +50,19 @@
 		223CB8A91437334D003F6D01 /* ECLaunchServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A71437334D003F6D01 /* ECLaunchServices.h */; };
 		223CB8AA1437334D003F6D01 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CB8A81437334D003F6D01 /* ECLaunchServices.m */; };
 		223CB8AB1437334D003F6D01 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CB8A81437334D003F6D01 /* ECLaunchServices.m */; };
-		223E0837141F96E900DD8795 /* ECMacStoreDifferentVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */; };
+		223E0837141F96E900DD8795 /* ECMacStoreDifferentVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082D141F96E900DD8795 /* ECMacStoreDifferentVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E0838141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
 		223E0839141F96E900DD8795 /* ECMacStoreDifferentVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E082E141F96E900DD8795 /* ECMacStoreDifferentVersion.m */; };
-		223E083A141F96E900DD8795 /* ECMacStoreExact.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082F141F96E900DD8795 /* ECMacStoreExact.h */; };
+		223E083A141F96E900DD8795 /* ECMacStoreExact.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E082F141F96E900DD8795 /* ECMacStoreExact.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E083B141F96E900DD8795 /* ECMacStoreExact.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0830141F96E900DD8795 /* ECMacStoreExact.m */; };
 		223E083C141F96E900DD8795 /* ECMacStoreExact.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0830141F96E900DD8795 /* ECMacStoreExact.m */; };
-		223E083D141F96E900DD8795 /* ECMacStoreReceipt.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0831141F96E900DD8795 /* ECMacStoreReceipt.h */; };
+		223E083D141F96E900DD8795 /* ECMacStoreReceipt.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0831141F96E900DD8795 /* ECMacStoreReceipt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E083E141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */; };
 		223E083F141F96E900DD8795 /* ECMacStoreReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0832141F96E900DD8795 /* ECMacStoreReceipt.m */; };
-		223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0833141F96E900DD8795 /* ECMacStoreSaved.h */; };
+		223E0840141F96E900DD8795 /* ECMacStoreSaved.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0833141F96E900DD8795 /* ECMacStoreSaved.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E0841141F96E900DD8795 /* ECMacStoreSaved.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0834141F96E900DD8795 /* ECMacStoreSaved.m */; };
 		223E0842141F96E900DD8795 /* ECMacStoreSaved.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0834141F96E900DD8795 /* ECMacStoreSaved.m */; };
-		223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0835141F96E900DD8795 /* ECMacStoreTest.h */; };
+		223E0843141F96E900DD8795 /* ECMacStoreTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 223E0835141F96E900DD8795 /* ECMacStoreTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223E0844141F96E900DD8795 /* ECMacStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0836141F96E900DD8795 /* ECMacStoreTest.m */; };
 		223E0845141F96E900DD8795 /* ECMacStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 223E0836141F96E900DD8795 /* ECMacStoreTest.m */; };
 		2248BB5213C7869400E13577 /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1273613C785CA0022CC5B /* ECErrorReporter.m */; };
@@ -112,6 +122,10 @@
 		2248BC4E13C794CE00E13577 /* ECTTickableTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0813C7948F00E13577 /* ECTTickableTableController.m */; };
 		2248BC4F13C794CE00E13577 /* ECTTickCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2248BC0913C7948F00E13577 /* ECTTickCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2248BC5013C794CE00E13577 /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0A13C7948F00E13577 /* ECTTickCell.m */; };
+		225260E81455C01100061EDD /* NSIndexSet+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 225260E61455C01100061EDD /* NSIndexSet+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		225260E91455C01100061EDD /* NSIndexSet+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 225260E61455C01100061EDD /* NSIndexSet+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		225260EA1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 225260E71455C01100061EDD /* NSIndexSet+ECCore.m */; };
+		225260EB1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 225260E71455C01100061EDD /* NSIndexSet+ECCore.m */; };
 		2254094B1354F15000DC8205 /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		2254094C1354F15000DC8205 /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		2254094D1354F15000DC8205 /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,8 +135,8 @@
 		22552BCC134B9E5300B8894E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BCB134B9E5300B8894E /* CoreGraphics.framework */; };
 		22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552BE6134BA0C900B8894E /* CoreLocation.framework */; };
 		22552C13134BA18A00B8894E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22552C12134BA18A00B8894E /* CoreLocation.framework */; };
-		2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
-		2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; };
+		2256927F14210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2256927D14210BE000C4F852 /* NSArray+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2256928114210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928314210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
@@ -223,7 +237,7 @@
 		2260226A141F8DC70044644C /* ECLicenseChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260217F141F86F30044644C /* ECLicenseChecker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260226B141F8DC70044644C /* ECMacStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602181141F86F30044644C /* ECMacStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260226C141F8DDF0044644C /* ECAquaticPrime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260217B141F86F30044644C /* ECAquaticPrime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; };
+		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB7124A349F00A9881F /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -442,6 +456,12 @@
 		220375DB141FF4DD0040E740 /* finder support.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = "finder support.scpt"; path = "Modules/ECCore/Resources/Mac/finder support.scpt"; sourceTree = SOURCE_ROOT; };
 		220375E1141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/ECAboutBox.xib; sourceTree = SOURCE_ROOT; };
 		220375E3141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDraggableFileArrayController.h; sourceTree = "<group>"; };
+		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
+		22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ECCore.h"; sourceTree = "<group>"; };
+		22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ECCore.m"; sourceTree = "<group>"; };
+		22198ABA14585B48006BE993 /* NSButton+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+ECCore.h"; sourceTree = "<group>"; };
+		22198ABB14585B48006BE993 /* NSButton+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+ECCore.m"; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		223CB89E14373230003F6D01 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 		223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
@@ -484,6 +504,8 @@
 		2248BC2213C7949E00E13577 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
 		2248BC2313C7949E00E13577 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProperties.h; sourceTree = "<group>"; };
 		2248BC2413C7949E00E13577 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
+		225260E61455C01100061EDD /* NSIndexSet+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+ECCore.h"; sourceTree = "<group>"; };
+		225260E71455C01100061EDD /* NSIndexSet+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+ECCore.m"; sourceTree = "<group>"; };
 		225409261354F05C00DC8205 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22552BC5134B9E5300B8894E /* EC Foundation Unit Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EC Foundation Unit Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22552BC7134B9E5300B8894E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -997,6 +1019,8 @@
 			children = (
 				22602190141F86F30044644C /* ECDraggableArrayController.h */,
 				22602191141F86F30044644C /* ECDraggableArrayController.m */,
+				22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */,
+				22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */,
 			);
 			path = tables;
 			sourceTree = "<group>";
@@ -1256,6 +1280,8 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */,
+				22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */,
 				228BCFE9144DF3CE00D22ED5 /* ECRandom.h */,
 				228BCFEA144DF3CE00D22ED5 /* ECRandom.m */,
 				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
@@ -1276,6 +1302,8 @@
 				22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */,
 				22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */,
 				22CA556C13DA09FF007E89E2 /* NSFileManager+ECCore.m */,
+				225260E61455C01100061EDD /* NSIndexSet+ECCore.h */,
+				225260E71455C01100061EDD /* NSIndexSet+ECCore.m */,
 				22CA556D13DA09FF007E89E2 /* NSString+ECCore.h */,
 				22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */,
 				22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */,
@@ -1322,6 +1350,8 @@
 				2260219C141F86F30044644C /* NSAppleScript+ECCore.m */,
 				2260219D141F86F30044644C /* NSApplication+ECCore.h */,
 				2260219E141F86F30044644C /* NSApplication+ECCore.m */,
+				22198ABA14585B48006BE993 /* NSButton+ECCore.h */,
+				22198ABB14585B48006BE993 /* NSButton+ECCore.m */,
 				22CEFD571421391600565841 /* NSColor+ECCore.h */,
 				22CEFD581421391600565841 /* NSColor+ECCore.m */,
 				2260219F141F86F30044644C /* NSGeometry+ECCore.h */,
@@ -1406,6 +1436,9 @@
 				22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */,
 				2256928014210BE000C4F852 /* NSArray+ECCore.h in Headers */,
 				223CB8A014373230003F6D01 /* ECLogContext.h in Headers */,
+				225260E91455C01100061EDD /* NSIndexSet+ECCore.h in Headers */,
+				22198AB714580FAC006BE993 /* NSMutableAttributedString+ECCore.h in Headers */,
+				22198AB9145818B8006BE993 /* ECClang.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,6 +1527,10 @@
 				223CB8A91437334D003F6D01 /* ECLaunchServices.h in Headers */,
 				228BCFEB144DF3CE00D22ED5 /* ECRandom.h in Headers */,
 				228BCFF0144DF40900D22ED5 /* NSWorkspace+ECCore.h in Headers */,
+				225260E81455C01100061EDD /* NSIndexSet+ECCore.h in Headers */,
+				22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */,
+				22198AB514580FA4006BE993 /* NSMutableAttributedString+ECCore.h in Headers */,
+				22198ABC14585B48006BE993 /* NSButton+ECCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1733,6 +1770,8 @@
 				22CA55D913DA09FF007E89E2 /* UIImage+ECCore.m in Sources */,
 				22C02E14141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 				2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */,
+				225260EB1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */,
+				22198AB814580FAC006BE993 /* NSMutableAttributedString+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1852,6 +1891,7 @@
 				223CB8A6143732E0003F6D01 /* ECLoggingMenu.m in Sources */,
 				223CB8AB1437334D003F6D01 /* ECLaunchServices.m in Sources */,
 				228BCFF2144DF40F00D22ED5 /* NSWorkspace+ECCore.m in Sources */,
+				22181C081456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1922,6 +1962,10 @@
 				223CB8AA1437334D003F6D01 /* ECLaunchServices.m in Sources */,
 				228BCFEC144DF3CE00D22ED5 /* ECRandom.m in Sources */,
 				228BCFF1144DF40900D22ED5 /* NSWorkspace+ECCore.m in Sources */,
+				225260EA1455C01100061EDD /* NSIndexSet+ECCore.m in Sources */,
+				22181C071456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
+				22198AB614580FA4006BE993 /* NSMutableAttributedString+ECCore.m in Sources */,
+				22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,6 +2034,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2004,6 +2049,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2242,6 +2288,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;

@@ -17,6 +17,7 @@
 #import "ECCompoundLicenseChecker.h"
 
 #import "NSApplication+ECCore.h"
+#import "NSFileManager+ECCore.h"
 
 #import "ECLogging.h"
 #import "ECLogManager.h"
@@ -36,24 +37,28 @@
 
 ECDefineLogChannel(ECAppDelegateChannel);
 
-// ==============================================
-// Properties
-// ==============================================
+#pragma mark - Constants
 
-ECPropertySynthesize(aboutController);
-ECPropertySynthesize(preferencesController);
-ECPropertySynthesize(licenseChecker);
+static NSString *const UserGuideType = @"pdf";
 
-@synthesize dockMenu = mDockMenu;
-@synthesize statusMenu = mStatusMenu;
+#pragma mark - Properties
+
+@synthesize aboutController;
+@synthesize applicationMenu;
+@synthesize dockMenu;
+@synthesize fileManager;
+@synthesize licenseChecker;
+@synthesize preferencesController;
+@synthesize statusMenu;
+
 
 #pragma mark - Lifecycle
 
 - (void) dealloc
 {
-    ECPropertyDealloc(aboutController);
-    ECPropertyDealloc(preferencesController);
-    ECPropertyDealloc(licenseChecker);
+    [aboutController release];
+    [preferencesController release];
+    [licenseChecker release];
 
     [super dealloc];
 }
@@ -322,12 +327,12 @@ ECPropertySynthesize(licenseChecker);
 
 - (BOOL) setupMacStore
 {
-	[self stripElegantChaosStoreItemsFromMenu: mApplicationMenu];
-	[self stripSparkleItemsFromMenu: mDockMenu];
-	[self stripElegantChaosStoreItemsFromMenu: mStatusMenu];
-	[self stripSparkleItemsFromMenu: mApplicationMenu];
-	[self stripElegantChaosStoreItemsFromMenu: mDockMenu];
-	[self stripSparkleItemsFromMenu: mStatusMenu];
+	[self stripElegantChaosStoreItemsFromMenu:self.applicationMenu];
+	[self stripSparkleItemsFromMenu:self.dockMenu];
+	[self stripElegantChaosStoreItemsFromMenu:self.statusMenu];
+	[self stripSparkleItemsFromMenu:self.applicationMenu];
+	[self stripElegantChaosStoreItemsFromMenu:self.dockMenu];
+	[self stripSparkleItemsFromMenu:self.statusMenu];
 	
     ECCompoundLicenseChecker* compoundChecker = [[ECCompoundLicenseChecker alloc] init];
     
@@ -345,6 +350,44 @@ ECPropertySynthesize(licenseChecker);
 	[compoundChecker release];
 	
 	return [compoundChecker isValid];
+}
+
+#pragma mark - User Guide
+
+
+- (IBAction)showUserGuide:(id)sender
+{
+    NSError* error = nil;
+    NSString* name = [NSString stringWithFormat:@"%@ User Guide", [[NSApplication sharedApplication] applicationName]];
+    NSURL* docsPath = [self.fileManager URLForCachedDataPath:@"Documentation"];
+    NSURL* localCopy = [[docsPath URLByAppendingPathComponent:name] URLByAppendingPathExtension:UserGuideType];
+    NSURL* original = [[NSBundle mainBundle] URLForResource:name withExtension:UserGuideType];
+    
+    // does a local copy already exist?
+    BOOL exists = [self.fileManager fileExistsAtURL:localCopy];
+    if (exists)
+    {
+        // is it out of date?
+        NSDictionary* localAttributes = [self.fileManager attributesOfItemAtPath:[localCopy path] error:&error];
+        NSDictionary* originalAttributes = [self.fileManager attributesOfItemAtPath:[original path] error:&error];
+        NSDate* localModified = [localAttributes objectForKey:NSFileModificationDate];
+        NSDate* originalModified = [originalAttributes objectForKey:NSFileModificationDate];
+        if (localModified && originalModified && [localModified isLessThan:originalModified])
+        {
+            // yes - remove old copy
+            [self.fileManager removeItemAtURL:localCopy error:&error];
+            exists = NO;
+        }
+    }
+    
+    // make a new copy if necessary
+    if (!exists)
+    {
+        [self.fileManager copyItemAtURL:original toURL:localCopy error:&error];
+    }
+	
+    // open the copy
+    [[NSWorkspace sharedWorkspace] openURL:localCopy];
 }
 
 @end
