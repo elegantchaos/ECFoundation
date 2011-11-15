@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A534C914731101006E2103 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A534C814731100006E2103 /* TestClass.m */; };
 		22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22A723591435DE0F00889A06 /* Credits.rtf */; };
 		22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7235B1435DE0F00889A06 /* MainMenu.xib */; };
 		22A723631435E1C800889A06 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A723601435E1C800889A06 /* ECLaunchServices.m */; };
@@ -83,6 +84,9 @@
 		226FB49213E28F2A00BF258D /* ECLogHandlerStderr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStderr.m; sourceTree = "<group>"; };
 		226FB49313E28F2A00BF258D /* ECLogHandlerStdout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerStdout.h; sourceTree = "<group>"; };
 		226FB49413E28F2A00BF258D /* ECLogHandlerStdout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStdout.m; sourceTree = "<group>"; };
+		22A534C514731085006E2103 /* ECLazyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLazyProperties.h; sourceTree = "<group>"; };
+		22A534C714731100006E2103 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestClass.h; path = Source/TestClass.h; sourceTree = SOURCE_ROOT; };
+		22A534C814731100006E2103 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestClass.m; path = Source/TestClass.m; sourceTree = SOURCE_ROOT; };
 		22A7235A1435DE0F00889A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Resources/en.lproj/Credits.rtf; sourceTree = SOURCE_ROOT; };
 		22A7235C1435DE0F00889A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		22A7235F1435E1C800889A06 /* ECLaunchServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLaunchServices.h; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 			children = (
 				22E51FD61434E0F0008F8D41 /* AppDelegate.h */,
 				22E51FD71434E0F0008F8D41 /* AppDelegate.m */,
+				22A534C714731100006E2103 /* TestClass.h */,
+				22A534C814731100006E2103 /* TestClass.m */,
 				226FB46E13E1EB0B00BF258D /* main.m */,
 				226FB4E013E2914900BF258D /* ECFoundation */,
 				226FB46F13E1EB0B00BF258D /* Prefix */,
@@ -390,6 +396,7 @@
 				22E6BDAD1434B82B0049E222 /* CGGeometry+ECCore.h */,
 				22E6BDAE1434B82B0049E222 /* CGGeometry+ECCore.m */,
 				22E6BDAF1434B82B0049E222 /* ECClang.h */,
+				22A534C514731085006E2103 /* ECLazyProperties.h */,
 				22E6BDB01434B82B0049E222 /* ECMacros.h */,
 				22E6BDB11434B82B0049E222 /* ECProperties.h */,
 				22E6BDB21434B82B0049E222 /* ECTestCase.h */,
@@ -536,6 +543,7 @@
 				22A7236D1435E29200889A06 /* ECLogHandlerStderr.m in Sources */,
 				22A7236E1435E29200889A06 /* ECLogHandlerStdout.m in Sources */,
 				22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */,
+				22A534C914731101006E2103 /* TestClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
