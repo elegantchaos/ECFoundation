@@ -33,14 +33,7 @@
 		22E51FDF1434E117008F8D41 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDBE1434B82B0049E222 /* NSFileManager+ECCore.m */; };
 		22E51FE01434E117008F8D41 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC01434B82B0049E222 /* NSString+ECCore.m */; };
 		22E51FE11434E117008F8D41 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC21434B82B0049E222 /* NSURL+ECCore.m */; };
-		22E51FF41434E140008F8D41 /* ECFoundationMac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE31434E140008F8D41 /* ECFoundationMac.plist */; };
 		22E51FF51434E140008F8D41 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE41434E140008F8D41 /* ECAboutBox.xib */; };
-		22E51FF61434E140008F8D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE61434E140008F8D41 /* InfoPlist.strings */; };
-		22E51FF71434E140008F8D41 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE81434E140008F8D41 /* finder support.scpt */; };
-		22E51FF81434E140008F8D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FEB1434E140008F8D41 /* InfoPlist.strings */; };
-		22E51FF91434E140008F8D41 /* view.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FED1434E140008F8D41 /* view.xib */; };
-		22E51FFA1434E140008F8D41 /* icon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FEF1434E140008F8D41 /* icon.tiff */; };
-		22E51FFB1434E140008F8D41 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FF01434E140008F8D41 /* info.plist */; };
 		22E51FFC1434E140008F8D41 /* ECAppKitGHUnit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FF21434E140008F8D41 /* ECAppKitGHUnit.plist */; };
 		22E51FFD1434E140008F8D41 /* ECAppKitSenTest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FF31434E140008F8D41 /* ECAppKitSenTest.plist */; };
 		22E520131434E149008F8D41 /* NSAppleEventDescriptor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E520001434E149008F8D41 /* NSAppleEventDescriptor+ECCore.m */; };
@@ -482,14 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E51FF41434E140008F8D41 /* ECFoundationMac.plist in Resources */,
 				22E51FF51434E140008F8D41 /* ECAboutBox.xib in Resources */,
-				22E51FF61434E140008F8D41 /* InfoPlist.strings in Resources */,
-				22E51FF71434E140008F8D41 /* finder support.scpt in Resources */,
-				22E51FF81434E140008F8D41 /* InfoPlist.strings in Resources */,
-				22E51FF91434E140008F8D41 /* view.xib in Resources */,
-				22E51FFA1434E140008F8D41 /* icon.tiff in Resources */,
-				22E51FFB1434E140008F8D41 /* info.plist in Resources */,
 				22E51FFC1434E140008F8D41 /* ECAppKitGHUnit.plist in Resources */,
 				22E51FFD1434E140008F8D41 /* ECAppKitSenTest.plist in Resources */,
 				22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */,
