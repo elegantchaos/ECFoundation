@@ -8,13 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-//#import "ECLazyProperties.h"
+#import "ECLazyProperties.h"
 
-@interface TestClass_nonlazy : NSObject
+@lazy_interface(TestClass, NSObject)
 
 @property (nonatomic, retain) NSString* test;
 
-@end
+@end_lazy_interface(TestClass)
 
-@interface TestClass : TestClass_nonlazy
-@end

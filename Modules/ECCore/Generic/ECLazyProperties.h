@@ -9,29 +9,23 @@
 
 #import <Foundation/Foundation.h>
 
-#define ECLazyInterface(class, base) \
-    @interface class##_nonlazy : base \
-    @end \
-    @interface class : class##_nonlazy \
-    @end \
-    @interface class##_nonlazy(LazyProperties)
+#define lazy_interface(class,parent) interface class##_nonlazy : parent
+#define end_lazy_interface(class) end @interface class : class##_nonlazy @end
 
+#define lazy_implementation(class) implementation class##_nonlazy
+#define lazy_properties(class) end @implementation class
+#define end_lazy_implementation(class) end
 
-#define ECLazyImplementation(class) \
-    implementation class##_nonlazy(LazyProperties)
-
-#define ECLazyProperty(name) \
+#define lazy_synthesize(prop) \
+    class Dummy__; \
+    - (NSString*)prop \
     { \
-        id value = [super name]; \
-        if (!value) \
-        { \
-            value = [super init##name]; \
-            self.name = value; \
-        } \
-        return value; \
+    id value = [super prop]; \
+    if (!value) \
+    { \
+    value = [super prop##Init]; \
+    self.test = value; \
+    } \
+    \
+    return value; \
     }
-
-    @interface 
-
-#define lazy_interface ECLazyInterface
-#define lazy_implementation ECLazyImplementation

@@ -8,36 +8,17 @@
 
 #import "TestClass.h"
 
-@implementation TestClass_nonlazy
+@lazy_implementation(TestClass)
 
 @synthesize test;
 
-- (void)dealloc
-{
-    [test release];
-    
-    [super dealloc];
-}
-
-- (NSString*)initTest
+- (NSString*)testInit
 {
     return @"test";
 }
 
-@end
+@lazy_properties(TestClass)
 
-@implementation TestClass
+@lazy_synthesize(test)
 
-- (NSString*)test
-{
-    id value = [super test];
-    if (!value)
-    {
-        value = [super initTest];
-        self.test = value;
-    }
-    
-    return value;
-}
-
-@end
+@end_lazy_implementation(TestClass)
