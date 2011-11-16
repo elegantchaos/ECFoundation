@@ -35,9 +35,7 @@
 		22E51FDF1434E117008F8D41 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDBE1434B82B0049E222 /* NSFileManager+ECCore.m */; };
 		22E51FE01434E117008F8D41 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC01434B82B0049E222 /* NSString+ECCore.m */; };
 		22E51FE11434E117008F8D41 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC21434B82B0049E222 /* NSURL+ECCore.m */; };
-		22E51FF41434E140008F8D41 /* ECFoundationMac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE31434E140008F8D41 /* ECFoundationMac.plist */; };
 		22E51FF51434E140008F8D41 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE41434E140008F8D41 /* ECAboutBox.xib */; };
-		22E51FF61434E140008F8D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE61434E140008F8D41 /* InfoPlist.strings */; };
 		22E51FF71434E140008F8D41 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE81434E140008F8D41 /* finder support.scpt */; };
 		22E51FFC1434E140008F8D41 /* ECAppKitGHUnit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FF21434E140008F8D41 /* ECAppKitGHUnit.plist */; };
 		22E51FFD1434E140008F8D41 /* ECAppKitSenTest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FF31434E140008F8D41 /* ECAppKitSenTest.plist */; };
@@ -488,9 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E51FF41434E140008F8D41 /* ECFoundationMac.plist in Resources */,
 				22E51FF51434E140008F8D41 /* ECAboutBox.xib in Resources */,
-				22E51FF61434E140008F8D41 /* InfoPlist.strings in Resources */,
 				22E51FF71434E140008F8D41 /* finder support.scpt in Resources */,
 				22E51FFC1434E140008F8D41 /* ECAppKitGHUnit.plist in Resources */,
 				22E51FFD1434E140008F8D41 /* ECAppKitSenTest.plist in Resources */,
