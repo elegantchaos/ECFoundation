@@ -21,7 +21,7 @@ In addition, the reorganisation into modules hasn't happened yet.
 For More Information
 --------------------
 
-See the [ECFoundation web page](http://www.elegantchaos.com/libraries/ecfoundation) for more information.
+See the [ECFoundation Wiki page](https://github.com/samdeane/ECFoundation/wiki) for more information.
 
 License
 -------
