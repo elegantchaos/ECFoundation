@@ -42,7 +42,7 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     
     // install some handlers
     [lm registerHandler:[[[ECLogHandlerNSLog alloc] init] autorelease]];
-    //    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
 
