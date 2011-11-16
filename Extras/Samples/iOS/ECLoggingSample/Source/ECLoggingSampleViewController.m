@@ -8,6 +8,7 @@
 
 #import "ECLoggingSampleViewController.h"
 
+#import "ECLogManager.h"
 #import "ECDebugViewController.h"
 
 @interface ECLoggingSampleViewController()
@@ -63,6 +64,7 @@ ECDefineDebugChannel(LoggingSampleViewControllerChannel);
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [[ECLogManager sharedInstance] saveChannelSettings];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -93,7 +95,7 @@ ECDefineDebugChannel(LoggingSampleViewControllerChannel);
 - (IBAction)tappedTestOutput:(id)sender
 {
     ECDebug(LoggingSampleViewControllerChannel, @"some test output");
-    ECDebug(LoggingSampleViewControllerChannel, @"some more output this should spill over many lines hopefully");
+    ECDebug(LoggingSampleViewControllerChannel, @"some more output this should spill over many lines hopefully at least it will if I really keep wittering on and on for a really long time");
 }
 
 @end
