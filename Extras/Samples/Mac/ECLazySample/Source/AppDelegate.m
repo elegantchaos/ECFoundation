@@ -49,11 +49,19 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
 
-    TestClass* test = [[TestClass alloc] init];
-    ECAssert([test.test isEqualToString:@"test value"]);
-    test.test = @"something else";
-    ECAssert([test.test isEqualToString:@"something else"]);
-    [test release];
+    TestClass* test1 = [[TestClass alloc] init];
+    TestClass* test2 = [[TestClass alloc] init];
+    
+    ECAssert([test1.test isEqualToString:@"test value"]);
+    test1.test = @"something else";
+    ECAssert([test1.test isEqualToString:@"something else"]);
+    
+    ECAssert([test2.test isEqualToString:@"test value"]);
+    test2.test = @"doodah";
+    ECAssert([test2.test isEqualToString:@"doodah"]);
+
+    [test1 release];
+    [test2 release];
 
     ECDebug(ApplicationChannel, @"will finish launching");
 }
