@@ -11,24 +11,22 @@
 
 @interface NSObject(ECLazyProperties)
 
-- (id)setLazyForProperty:(NSString*)property init:(id)init;
 + (void)initializeLazyProperties;
 
-#define lazy_synthesize(name,value) \
+#define lazy_synthesize(name,init) \
 class Dummy__; \
 - (id)name##Init__ \
 { \
-id current = [self name##Init__]; \
-return current ? current : [self setLazyForProperty:@#name init:value]; \
+id value = [self name##Init__]; \
+if (!value) \
+{ \
+    value = (init); \
+    [self setValue:value forKey:@#name]; \
+} \
+return value; \
 }
 
-#define lazy_synthesize_method(name,method) \
-class Dummy__; \
-- (id)name##Init__ \
-{ \
-id current = [self name##Init__]; \
-return current ? current : [self setLazyForProperty:@#name init:[self method]]; \
-}
+#define lazy_synthesize_method(name,method) lazy_synthesize_value(name,[self method])
 
 @end
 

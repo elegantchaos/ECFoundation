@@ -14,13 +14,6 @@
 
 @implementation NSObject(ECLazyProperties)
 
-- (id)setLazyForProperty:(NSString*)property init:(id)init
-{
-    NSString* setter = [NSString stringWithFormat:@"set%@:", [property capitalizedString]];
-    [self performSelector:NSSelectorFromString(setter) withObject:init];
-    return init;
-}
-
 + (void)initializeLazyProperties
 {
     uint count;
