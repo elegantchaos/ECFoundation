@@ -50,7 +50,9 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
 
     TestClass* test = [[TestClass alloc] init];
-    ECAssert([test.test isEqualToString:@"Test"]);
+    ECAssert([test.test isEqualToString:@"test"]);
+    test.test = @"something else";
+    ECAssert([test.test isEqualToString:@"something else"]);
     [test release];
              
     ECDebug(ApplicationChannel, @"will finish launching");
