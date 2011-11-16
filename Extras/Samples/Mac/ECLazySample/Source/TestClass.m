@@ -8,17 +8,15 @@
 
 #import "TestClass.h"
 
-@lazy_implementation(TestClass)
+@implementation TestClass
 
 @synthesize test;
 
-- (NSString*)testInit
++ (void)initialize
 {
-    return @"test";
+    [self initializeLazy];
 }
 
-@lazy_properties(TestClass)
+@lazy_synthesize(test, @"test value"); 
 
-@lazy_synthesize(test)
-
-@end_lazy_implementation(TestClass)
+@end

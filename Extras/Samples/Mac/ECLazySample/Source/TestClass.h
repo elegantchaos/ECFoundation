@@ -10,9 +10,9 @@
 
 #import "ECLazyProperties.h"
 
-@lazy_interface(TestClass, NSObject)
+@interface TestClass : NSObject
 
 @property (nonatomic, retain) NSString* test;
 
-@end_lazy_interface(TestClass)
+@end
 

@@ -9,23 +9,26 @@
 
 #import <Foundation/Foundation.h>
 
-#define lazy_interface(class,parent) interface class##_nonlazy : parent
-#define end_lazy_interface(class) end @interface class : class##_nonlazy @end
+@interface NSObject(Lazy)
 
-#define lazy_implementation(class) implementation class##_nonlazy
-#define lazy_properties(class) end @implementation class
-#define end_lazy_implementation(class) end
+- (id)setLazyForProperty:(NSString*)property init:(id)init;
++ (void)initializeLazy;
 
-#define lazy_synthesize(prop) \
-    class Dummy__; \
-    - (NSString*)prop \
-    { \
-    id value = [super prop]; \
-    if (!value) \
-    { \
-    value = [super prop##Init]; \
-    self.test = value; \
-    } \
-    \
-    return value; \
-    }
+#define lazy_synthesize(name,value) \
+class Dummy__; \
+- (id)name##Init__ \
+{ \
+id current = [self name##Init__]; \
+return current ? current : [self setLazyForProperty:@#name init:value]; \
+}
+
+#define lazy_synthesize_method(name,method) \
+class Dummy__; \
+- (id)name##Init__ \
+{ \
+id current = [self name##Init__]; \
+return current ? current : [self setLazyForProperty:@#name init:[self method]]; \
+}
+
+@end
+

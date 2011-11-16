@@ -16,7 +16,6 @@
 #import "ECLogHandlerStderr.h"
 
 #import "TestClass.h"
-#import "TestClass2.h"
 
 @implementation AppDelegate
 
@@ -51,16 +50,10 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
 
     TestClass* test = [[TestClass alloc] init];
-    ECAssert([test.test isEqualToString:@"test"]);
+    ECAssert([test.test isEqualToString:@"test value"]);
     test.test = @"something else";
     ECAssert([test.test isEqualToString:@"something else"]);
     [test release];
-
-    TestClass2* test2 = [[TestClass2 alloc] init];
-    ECAssert([test2.test isEqualToString:@"test"]);
-    test2.test = @"something else";
-    ECAssert([test2.test isEqualToString:@"something else"]);
-    [test2 release];
 
     ECDebug(ApplicationChannel, @"will finish launching");
 }

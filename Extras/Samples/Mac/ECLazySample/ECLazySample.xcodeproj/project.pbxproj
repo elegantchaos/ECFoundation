@@ -23,7 +23,7 @@
 		22A7236E1435E29200889A06 /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB49413E28F2A00BF258D /* ECLogHandlerStdout.m */; };
 		22A7236F1435E39000889A06 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46113E1EB0B00BF258D /* info.plist */; };
 		22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A723721435E4FD00889A06 /* ECLoggingMenu.m */; };
-		22BAAB8A1473CA86006B0CD9 /* TestClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAAB891473CA86006B0CD9 /* TestClass2.m */; };
+		22BAAB8D1473DA14006B0CD9 /* ECLazyProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAAB8C1473DA14006B0CD9 /* ECLazyProperties.m */; };
 		22E51FBB1434E04F008F8D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E51FBA1434E04F008F8D41 /* Cocoa.framework */; };
 		22E51FD81434E0F0008F8D41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E51FD71434E0F0008F8D41 /* AppDelegate.m */; };
 		22E51FD91434E117008F8D41 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDAE1434B82B0049E222 /* CGGeometry+ECCore.m */; };
@@ -94,8 +94,7 @@
 		22A723601435E1C800889A06 /* ECLaunchServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchServices.m; sourceTree = "<group>"; };
 		22A723711435E4FD00889A06 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
 		22A723721435E4FD00889A06 /* ECLoggingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLoggingMenu.m; sourceTree = "<group>"; };
-		22BAAB881473CA86006B0CD9 /* TestClass2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestClass2.h; path = Source/TestClass2.h; sourceTree = SOURCE_ROOT; };
-		22BAAB891473CA86006B0CD9 /* TestClass2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestClass2.m; path = Source/TestClass2.m; sourceTree = SOURCE_ROOT; };
+		22BAAB8C1473DA14006B0CD9 /* ECLazyProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyProperties.m; sourceTree = "<group>"; };
 		22E51FB81434E04F008F8D41 /* ECLoggingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ECLoggingSample.app; path = ECLazySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E51FBA1434E04F008F8D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		22E51FBD1434E04F008F8D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -221,8 +220,6 @@
 				22E51FD71434E0F0008F8D41 /* AppDelegate.m */,
 				22A534C714731100006E2103 /* TestClass.h */,
 				22A534C814731100006E2103 /* TestClass.m */,
-				22BAAB881473CA86006B0CD9 /* TestClass2.h */,
-				22BAAB891473CA86006B0CD9 /* TestClass2.m */,
 				226FB46E13E1EB0B00BF258D /* main.m */,
 				226FB4E013E2914900BF258D /* ECFoundation */,
 				226FB46F13E1EB0B00BF258D /* Prefix */,
@@ -402,6 +399,7 @@
 				22E6BDAE1434B82B0049E222 /* CGGeometry+ECCore.m */,
 				22E6BDAF1434B82B0049E222 /* ECClang.h */,
 				22A534C514731085006E2103 /* ECLazyProperties.h */,
+				22BAAB8C1473DA14006B0CD9 /* ECLazyProperties.m */,
 				22E6BDB01434B82B0049E222 /* ECMacros.h */,
 				22E6BDB11434B82B0049E222 /* ECProperties.h */,
 				22E6BDB21434B82B0049E222 /* ECTestCase.h */,
@@ -549,7 +547,7 @@
 				22A7236E1435E29200889A06 /* ECLogHandlerStdout.m in Sources */,
 				22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */,
 				22A534C914731101006E2103 /* TestClass.m in Sources */,
-				22BAAB8A1473CA86006B0CD9 /* TestClass2.m in Sources */,
+				22BAAB8D1473DA14006B0CD9 /* ECLazyProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
