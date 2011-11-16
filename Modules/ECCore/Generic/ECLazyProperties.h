@@ -9,10 +9,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject(Lazy)
+@interface NSObject(ECLazyProperties)
 
 - (id)setLazyForProperty:(NSString*)property init:(id)init;
-+ (void)initializeLazy;
++ (void)initializeLazyProperties;
 
 #define lazy_synthesize(name,value) \
 class Dummy__; \

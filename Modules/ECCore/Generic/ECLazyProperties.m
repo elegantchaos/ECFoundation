@@ -12,7 +12,7 @@
 #import <objc/runtime.h>
 #import </usr/include/objc/objc-class.h>
 
-@implementation NSObject(Lazy)
+@implementation NSObject(ECLazyProperties)
 
 - (id)setLazyForProperty:(NSString*)property init:(id)init
 {
@@ -21,7 +21,7 @@
     return init;
 }
 
-+ (void)initializeLazy
++ (void)initializeLazyProperties
 {
     uint count;
     objc_property_t* properties = class_copyPropertyList(self, &count);
@@ -31,7 +31,6 @@
         SEL init = NSSelectorFromString([NSString stringWithFormat:@"%sInit__", propertyName]);
         if ([self instancesRespondToSelector:init])
         {
-            NSLog(@"%s is lazy", propertyName);
             SEL getter = NSSelectorFromString([NSString stringWithFormat:@"%s", propertyName]);
             Method initMethod = class_getInstanceMethod(self, init);
             Method getterMethod = class_getInstanceMethod(self, getter);

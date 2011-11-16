@@ -8,15 +8,18 @@
 
 #import "TestClass.h"
 
-@implementation TestClass
+    @implementation TestClass
 
-@synthesize test;
+    @synthesize test;
 
-+ (void)initialize
-{
-    [self initializeLazy];
-}
+    + (void)initialize
+    {
+        if (self == [TestClass class])
+        {
+            [self initializeLazyProperties];
+        }
+    }
 
-@lazy_synthesize(test, @"test value"); 
+    @lazy_synthesize(test, @"test value"); 
 
-@end
+    @end
