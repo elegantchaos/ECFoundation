@@ -12,7 +12,17 @@
 
 #include <stdio.h>
 
+@interface ECLogHandlerFile()
+
+@property (nonatomic, retain) NSMutableDictionary* files;
+@property (nonatomic, retain) NSURL* logFolder;
+
+@end
+
 @implementation ECLogHandlerFile
+
+@synthesize files;
+@synthesize logFolder;
 
 #pragma mark - Lifecycle
 
@@ -25,15 +35,71 @@
     if ((self = [super init]) != nil) 
     {
         self.name = @"File";
+        
+        NSError* error = nil;
+        NSFileManager* fm = [NSFileManager defaultManager];
+        NSURL* libraryFolder = [fm URLForDirectory:NSLibraryDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:&error];
+        NSURL* logsFolder = [libraryFolder URLByAppendingPathComponent:@"Logs"];
+        self.logFolder = [logsFolder URLByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
+        [fm createDirectoryAtURL:self.logFolder withIntermediateDirectories:YES attributes:nil error:&error];
     }
     
     return self;
 }
 
+- (void)dealloc
+{
+    [files release];
+    [logFolder release];
+    
+    [super dealloc];
+}
 
 #pragma mark - Logging
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
+- (NSURL*)logFileForChannel:(ECLogChannel*)channel
+{
+    NSMutableDictionary* fileCache = self.files;
+    if (fileCache == nil)
+    {
+        fileCache = [NSMutableDictionary dictionary];
+        self.files = fileCache;
+    }
+    
+    NSURL* logFile = [fileCache objectForKey:channel.name];
+    if (!logFile)
+    {
+        logFile = [self.logFolder URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.log", channel.name]];
+        [fileCache setObject:logFile forKey:channel.name];
+    }
+
+    return logFile;
+}
+
+- (void)logString:(NSString*)string forChannel:(ECLogChannel*)channel
+{
+    NSData* data = [[string stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
+    NSFileManager* fm = [NSFileManager defaultManager];
+    NSURL* logFile = [self logFileForChannel:channel];
+    if ([fm fileExistsAtPath:[logFile path]])
+    {
+        NSError* error = nil;
+        NSFileHandle* file = [NSFileHandle fileHandleForWritingToURL:logFile error:&error];
+        if (file)
+        {
+            [file seekToEndOfFile];
+            [file writeData:data];
+            [file closeFile];
+        }
+    }
+    else
+    {
+        [fm createFileAtPath:[logFile path] contents:data attributes:nil];
+    }
+   
+}
+
+- (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext *)context
 {
     NSString* output;
     if (![channel showContext:ECLogContextMessage])
@@ -52,28 +118,7 @@
         }
     }
     
-    NSData* data = [output dataUsingEncoding:NSUTF8StringEncoding];
-
-    NSError* error = nil;
-    NSFileManager* fm = [NSFileManager defaultManager];
-    NSURL* libraryFolder = [fm URLForDirectory:NSLibraryDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:&error];
-    NSURL* logsFolder = [libraryFolder URLByAppendingPathComponent:@"Logs"];
-    NSURL* logFolder = [logsFolder URLByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
-    [fm createDirectoryAtURL:logFolder withIntermediateDirectories:YES attributes:nil error:&error];
-    NSURL* logFile = [logFolder URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.log", channel.name]];
-    if ([fm fileExistsAtPath:[logFile path]])
-    {
-        NSFileHandle* file = [NSFileHandle fileHandleForWritingToURL:logFile error:&error];
-        if (file)
-        {
-            [file writeData:data];
-            [file closeFile];
-        }
-    }
-    else
-    {
-        [fm createFileAtPath:[logFile path] contents:data attributes:nil];
-    }
+    [self logString:output forChannel:channel];
 }
 
 @end
