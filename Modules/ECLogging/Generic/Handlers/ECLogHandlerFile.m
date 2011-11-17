@@ -14,12 +14,16 @@
 
 @interface ECLogHandlerFile()
 
+#pragma mark - Private Properties
+
 @property (nonatomic, retain) NSMutableDictionary* files;
 @property (nonatomic, retain) NSURL* logFolder;
 
 @end
 
 @implementation ECLogHandlerFile
+
+#pragma mark - Properties
 
 @synthesize files;
 @synthesize logFolder;
@@ -48,6 +52,10 @@
     return self;
 }
 
+// --------------------------------------------------------------------------
+//! Cleanup.
+// --------------------------------------------------------------------------
+
 - (void)dealloc
 {
     [files release];
@@ -57,6 +65,10 @@
 }
 
 #pragma mark - Logging
+
+// --------------------------------------------------------------------------
+//! Return URL to the file we should log a channel to.
+// --------------------------------------------------------------------------
 
 - (NSURL*)logFileForChannel:(ECLogChannel*)channel
 {
@@ -77,12 +89,17 @@
     return logFile;
 }
 
+// --------------------------------------------------------------------------
+//! Output a string for a given channel.
+// --------------------------------------------------------------------------
+
 - (void)logString:(NSString*)string forChannel:(ECLogChannel*)channel
 {
     NSData* data = [[string stringByAppendingString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding];
     NSFileManager* fm = [NSFileManager defaultManager];
     NSURL* logFile = [self logFileForChannel:channel];
-    if ([fm fileExistsAtPath:[logFile path]])
+    NSString* logPath = [logFile path];
+    if ([fm fileExistsAtPath:logPath])
     {
         NSError* error = nil;
         NSFileHandle* file = [NSFileHandle fileHandleForWritingToURL:logFile error:&error];
@@ -95,10 +112,14 @@
     }
     else
     {
-        [fm createFileAtPath:[logFile path] contents:data attributes:nil];
+        [fm createFileAtPath:logPath contents:data attributes:nil];
     }
    
 }
+
+// --------------------------------------------------------------------------
+//! Perform the logging.
+// --------------------------------------------------------------------------
 
 - (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext *)context
 {
