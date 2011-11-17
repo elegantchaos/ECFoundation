@@ -11,6 +11,8 @@
 
 #import "ECLogging.h"
 #import "ECLogManager.h"
+#import "ECLogHandlerFile.h"
+#import "ECLogHandlerNSLog.h"
 
 @interface ECLoggingSampleAppDelegate()
 
@@ -37,7 +39,10 @@ ECDefineDebugChannel(ApplicationChannel);
 {
     ECLogManager* lm = [ECLogManager sharedInstance];
     [lm startup];
-    [lm registerDefaultHandler];
+
+    // install some handlers
+    [lm registerHandler:[[[ECLogHandlerNSLog alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
