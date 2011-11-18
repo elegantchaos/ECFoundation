@@ -386,7 +386,7 @@ static ECLogManager* gSharedInstance = nil;
     NSArray* handlersToUse = [channel.handlers allObjects];
     if (!handlersToUse)
     {
-        handlersToUse = [self.handlers allValues];
+        handlersToUse = self.defaultHandlers;
     }
     
 	for (ECLogHandler* handler in handlersToUse)
