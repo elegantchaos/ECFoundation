@@ -7,17 +7,17 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.elegantchaos.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.elegantchaos.ambientweet</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.1b4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>78</string>
+	<string>84</string>
 	<key>NSMainNibFile</key>
 	<string>view</string>
 	<key>NSPrincipalClass</key>
