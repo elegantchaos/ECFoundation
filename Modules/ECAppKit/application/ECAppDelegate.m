@@ -75,6 +75,8 @@ static NSString *const UserGuideType = @"pdf";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
+	self.fileManager = [NSFileManager defaultManager];
+	
     ECLogManager* lm = [ECLogManager sharedInstance];
 	[self installLogHandlers];
     [lm startup];
