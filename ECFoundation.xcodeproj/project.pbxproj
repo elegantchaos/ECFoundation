@@ -46,6 +46,14 @@
 		223931C21483C19A00584408 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931C01483C19A00584408 /* ECAssertion.m */; };
 		223931C31483C19A00584408 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931C01483C19A00584408 /* ECAssertion.m */; };
 		223931C41483C19A00584408 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931C01483C19A00584408 /* ECAssertion.m */; };
+		223931CD1483D97700584408 /* ECIsEmptyTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 223931C91483D97600584408 /* ECIsEmptyTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223931CF1483D97700584408 /* ECIsEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CA1483D97600584408 /* ECIsEmptyTransformer.m */; };
+		223931D11483D97700584408 /* ECIsEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CA1483D97600584408 /* ECIsEmptyTransformer.m */; };
+		223931D21483D97700584408 /* ECIsEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CA1483D97600584408 /* ECIsEmptyTransformer.m */; };
+		223931D31483D97700584408 /* ECIsNotEmptyTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 223931CB1483D97600584408 /* ECIsNotEmptyTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		223931D51483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CC1483D97600584408 /* ECIsNotEmptyTransformer.m */; };
+		223931D71483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CC1483D97600584408 /* ECIsNotEmptyTransformer.m */; };
+		223931D81483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223931CC1483D97600584408 /* ECIsNotEmptyTransformer.m */; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
@@ -468,6 +476,10 @@
 		22198ABB14585B48006BE993 /* NSButton+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+ECCore.m"; sourceTree = "<group>"; };
 		2229674F1354EDC5005F42E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		223931C01483C19A00584408 /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
+		223931C91483D97600584408 /* ECIsEmptyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECIsEmptyTransformer.h; sourceTree = "<group>"; };
+		223931CA1483D97600584408 /* ECIsEmptyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECIsEmptyTransformer.m; sourceTree = "<group>"; };
+		223931CB1483D97600584408 /* ECIsNotEmptyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECIsNotEmptyTransformer.h; sourceTree = "<group>"; };
+		223931CC1483D97600584408 /* ECIsNotEmptyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECIsNotEmptyTransformer.m; sourceTree = "<group>"; };
 		223CB89E14373230003F6D01 /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
 		223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLoggingMenu.h; sourceTree = "<group>"; };
 		223CB8A3143732E0003F6D01 /* ECLoggingMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLoggingMenu.m; sourceTree = "<group>"; };
@@ -957,6 +969,10 @@
 		22602175141F86F30044644C /* formatting */ = {
 			isa = PBXGroup;
 			children = (
+				223931C91483D97600584408 /* ECIsEmptyTransformer.h */,
+				223931CA1483D97600584408 /* ECIsEmptyTransformer.m */,
+				223931CB1483D97600584408 /* ECIsNotEmptyTransformer.h */,
+				223931CC1483D97600584408 /* ECIsNotEmptyTransformer.m */,
 				22602176141F86F30044644C /* ECIsValueTransformer.h */,
 				22602177141F86F30044644C /* ECIsValueTransformer.m */,
 				22602178141F86F30044644C /* ECLegalFilenameFormatter.h */,
@@ -1537,6 +1553,8 @@
 				22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */,
 				22198AB514580FA4006BE993 /* NSMutableAttributedString+ECCore.h in Headers */,
 				22198ABC14585B48006BE993 /* NSButton+ECCore.h in Headers */,
+				223931CD1483D97700584408 /* ECIsEmptyTransformer.h in Headers */,
+				223931D31483D97700584408 /* ECIsNotEmptyTransformer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1823,6 +1841,8 @@
 				22C02E16141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */,
 				2256928414210BE000C4F852 /* NSArray+ECCore.m in Sources */,
 				223931C41483C19A00584408 /* ECAssertion.m in Sources */,
+				223931D21483D97700584408 /* ECIsEmptyTransformer.m in Sources */,
+				223931D81483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1901,6 +1921,8 @@
 				228BCFF2144DF40F00D22ED5 /* NSWorkspace+ECCore.m in Sources */,
 				22181C081456E81B00F1AD22 /* ECDraggableFileArrayController.m in Sources */,
 				223931C31483C19A00584408 /* ECAssertion.m in Sources */,
+				223931D11483D97700584408 /* ECIsEmptyTransformer.m in Sources */,
+				223931D71483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1976,6 +1998,8 @@
 				22198AB614580FA4006BE993 /* NSMutableAttributedString+ECCore.m in Sources */,
 				22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */,
 				223931C11483C19A00584408 /* ECAssertion.m in Sources */,
+				223931CF1483D97700584408 /* ECIsEmptyTransformer.m in Sources */,
+				223931D51483D97700584408 /* ECIsNotEmptyTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
