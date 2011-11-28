@@ -8,7 +8,6 @@
 // --------------------------------------------------------------------------
 
 #import "ECAboutBoxInfoProvider.h"
-#import "ECProperties.h"
 
 @class ECPreferencesController;
 @class ECAboutBoxController;

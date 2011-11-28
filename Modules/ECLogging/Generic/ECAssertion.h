@@ -14,7 +14,7 @@
 #define ECAssertEmptyBase(object, imp)							
 
 #if EC_DEBUG
-#define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
+#define ECAssert(expression) NSAssert((expression), @" expression (" #expression ") was false")
 #define ECAssertC(expression) assert(expression)
 #else
 #define ECAssert(expression)
