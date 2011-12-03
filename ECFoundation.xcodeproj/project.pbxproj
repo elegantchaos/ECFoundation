@@ -254,17 +254,6 @@
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		2274C97F11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */; };
-		2274C98011FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */; };
-		227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */; };
-		227EEB4311A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */; };
-		227EEB4411A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */; };
-		227EEB4511A6BC66009420F7 /* ECMacDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3C11A6BC66009420F7 /* ECMacDebugSettings.xcconfig */; };
-		227EEB4611A6BC66009420F7 /* ECMacReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3D11A6BC66009420F7 /* ECMacReleaseSettings.xcconfig */; };
-		227EEB4711A6BC66009420F7 /* ECMacSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3E11A6BC66009420F7 /* ECMacSharedSettings.xcconfig */; };
-		227EEB4811A6BC66009420F7 /* ECIOSDebugSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */; };
-		227EEB4911A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */; };
-		227EEB4A11A6BC66009420F7 /* ECIOSSharedSettings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 227EEB4111A6BC66009420F7 /* ECIOSSharedSettings.xcconfig */; };
 		22886F491357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4A1357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4B1357B9F800828B95 /* ECXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22886F461357B9F800828B95 /* ECXMLElement.m */; };
@@ -1640,7 +1629,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Elegant Chaos";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECFoundation" */;
@@ -1700,17 +1689,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227EEB4211A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig in Resources */,
-				227EEB4311A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig in Resources */,
-				227EEB4411A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig in Resources */,
-				227EEB4511A6BC66009420F7 /* ECMacDebugSettings.xcconfig in Resources */,
-				227EEB4611A6BC66009420F7 /* ECMacReleaseSettings.xcconfig in Resources */,
-				227EEB4711A6BC66009420F7 /* ECMacSharedSettings.xcconfig in Resources */,
-				227EEB4811A6BC66009420F7 /* ECIOSDebugSettings.xcconfig in Resources */,
-				227EEB4911A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig in Resources */,
-				227EEB4A11A6BC66009420F7 /* ECIOSSharedSettings.xcconfig in Resources */,
-				2274C97F11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig in Resources */,
-				2274C98011FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig in Resources */,
 				22602255141F8BFD0044644C /* InfoPlist.strings in Resources */,
 				220375DE141FF4DD0040E740 /* finder support.scpt in Resources */,
 				220375E4141FF4E60040E740 /* ECAboutBox.xib in Resources */,
@@ -2194,7 +2172,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
@@ -2219,7 +2197,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
@@ -2244,7 +2222,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
