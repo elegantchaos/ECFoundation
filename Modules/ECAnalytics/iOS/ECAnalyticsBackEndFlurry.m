@@ -13,7 +13,9 @@
 #import "ECAnalyticsLogging.h"
 #import "ECAnalyticsEngine.h"
 
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
+
+#import "NSException+ECCore.h"
 
 #ifndef FLURRY_LOGGING_ON
     #define FLURRY_LOGGING_ON 0
@@ -32,21 +34,24 @@ static const NSUInteger kMaximumParameters = 10;
 
 @implementation ECAnalyticsBackEndFlurry
 
-@synthesize apiKey;
-
 // Perform one-time initialisation of the engine.
 - (void)startupWithEngine:(ECAnalyticsEngine*)engineIn;
 {
     self.engine = engineIn;
     
-	ECDebug(AnalyticsChannel, @"startup Flurry analytics engine %@", [FlurryAPI getFlurryAgentVersion]);
-	
-	[FlurryAPI startSession:self.apiKey];
-	
-	// Make sure Flurry updates as quickly as possible - these should be the default values anyway
-	[FlurryAPI setSessionReportsOnCloseEnabled:YES];
-	[FlurryAPI setSessionReportsOnPauseEnabled:YES];
-	[FlurryAPI setEventLoggingEnabled:YES];
+	ECDebug(AnalyticsChannel, @"startup Flurry analytics engine %@", [FlurryAnalytics getFlurryAgentVersion]);
+
+    NSString* key = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"FlurryKey"];
+    if (key)
+    {
+        [FlurryAnalytics startSession:key];
+        
+        // Make sure Flurry updates as quickly as possible - these should be the default values anyway
+        [FlurryAnalytics setSessionReportsOnCloseEnabled:YES];
+        [FlurryAnalytics setSessionReportsOnPauseEnabled:YES];
+        [FlurryAnalytics setEventLoggingEnabled:YES];
+    }
+
 }
 
 // Perform one-time cleanup of the engine.
@@ -62,11 +67,11 @@ static const NSUInteger kMaximumParameters = 10;
     
     if (parametersOrNil)
     {
-        [FlurryAPI logEvent:eventName withParameters:parametersOrNil timed:NO];
+        [FlurryAnalytics logEvent:eventName withParameters:parametersOrNil timed:NO];
     }
     else
     {
-        [FlurryAPI logEvent:eventName timed:NO];
+        [FlurryAnalytics logEvent:eventName timed:NO];
     }
 }
 
@@ -79,7 +84,7 @@ static const NSUInteger kMaximumParameters = 10;
 	ECAnalyticsEvent* event = [[[ECAnalyticsEvent alloc] initWithName: eventName parameters: parametersOrNil] autorelease];
     NSAssert([event.parameters count] <= kMaximumParameters, @"Flurry has a limit of %d parameters", kMaximumParameters);
 	
-	[FlurryAPI logEvent:eventName timed:YES];
+	[FlurryAnalytics logEvent:eventName timed:YES];
 
 	return event;
 }
@@ -91,21 +96,21 @@ static const NSUInteger kMaximumParameters = 10;
 
 	FlurryLogDetail(@"ended timed event %@", event.name);
 
-	[FlurryAPI endTimedEvent:event.name withParameters:event.parameters];
+	[FlurryAnalytics endTimedEvent:event.name withParameters:event.parameters];
 }
 
 // Log an error.
 - (void)error:(NSError*)error message:(NSString*)message;
 {
     FlurryLogDetail(@"Error reported to flurry: %@ %@ %@", name, message, error);
-    [FlurryAPI logError:[error domain] message:message error:error];
+    [FlurryAnalytics logError:[error domain] message:message error:error];
 }
 // Log an exception.
 - (void)exception:(NSException*)exception
 {
     NSDictionary* info = [exception userInfo];
-    NSString* compact = [self compactStackFromException:exception];
-    NSString* symbolic = [self symbolicStackFromException:exception];
+    NSString* compact = [exception stringFromCompactCallstack];
+    NSString* symbolic = [exception stringFromCallstack];
 
     // We always send the compact crawl since it's most likely to be useful
     NSString* message = compact;
@@ -116,7 +121,7 @@ static const NSUInteger kMaximumParameters = 10;
 
     // Flurry will report the exception's name and reason properties so there's no need to repeat them in our own messages
     FlurryLogDetail(@"Exception reported to flurry: %@", exception);
-	[FlurryAPI logError:error message:message exception:exception];
+	[FlurryAnalytics logError:error message:message exception:exception];
     
     // Also generate an event
     NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
@@ -135,7 +140,7 @@ static const NSUInteger kMaximumParameters = 10;
     }
     
 
-    [FlurryAPI logEvent:@"Exception" withParameters:parameters timed:NO];
+    [FlurryAnalytics logEvent:@"Exception" withParameters:parameters timed:NO];
 }
 
 @end

@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "NSArray+ECCore.h"
-
+#import "ECRandom.h"
 
 @implementation NSArray(ECCore)
 
@@ -26,6 +26,24 @@
     }
     
     return result;
+}
+
+@end
+
+@implementation NSMutableArray(ECCore)
+
+// --------------------------------------------------------------------------
+//! Array Shuffle
+//! http://en.wikipedia.org/wiki/Knuth_shuffle
+// --------------------------------------------------------------------------
+
+- (void)randomize 
+{
+    for(NSUInteger i = [self count]; i > 1; i--) 
+    {
+        NSUInteger j = [ECRandom randomIntegerBelow: i];
+        [self exchangeObjectAtIndex:i-1 withObjectAtIndex:j];
+    }
 }
 
 @end

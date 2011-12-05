@@ -12,6 +12,4 @@
 
 @interface ECAnalyticsBackEndFlurry : ECAnalyticsBackEnd 
 
-@property (copy, nonatomic) NSString* apiKey;
-
 @end

@@ -34,18 +34,32 @@
 
 + (NSInteger)randomIntegerFromZeroTo:(NSInteger)to
 {
-    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
-    
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
+    NSInteger result = arc4random()% (to + 1);
+
     ECAssert(result >= 0);
     ECAssert(result <= to);
 
     return result;
 }
 
++ (NSInteger)randomIntegerBelow:(NSInteger)to
+{
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to);
+
+    NSInteger result = arc4random()%to;
+    
+    ECAssert(result >= 0);
+    ECAssert(result < to);
+    
+    return result;
+}
+
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size
 {
-    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
-    
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
+    NSInteger result = arc4random()%size;
+
     ECAssert(size > 0);
     ECAssert(result >= 0);
     ECAssert(result < (NSInteger) size);
@@ -70,7 +84,8 @@
     {
         double range = to - from;
         double mult = range / resolution;
-        double rand = arc4random_uniform(resolution);
+//        double rand = arc4random_uniform(resolution);
+        double rand = arc4random()% (u_int32_t)resolution;
         result = from + (rand * mult);
         
         ECAssert(result >= from);
@@ -88,7 +103,8 @@
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to
 {
     NSInteger range = to - from;
-    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
+//    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
+    NSInteger rand = arc4random()% (range + 1);
     NSInteger result = from + rand;
     
     ECAssert(result >= from);
