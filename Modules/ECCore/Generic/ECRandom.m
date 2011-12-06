@@ -12,6 +12,26 @@
 
 @implementation ECRandom
 
+typedef u_int32_t (*uniform_func) (u_int32_t /*upper_bound*/);
+
+static uniform_func gUniformFunc = arc4random_uniform;
+static u_int32_t our_uniform_func(u_int32_t upper_bound);
+
+u_int32_t our_uniform_func(u_int32_t upper_bound)
+{
+	u_int32_t result = arc4random()% (upper_bound + 1);
+	
+	return result;
+}
+
++ (void)initialize
+{
+	if (!gUniformFunc)
+	{
+		gUniformFunc = our_uniform_func;
+	}
+}
+
 + (double)randomDoubleFromZeroTo:(double)to
 {
     double result = [ECRandom randomDoubleFrom:0.0 to:to];
@@ -34,8 +54,7 @@
 
 + (NSInteger)randomIntegerFromZeroTo:(NSInteger)to
 {
-//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
-    NSInteger result = arc4random()% (to + 1);
+	NSInteger result = (NSInteger) gUniformFunc((u_int32_t)to + 1);
 
     ECAssert(result >= 0);
     ECAssert(result <= to);
@@ -45,9 +64,7 @@
 
 + (NSInteger)randomIntegerBelow:(NSInteger)to
 {
-//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to);
-
-    NSInteger result = arc4random()%to;
+    NSInteger result = (NSInteger) gUniformFunc((u_int32_t)to);
     
     ECAssert(result >= 0);
     ECAssert(result < to);
@@ -57,8 +74,7 @@
 
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size
 {
-//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
-    NSInteger result = arc4random()%size;
+    NSInteger result = (NSInteger) gUniformFunc((u_int32_t)size);
 
     ECAssert(size > 0);
     ECAssert(result >= 0);
@@ -84,8 +100,7 @@
     {
         double range = to - from;
         double mult = range / resolution;
-//        double rand = arc4random_uniform(resolution);
-        double rand = arc4random()% (u_int32_t)resolution;
+        double rand = (double) gUniformFunc((u_int32_t) resolution);
         result = from + (rand * mult);
         
         ECAssert(result >= from);
@@ -103,8 +118,7 @@
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to
 {
     NSInteger range = to - from;
-//    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
-    NSInteger rand = arc4random()% (range + 1);
+    NSInteger rand = (NSInteger) gUniformFunc((u_int32_t)range + 1);
     NSInteger result = from + rand;
     
     ECAssert(result >= from);

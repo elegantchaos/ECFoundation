@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #include "ECAssertion.h"
+#include "ECLogging.h"
 
 ECDefineDebugChannel(AssertionChannel);
 
