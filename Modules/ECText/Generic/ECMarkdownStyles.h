@@ -1,21 +1,21 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 12/04/2011
+//! @date 18/10/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface NSArray(ECCore)
+@interface ECMarkdownStyles : NSObject
 
-- (id)firstObjectOrNil;
+@property (nonatomic, retain) NSString* plainFont;
+@property (nonatomic, retain) NSString* boldFont;
+@property (nonatomic, retain) NSString* headingFont;
 
-@end
+@property (nonatomic, assign) CGFloat plainSize;
+@property (nonatomic, assign) CGFloat headingSize;
 
-
-@interface NSMutableArray(ECCore)
-
-- (void)randomize;
+@property (nonatomic, assign) CGColorRef colour;
 
 @end

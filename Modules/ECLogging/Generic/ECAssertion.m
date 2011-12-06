@@ -7,15 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface NSArray(ECCore)
+#include "ECAssertion.h"
 
-- (id)firstObjectOrNil;
+ECDefineDebugChannel(AssertionChannel);
 
-@end
+@implementation ECAssertion
 
-
-@interface NSMutableArray(ECCore)
-
-- (void)randomize;
++ (void)failAssertion:(const char*)expression
+{
+    [NSException raise:@"ECAssertion failed" format:@"Expression:%s", expression, nil];
+}
 
 @end

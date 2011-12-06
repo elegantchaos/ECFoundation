@@ -1,21 +1,30 @@
 // --------------------------------------------------------------------------
 //! @author Sam Deane
-//! @date 12/04/2011
+//! @date 18/10/2011
 //
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface NSArray(ECCore)
+#import "ECMarkdownStyles.h"
 
-- (id)firstObjectOrNil;
+@implementation ECMarkdownStyles
 
-@end
+@synthesize boldFont;
+@synthesize colour;
+@synthesize headingFont;
+@synthesize headingSize;
+@synthesize plainFont;
+@synthesize plainSize;
 
-
-@interface NSMutableArray(ECCore)
-
-- (void)randomize;
+- (void)dealloc
+{
+    [boldFont release];
+    [headingFont release];
+    [plainFont release];
+    
+    [super dealloc];
+}
 
 @end

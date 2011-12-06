@@ -13,8 +13,10 @@
 #define ECAssertCountAtLeastBase(container, countMinimum, imp)	imp([container count] >= countMinimum)
 #define ECAssertEmptyBase(object, imp)							
 
+
 #if EC_DEBUG
-#define ECAssert(expression) NSAssert((expression), @" expression" #expression " was false")
+ECDeclareDebugChannel(AssertionChannel);
+#define ECAssert(expression) do { if (!(expression)) { ECDebug(AssertionChannel, @"Expression %s was false", #expression); [ECAssertion failAssertion:#expression]; } } while(0)
 #define ECAssertC(expression) assert(expression)
 #else
 #define ECAssert(expression)
@@ -37,3 +39,9 @@
 
 #define ECAssertIsKindOfClass(o, c) ECAssert([o isKindOfClass:[c class]])
 #define ECAssertIsMemberOfClass(o, c) ECAssert([o isMemberOfClass:[c class]])
+
+@interface ECAssertion : NSObject
+
++ (void)failAssertion:(const char*)expression;
+
+@end

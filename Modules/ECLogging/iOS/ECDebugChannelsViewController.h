@@ -7,8 +7,11 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+@class ECDebugViewController;
+
 @interface ECDebugChannelsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
 
-@property( retain, nonatomic) NSArray* channels;
+@property (nonatomic, retain) NSArray* channels;
+@property (nonatomic, retain) ECDebugViewController* debugViewController;
 
 @end

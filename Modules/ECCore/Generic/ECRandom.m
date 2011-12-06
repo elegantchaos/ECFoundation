@@ -34,18 +34,33 @@
 
 + (NSInteger)randomIntegerFromZeroTo:(NSInteger)to
 {
-    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
-    
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to + 1);
+    NSInteger result = arc4random()% (to + 1);
+
     ECAssert(result >= 0);
     ECAssert(result <= to);
 
     return result;
 }
 
++ (NSInteger)randomIntegerBelow:(NSInteger)to
+{
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)to);
+
+    NSInteger result = arc4random()%to;
+    
+    ECAssert(result >= 0);
+    ECAssert(result < to);
+    
+    return result;
+}
+
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size
 {
-    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
-    
+//    NSInteger result = (NSInteger) arc4random_uniform((u_int32_t)size);
+    NSInteger result = arc4random()%size;
+
+    ECAssert(size > 0);
     ECAssert(result >= 0);
     ECAssert(result < (NSInteger) size);
     
@@ -64,13 +79,23 @@
 
 + (double)randomDoubleFrom:(double)from to:(double)to resolution:(double)resolution
 {
-    double range = to - from;
-    double mult = range / resolution;
-    double rand = arc4random_uniform(resolution);
-    double result = from + (rand * mult);
-    
-    ECAssert(result >= from);
-    ECAssert(result <= to);
+    double result;
+    if (to > from)
+    {
+        double range = to - from;
+        double mult = range / resolution;
+//        double rand = arc4random_uniform(resolution);
+        double rand = arc4random()% (u_int32_t)resolution;
+        result = from + (rand * mult);
+        
+        ECAssert(result >= from);
+        ECAssert(result <= to);
+    }
+    else
+    {
+        ECAssert(to == from);
+        result = to;
+    }
 
     return result;
 }
@@ -78,13 +103,35 @@
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to
 {
     NSInteger range = to - from;
-    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
+//    NSInteger rand = (NSInteger) arc4random_uniform((u_int32_t)range + 1);
+    NSInteger rand = arc4random()% (range + 1);
     NSInteger result = from + rand;
     
     ECAssert(result >= from);
     ECAssert(result <= to);
     
     return result;
+}
+
+// --------------------------------------------------------------------------
+//! Test for a random event.
+//! Chance should be from 0.0 to 1.0
+// --------------------------------------------------------------------------
+
++ (BOOL)randomChance:(double)chance
+{
+    if (chance >= 1.0)
+    {
+        return YES;
+    }
+    else if (chance <= 0.0)
+    {
+        return NO;
+    }
+    else
+    {
+        return [self randomDoubleFromZeroTo:1.0] < chance;
+    }
 }
 
 @end

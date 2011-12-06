@@ -11,4 +11,6 @@
 
 @property (nonatomic, retain) UINavigationController* navController;
 
+- (void)pushViewController:(UIViewController *)controller;
+
 @end
