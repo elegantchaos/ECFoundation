@@ -30,6 +30,8 @@
 		2200188714917CE8002F1D1D /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */; };
 		22001889149183C2002F1D1D /* NSData+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22001888149183C2002F1D1D /* NSData+ECCoreTests.m */; };
 		2200188A149183C2002F1D1D /* NSData+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22001888149183C2002F1D1D /* NSData+ECCoreTests.m */; };
+		2200188E1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
+		2200188F1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
 		220375D8141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375DE141FF4DD0040E740 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 220375DB141FF4DD0040E740 /* finder support.scpt */; };
@@ -473,6 +475,7 @@
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2200188214917A9F002F1D1D /* NSMutableAttributedStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableAttributedStringTests.m; sourceTree = "<group>"; };
 		22001888149183C2002F1D1D /* NSData+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ECCoreTests.m"; sourceTree = "<group>"; };
+		2200188D1491869F002F1D1D /* NSBundleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundleTests.m; sourceTree = "<group>"; };
 		220375D3141FF4B80040E740 /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECFoundationIOS.plist; sourceTree = "<group>"; };
 		220375D7141FF4C00040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		220375DA141FF4DD0040E740 /* ECFoundationMac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundationMac.plist; path = Modules/ECCore/Resources/Mac/ECFoundationMac.plist; sourceTree = SOURCE_ROOT; };
@@ -527,7 +530,7 @@
 		2248BC1F13C7949E00E13577 /* ECDataItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDataItemTests.m; sourceTree = "<group>"; };
 		2248BC2213C7949E00E13577 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
 		2248BC2313C7949E00E13577 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProperties.h; sourceTree = "<group>"; };
-		2248BC2413C7949E00E13577 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
+		2248BC2413C7949E00E13577 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ECTestCase.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		225260E61455C01100061EDD /* NSIndexSet+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+ECCore.h"; sourceTree = "<group>"; };
 		225260E71455C01100061EDD /* NSIndexSet+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+ECCore.m"; sourceTree = "<group>"; };
 		225409261354F05C00DC8205 /* ECFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -592,7 +595,7 @@
 		226021A7141F86F30044644C /* NSWindow+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+ECCore.h"; sourceTree = "<group>"; };
 		226021A8141F86F30044644C /* NSWindow+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+ECCore.m"; sourceTree = "<group>"; };
 		226021AC141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+ECUtilitiesTests.h"; sourceTree = "<group>"; };
-		226021AD141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; };
+		226021AD141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		226021AE141F86F30044644C /* NSURL+ECMacTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECMacTests.h"; sourceTree = "<group>"; };
 		226021AF141F86F30044644C /* NSURL+ECMacTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECMacTests.m"; sourceTree = "<group>"; };
 		226021B0141F86F30044644C /* NSWorkspace+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+ECUtilitiesTests.h"; sourceTree = "<group>"; };
@@ -670,7 +673,7 @@
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
 		22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECLocation.m"; sourceTree = "<group>"; };
-		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; };
+		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22C1E1991490C912004DA13E /* TestDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDictionaryBackedObject.h; sourceTree = "<group>"; };
 		22C1E19A1490C977004DA13E /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
 		22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSException+ECCoreTests.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1321,6 +1324,8 @@
 				22C1E19A1490C977004DA13E /* ECTestCase.m */,
 				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
 				2256927E14210BE000C4F852 /* NSArray+ECCore.m */,
+				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
+				22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */,
 				22CA556513DA09FF007E89E2 /* NSData+ECCore.h */,
 				22CA556613DA09FF007E89E2 /* NSData+ECCore.m */,
 				22CA556713DA09FF007E89E2 /* NSDate+ECCore.h */,
@@ -1329,8 +1334,6 @@
 				22E99EA2148E51800034E167 /* NSException+ECCore.m */,
 				22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */,
 				22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */,
-				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
-				22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */,
 				22CA556913DA09FF007E89E2 /* NSDictionary+ECCore.h */,
 				22CA556A13DA09FF007E89E2 /* NSDictionary+ECCore.m */,
 				22CA556B13DA09FF007E89E2 /* NSFileManager+ECCore.h */,
@@ -1353,6 +1356,7 @@
 				22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */,
 				22C1E2361490FAE0004DA13E /* ECRandomTests.m */,
 				22177DBC14913A6800358975 /* NSArray+ECCoreTests.m */,
+				2200188D1491869F002F1D1D /* NSBundleTests.m */,
 				22001888149183C2002F1D1D /* NSData+ECCoreTests.m */,
 				22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */,
 				22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */,
@@ -1858,6 +1862,7 @@
 				2200188414917A9F002F1D1D /* NSMutableAttributedStringTests.m in Sources */,
 				2200188714917CE8002F1D1D /* NSMutableAttributedString+ECCore.m in Sources */,
 				2200188A149183C2002F1D1D /* NSData+ECCoreTests.m in Sources */,
+				2200188F1491869F002F1D1D /* NSBundleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1948,6 +1953,7 @@
 				2200188314917A9F002F1D1D /* NSMutableAttributedStringTests.m in Sources */,
 				2200188614917CE7002F1D1D /* NSMutableAttributedString+ECCore.m in Sources */,
 				22001889149183C2002F1D1D /* NSData+ECCoreTests.m in Sources */,
+				2200188E1491869F002F1D1D /* NSBundleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@
 	ECTestAssertNotNil(desc);
 	
 	NSURL* url = [desc urlValue];
-	ECTestAssertIsEqualString([url path], @"/Applications/Preview.app");
+	ECTestAssertStringIsEqual([url path], @"/Applications/Preview.app");
 }
 
 // --------------------------------------------------------------------------
@@ -42,8 +42,8 @@
 	
 	NSArray* array = [desc stringArrayValue];
 	ECTestAssertIsEqual([array count], 2);
-	ECTestAssertIsEqualString([array objectAtIndex: 0], @"/Test/1.txt");
-	ECTestAssertIsEqualString([array objectAtIndex: 1], @"/Test/2.txt");
+	ECTestAssertStringIsEqual([array objectAtIndex: 0], @"/Test/1.txt");
+	ECTestAssertStringIsEqual([array objectAtIndex: 1], @"/Test/2.txt");
 }
 
 // --------------------------------------------------------------------------
@@ -60,8 +60,8 @@
 	
 	NSArray* array = [desc urlArrayValue];
 	ECTestAssertIsEqual([array count], 2);
-	ECTestAssertIsEqualString([[array objectAtIndex: 0] path], @"/Test/1.txt");
-	ECTestAssertIsEqualString([[array objectAtIndex: 1] path], @"/Test/2.txt");
+	ECTestAssertStringIsEqual([[array objectAtIndex: 0] path], @"/Test/1.txt");
+	ECTestAssertStringIsEqual([[array objectAtIndex: 1] path], @"/Test/2.txt");
 }
 
 @end

@@ -60,13 +60,13 @@ static NSUInteger gTest2initCalled = 0;
     TestClass* test1 = [[TestClass alloc] init];
     TestClass* test2 = [[TestClass alloc] init];
     
-    ECTestAssertIsEqualString(test1.test, @"test value");
+    ECTestAssertStringIsEqual(test1.test, @"test value");
     test1.test = @"something else";
-    ECTestAssertIsEqualString(test1.test, @"something else");
+    ECTestAssertStringIsEqual(test1.test, @"something else");
     
-    ECTestAssertIsEqualString(test2.test, @"test value");
+    ECTestAssertStringIsEqual(test2.test, @"test value");
     test2.test = @"doodah";
-    ECTestAssertIsEqualString(test2.test, @"doodah");
+    ECTestAssertStringIsEqual(test2.test, @"doodah");
 	
     [test1 release];
     [test2 release];
@@ -79,13 +79,13 @@ static NSUInteger gTest2initCalled = 0;
     TestClass* test1 = [[TestClass alloc] init];
     TestClass* test2 = [[TestClass alloc] init];
     
-    ECTestAssertIsEqualString(test1.test2, @"test2 value");
+    ECTestAssertStringIsEqual(test1.test2, @"test2 value");
     test1.test2 = @"something else";
-    ECTestAssertIsEqualString(test1.test2, @"something else");
+    ECTestAssertStringIsEqual(test1.test2, @"something else");
     
-    ECTestAssertIsEqualString(test2.test2, @"test2 value");
+    ECTestAssertStringIsEqual(test2.test2, @"test2 value");
     test2.test2 = @"doodah";
-    ECTestAssertIsEqualString(test2.test2, @"doodah");
+    ECTestAssertStringIsEqual(test2.test2, @"doodah");
 	
     [test1 release];
     [test2 release];

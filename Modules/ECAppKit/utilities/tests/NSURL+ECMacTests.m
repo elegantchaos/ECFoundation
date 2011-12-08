@@ -25,10 +25,10 @@
 	NSURL* url = [NSURL URLWithString: @"/Applications/"];
 	NSURL* unique = [url getUniqueFileWithName: @"Preview" andExtension: @"app"];
 	ECTestAssertNotNil(unique);
-	ECTestAssertIsEqualString([unique path], @"/Applications/Preview 1.app");
+	ECTestAssertStringIsEqual([unique path], @"/Applications/Preview 1.app");
 	
 	unique = [url getUniqueFileWithName: @"Bogus" andExtension: @"bogus"];
 	ECTestAssertNotNil(unique);
-	ECTestAssertIsEqualString([unique path], @"/Applications/Bogus.bogus");
+	ECTestAssertStringIsEqual([unique path], @"/Applications/Bogus.bogus");
 }
 @end

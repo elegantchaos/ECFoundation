@@ -63,7 +63,7 @@
 
 	NSString* string = [test string];
 	ECTestAssertIsEqual(count, 3);
-	ECTestAssertIsEqualString(string, @"tes1 tes2 tes3");
+	ECTestAssertStringIsEqual(string, @"tes1 tes2 tes3");
 	[test release];
 }
 
@@ -92,7 +92,7 @@
 	
 	NSString* string = [test string];
 	ECTestAssertIsEqual(count, 3);
-	ECTestAssertIsEqualString(string, @"test3 test2 test1");
+	ECTestAssertStringIsEqual(string, @"test3 test2 test1");
 	[test release];
 }
 

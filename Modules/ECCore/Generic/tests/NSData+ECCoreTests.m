@@ -25,7 +25,7 @@
 	unsigned char value[] = { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0 };
 	NSData* data = [NSData dataWithBytes:&value length:sizeof(value)];
 	NSString* hex = [data hexString];
-	ECTestAssertIsEqualString(hex, @"123456789ABCDEF0");
+	ECTestAssertStringIsEqual(hex, @"123456789ABCDEF0");
 	
 }
 
@@ -33,7 +33,7 @@
 {
 	NSData* data = [NSData data];
 	NSString* hex = [data hexString];
-	ECTestAssertIsEqualString(hex, @"");
+	ECTestAssertStringIsEqual(hex, @"");
 }
 
 - (void)testSHA1
@@ -41,14 +41,14 @@
 	unsigned char value[] = { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0 };
 	NSData* data = [NSData dataWithBytes:&value length:sizeof(value)];
 	NSString* sha1 = [data sha1Digest];
-	ECTestAssertIsEqualString(sha1, @"2f8084dd1992a0b8aaaef44c93b8bd99de7ffac3");
+	ECTestAssertStringIsEqual(sha1, @"2f8084dd1992a0b8aaaef44c93b8bd99de7ffac3");
 }
 
 - (void)testEmptySHA1
 {
 	NSData* data = [NSData data];
 	NSString* sha1 = [data sha1Digest];
-	ECTestAssertIsEqualString(sha1, @"da39a3ee5e6b4b0d3255bfef95601890afd80709");
+	ECTestAssertStringIsEqual(sha1, @"da39a3ee5e6b4b0d3255bfef95601890afd80709");
 }
 
 @end
