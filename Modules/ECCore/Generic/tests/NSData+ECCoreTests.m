@@ -20,17 +20,20 @@
 
 @implementation NSDataTests
 
-- (void)dataTests
+- (void)testHexString
 {
-	NSUInteger value = 0x12345678;
+	unsigned char value[] = { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0 };
 	NSData* data = [NSData dataWithBytes:&value length:sizeof(value)];
 	NSString* hex = [data hexString];
-	ECTestAssertIsEqualString(hex, @"0x12345678");
+	ECTestAssertIsEqualString(hex, @"123456789ABCDEF0");
 }
 
-#if 0
-- (NSString*) hexString;
-- (NSString*) sha1Digest;
-#endif
+- (void)testSHA1
+{
+	unsigned char value[] = { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0 };
+	NSData* data = [NSData dataWithBytes:&value length:sizeof(value)];
+	NSString* sha1 = [data sha1Digest];
+	ECTestAssertIsEqualString(sha1, @"2f8084dd1992a0b8aaaef44c93b8bd99de7ffac3");
+}
 
 @end
