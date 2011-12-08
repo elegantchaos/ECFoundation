@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECTestCase.h"
-
+#import "NSArray+ECCore.h"
 
 @interface NSArrayTests : ECTestCase
 
@@ -16,8 +16,24 @@
 
 @implementation NSArrayTests
 
-- (void)test
+- (void)testFirstObjectOrNil
 {
+	ECTestAssertTrue([[NSArray array] firstObjectOrNil] == nil);
+	ECTestAssertTrue([[NSArray arrayWithObject:@"test"] firstObjectOrNil] == @"test");
+	
+	NSArray* array = [NSArray arrayWithObjects:@"test1", @"test2", nil];
+	ECTestAssertTrue([array firstObjectOrNil] == @"test1");
+}
+
+- (void)testRandomize
+{
+	NSMutableArray* array = [NSMutableArray array];
+	[array randomize];
+	ECTestAssertIsEmpty(array);
+	
+	[array addObject:@"test"];
+	[array randomize];
+	ECTestAssertTrue([array objectAtIndex:0] == @"test");
 }
 
 @end
