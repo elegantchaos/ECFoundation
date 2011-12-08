@@ -40,7 +40,7 @@ static const NSInteger kLargeInteger = LONG_MAX;
 		ECTestAssertRealIsLessEqual([ECRandom randomDoubleFrom:-kSmallDouble to:kLargeDouble], kLargeDouble);
 	}
 
-	ECTestAssertRealIsEqual([ECRandom randomDoubleFromZeroTo:0.0], 10.0);
+	ECTestAssertRealIsEqual([ECRandom randomDoubleFromZeroTo:0.0], 0.0);
 	ECTestAssertRealIsEqual([ECRandom randomDoubleFrom:kSmallDouble to:kSmallDouble], kSmallDouble);
 
 }
