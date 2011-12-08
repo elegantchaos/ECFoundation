@@ -13,6 +13,10 @@
 
 @interface NSString(ECCore)
 
+- (BOOL)containsString:(NSString*)string;
+- (BOOL)beginsWithString:(NSString*)string;
+- (BOOL)endsWithString:(NSString*)string;
+
 - (NSData*)splitWordsIntoInts;
 - (NSData*)splitWordsIntoFloats;
 - (NSArray*)componentsSeparatedByMixedCaps;

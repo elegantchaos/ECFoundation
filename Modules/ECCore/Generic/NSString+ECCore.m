@@ -194,4 +194,26 @@
 	}
 }
 
+- (BOOL)beginsWithString:(NSString *)string
+{
+	NSRange range = [self rangeOfString:string];
+	
+	return range.location == 0;
+}
+
+- (BOOL)endsWithString:(NSString *)string
+{
+	NSRange range = [self rangeOfString:string];
+	
+	return range.location == self.length - string.length;
+}
+
+- (BOOL)containsString:(NSString *)string
+{
+	NSRange range = [self rangeOfString:string];
+	
+	return range.location != NSNotFound;
+}
+
+
 @end

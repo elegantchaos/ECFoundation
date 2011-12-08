@@ -340,6 +340,8 @@
 		22C1E1931490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */; };
 		22C1E19B1490C977004DA13E /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19A1490C977004DA13E /* ECTestCase.m */; };
 		22C1E19C1490C977004DA13E /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19A1490C977004DA13E /* ECTestCase.m */; };
+		22C1E19E1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */; };
+		22C1E19F1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */; };
 		22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
@@ -669,6 +671,7 @@
 		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; };
 		22C1E1991490C912004DA13E /* TestDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDictionaryBackedObject.h; sourceTree = "<group>"; };
 		22C1E19A1490C977004DA13E /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
+		22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+ECCoreTests.m"; sourceTree = "<group>"; };
 		22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
 		22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
 		22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
@@ -1342,6 +1345,7 @@
 		22CA557113DA09FF007E89E2 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */,
 				22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */,
 				22CA557313DA09FF007E89E2 /* NSDate+ECCoreTests.m */,
 				22CA557513DA09FF007E89E2 /* NSDictionary+ECCoreTests.m */,
@@ -1849,6 +1853,7 @@
 				22E99EB2148E518B0034E167 /* ECRandom.m in Sources */,
 				22C1E1931490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */,
 				22C1E19C1490C977004DA13E /* ECTestCase.m in Sources */,
+				22C1E19F1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1932,6 +1937,7 @@
 				22E99EB1148E518B0034E167 /* ECRandom.m in Sources */,
 				22C1E1921490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */,
 				22C1E19B1490C977004DA13E /* ECTestCase.m in Sources */,
+				22C1E19E1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
