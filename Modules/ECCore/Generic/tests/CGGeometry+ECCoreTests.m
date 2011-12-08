@@ -18,11 +18,12 @@
 @implementation CGGeometry_ECCoreTests
 
 static CGRect kTestRect = { 0.0, 0.0, 100.0, 100.0 };
-static CGPoint kTestPoint = { 50.0, 50.0 };
+static CGPoint kTestPoint = { 100.0, 100.0 };
+static CGPoint kTestMiddle = { 50.0, 50.0 };
 
 - (void)testCGRectGetCentre
 {
-	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetCentre(kTestRect), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetCentre(kTestRect), kTestMiddle));
 	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetCentre(CGRectZero), CGPointZero));
 }
 
@@ -31,51 +32,51 @@ static CGPoint kTestPoint = { 50.0, 50.0 };
 	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(CGRectZero), CGPointZero));
 	
 	CGRect test = kTestRect;
-	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestMiddle));
 
 	test.origin.x += 50.0;
 	test.origin.y += 50.0;
 
-	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestMiddle));
 }
 
 - (void)testCGRectSetCentre
 {
 	CGRect test = CGRectSetCentre(kTestRect, CGPointZero);
 	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetCentre(test), CGPointZero));
-	test = CGRectSetCentre(test, kTestPoint);
+	test = CGRectSetCentre(test, kTestMiddle);
 	ECTestAssertTrue(CGRectEqualToRect(test, kTestRect));
 }
 
 - (void)testCGPointGetDistanceSquared
 {
 	ECTestAssertRealIsEqual(CGPointGetDistanceSquared(CGPointZero, CGPointZero), 0.0);
-	ECTestAssertRealIsEqual(CGPointGetDistanceSquared(CGPointZero, kTestPoint), 5000.0);
+	ECTestAssertRealIsEqual(CGPointGetDistanceSquared(CGPointZero, kTestPoint), 20000.0);
 }
 
 - (void)testCGPointGetDistance
 {
 	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, CGPointZero), 0.0);
-	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, kTestPoint), sqrt(5000.0));
+	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, kTestPoint), sqrt(20000.0));
 }
 
-#if 0
-
-NS_INLINE CGPoint CGPointAdd(CGPoint p1, CGPoint p2)
+- (void)testCGPointAdd
 {
-    return CGPointMake(p1.x + p2.x, p1.y + p2.y);
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointAdd(CGPointZero, kTestPoint), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointAdd(kTestPoint, CGPointZero), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointAdd(kTestMiddle, kTestMiddle), kTestPoint));
 }
 
-NS_INLINE CGPoint CGPointSubtract(CGPoint p1, CGPoint p2)
+- (void)testCGPointSubtract
 {
-    return CGPointMake(p1.x - p2.x, p1.y - p2.y);
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointSubtract(kTestPoint, CGPointZero), kTestPoint));
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointSubtract(kTestPoint, kTestPoint), CGPointZero));
 }
 
-NS_INLINE CGPoint CGPointGetMiddle(CGPoint p1, CGPoint p2)
+- (void)testCGPointGetMiddle
 {
-    return CGPointMake((p1.x + p2.x) / 2.0f, (p1.y - p2.y) / 2.0f);
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointGetMiddle(CGPointZero, CGPointZero), CGPointZero));
+	ECTestAssertTrue(CGPointEqualToPoint(CGPointGetMiddle(CGPointZero, kTestPoint), kTestMiddle));
 }
-
-#endif
 
 @end

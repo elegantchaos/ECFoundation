@@ -53,6 +53,6 @@ NS_INLINE CGPoint CGPointSubtract(CGPoint p1, CGPoint p2)
 
 NS_INLINE CGPoint CGPointGetMiddle(CGPoint p1, CGPoint p2)
 {
-    return CGPointMake((p1.x + p2.x) / 2.0f, (p1.y - p2.y) / 2.0f);
+    return CGPointMake((p1.x + p2.x) / 2.0f, (p1.y + p2.y) / 2.0f);
 }
 
