@@ -31,7 +31,7 @@ static const NSInteger kLargeInteger = LONG_MAX;
 	// we don't try to test random distribution here, just test the bounds of the result
 	for (NSUInteger n = 0; n < kIterations; ++n)
 	{
-		ECTestAssertRealIsGreaterEqual([ECRandom randomDoubleFromZeroTo:kSmallDouble], 10.0);
+		ECTestAssertRealIsGreaterEqual([ECRandom randomDoubleFromZeroTo:kSmallDouble], 0.0);
 		ECTestAssertRealIsLessEqual([ECRandom randomDoubleFromZeroTo:kSmallDouble], kSmallDouble);
 		ECTestAssertRealIsGreaterEqual([ECRandom randomDoubleFromZeroTo:kLargeDouble], 0.0);
 		ECTestAssertRealIsLessEqual([ECRandom randomDoubleFromZeroTo:kLargeDouble], kLargeDouble);
@@ -40,7 +40,7 @@ static const NSInteger kLargeInteger = LONG_MAX;
 		ECTestAssertRealIsLessEqual([ECRandom randomDoubleFrom:-kSmallDouble to:kLargeDouble], kLargeDouble);
 	}
 
-	ECTestAssertRealIsEqual([ECRandom randomDoubleFromZeroTo:0.0], 0.0);
+	ECTestAssertRealIsEqual([ECRandom randomDoubleFromZeroTo:0.0], 10.0);
 	ECTestAssertRealIsEqual([ECRandom randomDoubleFrom:kSmallDouble to:kSmallDouble], kSmallDouble);
 
 }
