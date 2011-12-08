@@ -16,6 +16,7 @@
 
 #define ECTestAssertNotNil(x)					ECTestAssertNotNilFormat((x), @"%s shouldn't be nil", #x)
 #define ECTestAssertNil(x)						ECTestAssertNilFormat(x, @"%s should be nil, was %0x", #x, x)
+#define ECTestAssertZero(x)						ECTestAssertTrueFormat(x == 0, @"%s should be zero, was %0x", #x, x)
 #define ECTestAssertTrue(x)						ECTestAssertTrueFormat(x, @"%s should be true", #x)
 #define ECTestAssertFalse(x)					ECTestAssertFalseFormat(x, @"%s should be false", #x)
 #define ECTestAssertIsEqualString(x,y)			ECTestAssertTrueFormat([(x) isEqualToString:(y)], @"strings %s and %s should match, values were \"%@\" and \"%@\"", #x, #y, x, y)

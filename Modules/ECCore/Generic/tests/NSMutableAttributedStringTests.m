@@ -16,6 +16,28 @@
 
 @implementation NSMutableAttributedStringTests
 
+- (void)testEdgeCases
+{
+	NSMutableAttributedString* test = [[NSMutableAttributedString alloc] initWithString:@""];
+	ECTestAssertNotNil(test);
+	
+	NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive;
+	NSError* error = nil;
+	NSRegularExpression* expression = [[NSRegularExpression alloc] initWithPattern:@"." options:options error:&error];
+	ECTestAssertNotNil(expression);
+	
+	NSUInteger __block count = 0;
+	
+	[test matchExpression:expression options:options reversed:NO action:^(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match) { ++count; } ];
+	ECTestAssertZero(count);
+
+	[test matchExpression:nil options:options reversed:NO action:^(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match) { ++count; } ];
+	ECTestAssertZero(count);
+
+	[test release];
+	
+}
+
 - (void)testMatchForwards
 {
 	NSMutableAttributedString* test = [[NSMutableAttributedString alloc] initWithString:@"test test test"];
