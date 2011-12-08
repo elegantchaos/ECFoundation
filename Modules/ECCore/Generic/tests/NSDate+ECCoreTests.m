@@ -14,7 +14,7 @@
 #import "ECTestCase.h"
 
 
-@interface NSDate_ECUtilitiesTests : ECTestCase
+@interface NSDateFormattingTests : ECTestCase
 {
 	NSDateFormatter*	mFormatter;
 	NSDate*				mOrigin;
@@ -27,11 +27,7 @@
 
 @end
 
-@implementation NSDate_ECUtilitiesTests
-
-// --------------------------------------------------------------------------
-//! Set up before each test.
-// --------------------------------------------------------------------------
+@implementation NSDateFormattingTests
 
 - (void) setUp
 {
@@ -47,10 +43,6 @@
 
 }
 
-// --------------------------------------------------------------------------
-//! Tear down after each test.
-// --------------------------------------------------------------------------
-
 - (void) tearDown
 {
 	[mFormatter release];
@@ -61,10 +53,6 @@
 	[mTwentyThreeHoursLater release];
 	[mThreeDaysLater release];
 }
-
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
 
 - (void) testFormattedRelative
 {
@@ -80,10 +68,6 @@
 	formatted = [mOrigin formattedRelativeTo: mTwentyThreeHoursLater];
 	ECTestAssertNil(formatted);
 }
-
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
 
 - (void) testFormattedRelativeWithDay
 {
@@ -116,10 +100,6 @@
 
 }
 
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
-
 - (void) testDayEdgeCases
 {
 	NSString* formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/11/1969 23.59.59"]];
@@ -133,6 +113,54 @@
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"14/11/1969 00.00.00"]];
 	ECTestAssertIsEqualString(formatted, @"2 days ago");
+}
+@end
+
+
+@interface NSDateTests : ECTestCase
+{
+	NSDateFormatter*	mFormatter;
+	NSDate*				mOrigin;
+	NSDate*				mThirtySecondsLater;
+	NSDate*				mFiveMinutesLater;
+	NSDate*				mSevenHoursLater;
+	NSDate*				mTwentyThreeHoursLater;
+	NSDate*				mThreeDaysLater;
+}
+
+@end
+
+@implementation NSDateTests
+
+static const NSTimeInterval kDayInterval = 60 * 60 * 24;
+- (void)testDays
+{
+	NSDate* now = [NSDate date];
+	NSDate* tomorrow = [now dateByAddingTimeInterval:kDayInterval];
+	NSDate* yesterday = [now dateByAddingTimeInterval:-kDayInterval];
+
+	ECTestAssertTrue([now isEarlierDayThan:tomorrow]);
+	ECTestAssertTrue([now isLaterDayThan:yesterday]);
+	ECTestAssertTrue([now isSameDayAs:now]);
+	ECTestAssertTrue([now isToday]);
+	ECTestAssertFalse([yesterday isToday]);
+	ECTestAssertFalse([tomorrow isToday]);
+
+	ECTestAssertTrue([now dayOffsetFrom:yesterday] == LaterDay);
+	ECTestAssertTrue([now dayOffsetFrom:tomorrow] == EarlierDay);
+	ECTestAssertTrue([now dayOffsetFrom:now] == SameDay);
+}
+
+- (void)testStartOfDay
+{
+	NSDate* now = [NSDate date];
+	NSDate* tomorrow = [now dateByAddingTimeInterval:kDayInterval];
+
+	NSDate* nowStart = [now startOfDay];
+	NSDate* tomorrowStart = [tomorrow startOfDay];
+	
+	ECTestAssertTrue([tomorrowStart timeIntervalSinceDate:nowStart] == kDayInterval);
+	ECTestAssertRealIsEqual([now timeIntervalSinceStartOfDay], [now timeIntervalSinceDate:nowStart]);
 }
 
 @end
