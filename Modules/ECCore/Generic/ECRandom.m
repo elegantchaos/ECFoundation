@@ -17,6 +17,8 @@ typedef u_int32_t (*uniform_func) (u_int32_t /*upper_bound*/);
 static uniform_func gUniformFunc = arc4random_uniform;
 static u_int32_t our_uniform_func(u_int32_t upper_bound);
 
+#define blah(x,y,z) x y z
+
 u_int32_t our_uniform_func(u_int32_t upper_bound)
 {
 	u_int32_t result = arc4random()% (upper_bound + 1);
