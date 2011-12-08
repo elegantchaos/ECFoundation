@@ -31,6 +31,7 @@
 	@catch (NSException *exception) 
 	{
 		NSString* stack = [exception stringFromCallstack];
+		ECTestLog(@"%@", stack);
 		ECTestAssertStringBeginsWith(stack, @"-[NSException_ECCoreTests testCallstack]");
 		ECTestAssertStringContains(stack, @"-[NSInvocation invoke]");
 	}
