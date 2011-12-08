@@ -28,11 +28,12 @@
 	
 	NSUInteger __block count = 0;
 	
+	// because we're going forward, we need to replace the string with one of the same length, otherwise the ranges will be messed up
 	[test matchExpression:expression options:options reversed:NO action:
 	 ^(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match) 
 	 {
 		 ++count;
-		 NSAttributedString* replacement = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"test%d",count]];
+		 NSAttributedString* replacement = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"tes%d",count]];
 		 [current replaceCharactersInRange:match.range withAttributedString:replacement];
 		 [replacement release];
 	 }
@@ -40,7 +41,7 @@
 
 	NSString* string = [test string];
 	ECTestAssertIsEqual(count, 3);
-	ECTestAssertIsEqualString(string, @"test1 test2 test3");
+	ECTestAssertIsEqualString(string, @"tes1 tes2 tes3");
 	[test release];
 }
 
@@ -55,19 +56,22 @@
 	ECTestAssertNotNil(expression);
 	
 	NSUInteger __block count = 0;
-	
+
+	// as we're going backward, we can safely replace items with longer or shorter strings
 	[test matchExpression:expression options:options reversed:YES action:
 	 ^(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match) 
 	 {
 		 ++count;
-		 NSAttributedString* replacement = [[NSAttributedString alloc] initWithString:@"blah"];
+		 NSAttributedString* replacement = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"test%d",count]];
 		 [current replaceCharactersInRange:match.range withAttributedString:replacement];
 		 [replacement release];
 	 }
 	 ];
-	[test release];
 	
+	NSString* string = [test string];
 	ECTestAssertIsEqual(count, 3);
+	ECTestAssertIsEqualString(string, @"test3 test2 test1");
+	[test release];
 }
 
 @end
