@@ -38,7 +38,7 @@ NS_INLINE CGFloat CGPointGetDistanceSquared(CGPoint p1, CGPoint p2)
 
 NS_INLINE CGFloat CGPointGetDistance(CGPoint p1, CGPoint p2)
 {
-    return sqrtf(CGPointGetDistanceSquared(p1, p2));
+    return sqrt(CGPointGetDistanceSquared(p1, p2));
 }
 
 NS_INLINE CGPoint CGPointAdd(CGPoint p1, CGPoint p2)
