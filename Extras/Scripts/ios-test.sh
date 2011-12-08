@@ -1,5 +1,6 @@
 echo Testing IOS
 
+base=`dirname $0`
 source "$base/shared-test.sh"
 targetIOS="ECFoundation Test iOS"
 sdkIOS="iphonesimulator"
