@@ -11,11 +11,11 @@
 #import "ECTestCase.h"
 
 
-@interface CGGeometry_ECCoreTests : ECTestCase
+@interface CGGeometryTests : ECTestCase
 
 @end
 
-@implementation CGGeometry_ECCoreTests
+@implementation CGGeometryTests
 
 static CGRect kTestRect = { (CGFloat) 0.0, (CGFloat) 0.0, (CGFloat) 100.0, (CGFloat) 100.0 };
 static CGPoint kTestPoint = { (CGFloat) 100.0, (CGFloat) 100.0 };

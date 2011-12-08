@@ -14,13 +14,13 @@
 #import "ECTestCase.h"
 
 
-@interface NSString_ECCoreTests : ECTestCase
+@interface NSStringTests : ECTestCase
 {
 }
 
 @end
 
-@implementation NSString_ECCoreTests
+@implementation NSStringTests
 
 // --------------------------------------------------------------------------
 //! Set up before each test.

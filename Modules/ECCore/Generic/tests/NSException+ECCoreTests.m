@@ -15,11 +15,11 @@
 #import "NSException+ECCore.h"
 #import "NSString+ECCore.h"
 
-@interface NSException_ECCoreTests : ECTestCase
+@interface NSExceptionTests : ECTestCase
 
 @end
 
-@implementation NSException_ECCoreTests
+@implementation NSExceptionTests
 
 
 - (void) testCallstack
@@ -32,7 +32,7 @@
 	{
 		NSString* stack = [exception stringFromCallstack];
 		ECTestLog(@"%@", stack);
-		ECTestAssertStringBeginsWith(stack, @"-[NSException_ECCoreTests testCallstack]");
+		ECTestAssertStringBeginsWith(stack, @"-[NSExceptionTests testCallstack]");
 		ECTestAssertStringContains(stack, @"-[NSInvocation invoke]");
 	}
 }
