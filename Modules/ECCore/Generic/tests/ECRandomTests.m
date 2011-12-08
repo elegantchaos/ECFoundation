@@ -56,9 +56,9 @@ static const NSInteger kLargeInteger = LONG_MAX;
 		ECTestAssertIsLessEqual([ECRandom randomIntegerFromZeroTo:kLargeInteger], kLargeInteger);
 
 		ECTestAssertIsGreaterEqual([ECRandom randomIndexFromRangeSized:kSmallInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kSmallInteger], kSmallInteger);
+		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kSmallInteger], (NSUInteger) kSmallInteger);
 		ECTestAssertIsGreaterEqual([ECRandom randomIndexFromRangeSized:kLargeInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kLargeInteger], kLargeInteger);
+		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kLargeInteger], (NSUInteger) kLargeInteger);
 
 		ECTestAssertIsGreaterEqual([ECRandom randomIntegerBelow:kSmallInteger], 0);
 		ECTestAssertIsLess([ECRandom randomIntegerBelow:kSmallInteger], kSmallInteger);

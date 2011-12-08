@@ -17,9 +17,9 @@
 
 @implementation CGGeometry_ECCoreTests
 
-static CGRect kTestRect = { 0.0, 0.0, 100.0, 100.0 };
-static CGPoint kTestPoint = { 100.0, 100.0 };
-static CGPoint kTestMiddle = { 50.0, 50.0 };
+static CGRect kTestRect = { (CGFloat) 0.0, (CGFloat) 0.0, (CGFloat) 100.0, (CGFloat) 100.0 };
+static CGPoint kTestPoint = { (CGFloat) 100.0, (CGFloat) 100.0 };
+static CGPoint kTestMiddle = { (CGFloat) 50.0, (CGFloat) 50.0 };
 
 - (void)testCGRectGetCentre
 {
@@ -34,8 +34,8 @@ static CGPoint kTestMiddle = { 50.0, 50.0 };
 	CGRect test = kTestRect;
 	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestMiddle));
 
-	test.origin.x += 50.0;
-	test.origin.y += 50.0;
+	test.origin.x += (CGFloat) 50.0;
+	test.origin.y += (CGFloat) 50.0;
 
 	ECTestAssertTrue(CGPointEqualToPoint(CGRectGetLocalCentre(test), kTestMiddle));
 }
@@ -57,7 +57,7 @@ static CGPoint kTestMiddle = { 50.0, 50.0 };
 - (void)testCGPointGetDistance
 {
 	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, CGPointZero), 0.0);
-	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, kTestPoint), sqrt(20000.0));
+	ECTestAssertRealIsEqual(CGPointGetDistance(CGPointZero, kTestPoint), (CGFloat) sqrt(20000.0));
 }
 
 - (void)testCGPointAdd
