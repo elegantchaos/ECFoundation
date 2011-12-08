@@ -29,9 +29,10 @@
     }
     else
     {
+		NSUInteger n = 0;
         for (NSTextCheckingResult* match in matches)
         {
-            block(original, self, [matches objectAtIndex:count]);
+            block(original, self, [matches objectAtIndex:n++]);
         }
     }
     
