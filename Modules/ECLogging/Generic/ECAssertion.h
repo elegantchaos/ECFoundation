@@ -19,11 +19,15 @@
 #import "ECLogging.h"
 
 ECDeclareDebugChannel(AssertionChannel);
+
 #define ECAssert(expression) do { if (!(expression)) { ECDebug(AssertionChannel, @"Expression %s was false", #expression); [ECAssertion failAssertion:#expression]; } } while(0)
-#define ECAssertC(expression) assert(expression)
+#define ECAssertC assert
+
 #else
+
 #define ECAssert(expression)
 #define ECAssertC(expression)
+
 #endif
 
 #define ECAssertShouldntBeHere() ECAssertShouldntBeHereBase(ECAssert)

@@ -33,7 +33,7 @@
 // Channels
 // --------------------------------------------------------------------------
 
-ECDefineDebugChannel(ErrorChannel);
+ECDefineLogChannel(ErrorChannel);
 
 // --------------------------------------------------------------------------
 // Globals
@@ -50,11 +50,14 @@ ECDefineDebugChannel(ErrorChannel);
     NSString* message = [[NSString alloc] initWithFormat:format arguments:arguments];
     if (error)
     {
-        ECDebug(ErrorChannel, @"%@ %@", message, error);
+        ECLog(ErrorChannel, @"%@ %@", message, error);
+		#if EC_DEBUG && EC_PLATFORM_MAC
+			[[NSApplication sharedApplication] presentError:error];
+		#endif
     }
     else
     {
-        ECDebug(ErrorChannel, message);
+        ECLog(ErrorChannel, message);
     }
     
     if (assertInDebug)

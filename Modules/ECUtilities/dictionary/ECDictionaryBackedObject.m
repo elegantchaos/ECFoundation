@@ -8,7 +8,6 @@
 // --------------------------------------------------------------------------
 
 #import "ECDictionaryBackedObject.h"
-#import "ECProperties.h"
 #import "ECLogging.h"
 
 #pragma mark - Private Interface

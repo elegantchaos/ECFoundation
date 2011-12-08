@@ -13,10 +13,13 @@
 #import "NSAppleEventDescriptor+ECCore.h"
 
 #import "ECErrorReporter.h"
+#import "ECLogging.h"
 
 #import <Carbon/Carbon.h>
 
 @implementation NSAppleScript(ECCore)
+
+ECDefineDebugChannel(NSAppleScriptChannel);
 
 // --------------------------------------------------------------------------
 //! Return compiled script from a file in the main bundle.
@@ -161,7 +164,7 @@
 			
 		} else {
             
-			NSLog(@"unrecognized parameter type for parameter %d in callHandler:withParameters:", index);
+			ECDebug(NSAppleScriptChannel, @"unrecognized parameter type for parameter %d in callHandler:withParameters:", index);
 			return nil; /* bad parameter */
 			
 		}
