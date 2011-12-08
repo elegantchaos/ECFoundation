@@ -10,8 +10,22 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSDate+ECCoreTests.h"
 #import "NSDate+ECCore.h"
+#import "ECTestCase.h"
+
+
+@interface NSDate_ECUtilitiesTests : ECTestCase
+{
+	NSDateFormatter*	mFormatter;
+	NSDate*				mOrigin;
+	NSDate*				mThirtySecondsLater;
+	NSDate*				mFiveMinutesLater;
+	NSDate*				mSevenHoursLater;
+	NSDate*				mTwentyThreeHoursLater;
+	NSDate*				mThreeDaysLater;
+}
+
+@end
 
 @implementation NSDate_ECUtilitiesTests
 
@@ -55,16 +69,16 @@
 - (void) testFormattedRelative
 {
 	NSString* formatted = [mOrigin formattedRelativeTo: mThirtySecondsLater];
-	ECTestAssertTrue([formatted isEqualToString: @"Less than a minute ago"], @"less than a minute should say so, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Less than a minute ago");
 
 	formatted = [mOrigin formattedRelativeTo: mFiveMinutesLater];
-	ECTestAssertTrue([formatted isEqualToString: @"5 minutes ago"], @"less than an hour should say number of minutes, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"5 minutes ago");
 
 	formatted = [mOrigin formattedRelativeTo: mSevenHoursLater];
-	ECTestAssertTrue([formatted isEqualToString: @"7 hours ago"], @"less than 8 hours ago should say number of hours, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"7 hours ago");
 
 	formatted = [mOrigin formattedRelativeTo: mTwentyThreeHoursLater];
-	ECTestAssertTrue(formatted == nil, @"over 8 hours ago should return nil, string was %@", formatted);
+	ECTestAssertNil(formatted);
 }
 
 // --------------------------------------------------------------------------
@@ -74,31 +88,31 @@
 - (void) testFormattedRelativeWithDay
 {
 	NSString* formatted = [mOrigin formattedRelativeWithDayTo: mThirtySecondsLater];
-	ECTestAssertTrue([formatted isEqualToString: @"Less than a minute ago"], @"less than a minute should say so, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Less than a minute ago");
 	
 	formatted = [mOrigin formattedRelativeWithDayTo: mFiveMinutesLater];
-	ECTestAssertTrue([formatted isEqualToString: @"5 minutes ago"], @"less than an hour should say number of minutes, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"5 minutes ago");
 	
 	formatted = [mOrigin formattedRelativeWithDayTo: mSevenHoursLater];
-	ECTestAssertTrue([formatted isEqualToString: @"7 hours ago"], @"less than 8 hours ago should say number of hours, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"7 hours ago");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: mTwentyThreeHoursLater];
-	ECTestAssertTrue([formatted isEqualToString: @"Yesterday"], @"over 8 hours ago should return Today or Yesterday, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Yesterday");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/11/1969 23.59.45"]];
-	ECTestAssertTrue([formatted isEqualToString: @"Today"], @"over 8 hours - should return Today, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Today");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: mTwentyThreeHoursLater];
-	ECTestAssertTrue([formatted isEqualToString: @"Yesterday"], @"over 8 hours - should return Yesterday, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Yesterday");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: mThreeDaysLater];
-	ECTestAssertTrue([formatted isEqualToString: @"3 days ago"], @"more than 2 days - should return 3 days, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"3 days ago");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/01/1970 23.59.45"]];
-	ECTestAssertTrue([formatted isEqualToString: @"November 12"], @"more than a month - should return the month and day, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"November 12");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/01/1971 23.59.45"]];
-	ECTestAssertTrue([formatted isEqualToString: @"1969"], @"more than a year - should return the year, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"1969");
 
 }
 
@@ -109,16 +123,16 @@
 - (void) testDayEdgeCases
 {
 	NSString* formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"12/11/1969 23.59.59"]];
-	ECTestAssertTrue([formatted isEqualToString: @"Today"], @"should be today, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Today");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"13/11/1969 00.00.00"]];
-	ECTestAssertTrue([formatted isEqualToString: @"Yesterday"], @"should be yesterday, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Yesterday");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"13/11/1969 23.59.59"]];
-	ECTestAssertTrue([formatted isEqualToString: @"Yesterday"], @"should be yesterday, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"Yesterday");
 
 	formatted = [mOrigin formattedRelativeWithDayTo: [mFormatter dateFromString: @"14/11/1969 00.00.00"]];
-	ECTestAssertTrue([formatted isEqualToString: @"2 days ago"], @"should be 2 days ago, string was %@", formatted);
+	ECTestAssertIsEqualString(formatted, @"2 days ago");
 }
 
 @end

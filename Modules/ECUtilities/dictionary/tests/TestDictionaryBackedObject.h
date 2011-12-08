@@ -12,7 +12,6 @@
 
 #import "ECDictionaryBackedObject.h"
 
-
 @interface TestDictionaryBackedObject : ECDictionaryBackedObject
 
 - (NSString*)name;

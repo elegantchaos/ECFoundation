@@ -10,26 +10,30 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECDictionaryBackedObjectCacheTests.h"
-#import "TestDictionaryBackedObject.h"
 #import "ECDictionaryBackedObjectCache.h"
+#import "TestDictionaryBackedObject.h"
 #import "ECTestCase.h"
+
+@class ECDictionaryBackedObjectCache;
+
+@interface ECDictionaryBackedObjectCacheTests : ECTestCase
+@end
 
 @interface ECDictionaryBackedObjectCacheTests()
 
-ECPropertyRetained(test1, NSDictionary*);
-ECPropertyRetained(test2, NSDictionary*);
-ECPropertyRetained(testArray, NSArray*);
-ECPropertyRetained(testCache, ECDictionaryBackedObjectCache*);
+@property (nonatomic, retain) NSDictionary* test1;
+@property (nonatomic, retain) NSDictionary* test2;
+@property (nonatomic, retain) NSArray* testArray;
+@property (nonatomic, retain) ECDictionaryBackedObjectCache* testCache;
 
 @end
 
 @implementation ECDictionaryBackedObjectCacheTests
 
-ECPropertySynthesize(test1);
-ECPropertySynthesize(test2);
-ECPropertySynthesize(testArray);
-ECPropertySynthesize(testCache);
+@synthesize test1;
+@synthesize test2;
+@synthesize testArray;
+@synthesize testCache;
 
 // --------------------------------------------------------------------------
 //! Set up before each test.
@@ -69,20 +73,20 @@ ECPropertySynthesize(testCache);
 
 - (void)checkObject1:(TestDictionaryBackedObject*)object1
 {
-    ECTestAssertNotNil(object1, @"object valid");
+    ECTestAssertNotNil(object1);
     
-    ECTestAssertTrue([object1.name isEqualToString:@"Sam"], @"name wrong");
-    ECTestAssertTrue([object1.text isEqualToString:@"Some Text"], @"text wrong");
-    ECTestAssertTrue([object1.objectID isEqualToString:@"1"], @"ID wrong");   
+    ECTestAssertTrue([object1.name isEqualToString:@"Sam"]);
+    ECTestAssertTrue([object1.text isEqualToString:@"Some Text"]);
+    ECTestAssertTrue([object1.objectID isEqualToString:@"1"]);   
 }
 
 - (void)checkObject2:(TestDictionaryBackedObject*)object2
 {
-    ECTestAssertNotNil(object2, @"object valid");
+    ECTestAssertNotNil(object2);
     
-    ECTestAssertTrue([object2.name isEqualToString:@"Tom"], @"name wrong");
-    ECTestAssertTrue([object2.text isEqualToString:@"Other Text"], @"text wrong");
-    ECTestAssertTrue([object2.objectID isEqualToString:@"2"], @"ID wrong");
+    ECTestAssertTrue([object2.name isEqualToString:@"Tom"]);
+    ECTestAssertTrue([object2.text isEqualToString:@"Other Text"]);
+    ECTestAssertTrue([object2.objectID isEqualToString:@"2"]);
     
     
 }
@@ -106,8 +110,8 @@ ECPropertySynthesize(testCache);
 - (void) testObjectsWithArray
 {
     NSArray* objects = [self.testCache objectsWithArray:self.testArray]; 
-    ECTestAssertNotNil(objects, @"objects valid");
-    ECTestAssertTrue([objects count] == 2, @"correct number of objects");
+    ECTestAssertNotNil(objects);
+    ECTestAssertTrue([objects count] == 2);
     
     TestDictionaryBackedObject* object1 = [objects objectAtIndex:0];
     [self checkObject1:object1];

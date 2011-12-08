@@ -10,8 +10,16 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSDictionary+ECCoreTests.h"
 #import "NSDictionary+ECCore.h"
+#import "ECTestCase.h"
+
+
+@interface NSDictionary_ECUtilitiesTests : ECTestCase
+{
+	NSDictionary* mDictionary;
+}
+
+@end
 
 @implementation NSDictionary_ECUtilitiesTests
 
@@ -48,20 +56,20 @@
 	
 	// try to get the bool value
 	id object = [mDictionary valueForKey: @"bool" intoBool: &value];
-	ECTestAssertNotNil(object, @"object returned");
-	ECTestAssertTrue(value, @"value is correct");
+	ECTestAssertNotNil(object);
+	ECTestAssertTrue(value);
 	
 	// try to get the double value as a bool - should work
 	value = NO;
 	object = [mDictionary valueForKey: @"double" intoBool: &value];
-	ECTestAssertNotNil(object, @"object returned");
-	ECTestAssertTrue(value, @"value is correct");
+	ECTestAssertNotNil(object);
+	ECTestAssertTrue(value);
 
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoBool: &value];
-	ECTestAssertNil(object, @"object not returned");
-	ECTestAssertFalse(value, @"value is unchanged");
+	ECTestAssertNil(object);
+	ECTestAssertFalse(value);
 	
 }
 
@@ -74,20 +82,20 @@
 	double value = 0.0;
 	
 	id object = [mDictionary valueForKey: @"double" intoDouble: &value];
-	ECTestAssertNotNil(object, @"object returned");
-	ECTestAssertTrue(value == 123.456, @"value is correct");
+	ECTestAssertNotNil(object);
+	ECTestAssertIsEqual(value, 123.456);
 
 	// try to get the bool value as a double - should work
 	value = 0.0;
 	object = [mDictionary valueForKey: @"bool" intoDouble: &value];
-	ECTestAssertNotNil(object, @"object returned");
-	ECTestAssertTrue(value == 1.0, @"value is correct");
+	ECTestAssertNotNil(object);
+	ECTestAssertIsEqual(value,1.0);
 	
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoDouble: &value];
-	ECTestAssertNil(object, @"object not returned");
-	ECTestAssertFalse(value == 123.456, @"value is unchanged");
+	ECTestAssertNil(object);
+	ECTestAssertIsNotEqual(value, 123.456);
 }
 
 @end

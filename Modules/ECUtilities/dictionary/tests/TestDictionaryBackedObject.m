@@ -11,6 +11,7 @@
 // --------------------------------------------------------------------------
 
 #import "TestDictionaryBackedObject.h"
+#import "ECDictionaryBackedObject.h"
 
 @implementation TestDictionaryBackedObject
 

@@ -10,8 +10,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSString+ECCoreTests.h"
 #import "NSString+ECCore.h"
+#import "ECTestCase.h"
+
+
+@interface NSString_ECCoreTests : ECTestCase
+{
+}
+
+@end
 
 @implementation NSString_ECCoreTests
 
@@ -41,13 +48,13 @@
 	
 	NSData* data = [string splitWordsIntoInts];
 	
-	ECTestAssertTrue([data length] == sizeof(int) * 10, @"data should contain 10 ints");
+	ECTestAssertTrue([data length] == sizeof(int) * 10);
 	
 	const int* ints = [data bytes];
 	for (int n = 0; n < 10; ++n)
 	{
 		int expected = (n < 5) ? n + 1 : 4 - n;
-		ECTestAssertTrue(ints[n] == expected, @"int values should be correct");
+		ECTestAssertTrue(ints[n] == expected);
 	}
 	
 }

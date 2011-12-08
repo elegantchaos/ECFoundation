@@ -9,13 +9,21 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-#define ECTestCaseBase SenTestCase
+#define ECTestAssertNotNilFormat		STAssertNotNil
+#define ECTestAssertNilFormat			STAssertNil
+#define ECTestAssertTrueFormat			STAssertTrue
+#define ECTestAssertFalseFormat			STAssertFalse
 
-#define ECTestAssertNotNil	STAssertNotNil
-#define ECTestAssertNil		STAssertNil
-#define ECTestAssertTrue	STAssertTrue
-#define ECTestAssertFalse	STAssertFalse
-#define ECTestFail			STFail
-#define ECTestLog			NSLog
+#define ECTestAssertNotNil(x)			ECTestAssertNotNilFormat((x), @"%s shouldn't be nil", #x)
+#define ECTestAssertNil(x)				ECTestAssertNilFormat(x, @"%s should be nil, was %0x", #x, x)
+#define ECTestAssertTrue(x)				ECTestAssertTrueFormat(x, @"%s should be true", #x)
+#define ECTestAssertFalse(x)			ECTestAssertFalseFormat(x, @"%s should be false", #x)
+#define ECTestAssertIsEqual(x,y)		ECTestAssertTrueFormat((x) == (y), @"%s (%ld) should equal %s (%ld)", #x, x, #y, y)
+#define ECTestAssertIsNotEqual(x,y)		ECTestAssertTrueFormat((x) != (y), @"%s (%ld) should not equal %s (%ld)", #x, x, #y, y)
+#define ECTestAssertIsEqualString(x,y)	ECTestAssertTrueFormat([(x) isEqualToString:(y)], @"%s (%@) should equal %s (%@)", #x, x, #y, y)
 
-typedef ECTestCaseBase ECTestCase;
+#define ECTestFail						STFail
+#define ECTestLog						NSLog
+
+@interface ECTestCase : SenTestCase
+@end

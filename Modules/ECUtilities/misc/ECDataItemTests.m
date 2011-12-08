@@ -26,9 +26,9 @@ static NSString *const kData2 = @"data2";
 
 - (void) basicTests: (ECDataItem*) item
 {
-	ECTestAssertNotNil(item, @"should allocate ok");
-	ECTestAssertNotNil(item.data, @"should have data dictionary");
-	ECTestAssertNotNil(item.items, @"should have items array");
+	ECTestAssertNotNil(item);
+	ECTestAssertNotNil(item.data);
+	ECTestAssertNotNil(item.items);
 }
 
 // --------------------------------------------------------------------------
@@ -37,9 +37,9 @@ static NSString *const kData2 = @"data2";
 
 - (void) dataTests: (ECDataItem*) item
 {
-	ECTestAssertTrue([item objectForKey: kKey1] == kData1, @"should have data");
-	ECTestAssertTrue([item objectForKey: kKey2] == kData2, @"should have data");
-	ECTestAssertTrue([item objectForKey: kKey3] == nil, @"shouldn't have data");
+	ECTestAssertTrue([item objectForKey: kKey1] == kData1);
+	ECTestAssertTrue([item objectForKey: kKey2] == kData2);
+	ECTestAssertTrue([item objectForKey: kKey3] == nil);
 }
 
 // --------------------------------------------------------------------------
@@ -48,7 +48,7 @@ static NSString *const kData2 = @"data2";
 
 - (void) itemsTests: (ECDataItem*) item
 {
-	ECTestAssertTrue(item.items.count == 2, @"items should be empty");	
+	ECTestAssertTrue(item.items.count == 2);	
 }
 
 // --------------------------------------------------------------------------
@@ -80,9 +80,9 @@ static NSString *const kData2 = @"data2";
 	ECDataItem* item = [[ECDataItem alloc] init];
 	[self basicTests: item];
 	
-	ECTestAssertNil(item.defaults, @"defaults should be empty");
-	ECTestAssertTrue(item.data.count == 0, @"data should be empty");
-	ECTestAssertTrue(item.items.count == 0, @"items should be empty");
+	ECTestAssertNil(item.defaults);
+	ECTestAssertTrue(item.data.count == 0);
+	ECTestAssertTrue(item.items.count == 0);
 	
 	[item release];
 }
@@ -94,7 +94,7 @@ static NSString *const kData2 = @"data2";
 - (void) testInitWithObjectsAndKeys
 {
 	ECDataItem* item = [self makeItemWithData];
-	ECTestAssertTrue(item.count == 2, @"should have two items");
+	ECTestAssertTrue(item.count == 2);
 	[self basicTests: item];
 	[self dataTests: item];
 }
@@ -123,7 +123,7 @@ static NSString *const kData2 = @"data2";
 	NSArray* items = [self makeItems];
 	ECDataItem* parent = [self makeItemWithData];
 	ECDataItem* item = [[ECDataItem alloc] initWithItems: items parent: parent];
-	ECTestAssertTrue(item.count == 0, @"should have no data");
+	ECTestAssertTrue(item.count == 0);
 	[self basicTests: item];
 	[self dataTests: item];
 	
@@ -141,7 +141,7 @@ static NSString *const kData2 = @"data2";
 	ECDataItem* parent = [ECDataItem item];
 	parent.defaults = [NSMutableDictionary dictionaryWithObjectsAndKeys: kData1, kKey1, kData2, kKey2, nil];
 	ECDataItem* item = [[ECDataItem alloc] initWithItems: items parent: parent];
-	ECTestAssertTrue(item.count == 0, @"should have no data");
+	ECTestAssertTrue(item.count == 0);
 	[self basicTests: item];
 	[self dataTests: item];
 	
@@ -163,9 +163,9 @@ static NSString *const kData2 = @"data2";
 	[self basicTests: item];
 	[self itemsTests: item];
 
-	ECTestAssertTrue([item objectForKey: kKey1] == @"different", @"should get answer from the data, overriding the defaults");
-	ECTestAssertTrue([item objectForKey: kKey2] == kData2, @"should get answer from the defaults");
-	ECTestAssertTrue([item objectForKey: kKey3] == @"other", @"should get answer from the data");
+	ECTestAssertTrue([item objectForKey: kKey1] == @"different");
+	ECTestAssertTrue([item objectForKey: kKey2] == kData2);
+	ECTestAssertTrue([item objectForKey: kKey3] == @"other");
 
 	[item release];
 	
@@ -213,24 +213,24 @@ static NSString *const kData2 = @"data2";
 	ECDataItem* child1 = [self makeItemWithData];
 	
 	[item insertItem: child1 atIndex: 0]; // insert into empty item
-	ECTestAssertTrue([item itemAtIndex: 0] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 0] == child1);
 	[item insertItem: [self makeItemWithData] atIndex: 1]; // insert at end
-	ECTestAssertTrue([item itemAtIndex: 0] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 0] == child1);
 	[item insertItem: [self makeItemWithData] atIndex: 0]; // insert at beginning
-	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 1] == child1);
 	[item insertItem: [self makeItemWithData] atIndex: 1]; // insert in middle
-	ECTestAssertTrue([item itemAtIndex: 2] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 2] == child1);
 	[item insertItem: [self makeItemWithData] atIndex: 4]; // insert at end
-	ECTestAssertTrue([item itemAtIndex: 2] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 2] == child1);
 	
 	[item removeItemAtIndex: 0]; // remove from beginning
-	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 1] == child1);
 	[item removeItemAtIndex: 3]; // remove from end
-	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 1] == child1);
 	[item moveItemFromIndex: 1 toIndex: 2];
-	ECTestAssertTrue([item itemAtIndex: 2] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 2] == child1);
 	[item removeItemAtIndex: 1]; // remove from middle
-	ECTestAssertTrue([item itemAtIndex: 1] == child1, @"child1 in the right place");
+	ECTestAssertTrue([item itemAtIndex: 1] == child1);
 	
 	[self itemsTests: item];
 }
@@ -251,10 +251,10 @@ static NSString *const kData2 = @"data2";
 	NSUInteger indexes[] = { 0, 0 };
 	NSIndexPath* path = [NSIndexPath indexPathWithIndexes: indexes length: 2];
 	
-	ECTestAssertTrue([parent itemAtIndexPath: path] == child, @"child indexed ok");
+	ECTestAssertTrue([parent itemAtIndexPath: path] == child);
 	
 	[parent removeItemAtIndexPath: path];
-	ECTestAssertTrue([item.items count] == 0, @"should have no items");
+	ECTestAssertTrue([item.items count] == 0);
 }
 
 @end
