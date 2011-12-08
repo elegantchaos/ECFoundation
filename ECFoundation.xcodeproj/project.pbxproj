@@ -334,8 +334,6 @@
 		22C02E14141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
 		22C02E15141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
 		22C02E16141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
-		22C1E1901490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */; };
-		22C1E1911490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */; };
 		22C1E1921490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */; };
 		22C1E1931490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */; };
 		22C1E19B1490C977004DA13E /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19A1490C977004DA13E /* ECTestCase.m */; };
@@ -1803,7 +1801,6 @@
 				22E99EA6148E51800034E167 /* ECLazyProperties.m in Sources */,
 				22E99EAC148E51800034E167 /* NSException+ECCore.m in Sources */,
 				22E99EB0148E518A0034E167 /* ECRandom.m in Sources */,
-				22C1E1911490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2015,7 +2012,6 @@
 				22E99E9A148E50F90034E167 /* ECAssertion.m in Sources */,
 				22E99EA5148E51800034E167 /* ECLazyProperties.m in Sources */,
 				22E99EAB148E51800034E167 /* NSException+ECCore.m in Sources */,
-				22C1E1901490BF6E004DA13E /* ECLazyPropertiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

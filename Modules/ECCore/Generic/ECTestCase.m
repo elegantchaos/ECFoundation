@@ -17,11 +17,11 @@
 	
 	if ([item respondsToSelector:@selector(length)])
 	{
-		result = [item length];
+		result = [(NSString*)item length]; // NB doesn't have to be a string, the cast is just there to stop xcode complaining about multiple method signatures
 	}
 	else if ([item respondsToSelector:@selector(count)])
 	{
-		result = [(NSArray*)item count];
+		result = [(NSArray*)item count]; // NB doesn't have to be an array, the cast is kust there to stop xcode complaining about multiple method signatures
 	}
 	else
 	{

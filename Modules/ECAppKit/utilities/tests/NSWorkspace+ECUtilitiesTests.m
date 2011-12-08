@@ -49,7 +49,7 @@
 {
 	if (mWorkspace)
 	{
-		ECTestAssertTrue([mWorkspace isFilePackageAtURL: mURL], @"Preview is a package");
+		ECTestAssertTrue([mWorkspace isFilePackageAtURL: mURL]);
 	}
 }
 
@@ -62,12 +62,12 @@
 	if (mWorkspace)
 	{
 		NSImage* iconForFile = [mWorkspace iconForFile: mPath];
-		ECTestAssertNotNil(iconForFile, @"should get an icon");
+		ECTestAssertNotNil(iconForFile);
 		NSImage* iconForURL = [mWorkspace iconForURL: mURL];
-		ECTestAssertNotNil(iconForURL, @"should get an icon");
+		ECTestAssertNotNil(iconForURL);
 		CGSize sizeForFile = CGSizeMake(iconForFile.size.width, iconForFile.size.height);
 		CGSize sizeForURL = CGSizeMake(iconForURL.size.width, iconForURL.size.height);
-		ECTestAssertTrue(CGSizeEqualToSize(sizeForFile, sizeForURL), @"icons should be the same");
+		ECTestAssertTrue(CGSizeEqualToSize(sizeForFile, sizeForURL));
 	}
 	
 }

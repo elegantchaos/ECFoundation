@@ -24,11 +24,11 @@
 {
 	NSURL* url = [NSURL URLWithString: @"/Applications/"];
 	NSURL* unique = [url getUniqueFileWithName: @"Preview" andExtension: @"app"];
-	ECTestAssertNotNil(unique, @"should be returned a URL");
-	ECTestAssertTrue([[unique path] isEqualToString: @"/Applications/Preview 1.app"], @"file name should be Preview 1.app");
+	ECTestAssertNotNil(unique);
+	ECTestAssertIsEqualString([unique path], @"/Applications/Preview 1.app");
 	
 	unique = [url getUniqueFileWithName: @"Bogus" andExtension: @"bogus"];
-	ECTestAssertNotNil(unique, @"should be returned a URL");
-	ECTestAssertTrue([[unique path] isEqualToString: @"/Applications/Bogus.bogus"], @"file name should be Bogus.bogus");
+	ECTestAssertNotNil(unique);
+	ECTestAssertIsEqualString([unique path], @"/Applications/Bogus.bogus");
 }
 @end

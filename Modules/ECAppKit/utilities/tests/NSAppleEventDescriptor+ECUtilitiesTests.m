@@ -22,10 +22,10 @@
 - (void) testURLValue
 {
 	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor descriptorWithString: @"/Applications/Preview.app"];
-	ECTestAssertNotNil(desc, @"should get a valid desc");
+	ECTestAssertNotNil(desc);
 	
 	NSURL* url = [desc urlValue];
-	ECTestAssertTrue([[url path] isEqualToString: @"/Applications/Preview.app"], @"should get same path back");
+	ECTestAssertIsEqualString([url path], @"/Applications/Preview.app");
 }
 
 // --------------------------------------------------------------------------
@@ -35,15 +35,15 @@
 - (void) testStringArrayValue
 {
 	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor listDescriptor];
-	ECTestAssertNotNil(desc, @"should get a valid desc");
+	ECTestAssertNotNil(desc);
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
-	ECTestAssertTrue([desc numberOfItems] == 2, @"should have two items");
+	ECTestAssertIsEqual([desc numberOfItems], 2);
 	
 	NSArray* array = [desc stringArrayValue];
-	ECTestAssertTrue([array count] == 2, @"should have two items");
-	ECTestAssertTrue([[array objectAtIndex: 0] isEqualToString: @"/Test/1.txt"], @"first item should be correct");
-	ECTestAssertTrue([[array objectAtIndex: 1] isEqualToString: @"/Test/2.txt"], @"second item should be correct");
+	ECTestAssertIsEqual([array count], 2);
+	ECTestAssertIsEqualString([array objectAtIndex: 0], @"/Test/1.txt");
+	ECTestAssertIsEqualString([array objectAtIndex: 1], @"/Test/2.txt");
 }
 
 // --------------------------------------------------------------------------
@@ -53,15 +53,15 @@
 - (void) testURLArrayValue
 {
 	NSAppleEventDescriptor* desc = [NSAppleEventDescriptor listDescriptor];
-	ECTestAssertNotNil(desc, @"should get a valid desc");
+	ECTestAssertNotNil(desc);
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
-	ECTestAssertTrue([desc numberOfItems] == 2, @"should have two items");
+	ECTestAssertIsEqual([desc numberOfItems], 2);
 	
 	NSArray* array = [desc urlArrayValue];
-	ECTestAssertTrue([array count] == 2, @"should have two items");
-	ECTestAssertTrue([[[array objectAtIndex: 0] path] isEqualToString: @"/Test/1.txt"], @"first item should be correct");
-	ECTestAssertTrue([[[array objectAtIndex: 1] path] isEqualToString: @"/Test/2.txt"], @"second item should be correct");
+	ECTestAssertIsEqual([array count], 2);
+	ECTestAssertIsEqualString([[array objectAtIndex: 0] path], @"/Test/1.txt");
+	ECTestAssertIsEqualString([[array objectAtIndex: 1] path], @"/Test/2.txt");
 }
 
 @end
