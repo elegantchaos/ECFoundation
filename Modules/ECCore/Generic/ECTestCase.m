@@ -10,4 +10,25 @@
 #import "ECTestCase.h"
 
 @implementation ECTestCase
+
++  (NSUInteger)genericCount:(id)item
+{
+	NSUInteger result;
+	
+	if ([item respondsToSelector:@selector(length)])
+	{
+		result = [item length];
+	}
+	else if ([item respondsToSelector:@selector(count)])
+	{
+		result = [(NSArray*)item count];
+	}
+	else
+	{
+		result = 0;
+	}
+	
+	return result;
+}
+
 @end

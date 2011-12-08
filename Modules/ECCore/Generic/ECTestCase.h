@@ -24,9 +24,14 @@
 #define ECTestAssertStringBeginsWith(x,y)		ECTestAssertTrueFormat([x beginsWithString:y], @"string %s should begin with %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
 #define ECTestAssertStringEndsWith(x,y)			ECTestAssertTrueFormat([x endsWithString:y], @"string %s should end with %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
 #define ECTestAssertStringContains(x,y)			ECTestAssertTrueFormat([x containsString:y], @"string %s should contain %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
+#define ECTestAssertIsEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] == 0, @"%s should be empty, value is %@", #x, x)
+#define ECTestAssertNotEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] != 0, @"%s should not be empty, value is %@", #x, x)
 
 #define ECTestFail						STFail
 #define ECTestLog						NSLog
 
 @interface ECTestCase : SenTestCase
+
++ (NSUInteger)genericCount:(id)item;
+
 @end

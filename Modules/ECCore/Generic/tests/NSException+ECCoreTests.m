@@ -32,7 +32,23 @@
 	{
 		NSString* stack = [exception stringFromCallstack];
 		ECTestAssertStringBeginsWith(stack, @"-[NSException_ECCoreTests testCallstack]");
-		NSLog(@"**%@**", stack);
+		ECTestAssertStringContains(stack, @"-[NSInvocation invoke]");
+	}
+}
+
+- (void) testCompactCallstack
+{
+	@try 
+	{
+		@throw [NSException exceptionWithName:@"name" reason:@"reason" userInfo:nil];
+	}
+	@catch (NSException *exception) 
+	{
+		NSString* stack = [exception stringFromCompactCallstack];
+
+		// not a lot we can test here, other than it returns something
+		ECTestAssertNotEmpty(stack);
+		
 	}
 }
 
