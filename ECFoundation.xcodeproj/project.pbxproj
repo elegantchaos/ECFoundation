@@ -342,6 +342,8 @@
 		22C1E19F1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */; };
 		22C1E2371490FAE0004DA13E /* ECRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E2361490FAE0004DA13E /* ECRandomTests.m */; };
 		22C1E2381490FAE0004DA13E /* ECRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E2361490FAE0004DA13E /* ECRandomTests.m */; };
+		22C1E24114910561004DA13E /* CGGeometry+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E24014910560004DA13E /* CGGeometry+ECCoreTests.m */; };
+		22C1E24214910561004DA13E /* CGGeometry+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E24014910560004DA13E /* CGGeometry+ECCoreTests.m */; };
 		22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
@@ -673,6 +675,7 @@
 		22C1E19A1490C977004DA13E /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
 		22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+ECCoreTests.m"; sourceTree = "<group>"; };
 		22C1E2361490FAE0004DA13E /* ECRandomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandomTests.m; sourceTree = "<group>"; };
+		22C1E24014910560004DA13E /* CGGeometry+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCoreTests.m"; sourceTree = "<group>"; };
 		22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
 		22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
 		22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
@@ -1305,23 +1308,23 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
+				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
 				22672DBF132321AA00CD8BC7 /* ECClang.h */,
 				22E99E9F148E51800034E167 /* ECLazyProperties.h */,
 				22E99EA0148E51800034E167 /* ECLazyProperties.m */,
 				2248BC2213C7949E00E13577 /* ECMacros.h */,
 				2248BC2313C7949E00E13577 /* ECProperties.h */,
-				2248BC2413C7949E00E13577 /* ECTestCase.h */,
-				22C1E19A1490C977004DA13E /* ECTestCase.m */,
 				228BCFE9144DF3CE00D22ED5 /* ECRandom.h */,
 				228BCFEA144DF3CE00D22ED5 /* ECRandom.m */,
+				2248BC2413C7949E00E13577 /* ECTestCase.h */,
+				22C1E19A1490C977004DA13E /* ECTestCase.m */,
+				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
+				2256927E14210BE000C4F852 /* NSArray+ECCore.m */,
 				22E99EA1148E51800034E167 /* NSException+ECCore.h */,
 				22E99EA2148E51800034E167 /* NSException+ECCore.m */,
 				22198AB314580FA4006BE993 /* NSMutableAttributedString+ECCore.h */,
 				22198AB414580FA4006BE993 /* NSMutableAttributedString+ECCore.m */,
-				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
-				2256927E14210BE000C4F852 /* NSArray+ECCore.m */,
-				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
-				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
 				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
 				22CA556413DA09FF007E89E2 /* NSBundle+ECCore.m */,
 				22CA556513DA09FF007E89E2 /* NSData+ECCore.h */,
@@ -1346,6 +1349,7 @@
 		22CA557113DA09FF007E89E2 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				22C1E24014910560004DA13E /* CGGeometry+ECCoreTests.m */,
 				22C1E2361490FAE0004DA13E /* ECRandomTests.m */,
 				22C1E19D1490CC27004DA13E /* NSException+ECCoreTests.m */,
 				22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */,
@@ -1856,6 +1860,7 @@
 				22C1E19C1490C977004DA13E /* ECTestCase.m in Sources */,
 				22C1E19F1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */,
 				22C1E2381490FAE0004DA13E /* ECRandomTests.m in Sources */,
+				22C1E24214910561004DA13E /* CGGeometry+ECCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1941,6 +1946,7 @@
 				22C1E19B1490C977004DA13E /* ECTestCase.m in Sources */,
 				22C1E19E1490CC27004DA13E /* NSException+ECCoreTests.m in Sources */,
 				22C1E2371490FAE0004DA13E /* ECRandomTests.m in Sources */,
+				22C1E24114910561004DA13E /* CGGeometry+ECCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
