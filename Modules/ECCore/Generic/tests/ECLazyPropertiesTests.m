@@ -15,6 +15,9 @@
 
 #pragma mark Test Class with Lazy Property
 
+
+static NSUInteger gTest2initCalled = 0;
+
 @interface TestClass : NSObject
 
 @property (nonatomic, retain) NSString* test;
@@ -39,6 +42,7 @@
 
 - (NSString*)initTest2
 {
+	gTest2initCalled++;
 	return @"test2 value";
 }
 
@@ -50,41 +54,43 @@
 
 @implementation ECLazyPropertiesTest
 
-// --------------------------------------------------------------------------
-//! Set up before each test.
-// --------------------------------------------------------------------------
 
-- (void) setUp
-{
-}
-
-// --------------------------------------------------------------------------
-//! Tear down after each test.
-// --------------------------------------------------------------------------
-
-- (void) tearDown
-{
-}
-
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
-
-- (void) testFormattedRelative
+- (void) testInitWithSimpleValue
 {
     TestClass* test1 = [[TestClass alloc] init];
     TestClass* test2 = [[TestClass alloc] init];
     
-    ECTestAssertTrue([test1.test isEqualToString:@"test value"]);
+    ECTestAssertIsEqualString(test1.test, @"test value");
     test1.test = @"something else";
-    ECTestAssertTrue([test1.test isEqualToString:@"something else"]);
+    ECTestAssertIsEqualString(test1.test, @"something else");
     
-    ECTestAssertTrue([test2.test isEqualToString:@"test value"]);
+    ECTestAssertIsEqualString(test2.test, @"test value");
     test2.test = @"doodah";
-    ECTestAssertTrue([test2.test isEqualToString:@"doodah"]);
+    ECTestAssertIsEqualString(test2.test, @"doodah");
 	
     [test1 release];
     [test2 release];
+}
+
+- (void) testInitWithMethod
+{
+	gTest2initCalled = 0;
+	
+    TestClass* test1 = [[TestClass alloc] init];
+    TestClass* test2 = [[TestClass alloc] init];
+    
+    ECTestAssertIsEqualString(test1.test2, @"test2 value");
+    test1.test2 = @"something else";
+    ECTestAssertIsEqualString(test1.test2, @"something else");
+    
+    ECTestAssertIsEqualString(test2.test2, @"test2 value");
+    test2.test2 = @"doodah";
+    ECTestAssertIsEqualString(test2.test2, @"doodah");
+	
+    [test1 release];
+    [test2 release];
+	
+	ECTestAssertIsEqual(gTest2initCalled, 2);
 }
 
 @end

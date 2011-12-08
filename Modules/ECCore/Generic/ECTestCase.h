@@ -20,7 +20,7 @@
 #define ECTestAssertFalse(x)			ECTestAssertFalseFormat(x, @"%s should be false", #x)
 #define ECTestAssertIsEqual(x,y)		ECTestAssertTrueFormat((x) == (y), @"%s (%ld) should equal %s (%ld)", #x, x, #y, y)
 #define ECTestAssertIsNotEqual(x,y)		ECTestAssertTrueFormat((x) != (y), @"%s (%ld) should not equal %s (%ld)", #x, x, #y, y)
-#define ECTestAssertIsEqualString(x,y)	ECTestAssertTrueFormat([(x) isEqualToString:(y)], @"%s (%@) should equal %s (%@)", #x, x, #y, y)
+#define ECTestAssertIsEqualString(x,y)	ECTestAssertTrueFormat([(x) isEqualToString:(y)], @"strings %s and %s should match, values were \"%@\" and \"%@\"", #x, #y, x, y)
 
 #define ECTestFail						STFail
 #define ECTestLog						NSLog
