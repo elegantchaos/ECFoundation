@@ -1,8 +1,9 @@
+echo Testing IOS
+
+source "$base/shared-test.sh"
 targetIOS="ECFoundation Test iOS"
 sdkIOS="iphonesimulator"
 
-echo Testing IOS
-xcodebuild -target "$targetIOS" $config -sdk "$sdkIOS" build > /dev/null
-xcodebuild -target "$targetIOS" $config -sdk iphonesimulator build
+xcodebuild -target "$targetIOS" $config -sdk "$sdkIOS" build
 
 

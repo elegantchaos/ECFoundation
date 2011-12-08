@@ -1,0 +1,2 @@
+export config="-configuration Debug"
+

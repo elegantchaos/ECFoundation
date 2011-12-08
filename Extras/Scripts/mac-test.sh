@@ -1,7 +1,8 @@
+echo Testing Mac
+
+source "$base/share-test.sh"
 targetMac="ECFoundation Test Mac"
 sdkMac="macosx"
 
-echo Testing Mac
-xcodebuild -target "$targetMac" $config -sdk "$sdkMac" build > /dev/null
-xcodebuild -target "$targetMac" $config -sdk macosx build
+xcodebuild -target "$targetMac" $config -sdk "$sdkMac" build
 
