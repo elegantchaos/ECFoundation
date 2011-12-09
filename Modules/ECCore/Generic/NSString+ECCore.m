@@ -17,14 +17,23 @@
 + (NSString*)stringWithOrdinal:(NSInteger)ordinal
 {
     NSString* suffix;
-    if (((ordinal >= 4) && (ordinal <= 20)) || ((ordinal >= 24) && (ordinal <= 30)))
+	NSInteger mod = ordinal % 10;
+    if (((mod >= 4) && (mod <= 20)) || (mod == 0))
     {
         suffix = @"th";
     }
     else
     {
-        NSString* suffixes[] = { @"st", @"nd", @"rd" };
-        suffix = suffixes[(ordinal % 10) - 1];
+		mod = ordinal % 100;
+		if ((mod >= 11) && (mod <= 14))
+		{
+			suffix = @"th";
+		}
+		else
+		{
+			NSString* suffixes[] = { @"st", @"nd", @"rd" };
+			suffix = suffixes[(ordinal % 10) - 1];
+		}
     }
     
     NSString* result = [NSString stringWithFormat:@"%d%@", ordinal, suffix];

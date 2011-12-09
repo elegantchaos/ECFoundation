@@ -132,13 +132,38 @@
 	ECTestAssertStringIsEqual([NSString stringByFormattingCount:2 singularFormat:@"s %d" pluralFormat:@"p %d"], @"p 2");
 }
 
+- (void)testOrdinals
+{
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:0], @"0th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:1], @"1st");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:2], @"2nd");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:3], @"3rd");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:4], @"4th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:5], @"5th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:6], @"6th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:7], @"7th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:8], @"8th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:9], @"9th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:10], @"10th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:11], @"11th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:12], @"12th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:13], @"13th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:14], @"14th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:15], @"15th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:16], @"16th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:17], @"17th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:18], @"18th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:19], @"19th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:20], @"20th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:21], @"21st");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:124], @"124th");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:422], @"422nd");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:121], @"121st");
+	ECTestAssertStringIsEqual([NSString stringWithOrdinal:1000], @"1000th");
+}
 #ifdef TO_DO
 
 + (NSString*)stringWithNewUUID;
-
-- (NSString*)sha1Digest;
-
-+ (NSString*)stringWithOrdinal:(NSInteger)ordinal;
 
 - (NSString*)truncateToLength:(NSUInteger)length;
 #endif
