@@ -33,8 +33,19 @@ ECDefineDebugChannel(NSURLChannel);
 
 - (id) initWithResourceNamed: (NSString*) name ofType: (NSString*) type
 {
-	NSString* path = [[NSBundle mainBundle] pathForResource: name ofType: type];
-	return [self initFileURLWithPath: path isDirectory: NO];
+	NSBundle* bundle = [NSBundle mainBundle];
+	NSString* path = [bundle pathForResource: name ofType: type];
+	if (path)
+	{
+		self = [self initFileURLWithPath: path isDirectory: NO];
+	}
+	else
+	{
+		[self release];
+		self = nil;
+	}
+	
+	return self;
 }
 
 

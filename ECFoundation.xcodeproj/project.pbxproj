@@ -56,6 +56,8 @@
 		2206F97314923FAC00AAC9B0 /* ECSha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96D14923FAB00AAC9B0 /* ECSha1.m */; };
 		2206F9751492403300AAC9B0 /* ECSha1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F9741492403200AAC9B0 /* ECSha1Tests.m */; };
 		2206F9761492403300AAC9B0 /* ECSha1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F9741492403200AAC9B0 /* ECSha1Tests.m */; };
+		2206F978149246CF00AAC9B0 /* NSURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F977149246CF00AAC9B0 /* NSURLTests.m */; };
+		2206F979149246CF00AAC9B0 /* NSURLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F977149246CF00AAC9B0 /* NSURLTests.m */; };
 		22177DBD14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22177DBE14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -505,6 +507,7 @@
 		2206F96C14923FAA00AAC9B0 /* ECSha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSha1.h; sourceTree = "<group>"; };
 		2206F96D14923FAB00AAC9B0 /* ECSha1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSha1.m; sourceTree = "<group>"; };
 		2206F9741492403200AAC9B0 /* ECSha1Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSha1Tests.m; sourceTree = "<group>"; };
+		2206F977149246CF00AAC9B0 /* NSURLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLTests.m; sourceTree = "<group>"; };
 		22177DBC14913A6800358975 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSArrayTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDraggableFileArrayController.h; sourceTree = "<group>"; };
 		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
@@ -1392,6 +1395,7 @@
 				2206F969149235DC00AAC9B0 /* NSIndexSetTests.m */,
 				2200188214917A9F002F1D1D /* NSMutableAttributedStringTests.m */,
 				22CA557713DA09FF007E89E2 /* NSStringTests.m */,
+				2206F977149246CF00AAC9B0 /* NSURLTests.m */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -1904,6 +1908,7 @@
 				2206F96B149235DC00AAC9B0 /* NSIndexSetTests.m in Sources */,
 				2206F97314923FAC00AAC9B0 /* ECSha1.m in Sources */,
 				2206F9761492403300AAC9B0 /* ECSha1Tests.m in Sources */,
+				2206F979149246CF00AAC9B0 /* NSURLTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1999,6 +2004,7 @@
 				2206F96A149235DC00AAC9B0 /* NSIndexSetTests.m in Sources */,
 				2206F97214923FAC00AAC9B0 /* ECSha1.m in Sources */,
 				2206F9751492403300AAC9B0 /* ECSha1Tests.m in Sources */,
+				2206F978149246CF00AAC9B0 /* NSURLTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
