@@ -30,7 +30,6 @@
 + (NSString*)stringWithLowercaseFromWords:(NSArray*)words separator:(NSString*)separator;
 + (NSString*)stringWithNewUUID;
 
-- (NSString*)sha1Digest;
 
 + (NSString*)stringWithOrdinal:(NSInteger)ordinal;
 

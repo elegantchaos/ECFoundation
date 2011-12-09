@@ -181,12 +181,6 @@
     return [newUUID autorelease];
 }
 
-- (NSString*)sha1Digest
-{
-	const char *cstr = [self cStringUsingEncoding:NSASCIIStringEncoding];
-	return [[NSData dataWithBytes:cstr length:strlen(cstr)] sha1Digest];
-}
-
 + (NSString*)stringByFormattingCount:(NSUInteger)count singularFormat:(NSString*)singularFormat pluralFormat:(NSString*)pluralFormat
 {
     NSString* format = (count == 1) ? singularFormat : pluralFormat;
