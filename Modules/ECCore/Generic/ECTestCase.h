@@ -10,6 +10,18 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "NSString+ECCore.h"
 
+#define ECAssertTest(expr, isTrueVal, expString, description, ...) \
+do { \
+BOOL _evaluatedExpression = (expr);\
+if (!_evaluatedExpression) {\
+[self failWithException:([NSException failureInCondition:expString \
+isTrue:isTrueVal \
+inFile:[NSString stringWithUTF8String:__FILE__] \
+atLine:__LINE__ \
+withDescription:@"%@", STComposeString(description, ##__VA_ARGS__)])]; \
+} \
+} while (0)
+
 #define ECTestAssertNotNilFormat				STAssertNotNil
 #define ECTestAssertNilFormat					STAssertNil
 #define ECTestAssertTrueFormat					STAssertTrue
@@ -20,29 +32,29 @@
 #define ECTestAssertZero(x)						ECTestAssertTrueFormat(x == 0, @"%s should be zero, was %0x", #x, x)
 #define ECTestAssertTrue(x)						ECTestAssertTrueFormat(x, @"%s should be true", #x)
 #define ECTestAssertFalse(x)					ECTestAssertFalseFormat(x, @"%s should be false", #x)
-#define ECTestAssertStringIsEqual(x,y)			ECTestAssertTrueFormat([(x) isEqualToString:(y)], @"strings %s and %s should match, values were \"%@\" and \"%@\"", #x, #y, x, y)
-#define ECTestAssertStringBeginsWith(x,y)		ECTestAssertTrueFormat([x beginsWithString:y], @"string %s should begin with %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
-#define ECTestAssertStringEndsWith(x,y)			ECTestAssertTrueFormat([x endsWithString:y], @"string %s should end with %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
-#define ECTestAssertStringContains(x,y)			ECTestAssertTrueFormat([x containsString:y], @"string %s should contain %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
-#define ECTestAssertIsEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] == 0, @"%s should be empty, value is %@", #x, x)
-#define ECTestAssertNotEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] != 0, @"%s should not be empty, value is %@", #x, x)
-#define ECTestAssertLength(x, l)				ECTestAssertTrueFormat([ECTestCase genericCount:x] == l, @"%s length/count should be %s, value is %@", #x, #l, x)
+#define ECTestAssertStringIsEqual(x,y)			ECAssertTest([(x) isEqualToString:(y)], NO, @"" #x " and " #y " match", @"Values were \"%@\" and \"%@\"", x, y)
+#define ECTestAssertStringBeginsWith(x,y)		ECAssertTest([x beginsWithString:y], NO, @"" #x " begins with " #y, @"Values were \"%@\" and \"%@\"", x, y)
+#define ECTestAssertStringEndsWith(x,y)			ECAssertTest([x endsWithString:y], NO, @"" #x " ends with " #y, @"Values were \"%@\" and \"%@\"", x, y)
+#define ECTestAssertStringContains(x,y)			ECAssertTest([x containsString:y], NO, @"" #x " contains " #y, @"Values were \"%@\" and \"%@\"", x, y)
+#define ECTestAssertIsEmpty(x)					ECAssertTest([ECTestCase genericCount:x] == 0, NO, @"Object" #x "is empty", @"Value is %@", x)
+#define ECTestAssertNotEmpty(x)					ECAssertTest([ECTestCase genericCount:x] != 0, YES, @"Object" #x "is empty", @"Value is %@", x)
+#define ECTestAssertLength(x, l)				ECAssertTest([ECTestCase genericCount:x] == l, NO, @"Length of " #x " is " #l, @"Value is %@, length is %d", x, [ECTestCase genericCount:x])
 
-#define ECTestAssertTest(x,t,y,f)				ECTestAssertTrueFormat((x) t (y), @"%s should %s %s (values are " f " and " f ")", #x, #t, #y, x, y)
+#define ECTestAssertOperator(x,t,y,f)			ECAssertTest((x) t (y), NO, @"" #x #t #y, @"Values are " f " and " f ")", x, y)
 
-#define ECTestAssertIsEqual(x,y)				ECTestAssertTest(x, ==, y, "%ld")
-#define ECTestAssertIsNotEqual(x,y)				ECTestAssertTest(x, !=, y, "%ld")
-#define ECTestAssertIsGreater(x,y)				ECTestAssertTest(x, >, y, "%ld")
-#define ECTestAssertIsGreaterEqual(x,y)			ECTestAssertTest(x, >=, y, "%ld")
-#define ECTestAssertIsLess(x,y)					ECTestAssertTest(x, <, y, "%ld")
-#define ECTestAssertIsLessEqual(x,y)			ECTestAssertTest(x, <=, y, "%ld")
+#define ECTestAssertIsEqual(x,y)				ECTestAssertOperator(x, ==, y, "%ld")
+#define ECTestAssertIsNotEqual(x,y)				ECTestAssertOperator(x, !=, y, "%ld")
+#define ECTestAssertIsGreater(x,y)				ECTestAssertOperator(x, >, y, "%ld")
+#define ECTestAssertIsGreaterEqual(x,y)			ECTestAssertOperator(x, >=, y, "%ld")
+#define ECTestAssertIsLess(x,y)					ECTestAssertOperator(x, <, y, "%ld")
+#define ECTestAssertIsLessEqual(x,y)			ECTestAssertOperator(x, <=, y, "%ld")
 
-#define ECTestAssertRealIsEqual(x,y)			ECTestAssertTest(x, ==, y, "%lf")
-#define ECTestAssertRealIsNotEqual(x,y)			ECTestAssertTest(x, !=, y, "%lf")
-#define ECTestAssertRealIsGreater(x,y)			ECTestAssertTest(x, >, y, "%lf")
-#define ECTestAssertRealIsGreaterEqual(x,y)		ECTestAssertTest(x, >=, y, "%lf")
-#define ECTestAssertRealIsLess(x,y)				ECTestAssertTest(x, <, y, "%lf")
-#define ECTestAssertRealIsLessEqual(x,y)		ECTestAssertTest(x, <=, y, "%lf")
+#define ECTestAssertRealIsEqual(x,y)			ECTestAssertOperator(x, ==, y, "%lf")
+#define ECTestAssertRealIsNotEqual(x,y)			ECTestAssertOperator(x, !=, y, "%lf")
+#define ECTestAssertRealIsGreater(x,y)			ECTestAssertOperator(x, >, y, "%lf")
+#define ECTestAssertRealIsGreaterEqual(x,y)		ECTestAssertOperator(x, >=, y, "%lf")
+#define ECTestAssertRealIsLess(x,y)				ECTestAssertOperator(x, <, y, "%lf")
+#define ECTestAssertRealIsLessEqual(x,y)		ECTestAssertOperator(x, <=, y, "%lf")
 
 
 #define ECTestFail						STFail
