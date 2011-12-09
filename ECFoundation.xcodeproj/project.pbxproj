@@ -32,6 +32,8 @@
 		2200188A149183C2002F1D1D /* NSData+ECCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22001888149183C2002F1D1D /* NSData+ECCoreTests.m */; };
 		2200188E1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
 		2200188F1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
+		22001891149188DA002F1D1D /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22001890149188DA002F1D1D /* Test.bundle */; };
+		22001892149188DA002F1D1D /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22001890149188DA002F1D1D /* Test.bundle */; };
 		220375D8141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375DE141FF4DD0040E740 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 220375DB141FF4DD0040E740 /* finder support.scpt */; };
@@ -476,6 +478,7 @@
 		2200188214917A9F002F1D1D /* NSMutableAttributedStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableAttributedStringTests.m; sourceTree = "<group>"; };
 		22001888149183C2002F1D1D /* NSData+ECCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ECCoreTests.m"; sourceTree = "<group>"; };
 		2200188D1491869F002F1D1D /* NSBundleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundleTests.m; sourceTree = "<group>"; };
+		22001890149188DA002F1D1D /* Test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Test.bundle; path = Modules/ECCore/Resources/Tests/Test.bundle; sourceTree = SOURCE_ROOT; };
 		220375D3141FF4B80040E740 /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECFoundationIOS.plist; sourceTree = "<group>"; };
 		220375D7141FF4C00040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		220375DA141FF4DD0040E740 /* ECFoundationMac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundationMac.plist; path = Modules/ECCore/Resources/Mac/ECFoundationMac.plist; sourceTree = SOURCE_ROOT; };
@@ -882,6 +885,7 @@
 		223CBAFB1205C7680008A641 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				22001890149188DA002F1D1D /* Test.bundle */,
 				223CBAFC1205C7680008A641 /* ECFoundation GHUnit.plist */,
 				223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */,
 			);
@@ -1699,6 +1703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */,
+				22001892149188DA002F1D1D /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1709,6 +1714,7 @@
 				220375DF141FF4DD0040E740 /* finder support.scpt in Resources */,
 				220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */,
 				220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */,
+				22001891149188DA002F1D1D /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
