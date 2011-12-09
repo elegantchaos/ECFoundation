@@ -19,16 +19,19 @@
 
 @interface ECAnalyticsBackEnd : NSObject
 
+#pragma mark - Public Properties
+
 @property (nonatomic, retain) ECAnalyticsEngine* engine;
 
-// Methods To Override
+#pragma mark - Public Methods
+
 - (void)startupWithEngine:(ECAnalyticsEngine*)engine;
 - (void)shutdown;
 - (void)suspend;
 - (void)resume;
-- (void)untimedEvent:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
-- (ECAnalyticsEvent*)timedEventStart:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
-- (void)timedEventEnd:(ECAnalyticsEvent*)event;
+- (void)eventUntimed:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
+- (ECAnalyticsEvent*)eventStart:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
+- (void)eventEnd:(ECAnalyticsEvent*)event;
 - (void)error:(NSError*)error message:(NSString*)message;
 - (void)exception:(NSException*)exception;
 - (BOOL)hasOwnExceptionHandler;

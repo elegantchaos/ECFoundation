@@ -13,17 +13,10 @@
 #import "ECAnalyticsLogging.h"
 #import "ECAnalyticsEngine.h"
 
+#import "NSException+ECCore.h"
+
 #import "FlurryAPI.h"
 
-#ifndef FLURRY_LOGGING_ON
-    #define FLURRY_LOGGING_ON 0
-#endif
-
-#if FLURRY_LOGGING_ON
-    #define FlurryLogDetail ECAnalyticsLogDebug
-#else
-    #define FlurryLogDetail(...)
-#endif
 
 static const NSUInteger kMaximumParameters = 10;
 
@@ -32,9 +25,14 @@ static const NSUInteger kMaximumParameters = 10;
 
 @implementation ECAnalyticsBackEndFlurry
 
+ECDefineDebugChannel(FlurryChannel)
+
 @synthesize apiKey;
 
-// Perform one-time initialisation of the engine.
+// --------------------------------------------------------------------------
+//! Perform one-time initialisation of the engine.
+// --------------------------------------------------------------------------
+
 - (void)startupWithEngine:(ECAnalyticsEngine*)engineIn;
 {
     self.engine = engineIn;
@@ -49,16 +47,22 @@ static const NSUInteger kMaximumParameters = 10;
 	[FlurryAPI setEventLoggingEnabled:YES];
 }
 
-// Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+//! Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+
 - (void)shutdown
 {
 	ECDebug(AnalyticsChannel, @"shutdown Flurry analytics engine");
 }
 
-// Log an un-timed event.
+// --------------------------------------------------------------------------
+//! Log an un-timed event.
+// --------------------------------------------------------------------------
+
 - (void)untimedEvent:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parametersOrNil
 {
-	FlurryLogDetail(@"logged untimed event %@ with parameters %@", eventName, parametersOrNil);
+	ECDebug(FlurryChannel, @"logged untimed event %@ with parameters %@", eventName, parametersOrNil);
     
     if (parametersOrNil)
     {
@@ -70,11 +74,14 @@ static const NSUInteger kMaximumParameters = 10;
     }
 }
 
-// Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+//! Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+
 - (ECAnalyticsEvent*)timedEventStart:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parametersOrNil
 {
     
-	FlurryLogDetail(@"started timed event %@ with parameters %@", eventName, parametersOrNil);
+	ECDebug(FlurryChannel, @"started timed event %@ with parameters %@", eventName, parametersOrNil);
 	
 	ECAnalyticsEvent* event = [[[ECAnalyticsEvent alloc] initWithName: eventName parameters: parametersOrNil] autorelease];
     NSAssert([event.parameters count] <= kMaximumParameters, @"Flurry has a limit of %d parameters", kMaximumParameters);
@@ -84,28 +91,38 @@ static const NSUInteger kMaximumParameters = 10;
 	return event;
 }
 
-// Finish logging a timed event.
+// --------------------------------------------------------------------------
+//! Finish logging a timed event.
+// --------------------------------------------------------------------------
+
 - (void)timedEventEnd:(ECAnalyticsEvent*)event
 {
     NSAssert([event.parameters count] <= kMaximumParameters, @"Flurry has a limit of %d parameters", kMaximumParameters);
 
-	FlurryLogDetail(@"ended timed event %@", event.name);
+	ECDebug(FlurryChannel, @"ended timed event %@", event.name);
 
 	[FlurryAPI endTimedEvent:event.name withParameters:event.parameters];
 }
 
-// Log an error.
+// --------------------------------------------------------------------------
+//! Log an error.
+// --------------------------------------------------------------------------
+
 - (void)error:(NSError*)error message:(NSString*)message;
 {
-    FlurryLogDetail(@"Error reported to flurry: %@ %@ %@", name, message, error);
+    ECDebug(FlurryChannel, @"Error reported to flurry: %@ %@ %@", name, message, error);
     [FlurryAPI logError:[error domain] message:message error:error];
 }
-// Log an exception.
+
+// --------------------------------------------------------------------------
+//! Log an exception.
+// --------------------------------------------------------------------------
+
 - (void)exception:(NSException*)exception
 {
     NSDictionary* info = [exception userInfo];
-    NSString* compact = [self compactStackFromException:exception];
-    NSString* symbolic = [self symbolicStackFromException:exception];
+    NSString* compact = [exception stringFromCompactCallstack];
+    NSString* symbolic = [exception stringFromCallstack];
 
     // We always send the compact crawl since it's most likely to be useful
     NSString* message = compact;
@@ -115,7 +132,7 @@ static const NSUInteger kMaximumParameters = 10;
     NSString* error = info ? [info description] : (symbolic ? symbolic : @"");
 
     // Flurry will report the exception's name and reason properties so there's no need to repeat them in our own messages
-    FlurryLogDetail(@"Exception reported to flurry: %@", exception);
+    ECDebug(FlurryChannel, @"Exception reported to flurry: %@", exception);
 	[FlurryAPI logError:error message:message exception:exception];
     
     // Also generate an event

@@ -23,28 +23,36 @@ typedef enum
 
 @interface ECAnalyticsEngine : NSObject 
 
+#pragma mark - Properties
+
 @property (assign, nonatomic) DebugOutputLevel debugLevel;
+
+#pragma mark - Instances
 
 - (id)initWithBackEnd:(ECAnalyticsBackEnd*)backEnd;
 - (id)initWithBackEndClass:(Class)backEndClass;
 - (id)initWithBackEndNamed:(NSString*)backEndClassName;
 
-// Engine management
-- (void)startupInstallingExceptionHandler:(BOOL)installingExceptionHandler;
+#pragma mark - Engine management
+
+- (void)startupUsingExceptionHandler:(BOOL)installingExceptionHandler;
 - (void)shutdown;
 - (void)suspend;
 - (void)resume;
 
-// Event name encoding
+#pragma mark - Event name encoding
+
 - (void)setEncodingParameters:(NSArray*)parameters forEventName:(NSString*)eventName;
 
-// Event parameters
+#pragma mark - Event parameters
+
 - (NSMutableDictionary*)parametersForObject:(NSObject*)object forEvent:(NSString*)eventName;
 
-// Event logging
-- (void)logUntimedEvent:(NSString*)event forObject:(id)object;
-- (ECAnalyticsEvent*)logTimedEventStart:(NSString*)event forObject:(id)object;
-- (void)logTimedEventEnd:(ECAnalyticsEvent*)event;
+#pragma mark - Event logging
+
+- (void)logEvent:(NSString*)event forObject:(id)object;
+- (ECAnalyticsEvent*)logEventStart:(NSString*)event forObject:(id)object;
+- (void)logEventEnd:(ECAnalyticsEvent*)event;
 - (void)logError:(NSError*)errorOrNil message:(NSString*)messageOrNil;
 - (void)logException:(NSException*)exception;
 

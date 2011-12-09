@@ -15,18 +15,6 @@
 #import "ECAnalyticsEventTarget.h"
 #import "ECAnalyticsStandardKeys.h"
 
-// A note about event encoding:
-// This mechanism is provided so that externally an analytics event can always be represented as
-// an single name plus a series of parameters, even though internally some of the parameters
-// may be encoded into the event name.
-//
-// By default, events are just left untouched. However, by calling setEncodingParameters:forEventName:,
-// you can supply a list of properties that will be added to the raw event name.
-//
-// So, for example, if you set the encoding parameters for the "Article Viewed" event to a list containing
-// "Edition Date", then supplied a value for of "01/02/2011" for the "Edition Date" parameter, the event name
-// would turn into "Article Viewed - 20110201".
-
 
 #pragma mark - Globals
 
@@ -131,7 +119,7 @@ static void uncaughtExceptionHandler(NSException *exception);
 //! Perform one-time initialisation of the engine.
 // --------------------------------------------------------------------------
 
-- (void)startupInstallingExceptionHandler:(BOOL)instalExceptionHandler
+- (void)startupUsingExceptionHandler:(BOOL)instalExceptionHandler
 {
 	[self.backEnd startupWithEngine:self];
 	self.events = [[[NSMutableSet alloc] init] autorelease];
@@ -270,22 +258,22 @@ static void uncaughtExceptionHandler(NSException *exception);
 //! Log an un-timed event.
 // --------------------------------------------------------------------------
 
-- (void)logUntimedEvent:(NSString*)eventName forObject:(id)object
+- (void)logEvent:(NSString*)eventName forObject:(id)object
 {
     NSMutableDictionary* parameters = [self parametersForObject:object forEvent:eventName];
     NSString* encodedEvent = [self encodedEventForName:eventName parameters:parameters];
-	[self.backEnd untimedEvent:encodedEvent forObject:object parameters:parameters];
+	[self.backEnd eventUntimed:encodedEvent forObject:object parameters:parameters];
 }
 
 // --------------------------------------------------------------------------
 //! Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
 // --------------------------------------------------------------------------
 
-- (ECAnalyticsEvent*)logTimedEventStart:(NSString*)eventName forObject:(id)object
+- (ECAnalyticsEvent*)logEventStart:(NSString*)eventName forObject:(id)object
 {
     NSMutableDictionary* parameters = [self parametersForObject:object forEvent:eventName];
     NSString* encodedEvent = [self encodedEventForName:eventName parameters:parameters];
-	ECAnalyticsEvent* event = [self.backEnd timedEventStart:encodedEvent forObject:object parameters:parameters];
+	ECAnalyticsEvent* event = [self.backEnd eventStart:encodedEvent forObject:object parameters:parameters];
 	[self.events addObject: event];
 	
 	return event;
@@ -295,12 +283,12 @@ static void uncaughtExceptionHandler(NSException *exception);
 //! Finish logging a timed event.
 // --------------------------------------------------------------------------
 
-- (void)logTimedEventEnd:(ECAnalyticsEvent*)event
+- (void)logEventEnd:(ECAnalyticsEvent*)event
 {
     // add duration parameter
     [event updateParameters:[NSDictionary dictionaryWithObject:[event elapsedTimeSinceStartQuantised] forKey: ECAnalyticsDurationParameter]];
 
-	[self.backEnd timedEventEnd: event];
+	[self.backEnd eventEnd: event];
 	
 	if (![self.events containsObject: event])
 	{

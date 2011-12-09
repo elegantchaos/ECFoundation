@@ -14,6 +14,8 @@
 #import "ECAnalyticsEvent.h"
 #import "ECAnalyticsLogging.h"
 
+#import "NSException+ECCore.h"
+
 #import <Webtrends/Webtrends.h>
 
 @interface ECAnalyticsBackEndWebtrends()
@@ -24,8 +26,11 @@
 
 @implementation ECAnalyticsBackEndWebtrends
 
-// Take a string value out of the dictionary and return it.
-// If the value is nil, or the empty string, we return the given default value instead.
+// --------------------------------------------------------------------------
+//! Take a string value out of the dictionary and return it.
+//! If the value is nil, or the empty string, we return the given default value instead.
+// --------------------------------------------------------------------------
+
 - (NSString*)removeStringValueForKey:(NSString*)key fromDictionary:(NSMutableDictionary*)dictionary orDefault:(NSString*)defaultValue
 {
     NSString* result;
@@ -57,21 +62,30 @@
     return result;
 }
 
-// Dispatch an event to Webtrends
-- (void)sendEventToWebtrends:(WTEvent*)event {
+// --------------------------------------------------------------------------
+//! Dispatch an event to Webtrends
+// --------------------------------------------------------------------------
+
+- (void)sendEventToWebtrends:(WTEvent*)event
+{
     event.DCSDebug = self.engine.debugLevel > DebugOutputOff;
     event.DCSVerbose = self.engine.debugLevel == DebugOutputVerbose;
     
-    @try {
+    @try 
+    {
         [self trackEvent:event];
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         NSLog(@"error sending Webtrends event");
     }
 }
 
-// Append all dictionary items to a WTEvent as custom parameters
-// We call description on each parameter to make sure it's a string
+// --------------------------------------------------------------------------
+//! Append all dictionary items to a WTEvent as custom parameters
+//! We call description on each parameter to make sure it's a string
+// --------------------------------------------------------------------------
+
 - (void)addDictionary:(NSDictionary*)dictionary toEvent:(WTEvent*)event
 {
     if (dictionary)
@@ -83,7 +97,10 @@
     }
 }
 
-// Perform one-time initialisation of the engine.
+// --------------------------------------------------------------------------
+//! Perform one-time initialisation of the engine.
+// --------------------------------------------------------------------------
+
 - (void)startupWithEngine:(ECAnalyticsEngine*)engineIn;
 {
     self.engine = engineIn;
@@ -94,7 +111,10 @@
     [self sendEventToWebtrends: event];
 }
 
-// Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+//! Perform one-time cleanup of the engine.
+// --------------------------------------------------------------------------
+
 - (void)shutdown
 {
     WTEvent* event = [WTEvent eventForAppExit];
@@ -103,23 +123,33 @@
     [self disableEventTracking];
 }
 
-// Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+//! Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+
 - (void)suspend
 {
     [self disableEventTracking];
 }
 
-// Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+//! Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+
 - (void)resume
 {
     [WTEvent enableEventTracking];
 }
 
-// Create a WebTrends event
-// If the event name is one of our standard constants, we try to use one of the webtrends factory methods
-// to construct the event. Otherwise we use the generic init method and pass the event name as the WT eventType parameter.
-// We attempt to extract various standard engine parameters and use them to supply values which WT expects us to provide.
-- (WTEvent*)makeEventWithName:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters {
+// --------------------------------------------------------------------------
+//! Create a WebTrends event
+//! If the event name is one of our standard constants, we try to use one of the webtrends factory methods
+//! to construct the event. Otherwise we use the generic init method and pass the event name as the WT eventType parameter.
+//! We attempt to extract various standard engine parameters and use them to supply values which WT expects us to provide.
+// --------------------------------------------------------------------------
+
+- (WTEvent*)makeEventWithName:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters 
+{
     NSMutableDictionary* mutable = [parameters mutableCopy];
     
     // extract the WT path (dcsuri) parameter
@@ -133,16 +163,19 @@
     
     // extract the WT content subgroup (WT.cg_s) parameter
     NSString* subgroup = [self removeStringValueForKey:ECAnalyticsSubsectionParameter fromDictionary:mutable orDefault:nil];
-    if (subgroup) {
+    if (subgroup) 
+    {
         [mutable setObject:subgroup forKey: @"WT.cg_s"];
     }
     
     // create the event
     WTEvent* event = nil;
-    if ([eventName isEqualToString:ECAnalyticsViewEvent]) {
+    if ([eventName isEqualToString:ECAnalyticsViewEvent])
+    {
         event = [WTEvent eventForContentView:path eventDescr:description eventType:eventName contentGroup:group];
     }
-    else if ([eventName isEqualToString:ECAnalyticsMediaEvent]) {
+    else if ([eventName isEqualToString:ECAnalyticsMediaEvent])
+    {
         
         NSString* mediaType = [self removeStringValueForKey:ECAnalyticsTypeParameter fromDictionary:mutable orDefault:@"unknown media type"];
         NSString* mediaName = [self removeStringValueForKey:ECAnalyticsIDParameter fromDictionary:mutable orDefault:@"unknown media name"];
@@ -150,13 +183,15 @@
         
         event = [WTEvent eventForMediaView:path eventDescr:description eventType:eventName contentGroup:group mediaName:mediaName mediaType:mediaType mediaEvent:mediaEvent];
     }
-    else {
+    else 
+    {
         event = [[[WTEvent alloc] initWithEventPath:path eventDescr:description eventType:eventName] autorelease];
     }
     
     // copy remaining parameters from the mutable array into the WT event 
     // we call description on each one first, to ensure that the parameters are all strings
-    for (NSString* key in [mutable allKeys]) {
+    for (NSString* key in [mutable allKeys]) 
+    {
         NSString* value = [[mutable objectForKey:key] description];
         [event setValue:value forCustomParameter:key];
     }
@@ -166,14 +201,20 @@
     return event;
 }
 
-// Log an un-timed event.
+// --------------------------------------------------------------------------
+//! Log an un-timed event.
+// --------------------------------------------------------------------------
+
 - (void)untimedEvent:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters
 {
     WTEvent* wtEvent = [self makeEventWithName:eventName forObject:object parameters:parameters];
     [self sendEventToWebtrends:wtEvent];
 }
 
-// Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+//! Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
+// --------------------------------------------------------------------------
+
 - (ECAnalyticsEvent*)timedEventStart:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters;
 {
     WTEvent* wtEvent = [self makeEventWithName:eventName forObject:object parameters:parameters];
@@ -185,7 +226,10 @@
 	return ourEvent;
 }
 
-// Finish logging a timed event.
+// --------------------------------------------------------------------------
+//! Finish logging a timed event.
+// --------------------------------------------------------------------------
+
 - (void)timedEventEnd:(ECAnalyticsEvent*)ourEvent
 {
     WTEvent* wtEvent = [self makeEventWithName:ourEvent.name forObject:ourEvent.object parameters:ourEvent.parameters];
@@ -193,7 +237,10 @@
 }
 
 
-// Log an error.
+// --------------------------------------------------------------------------
+//! Log an error.
+// --------------------------------------------------------------------------
+
 - (void)error:(NSError*)error message:(NSString*)message
 {
     NSString* safeMessage = [message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -206,11 +253,14 @@
     [self sendEventToWebtrends:event];
 }
 
-// Log an exception.
+// --------------------------------------------------------------------------
+//! Log an exception.
+// --------------------------------------------------------------------------
+
 - (void)exception:(NSException*)exception
 {
-    NSString* compact = [self compactStackFromException:exception];
-    NSString* symbolic = [self symbolicStackFromException:exception];
+    NSString* compact = [exception stringFromCompactCallstack];
+    NSString* symbolic = [exception stringFromCallstack];
     
     WTEvent* event = [WTEvent eventForError:@"Exception"];
     [self addDictionary:[exception userInfo] toEvent:event];

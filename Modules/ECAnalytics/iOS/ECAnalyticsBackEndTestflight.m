@@ -45,7 +45,7 @@
 //! Log an un-timed event.
 // --------------------------------------------------------------------------
 
-- (void)untimedEvent:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters
+- (void)eventUntimed:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters
 {
     [TestFlight passCheckpoint:event];
 }
@@ -54,7 +54,7 @@
 //! Start logging a timed event. Returns the event, which can be ended by calling logTimedEventEnd:
 // --------------------------------------------------------------------------
 
-- (ECAnalyticsEvent*)timedEventStart:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters
+- (ECAnalyticsEvent*)eventStart:(NSString*)eventName forObject:(id)object parameters:(NSDictionary*)parameters
 {
 	ECAnalyticsEvent* event = [[[ECAnalyticsEvent alloc] initWithName:eventName parameters:parameters] autorelease];
 	
@@ -65,7 +65,7 @@
 //! Finish logging a timed event.
 // --------------------------------------------------------------------------
 
-- (void)timedEventEnd:(ECAnalyticsEvent*)event
+- (void)eventEnd:(ECAnalyticsEvent*)event
 {
     [TestFlight passCheckpoint:event.name];
 }
