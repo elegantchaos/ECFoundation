@@ -311,6 +311,7 @@
 		22AE91FA1492628A008EF8E2 /* NSWorkspace+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE91F21492628A008EF8E2 /* NSWorkspace+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE91FB1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91F31492628A008EF8E2 /* NSWorkspace+ECCore.m */; };
 		22AE91FC1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91F31492628A008EF8E2 /* NSWorkspace+ECCore.m */; };
+		22AE91FE14926304008EF8E2 /* NSWorkspaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91FD14926304008EF8E2 /* NSWorkspaceTests.m */; };
 		22B1275213C785CA0022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273413C785CA0022CC5B /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1275313C785CA0022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273413C785CA0022CC5B /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1275413C785CA0022CC5B /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273513C785CA0022CC5B /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -689,6 +690,7 @@
 		22AE91F11492628A008EF8E2 /* ECMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMachine.m; sourceTree = "<group>"; };
 		22AE91F21492628A008EF8E2 /* NSWorkspace+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+ECCore.h"; sourceTree = "<group>"; };
 		22AE91F31492628A008EF8E2 /* NSWorkspace+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace+ECCore.m"; sourceTree = "<group>"; };
+		22AE91FD14926304008EF8E2 /* NSWorkspaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSWorkspaceTests.m; sourceTree = "<group>"; };
 		22B1273413C785CA0022CC5B /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		22B1273513C785CA0022CC5B /* ECErrorReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorReporter.h; sourceTree = "<group>"; };
 		22B1273613C785CA0022CC5B /* ECErrorReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorReporter.m; sourceTree = "<group>"; };
@@ -1225,6 +1227,7 @@
 				22AE91DF14925F24008EF8E2 /* NSMenuTests.m */,
 				22AE91E014925F24008EF8E2 /* NSUserDefaultsTests.m */,
 				22AE91E114925F24008EF8E2 /* NSWindowTests.m */,
+				22AE91FD14926304008EF8E2 /* NSWorkspaceTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -2039,6 +2042,7 @@
 				22AE91F61492628A008EF8E2 /* ECKeychain.m in Sources */,
 				22AE91F91492628A008EF8E2 /* ECMachine.m in Sources */,
 				22AE91FC1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */,
+				22AE91FE14926304008EF8E2 /* NSWorkspaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

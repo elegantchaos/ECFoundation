@@ -10,10 +10,18 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "NSWorkspace+ECUtilitiesTests.h"
+#import "ECTestCase.h"
 #import "NSWorkspace+ECCore.h"
 
-@implementation NSWorkspace_ECUtilitiesTests
+@interface NSWorkspaceTests : ECTestCase
+{
+	NSWorkspace*	mWorkspace;
+	NSString*		mPath;
+	NSURL*			mURL;
+}
+@end
+
+@implementation NSWorkspaceTests
 
 // --------------------------------------------------------------------------
 //! Set up before each test.
