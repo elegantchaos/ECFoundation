@@ -312,29 +312,29 @@
 		22AE91FB1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91F31492628A008EF8E2 /* NSWorkspace+ECCore.m */; };
 		22AE91FC1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91F31492628A008EF8E2 /* NSWorkspace+ECCore.m */; };
 		22AE91FE14926304008EF8E2 /* NSWorkspaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91FD14926304008EF8E2 /* NSWorkspaceTests.m */; };
-		22AE921714926D47008EF8E2 /* ECAnalyticsBackEnd.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920114926D47008EF8E2 /* ECAnalyticsBackEnd.h */; };
+		22AE921714926D47008EF8E2 /* ECAnalyticsBackEnd.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920114926D47008EF8E2 /* ECAnalyticsBackEnd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE921814926D47008EF8E2 /* ECAnalyticsBackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920214926D47008EF8E2 /* ECAnalyticsBackEnd.m */; };
 		22AE921914926D47008EF8E2 /* ECAnalyticsBackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920214926D47008EF8E2 /* ECAnalyticsBackEnd.m */; };
 		22AE921A14926D47008EF8E2 /* ECAnalyticsBackEndFlurry.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920314926D47008EF8E2 /* ECAnalyticsBackEndFlurry.h */; };
-		22AE921D14926D47008EF8E2 /* ECAnalyticsBackEndLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920514926D47008EF8E2 /* ECAnalyticsBackEndLogging.h */; };
+		22AE921D14926D47008EF8E2 /* ECAnalyticsBackEndLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920514926D47008EF8E2 /* ECAnalyticsBackEndLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE921E14926D47008EF8E2 /* ECAnalyticsBackEndLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920614926D47008EF8E2 /* ECAnalyticsBackEndLogging.m */; };
 		22AE921F14926D47008EF8E2 /* ECAnalyticsBackEndLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920614926D47008EF8E2 /* ECAnalyticsBackEndLogging.m */; };
-		22AE922014926D47008EF8E2 /* ECAnalyticsBackEndNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920714926D47008EF8E2 /* ECAnalyticsBackEndNull.h */; };
+		22AE922014926D47008EF8E2 /* ECAnalyticsBackEndNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920714926D47008EF8E2 /* ECAnalyticsBackEndNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE922114926D47008EF8E2 /* ECAnalyticsBackEndNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920814926D47008EF8E2 /* ECAnalyticsBackEndNull.m */; };
 		22AE922214926D47008EF8E2 /* ECAnalyticsBackEndNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920814926D47008EF8E2 /* ECAnalyticsBackEndNull.m */; };
 		22AE922514926D47008EF8E2 /* ECAnalyticsBackEndTestflight.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920A14926D47008EF8E2 /* ECAnalyticsBackEndTestflight.m */; };
 		22AE922814926D47008EF8E2 /* ECAnalyticsBackEndWebtrends.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920C14926D47008EF8E2 /* ECAnalyticsBackEndWebtrends.m */; };
-		22AE922914926D47008EF8E2 /* ECAnalyticsEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920D14926D47008EF8E2 /* ECAnalyticsEngine.h */; };
+		22AE922914926D47008EF8E2 /* ECAnalyticsEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920D14926D47008EF8E2 /* ECAnalyticsEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE922A14926D47008EF8E2 /* ECAnalyticsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920E14926D47008EF8E2 /* ECAnalyticsEngine.m */; };
 		22AE922B14926D47008EF8E2 /* ECAnalyticsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920E14926D47008EF8E2 /* ECAnalyticsEngine.m */; };
-		22AE922C14926D47008EF8E2 /* ECAnalyticsEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920F14926D47008EF8E2 /* ECAnalyticsEvent.h */; };
+		22AE922C14926D47008EF8E2 /* ECAnalyticsEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920F14926D47008EF8E2 /* ECAnalyticsEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE922D14926D47008EF8E2 /* ECAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921014926D47008EF8E2 /* ECAnalyticsEvent.m */; };
 		22AE922E14926D47008EF8E2 /* ECAnalyticsEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921014926D47008EF8E2 /* ECAnalyticsEvent.m */; };
-		22AE922F14926D47008EF8E2 /* ECAnalyticsEventTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921114926D47008EF8E2 /* ECAnalyticsEventTarget.h */; };
-		22AE923014926D47008EF8E2 /* ECAnalyticsLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921214926D47008EF8E2 /* ECAnalyticsLogging.h */; };
+		22AE922F14926D47008EF8E2 /* ECAnalyticsEventTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921114926D47008EF8E2 /* ECAnalyticsEventTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22AE923014926D47008EF8E2 /* ECAnalyticsLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921214926D47008EF8E2 /* ECAnalyticsLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE923114926D47008EF8E2 /* ECAnalyticsLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921314926D47008EF8E2 /* ECAnalyticsLogging.m */; };
 		22AE923214926D47008EF8E2 /* ECAnalyticsLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921314926D47008EF8E2 /* ECAnalyticsLogging.m */; };
-		22AE923314926D47008EF8E2 /* ECAnalyticsStandardKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921414926D47008EF8E2 /* ECAnalyticsStandardKeys.h */; };
+		22AE923314926D47008EF8E2 /* ECAnalyticsStandardKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE921414926D47008EF8E2 /* ECAnalyticsStandardKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE923414926D47008EF8E2 /* ECAnalyticsStandardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921514926D47008EF8E2 /* ECAnalyticsStandardKeys.m */; };
 		22AE923514926D47008EF8E2 /* ECAnalyticsStandardKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE921514926D47008EF8E2 /* ECAnalyticsStandardKeys.m */; };
 		22AE923614926D47008EF8E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22AE921614926D47008EF8E2 /* README.md */; };
@@ -1389,13 +1389,13 @@
 		22C02E09141FE33C004B159A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				22B1273213C785CA0022CC5B /* ECLogging */,
+				22AE91FF14926D46008EF8E2 /* ECAnalytics */,
+				22602168141F86F30044644C /* ECAppKit */,
 				227EEB8111A6BCCD009420F7 /* ECCore */,
 				22C02E0A141FE3CB004B159A /* ECLocation */,
-				220375D2141FF1E80040E740 /* ECUtilities */,
+				22B1273213C785CA0022CC5B /* ECLogging */,
 				227EEB8011A6BCCD009420F7 /* ECTouch */,
-				22602168141F86F30044644C /* ECAppKit */,
-				22AE91FF14926D46008EF8E2 /* ECAnalytics */,
+				220375D2141FF1E80040E740 /* ECUtilities */,
 			);
 			path = Modules;
 			sourceTree = SOURCE_ROOT;
