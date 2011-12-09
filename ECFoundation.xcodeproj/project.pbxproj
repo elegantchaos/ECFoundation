@@ -1389,12 +1389,12 @@
 				22CA556E13DA09FF007E89E2 /* NSString+ECCore.m */,
 				22CA556F13DA09FF007E89E2 /* NSURL+ECCore.h */,
 				22CA557013DA09FF007E89E2 /* NSURL+ECCore.m */,
-				22CA557113DA09FF007E89E2 /* tests */,
+				22CA557113DA09FF007E89E2 /* Tests */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
 		};
-		22CA557113DA09FF007E89E2 /* tests */ = {
+		22CA557113DA09FF007E89E2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				22C1E24014910560004DA13E /* CGGeometryTests.m */,
@@ -1413,7 +1413,7 @@
 				22CA557713DA09FF007E89E2 /* NSStringTests.m */,
 				2206F977149246CF00AAC9B0 /* NSURLTests.m */,
 			);
-			path = tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		22CA557813DA09FF007E89E2 /* iOS */ = {
