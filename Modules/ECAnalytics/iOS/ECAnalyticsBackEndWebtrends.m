@@ -9,8 +9,7 @@
 
 #import "ECAnalyticsBackEndWebtrends.h"
 #import "ECAnalyticsEngine.h"
-#import "ECAnalyticsStandardEvents.h"
-#import "ECAnalyticsStandardParameters.h"
+#import "ECAnalyticsStandardKeys.h"
 #import "ECAnalyticsEvent.h"
 #import "ECAnalyticsLogging.h"
 
