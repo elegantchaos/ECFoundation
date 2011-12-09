@@ -322,7 +322,6 @@
 		22AE922014926D47008EF8E2 /* ECAnalyticsBackEndNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920714926D47008EF8E2 /* ECAnalyticsBackEndNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE922114926D47008EF8E2 /* ECAnalyticsBackEndNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920814926D47008EF8E2 /* ECAnalyticsBackEndNull.m */; };
 		22AE922214926D47008EF8E2 /* ECAnalyticsBackEndNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920814926D47008EF8E2 /* ECAnalyticsBackEndNull.m */; };
-		22AE922514926D47008EF8E2 /* ECAnalyticsBackEndTestflight.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920A14926D47008EF8E2 /* ECAnalyticsBackEndTestflight.m */; };
 		22AE922914926D47008EF8E2 /* ECAnalyticsEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AE920D14926D47008EF8E2 /* ECAnalyticsEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22AE922A14926D47008EF8E2 /* ECAnalyticsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920E14926D47008EF8E2 /* ECAnalyticsEngine.m */; };
 		22AE922B14926D47008EF8E2 /* ECAnalyticsEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE920E14926D47008EF8E2 /* ECAnalyticsEngine.m */; };
@@ -2046,7 +2045,6 @@
 				22AE921914926D47008EF8E2 /* ECAnalyticsBackEnd.m in Sources */,
 				22AE921F14926D47008EF8E2 /* ECAnalyticsBackEndLogging.m in Sources */,
 				22AE922214926D47008EF8E2 /* ECAnalyticsBackEndNull.m in Sources */,
-				22AE922514926D47008EF8E2 /* ECAnalyticsBackEndTestflight.m in Sources */,
 				22AE922B14926D47008EF8E2 /* ECAnalyticsEngine.m in Sources */,
 				22AE922E14926D47008EF8E2 /* ECAnalyticsEvent.m in Sources */,
 				22AE923214926D47008EF8E2 /* ECAnalyticsLogging.m in Sources */,
