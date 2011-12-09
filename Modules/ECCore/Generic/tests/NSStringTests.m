@@ -117,18 +117,23 @@
 	
 	ECTestAssertStringIsEqual([@"aTestString" stringBySplittingMixedCaps], @"a Test String");
 	ECTestAssertStringIsEqual([@"" stringBySplittingMixedCaps], @"");
+	
+	NSArray* words = [NSArray arrayWithObjects:@"a", @"TEST", @"string", nil];
+	ECTestAssertStringIsEqual([NSString stringWithMixedCapsFromWords:words initialCap:NO], @"aTestString");
+	ECTestAssertStringIsEqual([NSString stringWithMixedCapsFromWords:words initialCap:YES], @"ATestString");
+	ECTestAssertStringIsEqual([NSString stringWithUppercaseFromWords:words separator:@"_"], @"A_TEST_STRING");
+	ECTestAssertStringIsEqual([NSString stringWithLowercaseFromWords:words separator:@"-"], @"a-test-string");
+}
 
+- (void)testCountFormatting
+{
+	ECTestAssertStringIsEqual([NSString stringByFormattingCount:0 singularFormat:@"s %d" pluralFormat:@"p %d"], @"p 0");
+	ECTestAssertStringIsEqual([NSString stringByFormattingCount:1 singularFormat:@"s %d" pluralFormat:@"p %d"], @"s 1");
+	ECTestAssertStringIsEqual([NSString stringByFormattingCount:2 singularFormat:@"s %d" pluralFormat:@"p %d"], @"p 2");
 }
 
 #ifdef TO_DO
-- (NSArray*)componentsSeparatedByMixedCaps;
 
-- (NSString*)stringBySplittingMixedCaps;
-
-+ (NSString*)stringByFormattingCount:(NSUInteger)count singularFormat:(NSString*)singularFormat pluralFormat:(NSString*)pluralFormat;
-+ (NSString*)stringWithMixedCapsFromWords:(NSArray*)words initialCap:(BOOL)initialCap;
-+ (NSString*)stringWithUppercaseFromWords:(NSArray*)words separator:(NSString*)separator;
-+ (NSString*)stringWithLowercaseFromWords:(NSArray*)words separator:(NSString*)separator;
 + (NSString*)stringWithNewUUID;
 
 - (NSString*)sha1Digest;
