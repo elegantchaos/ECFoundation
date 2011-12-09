@@ -66,6 +66,16 @@
 }
 
 // --------------------------------------------------------------------------
+//! Return the URL for the temporary directory
+// --------------------------------------------------------------------------
+
+- (NSURL*)URLForTemporaryDirectory
+{
+	NSURL* url = [NSURL fileURLWithPath:NSTemporaryDirectory()];
+	return url;
+}
+
+// --------------------------------------------------------------------------
 //! Return the URL for some application data.
 //! It will always create the folder if it doesn't exist.
 // --------------------------------------------------------------------------

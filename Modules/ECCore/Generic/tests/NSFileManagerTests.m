@@ -35,7 +35,7 @@
 	ECTestAssertTrue(isDirectory);
 }
 
-- (void)testURLS
+- (void)testURLStuff
 {
 	// test app seems to live in the /usr/bin inside the Xcode folder
 	// NB not sure if this will always be true, so this unit test may need changing at some point
@@ -52,19 +52,39 @@
 	path = [[self.fm URLForCachedDataPath:@"test cached data"] path];
 	ECTestAssertStringEndsWith(path, @"test cached data");
 
+	ECTestAssertNotEmpty([self.fm URLsForApplicationDataPath:@"test app data" inDomains:NSAllDomainsMask mode:IncludeMissingItems]);
+	ECTestAssertNotEmpty([self.fm URLsForCachedDataPath:@"test app data" inDomains:NSAllDomainsMask mode:IncludeMissingItems]);
 }
 
-#if TESTS_STILL_TO_DO
+- (void)testCreateDirectory
+{
+	NSURL* temp = [self.fm URLForTemporaryDirectory];
+	NSURL* intermediate = [temp URLByAppendingPathComponent:@"folder"];
+	NSURL* url = [intermediate URLByAppendingPathComponent:@"test"];
+	
+	// make a test folder hierarchy
+	NSError* error = nil;
+	BOOL ok = [self.fm createDirectoryAtURL:url withIntermediateDirectories:YES attributes:nil error:&error];
+	ECTestAssertNil(error);
+	ECTestAssertTrue(ok);
+	if (ok)
+	{
+		ECTestAssertTrue([self.fm fileExistsAtURL:intermediate]);
+		ECTestAssertTrue([self.fm fileExistsAtURL:url]);
 
-- (BOOL) createDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;
-
-- (NSURL*)URLForApplication;
-- (NSURL*)URLForUserDesktop;
-- (NSURL*)URLForApplicationDataPath:(NSString*)path;
-- (NSURL*)URLForCachedDataPath:(NSString*)path;
-- (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
-- (NSArray*)URLsForCachedDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
-- (NSArray*)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domain path:(NSString*)path mode:(URLsForApplicationDataPathMode)mode;
-#endif
+		// try to clean up if things went ok
+		ok = [self.fm removeItemAtURL:url error:&error];
+		ECTestAssertNil(error);
+		ECTestAssertTrue(ok);
+		
+		if (ok)
+		{
+			// try to clean up intermediate folder too
+			ok = [self.fm removeItemAtURL:intermediate error:&error];
+			ECTestAssertNil(error);
+			ECTestAssertTrue(ok);
+		}
+	}
+}
 
 @end
