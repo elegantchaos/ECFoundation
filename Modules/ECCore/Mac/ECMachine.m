@@ -11,6 +11,7 @@
 
 #import "NSData+ECCore.h"
 
+
 static CFDataRef copyMacAddress(void);
 
 // --------------------------------------------------------------------------
