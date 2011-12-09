@@ -1,12 +1,12 @@
-//
-//  NSString+ECCore.m
-//  ECFoundation
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 11/08/2010
 //
 //  Created by Sam Deane on 11/08/2010.
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
-//
+// --------------------------------------------------------------------------
 
 #import "NSString+ECCore.h"
 #import "NSData+ECCore.h"
@@ -194,6 +194,11 @@
 	}
 }
 
+// --------------------------------------------------------------------------
+//! Does this string begin with another string?
+//! Returns NO when passed the empty string.
+// --------------------------------------------------------------------------
+
 - (BOOL)beginsWithString:(NSString *)string
 {
 	NSRange range = [self rangeOfString:string];
@@ -201,12 +206,33 @@
 	return range.location == 0;
 }
 
+// --------------------------------------------------------------------------
+//! Does this string end with another string.
+//! Returns NO when passed the empty string.
+// --------------------------------------------------------------------------
+
 - (BOOL)endsWithString:(NSString *)string
 {
-	NSRange range = [self rangeOfString:string];
-	
-	return range.location == self.length - string.length;
+	NSUInteger length = [string length];
+	BOOL result = length > 0;
+	if (result)
+	{
+		NSUInteger ourLength = [self length];
+		result = (length <= ourLength);
+		if (result)
+		{
+			NSString* substring = [self substringFromIndex:ourLength - length];
+			result = [string isEqualToString:substring];
+		}
+	}
+
+	return result;
 }
+
+// --------------------------------------------------------------------------
+//! Does this string contain another string?
+//! Returns NO when passed the empty string.
+// --------------------------------------------------------------------------
 
 - (BOOL)containsString:(NSString *)string
 {
