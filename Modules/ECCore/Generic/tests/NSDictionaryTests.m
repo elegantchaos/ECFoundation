@@ -47,10 +47,6 @@
 	mDictionary = nil;
 }
 
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoBool:
-// --------------------------------------------------------------------------
-
 - (void) testValueForKeyIntoBool
 {
 	BOOL value = NO;
@@ -74,10 +70,6 @@
 	
 }
 
-// --------------------------------------------------------------------------
-//! Test NSDictionary valueForKey: intoDouble:
-// --------------------------------------------------------------------------
-
 - (void) testValueForKeyIntoDouble
 {
 	double value = 0.0;
@@ -98,5 +90,26 @@
 	ECTestAssertNil(object);
 	ECTestAssertIsNotEqual(value, 123.456);
 }
+
+- (void)testDictionaryWithoutKey
+{
+	NSDictionary* test = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
+	NSDictionary* stripped = [test dictionaryWithoutKey:@"key1"];
+	ECTestAssertIsEqual([stripped count], 1);
+	ECTestAssertNil([stripped objectForKey:@"key1"]);
+	ECTestAssertStringIsEqual([stripped objectForKey:@"key2"], @"value2");
+	
+	ECTestAssertIsEmpty([[NSDictionary dictionary] dictionaryWithoutKey:@"test"]);
+}
+
+#if 0
+- (CGPoint)pointForKey:(NSString*)key;
+- (CGSize)sizeForKey:(NSString*)key;
+- (CGRect)rectForKey:(NSString*)key;
+
+- (void)setPoint:(CGPoint)point forKey:(NSString*)key;
+- (void)setSize:(CGSize)size forKey:(NSString*)key;
+- (void)setRect:(CGRect)rect forKey:(NSString*)key;
+#endif
 
 @end
