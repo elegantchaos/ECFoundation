@@ -232,8 +232,6 @@
 		2260220B141F86F30044644C /* NSWindow+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 226021A7141F86F30044644C /* NSWindow+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260220C141F86F30044644C /* NSWindow+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021A8141F86F30044644C /* NSWindow+ECCore.m */; };
 		2260220D141F86F30044644C /* NSWindow+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021A8141F86F30044644C /* NSWindow+ECCore.m */; };
-		22602213141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021AD141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m */; };
-		22602216141F86F30044644C /* NSURL+ECMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021AF141F86F30044644C /* NSURL+ECMacTests.m */; };
 		22602219141F86F30044644C /* NSWorkspace+ECUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021B1141F86F30044644C /* NSWorkspace+ECUtilitiesTests.m */; };
 		2260221A141F86F30044644C /* ECCompletionTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 226021B3141F86F30044644C /* ECCompletionTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260221B141F86F30044644C /* ECCompletionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 226021B4141F86F30044644C /* ECCompletionTextView.m */; };
@@ -636,10 +634,6 @@
 		226021A6141F86F30044644C /* NSUserDefaults+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ECCore.m"; sourceTree = "<group>"; };
 		226021A7141F86F30044644C /* NSWindow+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+ECCore.h"; sourceTree = "<group>"; };
 		226021A8141F86F30044644C /* NSWindow+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+ECCore.m"; sourceTree = "<group>"; };
-		226021AC141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+ECUtilitiesTests.h"; sourceTree = "<group>"; };
-		226021AD141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSAppleEventDescriptor+ECUtilitiesTests.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		226021AE141F86F30044644C /* NSURL+ECMacTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECMacTests.h"; sourceTree = "<group>"; };
-		226021AF141F86F30044644C /* NSURL+ECMacTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECMacTests.m"; sourceTree = "<group>"; };
 		226021B0141F86F30044644C /* NSWorkspace+ECUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+ECUtilitiesTests.h"; sourceTree = "<group>"; };
 		226021B1141F86F30044644C /* NSWorkspace+ECUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWorkspace+ECUtilitiesTests.m"; sourceTree = "<group>"; };
 		226021B3141F86F30044644C /* ECCompletionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCompletionTextView.h; sourceTree = "<group>"; };
@@ -1137,10 +1131,6 @@
 		226021AB141F86F30044644C /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				226021AC141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.h */,
-				226021AD141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m */,
-				226021AE141F86F30044644C /* NSURL+ECMacTests.h */,
-				226021AF141F86F30044644C /* NSURL+ECMacTests.m */,
 				226021B0141F86F30044644C /* NSWorkspace+ECUtilitiesTests.h */,
 				226021B1141F86F30044644C /* NSWorkspace+ECUtilitiesTests.m */,
 			);
@@ -2021,8 +2011,6 @@
 				22602207141F86F30044644C /* NSURL+ECCoreMac.m in Sources */,
 				2260220A141F86F30044644C /* NSUserDefaults+ECCore.m in Sources */,
 				2260220D141F86F30044644C /* NSWindow+ECCore.m in Sources */,
-				22602213141F86F30044644C /* NSAppleEventDescriptor+ECUtilitiesTests.m in Sources */,
-				22602216141F86F30044644C /* NSURL+ECMacTests.m in Sources */,
 				22602219141F86F30044644C /* NSWorkspace+ECUtilitiesTests.m in Sources */,
 				2260221C141F86F30044644C /* ECCompletionTextView.m in Sources */,
 				2260221F141F86F30044644C /* ECFilledView.m in Sources */,
