@@ -102,14 +102,31 @@
 	ECTestAssertIsEmpty([[NSDictionary dictionary] dictionaryWithoutKey:@"test"]);
 }
 
-#if 0
-- (CGPoint)pointForKey:(NSString*)key;
-- (CGSize)sizeForKey:(NSString*)key;
-- (CGRect)rectForKey:(NSString*)key;
+- (void)testPoint
+{
+	CGPoint point = CGPointMake(123, 456);
+	NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+	[dict setPoint:point forKey:@"test"];
+	CGPoint recovered = [dict pointForKey:@"test"];
+	ECTestAssertTrue(CGPointEqualToPoint(point, recovered));
+}
 
-- (void)setPoint:(CGPoint)point forKey:(NSString*)key;
-- (void)setSize:(CGSize)size forKey:(NSString*)key;
-- (void)setRect:(CGRect)rect forKey:(NSString*)key;
-#endif
+- (void)testSize
+{
+	CGSize size = CGSizeMake(123, 456);
+	NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+	[dict setSize:size forKey:@"test"];
+	CGSize recovered = [dict sizeForKey:@"test"];
+	ECTestAssertTrue(CGSizeEqualToSize(size, recovered));
+}
+
+- (void)testRect
+{
+	CGRect rect = CGRectMake(123, 456, 678, 910);
+	NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+	[dict setRect:rect forKey:@"test"];
+	CGRect recovered = [dict rectForKey:@"test"];
+	ECTestAssertTrue(CGRectEqualToRect(rect, recovered));
+}
 
 @end
