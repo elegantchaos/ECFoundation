@@ -9,9 +9,6 @@
 
 #import "NSData+ECCore.h"
 
-#import <CommonCrypto/CommonDigest.h>
-
-
 @implementation NSData(ECUtilities)
 
 #pragma mark - Prototypes
@@ -56,28 +53,6 @@ unsigned char nibbleToHexChar(unsigned char nibble)
 	}
 	
 	return [string autorelease];
-}
-
-// --------------------------------------------------------------------------
-//! Return a SHA1 hash of the data.
-// --------------------------------------------------------------------------
-
-- (NSString*)sha1Digest
-{
-	uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-	
-	CC_SHA1([self bytes], (CC_LONG) [self length], digest);
-	
-	NSMutableString* outputHolder = [[NSMutableString alloc] initWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-	
-	for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
-		[outputHolder appendFormat:@"%02x", digest[i]];
-	}
-	
-	NSString *output = [outputHolder copy];
-	[outputHolder release];
-	
-	return [output autorelease];
 }
 
 @end
