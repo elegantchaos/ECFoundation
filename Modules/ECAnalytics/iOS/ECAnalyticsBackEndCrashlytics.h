@@ -7,13 +7,12 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#import "ECAnalyticsBackEnd.h"
+
 // --------------------------------------------------------------------------
-//! Protocol allowing an object to describe itself when it's added to an event.
+//! Analytics back end using the Crashlytics framework.
 // --------------------------------------------------------------------------
 
-@protocol ECAnalyticsEventTarget
-
-- (void)analyticsAddDefaultParametersForEvent:(NSString*)event toDictionary:(NSMutableDictionary*) dictionary;
-- (void)analyticsAddDynamicParametersForEvent:(NSString*)event toDictionary:(NSMutableDictionary*) dictionary;
+@interface ECAnalyticsBackEndCrashlytics : ECAnalyticsBackEnd 
 
 @end

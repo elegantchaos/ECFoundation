@@ -7,8 +7,13 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+
+#pragma mark - Standard Event Keys
+
 extern NSString *const ECAnalyticsMediaEvent;
 extern NSString *const ECAnalyticsViewEvent;
+
+#pragma mark - Standard Property Keys
 
 extern NSString *const ECAnalyticsDurationParameter;
 extern NSString *const ECAnalyticsIDParameter;

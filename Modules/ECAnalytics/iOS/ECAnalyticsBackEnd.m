@@ -17,6 +17,7 @@
 #pragma mark - Private Interface
 
 @interface ECAnalyticsBackEnd()
+
 @end
 
 @implementation ECAnalyticsBackEnd
@@ -34,20 +35,29 @@
 
 #pragma mark - Engine Implementation Methods
 
-// Perform engine specific startup - to be overriden by implementations.
+// --------------------------------------------------------------------------
+//! Perform engine specific startup - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
 - (void)startupWithEngine:(ECAnalyticsEngine *)engineIn
 {
     self.engine = engineIn;
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 }
 
-// Perform engine specific shutdown - to be overriden by implementations.
+// --------------------------------------------------------------------------
+//! Perform engine specific shutdown - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
 - (void)shutdown
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 }
 
-// Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+//! Suspend the engine (typically called when the application goes into the background)
+// --------------------------------------------------------------------------
+
 - (void)suspend
 {
     // by default we just shut down completely on suspend, and restart on resume
@@ -55,7 +65,10 @@
     [self shutdown];
 }
 
-// Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+//! Resume the engine (typically called when the application returns to the foreground)
+// --------------------------------------------------------------------------
+
 - (void)resume
 {
     // by default we just shut down completely on suspend, and restart on resume
@@ -63,33 +76,48 @@
     [self startupWithEngine:self.engine];
 }
 
-// Perform logging of untimed event - to be overriden by implementations.
-- (void)untimedEvent:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
+// --------------------------------------------------------------------------
+//! Perform logging of untimed event - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
+- (void)eventUntimed:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 }
 
-// Create a timed event - to be overriden by implementations.
-- (ECAnalyticsEvent*)timedEventStart:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
+// --------------------------------------------------------------------------
+//! Create a timed event - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
+- (ECAnalyticsEvent*)eventStart:(NSString*)event forObject:(id)object parameters:(NSDictionary*)parameters;
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 	
 	return nil;
 }
 
-// Finish with a timed event - to be overriden by implementations.
-- (void)timedEventEnd:(ECAnalyticsEvent*)event
+// --------------------------------------------------------------------------
+//! Finish with a timed event - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
+- (void)eventEnd:(ECAnalyticsEvent*)event
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 }
 
-// Perform error logging - to be overriden by implementations.
+// --------------------------------------------------------------------------
+//! Perform error logging - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
 - (void)error:(NSError*)error message:(NSString*)message;
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
 }
 
-// Perform exception logging - to be overriden by implementations.
+// --------------------------------------------------------------------------
+//! Perform exception logging - to be overriden by implementations.
+// --------------------------------------------------------------------------
+
 - (void)exception:(NSException*)exception
 {
 	ECDebug(AnalyticsChannel, @"subclasses should implement this method");
@@ -97,6 +125,9 @@
 
 #pragma mark - Exception Utilities
 
+// --------------------------------------------------------------------------
+//! Report whether we have our own handler, or whether to use the standard one.
+// --------------------------------------------------------------------------
 
 - (BOOL)hasOwnExceptionHandler
 {

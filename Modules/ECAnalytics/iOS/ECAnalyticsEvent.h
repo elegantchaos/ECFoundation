@@ -11,20 +11,25 @@
 
 @class ECAnalyticsEvent;
 
-// Represents an analytics event. 
-// Analytics Engine implementations can use this class as it is, or subclass if they need to associate other information with each event.
+// --------------------------------------------------------------------------
+//! An abstract event the represent something happening in the client application
+// --------------------------------------------------------------------------
 
 @interface ECAnalyticsEvent : NSObject 
 
-@property (copy, nonatomic) NSDictionary* parameters;       // Dictionary of event parameters
-@property (copy, nonatomic) NSString* name;                 // Event name
-@property (retain, nonatomic) NSDate* start;                // Time when the event started
-@property (assign, nonatomic) id object;                    // Optional user-supplied reference to the object the event is about.
+#pragma mark - Public Properties
 
-- (id) initWithName:(NSString*)name parameters:(NSDictionary*)parametersOrNil;
-- (void) resetParameters;
-- (void) updateParameters:(NSDictionary*)updates;
-- (NSTimeInterval) elapsedTimeSinceStart;
-- (NSString*) elapsedTimeSinceStartQuantised;
+@property (copy, nonatomic) NSDictionary* parameters;       //!< Dictionary of event parameters
+@property (copy, nonatomic) NSString* name;                 //!< Event name
+@property (retain, nonatomic) NSDate* start;                //!< Time when the event started
+@property (assign, nonatomic) id object;                    //!< Optional user-supplied reference to the object the event is about.
+
+#pragma mark - Public Methods
+
+- (id)initWithName:(NSString*)name parameters:(NSDictionary*)parametersOrNil;
+- (void)resetParameters;
+- (void)updateParameters:(NSDictionary*)updates;
+- (NSTimeInterval)elapsedTimeSinceStart;
+- (NSString*)elapsedTimeSinceStartQuantised;
 
 @end

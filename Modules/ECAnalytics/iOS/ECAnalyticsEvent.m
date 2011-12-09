@@ -12,12 +12,19 @@
 
 @implementation ECAnalyticsEvent
 
+#pragma mark - Properties
+
 @synthesize name;
 @synthesize parameters;
 @synthesize object;
 @synthesize start;
 
-// Initialise with an optional dictionary of event parameters.
+#pragma mark - Object Lifecycle
+
+// --------------------------------------------------------------------------
+//! Initialise with an optional dictionary of event parameters.
+// --------------------------------------------------------------------------
+
 - (id) initWithName:(NSString*)eventName parameters:(NSDictionary*)parametersOrNil;
 {
 	if ((self = [super init]) != nil)
@@ -35,7 +42,10 @@
 	return self;
 }
 
-// Clean up and release retained objects.
+// --------------------------------------------------------------------------
+//! Clean up and release retained objects.
+// --------------------------------------------------------------------------
+
 - (void) dealloc
 {
     [name release];
@@ -45,7 +55,12 @@
 	[super dealloc];
 }
 
-// Update/append the values of some properties
+#pragma mark - Parameters
+
+// --------------------------------------------------------------------------
+//! Update/append the values of some properties.
+// --------------------------------------------------------------------------
+
 - (void) updateParameters:(NSDictionary *)updates 
 {
     NSMutableDictionary* updated = [self.parameters mutableCopy];
@@ -54,20 +69,31 @@
     [updated release];
 }
 
-// Clear out all the parameters
+// --------------------------------------------------------------------------
+//! Clear out all the parameters.
+// --------------------------------------------------------------------------
+
 - (void) resetParameters 
 {
 	self.parameters = [NSDictionary dictionary];
 }
 
-// Return the time elapsed since this event was created
+#pragma mark - Timing
+
+// --------------------------------------------------------------------------
+//! Return the time elapsed since this event was created.
+// --------------------------------------------------------------------------
+
 - (NSTimeInterval) elapsedTimeSinceStart 
 {
     return -[self.start timeIntervalSinceNow];
 }
 
-// Return the time elapsed, quantised into one of a number of fixed values:
-// "< 30 Seconds", "1 Minute", "2 Minutes", "4 Minutes", "8 Minutes", etc
+// --------------------------------------------------------------------------
+//! Return the time elapsed, quantised into one of a number of fixed values:
+//! "< 30 Seconds", "1 Minute", "2 Minutes", "4 Minutes", "8 Minutes", etc
+// --------------------------------------------------------------------------
+
 - (NSString*) elapsedTimeSinceStartQuantised 
 {
     NSString* result;
@@ -82,10 +108,12 @@
         double minutesLog = log2(minutes);
         double roundedLog = round(minutesLog);
         long roundedMinutes = pow(2.0, roundedLog);
-        if (roundedMinutes > 1) {
+        if (roundedMinutes > 1) 
+        {
             result = [NSString stringWithFormat:@"%ld Minutes", roundedMinutes];
         }
-        else {
+        else 
+        {
             result = @"1 Minute";
         }
     }

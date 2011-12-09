@@ -9,4 +9,6 @@
 
 #import "ECLogging.h"
 
+#pragma mark - Shared analytics log channel.
+
 ECDeclareDebugChannel(AnalyticsChannel);
