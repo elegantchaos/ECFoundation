@@ -19,6 +19,7 @@
 
 - (NSData*)splitWordsIntoInts;
 - (NSData*)splitWordsIntoFloats;
+- (NSData*)splitWordsIntoDoubles;
 - (NSArray*)componentsSeparatedByMixedCaps;
 
 - (NSString*)stringBySplittingMixedCaps;

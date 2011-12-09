@@ -34,7 +34,39 @@
 	for (int n = 0; n < 10; ++n)
 	{
 		int expected = (n < 5) ? n + 1 : 4 - n;
-		ECTestAssertTrue(ints[n] == expected);
+		ECTestAssertIsEqual(ints[n], expected);
+	}
+}
+
+- (void) testSplitWordsIntoFloats
+{
+	NSString* string = [NSString stringWithString: @"1.1 2.2 3.3 4.4 5.5 -1.1 -2.2 -3.3 -4.4 -5.5"];
+	
+	NSData* data = [string splitWordsIntoFloats];
+	
+	ECTestAssertTrue([data length] == sizeof(float) * 10);
+	
+	const float* floats = [data bytes];
+	for (int n = 0; n < 10; ++n)
+	{
+		float expected = 1.1 * ((n < 5) ? n + 1 : 4 - n);
+		ECTestAssertRealIsEqual(floats[n], expected);
+	}
+}
+
+- (void) testSplitWordsIntoDoubles
+{
+	NSString* string = [NSString stringWithString: @"1.1 2.2 3.3 4.4 5.5 -1.1 -2.2 -3.3 -4.4 -5.5"];
+	
+	NSData* data = [string splitWordsIntoDoubles];
+	
+	ECTestAssertTrue([data length] == sizeof(double) * 10);
+	
+	const double* doubles = [data bytes];
+	for (int n = 0; n < 10; ++n)
+	{
+		double expected = 1.1 * ((n < 5) ? n + 1 : 4 - n);
+		ECTestAssertTrue(fabs(doubles[n] - expected) < 0.000001); // may be some minor rounding errors, so we test approximate equality
 	}
 }
 
@@ -73,10 +105,6 @@
 }
 
 #ifdef TO_DO
-- (BOOL)containsString:(NSString*)string;
-- (BOOL)beginsWithString:(NSString*)string;
-- (BOOL)endsWithString:(NSString*)string;
-
 - (NSData*)splitWordsIntoInts;
 - (NSData*)splitWordsIntoFloats;
 - (NSArray*)componentsSeparatedByMixedCaps;

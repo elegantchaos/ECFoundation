@@ -59,6 +59,20 @@
 	return [data autorelease];
 }
 
+- (NSData*) splitWordsIntoDoubles
+{
+	NSArray* numbers = [self componentsSeparatedByString: @" "];
+	NSUInteger count = [numbers count];
+	NSMutableData* data = [[NSMutableData alloc] initWithLength: sizeof(double) * count];
+	double* buffer = [data mutableBytes];
+	for (NSString* index in numbers)
+	{
+		*buffer++ = [index doubleValue];
+	}
+	
+	return [data autorelease];
+}
+
 - (NSArray*)componentsSeparatedByMixedCaps
 {
 	NSMutableArray* result = [NSMutableArray array];
