@@ -171,11 +171,9 @@
 	ECTestAssertStringIsEqual([@"" truncateToLength:4], @"");
 }
 
-#ifdef TO_DO
-
-+ (NSString*)stringWithNewUUID;
-
-- (NSString*)truncateToLength:(NSUInteger)length;
-#endif
+- (void)testUUID
+{
+	ECTestAssertNotEmpty([NSString stringWithNewUUID]);
+}
 
 @end
