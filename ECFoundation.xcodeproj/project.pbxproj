@@ -304,6 +304,16 @@
 		2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */; };
 		2298A47413552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
 		2298A47513552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
+		22AE91E214925F24008EF8E2 /* ECLaunchServicesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91D814925F24008EF8E2 /* ECLaunchServicesTests.m */; };
+		22AE91E314925F24008EF8E2 /* NSAppleEventDescriptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91D914925F24008EF8E2 /* NSAppleEventDescriptorTests.m */; };
+		22AE91E414925F24008EF8E2 /* NSAppleScriptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DA14925F24008EF8E2 /* NSAppleScriptTests.m */; };
+		22AE91E514925F24008EF8E2 /* NSApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DB14925F24008EF8E2 /* NSApplicationTests.m */; };
+		22AE91E614925F24008EF8E2 /* NSButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DC14925F24008EF8E2 /* NSButtonTests.m */; };
+		22AE91E714925F24008EF8E2 /* NSColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DD14925F24008EF8E2 /* NSColorTests.m */; };
+		22AE91E814925F24008EF8E2 /* NSGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DE14925F24008EF8E2 /* NSGeometryTests.m */; };
+		22AE91E914925F24008EF8E2 /* NSMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DF14925F24008EF8E2 /* NSMenuTests.m */; };
+		22AE91EA14925F24008EF8E2 /* NSUserDefaultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91E014925F24008EF8E2 /* NSUserDefaultsTests.m */; };
+		22AE91EB14925F24008EF8E2 /* NSWindowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91E114925F24008EF8E2 /* NSWindowTests.m */; };
 		22B1275213C785CA0022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273413C785CA0022CC5B /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1275313C785CA0022CC5B /* ECAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273413C785CA0022CC5B /* ECAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1275413C785CA0022CC5B /* ECErrorReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1273513C785CA0022CC5B /* ECErrorReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -678,6 +688,16 @@
 		2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectTests.m; sourceTree = "<group>"; };
 		2298A46A1355280000217C2B /* TestDictionaryBackedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDictionaryBackedObject.m; sourceTree = "<group>"; };
 		2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectCacheTests.m; sourceTree = "<group>"; };
+		22AE91D814925F24008EF8E2 /* ECLaunchServicesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchServicesTests.m; sourceTree = "<group>"; };
+		22AE91D914925F24008EF8E2 /* NSAppleEventDescriptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAppleEventDescriptorTests.m; sourceTree = "<group>"; };
+		22AE91DA14925F24008EF8E2 /* NSAppleScriptTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAppleScriptTests.m; sourceTree = "<group>"; };
+		22AE91DB14925F24008EF8E2 /* NSApplicationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationTests.m; sourceTree = "<group>"; };
+		22AE91DC14925F24008EF8E2 /* NSButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSButtonTests.m; sourceTree = "<group>"; };
+		22AE91DD14925F24008EF8E2 /* NSColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColorTests.m; sourceTree = "<group>"; };
+		22AE91DE14925F24008EF8E2 /* NSGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSGeometryTests.m; sourceTree = "<group>"; };
+		22AE91DF14925F24008EF8E2 /* NSMenuTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMenuTests.m; sourceTree = "<group>"; };
+		22AE91E014925F24008EF8E2 /* NSUserDefaultsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsTests.m; sourceTree = "<group>"; };
+		22AE91E114925F24008EF8E2 /* NSWindowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSWindowTests.m; sourceTree = "<group>"; };
 		22B1273413C785CA0022CC5B /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		22B1273513C785CA0022CC5B /* ECErrorReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorReporter.h; sourceTree = "<group>"; };
 		22B1273613C785CA0022CC5B /* ECErrorReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorReporter.m; sourceTree = "<group>"; };
@@ -1229,6 +1249,23 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		22AE91D714925F24008EF8E2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				22AE91D814925F24008EF8E2 /* ECLaunchServicesTests.m */,
+				22AE91D914925F24008EF8E2 /* NSAppleEventDescriptorTests.m */,
+				22AE91DA14925F24008EF8E2 /* NSAppleScriptTests.m */,
+				22AE91DB14925F24008EF8E2 /* NSApplicationTests.m */,
+				22AE91DC14925F24008EF8E2 /* NSButtonTests.m */,
+				22AE91DD14925F24008EF8E2 /* NSColorTests.m */,
+				22AE91DE14925F24008EF8E2 /* NSGeometryTests.m */,
+				22AE91DF14925F24008EF8E2 /* NSMenuTests.m */,
+				22AE91E014925F24008EF8E2 /* NSUserDefaultsTests.m */,
+				22AE91E114925F24008EF8E2 /* NSWindowTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		22B1273213C785CA0022CC5B /* ECLogging */ = {
 			isa = PBXGroup;
 			children = (
@@ -1456,6 +1493,7 @@
 				226021A6141F86F30044644C /* NSUserDefaults+ECCore.m */,
 				226021A7141F86F30044644C /* NSWindow+ECCore.h */,
 				226021A8141F86F30044644C /* NSWindow+ECCore.m */,
+				22AE91D714925F24008EF8E2 /* Tests */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -2025,6 +2063,16 @@
 				2206F97214923FAC00AAC9B0 /* ECSha1.m in Sources */,
 				2206F9751492403300AAC9B0 /* ECSha1Tests.m in Sources */,
 				2206F978149246CF00AAC9B0 /* NSURLTests.m in Sources */,
+				22AE91E214925F24008EF8E2 /* ECLaunchServicesTests.m in Sources */,
+				22AE91E314925F24008EF8E2 /* NSAppleEventDescriptorTests.m in Sources */,
+				22AE91E414925F24008EF8E2 /* NSAppleScriptTests.m in Sources */,
+				22AE91E514925F24008EF8E2 /* NSApplicationTests.m in Sources */,
+				22AE91E614925F24008EF8E2 /* NSButtonTests.m in Sources */,
+				22AE91E714925F24008EF8E2 /* NSColorTests.m in Sources */,
+				22AE91E814925F24008EF8E2 /* NSGeometryTests.m in Sources */,
+				22AE91E914925F24008EF8E2 /* NSMenuTests.m in Sources */,
+				22AE91EA14925F24008EF8E2 /* NSUserDefaultsTests.m in Sources */,
+				22AE91EB14925F24008EF8E2 /* NSWindowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

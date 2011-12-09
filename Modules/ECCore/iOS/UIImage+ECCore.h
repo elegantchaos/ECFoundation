@@ -9,7 +9,6 @@
 
 @interface UIImage(ECCore)
 
-
 - (UIImage*)imageByCroppingToRect:(CGRect)bounds;
 - (UIImage*)imageByresizingToFit:(CGSize)targetSize interpolationQuality:(CGInterpolationQuality)quality;
 - (UIImage*)imageAsThumbnail:(NSInteger)thumbnailSize interpolationQuality:(CGInterpolationQuality)quality;
