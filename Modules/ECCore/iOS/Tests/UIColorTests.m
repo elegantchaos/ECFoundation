@@ -18,9 +18,13 @@
 
 - (void)testIntColor
 {
-	UIColor* color1 = [UIColor colorWithIntRed:255 green:0 blue:128 alpha:64];
-	UIColor* color2 = [UIColor colorWithRed:1.0 green:0.0 blue:0.5 alpha:0.25];
-	ECTestAssertTrue([color1 isEqual:color2]);
+	UIColor* color1 = [UIColor colorWithIntRed:255 green:0 blue:127 alpha:64];
+	CGFloat r,g,b,a;
+	[color1 getRed:&r green:&g blue:&b alpha:&a];
+	ECTestAssertRealIsEqual(r, 1.0);
+	ECTestAssertRealIsEqual(g, 0);
+	ECTestAssertRealIsEqual(b, (CGFloat) 127.0 / (CGFloat) 255.0);
+	ECTestAssertRealIsEqual(a, (CGFloat) 64.0 / (CGFloat) 255.0);
 }
 
 @end

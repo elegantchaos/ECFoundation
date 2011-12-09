@@ -39,6 +39,7 @@ withDescription:@"%@", STComposeString(description, ##__VA_ARGS__)])]; \
 #define ECTestAssertIsEmpty(x)					ECAssertTest([ECTestCase genericCount:x] == 0, NO, @"Object" #x "is empty", @"Value is %@", x)
 #define ECTestAssertNotEmpty(x)					ECAssertTest([ECTestCase genericCount:x] != 0, YES, @"Object" #x "is empty", @"Value is %@", x)
 #define ECTestAssertLength(x, l)				ECAssertTest([ECTestCase genericCount:x] == l, NO, @"Length of " #x " is " #l, @"Value is %@, length is %d", x, [ECTestCase genericCount:x])
+#define ECTestAssertIsEqual(x, y)				ECAssertTest([x isEqual:y], NO, @"" #x " and " #y " are equal", @"Values were %@ and %@", x, y)
 
 #define ECTestAssertOperator(x,t,y,f)			ECAssertTest((x) t (y), NO, @"" #x #t #y, @"Values are " f " and " f ")", x, y)
 
