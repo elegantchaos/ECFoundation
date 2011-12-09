@@ -738,6 +738,8 @@
 		22AE921414926D47008EF8E2 /* ECAnalyticsStandardKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAnalyticsStandardKeys.h; sourceTree = "<group>"; };
 		22AE921514926D47008EF8E2 /* ECAnalyticsStandardKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAnalyticsStandardKeys.m; sourceTree = "<group>"; };
 		22AE921614926D47008EF8E2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		22AE924114928AB9008EF8E2 /* ECAnalyticsBackEndCrashlytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECAnalyticsBackEndCrashlytics.h; sourceTree = "<group>"; };
+		22AE924214928AB9008EF8E2 /* ECAnalyticsBackEndCrashlytics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECAnalyticsBackEndCrashlytics.m; sourceTree = "<group>"; };
 		22B1273413C785CA0022CC5B /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
 		22B1273513C785CA0022CC5B /* ECErrorReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorReporter.h; sourceTree = "<group>"; };
 		22B1273613C785CA0022CC5B /* ECErrorReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorReporter.m; sourceTree = "<group>"; };
@@ -1293,6 +1295,8 @@
 			children = (
 				22AE920114926D47008EF8E2 /* ECAnalyticsBackEnd.h */,
 				22AE920214926D47008EF8E2 /* ECAnalyticsBackEnd.m */,
+				22AE924114928AB9008EF8E2 /* ECAnalyticsBackEndCrashlytics.h */,
+				22AE924214928AB9008EF8E2 /* ECAnalyticsBackEndCrashlytics.m */,
 				22AE920314926D47008EF8E2 /* ECAnalyticsBackEndFlurry.h */,
 				22AE920414926D47008EF8E2 /* ECAnalyticsBackEndFlurry.m */,
 				22AE920514926D47008EF8E2 /* ECAnalyticsBackEndLogging.h */,

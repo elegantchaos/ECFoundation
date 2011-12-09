@@ -10,7 +10,9 @@
 #import "ECAnalyticsBackEnd.h"
 
 // --------------------------------------------------------------------------
-//! Analytics back end using the Crashlytics framework.
+//! Analytics back end using the Crashlytics framework for
+//! crash reporting.
+//! http://beta.crashlytics.com/
 // --------------------------------------------------------------------------
 
 @interface ECAnalyticsBackEndCrashlytics : ECAnalyticsBackEnd 
