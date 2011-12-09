@@ -124,6 +124,11 @@
 	for (NSURL* root in roots)
 	{
 		NSString* appId = [[NSBundle mainBundle] bundleIdentifier];
+		if (!appId)
+		{
+			appId = @"com.elegantchaos.unknown-application";
+		}
+
 		NSURL* folder = [[root URLByAppendingPathComponent:appId] URLByResolvingLinksAndAliases];
 		if (path)
 		{

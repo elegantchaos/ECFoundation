@@ -26,11 +26,15 @@
 
 #define ECUnusedInDebug(v) ECUnused(v)
 #define ECUnusedInRelease(v)
+#define ECDebugOnly(x) x
+#define ECReleaseOnly(x)
 
 
 #else
 
 #define ECUnusedInDebug(v)
 #define ECUnusedInRelease(v) ECUnused(v)
+#define ECDebugOnly(x)
+#define ECReleaseOnly(x) x
 
 #endif

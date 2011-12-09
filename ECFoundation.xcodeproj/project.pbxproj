@@ -44,6 +44,8 @@
 		220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375E2141FF4E60040E740 /* InfoPlist.strings */; };
 		2206F96314921CDC00AAC9B0 /* NSFileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96214921CDC00AAC9B0 /* NSFileManagerTests.m */; };
 		2206F96414921CDC00AAC9B0 /* NSFileManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96214921CDC00AAC9B0 /* NSFileManagerTests.m */; };
+		2206F9671492236400AAC9B0 /* NSURL+ECCoreIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */; };
+		2206F9681492236400AAC9B0 /* NSURL+ECCoreIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */; };
 		22177DBD14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22177DBE14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -488,6 +490,7 @@
 		220375E1141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/ECAboutBox.xib; sourceTree = SOURCE_ROOT; };
 		220375E3141FF4E60040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Modules/ECCore/Resources/Mac/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2206F96214921CDC00AAC9B0 /* NSFileManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManagerTests.m; sourceTree = "<group>"; };
+		2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECCoreIOS.m"; sourceTree = "<group>"; };
 		22177DBC14913A6800358975 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSArrayTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDraggableFileArrayController.h; sourceTree = "<group>"; };
 		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
@@ -1384,6 +1387,7 @@
 				22CA557C13DA09FF007E89E2 /* UIColor+ECCore.m */,
 				22CA557D13DA09FF007E89E2 /* UIImage+ECCore.h */,
 				22CA557E13DA09FF007E89E2 /* UIImage+ECCore.m */,
+				2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1816,6 +1820,7 @@
 				22E99EA6148E51800034E167 /* ECLazyProperties.m in Sources */,
 				22E99EAC148E51800034E167 /* NSException+ECCore.m in Sources */,
 				22E99EB0148E518A0034E167 /* ECRandom.m in Sources */,
+				2206F9671492236400AAC9B0 /* NSURL+ECCoreIOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1874,6 +1879,7 @@
 				2200188A149183C2002F1D1D /* NSDataTests.m in Sources */,
 				2200188F1491869F002F1D1D /* NSBundleTests.m in Sources */,
 				2206F96414921CDC00AAC9B0 /* NSFileManagerTests.m in Sources */,
+				2206F9681492236400AAC9B0 /* NSURL+ECCoreIOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

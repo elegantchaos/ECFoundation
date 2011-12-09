@@ -35,6 +35,25 @@
 	ECTestAssertTrue(isDirectory);
 }
 
+- (void)testURLS
+{
+	// test app seems to live in the /usr/bin inside the Xcode folder
+	// NB not sure if this will always be true, so this unit test may need changing at some point
+	NSString* path = [[self.fm URLForApplication] path];
+	ECTestAssertStringEndsWith(path, @"/usr/bin");
+	
+	// NB not sure if this test will pass for non-English language systems
+	path = [[self.fm URLForUserDesktop] path];
+	ECTestAssertStringEndsWith(path, @"/Desktop");
+
+	path = [[self.fm URLForApplicationDataPath:@"test app data"] path];
+	ECTestAssertStringEndsWith(path, @"/test app data");
+
+	path = [[self.fm URLForCachedDataPath:@"test cached data"] path];
+	ECTestAssertStringEndsWith(path, @"test cached data");
+
+}
+
 #if TESTS_STILL_TO_DO
 
 - (BOOL) createDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;

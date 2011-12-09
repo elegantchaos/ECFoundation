@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "NSString+ECCore.h"
 
 #define ECTestAssertNotNilFormat				STAssertNotNil
 #define ECTestAssertNilFormat					STAssertNil
