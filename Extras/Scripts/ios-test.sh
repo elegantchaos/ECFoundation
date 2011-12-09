@@ -5,6 +5,6 @@ source "$base/shared-test.sh"
 targetIOS="ECFoundation Test iOS"
 sdkIOS="iphonesimulator"
 
-xcodebuild -target "$targetIOS" $config -sdk "$sdkIOS" build | "${base}/ocunit2junit.rb"
+xcodebuild -target "$targetIOS" $config -sdk "$sdkIOS" clean build | "${base}/ocunit2junit.rb"
 
 
