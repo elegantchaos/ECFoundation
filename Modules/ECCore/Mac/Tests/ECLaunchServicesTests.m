@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECTestCase.h"
-
+#import "ECLaunchServices.h"
 
 @interface ECLaunchServicesTests : ECTestCase
 
@@ -16,8 +16,16 @@
 
 @implementation ECLaunchServicesTests
 
-- (void)test
+- (void)testOpenAtLogin
 {
+	NSURL* url = [self testBundleURL];
+	ECTestAssertFalse([ECLaunchServices willOpenAtLogin:url]);
+
+	[ECLaunchServices setOpenAtLogin:url enabled:YES];
+	ECTestAssertTrue([ECLaunchServices willOpenAtLogin:url]);
+
+	[ECLaunchServices setOpenAtLogin:url enabled:NO];
+	ECTestAssertFalse([ECLaunchServices willOpenAtLogin:url]);
 }
 
 @end

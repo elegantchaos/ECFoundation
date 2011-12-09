@@ -13,15 +13,8 @@
 
 
 @interface ECLaunchServices : NSObject 
-{
 
-}
-
-// --------------------------------------------------------------------------
-//! Public methods.
-// --------------------------------------------------------------------------
-
-+ (BOOL) willOpenAtLogin: (NSURL*)itemURL;
-+ (void) setOpenAtLogin: (NSURL*)itemURL enabled: (BOOL) enabled;
++ (BOOL)willOpenAtLogin:(NSURL*)itemURL;
++ (void)setOpenAtLogin:(NSURL*)itemURL enabled: (BOOL) enabled;
 
 @end
