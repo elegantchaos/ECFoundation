@@ -42,12 +42,12 @@ withDescription:@"%@", STComposeString(description, ##__VA_ARGS__)])]; \
 
 #define ECTestAssertOperator(x,t,y,f)			ECAssertTest((x) t (y), NO, @"" #x #t #y, @"Values are " f " and " f ")", x, y)
 
-#define ECTestAssertIsEqual(x,y)				ECTestAssertOperator(x, ==, y, "%ld")
-#define ECTestAssertIsNotEqual(x,y)				ECTestAssertOperator(x, !=, y, "%ld")
-#define ECTestAssertIsGreater(x,y)				ECTestAssertOperator(x, >, y, "%ld")
-#define ECTestAssertIsGreaterEqual(x,y)			ECTestAssertOperator(x, >=, y, "%ld")
-#define ECTestAssertIsLess(x,y)					ECTestAssertOperator(x, <, y, "%ld")
-#define ECTestAssertIsLessEqual(x,y)			ECTestAssertOperator(x, <=, y, "%ld")
+#define ECTestAssertIntegerIsEqual(x,y)			ECTestAssertOperator(x, ==, y, "%ld")
+#define ECTestAssertIntegerIsNotEqual(x,y)		ECTestAssertOperator(x, !=, y, "%ld")
+#define ECTestAssertIntegerIsGreater(x,y)		ECTestAssertOperator(x, >, y, "%ld")
+#define ECTestAssertIntegerIsGreaterEqual(x,y)	ECTestAssertOperator(x, >=, y, "%ld")
+#define ECTestAssertIntegerIsLess(x,y)			ECTestAssertOperator(x, <, y, "%ld")
+#define ECTestAssertIntegerIsLessEqual(x,y)		ECTestAssertOperator(x, <=, y, "%ld")
 
 #define ECTestAssertRealIsEqual(x,y)			ECTestAssertOperator(x, ==, y, "%lf")
 #define ECTestAssertRealIsNotEqual(x,y)			ECTestAssertOperator(x, !=, y, "%lf")

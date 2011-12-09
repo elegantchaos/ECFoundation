@@ -38,10 +38,10 @@
 	ECTestAssertNotNil(desc);
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
-	ECTestAssertIsEqual([desc numberOfItems], 2);
+	ECTestAssertIntegerIsEqual([desc numberOfItems], 2);
 	
 	NSArray* array = [desc stringArrayValue];
-	ECTestAssertIsEqual([array count], 2);
+	ECTestAssertIntegerIsEqual([array count], 2);
 	ECTestAssertStringIsEqual([array objectAtIndex: 0], @"/Test/1.txt");
 	ECTestAssertStringIsEqual([array objectAtIndex: 1], @"/Test/2.txt");
 }
@@ -56,10 +56,10 @@
 	ECTestAssertNotNil(desc);
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/1.txt"] atIndex: 1];
 	[desc insertDescriptor: [NSAppleEventDescriptor descriptorWithString: @"/Test/2.txt"] atIndex: 2];
-	ECTestAssertIsEqual([desc numberOfItems], 2);
+	ECTestAssertIntegerIsEqual([desc numberOfItems], 2);
 	
 	NSArray* array = [desc urlArrayValue];
-	ECTestAssertIsEqual([array count], 2);
+	ECTestAssertIntegerIsEqual([array count], 2);
 	ECTestAssertStringIsEqual([[array objectAtIndex: 0] path], @"/Test/1.txt");
 	ECTestAssertStringIsEqual([[array objectAtIndex: 1] path], @"/Test/2.txt");
 }

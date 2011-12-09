@@ -90,7 +90,7 @@ static NSUInteger gTest2initCalled = 0;
     [test1 release];
     [test2 release];
 	
-	ECTestAssertIsEqual(gTest2initCalled, 2);
+	ECTestAssertIntegerIsEqual(gTest2initCalled, 2);
 }
 
 @end

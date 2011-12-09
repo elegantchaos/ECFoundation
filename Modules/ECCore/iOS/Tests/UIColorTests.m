@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECTestCase.h"
-
+#import "UIColor+ECCore.h"
 
 @interface UIColorTests : ECTestCase
 
@@ -16,8 +16,11 @@
 
 @implementation UIColorTests
 
-- (void)test
+- (void)testIntColor
 {
+	UIColor* color1 = [UIColor colorWithIntRed:255 green:0 blue:128 alpha:64];
+	UIColor* color2 = [UIColor colorWithRed:1.0 green:0.0 blue:0.5 alpha:0.25];
+	ECTestAssertTrue([color1 isEqual:color2]);
 }
 
 @end

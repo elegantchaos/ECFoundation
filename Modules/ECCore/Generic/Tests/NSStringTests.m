@@ -34,7 +34,7 @@
 	for (int n = 0; n < 10; ++n)
 	{
 		int expected = (n < 5) ? n + 1 : 4 - n;
-		ECTestAssertIsEqual(ints[n], expected);
+		ECTestAssertIntegerIsEqual(ints[n], expected);
 	}
 }
 

@@ -50,30 +50,30 @@ static const NSInteger kLargeInteger = LONG_MAX;
 	// we don't try to test random distribution here, just test the bounds of the result
 	for (NSUInteger n = 0; n < kIterations; ++n)
 	{
-		ECTestAssertIsGreaterEqual([ECRandom randomIntegerFromZeroTo:kSmallInteger], 0);
-		ECTestAssertIsLessEqual([ECRandom randomIntegerFromZeroTo:kSmallInteger], kSmallInteger);
-		ECTestAssertIsGreaterEqual([ECRandom randomIntegerFromZeroTo:kLargeInteger], 0);
-		ECTestAssertIsLessEqual([ECRandom randomIntegerFromZeroTo:kLargeInteger], kLargeInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIntegerFromZeroTo:kSmallInteger], 0);
+		ECTestAssertIntegerIsLessEqual([ECRandom randomIntegerFromZeroTo:kSmallInteger], kSmallInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIntegerFromZeroTo:kLargeInteger], 0);
+		ECTestAssertIntegerIsLessEqual([ECRandom randomIntegerFromZeroTo:kLargeInteger], kLargeInteger);
 
-		ECTestAssertIsGreaterEqual([ECRandom randomIndexFromRangeSized:kSmallInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kSmallInteger], (NSUInteger) kSmallInteger);
-		ECTestAssertIsGreaterEqual([ECRandom randomIndexFromRangeSized:kLargeInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIndexFromRangeSized:kLargeInteger], (NSUInteger) kLargeInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIndexFromRangeSized:kSmallInteger], 0);
+		ECTestAssertIntegerIsLess([ECRandom randomIndexFromRangeSized:kSmallInteger], (NSUInteger) kSmallInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIndexFromRangeSized:kLargeInteger], 0);
+		ECTestAssertIntegerIsLess([ECRandom randomIndexFromRangeSized:kLargeInteger], (NSUInteger) kLargeInteger);
 
-		ECTestAssertIsGreaterEqual([ECRandom randomIntegerBelow:kSmallInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIntegerBelow:kSmallInteger], kSmallInteger);
-		ECTestAssertIsGreaterEqual([ECRandom randomIntegerBelow:kLargeInteger], 0);
-		ECTestAssertIsLess([ECRandom randomIntegerBelow:kLargeInteger], kLargeInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIntegerBelow:kSmallInteger], 0);
+		ECTestAssertIntegerIsLess([ECRandom randomIntegerBelow:kSmallInteger], kSmallInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIntegerBelow:kLargeInteger], 0);
+		ECTestAssertIntegerIsLess([ECRandom randomIntegerBelow:kLargeInteger], kLargeInteger);
 
-		ECTestAssertIsGreaterEqual([ECRandom randomIntegerFrom:-kSmallInteger to:kLargeInteger], -kSmallInteger);
-		ECTestAssertIsLessEqual([ECRandom randomIntegerFrom:-kSmallInteger to:kLargeInteger], kLargeInteger);
+		ECTestAssertIntegerIsGreaterEqual([ECRandom randomIntegerFrom:-kSmallInteger to:kLargeInteger], -kSmallInteger);
+		ECTestAssertIntegerIsLessEqual([ECRandom randomIntegerFrom:-kSmallInteger to:kLargeInteger], kLargeInteger);
 		
 	}
 
-	ECTestAssertIsEqual([ECRandom randomIntegerFromZeroTo:0], 0);
-	ECTestAssertIsEqual([ECRandom randomIndexFromRangeSized:1], 0);
-	ECTestAssertIsEqual([ECRandom randomIntegerBelow:1], 0);
-	ECTestAssertIsEqual([ECRandom randomIntegerFrom:kSmallInteger to:kSmallInteger], kSmallInteger);
+	ECTestAssertIntegerIsEqual([ECRandom randomIntegerFromZeroTo:0], 0);
+	ECTestAssertIntegerIsEqual([ECRandom randomIndexFromRangeSized:1], 0);
+	ECTestAssertIntegerIsEqual([ECRandom randomIntegerBelow:1], 0);
+	ECTestAssertIntegerIsEqual([ECRandom randomIntegerFrom:kSmallInteger to:kSmallInteger], kSmallInteger);
 }
 
 - (void)testChance

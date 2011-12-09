@@ -76,26 +76,26 @@
 	
 	id object = [mDictionary valueForKey: @"double" intoDouble: &value];
 	ECTestAssertNotNil(object);
-	ECTestAssertIsEqual(value, 123.456);
+	ECTestAssertIntegerIsEqual(value, 123.456);
 
 	// try to get the bool value as a double - should work
 	value = 0.0;
 	object = [mDictionary valueForKey: @"bool" intoDouble: &value];
 	ECTestAssertNotNil(object);
-	ECTestAssertIsEqual(value,1.0);
+	ECTestAssertIntegerIsEqual(value,1.0);
 	
 	// try to get non existant value
 	value = NO;
 	object = [mDictionary valueForKey: @"bogus" intoDouble: &value];
 	ECTestAssertNil(object);
-	ECTestAssertIsNotEqual(value, 123.456);
+	ECTestAssertIntegerIsNotEqual(value, 123.456);
 }
 
 - (void)testDictionaryWithoutKey
 {
 	NSDictionary* test = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
 	NSDictionary* stripped = [test dictionaryWithoutKey:@"key1"];
-	ECTestAssertIsEqual([stripped count], 1);
+	ECTestAssertIntegerIsEqual([stripped count], 1);
 	ECTestAssertNil([stripped objectForKey:@"key1"]);
 	ECTestAssertStringIsEqual([stripped objectForKey:@"key2"], @"value2");
 	
