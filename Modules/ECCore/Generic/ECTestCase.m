@@ -11,7 +11,12 @@
 
 @implementation ECTestCase
 
-+  (NSUInteger)genericCount:(id)item
+// --------------------------------------------------------------------------
+//! Return a count for any item that supports the count or length methods.
+//! Used in various test assert macros.
+// --------------------------------------------------------------------------
+
++ (NSUInteger)genericCount:(id)item
 {
 	NSUInteger result;
 	
@@ -29,6 +34,43 @@
 	}
 	
 	return result;
+}
+
+
+// --------------------------------------------------------------------------
+//! Return file path for a bundle which can be used for file tests.
+// --------------------------------------------------------------------------
+
+- (NSString*)testBundlePath
+{
+	// find test bundle in our resources
+	char  buffer[PATH_MAX];
+	const char* path = getcwd(buffer, PATH_MAX);
+	NSString* result = [NSString stringWithFormat:@"%s/Modules/ECCore/Resources/Tests/Test.bundle", path];
+	
+	return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return file URL for a bundle which can be used for file tests.
+// --------------------------------------------------------------------------
+
+- (NSURL*)testBundleURL
+{
+	NSURL* url = [NSURL fileURLWithPath:[self testBundlePath]];
+	
+	return url;
+}
+
+// --------------------------------------------------------------------------
+//! Return a bundle which can be used for file tests.
+// --------------------------------------------------------------------------
+
+- (NSBundle*)testBundle
+{
+	NSBundle* bundle = [NSBundle bundleWithPath:[self testBundlePath]];
+	
+	return bundle;
 }
 
 @end

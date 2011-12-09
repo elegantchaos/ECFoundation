@@ -18,10 +18,7 @@
 
 - (void)testBundleInfo
 {
-	// find test bundle in our resources
-	char  buffer[PATH_MAX];
-	const char* path = getcwd(buffer, PATH_MAX);
-	NSBundle* bundle = [NSBundle bundleWithPath:[NSString stringWithFormat:@"%s/Modules/ECCore/Resources/Tests/Test.bundle", path]];
+	NSBundle* bundle = [self testBundle];
 	
 	ECTestAssertStringIsEqual([bundle bundleName],@"Test Name");
 	ECTestAssertStringIsEqual([bundle bundleVersion],@"1.0");

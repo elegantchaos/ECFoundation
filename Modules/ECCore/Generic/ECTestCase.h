@@ -50,4 +50,8 @@
 
 + (NSUInteger)genericCount:(id)item;
 
+- (NSBundle*)testBundle;
+- (NSURL*)testBundleURL;
+- (NSString*)testBundlePath;
+
 @end
