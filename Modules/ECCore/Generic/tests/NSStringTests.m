@@ -161,6 +161,16 @@
 	ECTestAssertStringIsEqual([NSString stringWithOrdinal:121], @"121st");
 	ECTestAssertStringIsEqual([NSString stringWithOrdinal:1000], @"1000th");
 }
+
+- (void)testTruncate
+{
+	ECTestAssertStringIsEqual([@"Test" truncateToLength:4], @"Test");
+	ECTestAssertStringIsEqual([@"Test" truncateToLength:5], @"Test");
+	ECTestAssertStringIsEqual([@"Test" truncateToLength:3], @"Te…");
+	ECTestAssertStringIsEqual([@"Test" truncateToLength:0], @"");
+	ECTestAssertStringIsEqual([@"" truncateToLength:4], @"");
+}
+
 #ifdef TO_DO
 
 + (NSString*)stringWithNewUUID;

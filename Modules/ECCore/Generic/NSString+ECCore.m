@@ -200,15 +200,26 @@
 
 - (NSString*)truncateToLength:(NSUInteger)length
 {
-	NSUInteger actualLength = [self length];
-	if (actualLength <= length)
+	NSString* result;
+	
+	if (length == 0)
 	{
-		return self;
+		result = @"";
 	}
 	else
 	{
-		return [NSString stringWithFormat:@"%@…", [self substringToIndex: length - 1]];
+		NSUInteger actualLength = [self length];
+		if (actualLength <= length)
+		{
+			result = self;
+		}
+		else
+		{
+			result = [NSString stringWithFormat:@"%@…", [self substringToIndex: length - 1]];
+		}
 	}
+	
+	return result;
 }
 
 // --------------------------------------------------------------------------

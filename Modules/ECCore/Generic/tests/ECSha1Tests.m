@@ -49,7 +49,7 @@
 - (void)testSHA1URL
 {
 	NSString* sha1 = [[NSURL URLWithString:@"http://www.elegantchaos.com"] sha1Digest];
-	ECTestAssertStringIsEqual(sha1, @"98401c43d21d0b453dbfe42ecd22ac4d9604869d");
+	ECTestAssertStringIsEqual(sha1, @"b4327528c9b8c48169ae7dfcf892f2d7974c3410");
 }
 
 - (void)testEmptySHA1URL
