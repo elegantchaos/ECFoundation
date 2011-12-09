@@ -14,7 +14,6 @@
 #import "ECAnalyticsEventTarget.h"
 #import "ECAnalyticsStandardKeys.h"
 
-
 #pragma mark - Private Interface
 
 @interface ECAnalyticsBackEnd()

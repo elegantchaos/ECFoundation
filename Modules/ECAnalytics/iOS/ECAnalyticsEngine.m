@@ -15,6 +15,8 @@
 #import "ECAnalyticsEventTarget.h"
 #import "ECAnalyticsStandardKeys.h"
 
+#import "ECAssertion.h"
+
 // A note about event encoding:
 // This mechanism is provided so that externally an analytics event can always be represented as
 // an single name plus a series of parameters, even though internally some of the parameters

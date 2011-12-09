@@ -7,4 +7,6 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+#import "ECLogging.h"
+
 ECDeclareDebugChannel(AnalyticsChannel);
