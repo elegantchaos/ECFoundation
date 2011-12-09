@@ -26,6 +26,7 @@
 #define ECTestAssertStringContains(x,y)			ECTestAssertTrueFormat([x containsString:y], @"string %s should contain %s, values were \"%@\" and \"%@\"", #x, #y, x, y)
 #define ECTestAssertIsEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] == 0, @"%s should be empty, value is %@", #x, x)
 #define ECTestAssertNotEmpty(x)					ECTestAssertTrueFormat([ECTestCase genericCount:x] != 0, @"%s should not be empty, value is %@", #x, x)
+#define ECTestAssertLength(x, l)				ECTestAssertTrueFormat([ECTestCase genericCount:x] == l, @"%s length/count should be %s, value is %@", #x, #l, x)
 
 #define ECTestAssertTest(x,t,y,f)				ECTestAssertTrueFormat((x) t (y), @"%s should %s %s (values are " f " and " f ")", #x, #t, #y, x, y)
 

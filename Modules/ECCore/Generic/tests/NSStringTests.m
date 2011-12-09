@@ -104,9 +104,23 @@
 	ECTestAssertFalse([@"" endsWithString:@"test"]);
 }
 
+- (void)testMixedCaps
+{
+	NSArray* array = [@"aTestString" componentsSeparatedByMixedCaps];
+	ECTestAssertLength(array, 3);
+	ECTestAssertStringIsEqual([array objectAtIndex:0], @"a");
+	ECTestAssertStringIsEqual([array objectAtIndex:1], @"Test");
+	ECTestAssertStringIsEqual([array objectAtIndex:2], @"String");
+	
+	array = [@"" componentsSeparatedByMixedCaps];
+	ECTestAssertIsEmpty(array);
+	
+	ECTestAssertStringIsEqual([@"aTestString" stringBySplittingMixedCaps], @"a Test String");
+	ECTestAssertStringIsEqual([@"" stringBySplittingMixedCaps], @"");
+
+}
+
 #ifdef TO_DO
-- (NSData*)splitWordsIntoInts;
-- (NSData*)splitWordsIntoFloats;
 - (NSArray*)componentsSeparatedByMixedCaps;
 
 - (NSString*)stringBySplittingMixedCaps;
