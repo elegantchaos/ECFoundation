@@ -61,6 +61,12 @@
 		2206F97E14924D6300AAC9B0 /* UIApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97B14924D6300AAC9B0 /* UIApplicationTests.m */; };
 		2206F97F14924D6300AAC9B0 /* UIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97C14924D6300AAC9B0 /* UIColorTests.m */; };
 		2206F98014924D6300AAC9B0 /* UIImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97D14924D6300AAC9B0 /* UIImageTests.m */; };
+		22177ABD14956DE300C7BDBE /* ECScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AB714956DE300C7BDBE /* ECScrollingStyledLabel.h */; };
+		22177ABE14956DE300C7BDBE /* ECScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AB814956DE300C7BDBE /* ECScrollingStyledLabel.m */; };
+		22177ABF14956DE300C7BDBE /* ECScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AB914956DE300C7BDBE /* ECScrollView.h */; };
+		22177AC014956DE300C7BDBE /* ECScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177ABA14956DE300C7BDBE /* ECScrollView.m */; };
+		22177AC114956DE300C7BDBE /* ECStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177ABB14956DE300C7BDBE /* ECStyledLabel.h */; };
+		22177AC214956DE300C7BDBE /* ECStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177ABC14956DE300C7BDBE /* ECStyledLabel.m */; };
 		22177DBD14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22177DBE14913A6800358975 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177DBC14913A6800358975 /* NSArrayTests.m */; };
 		22181C061456E81B00F1AD22 /* ECDraggableFileArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -547,6 +553,12 @@
 		2206F97B14924D6300AAC9B0 /* UIApplicationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationTests.m; sourceTree = "<group>"; };
 		2206F97C14924D6300AAC9B0 /* UIColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorTests.m; sourceTree = "<group>"; };
 		2206F97D14924D6300AAC9B0 /* UIImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageTests.m; sourceTree = "<group>"; };
+		22177AB714956DE300C7BDBE /* ECScrollingStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECScrollingStyledLabel.h; sourceTree = "<group>"; };
+		22177AB814956DE300C7BDBE /* ECScrollingStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECScrollingStyledLabel.m; sourceTree = "<group>"; };
+		22177AB914956DE300C7BDBE /* ECScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECScrollView.h; sourceTree = "<group>"; };
+		22177ABA14956DE300C7BDBE /* ECScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECScrollView.m; sourceTree = "<group>"; };
+		22177ABB14956DE300C7BDBE /* ECStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECStyledLabel.h; sourceTree = "<group>"; };
+		22177ABC14956DE300C7BDBE /* ECStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECStyledLabel.m; sourceTree = "<group>"; };
 		22177DBC14913A6800358975 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSArrayTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22181C041456E81B00F1AD22 /* ECDraggableFileArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDraggableFileArrayController.h; sourceTree = "<group>"; };
 		22181C051456E81B00F1AD22 /* ECDraggableFileArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDraggableFileArrayController.m; sourceTree = "<group>"; };
@@ -971,6 +983,20 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		22177AB614956DE300C7BDBE /* ECViews */ = {
+			isa = PBXGroup;
+			children = (
+				22177AB714956DE300C7BDBE /* ECScrollingStyledLabel.h */,
+				22177AB814956DE300C7BDBE /* ECScrollingStyledLabel.m */,
+				22177AB914956DE300C7BDBE /* ECScrollView.h */,
+				22177ABA14956DE300C7BDBE /* ECScrollView.m */,
+				22177ABB14956DE300C7BDBE /* ECStyledLabel.h */,
+				22177ABC14956DE300C7BDBE /* ECStyledLabel.m */,
+			);
+			name = ECViews;
+			path = "../../../../../libraries/objective c/ECFoundation/Modules/ECTouch/ECViews";
+			sourceTree = "<group>";
+		};
 		223CBAE11205C5930008A641 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1211,6 +1237,7 @@
 		227EEB8011A6BCCD009420F7 /* ECTouch */ = {
 			isa = PBXGroup;
 			children = (
+				22177AB614956DE300C7BDBE /* ECViews */,
 				2248BBFC13C7948F00E13577 /* ECTable */,
 			);
 			path = ECTouch;
@@ -1640,6 +1667,9 @@
 				22AE922F14926D47008EF8E2 /* ECAnalyticsEventTarget.h in Headers */,
 				22AE923014926D47008EF8E2 /* ECAnalyticsLogging.h in Headers */,
 				22AE923314926D47008EF8E2 /* ECAnalyticsStandardKeys.h in Headers */,
+				22177ABD14956DE300C7BDBE /* ECScrollingStyledLabel.h in Headers */,
+				22177ABF14956DE300C7BDBE /* ECScrollView.h in Headers */,
+				22177AC114956DE300C7BDBE /* ECStyledLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1980,6 +2010,9 @@
 				22AE922D14926D47008EF8E2 /* ECAnalyticsEvent.m in Sources */,
 				22AE923114926D47008EF8E2 /* ECAnalyticsLogging.m in Sources */,
 				22AE923414926D47008EF8E2 /* ECAnalyticsStandardKeys.m in Sources */,
+				22177ABE14956DE300C7BDBE /* ECScrollingStyledLabel.m in Sources */,
+				22177AC014956DE300C7BDBE /* ECScrollView.m in Sources */,
+				22177AC214956DE300C7BDBE /* ECStyledLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
