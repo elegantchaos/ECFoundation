@@ -54,14 +54,19 @@ ECDefineDebugChannel(ApplicationChannel);
     ECDebug(ApplicationChannel, @"did finish launching");
 	[self startupLogging];
 	
-	self.model = [self makeModel];
-	[self.model startup];
-	[self.model load];
+	ECModelController* nm = [self newModel];
+	self.model = nm;
+	[nm startup];
+	[nm load];
+	[nm release];
 
-	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	self.window.rootViewController = [self makeRootViewController];
-	
-	[self.window makeKeyAndVisible];
+	UIViewController* nrvc = [self newRootViewController];
+	UIWindow* nw = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window = nw;
+	nw.rootViewController = nrvc;
+	[nw makeKeyAndVisible];
+	[nrvc release];
+	[nw release];
 	
 	return YES;
 }
@@ -158,7 +163,7 @@ ECDefineDebugChannel(ApplicationChannel);
 //! Should be provided by subclass.
 // --------------------------------------------------------------------------
 
-- (ECModelController*)makeModel
+- (ECModelController*)newModel
 {
 	ECAssertShouldntBeHere();
 
@@ -170,7 +175,7 @@ ECDefineDebugChannel(ApplicationChannel);
 //! Should be provided by subclass.
 // --------------------------------------------------------------------------
 
-- (UIViewController*)makeRootViewController
+- (UIViewController*)newRootViewController
 {
 	ECAssertShouldntBeHere();
 	

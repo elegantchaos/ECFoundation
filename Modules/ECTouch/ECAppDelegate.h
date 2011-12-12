@@ -17,7 +17,7 @@
 
 + (ECAppDelegate*)sharedInstance;
 
-- (ECModelController*)makeModel;
-- (UIViewController*)makeRootViewController;
+- (ECModelController*)newModel;
+- (UIViewController*)newRootViewController;
 
 @end
