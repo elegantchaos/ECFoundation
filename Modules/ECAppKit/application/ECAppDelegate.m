@@ -73,7 +73,7 @@ static NSString *const UserGuideType = @"pdf";
 //! Finish setting up the application.
 // --------------------------------------------------------------------------
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	self.fileManager = [NSFileManager defaultManager];
 	
