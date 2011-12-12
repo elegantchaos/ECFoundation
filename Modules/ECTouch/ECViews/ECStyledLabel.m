@@ -13,8 +13,7 @@
 
 #import "UIFont+ECCore.h"
 #import "ECLogging.h"
-#import "ECMarkdown.h"
-#import "ECMarkdownStyles.h"
+#import "ECDocumentStyles.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
@@ -183,25 +182,23 @@ ECDefineDebugChannel(StyledLabelChannel);
 {
 }
 
-- (ECMarkdownStyles*)defaultStyles
+// --------------------------------------------------------------------------
+//! Return some default styles based on the current font
+//! setting for the underlying UILabel.
+// --------------------------------------------------------------------------
+
+- (ECDocumentStyles*)defaultStyles
 {
-    ECMarkdownStyles* styles = [[ECMarkdownStyles alloc] init];
+    ECDocumentStyles* styles = [[ECDocumentStyles alloc] init];
     styles.plainFont = self.font.fontName;
     styles.plainSize = self.font.pointSize;
     styles.boldFont = [self.font boldVariant].fontName;
+	styles.italicFont = [self.font italicVariant].fontName;
     styles.headingFont = styles.boldFont;
     styles.headingSize = self.font.pointSize + 2.0;
     styles.colour = self.textColor.CGColor;
 
 	return [styles autorelease];
-}
-
-- (NSAttributedString*)attributedStringFromMarkdown:(NSString *)markdown
-{
-    ECMarkdownStyles* styles = [self defaultStyles];
-    NSAttributedString* result = [ECMarkdown attributedStringFromMarkdown:markdown styles:styles];
-    
-    return result;
 }
 
 @end
