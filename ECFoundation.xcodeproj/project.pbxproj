@@ -917,7 +917,6 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				22BE50B8149662D0007CC214 /* CoreText.framework */,
 				22F568D813211C39003E8EE8 /* README.md */,
 				22F568D713211C39003E8EE8 /* LICENSE.md */,
 				22C02E09141FE33C004B159A /* Modules */,
@@ -1050,6 +1049,7 @@
 		223CBAE11205C5930008A641 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				22BE50B8149662D0007CC214 /* CoreText.framework */,
 				22552BC7134B9E5300B8894E /* UIKit.framework */,
 				22552BC9134B9E5300B8894E /* Foundation.framework */,
 				22552BCB134B9E5300B8894E /* CoreGraphics.framework */,
