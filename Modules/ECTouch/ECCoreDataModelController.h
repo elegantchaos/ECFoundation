@@ -21,7 +21,11 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator* persistentStoreCoordinator;
 
-- (void)startup;
-- (void)shutdown;
+- (void)startupCoreData;
+- (void)shutdownCoreData;
+
+- (void)save;
+
+- (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound;
 
 @end

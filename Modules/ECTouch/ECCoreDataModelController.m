@@ -22,9 +22,6 @@
 @property (nonatomic, retain) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain) NSPersistentStoreCoordinator* persistentStoreCoordinator;
 
-- (void)startupCoreData;
-- (void)shutdownCoreData;
-
 @end
 
 @implementation ECCoreDataModelController
@@ -86,33 +83,41 @@
 	
 }
 
-
-#if 0
-- (Author*)authorWithName:(NSString*)name
+- (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound
 {
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
-    NSEntityDescription* entity = [NSEntityDescription entityForName:@"CDAuthor" inManagedObjectContext:self.managedObjectContext];
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%@ == %@", key, value];
     [request setEntity:entity];
     [request setPredicate:predicate];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:&error];
-    Author* result = [fetchedObjects firstObjectOrNil];
+    NSManagedObject* result = [fetchedObjects firstObjectOrNil];
     [request release];
-    if (!result)
+	if (wasFound)
+	{
+		*wasFound = (result != nil);
+	}
+	
+    if (result)
     {
-        NSLog(@"made author %@", name);
-        result = [NSEntityDescription insertNewObjectForEntityForName:@"CDAuthor" inManagedObjectContext:self.managedObjectContext];
-        result.name = name;
+        ECDebug(ModelChannel, @"retrieved %@ with %@ == %@, %@", entityName, key, value, result);
+	}
+	else
+	{
+        ECDebug(ModelChannel, @"made %@ with %@ == %@, %@", entityName, key, value, result);
+        result = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
+		[result setValue:value forKey:key];
         [self.managedObjectContext save:&error];
-    }
-    else
-    {
-        NSLog(@"retrieved author %@", name);
     }
     
     return result;
 }
-#endif
+
+- (void)save
+{
+	NSError* error = nil;
+	[self.managedObjectContext save:&error];
+}
 
 @end
