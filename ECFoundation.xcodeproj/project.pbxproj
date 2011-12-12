@@ -426,6 +426,12 @@
 		22BE51281496B01A007CC214 /* ECModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51261496B019007CC214 /* ECModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE51291496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
 		22BE512A1496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
+		22BE512E1496BCDA007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
+		22BE51301496BCDB007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
+		22BE51311496BCDE007CC214 /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50D7149668BE007CC214 /* ECHTMLParser.m */; };
+		22BE51321496BCDF007CC214 /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50D7149668BE007CC214 /* ECHTMLParser.m */; };
+		22BE51341496BD00007CC214 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE51331496BD00007CC214 /* CoreData.framework */; };
+		22BE51361496BD25007CC214 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE51351496BD25007CC214 /* QuartzCore.framework */; };
 		22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
@@ -835,6 +841,8 @@
 		22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoreDataModelController.m; sourceTree = "<group>"; };
 		22BE51261496B019007CC214 /* ECModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECModelController.h; sourceTree = "<group>"; };
 		22BE51271496B019007CC214 /* ECModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECModelController.m; sourceTree = "<group>"; };
+		22BE51331496BD00007CC214 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		22BE51351496BD25007CC214 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
 		22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECLocation.m"; sourceTree = "<group>"; };
 		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -896,6 +904,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BE51361496BD25007CC214 /* QuartzCore.framework in Frameworks */,
+				22BE51341496BD00007CC214 /* CoreData.framework in Frameworks */,
 				22BE50B9149662D0007CC214 /* CoreText.framework in Frameworks */,
 				22552BE7134BA0C900B8894E /* CoreLocation.framework in Frameworks */,
 				22552BC8134B9E5300B8894E /* UIKit.framework in Frameworks */,
@@ -947,6 +957,8 @@
 		0867D691FE84028FC02AAC07 /* ECFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				22BE51351496BD25007CC214 /* QuartzCore.framework */,
+				22BE51331496BD00007CC214 /* CoreData.framework */,
 				22F568D813211C39003E8EE8 /* README.md */,
 				22F568D713211C39003E8EE8 /* LICENSE.md */,
 				22C02E09141FE33C004B159A /* Modules */,
@@ -2211,6 +2223,8 @@
 				22BE510D1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
 				22BE51251496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
 				22BE512A1496B01A007CC214 /* ECModelController.m in Sources */,
+				22BE51301496BCDB007CC214 /* ECDocumentParser.m in Sources */,
+				22BE51321496BCDF007CC214 /* ECHTMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2317,6 +2331,8 @@
 				22AE91FE14926304008EF8E2 /* NSWorkspaceTests.m in Sources */,
 				22177AD81495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADE1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
+				22BE512E1496BCDA007CC214 /* ECDocumentParser.m in Sources */,
+				22BE51311496BCDE007CC214 /* ECHTMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
