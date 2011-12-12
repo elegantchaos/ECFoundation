@@ -9,10 +9,13 @@
 
 #import "ECMarkdown.h"
 #import "ECMarkdownStyles.h"
+#import "ECLogging.h"
 
 #import "NSMutableAttributedString+ECCore.h"
 
+#if EC_PLATFORM_IOS
 #import <CoreText/CoreText.h>
+#endif
 
 @implementation ECMarkdown
 
