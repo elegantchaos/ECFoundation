@@ -9,9 +9,11 @@
 
 @class ECDocumentStyles;
 
-@interface ECHTML : NSObject
+@interface ECHTMLParser : NSObject
 
-+ (NSAttributedString*)attributedStringFromHTML:(NSString*)html styles:(ECDocumentStyles*)styles;
+- (id)initWithStyles:(ECDocumentStyles*)styles;
+
+- (NSAttributedString*)attributedStringFromHTML:(NSString*)html;
 
 @end
 
