@@ -9,11 +9,18 @@
 
 @class ECDocumentStyles;
 
-@interface ECMarkdown : NSObject
+@interface ECDocumentParser : NSObject
 
-+ (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown styles:(ECDocumentStyles*)styles;
+#pragma mark - Public Properties
+
+@property (nonatomic, retain) ECDocumentStyles* styles;
+@property (nonatomic, retain) NSDictionary* attributesBold;
+@property (nonatomic, retain) NSDictionary* attributesItalic;
+@property (nonatomic, retain) NSDictionary* attributesPlain;
+
+#pragma mark - Public Methods
+
+- (id)initWithStyles:(ECDocumentStyles*)styles;
+- (void)initialiseAttributes;
 
 @end
-
-
-@class ECStyledLabel;

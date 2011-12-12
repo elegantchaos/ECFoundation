@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECHTMLParser.h"
+#import "ECMarkdownParser.h"
 
 #import "ECLogging.h"
 #import "ECDocumentStyles.h"
@@ -21,14 +21,13 @@
 
 #pragma mark - Private Interface
 
-@interface ECHTMLParser()
+@interface ECMarkdownParser()
 
 #pragma mark - Private Properties
 
+@property (nonatomic, retain) NSDictionary* attributesHeading1;
 @property (nonatomic, retain) NSRegularExpression* patternBold;
-@property (nonatomic, retain) NSRegularExpression* patternEm;
-@property (nonatomic, retain) NSRegularExpression* patternItalic;
-@property (nonatomic, retain) NSRegularExpression* patternStrong;
+@property (nonatomic, retain) NSRegularExpression* patternHeading1;
 
 #pragma mark - Private Methods
 
@@ -36,23 +35,23 @@
 
 @end
 
-@implementation ECHTMLParser
+@implementation ECMarkdownParser
 
 #pragma mark - Properties
 
+@synthesize attributesHeading1;
 @synthesize patternBold;
-@synthesize patternEm;
-@synthesize patternItalic;
-@synthesize patternStrong;
+@synthesize patternHeading1;
 
 #pragma mark - Debug Channels
 
-ECDefineDebugChannel(ECHTMLChannel);
+ECDefineDebugChannel(ECMarkdownChannel);
+
 
 #pragma mark - Object Lifecycle
 
 // --------------------------------------------------------------------------
-//! Initialise with some styles.
+//! Init with some styles.
 // --------------------------------------------------------------------------
 
 - (id)initWithStyles:(ECDocumentStyles *)stylesIn
@@ -71,18 +70,34 @@ ECDefineDebugChannel(ECHTMLChannel);
 
 - (void)dealloc 
 {
+	[attributesHeading1 release];
 	[patternBold release];
-	[patternEm release];
-	[patternItalic release];
-	[patternStrong release];
+	[patternHeading1 release];
     
     [super dealloc];
 }
 
-#pragma mark - HTML
+
+#pragma mark - Markdown
 
 // --------------------------------------------------------------------------
-//! Prepare expressions that we'll need.
+//! Set up style attributes that we'll need.
+// --------------------------------------------------------------------------
+
+- (void)initialiseAttributes
+{
+	[super initialiseAttributes];
+	
+	self.attributesHeading1 = 
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     (id) self.styles.headingFont, (id) kCTFontAttributeName,
+     nil
+     ];
+
+}
+
+// --------------------------------------------------------------------------
+//! Set up regular expression patterns that we'll need.
 // --------------------------------------------------------------------------
 
 - (void)initialisePatterns
@@ -90,27 +105,23 @@ ECDefineDebugChannel(ECHTMLChannel);
 	NSError* error = nil;
 	NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive;
 	
-	self.patternBold = [NSRegularExpression regularExpressionWithPattern:@"<b>(.*?)</b>" options:options error:&error];
-    self.patternStrong = [NSRegularExpression regularExpressionWithPattern:@"<strong>(.*?)</strong>" options:options error:&error];
-    self.patternItalic = [NSRegularExpression regularExpressionWithPattern:@"<i>(.*?)</i>" options:options error:&error];
-    self.patternEm = [NSRegularExpression regularExpressionWithPattern:@"<em>(.*?)</em>" options:options error:&error];
+	self.patternBold = [NSRegularExpression regularExpressionWithPattern:@"\\*(.*?)\\*" options:options error:&error];
+	self.patternHeading1 = [NSRegularExpression regularExpressionWithPattern:@"h1\\. (.*?\n)" options:options error:&error];
 }
 
 // --------------------------------------------------------------------------
-//! Parse some html and return an attributed string.
+//! Parse some markdown and return an attributed string.
 // --------------------------------------------------------------------------
 
-- (NSAttributedString*)attributedStringFromHTML:(NSString *)html
+- (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown
 {
-    NSMutableAttributedString* styled = [[NSMutableAttributedString alloc] initWithString:html attributes:self.attributesPlain];
+    NSMutableAttributedString* styled = [[NSMutableAttributedString alloc] initWithString:markdown attributes:self.attributesPlain];
     NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive | NSRegularExpressionDotMatchesLineSeparators;
     
 	[styled replaceExpression:self.patternBold options:options withIndex:0 attributes:self.attributesBold];
-	[styled replaceExpression:self.patternStrong options:options withIndex:0 attributes:self.attributesBold];
-	[styled replaceExpression:self.patternItalic options:options withIndex:0 attributes:self.attributesItalic];
-	[styled replaceExpression:self.patternEm options:options withIndex:0 attributes:self.attributesItalic];
-    
-	ECDebug(ECHTMLChannel, @"parsed html %@ into %@", html, styled);
+	[styled replaceExpression:self.patternHeading1 options:options withIndex:0 attributes:self.attributesHeading1];
+
+    ECDebug(ECMarkdownChannel, @"parsed mardown %@ to %@", markdown, styled);
     return [styled autorelease];
 }
 

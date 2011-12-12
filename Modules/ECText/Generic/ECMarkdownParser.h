@@ -9,8 +9,8 @@
 
 #import "ECDocumentParser.h"
 
-@interface ECHTMLParser : ECDocumentParser
+@interface ECMarkdownParser : ECDocumentParser
 
-- (NSAttributedString*)attributedStringFromHTML:(NSString*)html;
+- (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown;
 
 @end

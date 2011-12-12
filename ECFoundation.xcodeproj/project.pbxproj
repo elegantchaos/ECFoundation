@@ -73,12 +73,12 @@
 		22177ACB1495707400C7BDBE /* UIViewController+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */; };
 		22177ACC1495707400C7BDBE /* UIViewController+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC71495707400C7BDBE /* UIViewController+ECUtilities.m */; };
 		22177ACD1495707400C7BDBE /* UIViewController+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC71495707400C7BDBE /* UIViewController+ECUtilities.m */; };
-		22177AD41495710400C7BDBE /* ECMarkdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD01495710400C7BDBE /* ECMarkdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22177AD51495710400C7BDBE /* ECMarkdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD01495710400C7BDBE /* ECMarkdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22177AD61495710400C7BDBE /* ECMarkdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdown.m */; };
-		22177AD71495710400C7BDBE /* ECMarkdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdown.m */; };
-		22177AD81495710400C7BDBE /* ECMarkdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdown.m */; };
-		22177AD91495710400C7BDBE /* ECMarkdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdown.m */; };
+		22177AD41495710400C7BDBE /* ECMarkdownParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD01495710400C7BDBE /* ECMarkdownParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22177AD51495710400C7BDBE /* ECMarkdownParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD01495710400C7BDBE /* ECMarkdownParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22177AD61495710400C7BDBE /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdownParser.m */; };
+		22177AD71495710400C7BDBE /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdownParser.m */; };
+		22177AD81495710400C7BDBE /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdownParser.m */; };
+		22177AD91495710400C7BDBE /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD11495710400C7BDBE /* ECMarkdownParser.m */; };
 		22177ADA1495710400C7BDBE /* ECDocumentStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD21495710400C7BDBE /* ECDocumentStyles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22177ADB1495710400C7BDBE /* ECDocumentStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AD21495710400C7BDBE /* ECDocumentStyles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22177ADC1495710400C7BDBE /* ECDocumentStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AD31495710400C7BDBE /* ECDocumentStyles.m */; };
@@ -410,6 +410,10 @@
 		22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE50DA149668BE007CC214 /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50D7149668BE007CC214 /* ECHTMLParser.m */; };
 		22BE50DB149668BE007CC214 /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50D7149668BE007CC214 /* ECHTMLParser.m */; };
+		22BE50DF1496772A007CC214 /* ECDocumentParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50DD14967729007CC214 /* ECDocumentParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BE50E01496772A007CC214 /* ECDocumentParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50DD14967729007CC214 /* ECDocumentParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BE50E11496772A007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
+		22BE50E21496772A007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
 		22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
@@ -586,8 +590,8 @@
 		22177AC51495707400C7BDBE /* UIFont+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ECCore.m"; sourceTree = "<group>"; };
 		22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECUtilities.h"; sourceTree = "<group>"; };
 		22177AC71495707400C7BDBE /* UIViewController+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECUtilities.m"; sourceTree = "<group>"; };
-		22177AD01495710400C7BDBE /* ECMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMarkdown.h; sourceTree = "<group>"; };
-		22177AD11495710400C7BDBE /* ECMarkdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMarkdown.m; sourceTree = "<group>"; };
+		22177AD01495710400C7BDBE /* ECMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMarkdownParser.h; sourceTree = "<group>"; };
+		22177AD11495710400C7BDBE /* ECMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMarkdownParser.m; sourceTree = "<group>"; };
 		22177AD21495710400C7BDBE /* ECDocumentStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentStyles.h; sourceTree = "<group>"; };
 		22177AD31495710400C7BDBE /* ECDocumentStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentStyles.m; sourceTree = "<group>"; };
 		22177DBC14913A6800358975 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSArrayTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -811,6 +815,8 @@
 		22BE50B8149662D0007CC214 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		22BE50D6149668BE007CC214 /* ECHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECHTMLParser.h; sourceTree = "<group>"; };
 		22BE50D7149668BE007CC214 /* ECHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECHTMLParser.m; sourceTree = "<group>"; };
+		22BE50DD14967729007CC214 /* ECDocumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentParser.h; sourceTree = "<group>"; };
+		22BE50DE14967729007CC214 /* ECDocumentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentParser.m; sourceTree = "<group>"; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
 		22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECLocation.m"; sourceTree = "<group>"; };
 		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1043,12 +1049,14 @@
 		22177ACF1495710400C7BDBE /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				22BE50DD14967729007CC214 /* ECDocumentParser.h */,
+				22BE50DE14967729007CC214 /* ECDocumentParser.m */,
 				22177AD21495710400C7BDBE /* ECDocumentStyles.h */,
 				22177AD31495710400C7BDBE /* ECDocumentStyles.m */,
 				22BE50D6149668BE007CC214 /* ECHTMLParser.h */,
 				22BE50D7149668BE007CC214 /* ECHTMLParser.m */,
-				22177AD01495710400C7BDBE /* ECMarkdown.h */,
-				22177AD11495710400C7BDBE /* ECMarkdown.m */,
+				22177AD01495710400C7BDBE /* ECMarkdownParser.h */,
+				22177AD11495710400C7BDBE /* ECMarkdownParser.m */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -1734,9 +1742,10 @@
 				22177AC114956DE300C7BDBE /* ECStyledLabel.h in Headers */,
 				22177AC81495707400C7BDBE /* UIFont+ECCore.h in Headers */,
 				22177ACB1495707400C7BDBE /* UIViewController+ECUtilities.h in Headers */,
-				22177AD51495710400C7BDBE /* ECMarkdown.h in Headers */,
+				22177AD51495710400C7BDBE /* ECMarkdownParser.h in Headers */,
 				22177ADB1495710400C7BDBE /* ECDocumentStyles.h in Headers */,
 				22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */,
+				22BE50E01496772A007CC214 /* ECDocumentParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1829,9 +1838,10 @@
 				22AE91F41492628A008EF8E2 /* ECKeychain.h in Headers */,
 				22AE91F71492628A008EF8E2 /* ECMachine.h in Headers */,
 				22AE91FA1492628A008EF8E2 /* NSWorkspace+ECCore.h in Headers */,
-				22177AD41495710400C7BDBE /* ECMarkdown.h in Headers */,
+				22177AD41495710400C7BDBE /* ECMarkdownParser.h in Headers */,
 				22177ADA1495710400C7BDBE /* ECDocumentStyles.h in Headers */,
 				22BE50D8149668BE007CC214 /* ECHTMLParser.h in Headers */,
+				22BE50DF1496772A007CC214 /* ECDocumentParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2085,9 +2095,10 @@
 				22177AC214956DE300C7BDBE /* ECStyledLabel.m in Sources */,
 				22177AC91495707400C7BDBE /* UIFont+ECCore.m in Sources */,
 				22177ACC1495707400C7BDBE /* UIViewController+ECUtilities.m in Sources */,
-				22177AD71495710400C7BDBE /* ECMarkdown.m in Sources */,
+				22177AD71495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADD1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
 				22BE50DB149668BE007CC214 /* ECHTMLParser.m in Sources */,
+				22BE50E21496772A007CC214 /* ECDocumentParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2163,7 +2174,7 @@
 				22AE923514926D47008EF8E2 /* ECAnalyticsStandardKeys.m in Sources */,
 				22177ACA1495707400C7BDBE /* UIFont+ECCore.m in Sources */,
 				22177ACD1495707400C7BDBE /* UIViewController+ECUtilities.m in Sources */,
-				22177AD91495710400C7BDBE /* ECMarkdown.m in Sources */,
+				22177AD91495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADF1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2269,7 +2280,7 @@
 				22AE91F91492628A008EF8E2 /* ECMachine.m in Sources */,
 				22AE91FC1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */,
 				22AE91FE14926304008EF8E2 /* NSWorkspaceTests.m in Sources */,
-				22177AD81495710400C7BDBE /* ECMarkdown.m in Sources */,
+				22177AD81495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADE1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2349,9 +2360,10 @@
 				22AE91F51492628A008EF8E2 /* ECKeychain.m in Sources */,
 				22AE91F81492628A008EF8E2 /* ECMachine.m in Sources */,
 				22AE91FB1492628A008EF8E2 /* NSWorkspace+ECCore.m in Sources */,
-				22177AD61495710400C7BDBE /* ECMarkdown.m in Sources */,
+				22177AD61495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADC1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
 				22BE50DA149668BE007CC214 /* ECHTMLParser.m in Sources */,
+				22BE50E11496772A007CC214 /* ECDocumentParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
