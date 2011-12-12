@@ -1031,8 +1031,7 @@
 			children = (
 				22177ACF1495710400C7BDBE /* Generic */,
 			);
-			name = ECText;
-			path = "../../../../libraries/objective c/ECFoundation/Modules/ECText";
+			path = ECText;
 			sourceTree = "<group>";
 		};
 		22177ACF1495710400C7BDBE /* Generic */ = {
