@@ -39,4 +39,25 @@
     [original release];
 }
 
+- (void)replaceExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options withIndex:(NSUInteger)index attributes:(NSDictionary*)attributes
+{
+	[self matchExpression:expression options:options reversed:YES action:
+     ^(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match)
+     {
+		 [current replaceMatch:match withIndex:index attributes:attributes];
+     }
+     ];
+
+}
+- (void)replaceMatch:(NSTextCheckingResult*)match withIndex:(NSUInteger)index attributes:(NSDictionary*)attributes
+{
+	NSRange whole = [match rangeAtIndex:index];
+	NSRange range = [match rangeAtIndex:1];
+	NSInteger rangeOffset = range.location - whole.location;
+	NSAttributedString* boldText = [self attributedSubstringFromRange:range];
+	[self replaceCharactersInRange:whole withAttributedString:boldText];
+	range.location -= rangeOffset;
+	[self addAttributes:attributes range:range];
+}
+
 @end

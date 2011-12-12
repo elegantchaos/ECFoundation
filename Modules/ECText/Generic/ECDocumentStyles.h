@@ -7,11 +7,12 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@interface ECMarkdownStyles : NSObject
+@interface ECDocumentStyles : NSObject
 
 @property (nonatomic, retain) NSString* plainFont;
 @property (nonatomic, retain) NSString* boldFont;
 @property (nonatomic, retain) NSString* headingFont;
+@property (nonatomic, retain) NSString* italicFont;
 
 @property (nonatomic, assign) CGFloat plainSize;
 @property (nonatomic, assign) CGFloat headingSize;

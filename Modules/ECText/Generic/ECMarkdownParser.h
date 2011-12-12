@@ -7,14 +7,10 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECDocumentParser.h"
 
-#import <UIKit/UIKit.h>
+@interface ECMarkdownParser : ECDocumentParser
 
-
-@interface UIFont(ECCore)
-
-- (UIFont*)boldVariant;
-- (UIFont*)italicVariant;
+- (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown;
 
 @end

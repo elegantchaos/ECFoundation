@@ -15,5 +15,7 @@
 typedef void(^MatchAction)(NSAttributedString* original, NSMutableAttributedString* current, NSTextCheckingResult* match);
 
 - (void)matchExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options reversed:(BOOL)reversed action:(MatchAction)block;
+- (void)replaceExpression:(NSRegularExpression*)expression options:(NSRegularExpressionOptions)options withIndex:(NSUInteger)index attributes:(NSDictionary*)attributes;
+- (void)replaceMatch:(NSTextCheckingResult*)match withIndex:(NSUInteger)index attributes:(NSDictionary*)attributes;
 
 @end
