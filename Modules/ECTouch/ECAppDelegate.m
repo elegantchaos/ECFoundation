@@ -9,8 +9,10 @@
 
 #import "ECAppDelegate.h"
 
+#import "ECAssertion.h"
 #import "ECLogging.h"
 #import "ECLogManager.h"
+#import "ECModelController.h"
 
 @interface ECAppDelegate()
 - (void)startupLogging;
@@ -19,7 +21,29 @@
 
 @implementation ECAppDelegate
 
+@synthesize model;
+
 ECDefineDebugChannel(ApplicationChannel);
+
+// --------------------------------------------------------------------------
+//! Return the normal instance.
+// --------------------------------------------------------------------------
+
++ (ECAppDelegate*)sharedInstance
+{
+	return [UIApplication sharedApplication].delegate;
+}
+
+// --------------------------------------------------------------------------
+//! Clean up.
+// --------------------------------------------------------------------------
+
+- (void)dealloc 
+{
+    [model release];
+    
+    [super dealloc];
+}
 
 // --------------------------------------------------------------------------
 //! Set up the app after launching.
@@ -29,6 +53,15 @@ ECDefineDebugChannel(ApplicationChannel);
 {
     ECDebug(ApplicationChannel, @"did finish launching");
 	[self startupLogging];
+	
+	self.model = [self makeModel];
+	[self.model startup];
+	[self.model load];
+
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window.rootViewController = [self makeRootViewController];
+	
+	[self.window makeKeyAndVisible];
 	
 	return YES;
 }
@@ -67,6 +100,8 @@ ECDefineDebugChannel(ApplicationChannel);
 -(void) applicationDidEnterBackground:(UIApplication*)application 
 {
     ECDebug(ApplicationChannel, @"did enter background");
+
+	[self.model save];
     [[ECLogManager sharedInstance] saveChannelSettings];
 }
 
@@ -87,6 +122,7 @@ ECDefineDebugChannel(ApplicationChannel);
 {
     ECDebug(ApplicationChannel, @"will terminate");
     
+	[self.model shutdown];
     [self shutdownLogging];
 }
 
@@ -114,4 +150,31 @@ ECDefineDebugChannel(ApplicationChannel);
     [[ECLogManager sharedInstance] saveChannelSettings];
     [[ECLogManager sharedInstance] shutdown];
 }
+
+#pragma mark - To Be Overridden
+
+// --------------------------------------------------------------------------
+//! Create and return the global modal controller.
+//! Should be provided by subclass.
+// --------------------------------------------------------------------------
+
+- (ECModelController*)makeModel
+{
+	ECAssertShouldntBeHere();
+
+	return nil;
+}
+
+// --------------------------------------------------------------------------
+//! Create and return the root view controller.
+//! Should be provided by subclass.
+// --------------------------------------------------------------------------
+
+- (UIViewController*)makeRootViewController
+{
+	ECAssertShouldntBeHere();
+	
+	return nil;
+}
+
 @end

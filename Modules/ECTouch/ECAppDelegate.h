@@ -9,6 +9,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class ECModelController;
+
 @interface ECAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (nonatomic, retain) ECModelController* model;
+
++ (ECAppDelegate*)sharedInstance;
+
+- (ECModelController*)makeModel;
+- (UIViewController*)makeRootViewController;
 
 @end

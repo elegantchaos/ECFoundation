@@ -8,10 +8,17 @@
 // --------------------------------------------------------------------------
 
 #import "ECModelController.h"
+#import "ECAppDelegate.h"
 
 @implementation ECModelController
 
 ECDefineDebugChannel(ModelChannel);
+
++ (ECModelController*)sharedInstance
+{
+    return [ECAppDelegate sharedInstance].model;
+}
+
 
 - (void)startup
 {
@@ -21,6 +28,16 @@ ECDefineDebugChannel(ModelChannel);
 - (void)shutdown
 {
 	ECDebug(ModelChannel, @"model shutdown");
+}
+
+- (void)load
+{
+	ECDebug(ModelChannel, @"model load");
+}
+
+- (void)save
+{
+	ECDebug(ModelChannel, @"model save");
 }
 
 @end

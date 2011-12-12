@@ -13,7 +13,11 @@ ECDeclareDebugChannel(ModelChannel);
 
 @interface ECModelController : NSObject
 
++ (ECModelController*)sharedInstance;
+
 - (void)startup;
 - (void)shutdown;
+- (void)load;
+- (void)save;
 
 @end
