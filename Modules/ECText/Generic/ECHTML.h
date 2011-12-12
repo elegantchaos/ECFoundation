@@ -9,9 +9,9 @@
 
 @class ECDocumentStyles;
 
-@interface ECMarkdown : NSObject
+@interface ECHTML : NSObject
 
-+ (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown styles:(ECDocumentStyles*)styles;
++ (NSAttributedString*)attributedStringFromHTML:(NSString*)html styles:(ECDocumentStyles*)styles;
 
 @end
 

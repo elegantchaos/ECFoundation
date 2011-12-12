@@ -15,5 +15,6 @@
 @interface UIFont(ECCore)
 
 - (UIFont*)boldVariant;
+- (UIFont*)italicVariant;
 
 @end

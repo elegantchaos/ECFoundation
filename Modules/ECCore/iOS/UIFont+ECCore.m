@@ -37,4 +37,26 @@ ECDefineDebugChannel(FontChannel);
     return result;
 }
 
+- (UIFont*)italicVariant
+{
+    UIFont* result = self;
+    NSArray* styles = [UIFont fontNamesForFamilyName:self.familyName];
+    
+    ECDebug(FontChannel, @"available styles for %@: %@", self, styles);
+    
+    for (NSString* name in styles)
+    {
+        if (([name rangeOfString:@"italic" options:NSCaseInsensitiveSearch].location != NSNotFound) || ([name rangeOfString:@"oblique" options:NSCaseInsensitiveSearch].location != NSNotFound))
+        {
+            if ([name rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location == NSNotFound)
+            {
+                result = [UIFont fontWithName:name size:self.pointSize];
+                break;
+            }
+        }
+    }
+	
+    return result;
+}
+
 @end

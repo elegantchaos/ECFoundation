@@ -10,7 +10,7 @@
 #import "ECMarkdown.h"
 
 #import "ECLogging.h"
-#import "ECMarkdownStyles.h"
+#import "ECDocumentStyles.h"
 #import "ECLogging.h"
 
 #import "NSMutableAttributedString+ECCore.h"
@@ -23,7 +23,7 @@
 
 ECDefineDebugChannel(ECMarkdownChannel);
 
-+ (NSAttributedString*)attributedStringFromMarkdown:(NSString *)markdown styles:(ECMarkdownStyles *)styles
++ (NSAttributedString*)attributedStringFromMarkdown:(NSString *)markdown styles:(ECDocumentStyles *)styles
 {
     CTFontRef plainFont = CTFontCreateWithName((CFStringRef)styles.plainFont, styles.plainSize, NULL);
     CTFontRef boldFont = CTFontCreateWithName((CFStringRef)styles.boldFont, styles.plainSize, NULL);

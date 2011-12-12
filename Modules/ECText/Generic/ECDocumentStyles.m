@@ -7,14 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECMarkdownStyles.h"
+#import "ECDocumentStyles.h"
 
-@implementation ECMarkdownStyles
+@implementation ECDocumentStyles
 
 @synthesize boldFont;
 @synthesize colour;
 @synthesize headingFont;
 @synthesize headingSize;
+@synthesize italicFont;
 @synthesize plainFont;
 @synthesize plainSize;
 
@@ -22,6 +23,7 @@
 {
     [boldFont release];
     [headingFont release];
+	[italicFont release];
     [plainFont release];
     
     [super dealloc];
