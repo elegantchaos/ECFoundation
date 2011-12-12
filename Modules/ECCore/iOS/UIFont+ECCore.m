@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "UIFont+ECCore.h"
-
+#import "ECLogging.h"
 
 @implementation UIFont(ECCore)
 

@@ -8,6 +8,8 @@
 // --------------------------------------------------------------------------
 
 #import "ECMarkdown.h"
+
+#import "ECLogging.h"
 #import "ECMarkdownStyles.h"
 
 #import "NSMutableAttributedString+ECCore.h"

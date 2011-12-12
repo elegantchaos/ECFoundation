@@ -67,6 +67,7 @@
     
     ECStyledLabel* sl = [[ECStyledLabel alloc] initWithFrame:self.frame];
     self.label = sl;
+	sl.scroller = sv;
     [sl release];
    
     [sv addSubview:sl];

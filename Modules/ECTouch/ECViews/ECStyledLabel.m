@@ -13,6 +13,7 @@
 
 #import "UIFont+ECCore.h"
 
+#import "ECLogging.h"
 #import "ECMarkdown.h"
 #import "ECMarkdownStyles.h"
 
@@ -183,7 +184,7 @@ ECDefineDebugChannel(StyledLabelChannel);
 {
 }
 
-- (NSAttributedString*)attributedStringFromMarkdown:(NSString *)markdown
+- (ECMarkdownStyles*)defaultStyles
 {
     ECMarkdownStyles* styles = [[ECMarkdownStyles alloc] init];
     styles.plainFont = self.font.fontName;
@@ -192,9 +193,14 @@ ECDefineDebugChannel(StyledLabelChannel);
     styles.headingFont = styles.boldFont;
     styles.headingSize = self.font.pointSize + 2.0;
     styles.colour = self.textColor.CGColor;
-    
+
+	return [styles autorelease];
+}
+
+- (NSAttributedString*)attributedStringFromMarkdown:(NSString *)markdown
+{
+    ECMarkdownStyles* styles = [self defaultStyles];
     NSAttributedString* result = [ECMarkdown attributedStringFromMarkdown:markdown styles:styles];
-    [styles release];
     
     return result;
 }

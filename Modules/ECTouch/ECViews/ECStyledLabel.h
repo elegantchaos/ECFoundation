@@ -7,11 +7,14 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+@class ECMarkdownStyles;
+
 @interface ECStyledLabel : UILabel
 
 @property (nonatomic, copy) NSAttributedString* attributedText;
 @property (nonatomic, retain) IBOutlet UIScrollView* scroller;
 
 - (NSAttributedString*)attributedStringFromMarkdown:(NSString*)markdown;
+- (ECMarkdownStyles*)defaultStyles;
 
 @end
