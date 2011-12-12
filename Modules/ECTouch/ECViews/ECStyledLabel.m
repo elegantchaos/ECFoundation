@@ -12,7 +12,6 @@
 #import "NSMutableAttributedString+ECCore.h"
 
 #import "UIFont+ECCore.h"
-
 #import "ECLogging.h"
 #import "ECMarkdown.h"
 #import "ECMarkdownStyles.h"
