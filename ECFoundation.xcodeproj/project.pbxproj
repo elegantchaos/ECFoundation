@@ -420,6 +420,12 @@
 		22BE510B1496A9D1007CC214 /* ECAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51091496A9D0007CC214 /* ECAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE510C1496A9D1007CC214 /* ECAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE510A1496A9D1007CC214 /* ECAppDelegate.m */; };
 		22BE510D1496A9D1007CC214 /* ECAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE510A1496A9D1007CC214 /* ECAppDelegate.m */; };
+		22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */; };
+		22BE51251496AFB4007CC214 /* ECCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */; };
+		22BE51281496B01A007CC214 /* ECModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51261496B019007CC214 /* ECModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BE51291496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
+		22BE512A1496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
 		22C02E11141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E12141FE3CB004B159A /* CLLocation+ECLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C02E13141FE3CB004B159A /* CLLocation+ECLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */; };
@@ -825,6 +831,10 @@
 		22BE50FF1496A922007CC214 /* ECStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECStyledLabel.m; sourceTree = "<group>"; };
 		22BE51091496A9D0007CC214 /* ECAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAppDelegate.h; sourceTree = "<group>"; };
 		22BE510A1496A9D1007CC214 /* ECAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAppDelegate.m; sourceTree = "<group>"; };
+		22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDataModelController.h; sourceTree = "<group>"; };
+		22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoreDataModelController.m; sourceTree = "<group>"; };
+		22BE51261496B019007CC214 /* ECModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECModelController.h; sourceTree = "<group>"; };
+		22BE51271496B019007CC214 /* ECModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECModelController.m; sourceTree = "<group>"; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
 		22C02E0D141FE3CB004B159A /* CLLocation+ECLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ECLocation.m"; sourceTree = "<group>"; };
 		22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ECLazyPropertiesTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -1300,6 +1310,10 @@
 				2248BBFC13C7948F00E13577 /* ECTable */,
 				22BE51091496A9D0007CC214 /* ECAppDelegate.h */,
 				22BE510A1496A9D1007CC214 /* ECAppDelegate.m */,
+				22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */,
+				22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */,
+				22BE51261496B019007CC214 /* ECModelController.h */,
+				22BE51271496B019007CC214 /* ECModelController.m */,
 			);
 			path = ECTouch;
 			sourceTree = "<group>";
@@ -1756,6 +1770,8 @@
 				22BE51031496A922007CC214 /* ECScrollView.h in Headers */,
 				22BE51061496A922007CC214 /* ECStyledLabel.h in Headers */,
 				22BE510B1496A9D1007CC214 /* ECAppDelegate.h in Headers */,
+				22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */,
+				22BE51281496B01A007CC214 /* ECModelController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2110,6 +2126,8 @@
 				22BE51041496A922007CC214 /* ECScrollView.m in Sources */,
 				22BE51071496A922007CC214 /* ECStyledLabel.m in Sources */,
 				22BE510C1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
+				22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
+				22BE51291496B01A007CC214 /* ECModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2191,6 +2209,8 @@
 				22BE51051496A922007CC214 /* ECScrollView.m in Sources */,
 				22BE51081496A922007CC214 /* ECStyledLabel.m in Sources */,
 				22BE510D1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
+				22BE51251496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
+				22BE512A1496B01A007CC214 /* ECModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
