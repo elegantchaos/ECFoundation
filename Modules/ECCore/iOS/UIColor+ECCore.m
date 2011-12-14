@@ -11,30 +11,6 @@
 
 #import <objc/runtime.h>
 
-@interface UIColorInitialisation : UIColor
-
-@end
-
-@implementation UIColorInitialisation
-
-+(void)initialize
-{
-	if (self == [UIColorInitialisation class])
-	{
-		Class class = [UIColor class];
-		SEL apiSelector = @selector(getRed:green:blue:alpha:);
-		if (![class instancesRespondToSelector:apiSelector])
-		{
-			SEL replacementSelector = @selector(ecGetRed:green:blue:alpha:);
-		
-			IMP replacementImplementation = class_getMethodImplementation(class, replacementSelector);
-			class_addMethod(class, apiSelector, replacementImplementation, "");
-		}
-	}
-}
-
-@end
-
 @interface UIColor()
 
 - (BOOL)ecGetRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
@@ -43,6 +19,19 @@
 
 
 @implementation UIColor(ECCore)
+
+	+(void)load
+	{
+		Class class = [UIColor class];
+		SEL apiSelector = @selector(getRed:green:blue:alpha:);
+		if (![class instancesRespondToSelector:apiSelector])
+		{
+			SEL replacementSelector = @selector(ecGetRed:green:blue:alpha:);
+			
+			IMP replacementImplementation = class_getMethodImplementation(class, replacementSelector);
+			class_addMethod(class, apiSelector, replacementImplementation, "");
+		}
+	}
 
 + (UIColor*) blueTextColor
 {
