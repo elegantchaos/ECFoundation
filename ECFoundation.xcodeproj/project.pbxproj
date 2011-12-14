@@ -296,6 +296,12 @@
 		228A51021498FE39002907A6 /* ECIsNotEmptyTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228A50FD1498FE39002907A6 /* ECIsNotEmptyTransformer.h */; };
 		228A51031498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A50FE1498FE39002907A6 /* ECIsNotEmptyTransformer.m */; };
 		228A51041498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A50FE1498FE39002907A6 /* ECIsNotEmptyTransformer.m */; };
+		228A510814991FB3002907A6 /* ECRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 228A510614991FB3002907A6 /* ECRuntime.h */; };
+		228A510914991FB3002907A6 /* ECRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 228A510614991FB3002907A6 /* ECRuntime.h */; };
+		228A510A14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
+		228A510B14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
+		228A510C14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
+		228A510D14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
 		228BCFEB144DF3CE00D22ED5 /* ECRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 228BCFE9144DF3CE00D22ED5 /* ECRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		228BCFEC144DF3CE00D22ED5 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
 		2298A45D1355264A00217C2B /* ECDictionaryBackedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -759,6 +765,8 @@
 		228A50FC1498FE39002907A6 /* ECIsEmptyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECIsEmptyTransformer.m; sourceTree = "<group>"; };
 		228A50FD1498FE39002907A6 /* ECIsNotEmptyTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECIsNotEmptyTransformer.h; sourceTree = "<group>"; };
 		228A50FE1498FE39002907A6 /* ECIsNotEmptyTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECIsNotEmptyTransformer.m; sourceTree = "<group>"; };
+		228A510614991FB3002907A6 /* ECRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRuntime.h; sourceTree = "<group>"; };
+		228A510714991FB3002907A6 /* ECRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRuntime.m; sourceTree = "<group>"; };
 		228BCFE9144DF3CE00D22ED5 /* ECRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRandom.h; sourceTree = "<group>"; };
 		228BCFEA144DF3CE00D22ED5 /* ECRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandom.m; sourceTree = "<group>"; };
 		2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObject.h; sourceTree = "<group>"; };
@@ -1597,6 +1605,8 @@
 				2248BC2313C7949E00E13577 /* ECProperties.h */,
 				228BCFE9144DF3CE00D22ED5 /* ECRandom.h */,
 				228BCFEA144DF3CE00D22ED5 /* ECRandom.m */,
+				228A510614991FB3002907A6 /* ECRuntime.h */,
+				228A510714991FB3002907A6 /* ECRuntime.m */,
 				2206F96C14923FAA00AAC9B0 /* ECSha1.h */,
 				2206F96D14923FAB00AAC9B0 /* ECSha1.m */,
 				2248BC2413C7949E00E13577 /* ECTestCase.h */,
@@ -1798,6 +1808,7 @@
 				22BE510B1496A9D1007CC214 /* ECAppDelegate.h in Headers */,
 				22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */,
 				22BE51281496B01A007CC214 /* ECModelController.h in Headers */,
+				228A510914991FB3002907A6 /* ECRuntime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1896,6 +1907,7 @@
 				22BE50DF1496772A007CC214 /* ECDocumentParser.h in Headers */,
 				228A50FF1498FE39002907A6 /* ECIsEmptyTransformer.h in Headers */,
 				228A51021498FE39002907A6 /* ECIsNotEmptyTransformer.h in Headers */,
+				228A510814991FB3002907A6 /* ECRuntime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2156,6 +2168,7 @@
 				22BE510C1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
 				22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
 				22BE51291496B01A007CC214 /* ECModelController.m in Sources */,
+				228A510B14991FB3002907A6 /* ECRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2241,6 +2254,7 @@
 				22BE512A1496B01A007CC214 /* ECModelController.m in Sources */,
 				22BE51301496BCDB007CC214 /* ECDocumentParser.m in Sources */,
 				22BE51321496BCDF007CC214 /* ECHTMLParser.m in Sources */,
+				228A510D14991FB3002907A6 /* ECRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2351,6 +2365,7 @@
 				22BE51311496BCDE007CC214 /* ECHTMLParser.m in Sources */,
 				228A51011498FE39002907A6 /* ECIsEmptyTransformer.m in Sources */,
 				228A51041498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */,
+				228A510C14991FB3002907A6 /* ECRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2435,6 +2450,7 @@
 				22BE50E11496772A007CC214 /* ECDocumentParser.m in Sources */,
 				228A51001498FE39002907A6 /* ECIsEmptyTransformer.m in Sources */,
 				228A51031498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */,
+				228A510A14991FB3002907A6 /* ECRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

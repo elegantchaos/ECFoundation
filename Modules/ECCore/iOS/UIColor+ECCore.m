@@ -8,8 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "UIColor+ECCore.h"
-
-#import <objc/runtime.h>
+#import "ECRuntime.h"
 
 @interface UIColor()
 
@@ -20,18 +19,10 @@
 
 @implementation UIColor(ECCore)
 
-	+(void)load
-	{
-		Class class = [UIColor class];
-		SEL apiSelector = @selector(getRed:green:blue:alpha:);
-		if (![class instancesRespondToSelector:apiSelector])
-		{
-			SEL replacementSelector = @selector(ecGetRed:green:blue:alpha:);
-			
-			IMP replacementImplementation = class_getMethodImplementation(class, replacementSelector);
-			class_addMethod(class, apiSelector, replacementImplementation, "");
-		}
-	}
++(void)load
+{
+	class_replaceMethodIfMissing(self, @selector(getRed:green:blue:alpha:), @selector(ecGetRed:green:blue:alpha:));
+}
 
 + (UIColor*) blueTextColor
 {
