@@ -21,9 +21,9 @@
 ECDeclareDebugChannel(AssertionChannel);
 
 #define ECAssert(expression) do { if (!(expression)) { ECDebug(AssertionChannel, @"Expression %s was false", #expression); [ECAssertion failAssertion:#expression]; } } while(0)
-#define ECAssertC assert
+#define ECAssertC(expression) assert(expression)
 
-#else
+#else // NON-DEBUG
 
 #define ECAssert(expression)
 #define ECAssertC(expression)
