@@ -9,6 +9,38 @@
 
 #import "UIColor+ECCore.h"
 
+#import <objc/runtime.h>
+
+@interface UIColorInitialisation : UIColor
+
+@end
+
+@implementation UIColorInitialisation
+
++(void)initialize
+{
+	if (self == [UIColorInitialisation class])
+	{
+		Class class = [UIColor class];
+		SEL apiSelector = @selector(getRed:green:blue:alpha:);
+		if (![class instancesRespondToSelector:apiSelector])
+		{
+			SEL replacementSelector = @selector(ecGetRed:green:blue:alpha:);
+		
+			IMP replacementImplementation = class_getMethodImplementation(class, replacementSelector);
+			class_addMethod(class, apiSelector, replacementImplementation, "");
+		}
+	}
+}
+
+@end
+
+@interface UIColor()
+
+- (BOOL)ecGetRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
+
+@end
+
 
 @implementation UIColor(ECCore)
 
@@ -20,6 +52,21 @@
 + (UIColor *)colorWithIntRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(NSInteger)alpha
 {
     return [UIColor colorWithRed:(CGFloat)red / 255.0f green:(CGFloat)green / 255.0f blue:(CGFloat)blue / 255.0f alpha:(CGFloat)alpha / 255.0f];
+}
+
+- (BOOL)ecGetRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha
+{
+	const CGFloat* components = CGColorGetComponents(self.CGColor);
+	BOOL ok = components != nil;
+	if (ok)
+	{
+		*red = components[0];
+		*green = components[1];
+		*blue = components[2];
+		*alpha = components[3];
+	}
+	
+	return ok;
 }
 
 @end

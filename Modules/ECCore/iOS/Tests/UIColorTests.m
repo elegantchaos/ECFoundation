@@ -22,18 +22,7 @@
 {
 	UIColor* color1 = [UIColor colorWithIntRed:255 green:0 blue:127 alpha:64];
 	CGFloat r,g,b,a;
-	if ([color1 respondsToSelector:@selector(getRed:green:blue:alpha:)])
-	{
-		[color1 getRed:&r green:&g blue:&b alpha:&a];
-	}
-	else
-	{
-		const CGFloat* components = CGColorGetComponents(color1.CGColor);
-		r = components[0];
-		g = components[1];
-		b = components[2];
-		a = components[3];
-	}
+	[color1 getRed:&r green:&g blue:&b alpha:&a];
 	
 	ECTestAssertRealIsEqual(r, 1.0);
 	ECTestAssertRealIsEqual(g, 0);
