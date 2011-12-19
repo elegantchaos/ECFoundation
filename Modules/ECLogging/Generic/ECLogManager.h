@@ -43,10 +43,10 @@
 
 + (ECLogManager*)   sharedInstance;
 
-- (ECLogChannel*)   registerChannelWithRawName: (const char*) rawName;
-- (ECLogChannel*)   registerChannelWithName: (NSString*) name;
-- (void)            registerChannel: (ECLogChannel*) channel;
-- (void)            registerHandler: (ECLogHandler*) handler;
+- (ECLogChannel*)   registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
+- (ECLogChannel*)   registerChannelWithName:(NSString*)name options:(NSDictionary*)options;
+- (void)            registerChannel:(ECLogChannel*)channel;
+- (void)            registerHandler:(ECLogHandler*)handler;
 - (void)            registerDefaultHandler;
 - (void)            startup;
 - (void)            shutdown;

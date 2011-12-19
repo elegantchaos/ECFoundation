@@ -117,11 +117,11 @@ static ECLogManager* gSharedInstance = nil;
 //! If the channel was created, we register it.
 // --------------------------------------------------------------------------
 
-- (ECLogChannel*) registerChannelWithRawName: (const char*) rawName;
+- (ECLogChannel*) registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
 {
     LogManagerLog(@"registering raw channel with name %s", rawName);
     NSString* name = [ECLogChannel cleanName:rawName];
-    return [self registerChannelWithName:name];
+    return [self registerChannelWithName:name options:options];
 }
 
 // --------------------------------------------------------------------------
@@ -129,7 +129,7 @@ static ECLogManager* gSharedInstance = nil;
 //! If the channel was created, we register it.
 // --------------------------------------------------------------------------
 
-- (ECLogChannel*) registerChannelWithName: (NSString*) name;
+- (ECLogChannel*) registerChannelWithName:(NSString*)name options:(NSDictionary*)options
 {
     LogManagerLog(@"registering channel with name %@", name);
     ECLogChannel* channel = [self.channels objectForKey:name];
@@ -164,7 +164,7 @@ static ECLogManager* gSharedInstance = nil;
 //! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
-- (void) registerChannel: (ECLogChannel*) channel
+- (void) registerChannel:(ECLogChannel*)channel
 {
     LogManagerLog(@"adding channel %@", channel.name);
 	[self.channels setObject: channel forKey: channel.name];
@@ -314,7 +314,7 @@ static ECLogManager* gSharedInstance = nil;
     NSDictionary* channelSettings = [loadedSettings objectForKey:ChannelsSetting];
     for (NSString* channel in [channelSettings allKeys])
     {
-        [self registerChannelWithName:channel];
+        [self registerChannelWithName:channel options:nil];
     }
          
     self.settings = [[loadedSettings mutableCopy] autorelease];

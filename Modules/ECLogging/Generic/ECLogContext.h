@@ -48,6 +48,7 @@ extern "C"
     extern void disableChannel(ECLogChannel* channel);
     extern bool channelEnabled(ECLogChannel* channel);
     extern ECLogChannel* registerChannel(const char* name);
+    extern ECLogChannel* registerChannelWithOptions(const char* name, id options);
     extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...);
     
 #ifdef __cplusplus

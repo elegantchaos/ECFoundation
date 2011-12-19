@@ -56,7 +56,18 @@ bool channelEnabled(ECLogChannel* channel)
 
 ECLogChannel* registerChannel(const char* name)
 {
-	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName: name];
+	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName: name options:nil];
+	
+	return channel;
+}
+// --------------------------------------------------------------------------
+//! Create a new channel and register it. If a channel with the same name has
+//! already been registered, it is simply returned.
+// --------------------------------------------------------------------------
+
+ECLogChannel* registerChannelWithOptions(const char* name, id options)
+{
+	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName:name options:options];
 	
 	return channel;
 }

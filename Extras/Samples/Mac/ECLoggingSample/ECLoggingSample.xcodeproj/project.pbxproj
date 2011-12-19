@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22426111149EB4A900DB6C53 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426110149EB4A900DB6C53 /* ECRandom.m */; };
 		22426113149EB4C500DB6C53 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426112149EB4C500DB6C53 /* ECAssertion.m */; };
+		22426116149EBAD400DB6C53 /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426115149EBAD400DB6C53 /* ECLogHandlerASL.m */; };
 		22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22A723591435DE0F00889A06 /* Credits.rtf */; };
 		22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7235B1435DE0F00889A06 /* MainMenu.xib */; };
 		22A723631435E1C800889A06 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A723601435E1C800889A06 /* ECLaunchServices.m */; };
@@ -53,6 +54,8 @@
 		2242610F149EB4A900DB6C53 /* ECRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRandom.h; sourceTree = "<group>"; };
 		22426110149EB4A900DB6C53 /* ECRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandom.m; sourceTree = "<group>"; };
 		22426112149EB4C500DB6C53 /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
+		22426114149EBAD400DB6C53 /* ECLogHandlerASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerASL.h; sourceTree = "<group>"; };
+		22426115149EBAD400DB6C53 /* ECLogHandlerASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerASL.m; sourceTree = "<group>"; };
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -264,6 +267,8 @@
 			children = (
 				226FB48D13E28F2A00BF258D /* ECLogHandlerFile.h */,
 				226FB48E13E28F2A00BF258D /* ECLogHandlerFile.m */,
+				22426114149EBAD400DB6C53 /* ECLogHandlerASL.h */,
+				22426115149EBAD400DB6C53 /* ECLogHandlerASL.m */,
 				226FB48F13E28F2A00BF258D /* ECLogHandlerNSLog.h */,
 				226FB49013E28F2A00BF258D /* ECLogHandlerNSLog.m */,
 				226FB49113E28F2A00BF258D /* ECLogHandlerStderr.h */,
@@ -530,6 +535,7 @@
 				22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */,
 				22426111149EB4A900DB6C53 /* ECRandom.m in Sources */,
 				22426113149EB4C500DB6C53 /* ECAssertion.m in Sources */,
+				22426116149EBAD400DB6C53 /* ECLogHandlerASL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
