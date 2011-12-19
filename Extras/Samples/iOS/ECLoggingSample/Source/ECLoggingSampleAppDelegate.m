@@ -13,6 +13,9 @@
 #import "ECLogManager.h"
 #import "ECLogHandlerFile.h"
 #import "ECLogHandlerNSLog.h"
+#import "ECLogHandlerStdout.h"
+#import "ECLogHandlerStderr.h"
+#import "ECLogHandlerASL.h"
 
 @interface ECLoggingSampleAppDelegate()
 
@@ -43,6 +46,10 @@ ECDefineDebugChannel(ApplicationChannel);
     // install some handlers
     [lm registerHandler:[[[ECLogHandlerNSLog alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerASL alloc] init] autorelease]];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

@@ -42,10 +42,11 @@ enum
 {
     kSettingsSection,
     kHandlersSection,
-    kContextSection
+    kContextSection,
+    kResetSection
 };
 
-NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
+NSString *const kSections[] = { @"Settings", @"Handlers", @"Context", @"Reset" };
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -111,9 +112,13 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     {
         return [self.logManager handlerCount];
     }
-    else
+    else if (section == kContextSection)
     {
         return [self.logManager contextFlagCount];
+    }
+    else
+    {
+        return 1;
     }
 }
 
@@ -144,10 +149,14 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
         label = [self.logManager handlerNameForIndex:path.row];
         ticked = [self.channel tickHandlerWithIndex:path.row];
     }
-    else
+    else if (path.section == kContextSection)
     {
         label = [self.logManager contextFlagNameForIndex:path.row];
         ticked = [self.channel tickFlagWithIndex:path.row];
+    }
+    else
+    {
+        label = @"Reset";
     }
     
     cell.textLabel.text = label;
@@ -182,11 +191,14 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context" };
     {
         [self.channel selectHandlerWithIndex:path.row];
     }
-    else
+    else if (path.section == kContextSection)
     {
         [self.channel selectFlagWithIndex:path.row];
     }
-
+    else
+    {
+        [self.logManager resetChannel:self.channel];
+    }
     
     [table deselectRowAtIndexPath: path animated: YES];
     [self.tableView reloadData];
