@@ -11,8 +11,11 @@
 			<key>Level</key>
 			<integer>5</integer>
 		</dict>
-		<key>ApplicationUpdate</key>
-		<dict/>
+		<key>Object</key>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>Handlers</key>
 	<dict/>
