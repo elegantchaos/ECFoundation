@@ -53,6 +53,7 @@
 - (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext*)context;
 - (void)            enableAllChannels;
 - (void)            disableAllChannels;
+- (void)            resetAllChannels;
 - (void)            saveChannelSettings;
 
 - (NSArray*)        channelsSortedByName;

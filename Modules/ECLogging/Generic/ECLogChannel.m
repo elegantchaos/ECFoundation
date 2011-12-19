@@ -44,7 +44,6 @@ static NSString *const kSuffixToStrip = @"Channel";
 	{
 		self.name = nameIn;
         self.context = ECLogContextDefault;
-        self.level = kUndefinedLevel;
 	}
 	
 	return self;
@@ -56,6 +55,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 - (void) dealloc
 {
+    [level release];
 	[name release];
 	[handlers release];
     

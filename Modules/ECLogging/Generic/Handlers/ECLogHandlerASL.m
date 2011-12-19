@@ -70,11 +70,7 @@
     }
     
     NSString* contextString = [channel stringFromContext:context];
-    int level = (int) channel.level;
-    if (level == kUndefinedLevel)
-    {
-        level = ASL_LEVEL_INFO;
-    }
+    int level = channel.level ? (int) [channel.level integerValue] : ASL_LEVEL_INFO;
     
     if (![channel showContext:ECLogContextMessage])
     {

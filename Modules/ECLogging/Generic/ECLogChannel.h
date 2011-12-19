@@ -9,8 +9,6 @@
 
 #import "ECLogContext.h"
 
-static const NSInteger kUndefinedLevel = -1;
-
 @class ECLogHandler;
 
 @interface ECLogChannel : NSObject
@@ -30,7 +28,7 @@ static const NSInteger kUndefinedLevel = -1;
 @property (nonatomic, assign) ECLogContextFlags context;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, assign) BOOL setup;
-@property (nonatomic, assign) NSInteger level;
+@property (nonatomic, retain) NSNumber* level;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSMutableSet* handlers;
 

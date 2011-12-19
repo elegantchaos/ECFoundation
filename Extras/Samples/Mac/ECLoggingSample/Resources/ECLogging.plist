@@ -5,7 +5,12 @@
 	<key>Channels</key>
 	<dict>
 		<key>Application</key>
-		<dict/>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>Level</key>
+			<integer>5</integer>
+		</dict>
 		<key>ApplicationUpdate</key>
 		<dict/>
 	</dict>

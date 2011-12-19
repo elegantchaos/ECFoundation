@@ -166,16 +166,21 @@
 #if EC_DEBUG
     [self removeAllItemsEC];
     
-    NSMenuItem* enableAllItem = [[NSMenuItem alloc] initWithTitle: @"Enable All Channels" action: @selector(enableAllSelected:) keyEquivalent: @""];
-    enableAllItem.target = self;
+    NSMenuItem* enableAllItem = [[NSMenuItem alloc] initWithTitle: @"Enable All Channels" action: @selector(enableAllChannels) keyEquivalent: @""];
+    enableAllItem.target = mLogManager;
     [self addItem: enableAllItem];
     [enableAllItem release];
     
-    NSMenuItem* disableAllItem = [[NSMenuItem alloc] initWithTitle: @"Disable All Channels" action: @selector(disableAllSelected:) keyEquivalent: @""];
-    disableAllItem.target = self;
+    NSMenuItem* disableAllItem = [[NSMenuItem alloc] initWithTitle: @"Disable All Channels" action: @selector(disableAllChannels) keyEquivalent: @""];
+    disableAllItem.target = mLogManager;
     [self addItem: disableAllItem];
     [disableAllItem release];
-    
+
+    NSMenuItem* resetAllItem = [[NSMenuItem alloc] initWithTitle: @"Reset All Channels" action: @selector(resetAllChannels) keyEquivalent: @""];
+    resetAllItem.target = mLogManager;
+    [self addItem: resetAllItem];
+    [resetAllItem release];
+
     [self addItem:[NSMenuItem separatorItem]];
 
     NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:@"Default Handlers" action:nil keyEquivalent: @""];
@@ -268,24 +273,6 @@
     }
     
 	[mLogManager saveChannelSettings];
-}
-
-// --------------------------------------------------------------------------
-//! Disable all channels.
-// --------------------------------------------------------------------------
-
-- (IBAction) disableAllSelected: (NSMenuItem*) item
-{
-	[mLogManager disableAllChannels];
-}
-
-// --------------------------------------------------------------------------
-//! Enable all channels.
-// --------------------------------------------------------------------------
-
-- (IBAction) enableAllSelected: (NSMenuItem*) item
-{
-	[mLogManager enableAllChannels];
 }
 
 // --------------------------------------------------------------------------

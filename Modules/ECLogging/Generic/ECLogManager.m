@@ -163,6 +163,33 @@ static ECLogManager* gSharedInstance = nil;
 }
 
 // --------------------------------------------------------------------------
+//! Apply some settings to a channel.
+// --------------------------------------------------------------------------
+
+- (void)applySettings:(NSDictionary*)channelSettings toChannel:(ECLogChannel*)channel
+{
+    channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
+    channel.level = [channelSettings objectForKey:LevelSetting];
+    NSNumber* contextValue = [channelSettings objectForKey: ContextSetting];
+    channel.context = contextValue ? ((ECLogContextFlags) [contextValue integerValue]) : ECLogContextDefault;
+    LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
+    
+    NSArray* handlerNames = [channelSettings objectForKey: HandlersSetting];
+    if (handlerNames)
+    {
+        for (NSString* handlerName in handlerNames)
+        {
+            ECLogHandler* handler = [self.handlers objectForKey:handlerName];
+            if (handler)
+            {
+                LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
+                [channel enableHandler:handler];
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
 //! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
@@ -177,25 +204,7 @@ static ECLogManager* gSharedInstance = nil;
         NSDictionary* channelSettings = [allChannels objectForKey: channel.name];
         if (channelSettings)
         {
-            channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
-            channel.level = [[channelSettings objectForKey:LevelSetting] integerValue];
-            NSNumber* contextValue = [channelSettings objectForKey: ContextSetting];
-            channel.context = contextValue ? ((ECLogContextFlags) [contextValue integerValue]) : ECLogContextDefault;
-            LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
-            
-            NSArray* handlerNames = [channelSettings objectForKey: HandlersSetting];
-            if (handlerNames)
-            {
-                for (NSString* handlerName in handlerNames)
-                {
-                    ECLogHandler* handler = [self.handlers objectForKey:handlerName];
-                    if (handler)
-                    {
-                        LogManagerLog(@"added channel %@ handler %@", channel.name, handler.name);
-                        [channel enableHandler:handler];
-                    }
-                }
-            }
+            [self applySettings:channelSettings toChannel:channel];
         }
         else
         {
@@ -432,6 +441,22 @@ static ECLogManager* gSharedInstance = nil;
 	for (ECLogChannel* channel in [self.channels allValues])
 	{
         [channel disable];
+	}
+}
+
+// --------------------------------------------------------------------------
+//! Revert all channels to default settings.
+// --------------------------------------------------------------------------
+
+- (void) resetAllChannels
+{
+    NSURL* defaultSettingsFile = [[NSBundle mainBundle] URLForResource:@"ECLogging" withExtension:@"plist"];
+    NSDictionary* defaultSettings = [NSDictionary dictionaryWithContentsOfURL:defaultSettingsFile];
+	NSDictionary* allChannelSettings = [defaultSettings objectForKey:ChannelsSetting];
+	for (NSString* name in self.channels)
+	{
+        ECLogChannel* channel = [self.channels objectForKey:name];
+        [self applySettings:[allChannelSettings objectForKey:name] toChannel:channel];
 	}
 }
 
