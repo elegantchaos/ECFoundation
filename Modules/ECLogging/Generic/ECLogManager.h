@@ -41,30 +41,31 @@
 // Public Methods
 // --------------------------------------------------------------------------
 
-+ (ECLogManager*)   sharedInstance;
++ (ECLogManager*)sharedInstance;
 
-- (ECLogChannel*)   registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
-- (ECLogChannel*)   registerChannelWithName:(NSString*)name options:(NSDictionary*)options;
-- (void)            registerChannel:(ECLogChannel*)channel;
-- (void)            registerHandler:(ECLogHandler*)handler;
-- (void)            registerDefaultHandler;
-- (void)            startup;
-- (void)            shutdown;
-- (void)            logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext*)context;
-- (void)            enableAllChannels;
-- (void)            disableAllChannels;
-- (void)            resetAllChannels;
-- (void)            saveChannelSettings;
+- (ECLogChannel*)registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
+- (ECLogChannel*)registerChannelWithName:(NSString*)name options:(NSDictionary*)options;
+- (void)registerChannel:(ECLogChannel*)channel;
+- (void)registerHandler:(ECLogHandler*)handler;
+- (void)registerDefaultHandler;
+- (void)startup;
+- (void)shutdown;
+- (void)logFromChannel:(ECLogChannel*) channel withFormat:(NSString*) format arguments:(va_list) arguments context:(ECLogContext*)context;
+- (void)enableAllChannels;
+- (void)disableAllChannels;
+- (void)resetAllChannels;
+- (void)saveChannelSettings;
+- (void)resetChannel:(ECLogChannel*)channel;
 
-- (NSArray*)        channelsSortedByName;
+- (NSArray*)channelsSortedByName;
 
-- (NSString*)           contextFlagNameForIndex:(NSUInteger)index;
-- (ECLogContextFlags)   contextFlagValueForIndex:(NSUInteger)index;
-- (NSUInteger)          contextFlagCount;
+- (NSString*)contextFlagNameForIndex:(NSUInteger)index;
+- (ECLogContextFlags)contextFlagValueForIndex:(NSUInteger)index;
+- (NSUInteger)contextFlagCount;
 
-- (NSString*)           handlerNameForIndex:(NSUInteger)index;
-- (ECLogHandler*)       handlerForIndex:(NSUInteger)index;
-- (NSUInteger)          handlerCount;
+- (NSString*)handlerNameForIndex:(NSUInteger)index;
+- (ECLogHandler*)handlerForIndex:(NSUInteger)index;
+- (NSUInteger)handlerCount;
 
 @end
 

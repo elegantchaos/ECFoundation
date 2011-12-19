@@ -187,6 +187,10 @@ static ECLogManager* gSharedInstance = nil;
             }
         }
     }
+    else
+    {
+        channel.handlers = nil;
+    }
 }
 
 // --------------------------------------------------------------------------
@@ -202,15 +206,7 @@ static ECLogManager* gSharedInstance = nil;
     {
         NSDictionary* allChannels = [self.settings objectForKey:ChannelsSetting];
         NSDictionary* channelSettings = [allChannels objectForKey: channel.name];
-        if (channelSettings)
-        {
-            [self applySettings:channelSettings toChannel:channel];
-        }
-        else
-        {
-            [channel.handlers addObjectsFromArray:self.defaultHandlers];
-            channel.context = ECLogContextDefault;
-        }
+        [self applySettings:channelSettings toChannel:channel];
         
         channel.setup = YES;
     }
@@ -442,6 +438,18 @@ static ECLogManager* gSharedInstance = nil;
 	{
         [channel disable];
 	}
+}
+
+// --------------------------------------------------------------------------
+//! Revert all channels to default settings.
+// --------------------------------------------------------------------------
+
+- (void) resetChannel:(ECLogChannel *)channel
+{
+    NSURL* defaultSettingsFile = [[NSBundle mainBundle] URLForResource:@"ECLogging" withExtension:@"plist"];
+    NSDictionary* defaultSettings = [NSDictionary dictionaryWithContentsOfURL:defaultSettingsFile];
+	NSDictionary* allChannelSettings = [defaultSettings objectForKey:ChannelsSetting];
+    [self applySettings:[allChannelSettings objectForKey:channel.name] toChannel:channel];
 }
 
 // --------------------------------------------------------------------------

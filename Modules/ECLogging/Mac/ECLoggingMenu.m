@@ -20,9 +20,9 @@
 
 @interface ECLoggingMenu()
 
-- (void) setup;
-- (void) buildMenu;
-- (void) channelsChanged: (NSNotification*) notification;
+- (void)setup;
+- (void)buildMenu;
+- (void)channelsChanged:(NSNotification*)notification;
 
 @end
 
@@ -36,7 +36,7 @@
 //! Set up after creation from a nib.
 // --------------------------------------------------------------------------
 
-- (void) awakeFromNib
+- (void)awakeFromNib
 {
 	[self setup];
 }
@@ -45,7 +45,7 @@
 //! Setup after creation from code.
 // --------------------------------------------------------------------------
 
-- (id) initWithTitle: (NSString*) title
+- (id)initWithTitle:(NSString*)title
 {
 	if ((self = [super initWithTitle: title]) != nil)
 	{
@@ -59,7 +59,7 @@
 //! Clean up.
 // --------------------------------------------------------------------------
 
-- (void) dealloc
+- (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
 	
@@ -71,7 +71,7 @@
 //! Create the menu items.
 // --------------------------------------------------------------------------
 
-- (void) setup
+- (void)setup
 {
 #if EC_DEBUG
     mLogManager = [ECLogManager sharedInstance];
@@ -94,7 +94,7 @@
 //! Build a channel submenu.
 // --------------------------------------------------------------------------
 
-- (NSMenu*) buildMenuForChannel: (ECLogChannel*) channel
+- (NSMenu*)buildMenuForChannel:(ECLogChannel*)channel
 {
     NSMenu* menu = [[NSMenu alloc] initWithTitle:channel.name];
     
@@ -130,6 +130,13 @@
 		[item release];
     }
     
+    [menu addItem: [NSMenuItem separatorItem]];
+    item = [[NSMenuItem alloc] initWithTitle:@"Reset" action: @selector(resetSelected:) keyEquivalent: @""];
+    item.target = self;
+    item.representedObject = channel;
+    [menu addItem: item];
+    [item release];
+
     return [menu autorelease];
 }
 
@@ -161,7 +168,7 @@
 //! We make some global items, then a submenu for each registered channel.
 // --------------------------------------------------------------------------
 
-- (void) buildMenu
+- (void)buildMenu
 {
 #if EC_DEBUG
     [self removeAllItemsEC];
@@ -210,7 +217,7 @@
 //! We enabled/disable the channel.
 // --------------------------------------------------------------------------
 
-- (IBAction) channelMenuSelected: (NSMenuItem*) item
+- (IBAction)channelMenuSelected:(NSMenuItem*)item
 {
 	ECLogChannel* channel = item.representedObject;
 	channel.enabled = !channel.enabled;
@@ -222,7 +229,7 @@
 //! We enabled/disable the channel.
 // --------------------------------------------------------------------------
 
-- (IBAction) contextMenuSelected: (NSMenuItem*) item
+- (IBAction)contextMenuSelected:(NSMenuItem*)item
 {
     ECLogChannel* channel = [item parentItem].representedObject;
     [channel selectFlagWithIndex:item.tag];
@@ -233,7 +240,7 @@
 //! We enabled/disable the channel.
 // --------------------------------------------------------------------------
 
-- (IBAction) channelSelected: (NSMenuItem*) item
+- (IBAction)channelSelected:(NSMenuItem*)item
 {
 	ECLogChannel* channel = item.representedObject;
 	channel.enabled = !channel.enabled;
@@ -245,10 +252,21 @@
 //! We enable/disable the handler for the channel that the parent menu represents.
 // --------------------------------------------------------------------------
 
-- (IBAction) handlerSelected: (NSMenuItem*) item
+- (IBAction)handlerSelected:(NSMenuItem*)item
 {
     ECLogChannel* channel = [item parentItem].representedObject;
     [channel selectHandlerWithIndex:item.tag];
+}
+
+// --------------------------------------------------------------------------
+//! Respond to a handler menu item being selected.
+//! We enable/disable the handler for the channel that the parent menu represents.
+// --------------------------------------------------------------------------
+
+- (IBAction)resetSelected:(NSMenuItem*)item
+{
+    ECLogChannel* channel = [item parentItem].representedObject;
+    [mLogManager resetChannel:channel];
 }
 
 // --------------------------------------------------------------------------
@@ -279,7 +297,7 @@
 //! Respond to change notification by rebuilding all items.
 // --------------------------------------------------------------------------
 
-- (void) channelsChanged: (NSNotification*) notification
+- (void)channelsChanged:(NSNotification*)notification
 {
 	[self buildMenu];
 }
@@ -289,9 +307,9 @@
 //! channels/handlers that they represent.
 // --------------------------------------------------------------------------
 
-- (BOOL) validateMenuItem: (NSMenuItem*) item
+- (BOOL)validateMenuItem:(NSMenuItem*)item
 {
-    if ((item.action == @selector(channelSelected:)) || (item.action == @selector(channelMenuSelected:)))
+    if ((item.action == @selector(channelSelected:))|| (item.action == @selector(channelMenuSelected:)))
     {
         ECLogChannel* channel = item.representedObject;
         item.state = channel.enabled ? NSOnState : NSOffState;
