@@ -5,5 +5,6 @@ source "$base/shared-test.sh"
 targetMac="ECFoundation Test Mac"
 sdkMac="macosx"
 
-xcodebuild -target "$targetMac" $config -sdk "$sdkMac" clean build | "${base}/ocunit2junit.rb"
+# build the framework
 
+xcodebuild -target "$targetMac" $config -sdk "$sdkMac" clean build | "${base}/ocunit2junit.rb"
