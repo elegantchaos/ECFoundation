@@ -11,6 +11,7 @@
 #import "ECLogChannel.h"
 #import "ECLogHandlerNSLog.h"
 
+#import "NSDictionary+ECCore.h"
 
 @interface ECLogManager()
 
@@ -34,9 +35,9 @@
 // Private Methods
 // --------------------------------------------------------------------------
 
-- (void) loadChannelSettings;
-- (void) saveChannelSettings;
-- (void) postUpdateNotification;
+- (void)loadChannelSettings;
+- (void)saveChannelSettings;
+- (void)postUpdateNotification;
 
 @end
 
@@ -56,6 +57,7 @@ NSString *const LogChannelsChanged = @"LogChannelsChanged";
 NSString *const ContextSetting = @"Context";
 NSString *const EnabledSetting = @"Enabled";
 NSString *const HandlersSetting = @"Handlers";
+NSString *const LevelSetting = @"Level";
 NSString *const LogManagerSettings = @"LogManager";
 NSString *const ChannelsSetting = @"Channels";
 NSString *const DefaultsSetting = @"Defaults";
@@ -97,7 +99,7 @@ static ECLogManager* gSharedInstance = nil;
 //! Initialise the class.
 // --------------------------------------------------------------------------
 
-+ (void) initialize
++ (void)initialize
 {
     LogManagerLog(@"created log manager");
 	gSharedInstance = [[ECLogManager alloc] init];
@@ -107,7 +109,7 @@ static ECLogManager* gSharedInstance = nil;
 //! Return the shared instance.
 // --------------------------------------------------------------------------
 
-+ (ECLogManager*) sharedInstance
++ (ECLogManager*)sharedInstance
 {
 	return gSharedInstance;
 }
@@ -117,7 +119,7 @@ static ECLogManager* gSharedInstance = nil;
 //! If the channel was created, we register it.
 // --------------------------------------------------------------------------
 
-- (ECLogChannel*) registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
+- (ECLogChannel*)registerChannelWithRawName:(const char*)rawName options:(NSDictionary*)options;
 {
     LogManagerLog(@"registering raw channel with name %s", rawName);
     NSString* name = [ECLogChannel cleanName:rawName];
@@ -129,7 +131,7 @@ static ECLogManager* gSharedInstance = nil;
 //! If the channel was created, we register it.
 // --------------------------------------------------------------------------
 
-- (ECLogChannel*) registerChannelWithName:(NSString*)name options:(NSDictionary*)options
+- (ECLogChannel*)registerChannelWithName:(NSString*)name options:(NSDictionary*)options
 {
     LogManagerLog(@"registering channel with name %@", name);
     ECLogChannel* channel = [self.channels objectForKey:name];
@@ -153,7 +155,7 @@ static ECLogManager* gSharedInstance = nil;
 //! in an infinite loop if the notification causes another notification to be posted
 // --------------------------------------------------------------------------
 
-- (void) postUpdateNotification
+- (void)postUpdateNotification
 {
     NSNotification* notification = [NSNotification notificationWithName: LogChannelsChanged object: self];
     [[NSNotificationQueue defaultQueue] enqueueNotification:notification postingStyle:NSPostWhenIdle coalesceMask:NSNotificationCoalescingOnName forModes: nil];
@@ -164,7 +166,7 @@ static ECLogManager* gSharedInstance = nil;
 //! Register a channel with the log manager.
 // --------------------------------------------------------------------------
 
-- (void) registerChannel:(ECLogChannel*)channel
+- (void)registerChannel:(ECLogChannel*)channel
 {
     LogManagerLog(@"adding channel %@", channel.name);
 	[self.channels setObject: channel forKey: channel.name];
@@ -176,6 +178,7 @@ static ECLogManager* gSharedInstance = nil;
         if (channelSettings)
         {
             channel.enabled = [[channelSettings objectForKey: EnabledSetting] boolValue];
+            channel.level = [[channelSettings objectForKey:LevelSetting] integerValue];
             NSNumber* contextValue = [channelSettings objectForKey: ContextSetting];
             channel.context = contextValue ? ((ECLogContextFlags) [contextValue integerValue]) : ECLogContextDefault;
             LogManagerLog(@"loaded channel %@ setting enabled: %d", channel.name, channel.enabled);
@@ -310,14 +313,23 @@ static ECLogManager* gSharedInstance = nil;
 {
     LogManagerLog(@"log manager loading settings");
 
-    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey: LogManagerSettings];
+    NSDictionary* loadedSettings = [[NSUserDefaults standardUserDefaults] dictionaryForKey:LogManagerSettings];
+    if (!loadedSettings)
+    {
+        NSURL* defaultSettingsFile = [[NSBundle mainBundle] URLForResource:@"ECLogging" withExtension:@"plist"];
+        loadedSettings = [NSDictionary dictionaryWithContentsOfURL:defaultSettingsFile];
+    }
+    
     NSDictionary* channelSettings = [loadedSettings objectForKey:ChannelsSetting];
     for (NSString* channel in [channelSettings allKeys])
     {
         [self registerChannelWithName:channel options:nil];
     }
-         
-    self.settings = [[loadedSettings mutableCopy] autorelease];
+
+    if (loadedSettings)
+    {
+        self.settings = [NSMutableDictionary dictionaryWithDictionary:loadedSettings];
+    }
 }
 
 // --------------------------------------------------------------------------

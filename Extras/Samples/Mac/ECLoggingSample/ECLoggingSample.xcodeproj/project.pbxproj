@@ -10,6 +10,7 @@
 		22426111149EB4A900DB6C53 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426110149EB4A900DB6C53 /* ECRandom.m */; };
 		22426113149EB4C500DB6C53 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426112149EB4C500DB6C53 /* ECAssertion.m */; };
 		22426116149EBAD400DB6C53 /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426115149EBAD400DB6C53 /* ECLogHandlerASL.m */; };
+		2242611D149F50CD00DB6C53 /* ECLogging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2242611C149F50CD00DB6C53 /* ECLogging.plist */; };
 		22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22A723591435DE0F00889A06 /* Credits.rtf */; };
 		22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7235B1435DE0F00889A06 /* MainMenu.xib */; };
 		22A723631435E1C800889A06 /* ECLaunchServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A723601435E1C800889A06 /* ECLaunchServices.m */; };
@@ -56,6 +57,7 @@
 		22426112149EB4C500DB6C53 /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
 		22426114149EBAD400DB6C53 /* ECLogHandlerASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerASL.h; sourceTree = "<group>"; };
 		22426115149EBAD400DB6C53 /* ECLogHandlerASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerASL.m; sourceTree = "<group>"; };
+		2242611C149F50CD00DB6C53 /* ECLogging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECLogging.plist; path = Resources/ECLogging.plist; sourceTree = SOURCE_ROOT; };
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,6 +203,7 @@
 				22A723591435DE0F00889A06 /* Credits.rtf */,
 				22A7235B1435DE0F00889A06 /* MainMenu.xib */,
 				226FB46113E1EB0B00BF258D /* info.plist */,
+				2242611C149F50CD00DB6C53 /* ECLogging.plist */,
 				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -492,6 +495,7 @@
 				22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */,
 				22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */,
 				22A7236F1435E39000889A06 /* info.plist in Resources */,
+				2242611D149F50CD00DB6C53 /* ECLogging.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
