@@ -76,10 +76,10 @@ ECLogChannel* registerChannelWithOptions(const char* name, id options)
 //! C style routine to log to a channel.
 // --------------------------------------------------------------------------
 
-extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...)
+extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, id object, ...)
 {
 	va_list args;
-	va_start(args, format);
-	[[ECLogManager sharedInstance] logFromChannel: channel withFormat:format arguments:args context:context];
+	va_start(args, object);
+    [[ECLogManager sharedInstance] logFromChannel:channel withObject:object arguments:args context:context];
 	va_end(args);
 }

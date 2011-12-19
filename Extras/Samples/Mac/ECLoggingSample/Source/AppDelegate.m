@@ -49,6 +49,9 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerASL alloc] init] autorelease]];
 
     ECDebug(ApplicationChannel, @"will finish launching");
+    
+    NSImage* image = [NSImage imageNamed:@"Icon.png"];
+    ECDebug(ApplicationChannel, image);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

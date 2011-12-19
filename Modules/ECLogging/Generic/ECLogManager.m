@@ -70,7 +70,7 @@ typedef struct
 
 const ContextFlagInfo kContextFlagInfo[] = 
 {
-    { ECLogContextDefault, @"Use Defaults"},
+    { ECLogContextDefault, @"Use Default Flags"},
     { ECLogContextFile, @"File" },
     { ECLogContextDate, @"Date"},
     { ECLogContextFunction, @"Function"}, 
@@ -397,7 +397,7 @@ static ECLogManager* gSharedInstance = nil;
 //! Log to all valid handlers for a channel
 // --------------------------------------------------------------------------
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext*)context
+- (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context
 {
     // if no handlers specified, use them all
     NSArray* handlersToUse = [channel.handlers allObjects];
@@ -410,7 +410,7 @@ static ECLogManager* gSharedInstance = nil;
 	{
 		va_list arg_copy;
 		va_copy(arg_copy, arguments);
-		[handler logFromChannel: channel withFormat:format arguments:arg_copy context:context];
+		[handler logFromChannel:channel withObject:object arguments:arg_copy context:context];
 	}
 }
 
@@ -538,7 +538,7 @@ static ECLogManager* gSharedInstance = nil;
     NSString* result;
     if (index == 0)
     {
-        result = @"Use Defaults";
+        result = @"Use Default Handlers";
     }
     else
     {

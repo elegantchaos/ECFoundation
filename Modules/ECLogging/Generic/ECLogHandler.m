@@ -37,7 +37,7 @@
 // --------------------------------------------------------------------------
 
 
-- (void) logFromChannel:(ECLogChannel*)channel withFormat:(NSString*)format arguments:(va_list)arguments context:(ECLogContext*)context
+- (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context
 {
 	ECAssertShouldntBeHere();
 }
@@ -48,7 +48,7 @@
 //! Comparison function for sorting alphabetically by name.
 // --------------------------------------------------------------------------
 
-- (NSComparisonResult) caseInsensitiveCompare: (ECLogHandler*) other
+- (NSComparisonResult)caseInsensitiveCompare:(ECLogHandler*)other
 {
 	return [self.name caseInsensitiveCompare: other.name];
 }
