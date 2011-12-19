@@ -9,6 +9,8 @@
 
 #import "ECLogContext.h"
 
+static const NSInteger kUndefinedLevel = -1;
+
 @class ECLogHandler;
 
 @interface ECLogChannel : NSObject

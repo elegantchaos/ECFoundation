@@ -27,9 +27,10 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 @synthesize context;
 @synthesize enabled;
-@synthesize setup;
-@synthesize name;
 @synthesize handlers;
+@synthesize level;
+@synthesize name;
+@synthesize setup;
 
 #pragma mark - Lifecycle
 
@@ -43,6 +44,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 	{
 		self.name = nameIn;
         self.context = ECLogContextDefault;
+        self.level = kUndefinedLevel;
 	}
 	
 	return self;

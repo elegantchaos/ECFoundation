@@ -13,6 +13,7 @@
 #import "ECLogHandlerFile.h"
 #import "ECLogHandlerStdout.h"
 #import "ECLogHandlerStderr.h"
+#import "ECLogHandlerASL.h"
 
 @implementation AppDelegate
 
@@ -45,6 +46,7 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerASL alloc] init] autorelease]];
 
     ECDebug(ApplicationChannel, @"will finish launching");
 }

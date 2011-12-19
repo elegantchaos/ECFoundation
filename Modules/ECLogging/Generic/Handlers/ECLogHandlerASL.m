@@ -15,11 +15,14 @@
 @interface ECLogHandlerASL()
 
 @property (nonatomic, assign) aslclient aslClient;
-@property (nonatomic, assign) aslmsg aslMsg;
+@property (nonatomic, retain) NSMutableDictionary*  aslMsgs;
 
 @end
 
 @implementation ECLogHandlerASL
+
+@synthesize aslClient;
+@synthesize aslMsgs;
 
 #pragma mark - Lifecycle
 
@@ -35,8 +38,7 @@
         NSString* name = [[NSBundle mainBundle] bundleIdentifier];
         const char* name_c = [name UTF8String];
         self.aslClient = asl_open(name_c, "ECLogging", ASL_OPT_STDERR);
-        self.aslMsg = asl_new(ASL_TYPE_MSG);
-        asl_set(self.aslMsg, ASL_KEY_SENDER, name_c);
+        self.aslMsgs = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -44,7 +46,11 @@
 
 - (void)dealloc 
 {
-    asl_free(self.aslMsg);
+    for (NSValue* msg in [self.aslMsgs allValues])
+    {
+        asl_free([msg pointerValue]);
+    }
+    [aslMsgs release];
     asl_close(self.aslClient);
     
     [super dealloc];
@@ -54,12 +60,26 @@
 
 - (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
 {
+    aslmsg aslMsg = [[self.aslMsgs objectForKey:channel.name] pointerValue];
+    if (!aslMsg)
+    {
+        aslMsg = asl_new(ASL_TYPE_MSG);
+        NSString* name = [NSString stringWithFormat:@"%@.%@", [[NSBundle mainBundle] bundleIdentifier], channel.name];
+        asl_set(aslMsg, ASL_KEY_FACILITY, [name UTF8String]);
+        [self.aslMsgs setObject:[NSValue valueWithPointer:aslMsg] forKey:channel.name];
+    }
+    
     NSString* contextString = [channel stringFromContext:context];
-
+    int level = (int) channel.level;
+    if (level == kUndefinedLevel)
+    {
+        level = ASL_LEVEL_INFO;
+    }
+    
     if (![channel showContext:ECLogContextMessage])
     {
         // just log the context
-        asl_log(self.aslClient, self.aslMsg, ASL_LEVEL_NOTICE, "%s", [contextString UTF8String]);
+        asl_log(self.aslClient, aslMsg, level, "%s", [contextString UTF8String]);
     }
     else
     {
@@ -67,11 +87,11 @@
         NSString* bodyString = [[NSString alloc] initWithFormat: format arguments: arguments];
         if ([contextString length])
         {
-            asl_log(self.aslClient, self.aslMsg, ASL_LEVEL_NOTICE, "%s «%s»", [bodyString UTF8String], [contextString UTF8String]);
+            asl_log(self.aslClient, aslMsg, level, "%s «%s»", [bodyString UTF8String], [contextString UTF8String]);
         }
         else
         {
-            asl_log(self.aslClient, self.aslMsg, ASL_LEVEL_NOTICE, "%s", [bodyString UTF8String]);
+            asl_log(self.aslClient, aslMsg, level, "%s", [bodyString UTF8String]);
         }
         [bodyString release];
     }
