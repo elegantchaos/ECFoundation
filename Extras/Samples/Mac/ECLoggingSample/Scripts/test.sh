@@ -1,4 +1,4 @@
-echo Testing Mac
+echo Testing Mac ECLoggingSample
 
 base=`dirname $0`
 source "$base/../../../../Scripts/shared-test.sh"
