@@ -21,6 +21,7 @@
 
 ECDefineDebugChannel(ApplicationChannel);
 ECDefineDebugChannel(ApplicationUpdateChannel);
+ECDefineDebugChannel(ObjectChannel);
 
 #pragma mark - Properties
 
@@ -49,9 +50,10 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerASL alloc] init] autorelease]];
 
     ECDebug(ApplicationChannel, @"will finish launching");
-    
-    NSImage* image = [NSImage imageNamed:@"Icon.png"];
-    ECDebug(ApplicationChannel, image);
+
+    // example of logging a non-string object
+    ECDebug(ObjectChannel, self);
+    ECDebug(ObjectChannel, [NSImage imageNamed:NSImageNameActionTemplate]);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

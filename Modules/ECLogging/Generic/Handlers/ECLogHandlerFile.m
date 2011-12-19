@@ -123,24 +123,7 @@
 
 - (void) logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context
 {
-    NSString* format = [object description];
-    NSString* output;
-    if (![channel showContext:ECLogContextMessage])
-    {
-        // just log the context
-        output = [channel stringFromContext:context];
-    }
-    else
-    {
-        // log the message, possibly with a context appended
-        output = [[[NSString alloc] initWithFormat:format arguments: arguments] autorelease];
-        NSString* contextString = [channel stringFromContext:context];
-        if ([contextString length])
-        {
-            output = [NSString stringWithFormat:@"%@ «%@»", output, contextString];
-        }
-    }
-    
+    NSString* output = [self simpleOutputStringForChannel:channel withObject:object arguments:arguments context:context];
     [self logString:output forChannel:channel];
 }
 

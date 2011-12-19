@@ -35,13 +35,8 @@
 
 - (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context
 {
-    NSString* format = [object description];
-	NSString* body = [[NSString alloc] initWithFormat: format arguments: arguments];
-    NSString* output = [[NSString alloc] initWithFormat:@"«%@» %@", channel.name, body];
-	[body release];	
-
+    NSString* output = [self simpleOutputStringForChannel:channel withObject:object arguments:arguments context:context];
     fprintf(stderr, "%s\n", [output UTF8String]);
-    [output release];
 }
 
 @end

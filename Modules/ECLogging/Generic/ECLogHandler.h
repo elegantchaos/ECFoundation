@@ -21,5 +21,5 @@
 
 - (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context;
 - (NSComparisonResult)caseInsensitiveCompare:(ECLogHandler*)other;
-
+- (NSString*)simpleOutputStringForChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context;
 @end

@@ -60,8 +60,6 @@
 
 - (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext *)context
 {
-    NSString* format = [object description];
-    
     aslmsg aslMsg = [[self.aslMsgs objectForKey:channel.name] pointerValue];
     if (!aslMsg)
     {
@@ -71,28 +69,9 @@
         [self.aslMsgs setObject:[NSValue valueWithPointer:aslMsg] forKey:channel.name];
     }
     
-    NSString* contextString = [channel stringFromContext:context];
     int level = channel.level ? (int) [channel.level integerValue] : ASL_LEVEL_INFO;
-    
-    if (![channel showContext:ECLogContextMessage])
-    {
-        // just log the context
-        asl_log(self.aslClient, aslMsg, level, "%s", [contextString UTF8String]);
-    }
-    else
-    {
-        // log the message, possibly with a context appended
-        NSString* bodyString = [[NSString alloc] initWithFormat: format arguments: arguments];
-        if ([contextString length])
-        {
-            asl_log(self.aslClient, aslMsg, level, "%s «%s»", [bodyString UTF8String], [contextString UTF8String]);
-        }
-        else
-        {
-            asl_log(self.aslClient, aslMsg, level, "%s", [bodyString UTF8String]);
-        }
-        [bodyString release];
-    }
+    NSString* output = [self simpleOutputStringForChannel:channel withObject:object arguments:arguments context:context];
+    asl_log(self.aslClient, aslMsg, level, "%s", [output UTF8String]);
 }
 
 @end
