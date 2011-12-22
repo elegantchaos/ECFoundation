@@ -157,6 +157,7 @@ NSString *const kSections[] = { @"Settings", @"Handlers", @"Context", @"Reset" }
     else
     {
         label = @"Reset";
+		ticked = NO;
     }
     
     cell.textLabel.text = label;
