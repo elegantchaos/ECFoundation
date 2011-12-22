@@ -51,7 +51,7 @@ ECDefineLogChannel(ErrorChannel);
     if (error)
     {
         ECLog(ErrorChannel, @"%@ %@", message, error);
-		#if EC_DEBUG && EC_PLATFORM_MAC
+        #if 0 // TODO -- this creates a dependancy on AppKit - should refactor this out into the Mac UI classes EC_DEBUG && EC_PLATFORM_MAC
 			[[NSApplication sharedApplication] presentError:error];
 		#endif
     }

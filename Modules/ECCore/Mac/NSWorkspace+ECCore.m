@@ -9,7 +9,7 @@
 
 #import "NSWorkspace+ECCore.h"
 #import "NSAppleEventDescriptor+ECCore.h"
-#import "ECAppDelegate.h"
+#import "ECRandom.h"
 #import "NSAppleScript+ECCore.h"
 #import "NSURL+ECCoreMac.h"
 
@@ -34,7 +34,7 @@ static NSAppleScript *const kInvalidScript = (NSAppleScript*) -1;
     static NSAppleScript* script = nil;
     if (!script)
     {
-        NSBundle* bundle = [NSBundle bundleForClass:[ECAppDelegate class]];
+        NSBundle* bundle = [NSBundle bundleForClass:[ECRandom class]];
         script = [[NSAppleScript scriptNamed:@"finder support" fromBundle:bundle] retain];
         if (script == nil)
         {
