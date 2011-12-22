@@ -550,6 +550,18 @@
 		22EC40A513589DD5005C1F1A /* ECReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC40A113589DD5005C1F1A /* ECReachability.m */; };
 		22EC40A81358A17A005C1F1A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */; };
 		22EC40A91358A185005C1F1A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		22EDDC1A14A0E19300E61CFF /* ECASLClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDDC1814A0E19300E61CFF /* ECASLClient.h */; };
+		22EDDC1B14A0E19300E61CFF /* ECASLClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDDC1814A0E19300E61CFF /* ECASLClient.h */; };
+		22EDDC1C14A0E19300E61CFF /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC1914A0E19300E61CFF /* ECASLClient.m */; };
+		22EDDC1D14A0E19300E61CFF /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC1914A0E19300E61CFF /* ECASLClient.m */; };
+		22EDDC1E14A0E19300E61CFF /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC1914A0E19300E61CFF /* ECASLClient.m */; };
+		22EDDC1F14A0E19300E61CFF /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC1914A0E19300E61CFF /* ECASLClient.m */; };
+		22EDDC2314A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDDC2114A0E1B200E61CFF /* ECLogHandlerASL.h */; };
+		22EDDC2414A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EDDC2114A0E1B200E61CFF /* ECLogHandlerASL.h */; };
+		22EDDC2514A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
+		22EDDC2614A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
+		22EDDC2714A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
+		22EDDC2814A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
 		22FAC46D132149E900103630 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FAC46C132149E900103630 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -902,6 +914,10 @@
 		22EC40A013589DD5005C1F1A /* ECReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECReachability.h; sourceTree = "<group>"; };
 		22EC40A113589DD5005C1F1A /* ECReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECReachability.m; sourceTree = "<group>"; };
 		22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		22EDDC1814A0E19300E61CFF /* ECASLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECASLClient.h; sourceTree = "<group>"; };
+		22EDDC1914A0E19300E61CFF /* ECASLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECASLClient.m; sourceTree = "<group>"; };
+		22EDDC2114A0E1B200E61CFF /* ECLogHandlerASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerASL.h; sourceTree = "<group>"; };
+		22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerASL.m; sourceTree = "<group>"; };
 		22F568D713211C39003E8EE8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		22F568D813211C39003E8EE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22FAC46C132149E900103630 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1477,6 +1493,8 @@
 		22B1273313C785CA0022CC5B /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				22EDDC1814A0E19300E61CFF /* ECASLClient.h */,
+				22EDDC1914A0E19300E61CFF /* ECASLClient.m */,
 				22E99E99148E50F90034E167 /* ECAssertion.m */,
 				22B1273413C785CA0022CC5B /* ECAssertion.h */,
 				22B1273513C785CA0022CC5B /* ECErrorReporter.h */,
@@ -1498,6 +1516,8 @@
 		22B1273F13C785CA0022CC5B /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
+				22EDDC2114A0E1B200E61CFF /* ECLogHandlerASL.h */,
+				22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */,
 				22B1274013C785CA0022CC5B /* ECLogHandlerFile.h */,
 				22B1274113C785CA0022CC5B /* ECLogHandlerFile.m */,
 				22B1274213C785CA0022CC5B /* ECLogHandlerNSLog.h */,
@@ -1814,6 +1834,8 @@
 				22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */,
 				22BE51281496B01A007CC214 /* ECModelController.h in Headers */,
 				228A510914991FB3002907A6 /* ECRuntime.h in Headers */,
+				22EDDC1B14A0E19300E61CFF /* ECASLClient.h in Headers */,
+				22EDDC2414A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1912,6 +1934,8 @@
 				228A50FF1498FE39002907A6 /* ECIsEmptyTransformer.h in Headers */,
 				228A51021498FE39002907A6 /* ECIsNotEmptyTransformer.h in Headers */,
 				228A510814991FB3002907A6 /* ECRuntime.h in Headers */,
+				22EDDC1A14A0E19300E61CFF /* ECASLClient.h in Headers */,
+				22EDDC2314A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2173,6 +2197,8 @@
 				22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
 				22BE51291496B01A007CC214 /* ECModelController.m in Sources */,
 				228A510B14991FB3002907A6 /* ECRuntime.m in Sources */,
+				22EDDC1D14A0E19300E61CFF /* ECASLClient.m in Sources */,
+				22EDDC2614A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2259,6 +2285,8 @@
 				22BE51321496BCDF007CC214 /* ECHTMLParser.m in Sources */,
 				228A510D14991FB3002907A6 /* ECRuntime.m in Sources */,
 				2269C68B149E66B100C95D11 /* ECTestCase.m in Sources */,
+				22EDDC1F14A0E19300E61CFF /* ECASLClient.m in Sources */,
+				22EDDC2814A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2370,6 +2398,8 @@
 				228A51041498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */,
 				228A510C14991FB3002907A6 /* ECRuntime.m in Sources */,
 				2269C68A149E66B100C95D11 /* ECTestCase.m in Sources */,
+				22EDDC1E14A0E19300E61CFF /* ECASLClient.m in Sources */,
+				22EDDC2714A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2455,6 +2485,8 @@
 				228A51001498FE39002907A6 /* ECIsEmptyTransformer.m in Sources */,
 				228A51031498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */,
 				228A510A14991FB3002907A6 /* ECRuntime.m in Sources */,
+				22EDDC1C14A0E19300E61CFF /* ECASLClient.m in Sources */,
+				22EDDC2514A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
