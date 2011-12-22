@@ -69,6 +69,7 @@
         NSSocketPort* receivePort = [[NSSocketPort alloc] initWithProtocolFamily:AF_UNIX socketType:SOCK_STREAM protocol:0 socket:socket];
         connection = [NSConnection connectionWithReceivePort:receivePort sendPort:nil];
         [connection setRootObject:root];
+		[receivePort release];
     }
     
     return connection;

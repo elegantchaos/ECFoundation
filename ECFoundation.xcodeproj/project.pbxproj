@@ -322,6 +322,15 @@
 		2298A47113552A0C00217C2B /* ECDictionaryBackedObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */; };
 		2298A47413552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
 		2298A47513552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */; };
+		2299A8FA14A3A36D00729830 /* ECUnixPorts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2299A8F814A3A36D00729830 /* ECUnixPorts.h */; };
+		2299A8FB14A3A36D00729830 /* ECUnixPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A8F914A3A36D00729830 /* ECUnixPorts.m */; };
+		2299A8FC14A3A36D00729830 /* ECUnixPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A8F914A3A36D00729830 /* ECUnixPorts.m */; };
+		2299A8FF14A3A39E00729830 /* ECMachPorts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2299A8FD14A3A39E00729830 /* ECMachPorts.h */; };
+		2299A90014A3A39E00729830 /* ECMachPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A8FE14A3A39E00729830 /* ECMachPorts.m */; };
+		2299A90114A3A39E00729830 /* ECMachPorts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A8FE14A3A39E00729830 /* ECMachPorts.m */; };
+		2299A90414A3A3E300729830 /* ECLaunchD.h in Headers */ = {isa = PBXBuildFile; fileRef = 2299A90214A3A3E300729830 /* ECLaunchD.h */; };
+		2299A90514A3A3E300729830 /* ECLaunchD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A90314A3A3E300729830 /* ECLaunchD.m */; };
+		2299A90614A3A3E300729830 /* ECLaunchD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2299A90314A3A3E300729830 /* ECLaunchD.m */; };
 		22AE91E214925F24008EF8E2 /* ECLaunchServicesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91D814925F24008EF8E2 /* ECLaunchServicesTests.m */; };
 		22AE91E314925F24008EF8E2 /* NSAppleEventDescriptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91D914925F24008EF8E2 /* NSAppleEventDescriptorTests.m */; };
 		22AE91E414925F24008EF8E2 /* NSAppleScriptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE91DA14925F24008EF8E2 /* NSAppleScriptTests.m */; };
@@ -787,6 +796,12 @@
 		2298A4671355278200217C2B /* ECDictionaryBackedObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectTests.m; sourceTree = "<group>"; };
 		2298A46A1355280000217C2B /* TestDictionaryBackedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDictionaryBackedObject.m; sourceTree = "<group>"; };
 		2298A47313552BEC00217C2B /* ECDictionaryBackedObjectCacheTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObjectCacheTests.m; sourceTree = "<group>"; };
+		2299A8F814A3A36D00729830 /* ECUnixPorts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECUnixPorts.h; sourceTree = "<group>"; };
+		2299A8F914A3A36D00729830 /* ECUnixPorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECUnixPorts.m; sourceTree = "<group>"; };
+		2299A8FD14A3A39E00729830 /* ECMachPorts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMachPorts.h; sourceTree = "<group>"; };
+		2299A8FE14A3A39E00729830 /* ECMachPorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMachPorts.m; sourceTree = "<group>"; };
+		2299A90214A3A3E300729830 /* ECLaunchD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLaunchD.h; sourceTree = "<group>"; };
+		2299A90314A3A3E300729830 /* ECLaunchD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchD.m; sourceTree = "<group>"; };
 		22AE91D814925F24008EF8E2 /* ECLaunchServicesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLaunchServicesTests.m; sourceTree = "<group>"; };
 		22AE91D914925F24008EF8E2 /* NSAppleEventDescriptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAppleEventDescriptorTests.m; sourceTree = "<group>"; };
 		22AE91DA14925F24008EF8E2 /* NSAppleScriptTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAppleScriptTests.m; sourceTree = "<group>"; };
@@ -1423,6 +1438,27 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		2299A8DD14A3A33F00729830 /* ECNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				2299A8F714A3A36D00729830 /* Mac */,
+			);
+			path = ECNetwork;
+			sourceTree = "<group>";
+		};
+		2299A8F714A3A36D00729830 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				2299A90214A3A3E300729830 /* ECLaunchD.h */,
+				2299A90314A3A3E300729830 /* ECLaunchD.m */,
+				2299A8FD14A3A39E00729830 /* ECMachPorts.h */,
+				2299A8FE14A3A39E00729830 /* ECMachPorts.m */,
+				2299A8F814A3A36D00729830 /* ECUnixPorts.h */,
+				2299A8F914A3A36D00729830 /* ECUnixPorts.m */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
 		22AE91D714925F24008EF8E2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1574,6 +1610,7 @@
 				227EEB8111A6BCCD009420F7 /* ECCore */,
 				22C02E0A141FE3CB004B159A /* ECLocation */,
 				22B1273213C785CA0022CC5B /* ECLogging */,
+				2299A8DD14A3A33F00729830 /* ECNetwork */,
 				227EEB8011A6BCCD009420F7 /* ECTouch */,
 				220375D2141FF1E80040E740 /* ECUtilities */,
 			);
@@ -1936,6 +1973,9 @@
 				228A510814991FB3002907A6 /* ECRuntime.h in Headers */,
 				22EDDC1A14A0E19300E61CFF /* ECASLClient.h in Headers */,
 				22EDDC2314A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */,
+				2299A8FA14A3A36D00729830 /* ECUnixPorts.h in Headers */,
+				2299A8FF14A3A39E00729830 /* ECMachPorts.h in Headers */,
+				2299A90414A3A3E300729830 /* ECLaunchD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2400,6 +2440,9 @@
 				2269C68A149E66B100C95D11 /* ECTestCase.m in Sources */,
 				22EDDC1E14A0E19300E61CFF /* ECASLClient.m in Sources */,
 				22EDDC2714A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
+				2299A8FC14A3A36D00729830 /* ECUnixPorts.m in Sources */,
+				2299A90114A3A39E00729830 /* ECMachPorts.m in Sources */,
+				2299A90614A3A3E300729830 /* ECLaunchD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2487,6 +2530,9 @@
 				228A510A14991FB3002907A6 /* ECRuntime.m in Sources */,
 				22EDDC1C14A0E19300E61CFF /* ECASLClient.m in Sources */,
 				22EDDC2514A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
+				2299A8FB14A3A36D00729830 /* ECUnixPorts.m in Sources */,
+				2299A90014A3A39E00729830 /* ECMachPorts.m in Sources */,
+				2299A90514A3A3E300729830 /* ECLaunchD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
