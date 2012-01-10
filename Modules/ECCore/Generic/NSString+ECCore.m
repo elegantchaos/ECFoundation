@@ -181,4 +181,17 @@
     return result;
 }
 
+- (NSString*)truncateToLength:(NSUInteger)length
+{
+	NSUInteger actualLength = [self length];
+	if (actualLength <= length)
+	{
+		return self;
+	}
+	else
+	{
+		return [NSString stringWithFormat:@"%@…", [self substringToIndex: length - 1]];
+	}
+}
+
 @end

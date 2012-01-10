@@ -29,4 +29,6 @@
 
 + (NSString*)stringWithOrdinal:(NSInteger)ordinal;
 
+- (NSString*)truncateToLength:(NSUInteger)length;
+
 @end

@@ -386,12 +386,14 @@ static ECLogManager* gSharedInstance = nil;
     NSArray* handlersToUse = [channel.handlers allObjects];
     if (!handlersToUse)
     {
-        handlersToUse = [self.handlers allValues];
+        handlersToUse = self.defaultHandlers;
     }
     
 	for (ECLogHandler* handler in handlersToUse)
 	{
-		[handler logFromChannel: channel withFormat:format arguments:arguments context:context];
+		va_list arg_copy;
+		va_copy(arg_copy, arguments);
+		[handler logFromChannel: channel withFormat:format arguments:arg_copy context:context];
 	}
 }
 

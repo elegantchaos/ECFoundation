@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 
+#import "ECAssertion.h"
 #import "ECLogManager.h"
 #import "ECLogHandlerNSLog.h"
 #import "ECLogHandlerFile.h"
 #import "ECLogHandlerStdout.h"
 #import "ECLogHandlerStderr.h"
+
+#import "TestClass.h"
 
 @implementation AppDelegate
 
@@ -42,9 +45,23 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     
     // install some handlers
     [lm registerHandler:[[[ECLogHandlerNSLog alloc] init] autorelease]];
-    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
+    //    [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
+
+    TestClass* test1 = [[TestClass alloc] init];
+    TestClass* test2 = [[TestClass alloc] init];
+    
+    ECAssert([test1.test isEqualToString:@"test value"]);
+    test1.test = @"something else";
+    ECAssert([test1.test isEqualToString:@"something else"]);
+    
+    ECAssert([test2.test isEqualToString:@"test value"]);
+    test2.test = @"doodah";
+    ECAssert([test2.test isEqualToString:@"doodah"]);
+
+    [test1 release];
+    [test2 release];
 
     ECDebug(ApplicationChannel, @"will finish launching");
 }

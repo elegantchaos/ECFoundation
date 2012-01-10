@@ -217,4 +217,17 @@ ECDefineDebugChannel(NSApplicationChannel);
     return licenseFileType;
 }
 
+// --------------------------------------------------------------------------
+//! Are we running on OS X Lion or greater?
+// --------------------------------------------------------------------------
+
++ (BOOL)isLionOrGreater
+{
+	SInt32 major, minor;
+	Gestalt(gestaltSystemVersionMajor, &major);
+	Gestalt(gestaltSystemVersionMinor, &minor);
+	
+	return (major > 10) || (minor > 6);
+}
+
 @end
