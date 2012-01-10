@@ -28,6 +28,7 @@
 @property (nonatomic, assign) ECLogContextFlags context;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, assign) BOOL setup;
+@property (nonatomic, retain) NSNumber* level;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSMutableSet* handlers;
 

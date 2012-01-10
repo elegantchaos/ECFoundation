@@ -28,4 +28,6 @@
 - (void)setSize:(CGSize)size forKey:(NSString*)key;
 - (void)setRect:(CGRect)rect forKey:(NSString*)key;
 
+- (void)mergeEntriesFromDictionary:(NSDictionary*)dictionary;
+
 @end

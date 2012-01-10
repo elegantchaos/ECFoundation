@@ -33,31 +33,21 @@ ECDefineDebugChannel(NSURLChannel);
 
 - (id) initWithResourceNamed: (NSString*) name ofType: (NSString*) type
 {
-	NSString* path = [[NSBundle mainBundle] pathForResource: name ofType: type];
-	return [self initFileURLWithPath: path isDirectory: NO];
-}
-
-
-// --------------------------------------------------------------------------
-//! Return sha1 digest for the file represented by the URL
-// --------------------------------------------------------------------------
-
-- (NSString*)sha1Digest
-{
-	NSString* result;
-	NSData* data = [NSData dataWithContentsOfURL:self];
-	if (data)
+	NSBundle* bundle = [NSBundle mainBundle];
+	NSString* path = [bundle pathForResource: name ofType: type];
+	if (path)
 	{
-		result = [data sha1Digest];
+		self = [self initFileURLWithPath: path isDirectory: NO];
 	}
-	else // couldn't get contents, so return sha1 of the url itself
+	else
 	{
-		// TODO - handle directories properly 
-		result = [[self absoluteString] sha1Digest];
+		[self release];
+		self = nil;
 	}
 	
-	return result;
+	return self;
 }
+
 
 // --------------------------------------------------------------------------
 //! Get a unique name to use for a file in a folder, using the default

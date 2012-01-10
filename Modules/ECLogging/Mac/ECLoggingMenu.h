@@ -23,7 +23,5 @@
 // --------------------------------------------------------------------------
 
 - (IBAction) channelSelected: (id) sender;
-- (IBAction) enableAllSelected: (id) sender;
-- (IBAction) disableAllSelected: (id) sender;
 
 @end

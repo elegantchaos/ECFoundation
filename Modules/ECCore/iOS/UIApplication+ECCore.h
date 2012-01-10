@@ -9,8 +9,10 @@
 
 @interface UIApplication(ECCore)
 
-- (NSString*) aboutName;
-- (NSString*) aboutCopyright;
-- (NSString*) aboutVersion;
+- (NSString*)aboutName;
+- (NSString*)aboutCopyright;
+- (NSString*)aboutVersion;
+
++ (BOOL)isIOS5OrLater;
 
 @end

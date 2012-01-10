@@ -18,7 +18,7 @@
 {
     uint count;
     objc_property_t* properties = class_copyPropertyList(self, &count);
-    for (int i = 0; i < count ; i++)
+    for (uint i = 0; i < count ; i++)
     {
         const char* propertyName = property_getName(properties[i]);
         SEL init = NSSelectorFromString([NSString stringWithFormat:@"%sInit__", propertyName]);

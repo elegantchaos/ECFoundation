@@ -56,7 +56,18 @@ bool channelEnabled(ECLogChannel* channel)
 
 ECLogChannel* registerChannel(const char* name)
 {
-	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName: name];
+	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName: name options:nil];
+	
+	return channel;
+}
+// --------------------------------------------------------------------------
+//! Create a new channel and register it. If a channel with the same name has
+//! already been registered, it is simply returned.
+// --------------------------------------------------------------------------
+
+ECLogChannel* registerChannelWithOptions(const char* name, id options)
+{
+	ECLogChannel* channel = [[ECLogManager sharedInstance] registerChannelWithRawName:name options:options];
 	
 	return channel;
 }
@@ -65,10 +76,10 @@ ECLogChannel* registerChannel(const char* name)
 //! C style routine to log to a channel.
 // --------------------------------------------------------------------------
 
-extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, NSString* format, ...)
+extern void	logToChannel(ECLogChannel* channel, ECLogContext* context, id object, ...)
 {
 	va_list args;
-	va_start(args, format);
-	[[ECLogManager sharedInstance] logFromChannel: channel withFormat:format arguments:args context:context];
+	va_start(args, object);
+    [[ECLogManager sharedInstance] logFromChannel:channel withObject:object arguments:args context:context];
 	va_end(args);
 }

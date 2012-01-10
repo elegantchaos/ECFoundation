@@ -13,6 +13,7 @@
 #import "ECLogHandlerFile.h"
 #import "ECLogHandlerStdout.h"
 #import "ECLogHandlerStderr.h"
+#import "ECLogHandlerASL.h"
 
 @implementation AppDelegate
 
@@ -20,6 +21,7 @@
 
 ECDefineDebugChannel(ApplicationChannel);
 ECDefineDebugChannel(ApplicationUpdateChannel);
+ECDefineDebugChannel(ObjectChannel);
 
 #pragma mark - Properties
 
@@ -45,8 +47,13 @@ ECDefineDebugChannel(ApplicationUpdateChannel);
     [lm registerHandler:[[[ECLogHandlerFile alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStdout alloc] init] autorelease]];
     [lm registerHandler:[[[ECLogHandlerStderr alloc] init] autorelease]];
+    [lm registerHandler:[[[ECLogHandlerASL alloc] init] autorelease]];
 
     ECDebug(ApplicationChannel, @"will finish launching");
+
+    // example of logging a non-string object
+    ECDebug(ObjectChannel, self);
+    ECDebug(ObjectChannel, [NSImage imageNamed:NSImageNameActionTemplate]);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

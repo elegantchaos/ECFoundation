@@ -27,9 +27,10 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 @synthesize context;
 @synthesize enabled;
-@synthesize setup;
-@synthesize name;
 @synthesize handlers;
+@synthesize level;
+@synthesize name;
+@synthesize setup;
 
 #pragma mark - Lifecycle
 
@@ -54,6 +55,7 @@ static NSString *const kSuffixToStrip = @"Channel";
 
 - (void) dealloc
 {
+    [level release];
 	[name release];
 	[handlers release];
     

@@ -10,9 +10,16 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECDictionaryBackedObjectTests.h"
-#import "TestDictionaryBackedObject.h"
 #import "ECTestCase.h"
+#import "TestDictionaryBackedObject.h"
+
+@interface ECDictionaryBackedObjectTests : ECTestCase
+{
+@private
+	NSDictionary* testData;
+}
+
+@end
 
 @interface ECDictionaryBackedObjectTests()
 
@@ -53,11 +60,11 @@
 - (void) testObjectWithDictionary
 {
     TestDictionaryBackedObject* object = (TestDictionaryBackedObject*) [TestDictionaryBackedObject objectWithDictionary:self.testData]; 
-    ECTestAssertNotNil(object, @"object valid");
+    ECTestAssertNotNil(object);
     
-    ECTestAssertTrue([object.name isEqualToString:@"Sam"], @"name wrong");
-    ECTestAssertTrue([object.text isEqualToString:@"Some Text"], @"text wrong");
-    ECTestAssertTrue([object.objectID isEqualToString:@"1"], @"ID wrong");
+    ECTestAssertTrue([object.name isEqualToString:@"Sam"]);
+    ECTestAssertTrue([object.text isEqualToString:@"Some Text"]);
+    ECTestAssertTrue([object.objectID isEqualToString:@"1"]);
 }
 
 // --------------------------------------------------------------------------
@@ -67,7 +74,7 @@
 - (void) testUpdateWithDictionary
 {
     TestDictionaryBackedObject* object = (TestDictionaryBackedObject*) [TestDictionaryBackedObject objectWithDictionary:self.testData]; 
-    ECTestAssertNotNil(object, @"object valid");
+    ECTestAssertNotNil(object);
     
     NSDictionary* update = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"Tom", @"TestName",
@@ -76,9 +83,9 @@
                             nil];
     [object updateFromDictionary:update];
     
-    ECTestAssertTrue([object.name isEqualToString:@"Tom"], @"name wrong");
-    ECTestAssertTrue([object.text isEqualToString:@"Different Text"], @"text wrong");
-    ECTestAssertTrue([object.objectID isEqualToString:@"1"], @"ID wrong");
+    ECTestAssertTrue([object.name isEqualToString:@"Tom"]);
+    ECTestAssertTrue([object.text isEqualToString:@"Different Text"]);
+    ECTestAssertTrue([object.objectID isEqualToString:@"1"]);
 }
 
 @end

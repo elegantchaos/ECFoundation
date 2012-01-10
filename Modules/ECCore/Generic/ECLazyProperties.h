@@ -14,7 +14,7 @@
 + (void)initializeLazyProperties;
 
 #define lazy_synthesize(name,init) \
-class Dummy__; \
+synthesize name; \
 - (id)name##Init__ \
 { \
 id value = [self name##Init__]; \
@@ -26,7 +26,7 @@ if (!value) \
 return value; \
 }
 
-#define lazy_synthesize_method(name,method) lazy_synthesize_value(name,[self method])
+#define lazy_synthesize_method(name,method) lazy_synthesize(name,[self method])
 
 @end
 

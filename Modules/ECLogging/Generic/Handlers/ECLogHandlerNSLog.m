@@ -31,29 +31,10 @@
 
 #pragma mark - Logging
 
-- (void) logFromChannel: (ECLogChannel*) channel withFormat: (NSString*) format arguments: (va_list) arguments context:(ECLogContext *)context
+- (void)logFromChannel:(ECLogChannel*)channel withObject:(id)object arguments:(va_list)arguments context:(ECLogContext*)context
 {
-    NSString* contextString = [channel stringFromContext:context];
-
-    if (![channel showContext:ECLogContextMessage])
-    {
-        // just log the context
-        NSLog(@"%@", contextString);
-    }
-    else
-    {
-        // log the message, possibly with a context appended
-        NSString* bodyString = [[NSString alloc] initWithFormat: format arguments: arguments];
-        if ([contextString length])
-        {
-            NSLog(@"%@ «%@»", bodyString, contextString);
-        }
-        else
-        {
-            NSLog(@"%@", bodyString);
-        }
-        [bodyString release];
-    }
+    NSString* output = [self simpleOutputStringForChannel:channel withObject:object arguments:arguments context:context];
+    NSLog(@"%@", output);
 }
 
 @end

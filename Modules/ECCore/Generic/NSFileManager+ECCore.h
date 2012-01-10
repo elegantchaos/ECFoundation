@@ -31,6 +31,7 @@ typedef enum
 - (NSURL*)URLForUserDesktop;
 - (NSURL*)URLForApplicationDataPath:(NSString*)path;
 - (NSURL*)URLForCachedDataPath:(NSString*)path;
+- (NSURL*)URLForTemporaryDirectory;
 - (NSArray*)URLsForApplicationDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
 - (NSArray*)URLsForCachedDataPath:(NSString*)path inDomains:(NSSearchPathDomainMask)domain mode:(URLsForApplicationDataPathMode)mode;
 - (NSArray*)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domain path:(NSString*)path mode:(URLsForApplicationDataPathMode)mode;

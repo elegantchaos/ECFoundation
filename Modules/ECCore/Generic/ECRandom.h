@@ -12,9 +12,13 @@
 + (double)randomDoubleFromZeroTo:(double)to;
 + (double)randomDoubleFromZeroTo:(double)to resolution:(double)resolution;
 + (NSInteger)randomIntegerFromZeroTo:(NSInteger)to;
++ (NSInteger)randomIntegerBelow:(NSInteger)to;
 
 + (double)randomDoubleFrom:(double)from to:(double)to;
 + (double)randomDoubleFrom:(double)from to:(double)to resolution:(double)resolution;
 + (NSInteger)randomIntegerFrom:(NSInteger)from to:(NSInteger)to;
 + (NSUInteger)randomIndexFromRangeSized:(NSUInteger)size;
+
++ (BOOL)randomChance:(double)chance;
+
 @end

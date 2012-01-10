@@ -38,7 +38,7 @@ NS_INLINE CGFloat CGPointGetDistanceSquared(CGPoint p1, CGPoint p2)
 
 NS_INLINE CGFloat CGPointGetDistance(CGPoint p1, CGPoint p2)
 {
-    return sqrtf(CGPointGetDistanceSquared(p1, p2));
+    return (CGFloat) sqrt(CGPointGetDistanceSquared(p1, p2));
 }
 
 NS_INLINE CGPoint CGPointAdd(CGPoint p1, CGPoint p2)
@@ -53,6 +53,6 @@ NS_INLINE CGPoint CGPointSubtract(CGPoint p1, CGPoint p2)
 
 NS_INLINE CGPoint CGPointGetMiddle(CGPoint p1, CGPoint p2)
 {
-    return CGPointMake((p1.x + p2.x) / 2.0f, (p1.y - p2.y) / 2.0f);
+    return CGPointMake((p1.x + p2.x) / 2.0f, (p1.y + p2.y) / 2.0f);
 }
 

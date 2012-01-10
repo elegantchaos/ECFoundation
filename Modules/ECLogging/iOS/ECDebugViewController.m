@@ -45,7 +45,8 @@ typedef enum
 {
     kShowChannelsCommand,
     kEnableAllChannelsCommand,
-    kDisableAllChannelsCommand
+    kDisableAllChannelsCommand,
+    kResetAllChannelsCommand
 } Command;
 
 typedef struct 
@@ -59,7 +60,8 @@ Item kItems[] =
 {
     { @"Channels", UITableViewCellAccessoryDisclosureIndicator, kShowChannelsCommand },
     { @"Enable All", UITableViewCellAccessoryNone, kEnableAllChannelsCommand },
-    { @"Disable All", UITableViewCellAccessoryNone, kDisableAllChannelsCommand }
+    { @"Disable All", UITableViewCellAccessoryNone, kDisableAllChannelsCommand },
+    { @"Reset All", UITableViewCellAccessoryNone, kResetAllChannelsCommand }
 };
 
 // --------------------------------------------------------------------------
@@ -97,7 +99,17 @@ Item kItems[] =
 {
     ECDebugChannelsViewController* controller = [[ECDebugChannelsViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.title = @"Log Channels";
-    
+    controller.debugViewController = self;
+    [self pushViewController:controller];
+    [controller release];
+}
+
+// --------------------------------------------------------------------------
+//! Push a controller to the right nav controller.
+// --------------------------------------------------------------------------
+
+- (void)pushViewController:(UIViewController *)controller;
+{
     UINavigationController* nav = self.navController;
     if (!nav)
     {
@@ -105,7 +117,6 @@ Item kItems[] =
     }
     
     [nav pushViewController:controller animated:TRUE];
-    [controller release];
 }
 
 #pragma mark UITableViewDataSource methods
@@ -178,6 +189,10 @@ Item kItems[] =
             
         case kDisableAllChannelsCommand:
             [[ECLogManager sharedInstance] disableAllChannels];
+            break;
+            
+        case kResetAllChannelsCommand:
+            [[ECLogManager sharedInstance] resetAllChannels];
             break;
     }
     

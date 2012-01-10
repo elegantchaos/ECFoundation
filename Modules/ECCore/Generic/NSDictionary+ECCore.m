@@ -138,4 +138,31 @@
     [self setObject:values forKey:key];
 }
 
+// --------------------------------------------------------------------------
+//! Merge the first level of keys in this dictionary with those in another dictionary.
+// --------------------------------------------------------------------------
+
+- (void)mergeEntriesFromDictionary:(NSDictionary*)dictionary
+{
+    for (NSString* key in dictionary)
+    {
+        id existingItem = [self objectForKey:key];
+        id newItem = [dictionary objectForKey:key];
+        if (existingItem && newItem)
+        {
+            if ([existingItem isMemberOfClass:[NSDictionary class]] && [newItem isMemberOfClass:[NSDictionary class]])
+            {
+                NSMutableDictionary* merged = [NSMutableDictionary dictionaryWithDictionary:existingItem];
+                [merged addEntriesFromDictionary:newItem];
+                newItem = merged;
+            }
+        }
+        
+        if (newItem)
+        {
+            [self setObject:newItem forKey:key];
+        }
+    }
+
+}
 @end
