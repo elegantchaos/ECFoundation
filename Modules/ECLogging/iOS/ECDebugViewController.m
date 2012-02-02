@@ -89,6 +89,7 @@ Item kItems[] =
 - (void) viewDidLoad
 {
 	ECDebug(DebugViewChannel, @"setting up view");
+    self.title = @"Debug";
 }
 
 // --------------------------------------------------------------------------

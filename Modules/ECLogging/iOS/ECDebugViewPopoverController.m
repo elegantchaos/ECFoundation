@@ -29,12 +29,15 @@
 
 - (void)loadView
 {
-    UIView* root = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 600, 800)];
+    CGRect frame = CGRectMake(0, 0, 600, 800);
+    UIView* root = [[UIView alloc] initWithFrame:frame];
     
     // Implement loadView to create a view hierarchy programmatically, without using a nib.
     ECDebugViewController* dc = [[ECDebugViewController alloc] init];
     UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:dc];
     self.navController = nc;
+    dc.view.frame = frame;
+    nc.view.frame = frame;
     [root addSubview:nc.view];
     [nc release];
     [dc release];
