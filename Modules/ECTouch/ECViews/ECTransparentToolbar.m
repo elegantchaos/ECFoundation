@@ -1,10 +1,11 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 02/02/2012
 //
-//  ECTransparentToolbar.m
-//  AllenOvery
-//
-//  Created by Sam Deane on 01/02/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import "ECTransparentToolbar.h"
 

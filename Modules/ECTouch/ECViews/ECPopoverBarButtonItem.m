@@ -1,12 +1,14 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
+//! @date 02/02/2012
 //
-//  ECPopoverBarButtonItem.m
-//  AllenOvery
-//
-//  Created by Sam Deane on 01/02/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import "ECPopoverBarButtonItem.h"
+#import "ECPopoverContentController.h"
 
 static UIPopoverController* gShowingPopover;
 
@@ -49,9 +51,14 @@ static UIPopoverController* gShowingPopover;
     }
     else
     {
-        UIViewController* contentController = [[UIViewController alloc] initWithNibName:self.content bundle:nil];
+        Class contentClass = NSClassFromString(self.content);
+        UIViewController* contentController = [[contentClass alloc] initWithNibName:self.content bundle:nil];
         gShowingPopover = [[UIPopoverController alloc] initWithContentViewController:contentController];
         gShowingPopover.delegate = self;
+        if ([contentController conformsToProtocol:@protocol(ECPopoverContentController)])
+        {
+            [(UIViewController<ECPopoverContentController>*)gShowingPopover.popover = gShowingPopover;
+        }
         [gShowingPopover setPopoverContentSize:contentController.view.frame.size animated:NO];
         [gShowingPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
         [contentController release];

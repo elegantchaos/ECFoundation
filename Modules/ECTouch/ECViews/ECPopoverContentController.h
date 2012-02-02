@@ -9,9 +9,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ECPopoverContentController
 
-@interface ECPopoverBarButtonItem : UIBarButtonItem<UIPopoverControllerDelegate>
+@property (strong, nonatomic) UIPopoverController* popover;
 
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style content:(NSString*)contentIn;
+@end
+
+@interface ECPopoverContentControllerBase : UIViewController<ECPopoverContentController>
+
+@property (strong, nonatomic) UIPopoverController* popover;
 
 @end

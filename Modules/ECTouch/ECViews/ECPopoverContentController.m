@@ -7,11 +7,17 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import "ECPopoverContentController.h"
 
+@implementation ECPopoverContentControllerBase
 
-@interface ECPopoverBarButtonItem : UIBarButtonItem<UIPopoverControllerDelegate>
+@synthesize popover;
 
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style content:(NSString*)contentIn;
+- (void)dealloc
+{
+    [popover release];
+    
+    [super dealloc];
+}
 
 @end
