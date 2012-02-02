@@ -21,3 +21,16 @@
 }
 
 @end
+
+@implementation ECPopoverContentControllerTable
+
+@synthesize popover;
+
+- (void)dealloc
+{
+    [popover release];
+    
+    [super dealloc];
+}
+
+@end

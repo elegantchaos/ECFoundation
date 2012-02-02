@@ -20,3 +20,9 @@
 @property (strong, nonatomic) UIPopoverController* popover;
 
 @end
+
+@interface ECPopoverContentControllerTable : UITableViewController<ECPopoverContentController>
+
+@property (strong, nonatomic) UIPopoverController* popover;
+
+@end
