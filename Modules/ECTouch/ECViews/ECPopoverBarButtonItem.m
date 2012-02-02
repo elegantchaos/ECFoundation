@@ -57,7 +57,8 @@ static UIPopoverController* gShowingPopover;
         gShowingPopover.delegate = self;
         if ([contentController conformsToProtocol:@protocol(ECPopoverContentController)])
         {
-            [(UIViewController<ECPopoverContentController>*)gShowingPopover.popover = gShowingPopover;
+            UIViewController<ECPopoverContentController>* coerced = (UIViewController<ECPopoverContentController>*) contentController;
+            coerced.popover = gShowingPopover;
         }
         [gShowingPopover setPopoverContentSize:contentController.view.frame.size animated:NO];
         [gShowingPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
