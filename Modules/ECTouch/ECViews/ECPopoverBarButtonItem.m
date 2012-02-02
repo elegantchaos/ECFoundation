@@ -52,7 +52,18 @@ static UIPopoverController* gShowingPopover;
     else
     {
         Class contentClass = NSClassFromString(self.content);
-        UIViewController* contentController = [[contentClass alloc] initWithNibName:self.content bundle:nil];
+        
+        UIViewController* contentController;
+        NSURL* nibURL = [[NSBundle mainBundle] URLForResource:self.content withExtension:@"nib"];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[nibURL path]])
+        {
+            contentController = [[contentClass alloc] initWithNibName:self.content bundle:nil];
+        }
+        else 
+        {
+            contentController = [[contentClass alloc] init];
+        }
+
         gShowingPopover = [[UIPopoverController alloc] initWithContentViewController:contentController];
         gShowingPopover.delegate = self;
         if ([contentController conformsToProtocol:@protocol(ECPopoverContentController)])
