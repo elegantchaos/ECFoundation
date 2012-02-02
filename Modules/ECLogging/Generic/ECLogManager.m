@@ -242,8 +242,7 @@ static ECLogManager* gSharedInstance = nil;
 - (void) registerDefaultHandler
 {
 	ECLogHandler* handler = [[ECLogHandlerNSLog alloc] init];
-	[self registerHandler: handler];
-    [self.defaultHandlers addObject:handler];
+	[self registerHandler:handler];
 	[handler release];
 }
 
