@@ -12,6 +12,9 @@
 @interface ECTabbedTableViewController : UIViewController<UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView* table;
+@property (strong, nonatomic) IBOutlet UITabBar* tabs;
 @property (strong, nonatomic) NSArray* controllers;
+
+- (void)selectTabWithIndex:(NSUInteger)index;
 
 @end
