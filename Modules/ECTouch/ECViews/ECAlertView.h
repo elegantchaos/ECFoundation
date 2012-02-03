@@ -11,7 +11,7 @@
 
 typedef void (^AlertHandler)(NSUInteger);
 
-@interface ECAlert : NSObject<UIAlertViewDelegate>
+@interface ECAlertView : NSObject<UIAlertViewDelegate>
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)showWithHandler:(AlertHandler)handler;
