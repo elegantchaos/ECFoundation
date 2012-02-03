@@ -58,6 +58,7 @@
 - (void)selectTabWithIndex:(NSUInteger)index
 {
     self.tabs.selectedItem = [self.tabs.items objectAtIndex:index];
+    [self showContentForTabWithIndex:index];
 }
 
 - (void)showContentForTabWithIndex:(NSUInteger)index
