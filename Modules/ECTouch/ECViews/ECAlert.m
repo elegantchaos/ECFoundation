@@ -23,7 +23,7 @@ static NSMutableSet* gAlertsInFlight;
 @synthesize alert;
 @synthesize handler;
 
-- (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...
 {
     if ((self = [super init]) != nil)
     {
