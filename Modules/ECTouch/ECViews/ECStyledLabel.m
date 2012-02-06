@@ -160,6 +160,13 @@ ECDefineDebugChannel(StyledLabelChannel);
     }
 }
 
+- (void)layoutSubviews
+{
+    self.textLayer.frame = self.bounds;
+
+    [super layoutSubviews];
+}
+
 - (NSAttributedString*)attributedText
 {
     return self.textLayer.string;
