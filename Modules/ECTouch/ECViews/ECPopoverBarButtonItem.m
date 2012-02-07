@@ -9,8 +9,7 @@
 
 #import "ECPopoverBarButtonItem.h"
 #import "ECPopoverContentController.h"
-
-static UIPopoverController* gShowingPopover;
+#import "ECPopoverController.h"
 
 @interface ECPopoverBarButtonItem()
 
@@ -43,46 +42,14 @@ static UIPopoverController* gShowingPopover;
 
 - (IBAction)togglePopover:(id)sender
 {
-    if (gShowingPopover)
+    ECPopoverController* pc = [ECPopoverController sharedInstance];
+    if ([pc isShowingPopover])
     {
-        [gShowingPopover dismissPopoverAnimated:YES];
-        [gShowingPopover release];
-        gShowingPopover = nil;
+        [pc dismissPopover];
     }
     else
     {
-        Class contentClass = NSClassFromString(self.content);
-        
-        UIViewController* contentController;
-        NSURL* nibURL = [[NSBundle mainBundle] URLForResource:self.content withExtension:@"nib"];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:[nibURL path]])
-        {
-            contentController = [[contentClass alloc] initWithNibName:self.content bundle:nil];
-        }
-        else 
-        {
-            contentController = [[contentClass alloc] init];
-        }
-
-        gShowingPopover = [[UIPopoverController alloc] initWithContentViewController:contentController];
-        gShowingPopover.delegate = self;
-        if ([contentController conformsToProtocol:@protocol(ECPopoverContentController)])
-        {
-            UIViewController<ECPopoverContentController>* coerced = (UIViewController<ECPopoverContentController>*) contentController;
-            coerced.popover = gShowingPopover;
-        }
-        [gShowingPopover setPopoverContentSize:contentController.view.frame.size animated:NO];
-        [gShowingPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-        [contentController release];
-    }
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-    if (popoverController == gShowingPopover)
-    {
-        [gShowingPopover release];
-        gShowingPopover = nil;
+        [pc presentPopoverWithContentClass:self.content fromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     }
 }
 

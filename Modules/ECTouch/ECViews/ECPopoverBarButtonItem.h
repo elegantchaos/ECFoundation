@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ECPopoverBarButtonItem : UIBarButtonItem<UIPopoverControllerDelegate>
+@interface ECPopoverBarButtonItem : UIBarButtonItem
 
 - (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style content:(NSString*)contentIn;
 

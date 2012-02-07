@@ -32,6 +32,11 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     [super dealloc];
 }
 
+- (BOOL)isShowingPopover
+{
+    return self.showing != nil;
+}
+
 - (void)dismissPopover
 {
     if (self.showing)
