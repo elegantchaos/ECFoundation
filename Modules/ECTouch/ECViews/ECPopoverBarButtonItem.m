@@ -49,7 +49,7 @@
     }
     else
     {
-        [pc presentPopoverWithContentClass:self.content fromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        [pc presentPopoverWithContentClass:self.content content:nil fromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     }
 }
 

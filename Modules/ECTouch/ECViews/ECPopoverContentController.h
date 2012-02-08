@@ -13,6 +13,10 @@
 
 @property (strong, nonatomic) UIPopoverController* popover;
 
+@optional
+
+- (void)setupWithContent:(id)content;
+
 @end
 
 @interface ECPopoverContentControllerBase : UIViewController<ECPopoverContentController>

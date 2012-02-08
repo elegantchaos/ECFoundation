@@ -15,7 +15,7 @@ EC_SINGLETON(ECPopoverController);
 
 - (BOOL)isShowingPopover;
 - (void)dismissPopover;
-- (void)presentPopoverWithContentClass:(NSString*)name fromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
-- (void)presentPopoverWithContentClass:(NSString*)name fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
+- (void)presentPopoverWithContentClass:(NSString*)name content:(id)content fromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
+- (void)presentPopoverWithContentClass:(NSString*)name content:(id)content fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
 
 @end

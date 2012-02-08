@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) UIPopoverController* showing;
 
-- (UIPopoverController*)popoverWithContentClass:(NSString*)class;
+- (UIPopoverController*)popoverWithContentClass:(NSString*)class content:(id)content;
 
 @end
 
@@ -46,7 +46,7 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     }
 }
 
-- (UIPopoverController*)popoverWithContentClass:(NSString*)class
+- (UIPopoverController*)popoverWithContentClass:(NSString*)class content:(id)content
 {
     UIPopoverController* result = nil;
     Class contentClass = NSClassFromString(class);
@@ -69,6 +69,10 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     {
         UIViewController<ECPopoverContentController>* coerced = (UIViewController<ECPopoverContentController>*) contentController;
         coerced.popover = result;
+        if ([coerced respondsToSelector:@selector(setupWithContent:)])
+        {
+            [coerced setupWithContent:content];
+        }
     }
     [result setPopoverContentSize:contentController.view.frame.size animated:NO];
     [contentController release];
@@ -76,9 +80,9 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     return [result autorelease];
 }
 
-- (void)presentPopoverWithContentClass:(NSString*)name fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated
+- (void)presentPopoverWithContentClass:(NSString*)name content:(id)content fromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated
 {
-    UIPopoverController* popover = [self popoverWithContentClass:name];
+UIPopoverController* popover = [self popoverWithContentClass:name content:content];
 
     [self dismissPopover];
 
@@ -86,9 +90,9 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     self.showing = popover;
 }
 
-- (void)presentPopoverWithContentClass:(NSString*)name fromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated
+- (void)presentPopoverWithContentClass:(NSString*)name content:(id)content fromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated
 {
-    UIPopoverController* popover = [self popoverWithContentClass:name];
+    UIPopoverController* popover = [self popoverWithContentClass:name content:content];
     
     [self dismissPopover];
     
