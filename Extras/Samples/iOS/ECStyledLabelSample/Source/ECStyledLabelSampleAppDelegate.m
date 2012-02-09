@@ -39,7 +39,7 @@
     UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:view];
     [view release];
     
-    return [navigation autorelease];
+    return navigation;
 }
 
 @end

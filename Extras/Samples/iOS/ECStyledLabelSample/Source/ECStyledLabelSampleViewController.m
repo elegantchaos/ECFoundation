@@ -10,10 +10,11 @@
 
 #import "ECDebugViewController.h"
 #import "ECMarkdownParser.h"
+#import "ECDebugViewPopoverController.h"
+#import "ECPopoverBarButtonItem.h"
+#import "ECStyledLabel.h"
 
 @interface ECStyledLabelSampleViewController()
-
-@property (nonatomic, retain) ECDebugViewController* debugController;
 
 - (void)updateStyledText;
 
@@ -23,14 +24,12 @@
 
 #pragma mark - Properties
 
-@synthesize debugController;
 @synthesize labelStyled;
 @synthesize labelScrolling;
 @synthesize textViewMarkdown;
 
 - (void)dealloc 
 {
-    [debugController release];
     [labelScrolling release];
     [labelStyled release];
     [textViewMarkdown release];
@@ -49,19 +48,18 @@
 {
     [super viewDidLoad];
     
-    self.debugController = [[[ECDebugViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    UIBarButtonItem* debugButton = [[ECPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
+    self.navigationItem.rightBarButtonItem = debugButton;
+    [debugButton release];
     
-    __block id blockSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:self.textViewMarkdown queue:[NSOperationQueue mainQueue] usingBlock:
-     ^(NSNotification *note) 
-    {
-        [blockSelf updateStyledText];
-    }];
+    self.textViewMarkdown.delegate = self;
 }
 
 - (void)viewDidUnload
 {
-    self.debugController = nil;
+    self.labelStyled = nil;
+    self.labelScrolling = nil;
+    self.textViewMarkdown = nil;
     
     [super viewDidUnload];
 }
@@ -70,36 +68,6 @@
 {
     [super viewWillAppear:animated];
     [self updateStyledText];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
-- (IBAction)tappedShowDebugView:(id)sender
-{
-    [self.navigationController pushViewController:self.debugController animated:YES];
 }
 
 - (void)updateStyledText
@@ -113,7 +81,16 @@
     [parser release];
 }
 
-#pragma mark UITextFieldDelegate
+#pragma mark - UITextViewDelegate
 
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    NSLog(@"blah");
+}
+
+- (IBAction)textViewDidChange:(id)sender
+{
+    [self updateStyledText];
+}
 
 @end

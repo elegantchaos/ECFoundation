@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ECStyledLabel.h"
+@class ECStyledLabel;
 
-@interface ECStyledLabelSampleViewController : UIViewController<UITextFieldDelegate>
+@interface ECStyledLabelSampleViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView*      textViewMarkdown;
 @property (strong, nonatomic) IBOutlet ECStyledLabel*   labelScrolling;
 @property (strong, nonatomic) IBOutlet ECStyledLabel*   labelStyled;
 
-- (IBAction)tappedShowDebugView:(id)sender;
+- (IBAction)textViewDidChange:(id)sender;
 
 @end
