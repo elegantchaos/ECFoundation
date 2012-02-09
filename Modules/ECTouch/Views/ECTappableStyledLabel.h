@@ -9,6 +9,22 @@
 
 #import "ECStyledLabel.h"
 
+extern NSString *const ECTappableStyledLabelLinkKey;
+
+@class ECTappableStyledLabel;
+
+@protocol ECTappableStyledLabelDelegate
+
+@optional
+
+- (void)styledLabel:(ECTappableStyledLabel*)styledLabel didTapIndex:(NSUInteger)index attributes:(NSDictionary*)attributes;
+- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString*)link;
+
+@end
+
+
 @interface ECTappableStyledLabel : ECStyledLabel
+
+@property (assign, nonatomic) id delegate;
 
 @end

@@ -23,7 +23,12 @@
 
 #pragma mark - Properties
 
+@synthesize delegate;
 @synthesize framesetter;
+
+#pragma mark - Constants
+
+NSString *const ECTappableStyledLabelLinkKey = @"Link";
 
 #pragma mark - Channels
 
@@ -123,7 +128,7 @@
     }
 }
 
-- (NSDictionary*)dataForPoint:(CGPoint)point
+- (NSDictionary*)dataForPoint:(CGPoint)point index:(NSUInteger*)indexOut
 {
     NSDictionary* result = nil;
     NSAttributedString* string = self.textLayer.string;
@@ -151,6 +156,10 @@
             CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
             NSLog(@"index %ld", index);
             result = [string attributesAtIndex:index effectiveRange:nil];
+            if (indexOut)
+            {
+                *indexOut = index;
+            }
             break;
         }
 
@@ -165,102 +174,34 @@
     return result;
 }
 
-- (NSDictionary*)dataForPoint2:(CGPoint)point
-{
-    NSDictionary* result = nil;
-    NSAttributedString* attributed = self.attributedText;
-    if ([attributed isKindOfClass:[NSAttributedString class]])
-    {
-        NSLog(@"bounds %@", NSStringFromCGRect(self.bounds));
-        CGMutablePathRef mainPath = CGPathCreateMutable();
-        CGPathAddRect(mainPath, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height));  
-        
-        CTFramesetterRef fs = self.framesetter;
-        if (!fs)
-        {
-            fs = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attributed);
-            self.framesetter = fs;
-        }
-        
-        CTFrameRef ctframe = CTFramesetterCreateFrame(fs, CFRangeMake(0, 0), mainPath, NULL);
-        CGPathRelease(mainPath);
-        
-        NSArray *lines = (NSArray *)CTFrameGetLines(ctframe);
-        NSInteger lineCount = [lines count];
-        CGPoint origins[lineCount];
-        
-        NSLog(@"point %@", NSStringFromCGPoint(point));
-        if (lineCount != 0) {
-            
-            CTFrameGetLineOrigins(ctframe, CFRangeMake(0, 0), origins);
-            CGFloat height = CGRectGetHeight(self.frame);
-            CGFloat offset = 0;
-            
-            for (int i = 0; i < lineCount; i++) 
-            {
-                CGPoint baselineOrigin = origins[i];
-                //the view is inverted, the y origin of the baseline is upside down
-                baselineOrigin.y = height - baselineOrigin.y;
-                
-                CTLineRef line = (CTLineRef)[lines objectAtIndex:i];
-                CGFloat ascent, descent, leading;
-                CGFloat lineWidth = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
-                if (i == 0)
-                {
-                    offset = baselineOrigin.y - ascent;
-                }
-                
-                CGRect lineFrame = CGRectMake(baselineOrigin.x, (baselineOrigin.y - ascent) - offset, lineWidth, ascent + descent);
-                BOOL inLine = CGRectContainsPoint(lineFrame, point);
-                BOOL myInLine = (point.y >= lineFrame.origin.y) && (point.y <= (lineFrame.origin.y + lineFrame.size.height));
-                NSLog(@"line %@ point %@ contained:%d my contained: %d", NSStringFromCGRect(lineFrame), NSStringFromCGPoint(point), inLine, myInLine);
-                if (inLine) 
-                {
-                    //we look if the position of the touch is correct on the line
-                    CGPoint relativePoint = CGPointMake(point.x, baselineOrigin.y - point.y);
-                    NSLog(@"relative point %@", NSStringFromCGPoint(relativePoint));
-                    CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
-                    NSLog(@"index %ld", index);
-                    result = [attributed attributesAtIndex:index effectiveRange:nil];
-                    break;
-                }
-            }
-        }
-        
-        CFRelease(ctframe);
-    }
-	
-	return result;
-}
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	[super touchesEnded:touches withEvent:event];
 	
     CGPoint point = [(UITouch *)[touches anyObject] locationInView:self];
-    NSDictionary *data = [self dataForPoint:point];
+    NSUInteger index;
+    NSDictionary *data = [self dataForPoint:point index:&index];
     if (data) 
     {
         NSLog(@"data at point was %@", data);
-    }
-    
-#if 0
-    if (self.delegate && ([self.delegate respondsToSelector:@selector(touchedData:inCoreTextView:)] || [self.delegate respondsToSelector:@selector(coreTextView:receivedTouchOnData:)])) 
-    {
-            if ([self.delegate respondsToSelector:@selector(coreTextView:receivedTouchOnData:)]) 
+        if (self.delegate)
+        {
+            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapIndex:attributes:)])
             {
-                [self.delegate coreTextView:self receivedTouchOnData:data];
+                [self.delegate styledLabel:self didTapIndex:index attributes:data];
             }
-            else 
+            
+            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapLink:)])
             {
-                if ([self.delegate respondsToSelector:@selector(touchedData:inCoreTextView:)]) 
+                NSString* link = [data objectForKey:ECTappableStyledLabelLinkKey];
+                if (link)
                 {
-                    [self.delegate touchedData:data inCoreTextView:self];
+                    [self.delegate styledLabel:self didTapLink:link];
                 }
             }
         }
     }
-#endif
 }
 
 
