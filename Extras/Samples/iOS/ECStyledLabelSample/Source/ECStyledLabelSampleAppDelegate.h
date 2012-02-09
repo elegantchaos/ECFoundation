@@ -8,12 +8,5 @@
 
 #import "ECAppDelegate.h"
 
-@class ECStyledLabelSampleViewController;
-
 @interface ECStyledLabelSampleAppDelegate : ECAppDelegate
-
-@property (nonatomic, retain) UIWindow* window;
-@property (nonatomic, retain) ECStyledLabelSampleViewController* viewController;
-@property (nonatomic, retain) UINavigationController* navigationController;
-
 @end

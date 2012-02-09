@@ -22,6 +22,7 @@
 @implementation ECAppDelegate
 
 @synthesize model;
+@synthesize window;
 
 ECDefineDebugChannel(ApplicationChannel);
 
@@ -165,9 +166,9 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (ECModelController*)newModel
 {
-	ECAssertShouldntBeHere();
+    ECModelController* emptyModel = [[ECModelController alloc] init];
 
-	return nil;
+	return [emptyModel autorelease];
 }
 
 // --------------------------------------------------------------------------

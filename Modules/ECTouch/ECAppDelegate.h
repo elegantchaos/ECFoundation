@@ -13,7 +13,8 @@
 
 @interface ECAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, retain) ECModelController* model;
+@property (strong, nonatomic) ECModelController* model;
+@property (strong, nonatomic) UIWindow* window;
 
 + (ECAppDelegate*)sharedInstance;
 
