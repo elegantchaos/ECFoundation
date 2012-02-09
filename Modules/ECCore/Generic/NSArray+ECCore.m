@@ -12,6 +12,10 @@
 
 @implementation NSArray(ECCore)
 
+// --------------------------------------------------------------------------
+//! Return the first object in the array, or nil if there are no objects.
+// --------------------------------------------------------------------------
+
 - (id)firstObjectOrNil
 {
     id result;
@@ -19,6 +23,26 @@
     if ([self count])
     {
         result = [self objectAtIndex:0];
+    }
+    else
+    {
+        result = nil;
+    }
+    
+    return result;
+}
+
+// --------------------------------------------------------------------------
+//! Return the last object in the array, or nil if there are no objects.
+// --------------------------------------------------------------------------
+
+- (id)lastObjectOrNil
+{
+    id result;
+    
+    if ([self count])
+    {
+        result = [self lastObject];
     }
     else
     {

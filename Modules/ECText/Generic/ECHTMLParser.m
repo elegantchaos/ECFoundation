@@ -105,10 +105,10 @@ ECDefineDebugChannel(ECHTMLChannel);
     NSMutableAttributedString* styled = [[NSMutableAttributedString alloc] initWithString:html attributes:self.attributesPlain];
     NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive | NSRegularExpressionDotMatchesLineSeparators;
     
-	[styled replaceExpression:self.patternBold options:options withIndex:0 attributes:self.attributesBold];
-	[styled replaceExpression:self.patternStrong options:options withIndex:0 attributes:self.attributesBold];
-	[styled replaceExpression:self.patternItalic options:options withIndex:0 attributes:self.attributesItalic];
-	[styled replaceExpression:self.patternEm options:options withIndex:0 attributes:self.attributesItalic];
+	[styled replaceExpression:self.patternBold options:options atIndex:0 withIndex:1 attributes:self.attributesBold];
+	[styled replaceExpression:self.patternStrong options:options atIndex:0 withIndex:1 attributes:self.attributesBold];
+	[styled replaceExpression:self.patternItalic options:options atIndex:0 withIndex:1 attributes:self.attributesItalic];
+	[styled replaceExpression:self.patternEm options:options atIndex:0 withIndex:1 attributes:self.attributesItalic];
     
 	ECDebug(ECHTMLChannel, @"parsed html %@ into %@", html, styled);
     return [styled autorelease];

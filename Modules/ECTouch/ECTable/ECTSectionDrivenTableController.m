@@ -53,8 +53,11 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 - (void)clearSections
 {
     [self.sections removeAllObjects];
-    self.editable = NO;
-    self.navigationItem.rightBarButtonItem = nil;
+    if (self.editable)
+    {
+        self.editable = NO;
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     [[self tableView] reloadData];
 }
 
@@ -121,6 +124,13 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (navigation)
         {
+            NSString* back = [binding valueForKey:ECTDisclosureBackKey];
+            if (back)
+            {
+                UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:back style:UIBarButtonItemStylePlain target:nil action:nil];
+                navigation.topViewController.navigationItem.backBarButtonItem = backButton;
+                [backButton release];
+            }
             [navigation pushViewController:view animated:YES];
             ECDebug(ECTSectionDrivenTableControllerChannel, @"pushed %@ into navigation stack for %@", view, self.navigationController);
         }
@@ -184,12 +194,6 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 {
     ECTSection* section = [self sectionForIndexPath:indexPath];
     return [section cellForRowAtIndexPath:indexPath];
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ECTSection* section = [self sectionForIndexPath:indexPath];
-    return [section willDisplayCell:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

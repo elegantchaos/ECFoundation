@@ -56,12 +56,14 @@ NSString *const ECTCanMoveKey = @"canMove";
 NSString *const ECTCellClassKey = @"cellClass";
 NSString *const ECTDetailKey = @"detail";
 NSString *const ECTDetailKeyKey = @"detailKey";
+NSString *const ECTDisclosureBackKey = @"disclosureBackTitle";
 NSString *const ECTDisclosureClassKey = @"disclosureClass";
 NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
 NSString *const ECTEnabledKey = @"enabled";
 NSString *const ECTImageKey = @"image";
 NSString *const ECTImageKeyKey = @"imageKey";
 NSString *const ECTLabelKey = @"label";
+NSString *const ECTPlaceholderKey = @"placeholder";
 NSString *const ECTTargetKey = @"target";
 
 #pragma mark - Object lifecycle
@@ -198,21 +200,6 @@ NSString *const ECTTargetKey = @"target";
 - (NSString *)titleForFooterInSection
 {
     return self.footer;
-}
-
-- (void)willDisplayCell:(NSIndexPath *)indexPath
-{
-    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-    
-    NSString* identifier = [binding identifierForSection:self];
-    
-    UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) 
-    {
-        cell = [binding cellForSection:self];
-    }
-    
-    [cell willDisplayForBinding:binding section:self];
 }
 
 

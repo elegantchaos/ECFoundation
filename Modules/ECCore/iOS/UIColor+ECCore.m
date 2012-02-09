@@ -10,7 +10,6 @@
 #import "UIColor+ECCore.h"
 #import "ECRuntime.h"
 
-
 @implementation UIColor(ECCore)
 
 +(void)load

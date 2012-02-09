@@ -12,6 +12,8 @@
 
 @interface ECTTickableTableController : ECTSectionDrivenTableController<ECTTickSectionCellDelegate>
 
+@property (nonatomic, assign) BOOL autoPop;
+
 - (void)setupSections;
 
 @end

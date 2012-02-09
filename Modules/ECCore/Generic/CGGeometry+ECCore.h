@@ -7,6 +7,21 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+NS_INLINE CGFloat CGRectGetBottom(CGRect aRect) 
+{
+    return CGRectGetMaxY(aRect);
+}
+
+NS_INLINE CGFloat CGRectGetRight(CGRect aRect) 
+{
+    return CGRectGetMaxX(aRect);
+}
+
+NS_INLINE CGPoint CGRectGetBottomRight(CGRect aRect) 
+{
+    CGPoint centre = CGPointMake(CGRectGetMaxX(aRect), CGRectGetMaxY(aRect));
+    return centre;
+}
 
 NS_INLINE CGPoint CGRectGetCentre(CGRect aRect) 
 {
@@ -24,6 +39,28 @@ NS_INLINE CGRect CGRectSetCentre(CGRect aRect, CGPoint centre)
 {
     aRect.origin.x = centre.x - (aRect.size.width * 0.5f);
     aRect.origin.y = centre.y - (aRect.size.height * 0.5f);
+    
+    return aRect;
+}
+
+NS_INLINE CGRect CGRectSetBottomRight(CGRect aRect, CGPoint bottomRight) 
+{
+    aRect.origin.x = bottomRight.x - aRect.size.width;
+    aRect.origin.y = bottomRight.y - aRect.size.height;
+    
+    return aRect;
+}
+
+NS_INLINE CGRect CGRectSetBottom(CGRect aRect, CGFloat bottom) 
+{
+    aRect.origin.y = bottom - aRect.size.height;
+    
+    return aRect;
+}
+
+NS_INLINE CGRect CGRectSetRight(CGRect aRect, CGFloat right) 
+{
+    aRect.origin.x = right - aRect.size.width;
     
     return aRect;
 }

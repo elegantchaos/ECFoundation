@@ -21,6 +21,10 @@
 
 @implementation ECTSimpleCell
 
+#pragma mark - Channels
+
+ECDefineDebugChannel(ECTSimpleCellChannel);
+
 #pragma mark - Properties
 
 @synthesize canDelete;
@@ -35,6 +39,7 @@
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) != nil)
     {
         self.section = sectionIn;
+        ECDebug(ECTSimpleCellChannel, @"new cell %@ bound to %@", self, binding);
     }
     
     return self;
@@ -58,6 +63,7 @@
     ECTBinding* oldBinding = self.representedObject;
     if (oldBinding)
     {
+        ECDebug(ECTSimpleCellChannel, @"removed binding %@ from cell %@", oldBinding, self);
         [oldBinding removeValueObserver:self];
         self.representedObject = nil;
     }
@@ -65,8 +71,20 @@
 
 - (void)prepareForReuse
 {
-    [self removeBinding];
+    ECAssertNil(self.representedObject);
     [super prepareForReuse];
+    ECDebug(ECTSimpleCellChannel, @"reusing cell %@", self);
+
+}
+
+- (void)didMoveToSuperview
+{
+    if (self.superview == nil)
+    {
+        [self removeBinding];
+        ECDebug(ECTSimpleCellChannel, @"removed cell %@", self);
+    }
+    [super didMoveToSuperview];
 }
 
 - (void)updateUIForEvent:(UpdateEvent)event
@@ -162,11 +180,6 @@
     }
     
     self.accessoryType = accessory;
-}
-
-- (void)willDisplayForBinding:(ECTBinding *)binding section:(ECTSection *)section
-{
-    
 }
 
 - (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection *)section
