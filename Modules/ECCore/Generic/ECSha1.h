@@ -18,3 +18,4 @@
 @interface NSURL(ECSha1)
 - (NSString*)sha1Digest;
 @end
+

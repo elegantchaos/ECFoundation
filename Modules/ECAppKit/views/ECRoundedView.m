@@ -54,6 +54,8 @@ static const CGFloat kDefaultRadius = 25.0;
 {
 	[gradient release];
 	[path release];
+	
+	[super dealloc];
 }
 
 // --------------------------------------------------------------------------
