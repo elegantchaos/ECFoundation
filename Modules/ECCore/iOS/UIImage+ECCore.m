@@ -9,7 +9,7 @@
 
 #import "UIImage+ECCore.h"
 
-@interface UIImage ()
+@interface UIImage (ECCoreInternal)
 - (UIImage *)resizedImage:(CGSize)newSize transform:(CGAffineTransform)transform drawTransposed:(BOOL)transpose interpolationQuality:(CGInterpolationQuality)quality;
 - (CGAffineTransform)transformForOrientation:(CGSize)newSize;
 @end

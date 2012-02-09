@@ -10,13 +10,6 @@
 #import "UIColor+ECCore.h"
 #import "ECRuntime.h"
 
-@interface UIColor()
-
-- (BOOL)ecGetRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
-
-@end
-
-
 @implementation UIColor(ECCore)
 
 +(void)load

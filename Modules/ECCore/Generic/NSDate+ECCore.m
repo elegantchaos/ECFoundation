@@ -14,6 +14,16 @@ static const NSTimeInterval kHour = 60 * 60;
 static const NSTimeInterval kMaxHours = 60 * 60 * 8;
 static const NSTimeInterval kDay = 60 * 60 * 24;
 
+
+const RelativeEntry kDefaultEntries[] =
+{
+    { 0, @"In the future" },
+    { kMinute, @"Less than a minute ago" },
+    { kHour, @"%d minutes ago" },
+    { kMaxHours, @"%d hours ago" },
+    { 0, nil }
+};
+
 @implementation NSDate(ECUtilities)
 
 // --------------------------------------------------------------------------
@@ -26,30 +36,28 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 //! caller can use some other kind of description.
 // --------------------------------------------------------------------------
 
-+ (NSString *) formattedRelativeToInterval: (NSTimeInterval) interval
++ (NSString*)formattedRelativeToInterval:(NSTimeInterval)interval entries:(const RelativeEntry*)entries
 {
-	NSString* result;
-	
-	if (interval < 0)
-	{
-		result = @"In the future";
-	}
-	else if (interval < kMinute)
-	{
-		result = @"Less than a minute ago";
-	}
-	else if (interval < kHour)
-	{
-		result = [NSString stringWithFormat: @"%d minutes ago", (NSUInteger) (interval / kMinute)];
-	}
-	else if (interval < kMaxHours)
-	{
-		result = [NSString stringWithFormat: @"%d hours ago", (NSUInteger) (interval / kHour)];
-	}
-	else
-	{
-		result = nil;
-	}
+	NSString* result = nil;
+
+    NSTimeInterval i1 = 1.0;
+    NSTimeInterval i2 = 1.0;
+    
+	while (entries->format != nil)
+    {
+        if (interval < entries->interval)
+        {
+            NSTimeInterval a1 = (interval / i1);
+            NSTimeInterval a2 = (interval - (trunc(a1) * i1)) / i2;
+            result = [NSString stringWithFormat: entries->format, (NSUInteger) a1, (NSUInteger) a2];
+            break;
+        }
+    
+        i2 = i1;
+        i1 = entries->interval;
+        
+        entries++;
+    }
 	
 	return result;
 }
@@ -61,10 +69,10 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 //! caller can use some other kind of description.
 // --------------------------------------------------------------------------
 
-- (NSString *) formattedRelativeTo: (NSDate*) date
+- (NSString*)formattedRelativeTo:(NSDate*)date
 {
 	NSTimeInterval interval = date ? [date timeIntervalSinceDate: self] : -[self timeIntervalSinceNow];
-	return [NSDate formattedRelativeToInterval: interval];
+	return [NSDate formattedRelativeToInterval:interval entries:kDefaultEntries];
 }
 
 // --------------------------------------------------------------------------
@@ -78,7 +86,7 @@ static const NSTimeInterval kDay = 60 * 60 * 24;
 - (NSString*) formattedRelative;
 {
 	NSTimeInterval interval = -[self timeIntervalSinceNow];
-	return [NSDate formattedRelativeToInterval: interval];
+	return [NSDate formattedRelativeToInterval:interval entries:kDefaultEntries];
 }
 
 // --------------------------------------------------------------------------

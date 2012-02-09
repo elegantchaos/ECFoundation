@@ -21,6 +21,8 @@
 
 @implementation ECTTickableTableController
 
+@synthesize autoPop;
+
 #pragma mark - Debug Channels
 
 ECDefineDebugChannel(ECTTickableTableControllerChannel);
@@ -56,6 +58,11 @@ ECDefineDebugChannel(ECTTickableTableControllerChannel);
     ECDebug(ECTTickableTableControllerChannel, @"cell selected %@ %@", binding, binding.object);
     self.representedObject.objectValue = binding.object;
     [section reloadData];
+    
+    if (self.autoPop)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

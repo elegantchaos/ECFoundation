@@ -8,10 +8,16 @@
 // --------------------------------------------------------------------------
 
 #import "NSIndexSet+ECCore.h"
+#import "ECRuntime.h"
 
 @implementation NSIndexSet(ECCore)
 
--(NSUInteger)countOfIndexesInRange:(NSRange)range
++(void)load
+{
+	class_replaceMethodIfMissing(self, @selector(countOfIndexesInRange:), @selector(ecCountOfIndexesInRange:));
+}
+
+-(NSUInteger)ecCountOfIndexesInRange:(NSRange)range
 {
 	NSUInteger start, end, count;
 	

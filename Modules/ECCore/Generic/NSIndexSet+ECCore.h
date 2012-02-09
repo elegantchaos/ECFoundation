@@ -12,6 +12,6 @@
 
 @interface NSIndexSet(ECCore)
 
--(NSUInteger)countOfIndexesInRange:(NSRange)range;
+-(NSUInteger)ecCountOfIndexesInRange:(NSRange)range;
 
 @end

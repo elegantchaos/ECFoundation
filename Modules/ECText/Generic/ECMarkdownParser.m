@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSDictionary* attributesHeading1;
 @property (nonatomic, retain) NSRegularExpression* patternBold;
 @property (nonatomic, retain) NSRegularExpression* patternHeading1;
+@property (nonatomic, retain) NSRegularExpression* patternItalic;
 
 #pragma mark - Private Methods
 
@@ -42,6 +43,7 @@
 @synthesize attributesHeading1;
 @synthesize patternBold;
 @synthesize patternHeading1;
+@synthesize patternItalic;
 
 #pragma mark - Debug Channels
 
@@ -73,6 +75,7 @@ ECDefineDebugChannel(ECMarkdownChannel);
 	[attributesHeading1 release];
 	[patternBold release];
 	[patternHeading1 release];
+    [patternItalic release];
     
     [super dealloc];
 }
@@ -88,12 +91,15 @@ ECDefineDebugChannel(ECMarkdownChannel);
 {
 	[super initialiseAttributes];
 	
+    CTFontRef headingFont = CTFontCreateWithName((CFStringRef)self.styles.headingFont, self.styles.headingSize, NULL);
+
 	self.attributesHeading1 = 
     [NSDictionary dictionaryWithObjectsAndKeys:
-     (id) self.styles.headingFont, (id) kCTFontAttributeName,
+     (id) headingFont, (id) kCTFontAttributeName,
      nil
      ];
 
+    CFRelease(headingFont);
 }
 
 // --------------------------------------------------------------------------
@@ -105,8 +111,9 @@ ECDefineDebugChannel(ECMarkdownChannel);
 	NSError* error = nil;
 	NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive;
 	
-	self.patternBold = [NSRegularExpression regularExpressionWithPattern:@"\\*(.*?)\\*" options:options error:&error];
-	self.patternHeading1 = [NSRegularExpression regularExpressionWithPattern:@"h1\\. (.*?\n)" options:options error:&error];
+	self.patternBold = [NSRegularExpression regularExpressionWithPattern:@"\\*\\*(.*?)\\*\\*" options:options error:&error];
+	self.patternHeading1 = [NSRegularExpression regularExpressionWithPattern:@"(^|\n)#+ (.*?\n)" options:options error:&error];
+	self.patternItalic = [NSRegularExpression regularExpressionWithPattern:@"\\*(.*?)\\*" options:options error:&error];
 }
 
 // --------------------------------------------------------------------------
@@ -118,8 +125,9 @@ ECDefineDebugChannel(ECMarkdownChannel);
     NSMutableAttributedString* styled = [[NSMutableAttributedString alloc] initWithString:markdown attributes:self.attributesPlain];
     NSRegularExpressionOptions options = NSRegularExpressionCaseInsensitive | NSRegularExpressionDotMatchesLineSeparators;
     
-	[styled replaceExpression:self.patternBold options:options withIndex:0 attributes:self.attributesBold];
-	[styled replaceExpression:self.patternHeading1 options:options withIndex:0 attributes:self.attributesHeading1];
+    [styled replaceExpression:self.patternBold options:options atIndex:0 withIndex:1 attributes:self.attributesBold];
+    [styled replaceExpression:self.patternHeading1 options:options atIndex:0 withIndex:2 attributes:self.attributesHeading1];
+    [styled replaceExpression:self.patternItalic options:options atIndex:0 withIndex:1 attributes:self.attributesItalic];
 
     ECDebug(ECMarkdownChannel, @"parsed mardown %@ to %@", markdown, styled);
     return [styled autorelease];

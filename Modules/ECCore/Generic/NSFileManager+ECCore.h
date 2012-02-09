@@ -25,7 +25,7 @@ typedef enum
 - (BOOL) fileExistsAtURL:(NSURL*)	url;
 - (BOOL) fileExistsAtURL:(NSURL*)	url isDirectory:(BOOL*) isDirectory;
 
-- (BOOL) createDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;
+- (BOOL) ecCreateDirectoryAtURL: (NSURL*) url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error;
 
 - (NSURL*)URLForApplication;
 - (NSURL*)URLForUserDesktop;
