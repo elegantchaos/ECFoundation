@@ -245,6 +245,7 @@
 		22B828FD13E847C900BF47CC /* ECStyledLabelSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECStyledLabelSampleAppDelegate.m; path = Source/ECStyledLabelSampleAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		22B828FE13E847C900BF47CC /* ECStyledLabelSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECStyledLabelSampleViewController.h; path = Source/ECStyledLabelSampleViewController.h; sourceTree = SOURCE_ROOT; };
 		22B828FF13E847C900BF47CC /* ECStyledLabelSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECStyledLabelSampleViewController.m; path = Source/ECStyledLabelSampleViewController.m; sourceTree = SOURCE_ROOT; };
+		22CA27DD14E42E390056516B /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +271,7 @@
 				226FB46013E1EB0B00BF258D /* Resources */,
 				226FB43A13E1EA7200BF258D /* Frameworks */,
 				226FB43813E1EA7200BF258D /* Products */,
+				22CA27DD14E42E390056516B /* Scripts */,
 			);
 			sourceTree = "<group>";
 		};

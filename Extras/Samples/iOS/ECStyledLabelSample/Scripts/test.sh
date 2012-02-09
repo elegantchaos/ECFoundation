@@ -1,8 +1,8 @@
-echo Testing iOS ECLoggingSample
+echo Testing iOS ECStyledLabelSample
 
 base=`dirname $0`
 source "$base/../../../../Scripts/shared-test.sh"
-targetIOS="ECLoggingSample"
+targetIOS="ECStyledLabelSample"
 
 # build the framework
 
