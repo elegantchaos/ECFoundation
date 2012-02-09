@@ -84,6 +84,7 @@
 		2274A9F414E41191007D3E7C /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9F314E41191007D3E7C /* ECModelController.m */; };
 		22B8290013E847C900BF47CC /* ECStyledLabelSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FD13E847C900BF47CC /* ECStyledLabelSampleAppDelegate.m */; };
 		22B8290113E847C900BF47CC /* ECStyledLabelSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FF13E847C900BF47CC /* ECStyledLabelSampleViewController.m */; };
+		22CA27F214E4355C0056516B /* ECTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA27F114E4355C0056516B /* ECTappableStyledLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +247,8 @@
 		22B828FE13E847C900BF47CC /* ECStyledLabelSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECStyledLabelSampleViewController.h; path = Source/ECStyledLabelSampleViewController.h; sourceTree = SOURCE_ROOT; };
 		22B828FF13E847C900BF47CC /* ECStyledLabelSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECStyledLabelSampleViewController.m; path = Source/ECStyledLabelSampleViewController.m; sourceTree = SOURCE_ROOT; };
 		22CA27DD14E42E390056516B /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
+		22CA27F014E4355C0056516B /* ECTappableStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTappableStyledLabel.h; sourceTree = "<group>"; };
+		22CA27F114E4355C0056516B /* ECTappableStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTappableStyledLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +559,8 @@
 				2274A9A514E40D34007D3E7C /* ECScrollView.m */,
 				2274A9A614E40D34007D3E7C /* ECStyledLabel.h */,
 				2274A9A714E40D34007D3E7C /* ECStyledLabel.m */,
+				22CA27F014E4355C0056516B /* ECTappableStyledLabel.h */,
+				22CA27F114E4355C0056516B /* ECTappableStyledLabel.m */,
 				2274A9A814E40D34007D3E7C /* ECTabbedTableViewController.h */,
 				2274A9A914E40D34007D3E7C /* ECTabbedTableViewController.m */,
 				2274A9AA14E40D34007D3E7C /* ECTransparentToolbar.h */,
@@ -720,6 +725,7 @@
 				2274A9E714E40E4D007D3E7C /* ECHTMLParser.m in Sources */,
 				2274A9E814E40E4D007D3E7C /* ECMarkdownParser.m in Sources */,
 				2274A9F414E41191007D3E7C /* ECModelController.m in Sources */,
+				22CA27F214E4355C0056516B /* ECTappableStyledLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

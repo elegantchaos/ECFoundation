@@ -26,12 +26,14 @@
 
 @synthesize labelStyled;
 @synthesize labelScrolling;
+@synthesize labelTappable;
 @synthesize textViewMarkdown;
 
 - (void)dealloc 
 {
     [labelScrolling release];
     [labelStyled release];
+    [labelTappable release];
     [textViewMarkdown release];
     
     [super dealloc];
@@ -59,6 +61,7 @@
 {
     self.labelStyled = nil;
     self.labelScrolling = nil;
+    self.labelTappable = nil;
     self.textViewMarkdown = nil;
     
     [super viewDidUnload];

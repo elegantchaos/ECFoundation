@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class ECStyledLabel;
+@class ECTappableStyledLabel;
 
 @interface ECStyledLabelSampleViewController : UIViewController<UITextViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextView*      textViewMarkdown;
-@property (strong, nonatomic) IBOutlet ECStyledLabel*   labelScrolling;
-@property (strong, nonatomic) IBOutlet ECStyledLabel*   labelStyled;
-
+@property (strong, nonatomic) IBOutlet UITextView* textViewMarkdown;
+@property (strong, nonatomic) IBOutlet ECStyledLabel* labelScrolling;
+@property (strong, nonatomic) IBOutlet ECStyledLabel* labelStyled;
+@property (strong, nonatomic) IBOutlet ECTappableStyledLabel* labelTappable;
 - (IBAction)textViewDidChange:(id)sender;
 
 @end
