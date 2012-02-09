@@ -9,10 +9,10 @@
 
 #import "ECCoreDataModelController.h"
 
-#import <ECFoundation/NSFileManager+ECCore.h>
-#import <ECFoundation/NSArray+ECCore.h>
-#import <ECFoundation/UIApplication+ECCore.h>
-#import <ECFoundation/NSBundle+ECCore.h>
+#import "NSFileManager+ECCore.h"
+#import "NSArray+ECCore.h"
+#import "UIApplication+ECCore.h"
+#import "NSBundle+ECCore.h"
 
 #import <CoreData/CoreData.h>
 

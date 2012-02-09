@@ -9,6 +9,8 @@
 
 #import "ECTEditableCell.h"
 #import "ECTBinding.h"
+#import "ECLogging.h"
+
 #import "UIColor+ECCore.h"
 
 #pragma mark - Private Interface
