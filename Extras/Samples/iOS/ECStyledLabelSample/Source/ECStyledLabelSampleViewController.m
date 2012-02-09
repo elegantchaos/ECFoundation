@@ -52,7 +52,7 @@
     self.navigationItem.rightBarButtonItem = debugButton;
     [debugButton release];
     
-    self.textViewMarkdown.delegate = self;
+    self.title = @"ECStyledLabel Test Bed";
 }
 
 - (void)viewDidUnload
@@ -82,11 +82,6 @@
 }
 
 #pragma mark - UITextViewDelegate
-
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    NSLog(@"blah");
-}
 
 - (IBAction)textViewDidChange:(id)sender
 {
