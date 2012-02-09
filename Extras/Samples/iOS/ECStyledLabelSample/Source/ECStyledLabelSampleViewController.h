@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECTappableStyledLabel.h"
 
 @class ECStyledLabel;
 @class ECTappableStyledLabel;
 
-@interface ECStyledLabelSampleViewController : UIViewController<UITextViewDelegate>
+@interface ECStyledLabelSampleViewController : UIViewController<UITextViewDelegate, ECTappableStyledLabelDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView* textViewMarkdown;
 @property (strong, nonatomic) IBOutlet ECStyledLabel* labelScrolling;

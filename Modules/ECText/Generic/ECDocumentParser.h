@@ -9,6 +9,8 @@
 
 @class ECDocumentStyles;
 
+extern NSString *const ECDocumentLinkKey;
+
 @interface ECDocumentParser : NSObject
 
 #pragma mark - Public Properties
@@ -17,6 +19,7 @@
 @property (nonatomic, retain) NSDictionary* attributesBold;
 @property (nonatomic, retain) NSDictionary* attributesItalic;
 @property (nonatomic, retain) NSDictionary* attributesPlain;
+@property (nonatomic, retain) NSDictionary* attributesLink;
 
 #pragma mark - Public Methods
 

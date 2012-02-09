@@ -9,7 +9,6 @@
 
 #import "ECStyledLabel.h"
 
-extern NSString *const ECTappableStyledLabelLinkKey;
 
 @class ECTappableStyledLabel;
 
@@ -25,6 +24,6 @@ extern NSString *const ECTappableStyledLabelLinkKey;
 
 @interface ECTappableStyledLabel : ECStyledLabel
 
-@property (assign, nonatomic) id delegate;
+@property (assign, nonatomic) IBOutlet id delegate;
 
 @end

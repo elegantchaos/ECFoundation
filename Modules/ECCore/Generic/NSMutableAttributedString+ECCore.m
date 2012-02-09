@@ -52,13 +52,30 @@
 
 - (void)replaceMatch:(NSTextCheckingResult*)match atIndex:(NSUInteger)atIndex withIndex:(NSUInteger)withIndex attributes:(NSDictionary*)attributes
 {
+    NSMutableDictionary* attributesCopy = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    for (NSString* key in attributesCopy)
+    {
+        id value = [attributesCopy objectForKey:key];
+        if ([value isKindOfClass:[NSString class]])
+        {
+            NSString* string = value;
+            if (([string length] > 0) && [string characterAtIndex:0] == '^')
+            {
+                NSUInteger matchNo = [[string substringFromIndex:1] intValue];
+                NSRange matchRange = [match rangeAtIndex:matchNo];
+                NSString* matchValue = [[self string] substringWithRange:matchRange];
+                [attributesCopy setObject:matchValue forKey:key];
+            }
+        }
+    }
+
 	NSRange whole = [match rangeAtIndex:atIndex];
 	NSRange range = [match rangeAtIndex:withIndex];
 	NSInteger rangeOffset = range.location - whole.location;
 	NSAttributedString* boldText = [self attributedSubstringFromRange:range];
 	[self replaceCharactersInRange:whole withAttributedString:boldText];
 	range.location -= rangeOffset;
-	[self addAttributes:attributes range:range];
+	[self addAttributes:attributesCopy range:range];
 }
 
 @end

@@ -21,10 +21,15 @@
 
 @implementation ECDocumentParser
 
+#pragma mark - Constants
+
+NSString *const ECDocumentLinkKey = @"ECDocumentLink";
+
 #pragma mark - Properties
 
 @synthesize attributesBold;
 @synthesize attributesItalic;
+@synthesize attributesLink;
 @synthesize attributesPlain;
 @synthesize styles;
 
@@ -53,6 +58,7 @@
 {
 	[attributesBold release];
 	[attributesItalic release];
+    [attributesLink release];
 	[attributesPlain release];
     [styles release];
     
@@ -87,6 +93,13 @@
 	self.attributesItalic = 
     [NSDictionary dictionaryWithObjectsAndKeys:
      (id) italicFont, (id) kCTFontAttributeName,
+     nil
+     ];
+
+    self.attributesLink = 
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     (id) styles.linkColour, (id)kCTForegroundColorAttributeName,
+     @"^2", ECDocumentLinkKey,
      nil
      ];
 

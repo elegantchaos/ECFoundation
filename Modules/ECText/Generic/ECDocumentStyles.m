@@ -13,6 +13,7 @@
 
 @synthesize boldFont;
 @synthesize colour;
+@synthesize linkColour;
 @synthesize headingFont;
 @synthesize headingSize;
 @synthesize italicFont;

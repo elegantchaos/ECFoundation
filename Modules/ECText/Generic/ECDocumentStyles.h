@@ -18,5 +18,6 @@
 @property (nonatomic, assign) CGFloat headingSize;
 
 @property (nonatomic, assign) CGColorRef colour;
+@property (nonatomic, assign) CGColorRef linkColour;
 
 @end

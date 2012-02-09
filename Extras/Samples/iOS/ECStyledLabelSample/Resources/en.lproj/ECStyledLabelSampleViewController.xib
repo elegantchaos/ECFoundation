@@ -83,6 +83,7 @@
 						<string key="NSFrame">{{31, 749}, {711, 164}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="652894661"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -90,7 +91,8 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 						<string type="base64-UTF8" key="IBUIText">IyBIZWFkaW5nCgpTb21lIG1hcmtkb3duIHRleHQuCgpUaGlzIGlzICoqYm9sZCoqLCBhbmQgdGhpcyBp
-cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
+cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKW1Rlc3QgTGlua10odGVzdC1saW5rLXZhbHVlKQoKMQoyCjMK
+NAo1A</string>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
 							<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
@@ -117,7 +119,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 								<string key="NSFrameSize">{711, 165}</string>
 								<reference key="NSSuperview" ref="706277623"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="346774226"/>
+								<reference key="NSNextKeyView" ref="1022253"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -169,7 +171,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 						<reference key="IBUIFontDescription" ref="718841375"/>
 						<reference key="IBUIFont" ref="1028156400"/>
 					</object>
-					<object class="IBUILabel" id="422575775">
+					<object class="IBUILabel" id="516921370">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{31, 502}, {717, 159}}</string>
@@ -195,13 +197,13 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 						<reference key="IBUIFontDescription" ref="718841375"/>
 						<reference key="IBUIFont" ref="1028156400"/>
 					</object>
-					<object class="IBUILabel" id="346774226">
+					<object class="IBUILabel" id="1022253">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 473}, {170, 21}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="422575775"/>
+						<reference key="NSNextKeyView" ref="516921370"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -318,7 +320,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">labelTappable</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="422575775"/>
+						<reference key="destination" ref="516921370"/>
 					</object>
 					<int key="connectionID">36</int>
 				</object>
@@ -337,6 +339,14 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 						<reference key="destination" ref="706277623"/>
 					</object>
 					<int key="connectionID">12</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="516921370"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">37</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -372,8 +382,8 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 							<reference ref="302094465"/>
 							<reference ref="414040300"/>
 							<reference ref="353456603"/>
-							<reference ref="422575775"/>
-							<reference ref="346774226"/>
+							<reference ref="516921370"/>
+							<reference ref="1022253"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -418,12 +428,12 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">34</int>
-						<reference key="object" ref="422575775"/>
+						<reference key="object" ref="516921370"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
-						<reference key="object" ref="346774226"/>
+						<reference key="object" ref="1022253"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</object>
@@ -483,7 +493,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">36</int>
+			<int key="maxID">37</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -575,6 +585,17 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 				<object class="IBPartialClassDescription">
 					<string key="className">ECTappableStyledLabel</string>
 					<string key="superclassName">ECStyledLabel</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/ECTappableStyledLabel.h</string>

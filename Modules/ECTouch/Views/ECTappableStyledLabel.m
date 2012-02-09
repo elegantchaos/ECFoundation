@@ -9,6 +9,7 @@
 
 #import "ECTappableStyledLabel.h"
 #import "ECLogging.h"
+#import "ECDocumentParser.h"
 
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
@@ -25,9 +26,6 @@
 
 @synthesize delegate;
 
-#pragma mark - Constants
-
-NSString *const ECTappableStyledLabelLinkKey = @"Link";
 
 #pragma mark - Channels
 
@@ -194,7 +192,7 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
             
             if ([self.delegate respondsToSelector:@selector(styledLabel:didTapLink:)])
             {
-                NSString* link = [attributes objectForKey:ECTappableStyledLabelLinkKey];
+                NSString* link = [attributes objectForKey:ECDocumentLinkKey];
                 if (link)
                 {
                     ECDebug(ECTappableStyledLabelChannel, @"tapped link %@", link);

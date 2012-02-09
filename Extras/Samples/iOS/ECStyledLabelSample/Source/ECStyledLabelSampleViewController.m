@@ -13,7 +13,6 @@
 #import "ECMarkdownParser.h"
 #import "ECPopoverBarButtonItem.h"
 #import "ECStyledLabel.h"
-#import "ECTappableStyledLabel.h"
 
 @interface ECStyledLabelSampleViewController()
 
@@ -91,6 +90,13 @@
 - (IBAction)textViewDidChange:(id)sender
 {
     [self updateStyledText];
+}
+
+#pragma mark - ECTappableStyledLabelDelegate
+
+- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString *)link
+{
+    NSLog(@"link was %@", link);
 }
 
 @end

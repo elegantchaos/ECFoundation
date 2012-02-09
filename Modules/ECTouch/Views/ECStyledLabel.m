@@ -203,6 +203,7 @@ ECDefineDebugChannel(StyledLabelChannel);
     styles.headingFont = styles.boldFont;
     styles.headingSize = self.font.pointSize + 2.0;
     styles.colour = self.textColor.CGColor;
+    styles.linkColour = [UIColor blueColor].CGColor;
 
 	return [styles autorelease];
 }
