@@ -12,8 +12,14 @@
 #import "NSArray+ECCore.h"
 #import "NSURL+ECCore.h"
 #import "ECErrorReporter.h"
+#import "ECRuntime.h"
 
 @implementation NSFileManager(ECCore)
+
++(void)load
+{
+	class_replaceMethodIfMissing(self, @selector(createDirectoryAtURL:withIntermediateDirectories:attributes:error:), @selector(ecCreateDirectoryAtURL:withIntermediateDirectories:attributes:error:));
+}
 
 // --------------------------------------------------------------------------
 //! Does a URL represent a file or directory?
@@ -38,7 +44,7 @@
 //! Create a directory.
 // --------------------------------------------------------------------------
 
-- (BOOL)createDirectoryAtURL:(NSURL *)url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error
+- (BOOL)ecCreateDirectoryAtURL:(NSURL *)url withIntermediateDirectories:(BOOL)createIntermediates attributes:(NSDictionary *)attributes error:(NSError **)error
 {
 	BOOL result = [self createDirectoryAtPath: [url path] withIntermediateDirectories: createIntermediates attributes: attributes error: error];
     if (!result && error)

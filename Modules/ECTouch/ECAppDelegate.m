@@ -168,7 +168,7 @@ ECDefineDebugChannel(ApplicationChannel);
 {
     ECModelController* emptyModel = [[ECModelController alloc] init];
 
-	return [emptyModel autorelease];
+	return emptyModel;
 }
 
 // --------------------------------------------------------------------------
