@@ -123,8 +123,49 @@
     }
 }
 
-
 - (NSDictionary*)dataForPoint:(CGPoint)point
+{
+    NSDictionary* result = nil;
+    NSAttributedString* string = self.textLayer.string;
+    CTTypesetterRef typesetter = CTTypesetterCreateWithAttributedString((CFAttributedStringRef)string);
+    CGFloat width = self.bounds.size.width;
+    
+    CFIndex fullLength = [string length];
+    CFIndex offset = 0, length;
+    CGFloat y = 0;
+    do {
+        length = CTTypesetterSuggestLineBreak(typesetter, offset, width);
+        CTLineRef line = CTTypesetterCreateLine(typesetter, CFRangeMake(offset, length));
+        
+        CGFloat ascent, descent, leading;
+        CGFloat lineWidth = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+        
+        CGRect lineFrame = CGRectMake(0, y, lineWidth, ascent + descent + leading);
+        BOOL inLine = CGRectContainsPoint(lineFrame, point);
+        NSLog(@"line %@ point %@ contained:%d", NSStringFromCGRect(lineFrame), NSStringFromCGPoint(point), inLine);
+        if (inLine) 
+        {
+            //we look if the position of the touch is correct on the line
+            CGPoint relativePoint = CGPointMake(point.x, (point.y - y) - ascent);
+            NSLog(@"relative point %@", NSStringFromCGPoint(relativePoint));
+            CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
+            NSLog(@"index %ld", index);
+            result = [string attributesAtIndex:index effectiveRange:nil];
+            break;
+        }
+
+        CFRelease(line);
+        
+        offset += length;
+        y += ascent + descent + leading;
+    } while (offset < fullLength);
+    
+    CFRelease(typesetter);
+    
+    return result;
+}
+
+- (NSDictionary*)dataForPoint2:(CGPoint)point
 {
     NSDictionary* result = nil;
     NSAttributedString* attributed = self.attributedText;
