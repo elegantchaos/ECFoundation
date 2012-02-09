@@ -50,6 +50,13 @@
     [super viewDidLoad];
     
     self.debugController = [[[ECDebugViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    
+    __block id blockSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:self.textViewMarkdown queue:[NSOperationQueue mainQueue] usingBlock:
+     ^(NSNotification *note) 
+    {
+        [blockSelf updateStyledText];
+    }];
 }
 
 - (void)viewDidUnload
@@ -105,5 +112,8 @@
     self.labelScrolling.attributedText = text;
     [parser release];
 }
+
+#pragma mark UITextFieldDelegate
+
 
 @end

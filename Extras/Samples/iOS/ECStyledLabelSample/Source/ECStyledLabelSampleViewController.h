@@ -10,7 +10,7 @@
 
 #import "ECStyledLabel.h"
 
-@interface ECStyledLabelSampleViewController : UIViewController
+@interface ECStyledLabelSampleViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView*      textViewMarkdown;
 @property (strong, nonatomic) IBOutlet ECStyledLabel*   labelScrolling;
