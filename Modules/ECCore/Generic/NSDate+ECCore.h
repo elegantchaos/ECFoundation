@@ -11,21 +11,30 @@
 
 @interface NSDate(ECCore)
 
-typedef enum {
+typedef struct
+{
+    NSTimeInterval  interval;
+    NSString *const format;
+} RelativeEntry;
+
+
+typedef enum 
+{
     EarlierDay = -1,
     SameDay = 0,
     LaterDay = 1
 } DayOffset;
 
+
 + (NSDate*)dateWithTimeIntervalSinceStartOfToday:(NSTimeInterval)interval;
 
-+ (NSString *) formattedRelativeToInterval: (NSTimeInterval) interval;
++ (NSString*)formattedRelativeToInterval:(NSTimeInterval)interval entries:(const RelativeEntry*)entries;
 
-- (NSString *) formattedRelativeTo: (NSDate*) date;
-- (NSString *) formattedRelative;
+- (NSString*)formattedRelativeTo:(NSDate*)date;
+- (NSString*)formattedRelative;
 
-- (NSString*) formattedRelativeWithDayTo: (NSDate*) date;
-- (NSString *) formattedRelativeWithDay;
+- (NSString*)formattedRelativeWithDayTo: (NSDate*) date;
+- (NSString*)formattedRelativeWithDay;
 
 - (DayOffset)dayOffsetFrom:(NSDate*)date;
 - (BOOL)isEarlierDayThan:(NSDate*)date;

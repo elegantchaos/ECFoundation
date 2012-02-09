@@ -10,6 +10,7 @@
 @interface NSArray(ECCore)
 
 - (id)firstObjectOrNil;
+- (id)lastObjectOrNil;
 
 @end
 

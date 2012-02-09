@@ -30,6 +30,7 @@ typedef enum
 - (id)initWithStyle:(UITableViewCellStyle)style binding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
 - (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
+- (void)removeBinding;
 - (void)setupAccessoryForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;

@@ -140,6 +140,12 @@ ECDefineLogChannel(ItemCellChannel);
     //	self.text.keyboardAppearance = [self itemIntForKey: kKeyboardAppearanceKey orDefault: UIKeyboardAppearanceDefault];
     //	self.text.returnKeyType = [self itemIntForKey: kReturnKeyTypeKey orDefault: UIReturnKeyDone];
     //	self.text.enablesReturnKeyAutomatically = [self itemIntForKey: kEnablesReturnKeyAutomaticallyKey orDefault: NO];
+    
+    NSString* placeholder = [binding valueForKey:ECTPlaceholderKey];
+    if (placeholder)
+    {
+        self.text.placeholder = placeholder;
+    }
 }
 
 - (void)installGesture

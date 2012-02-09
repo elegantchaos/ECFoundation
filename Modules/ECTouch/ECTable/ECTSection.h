@@ -25,12 +25,14 @@ extern NSString *const ECTCanDeleteKey;
 extern NSString *const ECTCellClassKey;
 extern NSString *const ECTDetailKey;
 extern NSString *const ECTDetailKeyKey;
+extern NSString *const ECTDisclosureBackKey;
 extern NSString *const ECTDisclosureClassKey;
 extern NSString *const ECTDisclosureTitleKey;
 extern NSString *const ECTEnabledKey;
 extern NSString *const ECTImageKey;
 extern NSString *const ECTImageKeyKey;
 extern NSString *const ECTLabelKey;
+extern NSString *const ECTPlaceholderKey;
 extern NSString *const ECTTargetKey;
 
 // --------------------------------------------------------------------------
@@ -66,7 +68,6 @@ extern NSString *const ECTTargetKey;
 - (NSString *)titleForHeaderInSection;
 - (NSString *)titleForFooterInSection;
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)willDisplayCell:(NSIndexPath *)indexPath;
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail;
 - (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail;
@@ -85,7 +86,6 @@ extern NSString *const ECTTargetKey;
 
 - (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (void)willDisplayForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (BOOL)canDeleteInSection:(ECTSection*)section;
 - (BOOL)canMoveInSection:(ECTSection*)section;
