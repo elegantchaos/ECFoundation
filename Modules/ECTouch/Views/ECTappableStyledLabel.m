@@ -8,13 +8,13 @@
 // --------------------------------------------------------------------------
 
 #import "ECTappableStyledLabel.h"
+#import "ECLogging.h"
 
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
 
 @interface ECTappableStyledLabel()
 
-@property (assign, nonatomic) CTFramesetterRef framesetter;
 - (void)setup;
 
 @end
@@ -24,7 +24,6 @@
 #pragma mark - Properties
 
 @synthesize delegate;
-@synthesize framesetter;
 
 #pragma mark - Constants
 
@@ -32,6 +31,7 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
 
 #pragma mark - Channels
 
+ECDefineDebugChannel(ECTappableStyledLabelChannel);
 
 #pragma mark User Interaction
 
@@ -56,9 +56,7 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
 }
 
 - (void)dealloc
-{
-    CFRelease(self.framesetter);
-    
+{    
     [super dealloc];
 }
 
@@ -67,6 +65,7 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
     [self setUserInteractionEnabled:YES];
 }
 
+#if DEBUG_DRAW
 - (void)drawRect:(CGRect)rect
 {
     //    [super drawRect:rect];
@@ -127,8 +126,9 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
         CFRelease(ctframe);
     }
 }
+#endif
 
-- (NSDictionary*)dataForPoint:(CGPoint)point index:(NSUInteger*)indexOut
+- (NSDictionary*)attributesForPoint:(CGPoint)point index:(NSUInteger*)indexOut
 {
     NSDictionary* result = nil;
     NSAttributedString* string = self.textLayer.string;
@@ -147,14 +147,14 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
         
         CGRect lineFrame = CGRectMake(0, y, lineWidth, ascent + descent + leading);
         BOOL inLine = CGRectContainsPoint(lineFrame, point);
-        NSLog(@"line %@ point %@ contained:%d", NSStringFromCGRect(lineFrame), NSStringFromCGPoint(point), inLine);
+        ECDebug(ECTappableStyledLabelChannel, @"line %@ point %@ contained:%d", NSStringFromCGRect(lineFrame), NSStringFromCGPoint(point), inLine);
         if (inLine) 
         {
             //we look if the position of the touch is correct on the line
             CGPoint relativePoint = CGPointMake(point.x, (point.y - y) - ascent);
-            NSLog(@"relative point %@", NSStringFromCGPoint(relativePoint));
+            ECDebug(ECTappableStyledLabelChannel, @"relative point %@", NSStringFromCGPoint(relativePoint));
             CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
-            NSLog(@"index %ld", index);
+            ECDebug(ECTappableStyledLabelChannel, @"index %ld", index);
             result = [string attributesAtIndex:index effectiveRange:nil];
             if (indexOut)
             {
@@ -181,22 +181,23 @@ NSString *const ECTappableStyledLabelLinkKey = @"Link";
 	
     CGPoint point = [(UITouch *)[touches anyObject] locationInView:self];
     NSUInteger index;
-    NSDictionary *data = [self dataForPoint:point index:&index];
-    if (data) 
+    NSDictionary* attributes = [self attributesForPoint:point index:&index];
+    if (attributes) 
     {
-        NSLog(@"data at point was %@", data);
+        ECDebug(ECTappableStyledLabelChannel, @"tapped character index %d with attributes %@", index, attributes);
         if (self.delegate)
         {
             if ([self.delegate respondsToSelector:@selector(styledLabel:didTapIndex:attributes:)])
             {
-                [self.delegate styledLabel:self didTapIndex:index attributes:data];
+                [self.delegate styledLabel:self didTapIndex:index attributes:attributes];
             }
             
             if ([self.delegate respondsToSelector:@selector(styledLabel:didTapLink:)])
             {
-                NSString* link = [data objectForKey:ECTappableStyledLabelLinkKey];
+                NSString* link = [attributes objectForKey:ECTappableStyledLabelLinkKey];
                 if (link)
                 {
+                    ECDebug(ECTappableStyledLabelChannel, @"tapped link %@", link);
                     [self.delegate styledLabel:self didTapLink:link];
                 }
             }
