@@ -83,7 +83,6 @@
 						<string key="NSFrame">{{31, 749}, {711, 164}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="652894661"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -118,7 +117,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 								<string key="NSFrameSize">{711, 165}</string>
 								<reference key="NSSuperview" ref="706277623"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="923728226"/>
+								<reference key="NSNextKeyView" ref="346774226"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -170,7 +169,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 						<reference key="IBUIFontDescription" ref="718841375"/>
 						<reference key="IBUIFont" ref="1028156400"/>
 					</object>
-					<object class="IBUILabel" id="638587404">
+					<object class="IBUILabel" id="422575775">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{31, 502}, {717, 159}}</string>
@@ -196,13 +195,13 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 						<reference key="IBUIFontDescription" ref="718841375"/>
 						<reference key="IBUIFont" ref="1028156400"/>
 					</object>
-					<object class="IBUILabel" id="923728226">
+					<object class="IBUILabel" id="346774226">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 473}, {170, 21}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="638587404"/>
+						<reference key="NSNextKeyView" ref="422575775"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -317,6 +316,14 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">labelTappable</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="422575775"/>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="414040300"/>
 						<reference key="destination" ref="841351856"/>
@@ -365,8 +372,8 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 							<reference ref="302094465"/>
 							<reference ref="414040300"/>
 							<reference ref="353456603"/>
-							<reference ref="638587404"/>
-							<reference ref="923728226"/>
+							<reference ref="422575775"/>
+							<reference ref="346774226"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -411,12 +418,12 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">34</int>
-						<reference key="object" ref="638587404"/>
+						<reference key="object" ref="422575775"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
-						<reference key="object" ref="923728226"/>
+						<reference key="object" ref="346774226"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</object>
@@ -476,7 +483,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -520,12 +527,14 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>labelScrolling</string>
 							<string>labelStyled</string>
+							<string>labelTappable</string>
 							<string>textViewMarkdown</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>ECStyledLabel</string>
 							<string>ECStyledLabel</string>
+							<string>ECTappableStyledLabel</string>
 							<string>UITextView</string>
 						</object>
 					</object>
@@ -535,6 +544,7 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>labelScrolling</string>
 							<string>labelStyled</string>
+							<string>labelTappable</string>
 							<string>textViewMarkdown</string>
 						</object>
 						<object class="NSArray" key="dict.values">
@@ -546,6 +556,10 @@ cyAqaXRhbGljKiwgaW4gdGhlb3J5LgoKMQoyCjMKNAo1A</string>
 							<object class="IBToOneOutletInfo">
 								<string key="name">labelStyled</string>
 								<string key="candidateClassName">ECStyledLabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">labelTappable</string>
+								<string key="candidateClassName">ECTappableStyledLabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">textViewMarkdown</string>

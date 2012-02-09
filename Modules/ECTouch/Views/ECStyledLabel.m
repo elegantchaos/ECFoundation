@@ -21,7 +21,6 @@
 @interface ECStyledLabel()
 
 
-@property (nonatomic, retain) CATextLayer* textLayer;
 
 - (void)makeTextLayer;
 - (void)setTestText;
@@ -91,7 +90,7 @@ ECDefineDebugChannel(StyledLabelChannel);
 - (void)makeTextLayer
 {
     CATextLayer* text = [[CATextLayer alloc] init];
-    [self.layer addSublayer:text];
+//    [self.layer addSublayer:text];
     self.textLayer = text;
     [text release];
 

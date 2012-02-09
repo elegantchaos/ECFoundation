@@ -9,10 +9,11 @@
 #import "ECStyledLabelSampleViewController.h"
 
 #import "ECDebugViewController.h"
-#import "ECMarkdownParser.h"
 #import "ECDebugViewPopoverController.h"
+#import "ECMarkdownParser.h"
 #import "ECPopoverBarButtonItem.h"
 #import "ECStyledLabel.h"
+#import "ECTappableStyledLabel.h"
 
 @interface ECStyledLabelSampleViewController()
 
@@ -81,6 +82,7 @@
     NSAttributedString* text = [parser attributedStringFromMarkdown:markdown];
     self.labelStyled.attributedText = text;
     self.labelScrolling.attributedText = text;
+    self.labelTappable.attributedText = text;
     [parser release];
 }
 
