@@ -9,10 +9,13 @@
 #import "ECStyledLabelSampleViewController.h"
 
 #import "ECDebugViewController.h"
+#import "ECMarkdownParser.h"
 
 @interface ECStyledLabelSampleViewController()
 
 @property (nonatomic, retain) ECDebugViewController* debugController;
+
+- (void)updateStyledText;
 
 @end
 
@@ -21,10 +24,16 @@
 #pragma mark - Properties
 
 @synthesize debugController;
+@synthesize labelStyled;
+@synthesize labelScrolling;
+@synthesize textViewMarkdown;
 
 - (void)dealloc 
 {
     [debugController release];
+    [labelScrolling release];
+    [labelStyled release];
+    [textViewMarkdown release];
     
     [super dealloc];
 }
@@ -53,6 +62,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self updateStyledText];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,6 +93,17 @@
 - (IBAction)tappedShowDebugView:(id)sender
 {
     [self.navigationController pushViewController:self.debugController animated:YES];
+}
+
+- (void)updateStyledText
+{
+    NSString* markdown = self.textViewMarkdown.text;
+    ECDocumentStyles* styles = [self.labelStyled defaultStyles];
+    ECMarkdownParser* parser = [[ECMarkdownParser alloc] initWithStyles:styles];
+    NSAttributedString* text = [parser attributedStringFromMarkdown:markdown];
+    self.labelStyled.attributedText = text;
+    self.labelScrolling.attributedText = text;
+    [parser release];
 }
 
 @end
