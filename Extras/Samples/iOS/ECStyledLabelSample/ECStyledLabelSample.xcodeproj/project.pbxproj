@@ -91,7 +91,7 @@
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		226FB46113E1EB0B00BF258D /* Info2.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = Info2.plist; sourceTree = "<group>"; };
+		226FB46113E1EB0B00BF258D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		226FB46313E1EB0B00BF258D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ECStyledLabelSampleViewController.xib; sourceTree = "<group>"; };
 		226FB46713E1EB0B00BF258D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		226FB46E13E1EB0B00BF258D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		226FB46013E1EB0B00BF258D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				226FB46113E1EB0B00BF258D /* Info2.plist */,
+				226FB46113E1EB0B00BF258D /* Info.plist */,
 				226FB46213E1EB0B00BF258D /* ECStyledLabelSampleViewController.xib */,
 				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
 			);
