@@ -505,14 +505,14 @@
 				2274A97F14E40D34007D3E7C /* ECAppDelegate.m */,
 				2274A9F214E41191007D3E7C /* ECModelController.h */,
 				2274A9F314E41191007D3E7C /* ECModelController.m */,
-				2274A98414E40D34007D3E7C /* ECTable */,
-				2274A99914E40D34007D3E7C /* ECViews */,
+				2274A98414E40D34007D3E7C /* TableBindings */,
+				2274A99914E40D34007D3E7C /* Views */,
 			);
 			name = ECTouch;
 			path = ../../../../../Modules/ECTouch;
 			sourceTree = "<group>";
 		};
-		2274A98414E40D34007D3E7C /* ECTable */ = {
+		2274A98414E40D34007D3E7C /* TableBindings */ = {
 			isa = PBXGroup;
 			children = (
 				2274A98514E40D34007D3E7C /* ECTBinding.h */,
@@ -536,10 +536,10 @@
 				2274A99714E40D34007D3E7C /* ECTTickCell.h */,
 				2274A99814E40D34007D3E7C /* ECTTickCell.m */,
 			);
-			path = ECTable;
+			path = TableBindings;
 			sourceTree = "<group>";
 		};
-		2274A99914E40D34007D3E7C /* ECViews */ = {
+		2274A99914E40D34007D3E7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2274A99A14E40D34007D3E7C /* ECAlertView.h */,
@@ -561,7 +561,7 @@
 				2274A9AA14E40D34007D3E7C /* ECTransparentToolbar.h */,
 				2274A9AB14E40D34007D3E7C /* ECTransparentToolbar.m */,
 			);
-			path = ECViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2274A9DB14E40E4D007D3E7C /* ECText */ = {

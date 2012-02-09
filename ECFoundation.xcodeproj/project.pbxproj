@@ -1148,7 +1148,7 @@
 			path = resources/tests;
 			sourceTree = "<group>";
 		};
-		2248BBFC13C7948F00E13577 /* ECTable */ = {
+		2248BBFC13C7948F00E13577 /* TableBindings */ = {
 			isa = PBXGroup;
 			children = (
 				2248BBFD13C7948F00E13577 /* ECTBinding.h */,
@@ -1166,7 +1166,7 @@
 				2248BC0913C7948F00E13577 /* ECTTickCell.h */,
 				2248BC0A13C7948F00E13577 /* ECTTickCell.m */,
 			);
-			path = ECTable;
+			path = TableBindings;
 			sourceTree = "<group>";
 		};
 		2248BC1913C7949E00E13577 /* misc */ = {
@@ -1378,14 +1378,14 @@
 		227EEB8011A6BCCD009420F7 /* ECTouch */ = {
 			isa = PBXGroup;
 			children = (
-				22BE50F91496A922007CC214 /* ECViews */,
-				2248BBFC13C7948F00E13577 /* ECTable */,
 				22BE51091496A9D0007CC214 /* ECAppDelegate.h */,
 				22BE510A1496A9D1007CC214 /* ECAppDelegate.m */,
 				22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */,
 				22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */,
 				22BE51261496B019007CC214 /* ECModelController.h */,
 				22BE51271496B019007CC214 /* ECModelController.m */,
+				2248BBFC13C7948F00E13577 /* TableBindings */,
+				22BE50F91496A922007CC214 /* Views */,
 			);
 			path = ECTouch;
 			sourceTree = "<group>";
@@ -1588,7 +1588,7 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		22BE50F91496A922007CC214 /* ECViews */ = {
+		22BE50F91496A922007CC214 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				22BE50FA1496A922007CC214 /* ECScrollingStyledLabel.h */,
@@ -1598,7 +1598,7 @@
 				22BE50FE1496A922007CC214 /* ECStyledLabel.h */,
 				22BE50FF1496A922007CC214 /* ECStyledLabel.m */,
 			);
-			path = ECViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		22C02E09141FE33C004B159A /* Modules */ = {
