@@ -53,9 +53,9 @@
 - (void)replaceMatch:(NSTextCheckingResult*)match atIndex:(NSUInteger)atIndex withIndex:(NSUInteger)withIndex attributes:(NSDictionary*)attributes
 {
     NSMutableDictionary* attributesCopy = [NSMutableDictionary dictionaryWithDictionary:attributes];
-    for (NSString* key in attributesCopy)
+    for (NSString* key in attributes)
     {
-        id value = [attributesCopy objectForKey:key];
+        id value = [attributes objectForKey:key];
         if ([value isKindOfClass:[NSString class]])
         {
             NSString* string = value;
