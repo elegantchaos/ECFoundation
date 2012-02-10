@@ -175,8 +175,6 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[super touchesEnded:touches withEvent:event];
-	
     CGPoint point = [(UITouch *)[touches anyObject] locationInView:self];
     NSUInteger index;
     NSDictionary* attributes = [self attributesForPoint:point index:&index];
@@ -200,6 +198,10 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
                 }
             }
         }
+    }
+    else
+    {	
+        [super touchesEnded:touches withEvent:event];
     }
 }
 
