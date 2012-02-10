@@ -16,8 +16,8 @@
 
 @optional
 
-- (void)styledLabel:(ECTappableStyledLabel*)styledLabel didTapIndex:(NSUInteger)index attributes:(NSDictionary*)attributes;
-- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString*)link;
+- (void)styledLabel:(ECTappableStyledLabel*)styledLabel didTapIndex:(NSUInteger)index attributes:(NSDictionary*)attributes position:(CGPoint)position;
+- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString*)link position:(CGPoint)position;
 
 @end
 

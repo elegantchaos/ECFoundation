@@ -94,9 +94,9 @@
 
 #pragma mark - ECTappableStyledLabelDelegate
 
-- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString *)link
+- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString *)link position:(CGPoint)position
 {
-    NSLog(@"link was %@", link);
+    NSLog(@"link was %@, at %@", link, NSStringFromCGPoint(position));
 }
 
 @end

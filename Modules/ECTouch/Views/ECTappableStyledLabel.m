@@ -185,18 +185,18 @@ ECDefineDebugChannel(ECTappableStyledLabelChannel);
         ECDebug(ECTappableStyledLabelChannel, @"tapped character index %d with attributes %@", index, attributes);
         if (self.delegate)
         {
-            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapIndex:attributes:)])
+            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapIndex:attributes:position:)])
             {
-                [self.delegate styledLabel:self didTapIndex:index attributes:attributes];
+                [self.delegate styledLabel:self didTapIndex:index attributes:attributes position:point];
             }
             
-            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapLink:)])
+            if ([self.delegate respondsToSelector:@selector(styledLabel:didTapLink:position:)])
             {
                 NSString* link = [attributes objectForKey:ECDocumentLinkKey];
                 if (link)
                 {
                     ECDebug(ECTappableStyledLabelChannel, @"tapped link %@", link);
-                    [self.delegate styledLabel:self didTapLink:link];
+                    [self.delegate styledLabel:self didTapLink:link position:point];
                 }
             }
         }
