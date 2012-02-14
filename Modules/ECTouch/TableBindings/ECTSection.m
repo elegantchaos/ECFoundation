@@ -157,8 +157,10 @@ NSString *const ECTValueKey = @"value";
 
 - (void)bindArray:(NSArray*)array
 {
-    NSString* key = [self.allRowProperties objectForKey:ECTValueKey];
-    [self bindSource:array key:key properties:self.allRowProperties];
+    self.source = array;
+    self.sourceKey = [self.allRowProperties objectForKey:ECTValueKey];
+    self.sourceProperties = self.allRowProperties;
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array key:self.sourceKey properties:self.sourceProperties]];
 }
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
