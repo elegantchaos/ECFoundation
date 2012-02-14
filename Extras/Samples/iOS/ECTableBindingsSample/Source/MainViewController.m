@@ -1,18 +1,17 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
 //
-//  ECLoggingSampleViewController.m
-//  ECLoggingSample
-//
-//  Created by Sam Deane on 28/07/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import "MainViewController.h"
 
-#import "ECDebugViewController.h"
+#import "ECPopoverBarButtonItem.h"
+#import "ECTSectionDrivenTableController.h"
 
 @interface MainViewController()
-
-@property (nonatomic, retain) ECDebugViewController* debugController;
 
 @end
 
@@ -20,11 +19,13 @@
 
 #pragma mark - Properties
 
-@synthesize debugController;
+@synthesize table;
+
+#pragma mark - Object Lifecycle
 
 - (void)dealloc 
 {
-    [debugController release];
+    [table release];
     
     [super dealloc];
 }
@@ -34,55 +35,27 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - View lifecycle
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.debugController = [[[ECDebugViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    UIBarButtonItem* debugButton = [[ECPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
+    self.navigationItem.rightBarButtonItem = debugButton;
+    [debugButton release];
 }
 
 - (void)viewDidUnload
-{
-    self.debugController = nil;
+{   
+    self.table = nil;
     
     [super viewDidUnload];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
-- (IBAction)tappedShowDebugView:(id)sender
-{
-    [self.navigationController pushViewController:self.debugController animated:YES];
+    return YES;
 }
 
 @end

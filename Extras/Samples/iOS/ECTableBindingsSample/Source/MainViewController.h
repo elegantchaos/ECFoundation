@@ -1,15 +1,17 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
 //
-//  ECLoggingSampleViewController.h
-//  ECLoggingSample
-//
-//  Created by Sam Deane on 28/07/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
 
+@class ECTSectionDrivenTableController;
+
 @interface MainViewController : UIViewController
 
-- (IBAction)tappedShowDebugView:(id)sender;
+@property (strong, nonatomic) IBOutlet ECTSectionDrivenTableController* table;
 
 @end

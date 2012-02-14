@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223C373814EAB63C00C11C76 /* ECAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372514EAB63C00C11C76 /* ECAlertView.m */; };
+		223C373914EAB63C00C11C76 /* ECPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372714EAB63C00C11C76 /* ECPopoverBarButtonItem.m */; };
+		223C373A14EAB63C00C11C76 /* ECPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372914EAB63C00C11C76 /* ECPopoverContentController.m */; };
+		223C373B14EAB63C00C11C76 /* ECPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372B14EAB63C00C11C76 /* ECPopoverController.m */; };
+		223C373D14EAB63C00C11C76 /* ECScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372F14EAB63C00C11C76 /* ECScrollView.m */; };
+		223C373F14EAB63C00C11C76 /* ECTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C373314EAB63C00C11C76 /* ECTabbedTableViewController.m */; };
+		223C374114EAB63C00C11C76 /* ECTransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C373714EAB63C00C11C76 /* ECTransparentToolbar.m */; };
 		2245375514EAA8AE00BDCC7B /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245368814EAA8AE00BDCC7B /* CGGeometry+ECCore.m */; };
 		2245375614EAA8AE00BDCC7B /* ECLazyProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245368B14EAA8AE00BDCC7B /* ECLazyProperties.m */; };
 		2245375714EAA8AE00BDCC7B /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245368F14EAA8AE00BDCC7B /* ECRandom.m */; };
@@ -73,6 +80,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223C372414EAB63C00C11C76 /* ECAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAlertView.h; sourceTree = "<group>"; };
+		223C372514EAB63C00C11C76 /* ECAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAlertView.m; sourceTree = "<group>"; };
+		223C372614EAB63C00C11C76 /* ECPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPopoverBarButtonItem.h; sourceTree = "<group>"; };
+		223C372714EAB63C00C11C76 /* ECPopoverBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPopoverBarButtonItem.m; sourceTree = "<group>"; };
+		223C372814EAB63C00C11C76 /* ECPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPopoverContentController.h; sourceTree = "<group>"; };
+		223C372914EAB63C00C11C76 /* ECPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPopoverContentController.m; sourceTree = "<group>"; };
+		223C372A14EAB63C00C11C76 /* ECPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPopoverController.h; sourceTree = "<group>"; };
+		223C372B14EAB63C00C11C76 /* ECPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPopoverController.m; sourceTree = "<group>"; };
+		223C372E14EAB63C00C11C76 /* ECScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECScrollView.h; sourceTree = "<group>"; };
+		223C372F14EAB63C00C11C76 /* ECScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECScrollView.m; sourceTree = "<group>"; };
+		223C373214EAB63C00C11C76 /* ECTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTabbedTableViewController.h; sourceTree = "<group>"; };
+		223C373314EAB63C00C11C76 /* ECTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTabbedTableViewController.m; sourceTree = "<group>"; };
+		223C373614EAB63C00C11C76 /* ECTransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTransparentToolbar.h; sourceTree = "<group>"; };
+		223C373714EAB63C00C11C76 /* ECTransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTransparentToolbar.m; sourceTree = "<group>"; };
 		2245368714EAA8AE00BDCC7B /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
 		2245368814EAA8AE00BDCC7B /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
 		2245368914EAA8AE00BDCC7B /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECClang.h; sourceTree = "<group>"; };
@@ -188,7 +209,7 @@
 		2266D4D714EAA9720033B236 /* ECLogViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandler.m; sourceTree = "<group>"; };
 		2266D4D814EAA9720033B236 /* ECLogViewHandlerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewHandlerItem.h; sourceTree = "<group>"; };
 		2266D4D914EAA9720033B236 /* ECLogViewHandlerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandlerItem.m; sourceTree = "<group>"; };
-		226FB43713E1EA7200BF258D /* ECTableSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECTableSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		226FB43713E1EA7200BF258D /* ECTableBindingsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECTableBindingsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -219,6 +240,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223C372314EAB63C00C11C76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				223C372414EAB63C00C11C76 /* ECAlertView.h */,
+				223C372514EAB63C00C11C76 /* ECAlertView.m */,
+				223C372614EAB63C00C11C76 /* ECPopoverBarButtonItem.h */,
+				223C372714EAB63C00C11C76 /* ECPopoverBarButtonItem.m */,
+				223C372814EAB63C00C11C76 /* ECPopoverContentController.h */,
+				223C372914EAB63C00C11C76 /* ECPopoverContentController.m */,
+				223C372A14EAB63C00C11C76 /* ECPopoverController.h */,
+				223C372B14EAB63C00C11C76 /* ECPopoverController.m */,
+				223C372E14EAB63C00C11C76 /* ECScrollView.h */,
+				223C372F14EAB63C00C11C76 /* ECScrollView.m */,
+				223C373214EAB63C00C11C76 /* ECTabbedTableViewController.h */,
+				223C373314EAB63C00C11C76 /* ECTabbedTableViewController.m */,
+				223C373614EAB63C00C11C76 /* ECTransparentToolbar.h */,
+				223C373714EAB63C00C11C76 /* ECTransparentToolbar.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2245367914EAA8AE00BDCC7B /* ECCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +348,7 @@
 		2245371914EAA8AE00BDCC7B /* ECTouch */ = {
 			isa = PBXGroup;
 			children = (
+				223C372314EAB63C00C11C76 /* Views */,
 				2245371A14EAA8AE00BDCC7B /* ECAppDelegate.h */,
 				2245371B14EAA8AE00BDCC7B /* ECAppDelegate.m */,
 				2245371E14EAA8AE00BDCC7B /* ECModelController.h */,
@@ -427,7 +470,7 @@
 		226FB43813E1EA7200BF258D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				226FB43713E1EA7200BF258D /* ECTableSample.app */,
+				226FB43713E1EA7200BF258D /* ECTableBindingsSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,9 +535,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		226FB43613E1EA7200BF258D /* ECTableSample */ = {
+		226FB43613E1EA7200BF258D /* ECTableBindingsSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableSample" */;
+			buildConfigurationList = 226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableBindingsSample" */;
 			buildPhases = (
 				226FB43313E1EA7200BF258D /* Sources */,
 				226FB43413E1EA7200BF258D /* Frameworks */,
@@ -504,9 +547,9 @@
 			);
 			dependencies = (
 			);
-			name = ECTableSample;
+			name = ECTableBindingsSample;
 			productName = ECLoggingSample;
-			productReference = 226FB43713E1EA7200BF258D /* ECTableSample.app */;
+			productReference = 226FB43713E1EA7200BF258D /* ECTableBindingsSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -529,7 +572,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				226FB43613E1EA7200BF258D /* ECTableSample */,
+				226FB43613E1EA7200BF258D /* ECTableBindingsSample */,
 			);
 		};
 /* End PBXProject section */
@@ -609,6 +652,13 @@
 				2266D4EF14EAA9720033B236 /* ECLogViewHandlerItem.m in Sources */,
 				22FC16B514EAAD00008E9592 /* AppDelegate.m in Sources */,
 				22FC16B614EAAD00008E9592 /* MainViewController.m in Sources */,
+				223C373814EAB63C00C11C76 /* ECAlertView.m in Sources */,
+				223C373914EAB63C00C11C76 /* ECPopoverBarButtonItem.m in Sources */,
+				223C373A14EAB63C00C11C76 /* ECPopoverContentController.m in Sources */,
+				223C373B14EAB63C00C11C76 /* ECPopoverController.m in Sources */,
+				223C373D14EAB63C00C11C76 /* ECScrollView.m in Sources */,
+				223C373F14EAB63C00C11C76 /* ECTabbedTableViewController.m in Sources */,
+				223C374114EAB63C00C11C76 /* ECTransparentToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +769,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableSample" */ = {
+		226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableBindingsSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				226FB45913E1EA7200BF258D /* Debug */,
