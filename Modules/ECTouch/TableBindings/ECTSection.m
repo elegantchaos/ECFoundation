@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSString* sourceKey;
 @property (nonatomic, retain) NSDictionary* sourceProperties;
 @property (nonatomic, retain) ECTBinding* addCell;
+@property (nonatomic, retain) NSDictionary* sectionProperties;
+@property (nonatomic, retain) NSDictionary* allRowProperties;
+@property (nonatomic, retain) NSArray* eachRowProperties;
 
 @end
 
@@ -48,6 +51,10 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize table;
 @synthesize variableRowHeight;
 
+@synthesize sectionProperties;
+@synthesize allRowProperties;
+@synthesize eachRowProperties;
+
 #pragma mark - Constants
 
 NSString *const ECTActionKey = @"actionName";
@@ -72,11 +79,16 @@ NSString *const ECTValueKey = @"value";
 + (ECTSection*)sectionFromDictionary:(NSDictionary*)properties
 {
     ECTSection* section = [[ECTSection alloc] init];
+
+    NSDictionary* sectionProperties = [properties objectForKey:@"section"];
+
+    section.sectionProperties = sectionProperties;
+    section.allRowProperties = [properties objectForKey:@"rows"];
+    section.eachRowProperties = [properties objectForKey:@"eachRow"];
     
-    NSDictionary* sectionSettings = [properties objectForKey:@"sectionSettings"];
-    for (NSString* key in sectionSettings)
+    for (NSString* key in sectionProperties)
     {
-        [section setValue:[sectionSettings objectForKey:key] forKey:key];
+        [section setValue:[sectionProperties objectForKey:key] forKey:key];
     }
     
     return [section autorelease];
@@ -94,8 +106,8 @@ NSString *const ECTValueKey = @"value";
 {
     ECTSection* section = [self sectionFromDictionary:properties];
     
-    NSString* key = [properties objectForKey:ECTValueKey];
-    [section bindSource:array key:key properties:properties];
+    NSString* key = [section.allRowProperties objectForKey:ECTValueKey];
+    [section bindSource:array key:key properties:section.allRowProperties];
     
     return section;
 }

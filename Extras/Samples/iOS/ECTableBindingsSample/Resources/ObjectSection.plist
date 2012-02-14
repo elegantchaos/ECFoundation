@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>sectionSettings</key>
+	<key>section</key>
 	<dict>
 		<key>header</key>
 		<string>Object Binding</string>
@@ -11,13 +11,16 @@
 		<key>canMove</key>
 		<true/>
 	</dict>
-	<key>value</key>
-	<string>name</string>
-	<key>detailKey</key>
-	<string>label</string>
-	<key>canMove</key>
-	<true/>
-	<key>disclosureClass</key>
-	<string>ObjectViewController</string>
+	<key>rows</key>
+	<dict>
+		<key>value</key>
+		<string>name</string>
+		<key>detailKey</key>
+		<string>label</string>
+		<key>canMove</key>
+		<true/>
+		<key>disclosureClass</key>
+		<string>ObjectViewController</string>
+	</dict>
 </dict>
 </plist>
