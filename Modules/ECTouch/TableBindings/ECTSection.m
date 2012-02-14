@@ -105,9 +105,7 @@ NSString *const ECTValueKey = @"value";
 + (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
 {
     ECTSection* section = [self sectionFromDictionary:properties];
-    
-    NSString* key = [section.allRowProperties objectForKey:ECTValueKey];
-    [section bindSource:array key:key properties:section.allRowProperties];
+    [section bindArray:array];
     
     return section;
 }
@@ -156,6 +154,12 @@ NSString *const ECTValueKey = @"value";
 }
 
 #pragma mark - ECTSectionController methods
+
+- (void)bindArray:(NSArray*)array
+{
+    NSString* key = [self.allRowProperties objectForKey:ECTValueKey];
+    [self bindSource:array key:key properties:self.allRowProperties];
+}
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
 {

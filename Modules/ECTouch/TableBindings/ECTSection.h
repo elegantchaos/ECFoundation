@@ -62,6 +62,7 @@ extern NSString *const ECTTargetKey;
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)bindArray:(NSArray*)array;
 - (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)sourceChanged;
 
