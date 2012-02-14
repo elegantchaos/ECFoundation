@@ -688,7 +688,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
 				HEADER_SEARCH_PATHS = "../../../source/prefix/$(PLATFORM_NAME)/";
-				INFOPLIST_FILE = resources/info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -701,7 +701,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
 				HEADER_SEARCH_PATHS = "../../../source/prefix/$(PLATFORM_NAME)/";
-				INFOPLIST_FILE = resources/info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
