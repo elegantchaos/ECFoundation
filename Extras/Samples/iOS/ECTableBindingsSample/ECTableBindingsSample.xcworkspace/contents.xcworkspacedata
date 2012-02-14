@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ECTableSample.xcodeproj">
+      location = "group:ECTableBindingsSample.xcodeproj">
    </FileRef>
 </Workspace>

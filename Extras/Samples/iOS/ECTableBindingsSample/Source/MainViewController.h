@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ECLoggingSampleViewController : UIViewController
+@interface MainViewController : UIViewController
 
 - (IBAction)tappedShowDebugView:(id)sender;
 

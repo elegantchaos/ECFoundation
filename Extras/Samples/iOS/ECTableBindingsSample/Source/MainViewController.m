@@ -6,17 +6,17 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ECLoggingSampleViewController.h"
+#import "MainViewController.h"
 
 #import "ECDebugViewController.h"
 
-@interface ECLoggingSampleViewController()
+@interface MainViewController()
 
 @property (nonatomic, retain) ECDebugViewController* debugController;
 
 @end
 
-@implementation ECLoggingSampleViewController
+@implementation MainViewController
 
 #pragma mark - Properties
 

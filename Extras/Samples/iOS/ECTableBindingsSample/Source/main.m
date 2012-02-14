@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ECLoggingSampleAppDelegate.h"
-
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ECLoggingSampleAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, nil);
     }
 }
