@@ -55,7 +55,7 @@ ECDefineDebugChannel(ApplicationChannel);
     ECDebug(ApplicationChannel, @"did finish launching");
 	[self startupLogging];
 	
-	ECModelController* nm = [self newModel];
+	ECModelController* nm = [self newModelController];
 	self.model = nm;
 	[nm startup];
 	[nm load];
@@ -164,7 +164,7 @@ ECDefineDebugChannel(ApplicationChannel);
 //! Should be provided by subclass.
 // --------------------------------------------------------------------------
 
-- (ECModelController*)newModel
+- (id)newModelController
 {
     ECModelController* emptyModel = [[ECModelController alloc] init];
 

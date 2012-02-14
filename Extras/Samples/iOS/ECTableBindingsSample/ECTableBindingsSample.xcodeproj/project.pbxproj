@@ -49,6 +49,9 @@
 		224537B214EAA8AF00BDCC7B /* ECTSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245373014EAA8AE00BDCC7B /* ECTSwitchCell.m */; };
 		224537B314EAA8AF00BDCC7B /* ECTTickableTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245373214EAA8AE00BDCC7B /* ECTTickableTableController.m */; };
 		224537B414EAA8AF00BDCC7B /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245373414EAA8AE00BDCC7B /* ECTTickCell.m */; };
+		2258ECB414EAC944006D1602 /* ArraySection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2258ECB314EAC944006D1602 /* ArraySection.plist */; };
+		2258ECC014EAD658006D1602 /* ObjectViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2258ECBE14EAD658006D1602 /* ObjectViewControllerViewController.m */; };
+		2258ECC114EAD658006D1602 /* ObjectViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2258ECBF14EAD658006D1602 /* ObjectViewControllerViewController.xib */; };
 		2266D4DD14EAA9720033B236 /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B214EAA9720033B236 /* ECASLClient.m */; };
 		2266D4DE14EAA9720033B236 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B414EAA9720033B236 /* ECAssertion.m */; };
 		2266D4DF14EAA9720033B236 /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B614EAA9720033B236 /* ECErrorReporter.m */; };
@@ -71,7 +74,6 @@
 		226FB43C13E1EA7200BF258D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43B13E1EA7200BF258D /* UIKit.framework */; };
 		226FB43E13E1EA7200BF258D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43D13E1EA7200BF258D /* Foundation.framework */; };
 		226FB44013E1EA7200BF258D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43F13E1EA7200BF258D /* CoreGraphics.framework */; };
-		226FB47313E1EB0B00BF258D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46113E1EB0B00BF258D /* Info.plist */; };
 		226FB47413E1EB0B00BF258D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46213E1EB0B00BF258D /* MainViewController.xib */; };
 		226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46613E1EB0B00BF258D /* InfoPlist.strings */; };
 		226FB47913E1EB0B00BF258D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB46E13E1EB0B00BF258D /* main.m */; };
@@ -173,6 +175,10 @@
 		2245373214EAA8AE00BDCC7B /* ECTTickableTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTickableTableController.m; sourceTree = "<group>"; };
 		2245373314EAA8AE00BDCC7B /* ECTTickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTickCell.h; sourceTree = "<group>"; };
 		2245373414EAA8AE00BDCC7B /* ECTTickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTickCell.m; sourceTree = "<group>"; };
+		2258ECB314EAC944006D1602 /* ArraySection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ArraySection.plist; path = Resources/ArraySection.plist; sourceTree = SOURCE_ROOT; };
+		2258ECBD14EAD658006D1602 /* ObjectViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectViewControllerViewController.h; path = Source/ObjectViewControllerViewController.h; sourceTree = SOURCE_ROOT; };
+		2258ECBE14EAD658006D1602 /* ObjectViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectViewControllerViewController.m; path = Source/ObjectViewControllerViewController.m; sourceTree = SOURCE_ROOT; };
+		2258ECBF14EAD658006D1602 /* ObjectViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ObjectViewControllerViewController.xib; path = Source/ObjectViewControllerViewController.xib; sourceTree = SOURCE_ROOT; };
 		2266D4B114EAA9720033B236 /* ECASLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECASLClient.h; sourceTree = "<group>"; };
 		2266D4B214EAA9720033B236 /* ECASLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECASLClient.m; sourceTree = "<group>"; };
 		2266D4B314EAA9720033B236 /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				226FB46113E1EB0B00BF258D /* Info.plist */,
+				2258ECB314EAC944006D1602 /* ArraySection.plist */,
 				226FB46213E1EB0B00BF258D /* MainViewController.xib */,
 				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
 			);
@@ -512,6 +519,9 @@
 				22FC16B214EAAD00008E9592 /* AppDelegate.m */,
 				22FC16B314EAAD00008E9592 /* MainViewController.h */,
 				22FC16B414EAAD00008E9592 /* MainViewController.m */,
+				2258ECBD14EAD658006D1602 /* ObjectViewControllerViewController.h */,
+				2258ECBE14EAD658006D1602 /* ObjectViewControllerViewController.m */,
+				2258ECBF14EAD658006D1602 /* ObjectViewControllerViewController.xib */,
 				22A72ED414EABDDC00CFF8B9 /* ModelController.h */,
 				22A72ED514EABDDC00CFF8B9 /* ModelController.m */,
 				22A72ED114EABD6D00CFF8B9 /* ModelObject.h */,
@@ -595,10 +605,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226FB47313E1EB0B00BF258D /* Info.plist in Resources */,
 				226FB47413E1EB0B00BF258D /* MainViewController.xib in Resources */,
 				226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */,
 				22A72ED014EABAA200CFF8B9 /* README.md in Resources */,
+				2258ECB414EAC944006D1602 /* ArraySection.plist in Resources */,
+				2258ECC114EAD658006D1602 /* ObjectViewControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +686,7 @@
 				223C374114EAB63C00C11C76 /* ECTransparentToolbar.m in Sources */,
 				22A72ED314EABD6D00CFF8B9 /* ModelObject.m in Sources */,
 				22A72ED614EABDDC00CFF8B9 /* ModelController.m in Sources */,
+				2258ECC014EAD658006D1602 /* ObjectViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>sectionSettings</key>
+	<dict>
+		<key>header</key>
+		<string>Array Binding</string>
+		<key>footer</key>
+		<string>This section is bound to the model.objects array</string>
+		<key>canMove</key>
+		<true/>
+	</dict>
+	<key>value</key>
+	<string>name</string>
+	<key>detailKey</key>
+	<string>label</string>
+	<key>canMove</key>
+	<true/>
+</dict>
+</plist>

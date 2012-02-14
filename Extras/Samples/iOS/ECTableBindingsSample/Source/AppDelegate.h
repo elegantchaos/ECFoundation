@@ -12,4 +12,6 @@
 
 @interface AppDelegate : ECAppDelegate
 
++ (AppDelegate*)sharedInstance;
+
 @end

@@ -12,12 +12,12 @@
 
 @interface ECAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) ECModelController* model;
+@property (strong, nonatomic) id model;
 @property (strong, nonatomic) UIWindow* window;
 
 + (ECAppDelegate*)sharedInstance;
 
-- (ECModelController*)newModel;
+- (id)newModelController;
 - (UIViewController*)newRootViewController;
 
 @end

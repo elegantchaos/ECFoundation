@@ -21,6 +21,11 @@
 
 #pragma mark - App Delegate Methods
 
++ (AppDelegate*)sharedInstance
+{
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     BOOL result = [super application:application didFinishLaunchingWithOptions:launchOptions];

@@ -65,6 +65,33 @@ NSString *const ECTImageKeyKey = @"imageKey";
 NSString *const ECTLabelKey = @"label";
 NSString *const ECTPlaceholderKey = @"placeholder";
 NSString *const ECTTargetKey = @"target";
+NSString *const ECTValueKey = @"value";
+
+#pragma mark - Factory Methods
+
++ (ECTSection*)sectionBoundToArray:(NSArray*)array properties:(NSDictionary*)properties
+{
+    ECTSection* section = [[ECTSection alloc] init];
+    
+    NSString* key = [properties objectForKey:ECTValueKey];
+    [section bindSource:array key:key properties:properties];
+    
+    NSDictionary* sectionSettings = [properties objectForKey:@"sectionSettings"];
+    for (NSString* key in sectionSettings)
+    {
+        [section setValue:[sectionSettings objectForKey:key] forKey:key];
+    }
+
+    return [section autorelease];
+}
+
++ (ECTSection*)sectionBoundToArray:(NSArray*)array plist:(NSString*)plist
+{
+    NSURL* url = [[NSBundle mainBundle] URLForResource:plist withExtension:@"plist"];
+    NSDictionary* properties = [NSDictionary dictionaryWithContentsOfURL:url];
+    
+    return [[self class] sectionBoundToArray:array properties:properties];
+}
 
 #pragma mark - Object lifecycle
 

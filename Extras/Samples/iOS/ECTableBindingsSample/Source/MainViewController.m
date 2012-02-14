@@ -8,7 +8,10 @@
 
 #import "MainViewController.h"
 
+#import "AppDelegate.h"
+#import "ModelController.h"
 #import "ECPopoverBarButtonItem.h"
+#import "ECTSection.h"
 #import "ECTSectionDrivenTableController.h"
 
 @interface MainViewController()
@@ -42,8 +45,14 @@
     [super viewDidLoad];
     
     UIBarButtonItem* debugButton = [[ECPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
-    self.navigationItem.rightBarButtonItem = debugButton;
+    self.navigationItem.leftBarButtonItem = debugButton;
     [debugButton release];
+    
+    self.navigationItem.rightBarButtonItem = self.table.editButtonItem;
+    
+    ModelController* model = [AppDelegate sharedInstance].model;
+    ECTSection* section = [ECTSection sectionBoundToArray:model.objects plist:@"ArraySection"];
+    [self.table addSection:section];
 }
 
 - (void)viewDidUnload
