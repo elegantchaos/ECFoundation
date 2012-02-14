@@ -69,28 +69,43 @@ NSString *const ECTValueKey = @"value";
 
 #pragma mark - Factory Methods
 
-+ (ECTSection*)sectionBoundToArray:(NSArray*)array properties:(NSDictionary*)properties
++ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties
 {
     ECTSection* section = [[ECTSection alloc] init];
-    
-    NSString* key = [properties objectForKey:ECTValueKey];
-    [section bindSource:array key:key properties:properties];
     
     NSDictionary* sectionSettings = [properties objectForKey:@"sectionSettings"];
     for (NSString* key in sectionSettings)
     {
         [section setValue:[sectionSettings objectForKey:key] forKey:key];
     }
-
+    
     return [section autorelease];
 }
 
-+ (ECTSection*)sectionBoundToArray:(NSArray*)array plist:(NSString*)plist
++ (ECTSection*)sectionFromPlist:(NSString*)plist
 {
     NSURL* url = [[NSBundle mainBundle] URLForResource:plist withExtension:@"plist"];
     NSDictionary* properties = [NSDictionary dictionaryWithContentsOfURL:url];
     
-    return [[self class] sectionBoundToArray:array properties:properties];
+    return [self sectionFromDictionary:properties];
+}
+
++ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
+{
+    ECTSection* section = [self sectionFromDictionary:properties];
+    
+    NSString* key = [properties objectForKey:ECTValueKey];
+    [section bindSource:array key:key properties:properties];
+    
+    return section;
+}
+
++ (ECTSection*)sectionFromPlist:(NSString*)plist boundToArray:(NSArray*)array;
+{
+    NSURL* url = [[NSBundle mainBundle] URLForResource:plist withExtension:@"plist"];
+    NSDictionary* properties = [NSDictionary dictionaryWithContentsOfURL:url];
+    
+    return [self sectionFromDictionary:properties boundToArray:array];
 }
 
 #pragma mark - Object lifecycle

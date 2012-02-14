@@ -37,7 +37,7 @@
     self.navigationItem.rightBarButtonItem = self.table.editButtonItem;
     
     ModelController* model = [AppDelegate sharedInstance].model;
-    ECTSection* section = [ECTSection sectionBoundToArray:model.objects plist:@"ArraySection"];
+    ECTSection* section = [ECTSection sectionFromPlist:@"ArraySection" boundToArray:model.objects];
     [self.table addSection:section];
 }
 

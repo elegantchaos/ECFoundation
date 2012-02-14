@@ -40,11 +40,10 @@
 
 - (void)viewDidLoad
 {
-    ECTSection* section = [[ECTSection alloc] init];
-    //    [section addRow:self.binding.object key:@"name" properties:nil];
-    //    [section addRow:self.binding.object key:@"label" properties:nil];
+    ECTSection* section = [ECTSection sectionFromPlist:@"ObjectSection"];
+    [section addRow:self.binding.object key:@"name" properties:[NSDictionary dictionaryWithObjectsAndKeys:@"Name", ECTLabelKey, nil]];
+    [section addRow:self.binding.object key:@"label" properties:[NSDictionary dictionaryWithObjectsAndKeys:@"Label", ECTLabelKey, nil]];
     [self.table addSection:section];
-    [section release];
 }
 
 - (void)setupForBinding:(ECTBinding*)bindingIn

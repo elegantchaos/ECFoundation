@@ -55,8 +55,10 @@ extern NSString *const ECTTargetKey;
 @property (nonatomic, assign) ECTSectionDrivenTableController* table;
 @property (nonatomic, retain) NSArray* content;
 
-+ (ECTSection*)sectionBoundToArray:(NSArray*)array properties:(NSDictionary*)properties;
-+ (ECTSection*)sectionBoundToArray:(NSArray*)array plist:(NSString*)plist;
++ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties;
++ (ECTSection*)sectionFromPlist:(NSString*)plist;
++ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
++ (ECTSection*)sectionFromPlist:(NSString*)plist boundToArray:(NSArray*)array;
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
