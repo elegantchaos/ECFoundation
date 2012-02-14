@@ -262,13 +262,17 @@ NSString *const ECTValueKey = @"value";
 
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {
-    Class class = [binding disclosureClassForSection:self detail:detail];
-    if (!class)
+    id result = [binding disclosureClassForSection:self detail:detail];
+    if (!result)
     {
-        class = detail ? self.detailDisclosureClass : self.disclosureClass;
+        result = detail ? self.detailDisclosureClass : self.disclosureClass;
+        if ([result isKindOfClass:[NSString class]])
+        {
+            result = NSClassFromString(result);
+        }
     }
     
-    return class;
+    return result;
 }
 
 - (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail

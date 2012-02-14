@@ -218,7 +218,13 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)useDetail
 {
-    return useDetail ? self.detailDisclosureClass : self.disclosureClass;
+    id result = useDetail ? self.detailDisclosureClass : self.disclosureClass;
+    if ([result isKindOfClass:[NSString class]])
+    {
+        result = NSClassFromString(result);
+    }
+    
+    return result;
 }
 
 - (id)objectValue

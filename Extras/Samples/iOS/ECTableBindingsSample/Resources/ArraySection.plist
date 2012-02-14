@@ -17,5 +17,7 @@
 	<string>label</string>
 	<key>canMove</key>
 	<true/>
+	<key>disclosureClass</key>
+	<string>ObjectViewController</string>
 </dict>
 </plist>

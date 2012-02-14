@@ -22,21 +22,7 @@
 
 #pragma mark - Properties
 
-@synthesize table;
-
 #pragma mark - Object Lifecycle
-
-- (void)dealloc 
-{
-    [table release];
-    
-    [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 
 #pragma mark - View Lifecycle
 
@@ -53,13 +39,6 @@
     ModelController* model = [AppDelegate sharedInstance].model;
     ECTSection* section = [ECTSection sectionBoundToArray:model.objects plist:@"ArraySection"];
     [self.table addSection:section];
-}
-
-- (void)viewDidUnload
-{   
-    self.table = nil;
-    
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
