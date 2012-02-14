@@ -16,8 +16,6 @@
 
 @interface ECTSection()
 @property (nonatomic, retain) NSArray* source;
-@property (nonatomic, retain) NSString* sourceKey;
-@property (nonatomic, retain) NSDictionary* sourceProperties;
 @property (nonatomic, retain) ECTBinding* addCell;
 @property (nonatomic, retain) NSDictionary* sectionProperties;
 @property (nonatomic, retain) NSDictionary* allRowProperties;
@@ -46,8 +44,6 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize source;
-@synthesize sourceKey;
-@synthesize sourceProperties;
 @synthesize table;
 @synthesize variableRowHeight;
 
@@ -85,11 +81,7 @@ NSString *const ECTValueKey = @"value";
     section.sectionProperties = sectionProperties;
     section.allRowProperties = [properties objectForKey:@"rows"];
     section.eachRowProperties = [properties objectForKey:@"eachRow"];
-    
-    for (NSString* key in sectionProperties)
-    {
-        [section setValue:[sectionProperties objectForKey:key] forKey:key];
-    }
+    [section setValuesForKeysWithDictionary:sectionProperties];
     
     return [section autorelease];
 }
@@ -140,8 +132,6 @@ NSString *const ECTValueKey = @"value";
     [header release];
     [footer release];
     [source release];
-    [sourceKey release];
-    [sourceProperties release];
     
     [super dealloc];
 }
@@ -158,22 +148,21 @@ NSString *const ECTValueKey = @"value";
 - (void)bindArray:(NSArray*)array
 {
     self.source = array;
-    self.sourceKey = [self.allRowProperties objectForKey:ECTValueKey];
-    self.sourceProperties = self.allRowProperties;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array key:self.sourceKey properties:self.sourceProperties]];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
 }
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
 {
     self.source = sourceIn;
-    self.sourceKey = key;
-    self.sourceProperties = properties;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:sourceIn key:key properties:properties]];
+    NSMutableDictionary* expandedProps = [NSMutableDictionary dictionaryWithDictionary:properties];
+    [expandedProps setObject:key forKey:ECTValueKey];
+    self.allRowProperties = expandedProps;
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:sourceIn key:key properties:expandedProps]];
 }
 
 - (void)sourceChanged
 {
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source key:self.sourceKey properties:self.sourceProperties]];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source properties:self.allRowProperties]];
     [self reloadData];
 }
 

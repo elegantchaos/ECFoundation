@@ -40,6 +40,12 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 #pragma mark - Object lifecycle
 
++ (id)controllerWithObject:(id)object properties:(NSDictionary*)properties
+{
+    NSString* key = [properties objectForKey:ECTValueKey];
+    return [self controllerWithObject:object key:key properties:properties];
+}
+
 + (id)controllerWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
     ECTBinding* controller = [[self alloc] initWithObject:object key:key];
@@ -54,6 +60,12 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     controller.label = label;
     
     return [controller autorelease];
+}
+
++ (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties
+{
+    NSString* key = [properties objectForKey:ECTValueKey];
+    return [self controllersWithObjects:objects key:key properties:properties];
 }
 
 + (NSArray*)controllersWithObjects:(NSArray*)objects key:(NSString*)key properties:(NSDictionary*)properties

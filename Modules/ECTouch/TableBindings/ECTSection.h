@@ -34,6 +34,7 @@ extern NSString *const ECTImageKeyKey;
 extern NSString *const ECTLabelKey;
 extern NSString *const ECTPlaceholderKey;
 extern NSString *const ECTTargetKey;
+extern NSString* const ECTValueKey;
 
 // --------------------------------------------------------------------------
 //! Controller for a section in a table.

@@ -32,10 +32,12 @@
 @property (nonatomic, assign) SEL action;
 @property (nonatomic, assign) id target;
 
++ (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties;
 + (NSArray*)controllersWithObjects:(NSArray*)objects key:(NSString*)key properties:(NSDictionary*)properties;
 
 + (id)controllerWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 + (id)controllerWithObject:(id)object key:(NSString*)key label:(NSString*)label;
++ (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 
 - (id)initWithObject:(id)object key:(NSString*)key;
 
