@@ -76,6 +76,8 @@
 		226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46613E1EB0B00BF258D /* InfoPlist.strings */; };
 		226FB47913E1EB0B00BF258D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB46E13E1EB0B00BF258D /* main.m */; };
 		22A72ED014EABAA200CFF8B9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22A72ECF14EABAA200CFF8B9 /* README.md */; };
+		22A72ED314EABD6D00CFF8B9 /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A72ED214EABD6D00CFF8B9 /* ModelObject.m */; };
+		22A72ED614EABDDC00CFF8B9 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A72ED514EABDDC00CFF8B9 /* ModelController.m */; };
 		22FC16B514EAAD00008E9592 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FC16B214EAAD00008E9592 /* AppDelegate.m */; };
 		22FC16B614EAAD00008E9592 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FC16B414EAAD00008E9592 /* MainViewController.m */; };
 /* End PBXBuildFile section */
@@ -222,6 +224,10 @@
 		226FB47113E1EB0B00BF258D /* DebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugPrefix.pch; sourceTree = "<group>"; };
 		226FB47213E1EB0B00BF258D /* ReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePrefix.pch; sourceTree = "<group>"; };
 		22A72ECF14EABAA200CFF8B9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		22A72ED114EABD6D00CFF8B9 /* ModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelObject.h; path = Source/ModelObject.h; sourceTree = SOURCE_ROOT; };
+		22A72ED214EABD6D00CFF8B9 /* ModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelObject.m; path = Source/ModelObject.m; sourceTree = SOURCE_ROOT; };
+		22A72ED414EABDDC00CFF8B9 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelController.h; path = Source/ModelController.h; sourceTree = SOURCE_ROOT; };
+		22A72ED514EABDDC00CFF8B9 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelController.m; path = Source/ModelController.m; sourceTree = SOURCE_ROOT; };
 		22FC16B114EAAD00008E9592 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		22FC16B214EAAD00008E9592 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		22FC16B314EAAD00008E9592 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Source/MainViewController.h; sourceTree = SOURCE_ROOT; };
@@ -506,6 +512,10 @@
 				22FC16B214EAAD00008E9592 /* AppDelegate.m */,
 				22FC16B314EAAD00008E9592 /* MainViewController.h */,
 				22FC16B414EAAD00008E9592 /* MainViewController.m */,
+				22A72ED414EABDDC00CFF8B9 /* ModelController.h */,
+				22A72ED514EABDDC00CFF8B9 /* ModelController.m */,
+				22A72ED114EABD6D00CFF8B9 /* ModelObject.h */,
+				22A72ED214EABD6D00CFF8B9 /* ModelObject.m */,
 				226FB46E13E1EB0B00BF258D /* main.m */,
 				226FB4E013E2914900BF258D /* ECFoundation */,
 				226FB46F13E1EB0B00BF258D /* Prefix */,
@@ -663,6 +673,8 @@
 				223C373D14EAB63C00C11C76 /* ECScrollView.m in Sources */,
 				223C373F14EAB63C00C11C76 /* ECTabbedTableViewController.m in Sources */,
 				223C374114EAB63C00C11C76 /* ECTransparentToolbar.m in Sources */,
+				22A72ED314EABD6D00CFF8B9 /* ModelObject.m in Sources */,
+				22A72ED614EABDDC00CFF8B9 /* ModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

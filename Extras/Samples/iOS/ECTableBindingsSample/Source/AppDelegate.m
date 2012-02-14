@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "ModelController.h"
 
 @interface AppDelegate()
 
@@ -39,6 +40,11 @@
     [view release];
 
     return navigation;
+}
+
+- (ModelController*)newModelController
+{
+    return [[ModelController alloc] init];
 }
 
 @end
