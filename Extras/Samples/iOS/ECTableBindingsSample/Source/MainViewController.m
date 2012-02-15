@@ -54,8 +54,6 @@
     [self.table addSection:section];
     
     [model addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
-    //    NSMutableArray* array = [model mutableArrayValueForKey:@"objects"];
-    //[array removeObjectAtIndex:0];
     
     [self updateUI];
 }

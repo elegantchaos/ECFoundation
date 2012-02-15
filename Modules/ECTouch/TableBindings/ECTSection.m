@@ -15,12 +15,17 @@
 #import "ECAssertion.h"
 
 @interface ECTSection()
+
 @property (nonatomic, retain) id source;
 @property (nonatomic, retain) NSString* sourcePath;
 @property (nonatomic, retain) ECTBinding* addCell;
 @property (nonatomic, retain) NSDictionary* sectionProperties;
 @property (nonatomic, retain) NSDictionary* allRowProperties;
 @property (nonatomic, retain) NSArray* eachRowProperties;
+@property (nonatomic, assign) BOOL sourceChangedInternally;
+
+- (void)cleanupObservers;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 
 @end
 
@@ -46,6 +51,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize disclosureClass;
 @synthesize source;
 @synthesize sourcePath;
+@synthesize sourceChangedInternally;
 @synthesize table;
 @synthesize variableRowHeight;
 
@@ -131,6 +137,8 @@ NSString *const ECTValueKey = @"value";
 
 - (void)dealloc
 {
+    [self cleanupObservers];
+
     [addCell release];
     [cellIdentifier release];
     [content release];
@@ -143,6 +151,14 @@ NSString *const ECTValueKey = @"value";
 }
 
 #pragma mark - Utilities
+
+- (void)cleanupObservers
+{
+    if (self.sourcePath)
+    {
+        [self.source removeObjectForKey:self.sourcePath];
+    }
+}
 
 - (NSMutableArray*)mutableSource
 {
@@ -169,14 +185,17 @@ NSString *const ECTValueKey = @"value";
 
 - (void)bindArrayAtPath:(NSString *)path object:(id)object
 {
+    [self cleanupObservers];
     self.source = object;
     self.sourcePath = path;
     NSArray* array = [object valueForKeyPath:path];
     self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
+    [object addObserver:self forKeyPath:path options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
 {
+    [self cleanupObservers];
     self.source = sourceIn;
     NSMutableDictionary* expandedProps = [NSMutableDictionary dictionaryWithDictionary:properties];
     [expandedProps setObject:key forKey:ECTValueKey];
@@ -191,7 +210,7 @@ NSString *const ECTValueKey = @"value";
     [self reloadData];
 }
 
-- (void)addContent:(id)object
+- (void)addContent:(id)object atIndex:(NSUInteger)index properties:(NSDictionary*)properties
 {
     NSMutableArray* array;
     if (self.content)
@@ -204,7 +223,15 @@ NSString *const ECTValueKey = @"value";
         array = [NSMutableArray array];
     }
 
-    [array addObject:object];
+    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
+    [combined addEntriesFromDictionary:properties];
+    if (index < [self.eachRowProperties count])
+    {
+        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
+    }
+    
+    ECTBinding* binding = [ECTBinding controllerWithObject:object properties:combined];
+    [array insertObject:binding atIndex:index];
 }
 
 - (void)bindObject:(id)object
@@ -213,11 +240,7 @@ NSString *const ECTValueKey = @"value";
     for (NSUInteger index = 0; index < count; ++index)
     {
         [[self mutableSource] addObject:object];
-        
-        NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
-        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
-        
-        [self addContent:[ECTBinding controllerWithObject:object properties:combined]];
+        [self addContent:object atIndex:index properties:nil];
     }
     
 }
@@ -225,30 +248,15 @@ NSString *const ECTValueKey = @"value";
 - (void)addRow:(id)object
 {
     [[self mutableSource] addObject:object];
-    
-    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
-    NSUInteger index = [self.content count];
-    if (index < [self.eachRowProperties count])
-    {
-        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
-    }
-    
-    [self addContent:[ECTBinding controllerWithObject:object properties:combined]];
+    [self addContent:object atIndex:[self.content count] properties:nil];
 }
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
     [[self mutableSource] addObject:object];
-    
-    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
-    [combined addEntriesFromDictionary:properties];
-    NSUInteger index = [self.content count];
-    if (index < [self.eachRowProperties count])
-    {
-        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
-    }
-    
-    [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object key:key properties:combined]];
+    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:properties];
+    [combined setObject:key forKey:ECTValueKey];
+    [self addContent:object atIndex:[self.content count] properties:combined];
 }
 
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties
@@ -430,7 +438,10 @@ NSString *const ECTValueKey = @"value";
 {
     [(NSMutableArray*)self.content exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
     NSMutableArray* array = [self mutableSource];
+
+    self.sourceChangedInternally = YES;
     [array exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    self.sourceChangedInternally = NO;
 }
 
 - (void)moveRowFromSection:(ECTSection*)section atIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -444,7 +455,9 @@ NSString *const ECTValueKey = @"value";
     {
         [(NSMutableArray*)self.content removeObjectAtIndex:indexPath.row];
         NSMutableArray* array = [self mutableSource];
+        self.sourceChangedInternally = YES;
         [array removeObjectAtIndex:indexPath.row];
+        self.sourceChangedInternally = NO;
     }
 
     else if (editingStyle == UITableViewCellEditingStyleInsert)
@@ -452,5 +465,46 @@ NSString *const ECTValueKey = @"value";
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }   
 }
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (!sourceChangedInternally && [keyPath isEqualToString:self.sourcePath])
+    {
+        NSKeyValueChange kind = [[change objectForKey:NSKeyValueChangeKindKey] intValue];
+        NSIndexSet* indexes = [change objectForKey:NSKeyValueChangeIndexesKey];
+        switch (kind)
+        {
+            case NSKeyValueChangeRemoval:
+            {    
+                NSMutableArray* mutableContent = (NSMutableArray*) self.content;
+                [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) 
+                {
+                    [mutableContent removeObjectAtIndex:idx];
+                }];
+                break;
+            }
+
+            case NSKeyValueChangeInsertion:
+            {    
+                NSArray* newValues = [change objectForKey:NSKeyValueChangeNewKey];
+                __block NSUInteger valueIndex = 0;
+                [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) 
+                 {
+                     id newValue = [newValues objectAtIndex:valueIndex++];
+                     [self addContent:newValue atIndex:idx properties:nil];
+                 }];
+                break;
+            }
+
+            default:
+                ECDebug(ECTSectionControllerChannel, @"unhandled change kind %d for change %@", kind, change);
+        }
+        
+        [self reloadData];
+    }
+}
+
 
 @end
