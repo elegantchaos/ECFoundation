@@ -34,9 +34,9 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize enabled;
+@synthesize mappings;
 @synthesize object;
 @synthesize properties;
-@synthesize keys;
 @synthesize target;
 
 #pragma mark - Object lifecycle
@@ -77,7 +77,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)dealloc
 {
-    [keys release];
+    [mappings release];
     [object release];
     [properties release];
     
@@ -149,7 +149,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     if (!result)
     {
         // if we've got a key set, use that to look up a value on the object
-        NSString* mappedKey = [self.keys objectForKey:keyIn];
+        NSString* mappedKey = [self.mappings objectForKey:keyIn];
         if (mappedKey)
         {
             result = [self.object valueForKeyPath:mappedKey];
@@ -218,7 +218,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)setObjectValue:(id)value
 {
-    NSString* key = [self.keys objectForKey:ECTValueKey];
+    NSString* key = [self.mappings objectForKey:ECTValueKey];
     [self.object setValue:value forKeyPath:key];
 }
 
@@ -241,18 +241,18 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options
 {
-    for (NSString* key in self.keys)
+    for (NSString* key in self.mappings)
     {
-        NSString* mappedKey = [self.keys objectForKey:key];
+        NSString* mappedKey = [self.mappings objectForKey:key];
         [self.object addObserver:observer forKeyPath:mappedKey options:options context:self];
     }
 }
 
 - (void)removeValueObserver:(id)observer
 {
-    for (NSString* key in self.keys)
+    for (NSString* key in self.mappings)
     {
-        NSString* mappedKey = [self.keys objectForKey:key];
+        NSString* mappedKey = [self.mappings objectForKey:key];
         [self.object removeObserver:observer forKeyPath:mappedKey];
     }
 }

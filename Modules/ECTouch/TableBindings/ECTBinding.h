@@ -18,7 +18,7 @@
 
 @property (nonatomic, retain) id object;
 @property (nonatomic, retain) NSMutableDictionary* properties;
-@property (nonatomic, retain) NSMutableDictionary* keys;
+@property (nonatomic, retain) NSMutableDictionary* mappings;
 
 @property (nonatomic, assign) id cellClass;
 @property (nonatomic, assign) id disclosureClass;
