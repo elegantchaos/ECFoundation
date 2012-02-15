@@ -34,7 +34,7 @@ static CGFloat kVerticalInset = 0;
 
 #pragma mark - Object lifecycle
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) != nil)
     {
@@ -61,7 +61,7 @@ static CGFloat kVerticalInset = 0;
 - (void)updateUIForEvent:(UpdateEvent)event
 {
     ECTBinding* binding = self.representedObject;
-    NSString* label = [binding labelForSection:self.section];
+    NSString* label = [binding label];
     [self.buttonControl setTitle:label forState:UIControlStateNormal];
 }
 

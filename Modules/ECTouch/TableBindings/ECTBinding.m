@@ -25,13 +25,10 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 @synthesize canDelete;
 @synthesize canMove;
 @synthesize cellClass;
-@synthesize detail;
 @synthesize detailDisclosureClass;
 @synthesize detailKey;
 @synthesize disclosureClass;
-@synthesize disclosureTitle;
 @synthesize enabled;
-@synthesize label;
 @synthesize key;
 @synthesize object;
 @synthesize properties;
@@ -41,38 +38,18 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties
 {
-    NSString* key = [properties objectForKey:ECTValueKey];
-    return [self controllerWithObject:object key:key properties:properties];
-}
-
-+ (id)controllerWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties
-{
-    ECTBinding* controller = [[self alloc] initWithObject:object key:key];
+    ECTBinding* controller = [[self alloc] initWithObject:object];
     [controller setValuesForKeysWithDictionary:properties];
-    
-    return [controller autorelease];
-}
 
-+ (id)controllerWithObject:(id)object key:(NSString*)key label:(NSString*)label
-{
-    ECTBinding* controller = [[self alloc] initWithObject:object key:key];
-    controller.label = label;
-    
     return [controller autorelease];
 }
 
 + (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties
 {
-    NSString* key = [properties objectForKey:ECTValueKey];
-    return [self controllersWithObjects:objects key:key properties:properties];
-}
-
-+ (NSArray*)controllersWithObjects:(NSArray*)objects key:(NSString*)key properties:(NSDictionary*)properties
-{
     NSMutableArray* controllers = [NSMutableArray arrayWithCapacity:[objects count]];
     for (id object in objects)
     {
-        ECTBinding* item = [[ECTBinding alloc] initWithObject:object key:key];
+        ECTBinding* item = [[ECTBinding alloc] initWithObject:object];
         [item setValuesForKeysWithDictionary:properties];
         [controllers addObject:item];
         [item release];
@@ -81,13 +58,12 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return controllers;
 }
 
-- (id)initWithObject:(id)objectIn key:(NSString*)keyIn
+- (id)initWithObject:(id)objectIn
 {
     if ((self = [super init]) != nil) 
     {
         self.cellClass = [ECTSimpleCell class];
         self.object = objectIn;
-        self.key = keyIn;
         self.enabled = YES;
     }
     
@@ -96,10 +72,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)dealloc
 {
-    [detail release];
     [detailKey release];
-    [disclosureTitle release];
-    [label release];
     [key release];
     [object release];
     [properties release];
@@ -149,39 +122,23 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 #pragma mark - ECSectionDrivenTableObject methods
 
-- (NSString*)identifierForSection:(ECTSection*)section
+- (NSString*)identifier
 {
     return [ECTBinding normalisedClassName:self.cellClass];
 }
 
-- (id)valueForSection:(ECTSection*)section
+- (NSString*)label
 {
-    id result;
-    
-    if (self.key)
-    {
-        result = [self.object valueForKeyPath:self.key];
-    }
-    else
-    {
-        result = self.object;
-    }
-    
-    return result;
-}
-
-- (NSString*)labelForSection:(ECTSection*)section
-{
-    NSString* result = self.label;
+    NSString* result = [self.properties objectForKey:ECTLabelKey];
     if (!result)
     {
-        result = [[self valueForSection:section] description];
+        result = [[self objectValue] description];
     }
     
     return result;
 }
 
-- (UIImage*)imageForSection:(ECTSection*)section
+- (UIImage*)image
 {
     UIImage* result = nil;
     id value = [self.properties valueForKey:ECTImageKeyKey];
@@ -206,10 +163,10 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (NSString*)detailForSection:(ECTSection*)section
+- (NSString*)detail
 {
     // if we've got a fixed string, use it
-    NSString* result = self.detail;
+    NSString* result = [self.properties objectForKey:ECTDetailKey];
     if (!result)
     {
         // if we've got a key set, use that to look up a value on the object
@@ -222,35 +179,24 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     // fall back to using the object value, as long as it's not already used for the label
     if (!result && self.label)
     {
-        result = [[self valueForSection:section] description];
+        result = [[self objectValue] description];
     }
     
     return result;
 }
 
-- (NSString*)disclosureTitleForSection:(ECTSection*)section
+- (NSString*)disclosureTitle
 {
-    NSString* result = self.disclosureTitle;
+    NSString* result = [self.properties objectForKey:ECTDisclosureTitleKey];
     if (!result)
     {
-        result = [self labelForSection:section];
+        result = [self label];
     }
     
     return result;
 }
 
-- (UITableViewCell<ECTSectionDrivenTableCell> *)cellForSection:(ECTSection*)section identifier:(NSString*)identifier
-{
-    Class class = [ECTBinding normalisedClass:self.cellClass];
-    return [[[class alloc] initWithBinding:self section:section reuseIdentifier:identifier] autorelease];
-}
-
-- (CGFloat)heightForSection:(ECTSection*)section
-{
-    return [self.cellClass heightForBinding:self section:section];
-}
-
-- (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)useDetail
+- (Class)disclosureClassWithDetail:(BOOL)useDetail
 {
     id class = useDetail ? self.detailDisclosureClass : self.disclosureClass;
     Class result = [ECTBinding normalisedClass:class];
@@ -283,16 +229,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     ECDebug(ECTValueCellControllerChannel, @"value changed from %@ to %@", [self objectValue], value);
     
     [self setObjectValue:value];
-}
-
-- (BOOL)canDeleteInSection:(ECTSection*)section
-{
-    return self.canDelete;
-}
-
-- (BOOL)canMoveInSection:(ECTSection*)section
-{
-    return self.canMove;
 }
 
 - (NSString*)action

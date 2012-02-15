@@ -47,8 +47,6 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize footer;
 @synthesize header;
 @synthesize cellClass;
-@synthesize detailDisclosureClass;
-@synthesize disclosureClass;
 @synthesize source;
 @synthesize sourcePath;
 @synthesize sourceChangedInternally;
@@ -193,16 +191,6 @@ NSString *const ECTValueKey = @"value";
     [object addObserver:self forKeyPath:path options:NSKeyValueObservingOptionNew context:nil];
 }
 
-- (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
-{
-    [self cleanupObservers];
-    self.source = sourceIn;
-    NSMutableDictionary* expandedProps = [NSMutableDictionary dictionaryWithDictionary:properties];
-    [expandedProps setObject:key forKey:ECTValueKey];
-    self.allRowProperties = expandedProps;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:sourceIn key:key properties:expandedProps]];
-}
-
 - (void)sourceChanged
 {
     NSMutableArray* array = [self mutableSource];
@@ -260,11 +248,11 @@ NSString *const ECTValueKey = @"value";
     [self addContent:object atIndex:[self.content count] properties:combined];
 }
 
-- (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties
+- (void)makeAddableWithObject:(id)object properties:(NSDictionary*)properties
 {
     if (object)
     {
-        self.addCell = [ECTBinding controllerWithObject:object key:key properties:properties];
+        self.addCell = [ECTBinding controllerWithObject:object properties:properties];
     }
     else
     {
@@ -331,12 +319,12 @@ NSString *const ECTValueKey = @"value";
 {
     ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
 
-    NSString* identifier = [binding identifierForSection:self];
-    
+    NSString* identifier = [ECTBinding normalisedClassName:binding.cellClass];
     UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
-        cell = [binding cellForSection:self identifier:identifier];
+        Class class = [ECTBinding normalisedClass:binding.cellClass];
+        cell = [[[class alloc] initWithReuseIdentifier:identifier] autorelease];
     }
     
     [cell setupForBinding:binding section:self];
@@ -351,7 +339,12 @@ NSString *const ECTValueKey = @"value";
     if (self.variableRowHeight)
     {
         ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        result = [binding heightForSection:self];
+        Class<ECTSectionDrivenTableCell> class = [ECTBinding normalisedClass:binding.cellClass];
+        result = [class heightForBinding:binding];
+        if (result == UITableViewAutomaticDimension)
+        {
+            result = self.tableView.rowHeight;
+        }
     }
     
     return result;
@@ -359,7 +352,7 @@ NSString *const ECTValueKey = @"value";
 
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {
-    id class = [binding disclosureClassForSection:self detail:detail];
+    id class = [binding disclosureClassWithDetail:detail];
     Class result = [ECTBinding normalisedClass:class];
     
     return result;
@@ -392,7 +385,7 @@ NSString *const ECTValueKey = @"value";
     if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
     {
         ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelectWithBinding:binding section:self];
+        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelectWithBinding:binding];
         BOOL keepSelected = (selectionMode == SelectAlways) || ((selectionMode == SelectIfSelectable) && self.canSelect);
         if (keepSelected)
         {
@@ -413,7 +406,7 @@ NSString *const ECTValueKey = @"value";
         id cell = [[self tableView] cellForRowAtIndexPath:indexPath];
         if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
         {
-            result = [cell canMoveInSection:self] || [cell canDeleteInSection:self];
+            result = [cell canMove] || [cell canDelete];
         }
     }
     
@@ -428,7 +421,7 @@ NSString *const ECTValueKey = @"value";
         id cell = [[self tableView] cellForRowAtIndexPath:indexPath];
         if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
         {
-            result = [cell canMoveInSection:self];
+            result = [cell canMove];
         }
     }
 

@@ -11,16 +11,16 @@
 
 @implementation ECTTickCell
 
-- (id<ECTTickSectionCellDelegate>)selectionDelegateForSection:(ECTSection*)section binding:(ECTBinding*)binding
+- (id<ECTTickSectionCellDelegate>)selectionDelegateForBinding:(ECTBinding*)binding
 {
     id<ECTTickSectionCellDelegate> delegate = nil;
-    if ([section conformsToProtocol:@protocol(ECTTickSectionCellDelegate)])
+    if ([self.section conformsToProtocol:@protocol(ECTTickSectionCellDelegate)])
     {
-        delegate = (id<ECTTickSectionCellDelegate>) section;
+        delegate = (id<ECTTickSectionCellDelegate>) self.section;
     }
-    else if ([section.table conformsToProtocol:@protocol(ECTTickSectionCellDelegate)])
+    else if ([self.section.table conformsToProtocol:@protocol(ECTTickSectionCellDelegate)])
     {
-        delegate = (id<ECTTickSectionCellDelegate>) section.table;
+        delegate = (id<ECTTickSectionCellDelegate>) self.section.table;
     }
     
     return delegate;
@@ -28,8 +28,8 @@
 
 - (BOOL)cellSelectedForSection:(ECTSection*)section binding:(ECTBinding*)binding
 {
-    id<ECTTickSectionCellDelegate> delegate = [self selectionDelegateForSection:section binding:binding];
-    BOOL selected = delegate ? [delegate isSelectedForCell:self section:section binding:binding] : NO;
+    id<ECTTickSectionCellDelegate> delegate = [self selectionDelegateForBinding:binding];
+    BOOL selected = delegate ? [delegate isSelectedForCell:self binding:binding] : NO;
     
     return selected;
 }
@@ -42,11 +42,11 @@
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
-- (SelectionMode)didSelectWithBinding:(id)binding section:(ECTSection *)section
+- (SelectionMode)didSelectWithBinding:(id)binding
 {
     // we've been clicked
-    id<ECTTickSectionCellDelegate> delegate = [self selectionDelegateForSection:section binding:binding];
-    [delegate selectCell:self section:section binding:binding];
+    id<ECTTickSectionCellDelegate> delegate = [self selectionDelegateForBinding:binding];
+    [delegate selectCell:self binding:binding];
 
      return SelectNever;
 }

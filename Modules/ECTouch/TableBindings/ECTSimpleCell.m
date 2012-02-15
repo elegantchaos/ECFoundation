@@ -34,20 +34,19 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 #pragma mark - Object lifecycle
 
-- (id)initWithStyle:(UITableViewCellStyle)style binding:(ECTBinding*)binding section:(ECTSection*)sectionIn reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) != nil)
     {
-        self.section = sectionIn;
-        ECDebug(ECTSimpleCellChannel, @"new cell %@ bound to %@", self, binding);
+        ECDebug(ECTSimpleCellChannel, @"new cell %@", self);
     }
     
     return self;
 }
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
-    return [self initWithStyle:UITableViewCellStyleValue1 binding:binding section:sectionIn reuseIdentifier:reuseIdentifier];
+    return [self initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
 }
 
 - (void)dealloc
@@ -92,25 +91,25 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     ECTBinding* binding = self.representedObject;
     
     // get image to use
-    UIImage* image = [binding imageForSection:self.section];
+    UIImage* image = [binding image];
     self.imageView.image = image;
     
     // get text to use for label
-    NSString* label = [binding labelForSection:self.section];
+    NSString* label = [binding label];
     if (![label isKindOfClass:[NSString class]])
     {
         label = [label description];
     }
     
     // get text to use for detail - if it's the same as the label, don't show detail
-    NSString* detail = [binding detailForSection:self.section];
+    NSString* detail = [binding detail];
     if (detail == label)
     {
         detail = nil;
     }
     
-    self.canMove = [binding canMoveInSection:self.section];
-    self.canDelete = [binding canDeleteInSection:self.section];
+    self.canMove = [binding canMove];
+    self.canDelete = [binding canDelete];
     
     self.selectionStyle = binding.enabled ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
     
@@ -157,24 +156,22 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn
 {
     self.section = sectionIn;
-    [self setupAccessoryForBinding:binding section:sectionIn];
+    [self setupAccessoryForBinding:binding];
 
     self.representedObject = binding;
     [self updateUIForEvent:ValueInitialised];
     [self setupObserverForBinding:binding];
 }
 
-- (void)setupAccessoryForBinding:(ECTBinding *)binding section:(ECTSection *)sectionIn
+- (void)setupAccessoryForBinding:(ECTBinding *)binding
 {
-    ECAssert(self.section == sectionIn);
-
     UITableViewCellAccessoryType accessory;
     
-    if ([section disclosureClassForBinding:binding detail:YES])
+    if (binding.detailDisclosureClass)
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
-    else if ([section disclosureClassForBinding:binding detail:NO])
+    else if (binding.disclosureClass)
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -186,7 +183,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     self.accessoryType = accessory;
 }
 
-- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection *)section
+- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding
 {
     if (binding.target && binding.action)
     {
@@ -196,19 +193,19 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     return SelectIfSelectable;
 }
 
-- (BOOL)canDeleteInSection:(ECTSection*)section
+- (BOOL)canDelete
 {
     return self.canDelete;
 }
 
-- (BOOL)canMoveInSection:(ECTSection*)section
+- (BOOL)canMove
 {
     return self.canMove;
 }
 
-+ (CGFloat)heightForBinding:(ECTBinding*)binding section:(ECTSection*)section
++ (CGFloat)heightForBinding:(ECTBinding*)binding
 {
-    return section.tableView.rowHeight;
+    return UITableViewAutomaticDimension;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

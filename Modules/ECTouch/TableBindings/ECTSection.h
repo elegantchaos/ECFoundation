@@ -20,6 +20,7 @@ typedef enum
     SelectIfSelectable
 } SelectionMode;
 
+
 extern NSString *const ECTActionKey;
 extern NSString *const ECTCanMoveKey;
 extern NSString *const ECTCanDeleteKey;
@@ -47,8 +48,6 @@ extern NSString* const ECTValueKey;
 @property (nonatomic, retain) NSString* cellIdentifier;
 @property (nonatomic, retain) NSString* header;
 @property (nonatomic, retain) NSString* footer;
-@property (nonatomic, assign) Class detailDisclosureClass;
-@property (nonatomic, assign) Class disclosureClass;
 @property (nonatomic, assign) Class cellClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
@@ -62,7 +61,7 @@ extern NSString* const ECTValueKey;
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToObject:(id)object;
 
 - (void)addRow:(id)object;
-- (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)makeAddableWithObject:(id)object properties:(NSDictionary*)properties;
 - (void)bindObject:(id)object;
 - (void)bindArrayAtPath:(NSString*)path object:(id)object;
 - (void)sourceChanged;
@@ -94,13 +93,13 @@ extern NSString* const ECTValueKey;
 @end
 
 @protocol ECTSectionDrivenTableCell <NSObject>
-+ (CGFloat)heightForBinding:(ECTBinding*)binding section:(ECTSection*)section;
++ (CGFloat)heightForBinding:(ECTBinding*)binding;
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (BOOL)canDeleteInSection:(ECTSection*)section;
-- (BOOL)canMoveInSection:(ECTSection*)section;
+- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding;
+- (BOOL)canDelete;
+- (BOOL)canMove;
 @end
 
 

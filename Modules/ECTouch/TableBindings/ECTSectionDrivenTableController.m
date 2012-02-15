@@ -104,7 +104,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     if (view)
     {
         ECTBinding* binding = [section bindingForRowAtIndexPath:indexPath];
-        NSString* title = [binding disclosureTitleForSection:section];
+        NSString* title = [binding disclosureTitle];
         if (title)
         {
             view.title = title;   

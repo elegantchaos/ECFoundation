@@ -15,7 +15,7 @@
 
 @protocol ECTTickSectionCellDelegate <NSObject>
 
-- (BOOL)isSelectedForCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding;
-- (void)selectCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding;
+- (BOOL)isSelectedForCell:(ECTTickCell*)cell binding:(ECTBinding*)binding;
+- (void)selectCell:(ECTTickCell*)cell binding:(ECTBinding*)binding;
 
 @end

@@ -26,13 +26,13 @@ typedef enum
 @property (nonatomic, assign) BOOL canMove;
 
 
-- (id)initWithStyle:(UITableViewCellStyle)style binding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)reuseIdentifier;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (void)removeBinding;
-- (void)setupAccessoryForBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (BOOL)canDeleteInSection:(ECTSection*)section;
-- (BOOL)canMoveInSection:(ECTSection*)section;
+- (void)setupAccessoryForBinding:(ECTBinding*)binding;
+- (BOOL)canDelete;
+- (BOOL)canMove;
 - (void)updateUIForEvent:(UpdateEvent)event;
 
 @end

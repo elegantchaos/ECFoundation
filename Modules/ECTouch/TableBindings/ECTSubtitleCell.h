@@ -15,6 +15,6 @@
 
 @interface ECTSubtitleCell : ECTSimpleCell
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

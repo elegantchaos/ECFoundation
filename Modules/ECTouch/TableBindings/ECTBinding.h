@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECTSection.h"
+#import "ECMacros.h"
 
 // --------------------------------------------------------------------------
 //! Cell controller which sets a boolean property on an object.
@@ -15,10 +16,7 @@
 
 @interface ECTBinding : NSObject
 
-@property (nonatomic, retain) NSString* detail;
 @property (nonatomic, retain) NSString* detailKey;
-@property (nonatomic, retain) NSString* disclosureTitle;
-@property (nonatomic, retain) NSString* label;
 @property (nonatomic, retain) NSString* key;
 @property (nonatomic, retain) id object;
 @property (nonatomic, retain) NSMutableDictionary* properties;
@@ -34,31 +32,21 @@
 @property (nonatomic, assign) id target;
 
 + (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties;
-+ (NSArray*)controllersWithObjects:(NSArray*)objects key:(NSString*)key properties:(NSDictionary*)properties;
-
-+ (id)controllerWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
-+ (id)controllerWithObject:(id)object key:(NSString*)key label:(NSString*)label;
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 
 + (Class)normalisedClass:(id)classOrClassName;
 + (NSString*)normalisedClassName:(id)classOrClassName;
 
-- (id)initWithObject:(id)object key:(NSString*)key;
+- (id)initWithObject:(id)object;
 
 - (id)objectValue;
 - (void)setObjectValue:(id)value;
 
-- (NSString*)identifierForSection:(ECTSection*)section;
-- (id)valueForSection:(ECTSection*)section;
-- (id)cellForSection:(ECTSection*)section identifier:(NSString*)identifier;
-- (CGFloat)heightForSection:(ECTSection*)section;
-- (NSString*)disclosureTitleForSection:(ECTSection*)section;
-- (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail;
-- (NSString*)labelForSection:(ECTSection*)section;
-- (NSString*)detailForSection:(ECTSection*)section;
-- (UIImage*)imageForSection:(ECTSection*)section;
-- (BOOL)canMoveInSection:(ECTSection*)section;
-- (BOOL)canDeleteInSection:(ECTSection*)section;
+- (NSString*)disclosureTitle;
+- (Class)disclosureClassWithDetail:(BOOL)detail;
+- (NSString*)label;
+- (NSString*)detail;
+- (UIImage*)image;
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell;
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options;

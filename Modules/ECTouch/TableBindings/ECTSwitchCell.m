@@ -31,7 +31,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 #pragma mark - Object lifecycle
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)section reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) != nil)
     {
@@ -81,7 +81,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 - (void)updateUIForEvent:(UpdateEvent)event
 {
     ECTBinding* binding = self.representedObject;
-    NSNumber* value = (NSNumber*)[binding valueForSection:self.section];
+    NSNumber* value = (NSNumber*)[binding objectValue];
     self.switchControl.on = [value boolValue];
     self.switchControl.enabled = binding.enabled;
     

@@ -13,9 +13,9 @@
 
 #pragma mark - Object lifecycle
 
-- (id)initWithBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
-    return [self initWithStyle:UITableViewCellStyleSubtitle binding:binding section:sectionIn reuseIdentifier:reuseIdentifier];
+    return [self initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
 }
 
 @end

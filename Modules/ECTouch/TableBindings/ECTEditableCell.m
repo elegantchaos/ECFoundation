@@ -60,10 +60,10 @@ ECDefineLogChannel(ItemCellChannel);
 //! Initialise with a data item.
 // --------------------------------------------------------------------------
 
-- (id)initWithBinding:(ECTBinding *)binding section:(ECTSection *)section reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     //    if ((self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier]) != nil)
-    if ((self = [super initWithBinding:binding section:section reuseIdentifier:reuseIdentifier]) != nil)
+    if ((self = [super initWithReuseIdentifier:reuseIdentifier]) != nil)
 	{
 		CGRect rect;
 		rect.origin.x = kHorizontalInset;
@@ -101,7 +101,7 @@ ECDefineLogChannel(ItemCellChannel);
 - (void)updateUIForEvent:(UpdateEvent)event
 {
     ECTBinding* binding = self.representedObject;
-    NSString* value = [binding valueForSection:self.section];
+    NSString* value = [binding objectValue];
   	self.text.text = value;  
     
     [super updateUIForEvent:event];
@@ -111,7 +111,7 @@ ECDefineLogChannel(ItemCellChannel);
 //! Setup the item.
 // --------------------------------------------------------------------------
 
-- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
+- (void)setupForBinding:(ECTBinding*)binding
 {
     
 
@@ -132,7 +132,7 @@ ECDefineLogChannel(ItemCellChannel);
     //		self.text.font = font;
     //	}
 	
-    [super setupForBinding:binding section:section];
+    [super setupForBinding:binding];
     //	self.text.secureTextEntry = [self itemBoolForKey: kSecureKey];
     //	self.text.autocapitalizationType = [self itemIntForKey: kAutocapitalizationTypeKey orDefault: UITextAutocapitalizationTypeNone];
     //	self.text.autocorrectionType = [self itemIntForKey: kAutocorrectionTypeKey orDefault: UITextAutocorrectionTypeNo];

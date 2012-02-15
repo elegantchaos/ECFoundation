@@ -47,17 +47,17 @@ ECDefineDebugChannel(ECTTickableTableControllerChannel);
 
 #pragma mark - ECTTickSectionCellDelegate methods
 
-- (BOOL)isSelectedForCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding
+- (BOOL)isSelectedForCell:(ECTTickCell*)cell binding:(ECTBinding*)binding
 {
     id currentValue = self.representedObject.objectValue;
     return [currentValue isEqual:binding.object];
 }
 
-- (void)selectCell:(ECTTickCell*)cell section:(ECTSection*)section binding:(ECTBinding*)binding
+- (void)selectCell:(ECTTickCell*)cell binding:(ECTBinding*)binding
 {
     ECDebug(ECTTickableTableControllerChannel, @"cell selected %@ %@", binding, binding.object);
     self.representedObject.objectValue = binding.object;
-    [section reloadData];
+    [cell.section reloadData];
     
     if (self.autoPop)
     {
