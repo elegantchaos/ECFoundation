@@ -78,12 +78,14 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 #pragma mark - ECTSimpleSectionCell methods
 
-- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
+- (void)updateUIForEvent:(UpdateEvent)event
 {
-    [super setupForBinding:binding section:section];
-    NSNumber* value = (NSNumber*)[binding valueForSection:section];
+    ECTBinding* binding = self.representedObject;
+    NSNumber* value = (NSNumber*)[binding valueForSection:self.section];
     self.switchControl.on = [value boolValue];
     self.switchControl.enabled = binding.enabled;
+    
+    [super updateUIForEvent:event];
 }
 
 #pragma mark - Actions
