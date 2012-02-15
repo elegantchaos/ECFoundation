@@ -26,6 +26,16 @@
 			<string>label</string>
 			<key>label</key>
 			<string>Label</string>
+			<key>cellClass</key>
+			<string>ECTEditableCell</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>cellClass</key>
+			<string>ECTSwitchCell</string>
 		</dict>
 	</array>
 </dict>

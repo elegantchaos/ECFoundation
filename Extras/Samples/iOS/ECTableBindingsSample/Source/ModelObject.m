@@ -12,6 +12,7 @@
 
 @synthesize name;
 @synthesize label;
+@synthesize enabled;
 
 - (void)dealloc
 {
