@@ -23,9 +23,9 @@
 @property (nonatomic, retain) id object;
 @property (nonatomic, retain) NSMutableDictionary* properties;
 
-@property (nonatomic, assign) Class cellClass;
-@property (nonatomic, assign) Class disclosureClass;
-@property (nonatomic, assign) Class detailDisclosureClass;
+@property (nonatomic, assign) id cellClass;
+@property (nonatomic, assign) id disclosureClass;
+@property (nonatomic, assign) id detailDisclosureClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
 @property (nonatomic, assign) BOOL enabled;
@@ -39,6 +39,9 @@
 + (id)controllerWithObject:(id)object key:(NSString*)key label:(NSString*)label;
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 
++ (Class)normalisedClass:(id)classOrClassName;
++ (NSString*)normalisedClassName:(id)classOrClassName;
+
 - (id)initWithObject:(id)object key:(NSString*)key;
 
 - (id)objectValue;
@@ -46,7 +49,7 @@
 
 - (NSString*)identifierForSection:(ECTSection*)section;
 - (id)valueForSection:(ECTSection*)section;
-- (id)cellForSection:(ECTSection*)section;
+- (id)cellForSection:(ECTSection*)section identifier:(NSString*)identifier;
 - (CGFloat)heightForSection:(ECTSection*)section;
 - (NSString*)disclosureTitleForSection:(ECTSection*)section;
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)detail;

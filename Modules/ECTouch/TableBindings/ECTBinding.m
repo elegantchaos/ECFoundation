@@ -108,6 +108,28 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     [super dealloc];
 }
 
+#pragma mark - Class Utilities
+
++ (Class)normalisedClass:(id)classOrClassName
+{
+    if ([classOrClassName isKindOfClass:[NSString class]])
+     {
+         classOrClassName = NSClassFromString(classOrClassName);
+     }
+    
+    return classOrClassName;
+}
+
++ (NSString*)normalisedClassName:(id)classOrClassName
+{
+    if (![classOrClassName isKindOfClass:[NSString class]])
+    {
+        classOrClassName = NSStringFromClass(classOrClassName);
+    }
+    
+    return classOrClassName;
+}
+
 - (id)valueForUndefinedKey:(NSString *)undefinedKey
 {
     return [self.properties objectForKey:undefinedKey];
@@ -129,7 +151,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (NSString*)identifierForSection:(ECTSection*)section
 {
-    return NSStringFromClass([self cellClass]);
+    return [ECTBinding normalisedClassName:self.cellClass];
 }
 
 - (id)valueForSection:(ECTSection*)section
@@ -217,10 +239,10 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (UITableViewCell<ECTSectionDrivenTableCell> *)cellForSection:(ECTSection*)section
+- (UITableViewCell<ECTSectionDrivenTableCell> *)cellForSection:(ECTSection*)section identifier:(NSString*)identifier
 {
-    NSString* identifier = [self identifierForSection:section];
-    return [[[self.cellClass alloc] initWithBinding:self section:section reuseIdentifier:identifier] autorelease];
+    Class class = [ECTBinding normalisedClass:self.cellClass];
+    return [[[class alloc] initWithBinding:self section:section reuseIdentifier:identifier] autorelease];
 }
 
 - (CGFloat)heightForSection:(ECTSection*)section
@@ -230,11 +252,8 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (Class)disclosureClassForSection:(ECTSection *)section detail:(BOOL)useDetail
 {
-    id result = useDetail ? self.detailDisclosureClass : self.disclosureClass;
-    if ([result isKindOfClass:[NSString class]])
-    {
-        result = NSClassFromString(result);
-    }
+    id class = useDetail ? self.detailDisclosureClass : self.disclosureClass;
+    Class result = [ECTBinding normalisedClass:class];
     
     return result;
 }

@@ -18,6 +18,8 @@
 			<string>name</string>
 			<key>label</key>
 			<string>Name</string>
+			<key>cellClass</key>
+			<string>ECTEditableCell</string>
 		</dict>
 		<dict>
 			<key>value</key>

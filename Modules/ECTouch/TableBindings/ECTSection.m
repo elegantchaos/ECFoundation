@@ -307,7 +307,7 @@ NSString *const ECTValueKey = @"value";
     UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
-        cell = [binding cellForSection:self];
+        cell = [binding cellForSection:self identifier:identifier];
     }
     
     [cell setupForBinding:binding section:self];
@@ -330,15 +330,8 @@ NSString *const ECTValueKey = @"value";
 
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {
-    id result = [binding disclosureClassForSection:self detail:detail];
-    if (!result)
-    {
-        result = detail ? self.detailDisclosureClass : self.disclosureClass;
-        if ([result isKindOfClass:[NSString class]])
-        {
-            result = NSClassFromString(result);
-        }
-    }
+    id class = [binding disclosureClassForSection:self detail:detail];
+    Class result = [ECTBinding normalisedClass:class];
     
     return result;
 }

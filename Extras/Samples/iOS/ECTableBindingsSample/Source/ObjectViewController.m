@@ -40,8 +40,11 @@
 
 - (void)viewDidLoad
 {
-    ECTSection* section = [ECTSection sectionWithProperties:@"ObjectSection" boundToObject:self.binding.object];
-    [self.table addSection:section];
+    // make the same section twice, to prove that edits on the object in one section will be reflected in the other one
+    ECTSection* section1 = [ECTSection sectionWithProperties:@"ObjectSection" boundToObject:self.binding.object];
+    ECTSection* section2 = [ECTSection sectionWithProperties:@"ObjectSection" boundToObject:self.binding.object];
+    [self.table addSection:section1];
+    [self.table addSection:section2];
 }
 
 - (void)setupForBinding:(ECTBinding*)bindingIn
