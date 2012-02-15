@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
+#import "ECMacros.h"
 
 @class ECTBinding;
 @class ECTSectionDrivenTableController;
@@ -88,8 +89,8 @@ extern NSString* const ECTValueKey;
 @end
 
 @interface ECTSection(Deprecated)
-- (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
-- (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties EC_DEPRECATED;
+- (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties EC_DEPRECATED;
 @end
 
 @protocol ECTSectionDrivenTableCell <NSObject>

@@ -1,10 +1,10 @@
+// --------------------------------------------------------------------------
+//! @author Sam Deane
 //
-//  ModelController.m
-//  ECTableBindingsSample
-//
-//  Created by Sam Deane on 14/02/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
+//  This source code is distributed under the terms of Elegant Chaos's 
+//  liberal license: http://www.elegantchaos.com/license/liberal
+// --------------------------------------------------------------------------
 
 #import "ModelController.h"
 #import "ModelObject.h"
@@ -13,31 +13,24 @@
 
 @synthesize objects;
 
-- (id)init
+- (void)startup
 {
-    if ((self = [super init]) != nil)
+    NSMutableArray* objs = [NSMutableArray array];
+    for (NSUInteger n = 0; n < 10; ++n)
     {
-        NSMutableArray* objs = [NSMutableArray array];
-        for (NSUInteger n = 0; n < 10; ++n)
-        {
-            ModelObject* object = [[ModelObject alloc] init];
-            object.name = [NSString stringWithFormat:@"Object %d", n];
-            object.label = [NSString stringWithFormat:@"label for object %d", n];
-            [objs addObject:object];
-            [object release];
-        }
-        
-        self.objects = objs;
+        ModelObject* object = [[ModelObject alloc] init];
+        object.name = [NSString stringWithFormat:@"Object %d", n];
+        object.label = [NSString stringWithFormat:@"label for object %d", n];
+        [objs addObject:object];
+        [object release];
     }
     
-    return self;
+    self.objects = objs;
 }
 
-- (void)dealloc
+- (void)shutdown
 {
-    [objects release];
-    
-    [super dealloc];
+    self.objects = nil;
 }
 
 @end

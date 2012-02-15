@@ -526,14 +526,8 @@
 			children = (
 				22FC16B114EAAD00008E9592 /* AppDelegate.h */,
 				22FC16B214EAAD00008E9592 /* AppDelegate.m */,
-				22FC16B314EAAD00008E9592 /* MainViewController.h */,
-				22FC16B414EAAD00008E9592 /* MainViewController.m */,
-				22A72ED414EABDDC00CFF8B9 /* ModelController.h */,
-				22A72ED514EABDDC00CFF8B9 /* ModelController.m */,
-				22A72ED114EABD6D00CFF8B9 /* ModelObject.h */,
-				22A72ED214EABD6D00CFF8B9 /* ModelObject.m */,
-				2258ECBD14EAD658006D1602 /* ObjectViewController.h */,
-				2258ECBE14EAD658006D1602 /* ObjectViewController.m */,
+				228C55E814EC0B7200927290 /* View */,
+				228C55E914EC0B8100927290 /* Model */,
 				22E50D0214EB1279006F9F86 /* Supporting Files */,
 				226FB4E013E2914900BF258D /* ECFoundation */,
 			);
@@ -560,6 +554,28 @@
 				2245371914EAA8AE00BDCC7B /* ECTouch */,
 			);
 			name = ECFoundation;
+			sourceTree = "<group>";
+		};
+		228C55E814EC0B7200927290 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22FC16B314EAAD00008E9592 /* MainViewController.h */,
+				22FC16B414EAAD00008E9592 /* MainViewController.m */,
+				2258ECBD14EAD658006D1602 /* ObjectViewController.h */,
+				2258ECBE14EAD658006D1602 /* ObjectViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		228C55E914EC0B8100927290 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22A72ED414EABDDC00CFF8B9 /* ModelController.h */,
+				22A72ED514EABDDC00CFF8B9 /* ModelController.m */,
+				22A72ED114EABD6D00CFF8B9 /* ModelObject.h */,
+				22A72ED214EABD6D00CFF8B9 /* ModelObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		22E50D0214EB1279006F9F86 /* Supporting Files */ = {
