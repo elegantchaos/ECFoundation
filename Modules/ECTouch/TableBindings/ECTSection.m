@@ -15,8 +15,7 @@
 #import "ECAssertion.h"
 
 @interface ECTSection()
-@property (nonatomic, retain) NSArray* source;
-@property (nonatomic, retain) id sourceOwner;
+@property (nonatomic, retain) id source;
 @property (nonatomic, retain) NSString* sourcePath;
 @property (nonatomic, retain) ECTBinding* addCell;
 @property (nonatomic, retain) NSDictionary* sectionProperties;
@@ -46,7 +45,6 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize source;
-@synthesize sourceOwner;
 @synthesize sourcePath;
 @synthesize table;
 @synthesize variableRowHeight;
@@ -146,19 +144,29 @@ NSString *const ECTValueKey = @"value";
 
 #pragma mark - Utilities
 
-- (BOOL)isMutable
+- (NSMutableArray*)mutableSource
 {
-    return [self.content isKindOfClass:[NSMutableArray class]] && [self.source isKindOfClass:[NSMutableArray class]];
+    NSMutableArray* result;
+    if (self.sourcePath)
+    {
+        result = [self.source mutableArrayValueForKey:self.sourcePath];
+    }
+    else 
+    {
+        result = (NSMutableArray*) self.source;
+    }
+
+    return result;
 }
 
 #pragma mark - ECTSectionController methods
 
 - (void)bindArrayAtPath:(NSString *)path object:(id)object
 {
-    self.source = [object valueForKeyPath:path];
-    self.sourceOwner = object;
+    self.source = object;
     self.sourcePath = path;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source properties:self.allRowProperties]];
+    NSArray* array = [object valueForKeyPath:path];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
 }
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
@@ -415,11 +423,9 @@ NSString *const ECTValueKey = @"value";
 
 - (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    // if we've got here, then our content array is definitely mutable... honest
-    ECAssert([self isMutable]);
-    
     [(NSMutableArray*)self.content exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
-    [(NSMutableArray*)self.source exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    NSMutableArray* array = [self mutableSource];
+    [array exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
 }
 
 - (void)moveRowFromSection:(ECTSection*)section atIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -431,11 +437,8 @@ NSString *const ECTValueKey = @"value";
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        // if we've got here, then our content array is definitely mutable... honest
-        ECAssert([self isMutable]);
-        
         [(NSMutableArray*)self.content removeObjectAtIndex:indexPath.row];
-        NSMutableArray* array = [self.sourceOwner mutableArrayValueForKey:self.sourcePath];
+        NSMutableArray* array = [self mutableSource];
         [array removeObjectAtIndex:indexPath.row];
     }
 
