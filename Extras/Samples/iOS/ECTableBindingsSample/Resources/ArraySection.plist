@@ -13,7 +13,7 @@
 	</dict>
 	<key>rows</key>
 	<dict>
-		<key>keys</key>
+		<key>mappings</key>
 		<dict>
 			<key>value</key>
 			<string>name</string>

@@ -20,7 +20,7 @@ typedef enum
 
 @interface ECTSimpleCell : UITableViewCell<ECTSectionDrivenTableCell>
 
-@property (nonatomic, retain) ECTBinding* representedObject;
+@property (nonatomic, retain) ECTBinding* binding;
 @property (nonatomic, retain) ECTSection* section;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
@@ -30,7 +30,7 @@ typedef enum
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
 - (void)removeBinding;
-- (void)setupAccessoryForBinding:(ECTBinding*)binding;
+- (void)setupAccessory;
 - (BOOL)canDelete;
 - (BOOL)canMove;
 - (void)updateUIForEvent:(UpdateEvent)event;

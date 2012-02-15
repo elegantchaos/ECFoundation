@@ -14,7 +14,7 @@
 	<key>eachRow</key>
 	<array>
 		<dict>
-			<key>keys</key>
+			<key>mappings</key>
 			<dict>
 				<key>value</key>
 				<string>name</string>
@@ -25,7 +25,7 @@
 			<string>ECTEditableCell</string>
 		</dict>
 		<dict>
-			<key>keys</key>
+			<key>mappings</key>
 			<dict>
 				<key>value</key>
 				<string>label</string>
@@ -36,7 +36,7 @@
 			<string>ECTSubtitleCell</string>
 		</dict>
 		<dict>
-			<key>keys</key>
+			<key>mappings</key>
 			<dict>
 				<key>value</key>
 				<string>enabled</string>
@@ -47,7 +47,7 @@
 			<string>ECTSwitchCell</string>
 		</dict>
 		<dict>
-			<key>keys</key>
+			<key>mappings</key>
 			<dict>
 				<key>value</key>
 				<string>name</string>

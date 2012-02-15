@@ -100,8 +100,7 @@ ECDefineLogChannel(ItemCellChannel);
 
 - (void)updateUIForEvent:(UpdateEvent)event
 {
-    ECTBinding* binding = self.representedObject;
-    NSString* value = [binding objectValue];
+    NSString* value = [self.binding objectValue];
   	self.text.text = [value description];  
     
     [super updateUIForEvent:event];
@@ -181,7 +180,7 @@ ECDefineLogChannel(ItemCellChannel);
 {
 	ECDebug(ItemCellChannel, @"text end editing");
     
-    [self.representedObject didSetValue:textField.text forCell:self];
+    [self.binding didSetValue:textField.text forCell:self];
     [self removeGesture];
 }
 

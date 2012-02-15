@@ -60,8 +60,7 @@ static CGFloat kVerticalInset = 0;
 
 - (void)updateUIForEvent:(UpdateEvent)event
 {
-    ECTBinding* binding = self.representedObject;
-    NSString* label = [binding label];
+    NSString* label = [self.binding label];
     [self.buttonControl setTitle:label forState:UIControlStateNormal];
 }
 
@@ -74,8 +73,7 @@ static CGFloat kVerticalInset = 0;
 
 - (IBAction)tappedButton:(id)sender forEvent:(UIEvent*)event
 {
-    ECTBinding* binding = self.representedObject;
-    [[UIApplication sharedApplication] sendAction:binding.actionSelector to:binding.target from:self forEvent:event];
+    [[UIApplication sharedApplication] sendAction:self.binding.actionSelector to:self.binding.target from:self forEvent:event];
 }
 
 @end

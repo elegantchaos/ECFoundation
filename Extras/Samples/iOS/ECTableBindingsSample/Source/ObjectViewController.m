@@ -62,7 +62,7 @@
 {
     // when the button it tapped, we modify the label of the model object bound to the cell
     ECTButtonCell* cell = sender;
-    ECTBinding* cellBinding = cell.representedObject;
+    ECTBinding* cellBinding = cell.binding;
     ModelObject* object = cellBinding.object;
     object.label = [NSString stringWithFormat:@"Button was clicked at %@", [NSDate date]];
 }

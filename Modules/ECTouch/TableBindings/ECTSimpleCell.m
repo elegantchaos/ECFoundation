@@ -29,7 +29,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 @synthesize canDelete;
 @synthesize canMove;
-@synthesize representedObject; // TODO should this be a weak link?
+@synthesize binding; // TODO should this be a weak link?
 @synthesize section;
 
 #pragma mark - Object lifecycle
@@ -59,18 +59,17 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)removeBinding
 {
-    ECTBinding* oldBinding = self.representedObject;
-    if (oldBinding)
+    if (self.binding)
     {
-        ECDebug(ECTSimpleCellChannel, @"removed binding %@ from cell %@", oldBinding, self);
-        [oldBinding removeValueObserver:self];
-        self.representedObject = nil;
+        ECDebug(ECTSimpleCellChannel, @"removed binding %@ from cell %@", self.binding, self);
+        [self.binding removeValueObserver:self];
+        self.binding = nil;
     }
 }
 
 - (void)prepareForReuse
 {
-    ECAssertNil(self.representedObject);
+    ECAssertNil(self.binding);
     [super prepareForReuse];
     ECDebug(ECTSimpleCellChannel, @"reusing cell %@", self);
 
@@ -88,10 +87,8 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)updateUIForEvent:(UpdateEvent)event
 {
-    ECTBinding* binding = self.representedObject;
-    
     // get image to use
-    UIImage* image = [binding image];
+    UIImage* image = [self.binding image];
     self.imageView.image = image;
     
     // get text to use for label
@@ -148,30 +145,25 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     
 }
 
-- (void)setupObserverForBinding:(ECTBinding*)binding
-{
-    [binding addValueObserver:self options:NSKeyValueObservingOptionNew];
-}
-
-- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn
+- (void)setupForBinding:(ECTBinding*)newBinding section:(ECTSection*)sectionIn
 {
     self.section = sectionIn;
-    [self setupAccessoryForBinding:binding];
+    self.binding = newBinding;
 
-    self.representedObject = binding;
+    [self setupAccessory];
     [self updateUIForEvent:ValueInitialised];
-    [self setupObserverForBinding:binding];
+    [newBinding addValueObserver:self options:NSKeyValueObservingOptionNew];
 }
 
-- (void)setupAccessoryForBinding:(ECTBinding *)binding
+- (void)setupAccessory
 {
     UITableViewCellAccessoryType accessory;
     
-    if (binding.detailDisclosureClass)
+    if (self.binding.detailDisclosureClass)
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
-    else if (binding.disclosureClass)
+    else if (self.binding.disclosureClass)
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -183,11 +175,11 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     self.accessoryType = accessory;
 }
 
-- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding
+- (SelectionMode)didSelect
 {
-    if (binding.target && binding.action)
+    if (self.binding.target && self.binding.action)
     {
-        [binding.target performSelector:binding.actionSelector withObject:binding];
+        [self.binding.target performSelector:self.binding.actionSelector withObject:self.binding];
     }
 
     return SelectIfSelectable;
@@ -210,8 +202,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    ECTBinding* binding = self.representedObject;
-    if (context == binding)
+    if (context == self.binding)
     {
         [self updateUIForEvent:ValueChanged];
     }

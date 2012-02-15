@@ -95,7 +95,7 @@ extern NSString* const ECTValueKey;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section;
-- (SelectionMode)didSelectWithBinding:(ECTBinding*)binding;
+- (SelectionMode)didSelect;
 - (BOOL)canDelete;
 - (BOOL)canMove;
 @end

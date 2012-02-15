@@ -382,8 +382,7 @@ NSString *const ECTValueKey = @"value";
     UITableViewCell* cell = [[self tableView] cellForRowAtIndexPath:indexPath];
     if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
     {
-        ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelectWithBinding:binding];
+        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelect];
         BOOL keepSelected = (selectionMode == SelectAlways) || ((selectionMode == SelectIfSelectable) && self.canSelect);
         if (keepSelected)
         {
