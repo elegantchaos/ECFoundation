@@ -27,7 +27,7 @@
 			<key>label</key>
 			<string>Label</string>
 			<key>cellClass</key>
-			<string>ECTEditableCell</string>
+			<string>ECTSubtitleCell</string>
 		</dict>
 		<dict>
 			<key>value</key>
@@ -36,6 +36,14 @@
 			<string>Enabled</string>
 			<key>cellClass</key>
 			<string>ECTSwitchCell</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>name</string>
+			<key>cellClass</key>
+			<string>ECTButtonCell</string>
+			<key>action</key>
+			<string>tappedButton:</string>
 		</dict>
 	</array>
 </dict>

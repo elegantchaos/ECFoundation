@@ -13,7 +13,6 @@
 
 #pragma mark - Constants
 
-
 @implementation ECTBinding
 
 #pragma mark - Channels
@@ -22,7 +21,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 #pragma mark - Properties
 
-@synthesize action;
+@synthesize actionSelector;
 @synthesize canDelete;
 @synthesize canMove;
 @synthesize cellClass;
@@ -108,7 +107,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     [super dealloc];
 }
 
-#pragma mark - Class Utilities
+#pragma mark - Utilities
 
 + (Class)normalisedClass:(id)classOrClassName
 {
@@ -119,6 +118,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     
     return classOrClassName;
 }
+
 
 + (NSString*)normalisedClassName:(id)classOrClassName
 {
@@ -295,14 +295,14 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return self.canMove;
 }
 
-- (NSString*)actionName
+- (NSString*)action
 {
-    return NSStringFromSelector(self.action);
+    return NSStringFromSelector(self.actionSelector);
 }
 
-- (void)setActionName:(NSString*)actionName
+- (void)setAction:(NSString*)actionName
 {
-    self.action = NSSelectorFromString(actionName);
+    self.actionSelector = NSSelectorFromString(actionName);
 }
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options

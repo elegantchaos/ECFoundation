@@ -149,6 +149,11 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     
 }
 
+- (void)setupObserverForBinding:(ECTBinding*)binding
+{
+    [binding addValueObserver:self options:NSKeyValueObservingOptionNew];
+}
+
 - (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)sectionIn
 {
     self.section = sectionIn;
@@ -156,8 +161,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
     self.representedObject = binding;
     [self updateUIForEvent:ValueInitialised];
-    
-    [binding addValueObserver:self options:NSKeyValueObservingOptionNew];
+    [self setupObserverForBinding:binding];
 }
 
 - (void)setupAccessoryForBinding:(ECTBinding *)binding section:(ECTSection *)sectionIn
@@ -186,7 +190,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 {
     if (binding.target && binding.action)
     {
-        [binding.target performSelector:binding.action withObject:binding];
+        [binding.target performSelector:binding.actionSelector withObject:binding];
     }
 
     return SelectIfSelectable;

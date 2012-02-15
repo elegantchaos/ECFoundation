@@ -13,6 +13,7 @@
 
 @interface ECTButtonCell()
 
+- (IBAction)tappedButton:(id)sender forEvent:(UIEvent*)event;
 
 @end
 
@@ -38,7 +39,7 @@ static CGFloat kVerticalInset = 0;
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) != nil)
     {
         UIButton* button = [UIButton buttonWithType:[self buttonType]];
-        [button addTarget:binding.target action:binding.action forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(tappedButton:forEvent:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = CGRectMake(kHorizontalInset, kVerticalInset, self.contentView.frame.size.width - (2 * kHorizontalInset), self.contentView.frame.size.height - (2 * kVerticalInset));
         [self.contentView addSubview:button];
         button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -57,10 +58,10 @@ static CGFloat kVerticalInset = 0;
 
 #pragma mark - ECTSimpleSectionCell methods
 
-- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
+- (void)updateUIForEvent:(UpdateEvent)event
 {
-    self.representedObject = binding;
-    NSString* label = [binding labelForSection:section];
+    ECTBinding* binding = self.representedObject;
+    NSString* label = [binding labelForSection:self.section];
     [self.buttonControl setTitle:label forState:UIControlStateNormal];
 }
 
@@ -71,5 +72,10 @@ static CGFloat kVerticalInset = 0;
     return UIButtonTypeRoundedRect;
 }
 
+- (IBAction)tappedButton:(id)sender forEvent:(UIEvent*)event
+{
+    ECTBinding* binding = self.representedObject;
+    [[UIApplication sharedApplication] sendAction:binding.actionSelector to:binding.target from:self forEvent:event];
+}
 
 @end
