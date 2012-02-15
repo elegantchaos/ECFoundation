@@ -151,9 +151,15 @@ NSString *const ECTValueKey = @"value";
     {
         result = [self.source mutableArrayValueForKey:self.sourcePath];
     }
-    else 
+    else if (self.source)
     {
+        ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
         result = (NSMutableArray*) self.source;
+    }
+    else
+    {
+        result = [NSMutableArray array];
+        self.source = result;
     }
 
     return result;
@@ -180,26 +186,25 @@ NSString *const ECTValueKey = @"value";
 
 - (void)sourceChanged
 {
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source properties:self.allRowProperties]];
+    NSMutableArray* array = [self mutableSource];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
     [self reloadData];
 }
 
-- (void)addSource:(id)object
+- (void)addContent:(id)object
 {
-    if (!self.source)
+    NSMutableArray* array;
+    if (self.content)
     {
-        self.source = [NSMutableArray array];
+        array = (NSMutableArray*)self.content;
+        ECAssert([array isKindOfClass:[NSMutableArray class]]);
     }
-    
-    if (!self.content)
+    else
     {
-        self.content = [NSMutableArray array];
+        array = [NSMutableArray array];
     }
 
-    [(NSMutableArray*) self.source addObject:object];
-
-    ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
-    ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
+    [array addObject:object];
 }
 
 - (void)bindObject:(id)object
@@ -207,19 +212,19 @@ NSString *const ECTValueKey = @"value";
     NSUInteger count = [self.eachRowProperties count];
     for (NSUInteger index = 0; index < count; ++index)
     {
-        [self addSource:object];
+        [[self mutableSource] addObject:object];
         
         NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
         [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
         
-        [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object properties:combined]];
+        [self addContent:[ECTBinding controllerWithObject:object properties:combined]];
     }
     
 }
 
 - (void)addRow:(id)object
 {
-    [self addSource:object];
+    [[self mutableSource] addObject:object];
     
     NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
     NSUInteger index = [self.content count];
@@ -228,12 +233,12 @@ NSString *const ECTValueKey = @"value";
         [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
     }
     
-    [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object properties:combined]];
+    [self addContent:[ECTBinding controllerWithObject:object properties:combined]];
 }
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
-    [self addSource:object];
+    [[self mutableSource] addObject:object];
     
     NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
     [combined addEntriesFromDictionary:properties];
