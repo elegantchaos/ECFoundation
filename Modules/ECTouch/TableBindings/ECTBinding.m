@@ -13,6 +13,12 @@
 
 #pragma mark - Constants
 
+@interface ECTBinding()
+
+- (id)lookupKey:(NSString*)keyIn;
+
+@end
+
 @implementation ECTBinding
 
 #pragma mark - Channels
@@ -127,30 +133,16 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (UIImage*)image
 {
-    UIImage* result = nil;
-    id value = [self.properties valueForKey:ECTImageKeyKey];
-    if (value)
+    id result = [self lookupKey:ECTImageKey];
+    if ([result isMemberOfClass:[NSString class]])
     {
-        value = [self.object valueForKeyPath:value];
-    }
-    else
-    {
-        value = [self.properties valueForKey:ECTImageKey];
-    }
-    
-    if ([value isMemberOfClass:[NSString class]])
-    {
-        result = [UIImage imageNamed:value];
-    }
-    else
-    {
-        result = value;
+        result = [UIImage imageNamed:result];
     }
     
     return result;
 }
 
-- (NSString*)lookupKey:(NSString*)keyIn
+- (id)lookupKey:(NSString*)keyIn
 {
     // if we've got a fixed string, use it
     NSString* result = [self.properties objectForKey:keyIn];
