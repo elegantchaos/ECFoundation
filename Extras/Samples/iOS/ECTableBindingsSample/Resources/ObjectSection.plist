@@ -8,19 +8,23 @@
 		<string>Object Binding</string>
 		<key>footer</key>
 		<string>This section is bound to an individual model object</string>
-		<key>canMove</key>
-		<true/>
 	</dict>
 	<key>rows</key>
-	<dict>
-		<key>value</key>
-		<string>name</string>
-		<key>detailKey</key>
-		<string>label</string>
-		<key>canMove</key>
-		<true/>
-		<key>disclosureClass</key>
-		<string>ObjectViewController</string>
-	</dict>
+	<dict/>
+	<key>eachRow</key>
+	<array>
+		<dict>
+			<key>value</key>
+			<string>name</string>
+			<key>label</key>
+			<string>Name</string>
+		</dict>
+		<dict>
+			<key>value</key>
+			<string>label</string>
+			<key>label</key>
+			<string>Label</string>
+		</dict>
+	</array>
 </dict>
 </plist>

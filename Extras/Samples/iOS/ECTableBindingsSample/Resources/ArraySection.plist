@@ -22,7 +22,5 @@
 		<key>disclosureClass</key>
 		<string>ObjectViewController</string>
 	</dict>
-	<key>eachRow</key>
-	<dict/>
 </dict>
 </plist>

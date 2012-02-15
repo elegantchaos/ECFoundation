@@ -166,6 +166,32 @@ NSString *const ECTValueKey = @"value";
     [self reloadData];
 }
 
+- (void)addRow:(id)object
+{
+    if (!self.source)
+    {
+        self.source = [NSMutableArray array];
+    }
+    
+    if (!self.content)
+    {
+        self.content = [NSMutableArray array];
+    }
+    
+    ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
+    [(NSMutableArray*) self.source addObject:object];
+    
+    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
+    NSUInteger index = [self.content count];
+    if (index < [self.eachRowProperties count])
+    {
+        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
+    }
+    
+    ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
+    [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object properties:combined]];
+}
+
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
     if (!self.source)
@@ -181,8 +207,16 @@ NSString *const ECTValueKey = @"value";
     ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
     [(NSMutableArray*) self.source addObject:object];
     
+    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
+    [combined addEntriesFromDictionary:properties];
+    NSUInteger index = [self.content count];
+    if (index < [self.eachRowProperties count])
+    {
+        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
+    }
+    
     ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
-    [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object key:key properties:properties]];
+    [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object key:key properties:combined]];
 }
 
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties

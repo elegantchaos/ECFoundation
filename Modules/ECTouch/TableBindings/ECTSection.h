@@ -61,6 +61,7 @@ extern NSString* const ECTValueKey;
 + (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
 + (ECTSection*)sectionFromPlist:(NSString*)plist boundToArray:(NSArray*)array;
 
+- (void)addRow:(id)object;
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)bindArray:(NSArray*)array;
