@@ -56,16 +56,14 @@ extern NSString* const ECTValueKey;
 @property (nonatomic, assign) ECTSectionDrivenTableController* table;
 @property (nonatomic, retain) NSArray* content;
 
-+ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties;
-+ (ECTSection*)sectionFromPlist:(NSString*)plist;
-+ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
-+ (ECTSection*)sectionFromPlist:(NSString*)plist boundToArray:(NSArray*)array;
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName;
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArray:(NSArray*)array;
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToObject:(id)object;
 
 - (void)addRow:(id)object;
-- (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)bindObject:(id)object;
 - (void)bindArray:(NSArray*)array;
-- (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)sourceChanged;
 
 - (BOOL)canEdit;
@@ -87,6 +85,11 @@ extern NSString* const ECTValueKey;
 - (void)commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
+@end
+
+@interface ECTSection(Deprecated)
+- (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
+- (void)bindSource:(NSArray*)source key:(NSString*)key properties:(NSDictionary*)properties;
 @end
 
 @protocol ECTSectionDrivenTableCell <NSObject>

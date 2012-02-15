@@ -72,8 +72,19 @@ NSString *const ECTValueKey = @"value";
 
 #pragma mark - Factory Methods
 
-+ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName
 {
+    NSDictionary* properties;
+    if ([propertiesOrPlistName isKindOfClass:[NSDictionary class]])
+    {
+        properties = propertiesOrPlistName;
+    }
+    else
+    {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:propertiesOrPlistName withExtension:@"plist"];
+        properties = [NSDictionary dictionaryWithContentsOfURL:url];
+    }
+
     ECTSection* section = [[ECTSection alloc] init];
 
     NSDictionary* sectionProperties = [properties objectForKey:@"section"];
@@ -86,28 +97,20 @@ NSString *const ECTValueKey = @"value";
     return [section autorelease];
 }
 
-+ (ECTSection*)sectionFromPlist:(NSString*)plist
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArray:(NSArray*)array
 {
-    NSURL* url = [[NSBundle mainBundle] URLForResource:plist withExtension:@"plist"];
-    NSDictionary* properties = [NSDictionary dictionaryWithContentsOfURL:url];
-    
-    return [self sectionFromDictionary:properties];
-}
-
-+ (ECTSection*)sectionFromDictionary:(NSDictionary*)properties boundToArray:(NSArray*)array;
-{
-    ECTSection* section = [self sectionFromDictionary:properties];
+    ECTSection* section = [self sectionWithProperties:propertiesOrPlistName];
     [section bindArray:array];
     
     return section;
 }
 
-+ (ECTSection*)sectionFromPlist:(NSString*)plist boundToArray:(NSArray*)array;
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToObject:(id)object
 {
-    NSURL* url = [[NSBundle mainBundle] URLForResource:plist withExtension:@"plist"];
-    NSDictionary* properties = [NSDictionary dictionaryWithContentsOfURL:url];
-    
-    return [self sectionFromDictionary:properties boundToArray:array];
+    ECTSection* section = [self sectionWithProperties:propertiesOrPlistName];
+    [section bindObject:object];
+
+    return section;
 }
 
 #pragma mark - Object lifecycle
@@ -166,7 +169,7 @@ NSString *const ECTValueKey = @"value";
     [self reloadData];
 }
 
-- (void)addRow:(id)object
+- (void)addSource:(id)object
 {
     if (!self.source)
     {
@@ -177,9 +180,31 @@ NSString *const ECTValueKey = @"value";
     {
         self.content = [NSMutableArray array];
     }
-    
-    ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
+
     [(NSMutableArray*) self.source addObject:object];
+
+    ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
+    ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
+}
+
+- (void)bindObject:(id)object
+{
+    NSUInteger count = [self.eachRowProperties count];
+    for (NSUInteger index = 0; index < count; ++index)
+    {
+        [self addSource:object];
+        
+        NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
+        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
+        
+        [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object properties:combined]];
+    }
+    
+}
+
+- (void)addRow:(id)object
+{
+    [self addSource:object];
     
     NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
     NSUInteger index = [self.content count];
@@ -188,24 +213,12 @@ NSString *const ECTValueKey = @"value";
         [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
     }
     
-    ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
     [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object properties:combined]];
 }
 
 - (void)addRow:(id)object key:(NSString*)key properties:(NSDictionary*)properties
 {
-    if (!self.source)
-    {
-        self.source = [NSMutableArray array];
-    }
-    
-    if (!self.content)
-    {
-        self.content = [NSMutableArray array];
-    }
-    
-    ECAssert([self.source isKindOfClass:[NSMutableArray class]]);
-    [(NSMutableArray*) self.source addObject:object];
+    [self addSource:object];
     
     NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
     [combined addEntriesFromDictionary:properties];
@@ -215,7 +228,6 @@ NSString *const ECTValueKey = @"value";
         [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
     }
     
-    ECAssert([self.content isKindOfClass:[NSMutableArray class]]);
     [(NSMutableArray*) self.content addObject:[ECTBinding controllerWithObject:object key:key properties:combined]];
 }
 
