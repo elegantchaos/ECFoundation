@@ -7,7 +7,7 @@
 		<key>header</key>
 		<string>Array Binding</string>
 		<key>footer</key>
-		<string>This section is bound to the model.objects array</string>
+		<string>This section is bound to the model.objects array. The information to set up the section came from ArraySection.plist. Each row in the table corresponds to one item in the model.objects array. Tapping on a row pushes an ObjectViewController onto the navigation stack for that row&apos;s object.</string>
 		<key>canMove</key>
 		<true/>
 	</dict>

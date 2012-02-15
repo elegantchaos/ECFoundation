@@ -16,6 +16,8 @@
 
 @interface ECTSection()
 @property (nonatomic, retain) NSArray* source;
+@property (nonatomic, retain) id sourceOwner;
+@property (nonatomic, retain) NSString* sourcePath;
 @property (nonatomic, retain) ECTBinding* addCell;
 @property (nonatomic, retain) NSDictionary* sectionProperties;
 @property (nonatomic, retain) NSDictionary* allRowProperties;
@@ -44,6 +46,8 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize detailDisclosureClass;
 @synthesize disclosureClass;
 @synthesize source;
+@synthesize sourceOwner;
+@synthesize sourcePath;
 @synthesize table;
 @synthesize variableRowHeight;
 
@@ -97,10 +101,10 @@ NSString *const ECTValueKey = @"value";
     return [section autorelease];
 }
 
-+ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArray:(NSArray*)array
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArrayAtPath:(NSString *)path object:(id)object
 {
     ECTSection* section = [self sectionWithProperties:propertiesOrPlistName];
-    [section bindArray:array];
+    [section bindArrayAtPath:path object:object];
     
     return section;
 }
@@ -135,6 +139,7 @@ NSString *const ECTValueKey = @"value";
     [header release];
     [footer release];
     [source release];
+    [sourcePath release];
     
     [super dealloc];
 }
@@ -148,10 +153,12 @@ NSString *const ECTValueKey = @"value";
 
 #pragma mark - ECTSectionController methods
 
-- (void)bindArray:(NSArray*)array
+- (void)bindArrayAtPath:(NSString *)path object:(id)object
 {
-    self.source = array;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
+    self.source = [object valueForKeyPath:path];
+    self.sourceOwner = object;
+    self.sourcePath = path;
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:self.source properties:self.allRowProperties]];
 }
 
 - (void)bindSource:(NSArray*)sourceIn key:(NSString*)key properties:(NSDictionary*)properties
@@ -428,8 +435,10 @@ NSString *const ECTValueKey = @"value";
         ECAssert([self isMutable]);
         
         [(NSMutableArray*)self.content removeObjectAtIndex:indexPath.row];
-        [(NSMutableArray*)self.source removeObjectAtIndex:indexPath.row];
+        NSMutableArray* array = [self.sourceOwner mutableArrayValueForKey:self.sourcePath];
+        [array removeObjectAtIndex:indexPath.row];
     }
+
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

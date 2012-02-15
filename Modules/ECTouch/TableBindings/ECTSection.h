@@ -57,13 +57,13 @@ extern NSString* const ECTValueKey;
 @property (nonatomic, retain) NSArray* content;
 
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName;
-+ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArray:(NSArray*)array;
++ (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArrayAtPath:(NSString*)path object:(id)object;
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToObject:(id)object;
 
 - (void)addRow:(id)object;
 - (void)makeAddableWithObject:(id)object key:(NSString*)key properties:(NSDictionary*)properties;
 - (void)bindObject:(id)object;
-- (void)bindArray:(NSArray*)array;
+- (void)bindArrayAtPath:(NSString*)path object:(id)object;
 - (void)sourceChanged;
 
 - (BOOL)canEdit;

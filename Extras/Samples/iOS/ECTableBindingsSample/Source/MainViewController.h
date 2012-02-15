@@ -12,4 +12,10 @@
 
 @interface MainViewController : ECTSingleTableViewController
 
+@property (strong, nonatomic) IBOutlet UILabel* labelObjects;
+
+- (IBAction)tappedDelete:(id)sender;
+- (IBAction)tappedAdd:(id)sender;
+- (IBAction)tappedRandomise:(id)sender;
+
 @end
