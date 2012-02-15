@@ -10,14 +10,16 @@
 
 @implementation ModelObject
 
-@synthesize name;
-@synthesize label;
 @synthesize enabled;
+@synthesize label;
+@synthesize name;
+@synthesize option;
 
 - (void)dealloc
 {
-    [name release];
     [label release];
+    [name release];
+    [option release];
     
     [super dealloc];
 }

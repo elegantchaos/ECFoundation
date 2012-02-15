@@ -10,8 +10,9 @@
 
 @interface ModelObject : NSObject
 
-@property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSString* label;
 @property (assign, nonatomic) BOOL enabled;
+@property (strong, nonatomic) NSString* label;
+@property (strong, nonatomic) NSString* option;
+@property (strong, nonatomic) NSString* name;
 
 @end

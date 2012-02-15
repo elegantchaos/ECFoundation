@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSArray* eachRowProperties;
 @property (nonatomic, assign) BOOL sourceChangedInternally;
 
+- (void)bindArray:(NSArray*)array;
 - (void)cleanupObservers;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 
@@ -98,6 +99,12 @@ NSString *const ECTValueKey = @"value";
     section.eachRowProperties = [properties objectForKey:@"eachRow"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
+    NSArray* bindings = [properties objectForKey:@"bindings"];
+    if (bindings)
+    {
+        [section bindArray:bindings];
+    }
+
     return [section autorelease];
 }
 
@@ -187,6 +194,14 @@ NSString *const ECTValueKey = @"value";
     NSArray* array = [object valueForKeyPath:path];
     self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
     [object addObserver:self forKeyPath:path options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)bindArray:(NSArray*)array
+{
+    [self cleanupObservers];
+    self.source = array;
+    self.sourcePath = nil;
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
 }
 
 - (void)sourceChanged

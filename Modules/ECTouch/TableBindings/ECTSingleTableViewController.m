@@ -30,13 +30,11 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.table.navigator = self.navigationController;
-    
-    [super viewDidLoad];
 }
-
 - (void)viewDidUnload
 {   
     self.table = nil;

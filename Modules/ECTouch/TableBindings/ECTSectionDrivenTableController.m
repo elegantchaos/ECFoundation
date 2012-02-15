@@ -109,16 +109,37 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
         {
             view.title = title;   
         }
-        
-        if ([view conformsToProtocol:@protocol(ECTSectionDrivenTableDisclosureView)])
-        {
-            [(id<ECTSectionDrivenTableDisclosureView>) view setupForBinding:binding];
-        }
-        
+
         UINavigationController* navigation = self.navigator; // on iOS 4, we don't have child view controllers, so the navigation controller sometimes has to be set explicitly
         if (!navigation)
         {
             navigation = self.navigationController; // we can infer the navigation controller automatically if we're on it, or (iOS 5 only) a child of a controller on it
+        }
+        
+        BOOL isSectionDriven = [view isKindOfClass:[ECTSectionDrivenTableController class]];
+        ECTSectionDrivenTableController* asSectionDriven = (ECTSectionDrivenTableController*) view;
+        if (isSectionDriven)
+        {
+            asSectionDriven.navigator = navigation;
+        }
+        
+        BOOL isDisclosure = [view conformsToProtocol:@protocol(ECTSectionDrivenTableDisclosureView)];
+        if (isDisclosure)
+        {
+            [(id<ECTSectionDrivenTableDisclosureView>) view setupForBinding:binding];
+        }
+        
+        if (isSectionDriven)
+        {
+            NSArray* sectionsData = [binding valueForKey:@"sections"]; // TODO add to constants
+            if (sectionsData)
+            {
+                for (id sectionData in sectionsData)
+                {
+                    ECTSection* section = [ECTSection sectionWithProperties:sectionData];
+                    [asSectionDriven addSection:section];
+                }
+            }
         }
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -57,6 +57,21 @@
 			<key>action</key>
 			<string>tappedButton:</string>
 		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>option</string>
+			</dict>
+			<key>label</key>
+			<string>Option</string>
+			<key>disclosureClass</key>
+			<string>ECTTickableTableController</string>
+			<key>sections</key>
+			<array>
+				<string>OptionsSection</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

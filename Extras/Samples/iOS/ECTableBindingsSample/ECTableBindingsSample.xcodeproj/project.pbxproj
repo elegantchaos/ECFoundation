@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22072EE514EC30EE00290793 /* OptionsSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22072EE414EC30EE00290793 /* OptionsSection.plist */; };
 		223C373814EAB63C00C11C76 /* ECAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372514EAB63C00C11C76 /* ECAlertView.m */; };
 		223C373914EAB63C00C11C76 /* ECPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372714EAB63C00C11C76 /* ECPopoverBarButtonItem.m */; };
 		223C373A14EAB63C00C11C76 /* ECPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372914EAB63C00C11C76 /* ECPopoverContentController.m */; };
@@ -87,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22072EE414EC30EE00290793 /* OptionsSection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OptionsSection.plist; path = Resources/OptionsSection.plist; sourceTree = SOURCE_ROOT; };
 		223C372414EAB63C00C11C76 /* ECAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAlertView.h; sourceTree = "<group>"; };
 		223C372514EAB63C00C11C76 /* ECAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAlertView.m; sourceTree = "<group>"; };
 		223C372614EAB63C00C11C76 /* ECPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPopoverBarButtonItem.h; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				226FB46113E1EB0B00BF258D /* Info.plist */,
 				2258ECB314EAC944006D1602 /* ArraySection.plist */,
 				22E50D0314EB1569006F9F86 /* ObjectSection.plist */,
+				22072EE414EC30EE00290793 /* OptionsSection.plist */,
 				226FB46213E1EB0B00BF258D /* MainViewController.xib */,
 				22E50CFE14EB124F006F9F86 /* ObjectViewController.xib */,
 				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
@@ -643,6 +646,7 @@
 				2258ECB414EAC944006D1602 /* ArraySection.plist in Resources */,
 				22E50D0014EB124F006F9F86 /* ObjectViewController.xib in Resources */,
 				22E50D0414EB1569006F9F86 /* ObjectSection.plist in Resources */,
+				22072EE514EC30EE00290793 /* OptionsSection.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

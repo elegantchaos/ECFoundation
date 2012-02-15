@@ -21,6 +21,7 @@
         ModelObject* object = [[ModelObject alloc] init];
         object.name = [NSString stringWithFormat:@"Object %d", n];
         object.label = [NSString stringWithFormat:@"label for object %d", n];
+        object.option = @"Item 1";
         [objs addObject:object];
         [object release];
     }
