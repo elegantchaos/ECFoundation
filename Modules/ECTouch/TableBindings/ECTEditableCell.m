@@ -102,7 +102,7 @@ ECDefineLogChannel(ItemCellChannel);
 {
     ECTBinding* binding = self.representedObject;
     NSString* value = [binding objectValue];
-  	self.text.text = value;  
+  	self.text.text = [value description];  
     
     [super updateUIForEvent:event];
 }
@@ -111,7 +111,7 @@ ECDefineLogChannel(ItemCellChannel);
 //! Setup the item.
 // --------------------------------------------------------------------------
 
-- (void)setupForBinding:(ECTBinding*)binding
+- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection *)section
 {
     
 
@@ -132,7 +132,7 @@ ECDefineLogChannel(ItemCellChannel);
     //		self.text.font = font;
     //	}
 	
-    [super setupForBinding:binding];
+    [super setupForBinding:binding section:section];
     //	self.text.secureTextEntry = [self itemBoolForKey: kSecureKey];
     //	self.text.autocapitalizationType = [self itemIntForKey: kAutocapitalizationTypeKey orDefault: UITextAutocapitalizationTypeNone];
     //	self.text.autocorrectionType = [self itemIntForKey: kAutocorrectionTypeKey orDefault: UITextAutocorrectionTypeNo];

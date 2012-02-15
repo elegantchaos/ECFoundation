@@ -14,32 +14,44 @@
 	<key>eachRow</key>
 	<array>
 		<dict>
-			<key>key</key>
-			<string>name</string>
+			<key>keys</key>
+			<dict>
+				<key>value</key>
+				<string>name</string>
+			</dict>
 			<key>label</key>
 			<string>Name</string>
 			<key>cellClass</key>
 			<string>ECTEditableCell</string>
 		</dict>
 		<dict>
-			<key>key</key>
-			<string>label</string>
+			<key>keys</key>
+			<dict>
+				<key>value</key>
+				<string>label</string>
+			</dict>
 			<key>label</key>
 			<string>Label</string>
 			<key>cellClass</key>
 			<string>ECTSubtitleCell</string>
 		</dict>
 		<dict>
-			<key>key</key>
-			<string>enabled</string>
+			<key>keys</key>
+			<dict>
+				<key>value</key>
+				<string>enabled</string>
+			</dict>
 			<key>label</key>
 			<string>Enabled</string>
 			<key>cellClass</key>
 			<string>ECTSwitchCell</string>
 		</dict>
 		<dict>
-			<key>key</key>
-			<string>name</string>
+			<key>keys</key>
+			<dict>
+				<key>value</key>
+				<string>name</string>
+			</dict>
 			<key>cellClass</key>
 			<string>ECTButtonCell</string>
 			<key>action</key>

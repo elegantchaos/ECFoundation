@@ -13,10 +13,13 @@
 	</dict>
 	<key>rows</key>
 	<dict>
-		<key>key</key>
-		<string>name</string>
-		<key>detailKey</key>
-		<string>label</string>
+		<key>keys</key>
+		<dict>
+			<key>value</key>
+			<string>name</string>
+			<key>detail</key>
+			<string>label</string>
+		</dict>
 		<key>canMove</key>
 		<true/>
 		<key>disclosureClass</key>

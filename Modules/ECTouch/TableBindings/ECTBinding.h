@@ -16,10 +16,9 @@
 
 @interface ECTBinding : NSObject
 
-@property (nonatomic, retain) NSString* detailKey;
-@property (nonatomic, retain) NSString* key;
 @property (nonatomic, retain) id object;
 @property (nonatomic, retain) NSMutableDictionary* properties;
+@property (nonatomic, retain) NSMutableDictionary* keys;
 
 @property (nonatomic, assign) id cellClass;
 @property (nonatomic, assign) id disclosureClass;

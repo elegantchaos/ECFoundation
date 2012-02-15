@@ -26,12 +26,11 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 @synthesize canMove;
 @synthesize cellClass;
 @synthesize detailDisclosureClass;
-@synthesize detailKey;
 @synthesize disclosureClass;
 @synthesize enabled;
-@synthesize key;
 @synthesize object;
 @synthesize properties;
+@synthesize keys;
 @synthesize target;
 
 #pragma mark - Object lifecycle
@@ -72,8 +71,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)dealloc
 {
-    [detailKey release];
-    [key release];
+    [keys release];
     [object release];
     [properties release];
     
@@ -127,17 +125,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return [ECTBinding normalisedClassName:self.cellClass];
 }
 
-- (NSString*)label
-{
-    NSString* result = [self.properties objectForKey:ECTLabelKey];
-    if (!result)
-    {
-        result = [[self objectValue] description];
-    }
-    
-    return result;
-}
-
 - (UIImage*)image
 {
     UIImage* result = nil;
@@ -163,19 +150,41 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (NSString*)detail
+- (NSString*)lookupKey:(NSString*)keyIn
 {
     // if we've got a fixed string, use it
-    NSString* result = [self.properties objectForKey:ECTDetailKey];
+    NSString* result = [self.properties objectForKey:keyIn];
     if (!result)
     {
         // if we've got a key set, use that to look up a value on the object
-        if (self.detailKey)
+        NSString* mappedKey = [self.keys objectForKey:keyIn];
+        if (mappedKey)
         {
-            result = [self.object valueForKeyPath:self.detailKey];
+            result = [self.object valueForKeyPath:mappedKey];
         }
     }
     
+    return result;
+
+}
+
+- (NSString*)label
+{
+    NSString* result = [self lookupKey:ECTLabelKey];
+    if (!result)
+    {
+        result = [[self objectValue] description];
+    }
+    
+    return result;
+}
+
+
+- (NSString*)detail
+{
+    // if we've got a fixed string, use it
+    NSString* result = [self lookupKey:ECTDetailKey];
+
     // fall back to using the object value, as long as it's not already used for the label
     if (!result && self.label)
     {
@@ -206,12 +215,8 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (id)objectValue
 {
-    id result;
-    if (self.key)
-    {
-        result = [self.object valueForKeyPath:self.key];
-    }
-    else
+    id result = [self lookupKey:ECTValueKey];
+    if (!result)
     {
         result = self.object;
     }
@@ -221,7 +226,8 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)setObjectValue:(id)value
 {
-    [self.object setValue:value forKeyPath:self.key];
+    NSString* key = [self.keys objectForKey:ECTValueKey];
+    [self.object setValue:value forKeyPath:key];
 }
 
 - (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell
@@ -243,19 +249,19 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options
 {
-    NSString* keyToObserve = self.key;
-    if (keyToObserve)
+    for (NSString* key in self.keys)
     {
-        [self.object addObserver:observer forKeyPath:keyToObserve options:options context:self];
+        NSString* mappedKey = [self.keys objectForKey:key];
+        [self.object addObserver:observer forKeyPath:mappedKey options:options context:self];
     }
 }
 
 - (void)removeValueObserver:(id)observer
 {
-    NSString* keyToObserve = self.key;
-    if (keyToObserve)
+    for (NSString* key in self.keys)
     {
-        [self.object removeObserver:observer forKeyPath:keyToObserve];
+        NSString* mappedKey = [self.keys objectForKey:key];
+        [self.object removeObserver:observer forKeyPath:mappedKey];
     }
 }
 
