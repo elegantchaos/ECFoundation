@@ -28,7 +28,6 @@
         }
         
         self.objects = objs;
-        [objs release];
     }
     
     return self;
