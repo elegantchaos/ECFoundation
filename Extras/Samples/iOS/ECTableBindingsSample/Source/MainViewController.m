@@ -98,7 +98,7 @@
     ModelObject* object = [[ModelObject alloc] init];
     object.name = @"New Object";
     object.label = @"This is a newly created object";
-    [array addObject:object];
+    [array insertObject:object atIndex:0];
     [object release];
 }
 
@@ -106,7 +106,10 @@
 {
     ModelController* model = [AppDelegate sharedInstance].model;
     NSMutableArray* array = [model mutableArrayValueForKey:@"objects"];
-    [array removeObjectAtIndex:0];
+    if ([array count] > 0)
+    {
+        [array removeObjectAtIndex:0];
+    }
 }
 
 - (IBAction)tappedRandomise:(id)sender

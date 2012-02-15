@@ -221,6 +221,7 @@ NSString *const ECTValueKey = @"value";
     else
     {
         array = [NSMutableArray array];
+        self.content = array;
     }
 
     NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
