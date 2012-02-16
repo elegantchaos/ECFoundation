@@ -34,9 +34,6 @@
 + (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties;
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
 
-+ (Class)normalisedClass:(id)classOrClassName;
-+ (NSString*)normalisedClassName:(id)classOrClassName;
-
 - (id)initWithObject:(id)object;
 
 - (id)lookupKey:(NSString*)keyIn;

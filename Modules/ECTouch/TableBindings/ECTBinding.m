@@ -9,6 +9,7 @@
 
 #import "ECTBinding.h"
 
+#import "ECCoercion.h"
 #import "ECLogging.h"
 
 #import "ECTSimpleCell.h"
@@ -86,28 +87,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 }
 
 #pragma mark - Utilities
-
-+ (Class)normalisedClass:(id)classOrClassName
-{
-    if ([classOrClassName isKindOfClass:[NSString class]])
-     {
-         classOrClassName = NSClassFromString(classOrClassName);
-     }
-    
-    return classOrClassName;
-}
-
-
-+ (NSString*)normalisedClassName:(id)classOrClassName
-{
-    if (![classOrClassName isKindOfClass:[NSString class]])
-    {
-        classOrClassName = NSStringFromClass(classOrClassName);
-    }
-    
-    return classOrClassName;
-}
-
 - (id)valueForUndefinedKey:(NSString *)undefinedKey
 {
     return [self.properties objectForKey:undefinedKey];
@@ -137,7 +116,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 
 - (NSString*)identifier
 {
-    return [ECTBinding normalisedClassName:self.cellClass];
+    return [ECCoercion asClassName:self.cellClass];
 }
 
 - (UIImage*)image
@@ -199,7 +178,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 {
     NSString* key = useDetail ? ECTDetailKey : ECTClassKey;
     id class = [self lookupDisclosureKey:key];
-    Class result = [ECTBinding normalisedClass:class];
+    Class result = [ECCoercion asClass:class];
     
     return result;
 }

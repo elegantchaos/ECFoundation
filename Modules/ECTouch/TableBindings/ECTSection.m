@@ -12,8 +12,10 @@
 #import "ECTSectionDrivenTableController.h"
 #import "ECTBinding.h"
 #import "ECTKeys.h"
+
 #import "ECLogging.h"
 #import "ECAssertion.h"
+#import "ECCoercion.h"
 
 @interface ECTSection()
 
@@ -318,11 +320,11 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 {
     ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
 
-    NSString* identifier = [ECTBinding normalisedClassName:binding.cellClass];
+    NSString* identifier = [ECCoercion asClassName:binding.cellClass];
     UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
-        Class class = [ECTBinding normalisedClass:binding.cellClass];
+        Class class = [ECCoercion asClass:binding.cellClass];
         cell = [[[class alloc] initWithReuseIdentifier:identifier] autorelease];
     }
     
@@ -338,7 +340,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     if (self.variableRowHeight)
     {
         ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        Class<ECTSectionDrivenTableCell> class = [ECTBinding normalisedClass:binding.cellClass];
+        Class<ECTSectionDrivenTableCell> class = [ECCoercion asClass:binding.cellClass];
         result = [class heightForBinding:binding];
         if (result == UITableViewAutomaticDimension)
         {
@@ -373,7 +375,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {
     id class = [binding disclosureClassWithDetail:detail];
-    Class result = [ECTBinding normalisedClass:class];
+    Class result = [ECCoercion asClass:class];
     
     return result;
 }
