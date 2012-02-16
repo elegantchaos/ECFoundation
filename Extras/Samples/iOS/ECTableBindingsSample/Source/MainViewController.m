@@ -12,7 +12,7 @@
 #import "ModelController.h"
 #import "ModelObject.h"
 
-#import "ECPopoverBarButtonItem.h"
+#import "ECTPopoverBarButtonItem.h"
 #import "ECTSection.h"
 #import "ECTSectionDrivenTableController.h"
 
@@ -45,7 +45,7 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem* debugButton = [[ECPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
+    UIBarButtonItem* debugButton = [[ECTPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
     self.navigationItem.leftBarButtonItem = debugButton;
     [debugButton release];
     
