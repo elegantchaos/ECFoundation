@@ -12,6 +12,7 @@
 #import "ECTBinding.h"
 #import "ECTKeys.h"
 
+#import "ECLogging.h"
 #import "ECAssertion.h"
 #import "UIFont+ECCore.h"
 

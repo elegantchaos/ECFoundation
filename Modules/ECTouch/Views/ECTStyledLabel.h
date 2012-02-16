@@ -16,6 +16,4 @@
 @property (nonatomic, retain) IBOutlet UIScrollView* scroller;
 @property (nonatomic, retain) CATextLayer* textLayer;
 
-- (ECDocumentStyles*)defaultStyles;
-
 @end

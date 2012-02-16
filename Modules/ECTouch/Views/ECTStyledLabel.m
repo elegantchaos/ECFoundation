@@ -188,24 +188,4 @@ ECDefineDebugChannel(StyledLabelChannel);
 {
 }
 
-// --------------------------------------------------------------------------
-//! Return some default styles based on the current font
-//! setting for the underlying UILabel.
-// --------------------------------------------------------------------------
-
-- (ECDocumentStyles*)defaultStyles
-{
-    ECDocumentStyles* styles = [[ECDocumentStyles alloc] init];
-    styles.plainFont = self.font.fontName;
-    styles.plainSize = self.font.pointSize;
-    styles.boldFont = [self.font boldVariant].fontName;
-	styles.italicFont = [self.font italicVariant].fontName;
-    styles.headingFont = styles.boldFont;
-    styles.headingSize = self.font.pointSize + 2.0;
-    styles.colour = self.textColor.CGColor;
-    styles.linkColour = [UIColor blueColor].CGColor;
-
-	return [styles autorelease];
-}
-
 @end
