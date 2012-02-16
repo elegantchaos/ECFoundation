@@ -10,7 +10,25 @@
 		<string>This section is bound to an individual model object</string>
 	</dict>
 	<key>rows</key>
-	<dict/>
+	<dict>
+		<key>font</key>
+		<dict>
+			<key>label</key>
+			<dict>
+				<key>name</key>
+				<string>Marker Felt</string>
+				<key>size</key>
+				<integer>16</integer>
+			</dict>
+			<key>detail</key>
+			<dict>
+				<key>name</key>
+				<string>Marker Felt</string>
+				<key>size</key>
+				<integer>14</integer>
+			</dict>
+		</dict>
+	</dict>
 	<key>eachRow</key>
 	<array>
 		<dict>
