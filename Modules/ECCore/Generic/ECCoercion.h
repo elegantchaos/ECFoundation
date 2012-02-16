@@ -14,4 +14,7 @@
 + (NSString*)asClassName:(id)classOrClassName;
 + (NSArray*)asArray:(id)arrayOrObject;
 
++ (NSDictionary*)loadDictionary:(id)dictionaryOrPlistName;
++ (NSArray*)loadArray:(id)arrayOrPlistName;
+
 @end

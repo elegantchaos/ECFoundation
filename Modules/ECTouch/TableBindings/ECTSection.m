@@ -68,17 +68,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName
 {
-    NSDictionary* properties;
-    if ([propertiesOrPlistName isKindOfClass:[NSDictionary class]])
-    {
-        properties = propertiesOrPlistName;
-    }
-    else
-    {
-        NSURL* url = [[NSBundle mainBundle] URLForResource:propertiesOrPlistName withExtension:@"plist"];
-        properties = [NSDictionary dictionaryWithContentsOfURL:url];
-    }
-
+    NSDictionary* properties = [ECCoercion loadDictionary:propertiesOrPlistName];
     ECTSection* section = [[ECTSection alloc] init];
 
     NSDictionary* sectionProperties = [properties objectForKey:@"section"];
@@ -88,12 +78,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     section.eachRowProperties = [properties objectForKey:@"individualRows"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
-    id content = [properties objectForKey:@"content"];
-    if ([content isKindOfClass:[NSString class]])
-    {
-        NSURL* url = [[NSBundle mainBundle] URLForResource:content withExtension:@"plist"];
-        content = [NSArray arrayWithContentsOfURL:url];
-    }
+    id content = [ECCoercion loadArray:[properties objectForKey:@"content"]];
     if (content)
     {
         [section bindArray:content];

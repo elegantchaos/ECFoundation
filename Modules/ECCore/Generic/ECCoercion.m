@@ -41,4 +41,26 @@
     return arrayOrObject;
 }
 
++ (NSDictionary*)loadDictionary:(id)dictionaryOrPlistName
+{
+    if ([dictionaryOrPlistName isKindOfClass:[NSString class]])
+    {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:dictionaryOrPlistName withExtension:@"plist"];
+        dictionaryOrPlistName = [NSDictionary dictionaryWithContentsOfURL:url];
+    }
+    
+    return dictionaryOrPlistName;
+}
+
++ (NSArray*)loadArray:(id)arrayOrPlistName
+{
+    if ([arrayOrPlistName isKindOfClass:[NSString class]])
+    {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:arrayOrPlistName withExtension:@"plist"];
+        arrayOrPlistName = [NSArray arrayWithContentsOfURL:url];
+    }
+
+    return arrayOrPlistName;
+}
+
 @end
