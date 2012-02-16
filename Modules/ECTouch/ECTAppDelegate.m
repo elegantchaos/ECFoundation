@@ -7,19 +7,19 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECAppDelegate.h"
+#import "ECTAppDelegate.h"
+#import "ECTModelController.h"
 
 #import "ECAssertion.h"
 #import "ECLogging.h"
 #import "ECLogManager.h"
-#import "ECModelController.h"
 
-@interface ECAppDelegate()
+@interface ECTAppDelegate()
 - (void)startupLogging;
 - (void)shutdownLogging;
 @end
 
-@implementation ECAppDelegate
+@implementation ECTAppDelegate
 
 @synthesize model;
 @synthesize window;
@@ -30,7 +30,7 @@ ECDefineDebugChannel(ApplicationChannel);
 //! Return the normal instance.
 // --------------------------------------------------------------------------
 
-+ (ECAppDelegate*)sharedInstance
++ (ECTAppDelegate*)sharedInstance
 {
 	return [UIApplication sharedApplication].delegate;
 }
@@ -55,7 +55,7 @@ ECDefineDebugChannel(ApplicationChannel);
     ECDebug(ApplicationChannel, @"did finish launching");
 	[self startupLogging];
 	
-	ECModelController* nm = [self newModelController];
+	ECTModelController* nm = [self newModelController];
 	self.model = nm;
 	[nm startup];
 	[nm load];
@@ -166,7 +166,7 @@ ECDefineDebugChannel(ApplicationChannel);
 
 - (id)newModelController
 {
-    ECModelController* emptyModel = [[ECModelController alloc] init];
+    ECTModelController* emptyModel = [[ECTModelController alloc] init];
 
 	return emptyModel;
 }

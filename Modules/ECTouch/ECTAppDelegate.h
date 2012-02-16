@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class ECModelController;
+@class ECTModelController;
 
-@interface ECAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ECTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) id model;
 @property (strong, nonatomic) UIWindow* window;
 
-+ (ECAppDelegate*)sharedInstance;
++ (ECTAppDelegate*)sharedInstance;
 
 - (id)newModelController;
 - (UIViewController*)newRootViewController;

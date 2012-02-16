@@ -11,9 +11,9 @@
 
 ECDeclareDebugChannel(ModelChannel);
 
-@interface ECModelController : NSObject
+@interface ECTModelController : NSObject
 
-+ (ECModelController*)sharedInstance;
++ (ECTModelController*)sharedInstance;
 
 - (void)startup;
 - (void)shutdown;

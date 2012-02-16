@@ -7,16 +7,16 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECModelController.h"
-#import "ECAppDelegate.h"
+#import "ECTModelController.h"
+#import "ECTAppDelegate.h"
 
-@implementation ECModelController
+@implementation ECTModelController
 
 ECDefineDebugChannel(ModelChannel);
 
-+ (ECModelController*)sharedInstance
++ (ECTModelController*)sharedInstance
 {
-    return [ECAppDelegate sharedInstance].model;
+    return [ECTAppDelegate sharedInstance].model;
 }
 
 

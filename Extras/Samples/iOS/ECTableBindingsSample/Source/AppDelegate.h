@@ -6,11 +6,11 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECAppDelegate.h"
+#import "ECTAppDelegate.h"
 
 @class ECLoggingSampleViewController;
 
-@interface AppDelegate : ECAppDelegate
+@interface AppDelegate : ECTAppDelegate
 
 + (AppDelegate*)sharedInstance;
 

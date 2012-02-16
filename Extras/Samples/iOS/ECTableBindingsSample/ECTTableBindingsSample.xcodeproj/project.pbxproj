@@ -39,8 +39,8 @@
 		2245377C14EAA8AF00BDCC7B /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 224536C814EAA8AE00BDCC7B /* UIFont+ECCore.m */; };
 		2245377D14EAA8AF00BDCC7B /* UIImage+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 224536CA14EAA8AE00BDCC7B /* UIImage+ECCore.m */; };
 		2245377E14EAA8AF00BDCC7B /* UIViewController+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 224536CC14EAA8AE00BDCC7B /* UIViewController+ECUtilities.m */; };
-		224537A814EAA8AF00BDCC7B /* ECAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245371B14EAA8AE00BDCC7B /* ECAppDelegate.m */; };
-		224537AA14EAA8AF00BDCC7B /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245371F14EAA8AE00BDCC7B /* ECModelController.m */; };
+		224537A814EAA8AF00BDCC7B /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245371B14EAA8AE00BDCC7B /* ECTAppDelegate.m */; };
+		224537AA14EAA8AF00BDCC7B /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245371F14EAA8AE00BDCC7B /* ECTModelController.m */; };
 		224537AB14EAA8AF00BDCC7B /* ECTBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245372214EAA8AE00BDCC7B /* ECTBinding.m */; };
 		224537AC14EAA8AF00BDCC7B /* ECTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245372414EAA8AE00BDCC7B /* ECTButtonCell.m */; };
 		224537AD14EAA8AF00BDCC7B /* ECTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245372614EAA8AE00BDCC7B /* ECTEditableCell.m */; };
@@ -160,10 +160,10 @@
 		224536F814EAA8AE00BDCC7B /* ECCoreDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDebugPrefix.pch; sourceTree = "<group>"; };
 		224536F914EAA8AE00BDCC7B /* ECCoreReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreReleasePrefix.pch; sourceTree = "<group>"; };
 		224536FA14EAA8AE00BDCC7B /* ECCoreSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreSharedPrefix.pch; sourceTree = "<group>"; };
-		2245371A14EAA8AE00BDCC7B /* ECAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAppDelegate.h; sourceTree = "<group>"; };
-		2245371B14EAA8AE00BDCC7B /* ECAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAppDelegate.m; sourceTree = "<group>"; };
-		2245371E14EAA8AE00BDCC7B /* ECModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECModelController.h; sourceTree = "<group>"; };
-		2245371F14EAA8AE00BDCC7B /* ECModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECModelController.m; sourceTree = "<group>"; };
+		2245371A14EAA8AE00BDCC7B /* ECTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAppDelegate.h; sourceTree = "<group>"; };
+		2245371B14EAA8AE00BDCC7B /* ECTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAppDelegate.m; sourceTree = "<group>"; };
+		2245371E14EAA8AE00BDCC7B /* ECTModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTModelController.h; sourceTree = "<group>"; };
+		2245371F14EAA8AE00BDCC7B /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
 		2245372114EAA8AE00BDCC7B /* ECTBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTBinding.h; sourceTree = "<group>"; };
 		2245372214EAA8AE00BDCC7B /* ECTBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTBinding.m; sourceTree = "<group>"; };
 		2245372314EAA8AE00BDCC7B /* ECTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTButtonCell.h; sourceTree = "<group>"; };
@@ -382,10 +382,10 @@
 			isa = PBXGroup;
 			children = (
 				223C372314EAB63C00C11C76 /* Views */,
-				2245371A14EAA8AE00BDCC7B /* ECAppDelegate.h */,
-				2245371B14EAA8AE00BDCC7B /* ECAppDelegate.m */,
-				2245371E14EAA8AE00BDCC7B /* ECModelController.h */,
-				2245371F14EAA8AE00BDCC7B /* ECModelController.m */,
+				2245371A14EAA8AE00BDCC7B /* ECTAppDelegate.h */,
+				2245371B14EAA8AE00BDCC7B /* ECTAppDelegate.m */,
+				2245371E14EAA8AE00BDCC7B /* ECTModelController.h */,
+				2245371F14EAA8AE00BDCC7B /* ECTModelController.m */,
 				2245372014EAA8AE00BDCC7B /* TableBindings */,
 			);
 			name = ECTouch;
@@ -625,9 +625,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		226FB43613E1EA7200BF258D /* ECTableBindingsSample */ = {
+		226FB43613E1EA7200BF258D /* ECTTableBindingsSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableBindingsSample" */;
+			buildConfigurationList = 226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTTableBindingsSample" */;
 			buildPhases = (
 				226FB43313E1EA7200BF258D /* Sources */,
 				226FB43413E1EA7200BF258D /* Frameworks */,
@@ -637,7 +637,7 @@
 			);
 			dependencies = (
 			);
-			name = ECTableBindingsSample;
+			name = ECTTableBindingsSample;
 			productName = ECLoggingSample;
 			productReference = 226FB43713E1EA7200BF258D /* ECTableBindingsSample.app */;
 			productType = "com.apple.product-type.application";
@@ -650,7 +650,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTableBindingsSample" */;
+			buildConfigurationList = 226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTTableBindingsSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -662,7 +662,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				226FB43613E1EA7200BF258D /* ECTableBindingsSample */,
+				226FB43613E1EA7200BF258D /* ECTTableBindingsSample */,
 			);
 		};
 /* End PBXProject section */
@@ -716,8 +716,8 @@
 				2245377C14EAA8AF00BDCC7B /* UIFont+ECCore.m in Sources */,
 				2245377D14EAA8AF00BDCC7B /* UIImage+ECCore.m in Sources */,
 				2245377E14EAA8AF00BDCC7B /* UIViewController+ECUtilities.m in Sources */,
-				224537A814EAA8AF00BDCC7B /* ECAppDelegate.m in Sources */,
-				224537AA14EAA8AF00BDCC7B /* ECModelController.m in Sources */,
+				224537A814EAA8AF00BDCC7B /* ECTAppDelegate.m in Sources */,
+				224537AA14EAA8AF00BDCC7B /* ECTModelController.m in Sources */,
 				224537AB14EAA8AF00BDCC7B /* ECTBinding.m in Sources */,
 				224537AC14EAA8AF00BDCC7B /* ECTButtonCell.m in Sources */,
 				224537AD14EAA8AF00BDCC7B /* ECTEditableCell.m in Sources */,
@@ -874,7 +874,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTableBindingsSample" */ = {
+		226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTTableBindingsSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				226FB45613E1EA7200BF258D /* Debug */,
@@ -883,7 +883,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTableBindingsSample" */ = {
+		226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTTableBindingsSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				226FB45913E1EA7200BF258D /* Debug */,

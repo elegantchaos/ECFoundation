@@ -6,9 +6,9 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECModelController.h"
+#import "ECTModelController.h"
 
-@interface ModelController : ECModelController
+@interface ModelController : ECTModelController
 
 @property (strong, nonatomic) NSMutableArray* objects;
 
