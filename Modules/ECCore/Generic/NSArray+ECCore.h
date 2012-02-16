@@ -18,5 +18,6 @@
 @interface NSMutableArray(ECCore)
 
 - (void)randomize;
+- (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to;
 
 @end

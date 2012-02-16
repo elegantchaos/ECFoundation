@@ -17,6 +17,8 @@
 #import "ECAssertion.h"
 #import "ECCoercion.h"
 
+#import "NSArray+ECCore.h"
+
 @interface ECTSection()
 
 @property (nonatomic, retain) id source;
@@ -434,11 +436,15 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    [(NSMutableArray*)self.content exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
-    NSMutableArray* array = [self mutableSource];
-
     self.sourceChangedInternally = YES;
-    [array exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+    
+    NSUInteger fromRow = fromIndexPath.row;
+    NSUInteger toRow = toIndexPath.row;
+    NSMutableArray* mc = (NSMutableArray*) self.content;
+    NSMutableArray* ms = [self mutableSource];
+    [mc moveObjectFromIndex:fromRow toIndex:toRow];
+    [ms moveObjectFromIndex:fromRow toIndex:toRow];
+    
     self.sourceChangedInternally = NO;
 }
 

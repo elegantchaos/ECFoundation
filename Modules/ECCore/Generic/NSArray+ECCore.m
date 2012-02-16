@@ -70,4 +70,17 @@
     }
 }
 
+// --------------------------------------------------------------------------
+//! Move an object.
+//! The to index should be the place that the object is to be
+//! inserted *once it has been removed*.
+// --------------------------------------------------------------------------
+
+- (void)moveObjectFromIndex:(NSUInteger)from toIndex:(NSUInteger)to
+{
+    id object = [self objectAtIndex:from];
+    [self removeObjectAtIndex:from];
+    [self insertObject:object atIndex:to];
+}
+
 @end
