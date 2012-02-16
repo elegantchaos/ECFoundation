@@ -14,6 +14,8 @@
 #import "UIApplication+ECCore.h"
 #import "NSBundle+ECCore.h"
 
+#import "ECLogging.h"
+
 #import <CoreData/CoreData.h>
 
 @interface ECTCoreDataModelController()
@@ -109,6 +111,28 @@
         result = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.managedObjectContext];
 		[result setValue:value forKey:key];
         [self.managedObjectContext save:&error];
+    }
+    
+    return result;
+}
+
+
+- (NSArray*)allEntitiesForName:(NSString*)entityName
+{
+    NSError* error = nil;
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    [request release];
+	
+    if (result)
+    {
+        ECDebug(ModelChannel, @"retrieved %d %@ entities", [result count], entityName);
+	}
+	else
+	{
+        ECDebug(ModelChannel, @" couldn't get %@ entities, error: @%", entityName, result);
     }
     
     return result;

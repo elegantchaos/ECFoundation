@@ -27,5 +27,6 @@
 - (void)save;
 
 - (id)findOrCreateEntityForName:(NSString*)entityName forKey:(NSString*)key value:(NSString*)value wasFound:(BOOL*)wasFound;
+- (NSArray*)allEntitiesForName:(NSString*)entityName;
 
 @end
