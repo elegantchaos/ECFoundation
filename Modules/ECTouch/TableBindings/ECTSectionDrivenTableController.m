@@ -42,6 +42,19 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 
 #pragma mark - Object Lifecycle
 
+- (id)initWithBinding:(ECTBinding*)binding
+{
+    BOOL grouped = ([[binding lookupDisclosureKey:ECTStyleKey] isEqualToString:@"grouped"]);
+    UITableViewStyle style = grouped ? UITableViewStyleGrouped : UITableViewStylePlain;
+    
+    if ((self = [self initWithStyle:style]) != nil)
+    {
+    }
+    
+    return self;
+}
+
+
 - (void)dealloc
 {
     [representedObject release];
