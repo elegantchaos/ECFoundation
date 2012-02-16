@@ -28,5 +28,12 @@
 			<string>ObjectViewController</string>
 		</dict>
 	</dict>
+	<key>add</key>
+	<dict>
+		<key>label</key>
+		<string>Add Object</string>
+		<key>action</key>
+		<string>tappedAdd:</string>
+	</dict>
 </dict>
 </plist>

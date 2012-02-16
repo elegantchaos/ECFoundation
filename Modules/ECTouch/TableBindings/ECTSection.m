@@ -23,8 +23,8 @@
 @property (nonatomic, retain) NSString* sourcePath;
 @property (nonatomic, retain) ECTBinding* addCell;
 @property (nonatomic, retain) NSDictionary* sectionProperties;
-@property (nonatomic, retain) NSDictionary* allRowProperties;
-@property (nonatomic, retain) NSArray* eachRowProperties;
+@property (nonatomic, retain) NSDictionary* everyRowProperties;
+@property (nonatomic, retain) NSArray* individualRowProperties;
 @property (nonatomic, assign) BOOL sourceChangedInternally;
 
 - (void)bindArray:(NSArray*)array;
@@ -59,8 +59,8 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize variableRowHeight;
 
 @synthesize sectionProperties;
-@synthesize allRowProperties;
-@synthesize eachRowProperties;
+@synthesize everyRowProperties;
+@synthesize individualRowProperties;
 
 #pragma mark - Constants
 
@@ -74,14 +74,21 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     NSDictionary* sectionProperties = [properties objectForKey:@"section"];
 
     section.sectionProperties = sectionProperties;
-    section.allRowProperties = [properties objectForKey:@"everyRow"];
-    section.eachRowProperties = [properties objectForKey:@"individualRows"];
+    section.everyRowProperties = [properties objectForKey:@"everyRow"];
+    section.individualRowProperties = [properties objectForKey:@"individualRows"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
     id content = [ECCoercion loadArray:[properties objectForKey:@"content"]];
     if (content)
     {
         [section bindArray:content];
+    }
+
+    NSDictionary* addRow = [properties objectForKey:@"add"];
+    if (addRow)
+    {
+        NSString* label = [addRow objectForKey:ECTLabelKey];
+        [section makeAddableWithObject:label properties:addRow];
     }
 
     return [section autorelease];
@@ -172,7 +179,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     self.source = object;
     self.sourcePath = path;
     NSArray* array = [object valueForKeyPath:path];
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
     [object addObserver:self forKeyPath:path options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -181,13 +188,13 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     [self cleanupObservers];
     self.source = array;
     self.sourcePath = nil;
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
 }
 
 - (void)sourceChanged
 {
     NSMutableArray* array = [self mutableSource];
-    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.allRowProperties]];
+    self.content = [NSMutableArray arrayWithArray:[ECTBinding controllersWithObjects:array properties:self.everyRowProperties]];
     [self reloadData];
 }
 
@@ -205,11 +212,11 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
         self.content = array;
     }
 
-    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.allRowProperties];
+    NSMutableDictionary* combined = [NSMutableDictionary dictionaryWithDictionary:self.everyRowProperties];
     [combined addEntriesFromDictionary:properties];
-    if (index < [self.eachRowProperties count])
+    if (index < [self.individualRowProperties count])
     {
-        [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
+        [combined addEntriesFromDictionary:[self.individualRowProperties objectAtIndex:index]];
     }
     
     ECTBinding* newBinding = [ECTBinding controllerWithObject:object properties:combined];
@@ -218,7 +225,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (void)bindObject:(id)object
 {
-    NSUInteger count = [self.eachRowProperties count];
+    NSUInteger count = [self.individualRowProperties count];
     for (NSUInteger index = 0; index < count; ++index)
     {
         [[self mutableSource] addObject:object];

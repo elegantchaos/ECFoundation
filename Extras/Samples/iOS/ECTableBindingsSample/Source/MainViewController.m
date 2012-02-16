@@ -53,7 +53,6 @@
     
     ModelController* model = [AppDelegate sharedInstance].model;
     ECTSection* section1 = [ECTSection sectionWithProperties:@"ArraySection" boundToArrayAtPath:@"objects" object:model];
-    [section1 makeAddableWithObject:@"Add Item" properties:nil];
     [self.table addSection:section1];
 
     [model addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];

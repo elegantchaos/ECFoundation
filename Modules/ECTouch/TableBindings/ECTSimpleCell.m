@@ -196,22 +196,12 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (SelectionMode)didSelect
 {
-    if (self.binding.target && self.binding.action)
+    if (self.binding.actionSelector)
     {
-        [self.binding.target performSelector:self.binding.actionSelector withObject:self.binding];
+        [[UIApplication sharedApplication] sendAction:self.binding.actionSelector to:self.binding.target from:self forEvent:nil];
     }
 
     return SelectIfSelectable;
-}
-
-- (BOOL)canDelete
-{
-    return self.canDelete;
-}
-
-- (BOOL)canMove
-{
-    return self.canMove;
 }
 
 + (CGFloat)heightForBinding:(ECTBinding*)binding
