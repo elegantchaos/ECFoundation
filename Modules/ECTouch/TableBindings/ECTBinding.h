@@ -27,6 +27,9 @@
 @property (nonatomic, assign) SEL actionSelector;
 @property (nonatomic, assign) NSString* action; // this is deliberately assign, since the actual selector is stored
 @property (nonatomic, assign) id target;
+@property (nonatomic, retain) id value;
+@property (nonatomic, retain, readonly) NSString* label;
+@property (nonatomic, retain, readonly) NSString* detail;
 
 + (NSArray*)controllersWithObjects:(NSArray*)objects properties:(NSDictionary*)properties;
 + (id)controllerWithObject:(id)object properties:(NSDictionary*)properties;
@@ -36,15 +39,11 @@
 
 - (id)initWithObject:(id)object;
 
-- (id)objectValue;
-- (void)setObjectValue:(id)value;
 - (id)lookupKey:(NSString*)keyIn;
 
 - (id)lookupDisclosureKey:(NSString*)key;
 
 - (Class)disclosureClassWithDetail:(BOOL)detail;
-- (NSString*)label;
-- (NSString*)detail;
 - (UIImage*)image;
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options;

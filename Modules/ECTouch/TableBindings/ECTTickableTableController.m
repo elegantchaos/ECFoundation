@@ -62,14 +62,14 @@ ECDefineDebugChannel(ECTTickableTableControllerChannel);
 
 - (BOOL)isSelectedForCell:(ECTTickCell*)cell binding:(ECTBinding*)binding
 {
-    id currentValue = self.representedObject.objectValue;
+    id currentValue = self.representedObject.value;
     return [currentValue isEqual:binding.object];
 }
 
 - (void)selectCell:(ECTTickCell*)cell binding:(ECTBinding*)binding
 {
     ECDebug(ECTTickableTableControllerChannel, @"cell selected %@ %@", binding, binding.object);
-    self.representedObject.objectValue = binding.object;
+    self.representedObject.value = binding.object;
     [cell.section reloadData];
     
     if (self.autoPop)

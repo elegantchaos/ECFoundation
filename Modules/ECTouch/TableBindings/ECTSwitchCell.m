@@ -80,7 +80,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 
 - (void)updateUIForEvent:(UpdateEvent)event
 {
-    NSNumber* value = (NSNumber*)[self.binding objectValue];
+    NSNumber* value = (NSNumber*) self.binding.value;
     self.switchControl.on = [value boolValue];
     self.switchControl.enabled = self.binding.enabled;
     
@@ -93,7 +93,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 {
     ECDebug(ECTSwitchSectionCellChannel, @"switch %@ to %d", self.switchControl, switchControl.on); 
     
-    [self.binding setObjectValue:[NSNumber numberWithBool:switchControl.on]];
+    self.binding.value = [NSNumber numberWithBool:switchControl.on];
 }
 
 @end

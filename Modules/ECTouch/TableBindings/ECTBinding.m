@@ -174,7 +174,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     NSString* result = [self lookupKey:ECTLabelKey];
     if (!result)
     {
-        result = [[self objectValue] description];
+        result = [self.value description];
     }
     
     return result;
@@ -189,7 +189,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     // fall back to using the object value, as long as it's not already used for the label
     if (!result && self.label)
     {
-        result = [[self objectValue] description];
+        result = [self.value description];
     }
     
     return result;
@@ -204,7 +204,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (id)objectValue
+- (id)value
 {
     id result = [self lookupKey:ECTValueKey];
     if (!result)
@@ -215,7 +215,7 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (void)setObjectValue:(id)value
+- (void)setValue:(id)value
 {
     NSString* key = [self.mappings objectForKey:ECTValueKey];
     [self.object setValue:value forKeyPath:key];
