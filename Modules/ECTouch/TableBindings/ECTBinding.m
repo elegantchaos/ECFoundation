@@ -221,13 +221,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     [self.object setValue:value forKeyPath:key];
 }
 
-- (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell
-{
-    ECDebug(ECTValueCellControllerChannel, @"value changed from %@ to %@", [self objectValue], value);
-    
-    [self setObjectValue:value];
-}
-
 - (NSString*)action
 {
     return NSStringFromSelector(self.actionSelector);

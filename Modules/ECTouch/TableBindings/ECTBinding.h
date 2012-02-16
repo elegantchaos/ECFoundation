@@ -46,7 +46,6 @@
 - (NSString*)label;
 - (NSString*)detail;
 - (UIImage*)image;
-- (void)didSetValue:(id)value forCell:(UITableViewCell<ECTSectionDrivenTableCell>*)cell;
 
 - (void)addValueObserver:(id)observer options:(NSKeyValueObservingOptions)options;
 - (void)removeValueObserver:(id)observer;

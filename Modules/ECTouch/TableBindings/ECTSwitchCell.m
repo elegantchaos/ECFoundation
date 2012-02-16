@@ -93,7 +93,7 @@ ECDefineDebugChannel(ECTSwitchSectionCellChannel);
 {
     ECDebug(ECTSwitchSectionCellChannel, @"switch %@ to %d", self.switchControl, switchControl.on); 
     
-    [self.binding didSetValue:[NSNumber numberWithBool:switchControl.on] forCell:self];
+    [self.binding setObjectValue:[NSNumber numberWithBool:switchControl.on]];
 }
 
 @end

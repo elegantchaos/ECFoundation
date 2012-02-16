@@ -181,7 +181,7 @@ ECDefineLogChannel(ItemCellChannel);
 {
 	ECDebug(ItemCellChannel, @"text end editing");
     
-    [self.binding didSetValue:textField.text forCell:self];
+    [self.binding setObjectValue:textField.text];
     [self removeGesture];
 }
 
