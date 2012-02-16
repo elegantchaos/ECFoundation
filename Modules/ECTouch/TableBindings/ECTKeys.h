@@ -20,6 +20,7 @@ extern NSString *const ECTEnabledKey;
 extern NSString *const ECTImageKey;
 extern NSString *const ECTLabelKey;
 extern NSString *const ECTPlaceholderKey;
+extern NSString* const ECTSectionsKey;
 extern NSString* const ECTStyleKey;
 extern NSString *const ECTTargetKey;
 extern NSString* const ECTValueKey;

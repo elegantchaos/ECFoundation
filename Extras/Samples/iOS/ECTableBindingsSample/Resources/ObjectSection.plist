@@ -73,11 +73,9 @@
 				<string>grouped</string>
 				<key>title</key>
 				<string>Test Title</string>
-			</dict>
-			<key>sections</key>
-			<array>
+				<key>sections</key>
 				<string>OptionsSection</string>
-			</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

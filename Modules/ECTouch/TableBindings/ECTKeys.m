@@ -22,6 +22,7 @@ NSString *const ECTEnabledKey = @"enabled";
 NSString *const ECTImageKey = @"image";
 NSString *const ECTLabelKey = @"label";
 NSString *const ECTPlaceholderKey = @"placeholder";
+NSString* const ECTSectionsKey = @"sections";
 NSString* const ECTStyleKey = @"style";
 NSString *const ECTTargetKey = @"target";
 NSString *const ECTValueKey = @"value";

@@ -10,6 +10,7 @@
 #import "ECTSectionDrivenTableController.h"
 
 #import "ECAssertion.h"
+#import "ECCoercion.h"
 #import "ECLogging.h"
 
 #import "ECTBinding.h"
@@ -138,7 +139,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
         
         if (isSectionDriven)
         {
-            NSArray* sectionsData = [binding valueForKey:@"sections"]; // TODO add to constants
+            NSArray* sectionsData = [ECCoercion asArray:[binding lookupDisclosureKey:ECTSectionsKey]];
             if (sectionsData)
             {
                 for (id sectionData in sectionsData)
