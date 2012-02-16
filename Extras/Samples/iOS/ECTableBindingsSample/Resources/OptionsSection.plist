@@ -5,9 +5,9 @@
 	<key>section</key>
 	<dict>
 		<key>header</key>
-		<string>Options Binding</string>
+		<string>Some Options</string>
 		<key>footer</key>
-		<string>This section is bound to an array of options defined in the xml</string>
+		<string>This section is bound to an array of options defined in the file OptionsSection.plist</string>
 	</dict>
 	<key>rows</key>
 	<dict>

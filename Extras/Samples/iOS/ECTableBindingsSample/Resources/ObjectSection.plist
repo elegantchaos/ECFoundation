@@ -72,11 +72,13 @@
 				<key>style</key>
 				<string>grouped</string>
 				<key>title</key>
-				<string>Test Title</string>
+				<string>Choose An Option</string>
 				<key>sections</key>
 				<string>OptionsSection</string>
 				<key>autoPop</key>
 				<true/>
+				<key>back</key>
+				<string>Cancel</string>
 			</dict>
 		</dict>
 	</array>

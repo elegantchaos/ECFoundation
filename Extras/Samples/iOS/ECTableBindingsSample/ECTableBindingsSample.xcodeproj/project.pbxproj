@@ -394,30 +394,46 @@
 				22A72ECF14EABAA200CFF8B9 /* README.md */,
 				2245372114EAA8AE00BDCC7B /* ECTBinding.h */,
 				2245372214EAA8AE00BDCC7B /* ECTBinding.m */,
-				2245372314EAA8AE00BDCC7B /* ECTButtonCell.h */,
-				2245372414EAA8AE00BDCC7B /* ECTButtonCell.m */,
-				2245372514EAA8AE00BDCC7B /* ECTEditableCell.h */,
-				2245372614EAA8AE00BDCC7B /* ECTEditableCell.m */,
 				226109B514ED192500ABAF67 /* ECTKeys.h */,
 				226109B614ED192600ABAF67 /* ECTKeys.m */,
 				2245372714EAA8AE00BDCC7B /* ECTSection.h */,
 				2245372814EAA8AE00BDCC7B /* ECTSection.m */,
-				2245372914EAA8AE00BDCC7B /* ECTSectionDrivenTableController.h */,
-				2245372A14EAA8AE00BDCC7B /* ECTSectionDrivenTableController.m */,
+				226109BC14ED22C600ABAF67 /* Cells */,
+				226109BD14ED22E100ABAF67 /* ViewControllers */,
+			);
+			path = TableBindings;
+			sourceTree = "<group>";
+		};
+		226109BC14ED22C600ABAF67 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2245372314EAA8AE00BDCC7B /* ECTButtonCell.h */,
+				2245372414EAA8AE00BDCC7B /* ECTButtonCell.m */,
+				2245372514EAA8AE00BDCC7B /* ECTEditableCell.h */,
+				2245372614EAA8AE00BDCC7B /* ECTEditableCell.m */,
 				2245372B14EAA8AE00BDCC7B /* ECTSimpleCell.h */,
 				2245372C14EAA8AE00BDCC7B /* ECTSimpleCell.m */,
-				22E50CF614EB0C7D006F9F86 /* ECTSingleTableViewController.h */,
-				22E50CF714EB0C7D006F9F86 /* ECTSingleTableViewController.m */,
 				2245372D14EAA8AE00BDCC7B /* ECTSubtitleCell.h */,
 				2245372E14EAA8AE00BDCC7B /* ECTSubtitleCell.m */,
 				2245372F14EAA8AE00BDCC7B /* ECTSwitchCell.h */,
 				2245373014EAA8AE00BDCC7B /* ECTSwitchCell.m */,
-				2245373114EAA8AE00BDCC7B /* ECTTickableTableController.h */,
-				2245373214EAA8AE00BDCC7B /* ECTTickableTableController.m */,
 				2245373314EAA8AE00BDCC7B /* ECTTickCell.h */,
 				2245373414EAA8AE00BDCC7B /* ECTTickCell.m */,
 			);
-			path = TableBindings;
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		226109BD14ED22E100ABAF67 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2245372914EAA8AE00BDCC7B /* ECTSectionDrivenTableController.h */,
+				2245372A14EAA8AE00BDCC7B /* ECTSectionDrivenTableController.m */,
+				22E50CF614EB0C7D006F9F86 /* ECTSingleTableViewController.h */,
+				22E50CF714EB0C7D006F9F86 /* ECTSingleTableViewController.m */,
+				2245373114EAA8AE00BDCC7B /* ECTTickableTableController.h */,
+				2245373214EAA8AE00BDCC7B /* ECTTickableTableController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		2266D4AF14EAA9720033B236 /* ECLogging */ = {
