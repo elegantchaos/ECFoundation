@@ -148,7 +148,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 {
     if (self.sourcePath)
     {
-        [self.source removeObjectForKey:self.sourcePath];
+        [self.source removeObserver:self forKeyPath:self.sourcePath];
     }
 }
 
