@@ -7,15 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTabbedTableViewController.h"
+#import "ECTTabbedTableViewController.h"
 
-@interface ECTabbedTableViewController ()
+@interface ECTTabbedTableViewController ()
 
 - (void)showContentForTabWithIndex:(NSUInteger)index;
 
 @end
 
-@implementation ECTabbedTableViewController
+@implementation ECTTabbedTableViewController
 
 @synthesize controllers;
 @synthesize table;

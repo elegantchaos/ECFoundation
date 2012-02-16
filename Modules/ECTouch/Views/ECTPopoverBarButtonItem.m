@@ -7,11 +7,11 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECPopoverBarButtonItem.h"
-#import "ECPopoverContentController.h"
-#import "ECPopoverController.h"
+#import "ECTPopoverBarButtonItem.h"
+#import "ECTPopoverContentController.h"
+#import "ECTPopoverController.h"
 
-@interface ECPopoverBarButtonItem()
+@interface ECTPopoverBarButtonItem()
 
 @property (strong, nonatomic) NSString* content;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ECPopoverBarButtonItem
+@implementation ECTPopoverBarButtonItem
 
 @synthesize content;
 
@@ -42,7 +42,7 @@
 
 - (IBAction)togglePopover:(id)sender
 {
-    ECPopoverController* pc = [ECPopoverController sharedInstance];
+    ECTPopoverController* pc = [ECTPopoverController sharedInstance];
     if ([pc isShowingPopover])
     {
         [pc dismissPopover];

@@ -7,18 +7,18 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECScrollingStyledLabel.h"
+#import "ECTScrollingStyledLabel.h"
 
-#import "ECScrollView.h"
-#import "ECStyledLabel.h"
+#import "ECTScrollView.h"
+#import "ECTStyledLabel.h"
 
-@interface ECScrollingStyledLabel()
+@interface ECTScrollingStyledLabel()
 
 - (void)makeSubviews;
 
 @end
 
-@implementation ECScrollingStyledLabel
+@implementation ECTScrollingStyledLabel
 
 #pragma mark - Properties
 
@@ -61,11 +61,11 @@
 
 - (void)makeSubviews
 {
-    ECScrollView* sv = [[ECScrollView alloc] initWithFrame:self.frame];
+    ECTScrollView* sv = [[ECTScrollView alloc] initWithFrame:self.frame];
     self.scroller = sv;
     [sv release];
     
-    ECStyledLabel* sl = [[ECStyledLabel alloc] initWithFrame:self.frame];
+    ECTStyledLabel* sl = [[ECTStyledLabel alloc] initWithFrame:self.frame];
     self.label = sl;
 	sl.scroller = sv;
     [sl release];

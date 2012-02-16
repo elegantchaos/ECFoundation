@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ECSingleton.h"
 
-@interface ECPopoverController : NSObject<UIPopoverControllerDelegate>
+@interface ECTPopoverController : NSObject<UIPopoverControllerDelegate>
 
-EC_SINGLETON(ECPopoverController);
+EC_SINGLETON(ECTPopoverController);
 
 - (BOOL)isShowingPopover;
 - (void)dismissPopover;

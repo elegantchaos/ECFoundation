@@ -7,15 +7,15 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECDocumentStyles;
-@class CATextLayer;
+@class ECTStyledLabel;
+@class ECTScrollView;
 
-@interface ECStyledLabel : UILabel
+@interface ECTScrollingStyledLabel : UIView
 
-@property (nonatomic, copy) NSAttributedString* attributedText;
-@property (nonatomic, retain) IBOutlet UIScrollView* scroller;
-@property (nonatomic, retain) CATextLayer* textLayer;
+@property (nonatomic, retain) ECTStyledLabel* label;
+@property (nonatomic, retain) ECTScrollView* scroller;
 
-- (ECDocumentStyles*)defaultStyles;
+- (NSAttributedString*)attributedText;
+- (void)setAttributedText:(NSAttributedString*)text;
 
 @end

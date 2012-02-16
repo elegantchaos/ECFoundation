@@ -7,17 +7,17 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECScrollView.h"
+#import "ECTScrollView.h"
 #import "ECLogging.h"
 
 #pragma mark - Constants
 
 
-@implementation ECScrollView
+@implementation ECTScrollView
 
 #pragma mark - Channels
 
-ECDefineDebugChannel(ECScrollViewChannel);
+ECDefineDebugChannel(ECTScrollViewChannel);
 
 #pragma mark - Properties
 

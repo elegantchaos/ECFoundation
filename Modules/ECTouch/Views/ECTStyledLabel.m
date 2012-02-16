@@ -7,7 +7,7 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECStyledLabel.h"
+#import "ECTStyledLabel.h"
 
 #import "NSMutableAttributedString+ECCore.h"
 
@@ -18,7 +18,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 
-@interface ECStyledLabel()
+@interface ECTStyledLabel()
 
 
 
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation ECStyledLabel
+@implementation ECTStyledLabel
 
 #pragma mark - Properties
 

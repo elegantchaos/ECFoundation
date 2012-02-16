@@ -7,20 +7,20 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECTappableStyledLabel.h"
+#import "ECTTappableStyledLabel.h"
 #import "ECLogging.h"
 #import "ECDocumentParser.h"
 
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ECTappableStyledLabel()
+@interface ECTTappableStyledLabel()
 
 - (void)setup;
 
 @end
 
-@implementation ECTappableStyledLabel
+@implementation ECTTappableStyledLabel
 
 #pragma mark - Properties
 

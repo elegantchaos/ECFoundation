@@ -1,22 +1,22 @@
 //
-//  ECStyledLabelSampleAppDelegate.m
+//  AppDelegate.m
 //  ECStyledLabelSample
 //
 //  Created by Sam Deane on 28/07/2011.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ECStyledLabelSampleAppDelegate.h"
-#import "ECStyledLabelSampleViewController.h"
+#import "AppDelegate.h"
+#import "MainViewController.h"
 
 #import "ECLogging.h"
 
-@interface ECStyledLabelSampleAppDelegate()
+@interface AppDelegate()
 
 
 @end
 
-@implementation ECStyledLabelSampleAppDelegate
+@implementation AppDelegate
 
 #pragma mark - Properties
 
@@ -35,7 +35,7 @@
 
 - (UIViewController*)newRootViewController
 {
-    ECStyledLabelSampleViewController* view = [[ECStyledLabelSampleViewController alloc] initWithNibName:@"ECStyledLabelSampleViewController" bundle:nil];
+    MainViewController* view = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:view];
     [view release];
     

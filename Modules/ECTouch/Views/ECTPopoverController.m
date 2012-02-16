@@ -7,11 +7,11 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECPopoverController.h"
-#import "ECPopoverContentController.h"
+#import "ECTPopoverController.h"
+#import "ECTPopoverContentController.h"
 
 
-@interface ECPopoverController()
+@interface ECTPopoverController()
 
 @property (strong, nonatomic) UIPopoverController* showing;
 
@@ -19,11 +19,11 @@
 
 @end
 
-@implementation ECPopoverController
+@implementation ECTPopoverController
 
 @synthesize showing;
 
-EC_SYNTHESIZE_SINGLETON(ECPopoverController);
+EC_SYNTHESIZE_SINGLETON(ECTPopoverController);
 
 - (void)dealloc
 {
@@ -65,9 +65,9 @@ EC_SYNTHESIZE_SINGLETON(ECPopoverController);
     result = [[UIPopoverController alloc] initWithContentViewController:contentController];
     result.delegate = self;
     
-    if ([contentController conformsToProtocol:@protocol(ECPopoverContentController)])
+    if ([contentController conformsToProtocol:@protocol(ECTPopoverContentController)])
     {
-        UIViewController<ECPopoverContentController>* coerced = (UIViewController<ECPopoverContentController>*) contentController;
+        UIViewController<ECTPopoverContentController>* coerced = (UIViewController<ECTPopoverContentController>*) contentController;
         coerced.popover = result;
         if ([coerced respondsToSelector:@selector(setupWithContent:)])
         {

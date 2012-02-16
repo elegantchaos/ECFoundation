@@ -11,7 +11,7 @@
 //! UIScrollView with some extra properties
 // --------------------------------------------------------------------------
 
-@interface ECScrollView : UIScrollView
+@interface ECTScrollView : UIScrollView
 
 @property (nonatomic, assign) BOOL swallowTouches;
 @property (nonatomic, assign) SEL action;

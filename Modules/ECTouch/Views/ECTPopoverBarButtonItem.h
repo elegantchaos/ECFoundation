@@ -9,6 +9,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ECTransparentToolbar : UIToolbar
+
+@interface ECTPopoverBarButtonItem : UIBarButtonItem
+
+- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style content:(NSString*)contentIn;
 
 @end

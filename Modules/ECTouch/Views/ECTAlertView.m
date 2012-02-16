@@ -7,18 +7,18 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECAlertView.h"
+#import "ECTAlertView.h"
 
 static NSMutableSet* gAlertsInFlight;
 
-@interface ECAlertView()
+@interface ECTAlertView()
 
 @property (strong, nonatomic) UIAlertView* alert;
 @property (strong, nonatomic) AlertHandler handler;
 
 @end
 
-@implementation ECAlertView
+@implementation ECTAlertView
 
 @synthesize alert;
 @synthesize handler;

@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ECPopoverContentController
+@protocol ECTPopoverContentController
 
 @property (strong, nonatomic) UIPopoverController* popover;
 
@@ -19,13 +19,13 @@
 
 @end
 
-@interface ECPopoverContentControllerBase : UIViewController<ECPopoverContentController>
+@interface ECTPopoverContentControllerBase : UIViewController<ECTPopoverContentController>
 
 @property (strong, nonatomic) UIPopoverController* popover;
 
 @end
 
-@interface ECPopoverContentControllerTable : UITableViewController<ECPopoverContentController>
+@interface ECTPopoverContentControllerTable : UITableViewController<ECTPopoverContentController>
 
 @property (strong, nonatomic) UIPopoverController* popover;
 

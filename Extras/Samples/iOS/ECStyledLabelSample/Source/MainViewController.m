@@ -1,26 +1,27 @@
 //
-//  ECStyledLabelSampleViewController.m
+//  MainViewController.m
 //  ECStyledLabelSample
 //
 //  Created by Sam Deane on 28/07/2011.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ECStyledLabelSampleViewController.h"
+#import "MainViewController.h"
 
 #import "ECDebugViewController.h"
 #import "ECDebugViewPopoverController.h"
 #import "ECMarkdownParser.h"
-#import "ECPopoverBarButtonItem.h"
-#import "ECStyledLabel.h"
 
-@interface ECStyledLabelSampleViewController()
+#import "ECTPopoverBarButtonItem.h"
+#import "ECTStyledLabel.h"
+
+@interface MainViewController()
 
 - (void)updateStyledText;
 
 @end
 
-@implementation ECStyledLabelSampleViewController
+@implementation MainViewController
 
 #pragma mark - Properties
 
@@ -50,7 +51,7 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem* debugButton = [[ECPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
+    UIBarButtonItem* debugButton = [[ECTPopoverBarButtonItem alloc] initWithTitle:@"Debug" style:UIBarButtonItemStylePlain content:@"ECDebugViewPopoverController"];
     self.navigationItem.rightBarButtonItem = debugButton;
     [debugButton release];
     
@@ -94,7 +95,7 @@
 
 #pragma mark - ECTappableStyledLabelDelegate
 
-- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString *)link position:(CGPoint)position
+- (void)styledLabel:(ECTTappableStyledLabel *)styledLabel didTapLink:(NSString *)link position:(CGPoint)position
 {
     NSLog(@"link was %@, at %@", link, NSStringFromCGPoint(position));
 }

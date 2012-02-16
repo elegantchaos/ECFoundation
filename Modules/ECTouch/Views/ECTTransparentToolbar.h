@@ -7,30 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECPopoverContentController.h"
+#import <UIKit/UIKit.h>
 
-@implementation ECPopoverContentControllerBase
-
-@synthesize popover;
-
-- (void)dealloc
-{
-    [popover release];
-    
-    [super dealloc];
-}
-
-@end
-
-@implementation ECPopoverContentControllerTable
-
-@synthesize popover;
-
-- (void)dealloc
-{
-    [popover release];
-    
-    [super dealloc];
-}
+@interface ECTTransparentToolbar : UIToolbar
 
 @end

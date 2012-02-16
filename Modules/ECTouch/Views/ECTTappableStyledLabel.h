@@ -7,22 +7,22 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECStyledLabel.h"
+#import "ECTStyledLabel.h"
 
 
-@class ECTappableStyledLabel;
+@class ECTTappableStyledLabel;
 
-@protocol ECTappableStyledLabelDelegate
+@protocol ECTTappableStyledLabelDelegate
 
 @optional
 
-- (void)styledLabel:(ECTappableStyledLabel*)styledLabel didTapIndex:(NSUInteger)index attributes:(NSDictionary*)attributes position:(CGPoint)position;
-- (void)styledLabel:(ECTappableStyledLabel *)styledLabel didTapLink:(NSString*)link position:(CGPoint)position;
+- (void)styledLabel:(ECTTappableStyledLabel*)styledLabel didTapIndex:(NSUInteger)index attributes:(NSDictionary*)attributes position:(CGPoint)position;
+- (void)styledLabel:(ECTTappableStyledLabel *)styledLabel didTapLink:(NSString*)link position:(CGPoint)position;
 
 @end
 
 
-@interface ECTappableStyledLabel : ECStyledLabel
+@interface ECTTappableStyledLabel : ECTStyledLabel
 
 @property (assign, nonatomic) IBOutlet id delegate;
 

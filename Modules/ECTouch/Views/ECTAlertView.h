@@ -7,14 +7,13 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ECTabbedTableViewController : UIViewController<UITabBarDelegate>
+typedef void (^AlertHandler)(NSUInteger);
 
-@property (strong, nonatomic) IBOutlet UITableView* table;
-@property (strong, nonatomic) IBOutlet UITabBar* tabs;
-@property (strong, nonatomic) NSArray* controllers;
+@interface ECTAlertView : NSObject<UIAlertViewDelegate>
 
-- (void)selectTabWithIndex:(NSUInteger)index;
+- (id)initWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)showWithHandler:(AlertHandler)handler;
 
 @end
