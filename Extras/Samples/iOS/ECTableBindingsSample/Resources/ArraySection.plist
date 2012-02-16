@@ -19,6 +19,8 @@
 			<string>name</string>
 			<key>detail</key>
 			<string>label</string>
+			<key>image</key>
+			<string>image</string>
 		</dict>
 		<key>canMove</key>
 		<true/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22072EE514EC30EE00290793 /* OptionsSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22072EE414EC30EE00290793 /* OptionsSection.plist */; };
+		2214C6DB14ED6913007C994A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2214C6DA14ED6913007C994A /* Logo.png */; };
 		223C373814EAB63C00C11C76 /* ECAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372514EAB63C00C11C76 /* ECAlertView.m */; };
 		223C373914EAB63C00C11C76 /* ECPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372714EAB63C00C11C76 /* ECPopoverBarButtonItem.m */; };
 		223C373A14EAB63C00C11C76 /* ECPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C372914EAB63C00C11C76 /* ECPopoverContentController.m */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		22072EE414EC30EE00290793 /* OptionsSection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OptionsSection.plist; path = Resources/OptionsSection.plist; sourceTree = SOURCE_ROOT; };
+		2214C6DA14ED6913007C994A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Resources/Logo.png; sourceTree = SOURCE_ROOT; };
 		223C372414EAB63C00C11C76 /* ECAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAlertView.h; sourceTree = "<group>"; };
 		223C372514EAB63C00C11C76 /* ECAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAlertView.m; sourceTree = "<group>"; };
 		223C372614EAB63C00C11C76 /* ECPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPopoverBarButtonItem.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				22072EE414EC30EE00290793 /* OptionsSection.plist */,
 				226109C014ED2A1900ABAF67 /* TickableOptionsSection.plist */,
 				226109BF14ED2A1900ABAF67 /* Options.plist */,
+				2214C6DA14ED6913007C994A /* Logo.png */,
 				226FB46213E1EB0B00BF258D /* MainViewController.xib */,
 				22E50CFE14EB124F006F9F86 /* ObjectViewController.xib */,
 				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
@@ -678,6 +681,7 @@
 				22072EE514EC30EE00290793 /* OptionsSection.plist in Resources */,
 				226109C114ED2A1900ABAF67 /* Options.plist in Resources */,
 				226109C214ED2A1900ABAF67 /* TickableOptionsSection.plist in Resources */,
+				2214C6DB14ED6913007C994A /* Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

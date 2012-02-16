@@ -11,12 +11,14 @@
 @implementation ModelObject
 
 @synthesize enabled;
+@synthesize image;
 @synthesize label;
 @synthesize name;
 @synthesize option;
 
 - (void)dealloc
 {
+    [image dealloc];
     [label release];
     [name release];
     [option release];

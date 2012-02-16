@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString* label;
 @property (strong, nonatomic) NSString* option;
 @property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) UIImage* image;
 
 @end
