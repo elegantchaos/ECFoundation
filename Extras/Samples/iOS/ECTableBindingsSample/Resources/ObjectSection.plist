@@ -9,7 +9,7 @@
 		<key>footer</key>
 		<string>This section is bound to an individual model object</string>
 	</dict>
-	<key>rows</key>
+	<key>everyRow</key>
 	<dict>
 		<key>font</key>
 		<dict>

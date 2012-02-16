@@ -17,5 +17,6 @@
 - (IBAction)tappedDelete:(id)sender;
 - (IBAction)tappedAdd:(id)sender;
 - (IBAction)tappedRandomise:(id)sender;
+- (IBAction)tappedReplace:(id)sender;
 
 @end

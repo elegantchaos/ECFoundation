@@ -84,7 +84,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     NSDictionary* sectionProperties = [properties objectForKey:@"section"];
 
     section.sectionProperties = sectionProperties;
-    section.allRowProperties = [properties objectForKey:@"rows"];
+    section.allRowProperties = [properties objectForKey:@"everyRow"];
     section.eachRowProperties = [properties objectForKey:@"eachRow"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
@@ -504,6 +504,13 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
                 break;
             }
 
+            case NSKeyValueChangeSetting:
+            case NSKeyValueChangeReplacement:
+            {
+                [self sourceChanged];
+                break;
+            }
+                
             default:
                 ECDebug(ECTSectionControllerChannel, @"unhandled change kind %d for change %@", kind, change);
         }

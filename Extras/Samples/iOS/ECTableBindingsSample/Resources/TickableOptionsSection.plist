@@ -11,7 +11,7 @@
 		<key>canSelect</key>
 		<true/>
 	</dict>
-	<key>rows</key>
+	<key>everyRow</key>
 	<dict>
 		<key>cellClass</key>
 		<string>ECTTickCell</string>

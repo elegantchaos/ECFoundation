@@ -16,6 +16,8 @@
 #import "ECTSection.h"
 #import "ECTSectionDrivenTableController.h"
 
+#import "NSArray+ECCore.h"
+
 @interface MainViewController()
 
 - (void)updateUI;
@@ -51,6 +53,7 @@
     
     ModelController* model = [AppDelegate sharedInstance].model;
     ECTSection* section1 = [ECTSection sectionWithProperties:@"ArraySection" boundToArrayAtPath:@"objects" object:model];
+    [section1 makeAddableWithObject:@"Add Item" properties:nil];
     [self.table addSection:section1];
 
     [model addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
@@ -114,9 +117,26 @@
 
 - (IBAction)tappedRandomise:(id)sender
 {
-    //    ModelController* model = [AppDelegate sharedInstance].model;
-    //    NSMutableArray* array = [model mutableArrayValueForKey:@"objects"];
+    ModelController* model = [AppDelegate sharedInstance].model; 
+    NSMutableArray* array = [model mutableArrayValueForKey:@"objects"];
+    [array randomize];
 }
 
+- (IBAction)tappedReplace:(id)sender
+{
+    ModelController* model = [AppDelegate sharedInstance].model;
+    NSMutableArray* objs = [NSMutableArray array];
+    for (NSUInteger n = 0; n < 6; ++n)
+    {
+        ModelObject* object = [[ModelObject alloc] init];
+        object.name = [NSString stringWithFormat:@"Replacement Object %d", n];
+        object.label = [[NSDate date] description];
+        object.option = @"Item 2";
+        [objs addObject:object];
+        [object release];
+    }
+    
+    model.objects = objs;
+}
 
 @end
