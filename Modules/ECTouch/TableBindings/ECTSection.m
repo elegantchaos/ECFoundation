@@ -85,7 +85,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
     section.sectionProperties = sectionProperties;
     section.allRowProperties = [properties objectForKey:@"everyRow"];
-    section.eachRowProperties = [properties objectForKey:@"eachRow"];
+    section.eachRowProperties = [properties objectForKey:@"individualRows"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
     id bindings = [properties objectForKey:@"bindings"];

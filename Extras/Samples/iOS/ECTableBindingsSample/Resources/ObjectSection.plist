@@ -29,7 +29,7 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>eachRow</key>
+	<key>individualRows</key>
 	<array>
 		<dict>
 			<key>mappings</key>

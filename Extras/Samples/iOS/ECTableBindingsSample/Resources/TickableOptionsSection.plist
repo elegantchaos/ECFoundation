@@ -16,7 +16,7 @@
 		<key>cellClass</key>
 		<string>ECTTickCell</string>
 	</dict>
-	<key>eachRow</key>
+	<key>individualRows</key>
 	<array/>
 	<key>bindings</key>
 	<string>Options</string>
