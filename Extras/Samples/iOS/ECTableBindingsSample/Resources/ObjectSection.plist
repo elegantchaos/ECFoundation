@@ -65,10 +65,13 @@
 			</dict>
 			<key>label</key>
 			<string>Option</string>
-			<key>disclosureClass</key>
-			<string>ECTTickableTableController</string>
-			<key>style</key>
-			<string>grouped</string>
+			<key>disclosure</key>
+			<dict>
+				<key>class</key>
+				<string>ECTTickableTableController</string>
+				<key>style</key>
+				<string>grouped</string>
+			</dict>
 			<key>sections</key>
 			<array>
 				<string>OptionsSection</string>

@@ -22,8 +22,11 @@
 		</dict>
 		<key>canMove</key>
 		<true/>
-		<key>disclosureClass</key>
-		<string>ObjectViewController</string>
+		<key>disclosure</key>
+		<dict>
+			<key>class</key>
+			<string>ObjectViewController</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
