@@ -11,6 +11,7 @@
 #import "ECTSimpleCell.h"
 #import "ECTSectionDrivenTableController.h"
 #import "ECTBinding.h"
+#import "ECTKeys.h"
 #import "ECLogging.h"
 #import "ECAssertion.h"
 
@@ -59,21 +60,6 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 @synthesize eachRowProperties;
 
 #pragma mark - Constants
-
-NSString *const ECTActionKey = @"actionName";
-NSString *const ECTCanDeleteKey = @"canDelete";
-NSString *const ECTCanMoveKey = @"canMove";
-NSString *const ECTCellClassKey = @"cellClass";
-NSString *const ECTDetailKey = @"detail";
-NSString *const ECTDisclosureBackKey = @"disclosureBackTitle";
-NSString *const ECTDisclosureClassKey = @"disclosureClass";
-NSString *const ECTDisclosureTitleKey = @"disclosureTitle";
-NSString *const ECTEnabledKey = @"enabled";
-NSString *const ECTImageKey = @"image";
-NSString *const ECTLabelKey = @"label";
-NSString *const ECTPlaceholderKey = @"placeholder";
-NSString *const ECTTargetKey = @"target";
-NSString *const ECTValueKey = @"value";
 
 #pragma mark - Factory Methods
 
@@ -363,33 +349,33 @@ NSString *const ECTValueKey = @"value";
     return result;
 }
 
+- (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail
+{
+    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
+    Class class = [self disclosureClassForBinding:binding detail:detail];
+    
+    UIViewController* view = [class alloc];
+    NSString* nib = NSStringFromClass([self class]);
+    if ([[NSBundle mainBundle] pathForResource:nib ofType:@"nib"])
+    {
+        view = [view initWithNibName:nib bundle:nil];
+    }
+    else
+    {
+        view = [view initWithBinding:binding];
+    }
+    
+    ECDebug(ECTSectionControllerChannel, @"made disclosure view of class %@ for path %@", nib, indexPath);
+    
+    return [view autorelease];
+}
+
 - (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
 {
     id class = [binding disclosureClassWithDetail:detail];
     Class result = [ECTBinding normalisedClass:class];
     
     return result;
-}
-
-- (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail
-{
-    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-    Class class = [self disclosureClassForBinding:binding detail:detail];
-    
-    NSString* nib = NSStringFromClass(class);
-    UIViewController* view;
-    if ([[NSBundle mainBundle] pathForResource:nib ofType:@"nib"])
-    {
-        view = [[class alloc] initWithNibName:nib bundle:nil];
-    }
-    else
-    {
-        view = [[class alloc] initWithNibName:nil bundle:nil];
-    }
-    
-    ECDebug(ECTSectionControllerChannel, @"made disclosure view of class %@ for path %@", nib, indexPath);
-    
-    return [view autorelease];
 }
 
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -512,5 +498,15 @@ NSString *const ECTValueKey = @"value";
     }
 }
 
+@end
+
+@implementation UIViewController(ECTTables)
+
+- (id)initWithBinding:(ECTBinding*)binding
+{
+    self = [self initWithNibName:nil bundle:nil];
+    
+    return self;
+}
 
 @end

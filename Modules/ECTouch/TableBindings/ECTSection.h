@@ -20,22 +20,6 @@ typedef enum
     SelectIfSelectable
 } SelectionMode;
 
-
-extern NSString *const ECTActionKey;
-extern NSString *const ECTCanMoveKey;
-extern NSString *const ECTCanDeleteKey;
-extern NSString *const ECTCellClassKey;
-extern NSString *const ECTDetailKey;
-extern NSString *const ECTDisclosureBackKey;
-extern NSString *const ECTDisclosureClassKey;
-extern NSString *const ECTDisclosureTitleKey;
-extern NSString *const ECTEnabledKey;
-extern NSString *const ECTImageKey;
-extern NSString *const ECTLabelKey;
-extern NSString *const ECTPlaceholderKey;
-extern NSString *const ECTTargetKey;
-extern NSString* const ECTValueKey;
-
 // --------------------------------------------------------------------------
 //! Controller for a section in a table.
 // --------------------------------------------------------------------------
@@ -98,6 +82,13 @@ extern NSString* const ECTValueKey;
 - (SelectionMode)didSelect;
 - (BOOL)canDelete;
 - (BOOL)canMove;
+@end
+
+
+@interface UIViewController(ECTTables)
+
+- (id)initWithBinding:(ECTBinding*)binding;
+
 @end
 
 

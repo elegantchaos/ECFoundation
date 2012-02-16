@@ -21,8 +21,6 @@
 @property (nonatomic, retain) NSMutableDictionary* mappings;
 
 @property (nonatomic, assign) id cellClass;
-@property (nonatomic, assign) id disclosureClass;
-@property (nonatomic, assign) id detailDisclosureClass;
 @property (nonatomic, assign) BOOL canDelete;
 @property (nonatomic, assign) BOOL canMove;
 @property (nonatomic, assign) BOOL enabled;
@@ -40,8 +38,10 @@
 
 - (id)objectValue;
 - (void)setObjectValue:(id)value;
+- (id)lookupKey:(NSString*)keyIn;
 
-- (NSString*)disclosureTitle;
+- (id)lookupDisclosureKey:(NSString*)key;
+
 - (Class)disclosureClassWithDetail:(BOOL)detail;
 - (NSString*)label;
 - (NSString*)detail;

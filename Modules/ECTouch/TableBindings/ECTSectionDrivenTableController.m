@@ -8,10 +8,13 @@
 // --------------------------------------------------------------------------
 
 #import "ECTSectionDrivenTableController.h"
+
+#import "ECAssertion.h"
+#import "ECLogging.h"
+
 #import "ECTBinding.h"
 #import "ECTSection.h"
-#import "ECLogging.h"
-#import "ECAssertion.h"
+#import "ECTKeys.h"
 
 @interface ECTSectionDrivenTableController()
 
@@ -104,7 +107,11 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     if (view)
     {
         ECTBinding* binding = [section bindingForRowAtIndexPath:indexPath];
-        NSString* title = [binding disclosureTitle];
+        NSString* title = [binding lookupDisclosureKey:ECTTitleKey];
+        if (!title)
+        {
+            title = [binding label];
+        }
         if (title)
         {
             view.title = title;   
@@ -145,7 +152,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (navigation)
         {
-            NSString* back = [binding valueForKey:ECTDisclosureBackKey];
+            NSString* back = [binding lookupDisclosureKey:ECTBackKey];
             if (back)
             {
                 UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:back style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -301,3 +308,4 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 }
 
 @end
+

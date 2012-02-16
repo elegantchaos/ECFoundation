@@ -67,6 +67,8 @@
 			<string>Option</string>
 			<key>disclosureClass</key>
 			<string>ECTTickableTableController</string>
+			<key>style</key>
+			<string>grouped</string>
 			<key>sections</key>
 			<array>
 				<string>OptionsSection</string>

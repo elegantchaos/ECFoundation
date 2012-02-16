@@ -52,6 +52,7 @@
 		224537B414EAA8AF00BDCC7B /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2245373414EAA8AE00BDCC7B /* ECTTickCell.m */; };
 		2258ECB414EAC944006D1602 /* ArraySection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2258ECB314EAC944006D1602 /* ArraySection.plist */; };
 		2258ECC014EAD658006D1602 /* ObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2258ECBE14EAD658006D1602 /* ObjectViewController.m */; };
+		226109B714ED192600ABAF67 /* ECTKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 226109B614ED192600ABAF67 /* ECTKeys.m */; };
 		2266D4DD14EAA9720033B236 /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B214EAA9720033B236 /* ECASLClient.m */; };
 		2266D4DE14EAA9720033B236 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B414EAA9720033B236 /* ECAssertion.m */; };
 		2266D4DF14EAA9720033B236 /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266D4B614EAA9720033B236 /* ECErrorReporter.m */; };
@@ -182,6 +183,8 @@
 		2258ECB314EAC944006D1602 /* ArraySection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ArraySection.plist; path = Resources/ArraySection.plist; sourceTree = SOURCE_ROOT; };
 		2258ECBD14EAD658006D1602 /* ObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectViewController.h; path = Source/ObjectViewController.h; sourceTree = SOURCE_ROOT; };
 		2258ECBE14EAD658006D1602 /* ObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectViewController.m; path = Source/ObjectViewController.m; sourceTree = SOURCE_ROOT; };
+		226109B514ED192500ABAF67 /* ECTKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTKeys.h; sourceTree = "<group>"; };
+		226109B614ED192600ABAF67 /* ECTKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTKeys.m; sourceTree = "<group>"; };
 		2266D4B114EAA9720033B236 /* ECASLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECASLClient.h; sourceTree = "<group>"; };
 		2266D4B214EAA9720033B236 /* ECASLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECASLClient.m; sourceTree = "<group>"; };
 		2266D4B314EAA9720033B236 /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				2245372414EAA8AE00BDCC7B /* ECTButtonCell.m */,
 				2245372514EAA8AE00BDCC7B /* ECTEditableCell.h */,
 				2245372614EAA8AE00BDCC7B /* ECTEditableCell.m */,
+				226109B514ED192500ABAF67 /* ECTKeys.h */,
+				226109B614ED192600ABAF67 /* ECTKeys.m */,
 				2245372714EAA8AE00BDCC7B /* ECTSection.h */,
 				2245372814EAA8AE00BDCC7B /* ECTSection.m */,
 				2245372914EAA8AE00BDCC7B /* ECTSectionDrivenTableController.h */,
@@ -725,6 +730,7 @@
 				22A72ED614EABDDC00CFF8B9 /* ModelController.m in Sources */,
 				2258ECC014EAD658006D1602 /* ObjectViewController.m in Sources */,
 				22E50CF814EB0C7E006F9F86 /* ECTSingleTableViewController.m in Sources */,
+				226109B714ED192600ABAF67 /* ECTKeys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

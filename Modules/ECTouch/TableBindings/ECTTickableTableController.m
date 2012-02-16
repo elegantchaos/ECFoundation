@@ -10,6 +10,7 @@
 #import "ECTTickableTableController.h"
 #import "ECTSection.h"
 #import "ECTBinding.h"
+#import "ECTKeys.h"
 #import "ECTTickCell.h"
 #import "ECLogging.h"
 
@@ -28,6 +29,18 @@
 ECDefineDebugChannel(ECTTickableTableControllerChannel);
 
 #pragma mark - Properties
+
+#pragma mark - Object Lifecycle
+
+- (id)initWithBinding:(ECTBinding*)binding
+{
+    BOOL grouped = ([[binding lookupKey:ECTStyleKey] isEqualToString:@"grouped"]);
+    UITableViewStyle style = grouped ? UITableViewStyleGrouped : UITableViewStylePlain;
+
+    self = [self initWithStyle:style];
+
+    return self;
+}
 
 
 #pragma mark - View lifecycle

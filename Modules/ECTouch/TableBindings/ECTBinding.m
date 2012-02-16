@@ -8,8 +8,11 @@
 // --------------------------------------------------------------------------
 
 #import "ECTBinding.h"
-#import "ECTSimpleCell.h"
+
 #import "ECLogging.h"
+
+#import "ECTSimpleCell.h"
+#import "ECTKeys.h"
 
 #pragma mark - Constants
 
@@ -31,8 +34,6 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
 @synthesize canDelete;
 @synthesize canMove;
 @synthesize cellClass;
-@synthesize detailDisclosureClass;
-@synthesize disclosureClass;
 @synthesize enabled;
 @synthesize mappings;
 @synthesize object;
@@ -124,6 +125,14 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     }
 }
 
+- (id)lookupDisclosureKey:(NSString *)key
+{
+    NSDictionary* disclosure = [self lookupKey:ECTDisclosureKey];
+    id result = [disclosure objectForKey:key];
+    
+    return result;
+}
+
 #pragma mark - ECSectionDrivenTableObject methods
 
 - (NSString*)identifier
@@ -186,20 +195,10 @@ ECDefineDebugChannel(ECTValueCellControllerChannel);
     return result;
 }
 
-- (NSString*)disclosureTitle
-{
-    NSString* result = [self.properties objectForKey:ECTDisclosureTitleKey];
-    if (!result)
-    {
-        result = [self label];
-    }
-    
-    return result;
-}
-
 - (Class)disclosureClassWithDetail:(BOOL)useDetail
 {
-    id class = useDetail ? self.detailDisclosureClass : self.disclosureClass;
+    NSString* key = useDetail ? ECTDetailKey : ECTClassKey;
+    id class = [self lookupDisclosureKey:key];
     Class result = [ECTBinding normalisedClass:class];
     
     return result;

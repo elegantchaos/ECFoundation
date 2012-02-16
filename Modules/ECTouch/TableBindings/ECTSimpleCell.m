@@ -10,6 +10,7 @@
 #import "ECTSimpleCell.h"
 #import "ECTSection.h"
 #import "ECTBinding.h"
+#import "ECTKeys.h"
 #import "ECAssertion.h"
 
 @interface ECTSimpleCell()
@@ -159,11 +160,11 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 {
     UITableViewCellAccessoryType accessory;
     
-    if (self.binding.detailDisclosureClass)
+    if ([self.binding lookupDisclosureKey:ECTDetailKey])
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
-    else if (self.binding.disclosureClass)
+    else if ([self.binding lookupDisclosureKey:ECTClassKey])
     {
         accessory = UITableViewCellAccessoryDisclosureIndicator;
     }
