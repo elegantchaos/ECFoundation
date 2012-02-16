@@ -12,7 +12,59 @@
 
 @implementation UIFont(ECCore)
 
+
 ECDefineDebugChannel(FontChannel);
+
+NSString *const ECFontNameKey = @"name";
+NSString *const ECFontSizeKey = @"size";
+
++ (UIFont*)fontFromDictionary:(NSDictionary*)dictionary
+{
+    NSString* name = [dictionary objectForKey:ECFontNameKey];
+    CGFloat size = [[dictionary objectForKey:ECFontSizeKey] floatValue];
+    if (!size)
+    {
+        size = [UIFont labelFontSize];
+    }
+    
+    UIFont* font;
+    if (!name)
+    {
+        font = [UIFont systemFontOfSize:size];
+    }
+    else 
+    {
+        font = [UIFont fontWithName:name size:size];
+    }
+    
+    return font;
+}
+
+- (UIFont*)fontFromDictionary:(NSDictionary*)dictionary
+{
+    NSString* name = [dictionary objectForKey:ECFontNameKey];
+    CGFloat size = [[dictionary objectForKey:ECFontSizeKey] floatValue];
+    if (!size)
+    {
+        size = self.pointSize;
+    }
+    if (!size)
+    {
+        size = [UIFont labelFontSize];
+    }
+    
+    UIFont* font;
+    if (!name)
+    {
+        font = [self fontWithSize:size];
+    }
+    else 
+    {
+        font = [UIFont fontWithName:name size:size];
+    }
+    
+    return font;
+}
 
 - (UIFont*)boldVariant
 {

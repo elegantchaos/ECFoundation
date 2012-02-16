@@ -11,9 +11,9 @@
 #import "ECTSection.h"
 #import "ECTBinding.h"
 #import "ECTKeys.h"
-#import "ECAssertion.h"
 
-static const CGFloat kDefaultFontSize = 15;
+#import "ECAssertion.h"
+#import "UIFont+ECCore.h"
 
 @interface ECTSimpleCell()
 
@@ -150,29 +150,11 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
 
 - (void)setupFontForLabel:(UILabel*)label key:(NSString*)key info:(NSDictionary*)fontInfo
 {
-    fontInfo = [fontInfo objectForKey:key];
-    NSString* name = [fontInfo objectForKey:ECTNameKey];
-    CGFloat size = [[fontInfo objectForKey:ECTSizeKey] floatValue];
-    if (!size)
+    NSDictionary* info = [fontInfo objectForKey:key];
+    if (info)
     {
-        size = label.font.pointSize;
+        label.font = [UIFont fontFromDictionary:info];
     }
-    if (!size)
-    {
-        size = kDefaultFontSize;
-    }
-    
-    UIFont* font;
-    if (!name)
-    {
-        font = [label.font fontWithSize:size];
-    }
-    else 
-    {
-        font = [UIFont fontWithName:name size:size];
-    }
-    
-    label.font = font;
 }
 
 - (void)setupForBinding:(ECTBinding*)newBinding section:(ECTSection*)sectionIn

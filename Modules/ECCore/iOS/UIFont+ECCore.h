@@ -11,8 +11,13 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const ECFontNameKey;
+extern NSString *const ECFontSizeKey;
 
 @interface UIFont(ECCore)
+
++ (UIFont*)fontFromDictionary:(NSDictionary*)dictionary;
+- (UIFont*)fontFromDictionary:(NSDictionary*)dictionary;
 
 - (UIFont*)boldVariant;
 - (UIFont*)italicVariant;
