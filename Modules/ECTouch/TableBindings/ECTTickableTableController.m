@@ -34,7 +34,7 @@ ECDefineDebugChannel(ECTTickableTableControllerChannel);
 
 - (id)initWithBinding:(ECTBinding*)binding
 {
-    BOOL grouped = ([[binding lookupKey:ECTStyleKey] isEqualToString:@"grouped"]);
+    BOOL grouped = ([[binding lookupDisclosureKey:ECTStyleKey] isEqualToString:@"grouped"]);
     UITableViewStyle style = grouped ? UITableViewStyleGrouped : UITableViewStylePlain;
 
     self = [self initWithStyle:style];

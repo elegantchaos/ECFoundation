@@ -67,10 +67,12 @@
 			<string>Option</string>
 			<key>disclosure</key>
 			<dict>
-				<key>class</key>
+				<key>detail</key>
 				<string>ECTTickableTableController</string>
 				<key>style</key>
 				<string>grouped</string>
+				<key>title</key>
+				<string>Test Title</string>
 			</dict>
 			<key>sections</key>
 			<array>

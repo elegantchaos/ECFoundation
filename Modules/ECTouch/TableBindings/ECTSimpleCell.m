@@ -162,7 +162,7 @@ ECDefineDebugChannel(ECTSimpleCellChannel);
     
     if ([self.binding lookupDisclosureKey:ECTDetailKey])
     {
-        accessory = UITableViewCellAccessoryDisclosureIndicator;
+        accessory = UITableViewCellAccessoryDetailDisclosureButton;
     }
     else if ([self.binding lookupDisclosureKey:ECTClassKey])
     {
