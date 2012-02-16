@@ -13,7 +13,6 @@
 
 #import "UIFont+ECCore.h"
 #import "ECLogging.h"
-#import "ECDocumentStyles.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>

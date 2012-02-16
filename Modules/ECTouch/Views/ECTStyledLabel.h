@@ -7,7 +7,6 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-@class ECDocumentStyles;
 @class CATextLayer;
 
 @interface ECTStyledLabel : UILabel
