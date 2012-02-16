@@ -8,6 +8,8 @@
 		<string>Some Options</string>
 		<key>footer</key>
 		<string>This section is bound to an array of options defined in the file OptionsSection.plist</string>
+		<key>canSelect</key>
+		<true/>
 	</dict>
 	<key>rows</key>
 	<dict>

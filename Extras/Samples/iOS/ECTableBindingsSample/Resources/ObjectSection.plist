@@ -68,7 +68,7 @@
 			<key>disclosure</key>
 			<dict>
 				<key>detail</key>
-				<string>ECTTickableTableController</string>
+				<string>ECTSectionDrivenTableController</string>
 				<key>style</key>
 				<string>grouped</string>
 				<key>title</key>

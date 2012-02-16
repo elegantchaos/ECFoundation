@@ -53,9 +53,6 @@
     ECTSection* section1 = [ECTSection sectionWithProperties:@"ArraySection" boundToArrayAtPath:@"objects" object:model];
     [self.table addSection:section1];
 
-    ECTSection* section2 = [ECTSection sectionWithProperties:@"OptionsSection"];
-    [self.table addSection:section2];
-
     [model addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
     
     [self updateUI];
