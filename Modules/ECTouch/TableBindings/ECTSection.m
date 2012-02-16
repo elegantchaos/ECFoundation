@@ -88,15 +88,15 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     section.eachRowProperties = [properties objectForKey:@"individualRows"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
-    id bindings = [properties objectForKey:@"bindings"];
-    if ([bindings isKindOfClass:[NSString class]])
+    id content = [properties objectForKey:@"content"];
+    if ([content isKindOfClass:[NSString class]])
     {
-        NSURL* url = [[NSBundle mainBundle] URLForResource:bindings withExtension:@"plist"];
-        bindings = [NSArray arrayWithContentsOfURL:url];
+        NSURL* url = [[NSBundle mainBundle] URLForResource:content withExtension:@"plist"];
+        content = [NSArray arrayWithContentsOfURL:url];
     }
-    if (bindings)
+    if (content)
     {
-        [section bindArray:bindings];
+        [section bindArray:content];
     }
 
     return [section autorelease];
