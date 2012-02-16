@@ -74,6 +74,30 @@
 				<key>title</key>
 				<string>Choose An Option</string>
 				<key>sections</key>
+				<string>TickableOptionsSection</string>
+				<key>autoPop</key>
+				<true/>
+				<key>back</key>
+				<string>Cancel</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>option</string>
+			</dict>
+			<key>label</key>
+			<string>Option</string>
+			<key>disclosure</key>
+			<dict>
+				<key>detail</key>
+				<string>ECTSectionDrivenTableController</string>
+				<key>style</key>
+				<string>grouped</string>
+				<key>title</key>
+				<string>Choose An Option</string>
+				<key>sections</key>
 				<string>OptionsSection</string>
 				<key>autoPop</key>
 				<true/>

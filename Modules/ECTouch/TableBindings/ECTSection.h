@@ -37,6 +37,7 @@ typedef enum
 @property (nonatomic, assign) BOOL variableRowHeight;
 @property (nonatomic, assign) ECTSectionDrivenTableController* table;
 @property (nonatomic, retain) NSArray* content;
+@property (nonatomic, retain) ECTBinding* binding;
 
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName;
 + (ECTSection*)sectionWithProperties:(id)propertiesOrPlistName boundToArrayAtPath:(NSString*)path object:(id)object;
@@ -75,6 +76,9 @@ typedef enum
 @end
 
 @protocol ECTSectionDrivenTableCell <NSObject>
+
+@property (nonatomic, retain) ECTBinding* binding;
+
 + (CGFloat)heightForBinding:(ECTBinding*)binding;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;

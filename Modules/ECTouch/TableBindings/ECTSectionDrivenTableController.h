@@ -7,26 +7,17 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <UIKit/UIKit.h>
+#import "ECTBindingViewController.h"
 
 @class ECTSection;
 @class ECTBinding;
-
-// --------------------------------------------------------------------------
-//! View controller which can be used when disclosing a row in a section
-//! driven table.
-// --------------------------------------------------------------------------
-
-@protocol ECTSectionDrivenTableDisclosureView <NSObject>
-- (void)setupForBinding:(ECTBinding*)binding;
-@end
 
 // --------------------------------------------------------------------------
 //! Table view controller which uses section controllers to populate and
 //! control the table.
 // --------------------------------------------------------------------------
 
-@interface ECTSectionDrivenTableController : UITableViewController<ECTSectionDrivenTableDisclosureView>
+@interface ECTSectionDrivenTableController : UITableViewController<ECTBindingViewController>
 
 @property (nonatomic, retain, readonly) NSMutableArray* sections;
 @property (nonatomic, retain) ECTBinding* representedObject;

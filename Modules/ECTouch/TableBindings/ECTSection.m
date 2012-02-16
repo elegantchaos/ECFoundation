@@ -43,6 +43,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 @synthesize addCell;
 @synthesize addDisclosureTitle;
+@synthesize binding;
 @synthesize content;
 @synthesize canDelete;
 @synthesize canMove;
@@ -87,7 +88,12 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     section.eachRowProperties = [properties objectForKey:@"eachRow"];
     [section setValuesForKeysWithDictionary:sectionProperties];
     
-    NSArray* bindings = [properties objectForKey:@"bindings"];
+    id bindings = [properties objectForKey:@"bindings"];
+    if ([bindings isKindOfClass:[NSString class]])
+    {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:bindings withExtension:@"plist"];
+        bindings = [NSArray arrayWithContentsOfURL:url];
+    }
     if (bindings)
     {
         [section bindArray:bindings];
@@ -131,6 +137,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     [self cleanupObservers];
 
     [addCell release];
+    [binding release];
     [cellIdentifier release];
     [content release];
     [header release];
@@ -220,8 +227,8 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
         [combined addEntriesFromDictionary:[self.eachRowProperties objectAtIndex:index]];
     }
     
-    ECTBinding* binding = [ECTBinding controllerWithObject:object properties:combined];
-    [array insertObject:binding atIndex:index];
+    ECTBinding* newBinding = [ECTBinding controllerWithObject:object properties:combined];
+    [array insertObject:newBinding atIndex:index];
 }
 
 - (void)bindObject:(id)object
@@ -318,17 +325,17 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
+    ECTBinding* rowBinding = [self bindingForRowAtIndexPath:indexPath];
 
-    NSString* identifier = [ECCoercion asClassName:binding.cellClass];
+    NSString* identifier = [ECCoercion asClassName:rowBinding.cellClass];
     UITableViewCell<ECTSectionDrivenTableCell>* cell = (UITableViewCell<ECTSectionDrivenTableCell>*) [[self tableView] dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
-        Class class = [ECCoercion asClass:binding.cellClass];
+        Class class = [ECCoercion asClass:rowBinding.cellClass];
         cell = [[[class alloc] initWithReuseIdentifier:identifier] autorelease];
     }
     
-    [cell setupForBinding:binding section:self];
+    [cell setupForBinding:rowBinding section:self];
     
     return cell;
 }
@@ -339,9 +346,9 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     
     if (self.variableRowHeight)
     {
-        ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-        Class<ECTSectionDrivenTableCell> class = [ECCoercion asClass:binding.cellClass];
-        result = [class heightForBinding:binding];
+        ECTBinding* rowBinding = [self bindingForRowAtIndexPath:indexPath];
+        Class<ECTSectionDrivenTableCell> class = [ECCoercion asClass:rowBinding.cellClass];
+        result = [class heightForBinding:rowBinding];
         if (result == UITableViewAutomaticDimension)
         {
             result = self.tableView.rowHeight;
@@ -353,8 +360,8 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (UIViewController*)disclosureViewForRowAtIndexPath:(NSIndexPath*)indexPath detail:(BOOL)detail
 {
-    ECTBinding* binding = [self bindingForRowAtIndexPath:indexPath];
-    Class class = [self disclosureClassForBinding:binding detail:detail];
+    ECTBinding* rowBinding = [self bindingForRowAtIndexPath:indexPath];
+    Class class = [self disclosureClassForBinding:rowBinding detail:detail];
     
     UIViewController* view = [class alloc];
     NSString* nib = NSStringFromClass([self class]);
@@ -364,7 +371,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     }
     else
     {
-        view = [view initWithBinding:binding];
+        view = [view initWithBinding:rowBinding];
     }
     
     ECDebug(ECTSectionControllerChannel, @"made disclosure view of class %@ for path %@", nib, indexPath);
@@ -372,9 +379,9 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
     return [view autorelease];
 }
 
-- (Class)disclosureClassForBinding:(ECTBinding*)binding detail:(BOOL)detail
+- (Class)disclosureClassForBinding:(ECTBinding*)rowBinding detail:(BOOL)detail
 {
-    id class = [binding disclosureClassWithDetail:detail];
+    id class = [rowBinding disclosureClassWithDetail:detail];
     Class result = [ECCoercion asClass:class];
     
     return result;
@@ -382,14 +389,22 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
 
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [[self tableView] cellForRowAtIndexPath:indexPath];
-    if ([cell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
+    id selectedCell = [[self tableView] cellForRowAtIndexPath:indexPath];
+    if ([selectedCell conformsToProtocol:@protocol(ECTSectionDrivenTableCell)])
     {
-        SelectionMode selectionMode = [(id<ECTSectionDrivenTableCell>)cell didSelect];
+        UITableViewCell<ECTSectionDrivenTableCell>* cell = selectedCell;
+        SelectionMode selectionMode = [cell didSelect];
         BOOL keepSelected = (selectionMode == SelectAlways) || ((selectionMode == SelectIfSelectable) && self.canSelect);
         if (keepSelected)
         {
-            // TODO update selection binding here so that something knows what the selection is?
+            self.binding.value = cell.binding.object;
+            [self reloadData];
+            
+            if ([[self.binding lookupDisclosureKey:ECTAutoPopKey] boolValue])
+            {
+                [self.table.navigator popViewControllerAnimated:YES];
+            }
+
         }
         else
         {

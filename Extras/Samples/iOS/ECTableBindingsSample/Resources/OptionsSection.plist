@@ -8,19 +8,14 @@
 		<string>Some Options</string>
 		<key>footer</key>
 		<string>This section is bound to an array of options defined in the file OptionsSection.plist</string>
+		<key>canSelect</key>
+		<true/>
 	</dict>
 	<key>rows</key>
-	<dict>
-		<key>cellClass</key>
-		<string>ECTTickCell</string>
-	</dict>
+	<dict/>
 	<key>eachRow</key>
 	<array/>
 	<key>bindings</key>
-	<array>
-		<string>Item 1</string>
-		<string>Item 2</string>
-		<string>Item 3</string>
-	</array>
+	<string>Options</string>
 </dict>
 </plist>

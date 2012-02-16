@@ -10,6 +10,13 @@
 
 @class ECTSectionDrivenTableController;
 
+// --------------------------------------------------------------------------
+//! Controller for a view that contains a single section driven
+//! table. Typically the view will be defined in a xib, and the
+//! section driven table controller will be instantiated there
+//! and linked to this controller using IB.
+// --------------------------------------------------------------------------
+
 @interface ECTSingleTableViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet ECTSectionDrivenTableController* table;

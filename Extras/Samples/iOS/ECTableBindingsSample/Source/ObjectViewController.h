@@ -9,7 +9,7 @@
 #import "ECTSingleTableViewController.h"
 #import "ECTSectionDrivenTableController.h"
 
-@interface ObjectViewController : ECTSingleTableViewController<ECTSectionDrivenTableDisclosureView>
+@interface ObjectViewController : ECTSingleTableViewController<ECTBindingViewController>
 
 - (void)setupForBinding:(ECTBinding*)binding;
 

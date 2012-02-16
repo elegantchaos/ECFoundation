@@ -73,6 +73,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
     }
 
     section.table = self;
+    section.binding = self.representedObject;
     [self.sections addObject:section];
     if ([section canEdit])
     {
@@ -131,10 +132,10 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
             asSectionDriven.navigator = navigation;
         }
         
-        BOOL isDisclosure = [view conformsToProtocol:@protocol(ECTSectionDrivenTableDisclosureView)];
+        BOOL isDisclosure = [view conformsToProtocol:@protocol(ECTBindingViewController)];
         if (isDisclosure)
         {
-            [(id<ECTSectionDrivenTableDisclosureView>) view setupForBinding:binding];
+            [(id<ECTBindingViewController>) view setupForBinding:binding];
         }
         
         if (isSectionDriven)
@@ -300,7 +301,7 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
      return [section canMoveRowAtIndexPath:indexPath];
  }
 
-#pragma mark - ECTSectionDrivenTableDisclosureView
+#pragma mark - ECTBindingViewController
 
 - (void)setupForBinding:(ECTBinding *)binding
 {
