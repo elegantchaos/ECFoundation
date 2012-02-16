@@ -12,10 +12,3 @@
 @interface ECTTickCell : ECTSimpleCell
 
 @end
-
-@protocol ECTTickSectionCellDelegate <NSObject>
-
-- (BOOL)isSelectedForCell:(ECTTickCell*)cell binding:(ECTBinding*)binding;
-- (void)selectCell:(ECTTickCell*)cell binding:(ECTBinding*)binding;
-
-@end
