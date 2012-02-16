@@ -9,24 +9,11 @@
 
 #import "ECTTickCell.h"
 
-#import "ECTBinding.h"
-#import "ECTSection.h"
-
 @implementation ECTTickCell
-
-- (void)setupForBinding:(ECTBinding*)binding section:(ECTSection*)section
-{
-    [super setupForBinding:binding section:section];
-    
-    id currentValue = section.binding.value;
-    BOOL selected = [currentValue isEqual:binding.object];
-    self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    //[super setSelected:selected animated:animated];
 }
 
 @end

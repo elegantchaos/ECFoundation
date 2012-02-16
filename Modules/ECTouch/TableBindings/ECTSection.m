@@ -398,13 +398,10 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
         if (keepSelected)
         {
             self.binding.value = cell.binding.object;
-            //[self reloadData];
-            
             if ([[self.binding lookupDisclosureKey:ECTAutoPopKey] boolValue])
             {
                 [self.table.navigator popViewControllerAnimated:YES];
             }
-
         }
         else
         {
