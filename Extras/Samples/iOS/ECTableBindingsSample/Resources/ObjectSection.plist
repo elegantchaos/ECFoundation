@@ -75,6 +75,8 @@
 				<string>Test Title</string>
 				<key>sections</key>
 				<string>OptionsSection</string>
+				<key>autoPop</key>
+				<true/>
 			</dict>
 		</dict>
 	</array>

@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 extern NSString *const ECTActionKey;
+extern NSString *const ECTAutoPopKey;
 extern NSString *const ECTCanMoveKey;
 extern NSString *const ECTCanDeleteKey;
 extern NSString *const ECTCellClassKey;

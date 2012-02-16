@@ -10,6 +10,7 @@
 #import "ECTKeys.h"
 
 NSString *const ECTActionKey = @"actionName";
+NSString *const ECTAutoPopKey = @"autoPop";
 NSString *const ECTCanDeleteKey = @"canDelete";
 NSString *const ECTCanMoveKey = @"canMove";
 NSString *const ECTCellClassKey = @"cellClass";
