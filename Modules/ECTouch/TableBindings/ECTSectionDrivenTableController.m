@@ -65,6 +65,33 @@ ECDefineDebugChannel(ECTSectionDrivenTableControllerChannel);
 
 #pragma mark - UIViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    id selectedObject = self.representedObject.value;
+    NSUInteger sectionIndex = 0;
+    for (ECTSection* section in self.sections)
+    {
+        NSUInteger row = 0;
+        if (section.canSelect)
+        {
+            for (ECTBinding* object in section.content)
+            {
+                if ([object.value isEqual:selectedObject])
+                {
+                    NSIndexPath* path = [NSIndexPath indexPathForRow:row inSection:sectionIndex];
+                    [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionNone];
+                    break;
+                }
+                     
+                ++row;
+            }
+            
+            ++sectionIndex;
+        }
+    }
+    
+    [super viewDidAppear:animated];
+}
 #pragma mark - Section utilities
 
 - (void)clearSections

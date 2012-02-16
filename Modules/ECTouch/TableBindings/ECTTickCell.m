@@ -23,9 +23,10 @@
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
-- (SelectionMode)didSelect
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-     return SelectIfSelectable;
+    self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    //[super setSelected:selected animated:animated];
 }
 
 @end

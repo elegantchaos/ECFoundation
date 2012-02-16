@@ -398,7 +398,7 @@ ECDefineDebugChannel(ECTSectionControllerChannel);
         if (keepSelected)
         {
             self.binding.value = cell.binding.object;
-            [self reloadData];
+            //[self reloadData];
             
             if ([[self.binding lookupDisclosureKey:ECTAutoPopKey] boolValue])
             {

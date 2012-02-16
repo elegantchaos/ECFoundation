@@ -76,7 +76,7 @@
 				<key>sections</key>
 				<string>TickableOptionsSection</string>
 				<key>autoPop</key>
-				<true/>
+				<false/>
 				<key>back</key>
 				<string>Cancel</string>
 			</dict>
@@ -99,8 +99,6 @@
 				<string>Choose An Option</string>
 				<key>sections</key>
 				<string>OptionsSection</string>
-				<key>autoPop</key>
-				<true/>
 				<key>back</key>
 				<string>Cancel</string>
 			</dict>
