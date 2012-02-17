@@ -9,25 +9,30 @@
 
 #import "ECDocumentStyles.h"
 
-@implementation ECDocumentStyles
+@class ECDocumentStyles;
+@class UIFont;
 
-@synthesize boldFont;
-@synthesize colour;
-@synthesize linkColour;
-@synthesize headingFont;
-@synthesize headingSize;
-@synthesize italicFont;
-@synthesize plainFont;
-@synthesize plainSize;
+@interface ECDocumentStyles(UISupport)
 
-- (void)dealloc
-{
-    [boldFont release];
-    [headingFont release];
-	[italicFont release];
-    [plainFont release];
-    
-    [super dealloc];
-}
+- (id)initWithFont:(UIFont*)font colour:(UIColor*)colourIn;
 
 @end
+
+@interface UILabel(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+
+@interface UITextField(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+
+@interface UITextView(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+

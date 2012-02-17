@@ -280,6 +280,9 @@
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		2288157E14EE8D9A00DE962A /* ECDocumentStylesUISupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 2288157C14EE8D9A00DE962A /* ECDocumentStylesUISupport.h */; };
+		2288157F14EE8D9A00DE962A /* ECDocumentStylesUISupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288157D14EE8D9A00DE962A /* ECDocumentStylesUISupport.m */; };
+		2288158014EE8D9A00DE962A /* ECDocumentStylesUISupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288157D14EE8D9A00DE962A /* ECDocumentStylesUISupport.m */; };
 		22886F491357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4A1357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4B1357B9F800828B95 /* ECXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22886F461357B9F800828B95 /* ECXMLElement.m */; };
@@ -806,6 +809,8 @@
 		227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4111A6BC66009420F7 /* ECIOSSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSSharedSettings.xcconfig; sourceTree = "<group>"; };
+		2288157C14EE8D9A00DE962A /* ECDocumentStylesUISupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentStylesUISupport.h; sourceTree = "<group>"; };
+		2288157D14EE8D9A00DE962A /* ECDocumentStylesUISupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentStylesUISupport.m; sourceTree = "<group>"; };
 		22886F451357B9F800828B95 /* ECXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECXMLElement.h; sourceTree = "<group>"; };
 		22886F461357B9F800828B95 /* ECXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECXMLElement.m; sourceTree = "<group>"; };
 		22886F471357B9F800828B95 /* ECXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECXMLParser.h; sourceTree = "<group>"; };
@@ -1164,6 +1169,7 @@
 			isa = PBXGroup;
 			children = (
 				22177ACF1495710400C7BDBE /* Generic */,
+				2288157B14EE8D9A00DE962A /* iOS */,
 			);
 			path = ECText;
 			sourceTree = "<group>";
@@ -1473,6 +1479,15 @@
 				2269C687149E66B100C95D11 /* Test */,
 			);
 			path = ECCore;
+			sourceTree = "<group>";
+		};
+		2288157B14EE8D9A00DE962A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2288157C14EE8D9A00DE962A /* ECDocumentStylesUISupport.h */,
+				2288157D14EE8D9A00DE962A /* ECDocumentStylesUISupport.m */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		22886F441357B9F800828B95 /* xml */ = {
@@ -1979,6 +1994,7 @@
 				22EA2D2114ED9B500043ABFA /* ECCoercion.h in Headers */,
 				22EA2D2714ED9BFD0043ABFA /* ECSingleton.h in Headers */,
 				228FB8D114EDC55400D095CF /* ECDebugViewPopoverController.h in Headers */,
+				2288157E14EE8D9A00DE962A /* ECDocumentStylesUISupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2361,6 +2377,7 @@
 				22EA2D2314ED9B500043ABFA /* ECCoercion.m in Sources */,
 				22EA2D2914ED9BFD0043ABFA /* ECSingleton.m in Sources */,
 				228FB8D214EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
+				2288157F14EE8D9A00DE962A /* ECDocumentStylesUISupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2447,6 +2464,7 @@
 				22EA2D2A14ED9C370043ABFA /* ECTModelController.m in Sources */,
 				22EA2D2B14ED9C3A0043ABFA /* ECTAppDelegate.m in Sources */,
 				228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
+				2288158014EE8D9A00DE962A /* ECDocumentStylesUISupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

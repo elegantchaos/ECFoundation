@@ -7,6 +7,8 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
+@class UIFont;
+
 @interface ECDocumentStyles : NSObject
 
 @property (nonatomic, retain) NSString* plainFont;
@@ -20,23 +22,5 @@
 @property (nonatomic, assign) CGColorRef colour;
 @property (nonatomic, assign) CGColorRef linkColour;
 
-@end
-
-@interface UILabel(ECDocumentStyles)
-
-- (ECDocumentStyles*)defaultStyles;
 
 @end
-
-@interface UITextField(ECDocumentStyles)
-
-- (ECDocumentStyles*)defaultStyles;
-
-@end
-
-@interface UITextView(ECDocumentStyles)
-
-- (ECDocumentStyles*)defaultStyles;
-
-@end
-
