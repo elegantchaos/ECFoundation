@@ -90,7 +90,8 @@
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%@ == %@", key, value];
+	NSString* predicateFormat = [NSString stringWithFormat:@"%@ like %@", key, @"%@"];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:predicateFormat, value];
     [request setEntity:entity];
     [request setPredicate:predicate];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:&error];

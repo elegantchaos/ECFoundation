@@ -302,6 +302,9 @@
 		228A510D14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
 		228BCFEB144DF3CE00D22ED5 /* ECRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 228BCFE9144DF3CE00D22ED5 /* ECRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		228BCFEC144DF3CE00D22ED5 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
+		228FB8D114EDC55400D095CF /* ECDebugViewPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		228FB8D214EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */; };
+		228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */; };
 		2298A45D1355264A00217C2B /* ECDictionaryBackedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2298A45E1355264A00217C2B /* ECDictionaryBackedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2298A45F1355264A00217C2B /* ECDictionaryBackedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45A1355264A00217C2B /* ECDictionaryBackedObject.m */; };
@@ -815,6 +818,8 @@
 		228A510714991FB3002907A6 /* ECRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRuntime.m; sourceTree = "<group>"; };
 		228BCFE9144DF3CE00D22ED5 /* ECRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRandom.h; sourceTree = "<group>"; };
 		228BCFEA144DF3CE00D22ED5 /* ECRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandom.m; sourceTree = "<group>"; };
+		228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewPopoverController.h; sourceTree = "<group>"; };
+		228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewPopoverController.m; sourceTree = "<group>"; };
 		2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObject.h; sourceTree = "<group>"; };
 		2298A45A1355264A00217C2B /* ECDictionaryBackedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObject.m; sourceTree = "<group>"; };
 		2298A45B1355264A00217C2B /* ECDictionaryBackedObjectCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObjectCache.h; sourceTree = "<group>"; };
@@ -1641,6 +1646,8 @@
 				22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */,
 				22B1274D13C785CA0022CC5B /* ECDebugViewController.h */,
 				22B1274E13C785CA0022CC5B /* ECDebugViewController.m */,
+				228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */,
+				228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1971,6 +1978,7 @@
 				22EA2D1C14ED9B2E0043ABFA /* ECTTransparentToolbar.h in Headers */,
 				22EA2D2114ED9B500043ABFA /* ECCoercion.h in Headers */,
 				22EA2D2714ED9BFD0043ABFA /* ECSingleton.h in Headers */,
+				228FB8D114EDC55400D095CF /* ECDebugViewPopoverController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2352,6 +2360,7 @@
 				22EA2D1D14ED9B2E0043ABFA /* ECTTransparentToolbar.m in Sources */,
 				22EA2D2314ED9B500043ABFA /* ECCoercion.m in Sources */,
 				22EA2D2914ED9BFD0043ABFA /* ECSingleton.m in Sources */,
+				228FB8D214EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2437,6 +2446,7 @@
 				22EDDC2814A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 				22EA2D2A14ED9C370043ABFA /* ECTModelController.m in Sources */,
 				22EA2D2B14ED9C3A0043ABFA /* ECTAppDelegate.m in Sources */,
+				228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
