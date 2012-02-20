@@ -118,12 +118,16 @@
 }
 
 
-- (NSArray*)allEntitiesForName:(NSString*)entityName
+- (NSArray*)allEntitiesForName:(NSString*)entityName sorted:(NSArray*)sort
 {
     NSError* error = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     NSEntityDescription* entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
+	if (sort)
+	{
+		[request setSortDescriptors:sort];
+	}
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
 	
