@@ -1,0 +1,3 @@
+[submodule "Modules/ECUnitTests"]
+	path = Modules/ECUnitTests
+	url = git://github.com/samdeane/ECUnitTests.git
