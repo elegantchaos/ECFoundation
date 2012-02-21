@@ -278,6 +278,8 @@
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		227C549D14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
+		227C549E14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
 		2288159414EE94EC00DE962A /* ECDocumentStyles+UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2288159514EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
 		2288159614EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
@@ -800,6 +802,7 @@
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationAdHocSettings.xcconfig; sourceTree = "<group>"; };
 		2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSAdHocSettings.xcconfig; sourceTree = "<group>"; };
+		227C549C14F4120700881415 /* Test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Test.bundle; sourceTree = "<group>"; };
 		227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationSharedSettings.xcconfig; sourceTree = "<group>"; };
@@ -1446,6 +1449,14 @@
 			path = resources/mac;
 			sourceTree = "<group>";
 		};
+		227C549B14F4120700881415 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				227C549C14F4120700881415 /* Test.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		227EEB8011A6BCCD009420F7 /* ECTouch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1882,6 +1893,7 @@
 			isa = PBXGroup;
 			children = (
 				22DEA70114F40E0C00DF5777 /* Generic */,
+				227C549B14F4120700881415 /* Resources */,
 				22DEA70414F40E0C00DF5777 /* README */,
 			);
 			path = ECUnitTests;
@@ -2244,6 +2256,7 @@
 				22001892149188DA002F1D1D /* Test.bundle in Resources */,
 				22AE923714926D47008EF8E2 /* README.md in Resources */,
 				22DEA70814F40E0C00DF5777 /* README in Resources */,
+				227C549E14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2256,6 +2269,7 @@
 				220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */,
 				22001891149188DA002F1D1D /* Test.bundle in Resources */,
 				22DEA70714F40E0C00DF5777 /* README in Resources */,
+				227C549D14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
