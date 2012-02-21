@@ -1,9 +1,9 @@
 echo Testing IOS
 
 base=`dirname $0`
-source "$base/shared-test.sh"
-targetIOS="ECFoundation Test iOS"
+ecunittests="$base/../../Modules/ECUnitTests/Scripts"
+source "$ecunittests/test-common.sh"
 
-xcodebuild -target "$targetIOS" $config -sdk "$sdkIOS" clean build | "${base}/ocunit2junit.rb"
+xcodebuild -target "ECFoundation Test iOS" -configuration "$testConfig" -sdk "$testSDKiOS" $testOptions | "$ecunittests/$testConvertOutput"
 
 

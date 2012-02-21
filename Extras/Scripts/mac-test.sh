@@ -1,9 +1,7 @@
 echo Testing Mac
 
 base=`dirname $0`
-source "$base/shared-test.sh"
-targetMac="ECFoundation Test Mac"
+ecunittests="$base/../../Modules/ECUnitTests/Scripts"
+source "$ecunittests/test-common.sh"
 
-# build the framework
-
-xcodebuild -target "$targetMac" $config -sdk "$sdkMac" clean build | "${base}/ocunit2junit.rb"
+xcodebuild -target "ECFoundation Test Mac" -configuration "$testConfig" -sdk "$testSDKMac" $testOptions | "$ecunittests/$testConvertOutput"
