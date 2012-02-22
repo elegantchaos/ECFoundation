@@ -73,6 +73,7 @@
 		2274A9E814E40E4D007D3E7C /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */; };
 		2274A9EA14E40F02007D3E7C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274A9E914E40F02007D3E7C /* CoreText.framework */; };
 		2274A9EC14E40F42007D3E7C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274A9EB14E40F42007D3E7C /* QuartzCore.framework */; };
+		2288158A14EE933300DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */; };
 		22B8290013E847C900BF47CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FD13E847C900BF47CC /* AppDelegate.m */; };
 		22B8290113E847C900BF47CC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FF13E847C900BF47CC /* MainViewController.m */; };
 		22CA27F214E4355C0056516B /* ECTTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA27F114E4355C0056516B /* ECTTappableStyledLabel.m */; };
@@ -85,7 +86,7 @@
 		2214C6ED14ED727C007C994A /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
 		2214C6F114ED733A007C994A /* ECCoercion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoercion.h; sourceTree = "<group>"; };
 		2214C6F214ED733A007C994A /* ECCoercion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoercion.m; sourceTree = "<group>"; };
-		226FB43713E1EA7200BF258D /* ECStyledLabelSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECStyledLabelSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECTStyledLabelSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,6 +216,8 @@
 		2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMarkdownParser.m; sourceTree = "<group>"; };
 		2274A9E914E40F02007D3E7C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		2274A9EB14E40F42007D3E7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
+		2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ECDocumentStyles+UIKit.m"; sourceTree = "<group>"; };
 		22B828FC13E847C900BF47CC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		22B828FD13E847C900BF47CC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		22B828FE13E847C900BF47CC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Source/MainViewController.h; sourceTree = SOURCE_ROOT; };
@@ -254,7 +257,7 @@
 		226FB43813E1EA7200BF258D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				226FB43713E1EA7200BF258D /* ECStyledLabelSample.app */,
+				226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 		2274A9DB14E40E4D007D3E7C /* ECText */ = {
 			isa = PBXGroup;
 			children = (
+				2288158714EE933300DE962A /* iOS */,
 				2274A9DC14E40E4D007D3E7C /* Generic */,
 			);
 			name = ECText;
@@ -540,6 +544,15 @@
 			path = Generic;
 			sourceTree = "<group>";
 		};
+		2288158714EE933300DE962A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */,
+				2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,7 +570,7 @@
 			);
 			name = ECTStyledLabelSample;
 			productName = ECLoggingSample;
-			productReference = 226FB43713E1EA7200BF258D /* ECStyledLabelSample.app */;
+			productReference = 226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -664,6 +677,7 @@
 				2214C6EE14ED727C007C994A /* ECTAppDelegate.m in Sources */,
 				2214C6EF14ED727C007C994A /* ECTModelController.m in Sources */,
 				2214C6F314ED733A007C994A /* ECCoercion.m in Sources */,
+				2288158A14EE933300DE962A /* ECDocumentStyles+UIKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

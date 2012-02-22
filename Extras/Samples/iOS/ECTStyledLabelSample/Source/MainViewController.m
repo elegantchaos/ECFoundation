@@ -11,6 +11,7 @@
 #import "ECDebugViewController.h"
 #import "ECDebugViewPopoverController.h"
 #import "ECMarkdownParser.h"
+#import "ECDocumentStyles+UIKit.h"
 
 #import "ECTPopoverBarButtonItem.h"
 #import "ECTStyledLabel.h"

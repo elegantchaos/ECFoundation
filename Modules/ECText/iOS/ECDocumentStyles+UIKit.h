@@ -7,19 +7,31 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "ECDocumentStyles.h"
 
-#import <UIKit/UIKit.h>
+@class ECDocumentStyles;
 
-extern NSString *const ECFontNameKey;
-extern NSString *const ECFontSizeKey;
+@interface ECDocumentStyles(UIKit)
 
-@interface UIFont(ECCore)
-
-+ (UIFont*)fontFromDictionary:(NSDictionary*)dictionary;
-- (UIFont*)fontFromDictionary:(NSDictionary*)dictionary;
-
-- (UIFont*)boldVariant;
-- (UIFont*)italicVariant;
+- (id)initWithFont:(UIFont*)font colour:(UIColor*)colourIn;
 
 @end
+
+@interface UILabel(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+
+@interface UITextField(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+
+@interface UITextView(ECDocumentStyles)
+
+- (ECDocumentStyles*)defaultStyles;
+
+@end
+
