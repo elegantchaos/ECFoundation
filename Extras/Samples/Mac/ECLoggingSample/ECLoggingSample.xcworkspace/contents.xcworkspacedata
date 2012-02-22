@@ -4,4 +4,7 @@
    <FileRef
       location = "group:ECLoggingSample.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../../../../Modules/ECLogging/ECLogging.xcodeproj">
+   </FileRef>
 </Workspace>
