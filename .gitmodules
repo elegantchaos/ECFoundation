@@ -4,3 +4,6 @@
 [submodule "Modules/ECCore"]
 	path = Modules/ECCore
 	url = git://github.com/samdeane/ECCore.git
+[submodule "Modules/ECLogging"]
+	path = Modules/ECLogging
+	url = git://github.com/samdeane/ECLogging.git
