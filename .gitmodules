@@ -10,3 +10,6 @@
 [submodule "Modules/ECText"]
 	path = Modules/ECText
 	url = git://github.com/samdeane/ECText.git
+[submodule "Modules/ECTouch"]
+	path = Modules/ECTouch
+	url = git://github.com/samdeane/ECTouch.git
