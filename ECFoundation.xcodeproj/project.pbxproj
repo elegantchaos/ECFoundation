@@ -1620,9 +1620,7 @@
 		22B1273213C785CA0022CC5B /* ECLogging */ = {
 			isa = PBXGroup;
 			children = (
-				22B1273313C785CA0022CC5B /* Generic */,
-				22B1274813C785CA0022CC5B /* iOS */,
-				22B1274F13C785CA0022CC5B /* Mac */,
+				22F71E4914F8F8AC005DEE63 /* Source */,
 			);
 			path = ECLogging;
 			sourceTree = "<group>";
@@ -1929,6 +1927,16 @@
 				22EC40A113589DD5005C1F1A /* ECReachability.m */,
 			);
 			path = networking;
+			sourceTree = "<group>";
+		};
+		22F71E4914F8F8AC005DEE63 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				22B1273313C785CA0022CC5B /* Generic */,
+				22B1274813C785CA0022CC5B /* iOS */,
+				22B1274F13C785CA0022CC5B /* Mac */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
