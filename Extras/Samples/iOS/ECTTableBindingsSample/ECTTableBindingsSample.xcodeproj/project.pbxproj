@@ -469,7 +469,8 @@
 				2266D4BF14EAA9720033B236 /* ECLogManager.m */,
 				2266D4C014EAA9720033B236 /* Handlers */,
 			);
-			path = Generic;
+			name = Generic;
+			path = Source/Generic;
 			sourceTree = "<group>";
 		};
 		2266D4C014EAA9720033B236 /* Handlers */ = {
@@ -507,7 +508,8 @@
 				2266D4D814EAA9720033B236 /* ECLogViewHandlerItem.h */,
 				2266D4D914EAA9720033B236 /* ECLogViewHandlerItem.m */,
 			);
-			path = iOS;
+			name = iOS;
+			path = Source/iOS;
 			sourceTree = "<group>";
 		};
 		226FB42C13E1EA7200BF258D = {
