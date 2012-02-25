@@ -216,7 +216,7 @@
 		2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMarkdownParser.m; sourceTree = "<group>"; };
 		2274A9E914E40F02007D3E7C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		2274A9EB14E40F42007D3E7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
+		2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
 		2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ECDocumentStyles+UIKit.m"; sourceTree = "<group>"; };
 		22B828FC13E847C900BF47CC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		22B828FD13E847C900BF47CC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -438,7 +438,8 @@
 				2274A95F14E40D34007D3E7C /* ECLogManager.m */,
 				2274A96014E40D34007D3E7C /* Handlers */,
 			);
-			path = Generic;
+			name = Generic;
+			path = Source/Generic;
 			sourceTree = "<group>";
 		};
 		2274A96014E40D34007D3E7C /* Handlers */ = {
@@ -476,7 +477,8 @@
 				2274A97814E40D34007D3E7C /* ECLogViewHandlerItem.h */,
 				2274A97914E40D34007D3E7C /* ECLogViewHandlerItem.m */,
 			);
-			path = iOS;
+			name = iOS;
+			path = Source/iOS;
 			sourceTree = "<group>";
 		};
 		2274A97D14E40D34007D3E7C /* ECTouch */ = {
