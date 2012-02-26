@@ -422,8 +422,8 @@
 		22B1277F13C785CA0022CC5B /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */; };
 		22B1278113C785CA0022CC5B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1274D13C785CA0022CC5B /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1278313C785CA0022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274E13C785CA0022CC5B /* ECDebugViewController.m */; };
-		22B184E614F4404C0008887D /* ECDynamicTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECDynamicTestCase.m */; };
-		22B184E714F4404C0008887D /* ECDynamicTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECDynamicTestCase.m */; };
+		22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
+		22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
 		22BE50B9149662D0007CC214 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE50B8149662D0007CC214 /* CoreText.framework */; };
 		22BE50D8149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -908,8 +908,8 @@
 		22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelViewController.m; sourceTree = "<group>"; };
 		22B1274D13C785CA0022CC5B /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
-		22B184E414F4404C0008887D /* ECDynamicTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDynamicTestCase.h; sourceTree = "<group>"; };
-		22B184E514F4404C0008887D /* ECDynamicTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDynamicTestCase.m; sourceTree = "<group>"; };
+		22B184E414F4404C0008887D /* ECParameterisedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECParameterisedTestCase.h; sourceTree = "<group>"; };
+		22B184E514F4404C0008887D /* ECParameterisedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECParameterisedTestCase.m; sourceTree = "<group>"; };
 		22BE50B8149662D0007CC214 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		22BE50D6149668BE007CC214 /* ECHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECHTMLParser.h; sourceTree = "<group>"; };
 		22BE50D7149668BE007CC214 /* ECHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECHTMLParser.m; sourceTree = "<group>"; };
@@ -1912,8 +1912,8 @@
 		22DEA70114F40E0C00DF5777 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				22B184E414F4404C0008887D /* ECDynamicTestCase.h */,
-				22B184E514F4404C0008887D /* ECDynamicTestCase.m */,
+				22B184E414F4404C0008887D /* ECParameterisedTestCase.h */,
+				22B184E514F4404C0008887D /* ECParameterisedTestCase.m */,
 				22DEA70214F40E0C00DF5777 /* ECTestCase.h */,
 				22DEA70314F40E0C00DF5777 /* ECTestCase.m */,
 			);
@@ -2514,7 +2514,7 @@
 				228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
 				2288159614EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */,
 				22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */,
-				22B184E714F4404C0008887D /* ECDynamicTestCase.m in Sources */,
+				22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2631,7 +2631,7 @@
 				2299A90114A3A39E00729830 /* ECMachPorts.m in Sources */,
 				2299A90614A3A3E300729830 /* ECLaunchD.m in Sources */,
 				22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */,
-				22B184E614F4404C0008887D /* ECDynamicTestCase.m in Sources */,
+				22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
