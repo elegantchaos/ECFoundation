@@ -32,8 +32,6 @@
 		2200188A149183C2002F1D1D /* NSDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22001888149183C2002F1D1D /* NSDataTests.m */; };
 		2200188E1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
 		2200188F1491869F002F1D1D /* NSBundleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200188D1491869F002F1D1D /* NSBundleTests.m */; };
-		22001891149188DA002F1D1D /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22001890149188DA002F1D1D /* Test.bundle */; };
-		22001892149188DA002F1D1D /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22001890149188DA002F1D1D /* Test.bundle */; };
 		220375D8141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 220375D6141FF4C00040E740 /* InfoPlist.strings */; };
 		220375DE141FF4DD0040E740 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 220375DB141FF4DD0040E740 /* finder support.scpt */; };
@@ -165,8 +163,6 @@
 		2248BC4A13C794CE00E13577 /* ECTSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0413C7948F00E13577 /* ECTSimpleCell.m */; };
 		2248BC4B13C794CE00E13577 /* ECTSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2248BC0513C7948F00E13577 /* ECTSwitchCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2248BC4C13C794CE00E13577 /* ECTSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0613C7948F00E13577 /* ECTSwitchCell.m */; };
-		2248BC4D13C794CE00E13577 /* ECTTickableTableController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2248BC0713C7948F00E13577 /* ECTTickableTableController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2248BC4E13C794CE00E13577 /* ECTTickableTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0813C7948F00E13577 /* ECTTickableTableController.m */; };
 		2248BC4F13C794CE00E13577 /* ECTTickCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2248BC0913C7948F00E13577 /* ECTTickCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2248BC5013C794CE00E13577 /* ECTTickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BC0A13C7948F00E13577 /* ECTTickCell.m */; };
 		225260E81455C01100061EDD /* NSIndexSet+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 225260E61455C01100061EDD /* NSIndexSet+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -276,12 +272,15 @@
 		2260226B141F8DC70044644C /* ECMacStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22602181141F86F30044644C /* ECMacStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2260226C141F8DDF0044644C /* ECAquaticPrime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260217B141F86F30044644C /* ECAquaticPrime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22672DC1132321AE00CD8BC7 /* ECClang.h in Headers */ = {isa = PBXBuildFile; fileRef = 22672DBF132321AA00CD8BC7 /* ECClang.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2269C68A149E66B100C95D11 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2269C689149E66B100C95D11 /* ECTestCase.m */; };
-		2269C68B149E66B100C95D11 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2269C689149E66B100C95D11 /* ECTestCase.m */; };
 		22728DB7124A349F00A9881F /* ECCoreAdHocPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB8124A34A000A9881F /* ECCoreDebugPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DB9124A34A000A9881F /* ECCoreReleasePrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		227C549D14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
+		227C549E14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
+		2288159414EE94EC00DE962A /* ECDocumentStyles+UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2288159514EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
+		2288159614EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
 		22886F491357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4A1357B9F800828B95 /* ECXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 22886F451357B9F800828B95 /* ECXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22886F4B1357B9F800828B95 /* ECXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22886F461357B9F800828B95 /* ECXMLElement.m */; };
@@ -304,6 +303,9 @@
 		228A510D14991FB3002907A6 /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 228A510714991FB3002907A6 /* ECRuntime.m */; };
 		228BCFEB144DF3CE00D22ED5 /* ECRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 228BCFE9144DF3CE00D22ED5 /* ECRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		228BCFEC144DF3CE00D22ED5 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
+		228FB8D114EDC55400D095CF /* ECDebugViewPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		228FB8D214EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */; };
+		228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */; };
 		2298A45D1355264A00217C2B /* ECDictionaryBackedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2298A45E1355264A00217C2B /* ECDictionaryBackedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2298A45F1355264A00217C2B /* ECDictionaryBackedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2298A45A1355264A00217C2B /* ECDictionaryBackedObject.m */; };
@@ -420,6 +422,8 @@
 		22B1277F13C785CA0022CC5B /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */; };
 		22B1278113C785CA0022CC5B /* ECDebugViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B1274D13C785CA0022CC5B /* ECDebugViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B1278313C785CA0022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274E13C785CA0022CC5B /* ECDebugViewController.m */; };
+		22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
+		22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
 		22BE50B9149662D0007CC214 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE50B8149662D0007CC214 /* CoreText.framework */; };
 		22BE50D8149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -429,24 +433,9 @@
 		22BE50E01496772A007CC214 /* ECDocumentParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50DD14967729007CC214 /* ECDocumentParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE50E11496772A007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
 		22BE50E21496772A007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
-		22BE51001496A922007CC214 /* ECScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50FA1496A922007CC214 /* ECScrollingStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE51011496A922007CC214 /* ECScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FB1496A922007CC214 /* ECScrollingStyledLabel.m */; };
-		22BE51021496A922007CC214 /* ECScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FB1496A922007CC214 /* ECScrollingStyledLabel.m */; };
-		22BE51031496A922007CC214 /* ECScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50FC1496A922007CC214 /* ECScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE51041496A922007CC214 /* ECScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FD1496A922007CC214 /* ECScrollView.m */; };
-		22BE51051496A922007CC214 /* ECScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FD1496A922007CC214 /* ECScrollView.m */; };
-		22BE51061496A922007CC214 /* ECStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50FE1496A922007CC214 /* ECStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE51071496A922007CC214 /* ECStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FF1496A922007CC214 /* ECStyledLabel.m */; };
-		22BE51081496A922007CC214 /* ECStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50FF1496A922007CC214 /* ECStyledLabel.m */; };
-		22BE510B1496A9D1007CC214 /* ECAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51091496A9D0007CC214 /* ECAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE510C1496A9D1007CC214 /* ECAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE510A1496A9D1007CC214 /* ECAppDelegate.m */; };
-		22BE510D1496A9D1007CC214 /* ECAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE510A1496A9D1007CC214 /* ECAppDelegate.m */; };
-		22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */; };
-		22BE51251496AFB4007CC214 /* ECCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */; };
-		22BE51281496B01A007CC214 /* ECModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51261496B019007CC214 /* ECModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BE51291496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
-		22BE512A1496B01A007CC214 /* ECModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51271496B019007CC214 /* ECModelController.m */; };
+		22BE51231496AFB4007CC214 /* ECTCoreDataModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE51211496AFB4007CC214 /* ECTCoreDataModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22BE51241496AFB4007CC214 /* ECTCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECTCoreDataModelController.m */; };
+		22BE51251496AFB4007CC214 /* ECTCoreDataModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE51221496AFB4007CC214 /* ECTCoreDataModelController.m */; };
 		22BE512E1496BCDA007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
 		22BE51301496BCDB007CC214 /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50DE14967729007CC214 /* ECDocumentParser.m */; };
 		22BE51311496BCDE007CC214 /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE50D7149668BE007CC214 /* ECHTMLParser.m */; };
@@ -533,6 +522,10 @@
 		22CEFD591421391600565841 /* NSColor+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CEFD571421391600565841 /* NSColor+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CEFD5A1421391600565841 /* NSColor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEFD581421391600565841 /* NSColor+ECCore.m */; };
 		22CEFD5B1421391600565841 /* NSColor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEFD581421391600565841 /* NSColor+ECCore.m */; };
+		22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
+		22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
+		22DEA70714F40E0C00DF5777 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README */; };
+		22DEA70814F40E0C00DF5777 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README */; };
 		22E99E9A148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9B148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9C148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
@@ -553,6 +546,51 @@
 		22E99EB0148E518A0034E167 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
 		22E99EB1148E518B0034E167 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
 		22E99EB2148E518B0034E167 /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 228BCFEA144DF3CE00D22ED5 /* ECRandom.m */; };
+		22EA2CD914ED9A9B0043ABFA /* ECTAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CD314ED9A9B0043ABFA /* ECTAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CDA14ED9A9B0043ABFA /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CD414ED9A9B0043ABFA /* ECTAppDelegate.m */; };
+		22EA2CDB14ED9A9B0043ABFA /* ECTModelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CD514ED9A9B0043ABFA /* ECTModelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CDC14ED9A9B0043ABFA /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CD614ED9A9B0043ABFA /* ECTModelController.m */; };
+		22EA2CEA14ED9AE10043ABFA /* ECTBindingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CDE14ED9AE10043ABFA /* ECTBindingViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CEB14ED9AE10043ABFA /* ECTButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CDF14ED9AE10043ABFA /* ECTButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CEC14ED9AE10043ABFA /* ECTButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CE014ED9AE10043ABFA /* ECTButtonCell.m */; };
+		22EA2CED14ED9AE10043ABFA /* ECTEditableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CE114ED9AE10043ABFA /* ECTEditableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CEE14ED9AE10043ABFA /* ECTEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CE214ED9AE10043ABFA /* ECTEditableCell.m */; };
+		22EA2CEF14ED9AE10043ABFA /* ECTKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CE314ED9AE10043ABFA /* ECTKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CF014ED9AE10043ABFA /* ECTKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CE414ED9AE10043ABFA /* ECTKeys.m */; };
+		22EA2CF114ED9AE10043ABFA /* ECTSingleTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CE514ED9AE10043ABFA /* ECTSingleTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CF214ED9AE10043ABFA /* ECTSingleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CE614ED9AE10043ABFA /* ECTSingleTableViewController.m */; };
+		22EA2CF314ED9AE10043ABFA /* ECTSubtitleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CE714ED9AE10043ABFA /* ECTSubtitleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2CF414ED9AE10043ABFA /* ECTSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CE814ED9AE10043ABFA /* ECTSubtitleCell.m */; };
+		22EA2D0A14ED9B2E0043ABFA /* ECTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CF614ED9B2E0043ABFA /* ECTAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D0B14ED9B2E0043ABFA /* ECTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CF714ED9B2E0043ABFA /* ECTAlertView.m */; };
+		22EA2D0C14ED9B2E0043ABFA /* ECTPopoverBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CF814ED9B2E0043ABFA /* ECTPopoverBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D0D14ED9B2E0043ABFA /* ECTPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CF914ED9B2E0043ABFA /* ECTPopoverBarButtonItem.m */; };
+		22EA2D0E14ED9B2E0043ABFA /* ECTPopoverContentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CFA14ED9B2E0043ABFA /* ECTPopoverContentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D0F14ED9B2E0043ABFA /* ECTPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CFB14ED9B2E0043ABFA /* ECTPopoverContentController.m */; };
+		22EA2D1014ED9B2E0043ABFA /* ECTPopoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CFC14ED9B2E0043ABFA /* ECTPopoverController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1114ED9B2E0043ABFA /* ECTPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CFD14ED9B2E0043ABFA /* ECTPopoverController.m */; };
+		22EA2D1214ED9B2E0043ABFA /* ECTScrollingStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2CFE14ED9B2E0043ABFA /* ECTScrollingStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1314ED9B2E0043ABFA /* ECTScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CFF14ED9B2E0043ABFA /* ECTScrollingStyledLabel.m */; };
+		22EA2D1414ED9B2E0043ABFA /* ECTScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D0014ED9B2E0043ABFA /* ECTScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1514ED9B2E0043ABFA /* ECTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D0114ED9B2E0043ABFA /* ECTScrollView.m */; };
+		22EA2D1614ED9B2E0043ABFA /* ECTStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D0214ED9B2E0043ABFA /* ECTStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1714ED9B2E0043ABFA /* ECTStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D0314ED9B2E0043ABFA /* ECTStyledLabel.m */; };
+		22EA2D1814ED9B2E0043ABFA /* ECTTabbedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D0414ED9B2E0043ABFA /* ECTTabbedTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1914ED9B2E0043ABFA /* ECTTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D0514ED9B2E0043ABFA /* ECTTabbedTableViewController.m */; };
+		22EA2D1A14ED9B2E0043ABFA /* ECTTappableStyledLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D0614ED9B2E0043ABFA /* ECTTappableStyledLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1B14ED9B2E0043ABFA /* ECTTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D0714ED9B2E0043ABFA /* ECTTappableStyledLabel.m */; };
+		22EA2D1C14ED9B2E0043ABFA /* ECTTransparentToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D0814ED9B2E0043ABFA /* ECTTransparentToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22EA2D1D14ED9B2E0043ABFA /* ECTTransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D0914ED9B2E0043ABFA /* ECTTransparentToolbar.m */; };
+		22EA2D2014ED9B500043ABFA /* ECCoercion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D1E14ED9B500043ABFA /* ECCoercion.h */; };
+		22EA2D2114ED9B500043ABFA /* ECCoercion.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D1E14ED9B500043ABFA /* ECCoercion.h */; };
+		22EA2D2214ED9B500043ABFA /* ECCoercion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D1F14ED9B500043ABFA /* ECCoercion.m */; };
+		22EA2D2314ED9B500043ABFA /* ECCoercion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D1F14ED9B500043ABFA /* ECCoercion.m */; };
+		22EA2D2614ED9BFD0043ABFA /* ECSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D2414ED9BFD0043ABFA /* ECSingleton.h */; };
+		22EA2D2714ED9BFD0043ABFA /* ECSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA2D2414ED9BFD0043ABFA /* ECSingleton.h */; };
+		22EA2D2814ED9BFD0043ABFA /* ECSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D2514ED9BFD0043ABFA /* ECSingleton.m */; };
+		22EA2D2914ED9BFD0043ABFA /* ECSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2D2514ED9BFD0043ABFA /* ECSingleton.m */; };
+		22EA2D2A14ED9C370043ABFA /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CD614ED9A9B0043ABFA /* ECTModelController.m */; };
+		22EA2D2B14ED9C3A0043ABFA /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA2CD414ED9A9B0043ABFA /* ECTAppDelegate.m */; };
 		22EC40A213589DD5005C1F1A /* ECReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EC40A013589DD5005C1F1A /* ECReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EC40A313589DD5005C1F1A /* ECReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EC40A013589DD5005C1F1A /* ECReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EC40A413589DD5005C1F1A /* ECReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC40A113589DD5005C1F1A /* ECReachability.m */; };
@@ -612,7 +650,6 @@
 		2200188214917A9F002F1D1D /* NSMutableAttributedStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableAttributedStringTests.m; sourceTree = "<group>"; };
 		22001888149183C2002F1D1D /* NSDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTests.m; sourceTree = "<group>"; };
 		2200188D1491869F002F1D1D /* NSBundleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBundleTests.m; sourceTree = "<group>"; };
-		22001890149188DA002F1D1D /* Test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Test.bundle; path = Modules/ECCore/Resources/Tests/Test.bundle; sourceTree = SOURCE_ROOT; };
 		220375D3141FF4B80040E740 /* ECFoundationIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ECFoundationIOS.plist; sourceTree = "<group>"; };
 		220375D7141FF4C00040E740 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		220375DA141FF4DD0040E740 /* ECFoundationMac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ECFoundationMac.plist; path = Modules/ECCore/Resources/Mac/ECFoundationMac.plist; sourceTree = SOURCE_ROOT; };
@@ -673,8 +710,6 @@
 		2248BC0413C7948F00E13577 /* ECTSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSimpleCell.m; sourceTree = "<group>"; };
 		2248BC0513C7948F00E13577 /* ECTSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSwitchCell.h; sourceTree = "<group>"; };
 		2248BC0613C7948F00E13577 /* ECTSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSwitchCell.m; sourceTree = "<group>"; };
-		2248BC0713C7948F00E13577 /* ECTTickableTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTickableTableController.h; sourceTree = "<group>"; };
-		2248BC0813C7948F00E13577 /* ECTTickableTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTickableTableController.m; sourceTree = "<group>"; };
 		2248BC0913C7948F00E13577 /* ECTTickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTickCell.h; sourceTree = "<group>"; };
 		2248BC0A13C7948F00E13577 /* ECTTickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTickCell.m; sourceTree = "<group>"; };
 		2248BC1A13C7949E00E13577 /* ECCommonKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommonKeys.h; sourceTree = "<group>"; };
@@ -759,8 +794,6 @@
 		22602238141F8A460044644C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		2260223A141F8A4E0044644C /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		22672DBF132321AA00CD8BC7 /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECClang.h; sourceTree = "<group>"; };
-		2269C688149E66B100C95D11 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
-		2269C689149E66B100C95D11 /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
 		22728A65124A240500A9881F /* ECCoreAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreAdHocPrefix.pch; sourceTree = "<group>"; };
 		22728A66124A240500A9881F /* ECCoreDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDebugPrefix.pch; sourceTree = "<group>"; };
 		22728A67124A240500A9881F /* ECCoreReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreReleasePrefix.pch; sourceTree = "<group>"; };
@@ -768,6 +801,9 @@
 		227333B811EBBA3000695FB4 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		2274C97D11FF881E00E5C351 /* ECFoundationAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationAdHocSettings.xcconfig; sourceTree = "<group>"; };
 		2274C97E11FF881E00E5C351 /* ECIOSAdHocSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSAdHocSettings.xcconfig; sourceTree = "<group>"; };
+		227C549C14F4120700881415 /* Test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Test.bundle; sourceTree = "<group>"; };
+		227C54A114F4132500881415 /* ocunit2junit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = ocunit2junit.rb; sourceTree = "<group>"; };
+		227C54A214F4132500881415 /* test-common.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "test-common.sh"; sourceTree = "<group>"; };
 		227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationSharedSettings.xcconfig; sourceTree = "<group>"; };
@@ -777,6 +813,8 @@
 		227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4111A6BC66009420F7 /* ECIOSSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSSharedSettings.xcconfig; sourceTree = "<group>"; };
+		2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
+		2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ECDocumentStyles+UIKit.m"; sourceTree = "<group>"; };
 		22886F451357B9F800828B95 /* ECXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECXMLElement.h; sourceTree = "<group>"; };
 		22886F461357B9F800828B95 /* ECXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECXMLElement.m; sourceTree = "<group>"; };
 		22886F471357B9F800828B95 /* ECXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECXMLParser.h; sourceTree = "<group>"; };
@@ -789,6 +827,8 @@
 		228A510714991FB3002907A6 /* ECRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRuntime.m; sourceTree = "<group>"; };
 		228BCFE9144DF3CE00D22ED5 /* ECRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRandom.h; sourceTree = "<group>"; };
 		228BCFEA144DF3CE00D22ED5 /* ECRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandom.m; sourceTree = "<group>"; };
+		228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewPopoverController.h; sourceTree = "<group>"; };
+		228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewPopoverController.m; sourceTree = "<group>"; };
 		2298A4591355264A00217C2B /* ECDictionaryBackedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObject.h; sourceTree = "<group>"; };
 		2298A45A1355264A00217C2B /* ECDictionaryBackedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDictionaryBackedObject.m; sourceTree = "<group>"; };
 		2298A45B1355264A00217C2B /* ECDictionaryBackedObjectCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDictionaryBackedObjectCache.h; sourceTree = "<group>"; };
@@ -868,23 +908,15 @@
 		22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelViewController.m; sourceTree = "<group>"; };
 		22B1274D13C785CA0022CC5B /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
+		22B184E414F4404C0008887D /* ECParameterisedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECParameterisedTestCase.h; sourceTree = "<group>"; };
+		22B184E514F4404C0008887D /* ECParameterisedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECParameterisedTestCase.m; sourceTree = "<group>"; };
 		22BE50B8149662D0007CC214 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		22BE50D6149668BE007CC214 /* ECHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECHTMLParser.h; sourceTree = "<group>"; };
 		22BE50D7149668BE007CC214 /* ECHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECHTMLParser.m; sourceTree = "<group>"; };
 		22BE50DD14967729007CC214 /* ECDocumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentParser.h; sourceTree = "<group>"; };
 		22BE50DE14967729007CC214 /* ECDocumentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentParser.m; sourceTree = "<group>"; };
-		22BE50FA1496A922007CC214 /* ECScrollingStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECScrollingStyledLabel.h; sourceTree = "<group>"; };
-		22BE50FB1496A922007CC214 /* ECScrollingStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECScrollingStyledLabel.m; sourceTree = "<group>"; };
-		22BE50FC1496A922007CC214 /* ECScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECScrollView.h; sourceTree = "<group>"; };
-		22BE50FD1496A922007CC214 /* ECScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECScrollView.m; sourceTree = "<group>"; };
-		22BE50FE1496A922007CC214 /* ECStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECStyledLabel.h; sourceTree = "<group>"; };
-		22BE50FF1496A922007CC214 /* ECStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECStyledLabel.m; sourceTree = "<group>"; };
-		22BE51091496A9D0007CC214 /* ECAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAppDelegate.h; sourceTree = "<group>"; };
-		22BE510A1496A9D1007CC214 /* ECAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAppDelegate.m; sourceTree = "<group>"; };
-		22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDataModelController.h; sourceTree = "<group>"; };
-		22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoreDataModelController.m; sourceTree = "<group>"; };
-		22BE51261496B019007CC214 /* ECModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECModelController.h; sourceTree = "<group>"; };
-		22BE51271496B019007CC214 /* ECModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECModelController.m; sourceTree = "<group>"; };
+		22BE51211496AFB4007CC214 /* ECTCoreDataModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTCoreDataModelController.h; sourceTree = "<group>"; };
+		22BE51221496AFB4007CC214 /* ECTCoreDataModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTCoreDataModelController.m; sourceTree = "<group>"; };
 		22BE51331496BD00007CC214 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		22BE51351496BD25007CC214 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		22C02E0C141FE3CB004B159A /* CLLocation+ECLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ECLocation.h"; sourceTree = "<group>"; };
@@ -921,11 +953,54 @@
 		22CA557E13DA09FF007E89E2 /* UIImage+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ECCore.m"; sourceTree = "<group>"; };
 		22CEFD571421391600565841 /* NSColor+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ECCore.h"; sourceTree = "<group>"; };
 		22CEFD581421391600565841 /* NSColor+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ECCore.m"; sourceTree = "<group>"; };
+		22DEA70214F40E0C00DF5777 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
+		22DEA70314F40E0C00DF5777 /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
+		22DEA70414F40E0C00DF5777 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		22E99E99148E50F90034E167 /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
 		22E99E9F148E51800034E167 /* ECLazyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLazyProperties.h; sourceTree = "<group>"; };
 		22E99EA0148E51800034E167 /* ECLazyProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyProperties.m; sourceTree = "<group>"; };
 		22E99EA1148E51800034E167 /* NSException+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+ECCore.h"; sourceTree = "<group>"; };
 		22E99EA2148E51800034E167 /* NSException+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+ECCore.m"; sourceTree = "<group>"; };
+		22EA2CD314ED9A9B0043ABFA /* ECTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAppDelegate.h; sourceTree = "<group>"; };
+		22EA2CD414ED9A9B0043ABFA /* ECTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAppDelegate.m; sourceTree = "<group>"; };
+		22EA2CD514ED9A9B0043ABFA /* ECTModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTModelController.h; sourceTree = "<group>"; };
+		22EA2CD614ED9A9B0043ABFA /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
+		22EA2CDE14ED9AE10043ABFA /* ECTBindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTBindingViewController.h; sourceTree = "<group>"; };
+		22EA2CDF14ED9AE10043ABFA /* ECTButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTButtonCell.h; sourceTree = "<group>"; };
+		22EA2CE014ED9AE10043ABFA /* ECTButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTButtonCell.m; sourceTree = "<group>"; };
+		22EA2CE114ED9AE10043ABFA /* ECTEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTEditableCell.h; sourceTree = "<group>"; };
+		22EA2CE214ED9AE10043ABFA /* ECTEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTEditableCell.m; sourceTree = "<group>"; };
+		22EA2CE314ED9AE10043ABFA /* ECTKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTKeys.h; sourceTree = "<group>"; };
+		22EA2CE414ED9AE10043ABFA /* ECTKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTKeys.m; sourceTree = "<group>"; };
+		22EA2CE514ED9AE10043ABFA /* ECTSingleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSingleTableViewController.h; sourceTree = "<group>"; };
+		22EA2CE614ED9AE10043ABFA /* ECTSingleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSingleTableViewController.m; sourceTree = "<group>"; };
+		22EA2CE714ED9AE10043ABFA /* ECTSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSubtitleCell.h; sourceTree = "<group>"; };
+		22EA2CE814ED9AE10043ABFA /* ECTSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSubtitleCell.m; sourceTree = "<group>"; };
+		22EA2CE914ED9AE10043ABFA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		22EA2CF614ED9B2E0043ABFA /* ECTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAlertView.h; sourceTree = "<group>"; };
+		22EA2CF714ED9B2E0043ABFA /* ECTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAlertView.m; sourceTree = "<group>"; };
+		22EA2CF814ED9B2E0043ABFA /* ECTPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverBarButtonItem.h; sourceTree = "<group>"; };
+		22EA2CF914ED9B2E0043ABFA /* ECTPopoverBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverBarButtonItem.m; sourceTree = "<group>"; };
+		22EA2CFA14ED9B2E0043ABFA /* ECTPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverContentController.h; sourceTree = "<group>"; };
+		22EA2CFB14ED9B2E0043ABFA /* ECTPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverContentController.m; sourceTree = "<group>"; };
+		22EA2CFC14ED9B2E0043ABFA /* ECTPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverController.h; sourceTree = "<group>"; };
+		22EA2CFD14ED9B2E0043ABFA /* ECTPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverController.m; sourceTree = "<group>"; };
+		22EA2CFE14ED9B2E0043ABFA /* ECTScrollingStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollingStyledLabel.h; sourceTree = "<group>"; };
+		22EA2CFF14ED9B2E0043ABFA /* ECTScrollingStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollingStyledLabel.m; sourceTree = "<group>"; };
+		22EA2D0014ED9B2E0043ABFA /* ECTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollView.h; sourceTree = "<group>"; };
+		22EA2D0114ED9B2E0043ABFA /* ECTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollView.m; sourceTree = "<group>"; };
+		22EA2D0214ED9B2E0043ABFA /* ECTStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTStyledLabel.h; sourceTree = "<group>"; };
+		22EA2D0314ED9B2E0043ABFA /* ECTStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTStyledLabel.m; sourceTree = "<group>"; };
+		22EA2D0414ED9B2E0043ABFA /* ECTTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTabbedTableViewController.h; sourceTree = "<group>"; };
+		22EA2D0514ED9B2E0043ABFA /* ECTTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTabbedTableViewController.m; sourceTree = "<group>"; };
+		22EA2D0614ED9B2E0043ABFA /* ECTTappableStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTappableStyledLabel.h; sourceTree = "<group>"; };
+		22EA2D0714ED9B2E0043ABFA /* ECTTappableStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTappableStyledLabel.m; sourceTree = "<group>"; };
+		22EA2D0814ED9B2E0043ABFA /* ECTTransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTransparentToolbar.h; sourceTree = "<group>"; };
+		22EA2D0914ED9B2E0043ABFA /* ECTTransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTransparentToolbar.m; sourceTree = "<group>"; };
+		22EA2D1E14ED9B500043ABFA /* ECCoercion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoercion.h; sourceTree = "<group>"; };
+		22EA2D1F14ED9B500043ABFA /* ECCoercion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoercion.m; sourceTree = "<group>"; };
+		22EA2D2414ED9BFD0043ABFA /* ECSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSingleton.h; sourceTree = "<group>"; };
+		22EA2D2514ED9BFD0043ABFA /* ECSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSingleton.m; sourceTree = "<group>"; };
 		22EC40A013589DD5005C1F1A /* ECReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECReachability.h; sourceTree = "<group>"; };
 		22EC40A113589DD5005C1F1A /* ECReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECReachability.m; sourceTree = "<group>"; };
 		22EC40A61358A0D1005C1F1A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -1103,6 +1178,7 @@
 			isa = PBXGroup;
 			children = (
 				22177ACF1495710400C7BDBE /* Generic */,
+				2288157B14EE8D9A00DE962A /* iOS */,
 			);
 			path = ECText;
 			sourceTree = "<group>";
@@ -1140,7 +1216,6 @@
 		223CBAFB1205C7680008A641 /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				22001890149188DA002F1D1D /* Test.bundle */,
 				223CBAFC1205C7680008A641 /* ECFoundation GHUnit.plist */,
 				223CBAFD1205C7680008A641 /* ECFoundation SenTest.plist */,
 			);
@@ -1148,25 +1223,35 @@
 			path = resources/tests;
 			sourceTree = "<group>";
 		};
-		2248BBFC13C7948F00E13577 /* ECTable */ = {
+		2248BBFC13C7948F00E13577 /* TableBindings */ = {
 			isa = PBXGroup;
 			children = (
+				22EA2CE914ED9AE10043ABFA /* README.md */,
 				2248BBFD13C7948F00E13577 /* ECTBinding.h */,
 				2248BBFE13C7948F00E13577 /* ECTBinding.m */,
+				22EA2CDE14ED9AE10043ABFA /* ECTBindingViewController.h */,
+				22EA2CDF14ED9AE10043ABFA /* ECTButtonCell.h */,
+				22EA2CE014ED9AE10043ABFA /* ECTButtonCell.m */,
+				22EA2CE114ED9AE10043ABFA /* ECTEditableCell.h */,
+				22EA2CE214ED9AE10043ABFA /* ECTEditableCell.m */,
+				22EA2CE314ED9AE10043ABFA /* ECTKeys.h */,
+				22EA2CE414ED9AE10043ABFA /* ECTKeys.m */,
 				2248BBFF13C7948F00E13577 /* ECTSection.h */,
 				2248BC0013C7948F00E13577 /* ECTSection.m */,
 				2248BC0113C7948F00E13577 /* ECTSectionDrivenTableController.h */,
 				2248BC0213C7948F00E13577 /* ECTSectionDrivenTableController.m */,
 				2248BC0313C7948F00E13577 /* ECTSimpleCell.h */,
 				2248BC0413C7948F00E13577 /* ECTSimpleCell.m */,
+				22EA2CE514ED9AE10043ABFA /* ECTSingleTableViewController.h */,
+				22EA2CE614ED9AE10043ABFA /* ECTSingleTableViewController.m */,
+				22EA2CE714ED9AE10043ABFA /* ECTSubtitleCell.h */,
+				22EA2CE814ED9AE10043ABFA /* ECTSubtitleCell.m */,
 				2248BC0513C7948F00E13577 /* ECTSwitchCell.h */,
 				2248BC0613C7948F00E13577 /* ECTSwitchCell.m */,
-				2248BC0713C7948F00E13577 /* ECTTickableTableController.h */,
-				2248BC0813C7948F00E13577 /* ECTTickableTableController.m */,
 				2248BC0913C7948F00E13577 /* ECTTickCell.h */,
 				2248BC0A13C7948F00E13577 /* ECTTickCell.m */,
 			);
-			path = ECTable;
+			path = TableBindings;
 			sourceTree = "<group>";
 		};
 		2248BC1913C7949E00E13577 /* misc */ = {
@@ -1343,15 +1428,6 @@
 			path = windows;
 			sourceTree = "<group>";
 		};
-		2269C687149E66B100C95D11 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				2269C688149E66B100C95D11 /* ECTestCase.h */,
-				2269C689149E66B100C95D11 /* ECTestCase.m */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		22728A64124A240500A9881F /* Prefix */ = {
 			isa = PBXGroup;
 			children = (
@@ -1375,17 +1451,34 @@
 			path = resources/mac;
 			sourceTree = "<group>";
 		};
+		227C549B14F4120700881415 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				227C549C14F4120700881415 /* Test.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		227C54A014F4132500881415 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				227C54A114F4132500881415 /* ocunit2junit.rb */,
+				227C54A214F4132500881415 /* test-common.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		227EEB8011A6BCCD009420F7 /* ECTouch */ = {
 			isa = PBXGroup;
 			children = (
-				22BE50F91496A922007CC214 /* ECViews */,
-				2248BBFC13C7948F00E13577 /* ECTable */,
-				22BE51091496A9D0007CC214 /* ECAppDelegate.h */,
-				22BE510A1496A9D1007CC214 /* ECAppDelegate.m */,
-				22BE51211496AFB4007CC214 /* ECCoreDataModelController.h */,
-				22BE51221496AFB4007CC214 /* ECCoreDataModelController.m */,
-				22BE51261496B019007CC214 /* ECModelController.h */,
-				22BE51271496B019007CC214 /* ECModelController.m */,
+				22EA2CD314ED9A9B0043ABFA /* ECTAppDelegate.h */,
+				22EA2CD414ED9A9B0043ABFA /* ECTAppDelegate.m */,
+				22EA2CD514ED9A9B0043ABFA /* ECTModelController.h */,
+				22EA2CD614ED9A9B0043ABFA /* ECTModelController.m */,
+				22BE51211496AFB4007CC214 /* ECTCoreDataModelController.h */,
+				22BE51221496AFB4007CC214 /* ECTCoreDataModelController.m */,
+				2248BBFC13C7948F00E13577 /* TableBindings */,
+				22BE50F91496A922007CC214 /* Views */,
 			);
 			path = ECTouch;
 			sourceTree = "<group>";
@@ -1399,9 +1492,17 @@
 				22CA557F13DA09FF007E89E2 /* Mac */,
 				22728A64124A240500A9881F /* Prefix */,
 				089C1665FE841158C02AAC07 /* Resources */,
-				2269C687149E66B100C95D11 /* Test */,
 			);
 			path = ECCore;
+			sourceTree = "<group>";
+		};
+		2288157B14EE8D9A00DE962A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */,
+				2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		22886F441357B9F800828B95 /* xml */ = {
@@ -1519,9 +1620,7 @@
 		22B1273213C785CA0022CC5B /* ECLogging */ = {
 			isa = PBXGroup;
 			children = (
-				22B1273313C785CA0022CC5B /* Generic */,
-				22B1274813C785CA0022CC5B /* iOS */,
-				22B1274F13C785CA0022CC5B /* Mac */,
+				22F71E4914F8F8AC005DEE63 /* Source */,
 			);
 			path = ECLogging;
 			sourceTree = "<group>";
@@ -1575,6 +1674,8 @@
 				22B1274C13C785CA0022CC5B /* ECDebugChannelViewController.m */,
 				22B1274D13C785CA0022CC5B /* ECDebugViewController.h */,
 				22B1274E13C785CA0022CC5B /* ECDebugViewController.m */,
+				228FB8CF14EDC55400D095CF /* ECDebugViewPopoverController.h */,
+				228FB8D014EDC55400D095CF /* ECDebugViewPopoverController.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1588,30 +1689,45 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		22BE50F91496A922007CC214 /* ECViews */ = {
+		22BE50F91496A922007CC214 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				22BE50FA1496A922007CC214 /* ECScrollingStyledLabel.h */,
-				22BE50FB1496A922007CC214 /* ECScrollingStyledLabel.m */,
-				22BE50FC1496A922007CC214 /* ECScrollView.h */,
-				22BE50FD1496A922007CC214 /* ECScrollView.m */,
-				22BE50FE1496A922007CC214 /* ECStyledLabel.h */,
-				22BE50FF1496A922007CC214 /* ECStyledLabel.m */,
+				22EA2CF614ED9B2E0043ABFA /* ECTAlertView.h */,
+				22EA2CF714ED9B2E0043ABFA /* ECTAlertView.m */,
+				22EA2CF814ED9B2E0043ABFA /* ECTPopoverBarButtonItem.h */,
+				22EA2CF914ED9B2E0043ABFA /* ECTPopoverBarButtonItem.m */,
+				22EA2CFA14ED9B2E0043ABFA /* ECTPopoverContentController.h */,
+				22EA2CFB14ED9B2E0043ABFA /* ECTPopoverContentController.m */,
+				22EA2CFC14ED9B2E0043ABFA /* ECTPopoverController.h */,
+				22EA2CFD14ED9B2E0043ABFA /* ECTPopoverController.m */,
+				22EA2CFE14ED9B2E0043ABFA /* ECTScrollingStyledLabel.h */,
+				22EA2CFF14ED9B2E0043ABFA /* ECTScrollingStyledLabel.m */,
+				22EA2D0014ED9B2E0043ABFA /* ECTScrollView.h */,
+				22EA2D0114ED9B2E0043ABFA /* ECTScrollView.m */,
+				22EA2D0214ED9B2E0043ABFA /* ECTStyledLabel.h */,
+				22EA2D0314ED9B2E0043ABFA /* ECTStyledLabel.m */,
+				22EA2D0414ED9B2E0043ABFA /* ECTTabbedTableViewController.h */,
+				22EA2D0514ED9B2E0043ABFA /* ECTTabbedTableViewController.m */,
+				22EA2D0614ED9B2E0043ABFA /* ECTTappableStyledLabel.h */,
+				22EA2D0714ED9B2E0043ABFA /* ECTTappableStyledLabel.m */,
+				22EA2D0814ED9B2E0043ABFA /* ECTTransparentToolbar.h */,
+				22EA2D0914ED9B2E0043ABFA /* ECTTransparentToolbar.m */,
 			);
-			path = ECViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		22C02E09141FE33C004B159A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				22177ACE1495710400C7BDBE /* ECText */,
 				22AE91FF14926D46008EF8E2 /* ECAnalytics */,
 				22602168141F86F30044644C /* ECAppKit */,
 				227EEB8111A6BCCD009420F7 /* ECCore */,
 				22C02E0A141FE3CB004B159A /* ECLocation */,
 				22B1273213C785CA0022CC5B /* ECLogging */,
 				2299A8DD14A3A33F00729830 /* ECNetwork */,
+				22177ACE1495710400C7BDBE /* ECText */,
 				227EEB8011A6BCCD009420F7 /* ECTouch */,
+				22DEA70014F40E0C00DF5777 /* ECUnitTests */,
 				220375D2141FF1E80040E740 /* ECUtilities */,
 			);
 			path = Modules;
@@ -1664,6 +1780,8 @@
 				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
 				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
 				22672DBF132321AA00CD8BC7 /* ECClang.h */,
+				22EA2D1E14ED9B500043ABFA /* ECCoercion.h */,
+				22EA2D1F14ED9B500043ABFA /* ECCoercion.m */,
 				22E99E9F148E51800034E167 /* ECLazyProperties.h */,
 				22E99EA0148E51800034E167 /* ECLazyProperties.m */,
 				2248BC2213C7949E00E13577 /* ECMacros.h */,
@@ -1674,6 +1792,8 @@
 				228A510714991FB3002907A6 /* ECRuntime.m */,
 				2206F96C14923FAA00AAC9B0 /* ECSha1.h */,
 				2206F96D14923FAB00AAC9B0 /* ECSha1.m */,
+				22EA2D2414ED9BFD0043ABFA /* ECSingleton.h */,
+				22EA2D2514ED9BFD0043ABFA /* ECSingleton.m */,
 				2256927D14210BE000C4F852 /* NSArray+ECCore.h */,
 				2256927E14210BE000C4F852 /* NSArray+ECCore.m */,
 				22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */,
@@ -1778,6 +1898,28 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
+		22DEA70014F40E0C00DF5777 /* ECUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DEA70114F40E0C00DF5777 /* Generic */,
+				227C549B14F4120700881415 /* Resources */,
+				227C54A014F4132500881415 /* Scripts */,
+				22DEA70414F40E0C00DF5777 /* README */,
+			);
+			path = ECUnitTests;
+			sourceTree = "<group>";
+		};
+		22DEA70114F40E0C00DF5777 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				22B184E414F4404C0008887D /* ECParameterisedTestCase.h */,
+				22B184E514F4404C0008887D /* ECParameterisedTestCase.m */,
+				22DEA70214F40E0C00DF5777 /* ECTestCase.h */,
+				22DEA70314F40E0C00DF5777 /* ECTestCase.m */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 		22EC409F13589DD5005C1F1A /* networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1785,6 +1927,16 @@
 				22EC40A113589DD5005C1F1A /* ECReachability.m */,
 			);
 			path = networking;
+			sourceTree = "<group>";
+		};
+		22F71E4914F8F8AC005DEE63 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				22B1273313C785CA0022CC5B /* Generic */,
+				22B1274813C785CA0022CC5B /* iOS */,
+				22B1274F13C785CA0022CC5B /* Mac */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1826,7 +1978,6 @@
 				2248BC4713C794CE00E13577 /* ECTSectionDrivenTableController.h in Headers */,
 				2248BC4913C794CE00E13577 /* ECTSimpleCell.h in Headers */,
 				2248BC4B13C794CE00E13577 /* ECTSwitchCell.h in Headers */,
-				2248BC4D13C794CE00E13577 /* ECTTickableTableController.h in Headers */,
 				2248BC4F13C794CE00E13577 /* ECTTickCell.h in Headers */,
 				22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */,
 				22CA558F13DA09FF007E89E2 /* NSBundle+ECCore.h in Headers */,
@@ -1864,15 +2015,32 @@
 				22177ADB1495710400C7BDBE /* ECDocumentStyles.h in Headers */,
 				22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */,
 				22BE50E01496772A007CC214 /* ECDocumentParser.h in Headers */,
-				22BE51001496A922007CC214 /* ECScrollingStyledLabel.h in Headers */,
-				22BE51031496A922007CC214 /* ECScrollView.h in Headers */,
-				22BE51061496A922007CC214 /* ECStyledLabel.h in Headers */,
-				22BE510B1496A9D1007CC214 /* ECAppDelegate.h in Headers */,
-				22BE51231496AFB4007CC214 /* ECCoreDataModelController.h in Headers */,
-				22BE51281496B01A007CC214 /* ECModelController.h in Headers */,
+				22BE51231496AFB4007CC214 /* ECTCoreDataModelController.h in Headers */,
 				228A510914991FB3002907A6 /* ECRuntime.h in Headers */,
 				22EDDC1B14A0E19300E61CFF /* ECASLClient.h in Headers */,
 				22EDDC2414A0E1B200E61CFF /* ECLogHandlerASL.h in Headers */,
+				22EA2CD914ED9A9B0043ABFA /* ECTAppDelegate.h in Headers */,
+				22EA2CDB14ED9A9B0043ABFA /* ECTModelController.h in Headers */,
+				22EA2CEA14ED9AE10043ABFA /* ECTBindingViewController.h in Headers */,
+				22EA2CEB14ED9AE10043ABFA /* ECTButtonCell.h in Headers */,
+				22EA2CED14ED9AE10043ABFA /* ECTEditableCell.h in Headers */,
+				22EA2CEF14ED9AE10043ABFA /* ECTKeys.h in Headers */,
+				22EA2CF114ED9AE10043ABFA /* ECTSingleTableViewController.h in Headers */,
+				22EA2CF314ED9AE10043ABFA /* ECTSubtitleCell.h in Headers */,
+				22EA2D0A14ED9B2E0043ABFA /* ECTAlertView.h in Headers */,
+				22EA2D0C14ED9B2E0043ABFA /* ECTPopoverBarButtonItem.h in Headers */,
+				22EA2D0E14ED9B2E0043ABFA /* ECTPopoverContentController.h in Headers */,
+				22EA2D1014ED9B2E0043ABFA /* ECTPopoverController.h in Headers */,
+				22EA2D1214ED9B2E0043ABFA /* ECTScrollingStyledLabel.h in Headers */,
+				22EA2D1414ED9B2E0043ABFA /* ECTScrollView.h in Headers */,
+				22EA2D1614ED9B2E0043ABFA /* ECTStyledLabel.h in Headers */,
+				22EA2D1814ED9B2E0043ABFA /* ECTTabbedTableViewController.h in Headers */,
+				22EA2D1A14ED9B2E0043ABFA /* ECTTappableStyledLabel.h in Headers */,
+				22EA2D1C14ED9B2E0043ABFA /* ECTTransparentToolbar.h in Headers */,
+				22EA2D2114ED9B500043ABFA /* ECCoercion.h in Headers */,
+				22EA2D2714ED9BFD0043ABFA /* ECSingleton.h in Headers */,
+				228FB8D114EDC55400D095CF /* ECDebugViewPopoverController.h in Headers */,
+				2288159414EE94EC00DE962A /* ECDocumentStyles+UIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1976,6 +2144,8 @@
 				2299A8FA14A3A36D00729830 /* ECUnixPorts.h in Headers */,
 				2299A8FF14A3A39E00729830 /* ECMachPorts.h in Headers */,
 				2299A90414A3A3E300729830 /* ECLaunchD.h in Headers */,
+				22EA2D2014ED9B500043ABFA /* ECCoercion.h in Headers */,
+				22EA2D2614ED9BFD0043ABFA /* ECSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2061,7 +2231,8 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				CLASSPREFIX = EC;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Elegant Chaos";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECFoundation" */;
@@ -2105,8 +2276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */,
-				22001892149188DA002F1D1D /* Test.bundle in Resources */,
 				22AE923714926D47008EF8E2 /* README.md in Resources */,
+				22DEA70814F40E0C00DF5777 /* README in Resources */,
+				227C549E14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2117,7 +2289,8 @@
 				220375DF141FF4DD0040E740 /* finder support.scpt in Resources */,
 				220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */,
 				220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */,
-				22001891149188DA002F1D1D /* Test.bundle in Resources */,
+				22DEA70714F40E0C00DF5777 /* README in Resources */,
+				227C549D14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2194,7 +2367,6 @@
 				2248BC4813C794CE00E13577 /* ECTSectionDrivenTableController.m in Sources */,
 				2248BC4A13C794CE00E13577 /* ECTSimpleCell.m in Sources */,
 				2248BC4C13C794CE00E13577 /* ECTSwitchCell.m in Sources */,
-				2248BC4E13C794CE00E13577 /* ECTTickableTableController.m in Sources */,
 				2248BC5013C794CE00E13577 /* ECTTickCell.m in Sources */,
 				22CA558513DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */,
 				22CA559113DA09FF007E89E2 /* NSBundle+ECCore.m in Sources */,
@@ -2230,15 +2402,31 @@
 				22177ADD1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
 				22BE50DB149668BE007CC214 /* ECHTMLParser.m in Sources */,
 				22BE50E21496772A007CC214 /* ECDocumentParser.m in Sources */,
-				22BE51011496A922007CC214 /* ECScrollingStyledLabel.m in Sources */,
-				22BE51041496A922007CC214 /* ECScrollView.m in Sources */,
-				22BE51071496A922007CC214 /* ECStyledLabel.m in Sources */,
-				22BE510C1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
-				22BE51241496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
-				22BE51291496B01A007CC214 /* ECModelController.m in Sources */,
+				22BE51241496AFB4007CC214 /* ECTCoreDataModelController.m in Sources */,
 				228A510B14991FB3002907A6 /* ECRuntime.m in Sources */,
 				22EDDC1D14A0E19300E61CFF /* ECASLClient.m in Sources */,
 				22EDDC2614A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
+				22EA2CDA14ED9A9B0043ABFA /* ECTAppDelegate.m in Sources */,
+				22EA2CDC14ED9A9B0043ABFA /* ECTModelController.m in Sources */,
+				22EA2CEC14ED9AE10043ABFA /* ECTButtonCell.m in Sources */,
+				22EA2CEE14ED9AE10043ABFA /* ECTEditableCell.m in Sources */,
+				22EA2CF014ED9AE10043ABFA /* ECTKeys.m in Sources */,
+				22EA2CF214ED9AE10043ABFA /* ECTSingleTableViewController.m in Sources */,
+				22EA2CF414ED9AE10043ABFA /* ECTSubtitleCell.m in Sources */,
+				22EA2D0B14ED9B2E0043ABFA /* ECTAlertView.m in Sources */,
+				22EA2D0D14ED9B2E0043ABFA /* ECTPopoverBarButtonItem.m in Sources */,
+				22EA2D0F14ED9B2E0043ABFA /* ECTPopoverContentController.m in Sources */,
+				22EA2D1114ED9B2E0043ABFA /* ECTPopoverController.m in Sources */,
+				22EA2D1314ED9B2E0043ABFA /* ECTScrollingStyledLabel.m in Sources */,
+				22EA2D1514ED9B2E0043ABFA /* ECTScrollView.m in Sources */,
+				22EA2D1714ED9B2E0043ABFA /* ECTStyledLabel.m in Sources */,
+				22EA2D1914ED9B2E0043ABFA /* ECTTabbedTableViewController.m in Sources */,
+				22EA2D1B14ED9B2E0043ABFA /* ECTTappableStyledLabel.m in Sources */,
+				22EA2D1D14ED9B2E0043ABFA /* ECTTransparentToolbar.m in Sources */,
+				22EA2D2314ED9B500043ABFA /* ECCoercion.m in Sources */,
+				22EA2D2914ED9BFD0043ABFA /* ECSingleton.m in Sources */,
+				228FB8D214EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
+				2288159514EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2315,18 +2503,18 @@
 				22177ACD1495707400C7BDBE /* UIViewController+ECUtilities.m in Sources */,
 				22177AD91495710400C7BDBE /* ECMarkdownParser.m in Sources */,
 				22177ADF1495710400C7BDBE /* ECDocumentStyles.m in Sources */,
-				22BE51021496A922007CC214 /* ECScrollingStyledLabel.m in Sources */,
-				22BE51051496A922007CC214 /* ECScrollView.m in Sources */,
-				22BE51081496A922007CC214 /* ECStyledLabel.m in Sources */,
-				22BE510D1496A9D1007CC214 /* ECAppDelegate.m in Sources */,
-				22BE51251496AFB4007CC214 /* ECCoreDataModelController.m in Sources */,
-				22BE512A1496B01A007CC214 /* ECModelController.m in Sources */,
+				22BE51251496AFB4007CC214 /* ECTCoreDataModelController.m in Sources */,
 				22BE51301496BCDB007CC214 /* ECDocumentParser.m in Sources */,
 				22BE51321496BCDF007CC214 /* ECHTMLParser.m in Sources */,
 				228A510D14991FB3002907A6 /* ECRuntime.m in Sources */,
-				2269C68B149E66B100C95D11 /* ECTestCase.m in Sources */,
 				22EDDC1F14A0E19300E61CFF /* ECASLClient.m in Sources */,
 				22EDDC2814A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
+				22EA2D2A14ED9C370043ABFA /* ECTModelController.m in Sources */,
+				22EA2D2B14ED9C3A0043ABFA /* ECTAppDelegate.m in Sources */,
+				228FB8D314EDC55400D095CF /* ECDebugViewPopoverController.m in Sources */,
+				2288159614EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */,
+				22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */,
+				22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2437,12 +2625,13 @@
 				228A51011498FE39002907A6 /* ECIsEmptyTransformer.m in Sources */,
 				228A51041498FE39002907A6 /* ECIsNotEmptyTransformer.m in Sources */,
 				228A510C14991FB3002907A6 /* ECRuntime.m in Sources */,
-				2269C68A149E66B100C95D11 /* ECTestCase.m in Sources */,
 				22EDDC1E14A0E19300E61CFF /* ECASLClient.m in Sources */,
 				22EDDC2714A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */,
 				2299A8FC14A3A36D00729830 /* ECUnixPorts.m in Sources */,
 				2299A90114A3A39E00729830 /* ECMachPorts.m in Sources */,
 				2299A90614A3A3E300729830 /* ECLaunchD.m in Sources */,
+				22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */,
+				22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2533,6 +2722,8 @@
 				2299A8FB14A3A36D00729830 /* ECUnixPorts.m in Sources */,
 				2299A90014A3A39E00729830 /* ECMachPorts.m in Sources */,
 				2299A90514A3A3E300729830 /* ECLaunchD.m in Sources */,
+				22EA2D2214ED9B500043ABFA /* ECCoercion.m in Sources */,
+				22EA2D2814ED9BFD0043ABFA /* ECSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

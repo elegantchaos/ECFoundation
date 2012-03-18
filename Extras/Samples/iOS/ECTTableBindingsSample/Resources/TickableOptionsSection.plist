@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>section</key>
+	<dict>
+		<key>header</key>
+		<string>Some Options</string>
+		<key>footer</key>
+		<string>This section is bound to an array of options defined in the file OptionsSection.plist</string>
+		<key>canSelect</key>
+		<true/>
+	</dict>
+	<key>everyRow</key>
+	<dict>
+		<key>cellClass</key>
+		<string>ECTTickCell</string>
+	</dict>
+	<key>individualRows</key>
+	<array/>
+	<key>content</key>
+	<string>Options</string>
+</dict>
+</plist>

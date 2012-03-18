@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2214C6EE14ED727C007C994A /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6EB14ED727C007C994A /* ECTAppDelegate.m */; };
+		2214C6EF14ED727C007C994A /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6ED14ED727C007C994A /* ECTModelController.m */; };
+		2214C6F314ED733A007C994A /* ECCoercion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6F214ED733A007C994A /* ECCoercion.m */; };
+		226FB43C13E1EA7200BF258D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43B13E1EA7200BF258D /* UIKit.framework */; };
+		226FB43E13E1EA7200BF258D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43D13E1EA7200BF258D /* Foundation.framework */; };
+		226FB44013E1EA7200BF258D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43F13E1EA7200BF258D /* CoreGraphics.framework */; };
+		226FB47413E1EB0B00BF258D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46213E1EB0B00BF258D /* MainViewController.xib */; };
+		226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226FB46613E1EB0B00BF258D /* InfoPlist.strings */; };
+		226FB47913E1EB0B00BF258D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB46E13E1EB0B00BF258D /* main.m */; };
+		2274A8FC14E40D26007D3E7C /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86014E40D26007D3E7C /* CGGeometry+ECCore.m */; };
+		2274A8FD14E40D26007D3E7C /* ECLazyProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86314E40D26007D3E7C /* ECLazyProperties.m */; };
+		2274A8FE14E40D26007D3E7C /* ECRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86714E40D26007D3E7C /* ECRandom.m */; };
+		2274A8FF14E40D26007D3E7C /* ECRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86914E40D26007D3E7C /* ECRuntime.m */; };
+		2274A90014E40D26007D3E7C /* ECSha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86B14E40D26007D3E7C /* ECSha1.m */; };
+		2274A90114E40D26007D3E7C /* ECSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86D14E40D26007D3E7C /* ECSingleton.m */; };
+		2274A90214E40D26007D3E7C /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A86F14E40D26007D3E7C /* NSArray+ECCore.m */; };
+		2274A90314E40D26007D3E7C /* NSBundle+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87114E40D26007D3E7C /* NSBundle+ECCore.m */; };
+		2274A90414E40D26007D3E7C /* NSData+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87314E40D26007D3E7C /* NSData+ECCore.m */; };
+		2274A90514E40D26007D3E7C /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87514E40D26007D3E7C /* NSDate+ECCore.m */; };
+		2274A90614E40D26007D3E7C /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87714E40D26007D3E7C /* NSDictionary+ECCore.m */; };
+		2274A90714E40D26007D3E7C /* NSException+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87914E40D26007D3E7C /* NSException+ECCore.m */; };
+		2274A90814E40D26007D3E7C /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87B14E40D26007D3E7C /* NSFileManager+ECCore.m */; };
+		2274A90914E40D26007D3E7C /* NSIndexSet+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87D14E40D26007D3E7C /* NSIndexSet+ECCore.m */; };
+		2274A90A14E40D26007D3E7C /* NSMutableAttributedString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A87F14E40D26007D3E7C /* NSMutableAttributedString+ECCore.m */; };
+		2274A90B14E40D26007D3E7C /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A88114E40D26007D3E7C /* NSString+ECCore.m */; };
+		2274A90C14E40D26007D3E7C /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A88314E40D26007D3E7C /* NSURL+ECCore.m */; };
+		2274A91D14E40D26007D3E7C /* NSURL+ECCoreIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A89614E40D26007D3E7C /* NSURL+ECCoreIOS.m */; };
+		2274A92114E40D26007D3E7C /* UIApplication+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A89C14E40D26007D3E7C /* UIApplication+ECCore.m */; };
+		2274A92214E40D26007D3E7C /* UIColor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A89E14E40D26007D3E7C /* UIColor+ECCore.m */; };
+		2274A92314E40D26007D3E7C /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A8A014E40D26007D3E7C /* UIFont+ECCore.m */; };
+		2274A92414E40D26007D3E7C /* UIImage+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A8A214E40D26007D3E7C /* UIImage+ECCore.m */; };
+		2274A92514E40D26007D3E7C /* UIViewController+ECUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A8A414E40D26007D3E7C /* UIViewController+ECUtilities.m */; };
+		2274A9AC14E40D34007D3E7C /* ECASLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95214E40D34007D3E7C /* ECASLClient.m */; };
+		2274A9AD14E40D34007D3E7C /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95414E40D34007D3E7C /* ECAssertion.m */; };
+		2274A9AE14E40D34007D3E7C /* ECErrorReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95614E40D34007D3E7C /* ECErrorReporter.m */; };
+		2274A9AF14E40D34007D3E7C /* ECLogChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95814E40D34007D3E7C /* ECLogChannel.m */; };
+		2274A9B014E40D34007D3E7C /* ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95B14E40D34007D3E7C /* ECLogging.m */; };
+		2274A9B114E40D34007D3E7C /* ECLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95D14E40D34007D3E7C /* ECLogHandler.m */; };
+		2274A9B214E40D34007D3E7C /* ECLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A95F14E40D34007D3E7C /* ECLogManager.m */; };
+		2274A9B314E40D34007D3E7C /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96214E40D34007D3E7C /* ECLogHandlerASL.m */; };
+		2274A9B414E40D34007D3E7C /* ECLogHandlerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96414E40D34007D3E7C /* ECLogHandlerFile.m */; };
+		2274A9B514E40D34007D3E7C /* ECLogHandlerNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96614E40D34007D3E7C /* ECLogHandlerNSLog.m */; };
+		2274A9B614E40D34007D3E7C /* ECLogHandlerStderr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96814E40D34007D3E7C /* ECLogHandlerStderr.m */; };
+		2274A9B714E40D34007D3E7C /* ECLogHandlerStdout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96A14E40D34007D3E7C /* ECLogHandlerStdout.m */; };
+		2274A9B814E40D34007D3E7C /* ECDebugChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96D14E40D34007D3E7C /* ECDebugChannelsViewController.m */; };
+		2274A9B914E40D34007D3E7C /* ECDebugChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A96F14E40D34007D3E7C /* ECDebugChannelViewController.m */; };
+		2274A9BA14E40D34007D3E7C /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A97114E40D34007D3E7C /* ECDebugViewController.m */; };
+		2274A9BB14E40D34007D3E7C /* ECDebugViewPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A97314E40D34007D3E7C /* ECDebugViewPopoverController.m */; };
+		2274A9BC14E40D34007D3E7C /* ECLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A97514E40D34007D3E7C /* ECLogViewController.m */; };
+		2274A9BD14E40D34007D3E7C /* ECLogViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A97714E40D34007D3E7C /* ECLogViewHandler.m */; };
+		2274A9BE14E40D34007D3E7C /* ECLogViewHandlerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A97914E40D34007D3E7C /* ECLogViewHandlerItem.m */; };
+		2274A9CD14E40D34007D3E7C /* ECTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A99B14E40D34007D3E7C /* ECTAlertView.m */; };
+		2274A9CE14E40D34007D3E7C /* ECTPopoverBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A99D14E40D34007D3E7C /* ECTPopoverBarButtonItem.m */; };
+		2274A9CF14E40D34007D3E7C /* ECTPopoverContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A99F14E40D34007D3E7C /* ECTPopoverContentController.m */; };
+		2274A9D014E40D34007D3E7C /* ECTPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9A114E40D34007D3E7C /* ECTPopoverController.m */; };
+		2274A9D114E40D34007D3E7C /* ECTScrollingStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9A314E40D34007D3E7C /* ECTScrollingStyledLabel.m */; };
+		2274A9D214E40D34007D3E7C /* ECTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9A514E40D34007D3E7C /* ECTScrollView.m */; };
+		2274A9D314E40D34007D3E7C /* ECTStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9A714E40D34007D3E7C /* ECTStyledLabel.m */; };
+		2274A9D414E40D34007D3E7C /* ECTTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9A914E40D34007D3E7C /* ECTTabbedTableViewController.m */; };
+		2274A9D514E40D34007D3E7C /* ECTTransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9AB14E40D34007D3E7C /* ECTTransparentToolbar.m */; };
+		2274A9E514E40E4D007D3E7C /* ECDocumentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9DE14E40E4D007D3E7C /* ECDocumentParser.m */; };
+		2274A9E614E40E4D007D3E7C /* ECDocumentStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9E014E40E4D007D3E7C /* ECDocumentStyles.m */; };
+		2274A9E714E40E4D007D3E7C /* ECHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9E214E40E4D007D3E7C /* ECHTMLParser.m */; };
+		2274A9E814E40E4D007D3E7C /* ECMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */; };
+		2274A9EA14E40F02007D3E7C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274A9E914E40F02007D3E7C /* CoreText.framework */; };
+		2274A9EC14E40F42007D3E7C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2274A9EB14E40F42007D3E7C /* QuartzCore.framework */; };
+		2288158A14EE933300DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */; };
+		22B8290013E847C900BF47CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FD13E847C900BF47CC /* AppDelegate.m */; };
+		22B8290113E847C900BF47CC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B828FF13E847C900BF47CC /* MainViewController.m */; };
+		22CA27F214E4355C0056516B /* ECTTappableStyledLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA27F114E4355C0056516B /* ECTTappableStyledLabel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2214C6EA14ED727C007C994A /* ECTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAppDelegate.h; sourceTree = "<group>"; };
+		2214C6EB14ED727C007C994A /* ECTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAppDelegate.m; sourceTree = "<group>"; };
+		2214C6EC14ED727C007C994A /* ECTModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTModelController.h; sourceTree = "<group>"; };
+		2214C6ED14ED727C007C994A /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
+		2214C6F114ED733A007C994A /* ECCoercion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoercion.h; sourceTree = "<group>"; };
+		2214C6F214ED733A007C994A /* ECCoercion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoercion.m; sourceTree = "<group>"; };
+		226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECTStyledLabelSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		226FB43F13E1EA7200BF258D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		226FB46113E1EB0B00BF258D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226FB46313E1EB0B00BF258D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
+		226FB46713E1EB0B00BF258D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		226FB46E13E1EB0B00BF258D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		226FB47013E1EB0B00BF258D /* SharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPrefix.pch; sourceTree = "<group>"; };
+		226FB47113E1EB0B00BF258D /* DebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugPrefix.pch; sourceTree = "<group>"; };
+		226FB47213E1EB0B00BF258D /* ReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleasePrefix.pch; sourceTree = "<group>"; };
+		2274A85F14E40D26007D3E7C /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
+		2274A86014E40D26007D3E7C /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
+		2274A86114E40D26007D3E7C /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECClang.h; sourceTree = "<group>"; };
+		2274A86214E40D26007D3E7C /* ECLazyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLazyProperties.h; sourceTree = "<group>"; };
+		2274A86314E40D26007D3E7C /* ECLazyProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyProperties.m; sourceTree = "<group>"; };
+		2274A86414E40D26007D3E7C /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
+		2274A86514E40D26007D3E7C /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProperties.h; sourceTree = "<group>"; };
+		2274A86614E40D26007D3E7C /* ECRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRandom.h; sourceTree = "<group>"; };
+		2274A86714E40D26007D3E7C /* ECRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandom.m; sourceTree = "<group>"; };
+		2274A86814E40D26007D3E7C /* ECRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECRuntime.h; sourceTree = "<group>"; };
+		2274A86914E40D26007D3E7C /* ECRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRuntime.m; sourceTree = "<group>"; };
+		2274A86A14E40D26007D3E7C /* ECSha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSha1.h; sourceTree = "<group>"; };
+		2274A86B14E40D26007D3E7C /* ECSha1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSha1.m; sourceTree = "<group>"; };
+		2274A86C14E40D26007D3E7C /* ECSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSingleton.h; sourceTree = "<group>"; };
+		2274A86D14E40D26007D3E7C /* ECSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSingleton.m; sourceTree = "<group>"; };
+		2274A86E14E40D26007D3E7C /* NSArray+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ECCore.h"; sourceTree = "<group>"; };
+		2274A86F14E40D26007D3E7C /* NSArray+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ECCore.m"; sourceTree = "<group>"; };
+		2274A87014E40D26007D3E7C /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
+		2274A87114E40D26007D3E7C /* NSBundle+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ECCore.m"; sourceTree = "<group>"; };
+		2274A87214E40D26007D3E7C /* NSData+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ECCore.h"; sourceTree = "<group>"; };
+		2274A87314E40D26007D3E7C /* NSData+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ECCore.m"; sourceTree = "<group>"; };
+		2274A87414E40D26007D3E7C /* NSDate+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ECCore.h"; sourceTree = "<group>"; };
+		2274A87514E40D26007D3E7C /* NSDate+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ECCore.m"; sourceTree = "<group>"; };
+		2274A87614E40D26007D3E7C /* NSDictionary+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ECCore.h"; sourceTree = "<group>"; };
+		2274A87714E40D26007D3E7C /* NSDictionary+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECCore.m"; sourceTree = "<group>"; };
+		2274A87814E40D26007D3E7C /* NSException+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+ECCore.h"; sourceTree = "<group>"; };
+		2274A87914E40D26007D3E7C /* NSException+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+ECCore.m"; sourceTree = "<group>"; };
+		2274A87A14E40D26007D3E7C /* NSFileManager+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECCore.h"; sourceTree = "<group>"; };
+		2274A87B14E40D26007D3E7C /* NSFileManager+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECCore.m"; sourceTree = "<group>"; };
+		2274A87C14E40D26007D3E7C /* NSIndexSet+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+ECCore.h"; sourceTree = "<group>"; };
+		2274A87D14E40D26007D3E7C /* NSIndexSet+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+ECCore.m"; sourceTree = "<group>"; };
+		2274A87E14E40D26007D3E7C /* NSMutableAttributedString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ECCore.h"; sourceTree = "<group>"; };
+		2274A87F14E40D26007D3E7C /* NSMutableAttributedString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ECCore.m"; sourceTree = "<group>"; };
+		2274A88014E40D26007D3E7C /* NSString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCore.h"; sourceTree = "<group>"; };
+		2274A88114E40D26007D3E7C /* NSString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCore.m"; sourceTree = "<group>"; };
+		2274A88214E40D26007D3E7C /* NSURL+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECCore.h"; sourceTree = "<group>"; };
+		2274A88314E40D26007D3E7C /* NSURL+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECCore.m"; sourceTree = "<group>"; };
+		2274A89614E40D26007D3E7C /* NSURL+ECCoreIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECCoreIOS.m"; sourceTree = "<group>"; };
+		2274A89B14E40D26007D3E7C /* UIApplication+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ECCore.h"; sourceTree = "<group>"; };
+		2274A89C14E40D26007D3E7C /* UIApplication+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ECCore.m"; sourceTree = "<group>"; };
+		2274A89D14E40D26007D3E7C /* UIColor+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ECCore.h"; sourceTree = "<group>"; };
+		2274A89E14E40D26007D3E7C /* UIColor+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ECCore.m"; sourceTree = "<group>"; };
+		2274A89F14E40D26007D3E7C /* UIFont+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ECCore.h"; sourceTree = "<group>"; };
+		2274A8A014E40D26007D3E7C /* UIFont+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ECCore.m"; sourceTree = "<group>"; };
+		2274A8A114E40D26007D3E7C /* UIImage+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ECCore.h"; sourceTree = "<group>"; };
+		2274A8A214E40D26007D3E7C /* UIImage+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ECCore.m"; sourceTree = "<group>"; };
+		2274A8A314E40D26007D3E7C /* UIViewController+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECUtilities.h"; sourceTree = "<group>"; };
+		2274A8A414E40D26007D3E7C /* UIViewController+ECUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECUtilities.m"; sourceTree = "<group>"; };
+		2274A8CF14E40D26007D3E7C /* ECCoreAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreAdHocPrefix.pch; sourceTree = "<group>"; };
+		2274A8D014E40D26007D3E7C /* ECCoreDebugPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreDebugPrefix.pch; sourceTree = "<group>"; };
+		2274A8D114E40D26007D3E7C /* ECCoreReleasePrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreReleasePrefix.pch; sourceTree = "<group>"; };
+		2274A8D214E40D26007D3E7C /* ECCoreSharedPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreSharedPrefix.pch; sourceTree = "<group>"; };
+		2274A95114E40D34007D3E7C /* ECASLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECASLClient.h; sourceTree = "<group>"; };
+		2274A95214E40D34007D3E7C /* ECASLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECASLClient.m; sourceTree = "<group>"; };
+		2274A95314E40D34007D3E7C /* ECAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAssertion.h; sourceTree = "<group>"; };
+		2274A95414E40D34007D3E7C /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
+		2274A95514E40D34007D3E7C /* ECErrorReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorReporter.h; sourceTree = "<group>"; };
+		2274A95614E40D34007D3E7C /* ECErrorReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorReporter.m; sourceTree = "<group>"; };
+		2274A95714E40D34007D3E7C /* ECLogChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogChannel.h; sourceTree = "<group>"; };
+		2274A95814E40D34007D3E7C /* ECLogChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogChannel.m; sourceTree = "<group>"; };
+		2274A95914E40D34007D3E7C /* ECLogContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogContext.h; sourceTree = "<group>"; };
+		2274A95A14E40D34007D3E7C /* ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogging.h; sourceTree = "<group>"; };
+		2274A95B14E40D34007D3E7C /* ECLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogging.m; sourceTree = "<group>"; };
+		2274A95C14E40D34007D3E7C /* ECLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandler.h; sourceTree = "<group>"; };
+		2274A95D14E40D34007D3E7C /* ECLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandler.m; sourceTree = "<group>"; };
+		2274A95E14E40D34007D3E7C /* ECLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogManager.h; sourceTree = "<group>"; };
+		2274A95F14E40D34007D3E7C /* ECLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogManager.m; sourceTree = "<group>"; };
+		2274A96114E40D34007D3E7C /* ECLogHandlerASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerASL.h; sourceTree = "<group>"; };
+		2274A96214E40D34007D3E7C /* ECLogHandlerASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerASL.m; sourceTree = "<group>"; };
+		2274A96314E40D34007D3E7C /* ECLogHandlerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerFile.h; sourceTree = "<group>"; };
+		2274A96414E40D34007D3E7C /* ECLogHandlerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerFile.m; sourceTree = "<group>"; };
+		2274A96514E40D34007D3E7C /* ECLogHandlerNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerNSLog.h; sourceTree = "<group>"; };
+		2274A96614E40D34007D3E7C /* ECLogHandlerNSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerNSLog.m; sourceTree = "<group>"; };
+		2274A96714E40D34007D3E7C /* ECLogHandlerStderr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerStderr.h; sourceTree = "<group>"; };
+		2274A96814E40D34007D3E7C /* ECLogHandlerStderr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStderr.m; sourceTree = "<group>"; };
+		2274A96914E40D34007D3E7C /* ECLogHandlerStdout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerStdout.h; sourceTree = "<group>"; };
+		2274A96A14E40D34007D3E7C /* ECLogHandlerStdout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStdout.m; sourceTree = "<group>"; };
+		2274A96C14E40D34007D3E7C /* ECDebugChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugChannelsViewController.h; sourceTree = "<group>"; };
+		2274A96D14E40D34007D3E7C /* ECDebugChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelsViewController.m; sourceTree = "<group>"; };
+		2274A96E14E40D34007D3E7C /* ECDebugChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugChannelViewController.h; sourceTree = "<group>"; };
+		2274A96F14E40D34007D3E7C /* ECDebugChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugChannelViewController.m; sourceTree = "<group>"; };
+		2274A97014E40D34007D3E7C /* ECDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewController.h; sourceTree = "<group>"; };
+		2274A97114E40D34007D3E7C /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
+		2274A97214E40D34007D3E7C /* ECDebugViewPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDebugViewPopoverController.h; sourceTree = "<group>"; };
+		2274A97314E40D34007D3E7C /* ECDebugViewPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewPopoverController.m; sourceTree = "<group>"; };
+		2274A97414E40D34007D3E7C /* ECLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewController.h; sourceTree = "<group>"; };
+		2274A97514E40D34007D3E7C /* ECLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewController.m; sourceTree = "<group>"; };
+		2274A97614E40D34007D3E7C /* ECLogViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewHandler.h; sourceTree = "<group>"; };
+		2274A97714E40D34007D3E7C /* ECLogViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandler.m; sourceTree = "<group>"; };
+		2274A97814E40D34007D3E7C /* ECLogViewHandlerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogViewHandlerItem.h; sourceTree = "<group>"; };
+		2274A97914E40D34007D3E7C /* ECLogViewHandlerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogViewHandlerItem.m; sourceTree = "<group>"; };
+		2274A99A14E40D34007D3E7C /* ECTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAlertView.h; sourceTree = "<group>"; };
+		2274A99B14E40D34007D3E7C /* ECTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAlertView.m; sourceTree = "<group>"; };
+		2274A99C14E40D34007D3E7C /* ECTPopoverBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverBarButtonItem.h; sourceTree = "<group>"; };
+		2274A99D14E40D34007D3E7C /* ECTPopoverBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverBarButtonItem.m; sourceTree = "<group>"; };
+		2274A99E14E40D34007D3E7C /* ECTPopoverContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverContentController.h; sourceTree = "<group>"; };
+		2274A99F14E40D34007D3E7C /* ECTPopoverContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverContentController.m; sourceTree = "<group>"; };
+		2274A9A014E40D34007D3E7C /* ECTPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTPopoverController.h; sourceTree = "<group>"; };
+		2274A9A114E40D34007D3E7C /* ECTPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTPopoverController.m; sourceTree = "<group>"; };
+		2274A9A214E40D34007D3E7C /* ECTScrollingStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollingStyledLabel.h; sourceTree = "<group>"; };
+		2274A9A314E40D34007D3E7C /* ECTScrollingStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollingStyledLabel.m; sourceTree = "<group>"; };
+		2274A9A414E40D34007D3E7C /* ECTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTScrollView.h; sourceTree = "<group>"; };
+		2274A9A514E40D34007D3E7C /* ECTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTScrollView.m; sourceTree = "<group>"; };
+		2274A9A614E40D34007D3E7C /* ECTStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTStyledLabel.h; sourceTree = "<group>"; };
+		2274A9A714E40D34007D3E7C /* ECTStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTStyledLabel.m; sourceTree = "<group>"; };
+		2274A9A814E40D34007D3E7C /* ECTTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTabbedTableViewController.h; sourceTree = "<group>"; };
+		2274A9A914E40D34007D3E7C /* ECTTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTabbedTableViewController.m; sourceTree = "<group>"; };
+		2274A9AA14E40D34007D3E7C /* ECTTransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTransparentToolbar.h; sourceTree = "<group>"; };
+		2274A9AB14E40D34007D3E7C /* ECTTransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTransparentToolbar.m; sourceTree = "<group>"; };
+		2274A9DD14E40E4D007D3E7C /* ECDocumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentParser.h; sourceTree = "<group>"; };
+		2274A9DE14E40E4D007D3E7C /* ECDocumentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentParser.m; sourceTree = "<group>"; };
+		2274A9DF14E40E4D007D3E7C /* ECDocumentStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDocumentStyles.h; sourceTree = "<group>"; };
+		2274A9E014E40E4D007D3E7C /* ECDocumentStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDocumentStyles.m; sourceTree = "<group>"; };
+		2274A9E114E40E4D007D3E7C /* ECHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECHTMLParser.h; sourceTree = "<group>"; };
+		2274A9E214E40E4D007D3E7C /* ECHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECHTMLParser.m; sourceTree = "<group>"; };
+		2274A9E314E40E4D007D3E7C /* ECMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMarkdownParser.h; sourceTree = "<group>"; };
+		2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMarkdownParser.m; sourceTree = "<group>"; };
+		2274A9E914E40F02007D3E7C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2274A9EB14E40F42007D3E7C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
+		2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ECDocumentStyles+UIKit.m"; sourceTree = "<group>"; };
+		22B828FC13E847C900BF47CC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		22B828FD13E847C900BF47CC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		22B828FE13E847C900BF47CC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Source/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		22B828FF13E847C900BF47CC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Source/MainViewController.m; sourceTree = SOURCE_ROOT; };
+		22CA27DD14E42E390056516B /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
+		22CA27F014E4355C0056516B /* ECTTappableStyledLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTTappableStyledLabel.h; sourceTree = "<group>"; };
+		22CA27F114E4355C0056516B /* ECTTappableStyledLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTTappableStyledLabel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		226FB43413E1EA7200BF258D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2274A9EC14E40F42007D3E7C /* QuartzCore.framework in Frameworks */,
+				226FB44013E1EA7200BF258D /* CoreGraphics.framework in Frameworks */,
+				2274A9EA14E40F02007D3E7C /* CoreText.framework in Frameworks */,
+				226FB43C13E1EA7200BF258D /* UIKit.framework in Frameworks */,
+				226FB43E13E1EA7200BF258D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		226FB42C13E1EA7200BF258D = {
+			isa = PBXGroup;
+			children = (
+				226FB46813E1EB0B00BF258D /* Source */,
+				226FB46013E1EB0B00BF258D /* Resources */,
+				226FB43A13E1EA7200BF258D /* Frameworks */,
+				226FB43813E1EA7200BF258D /* Products */,
+				22CA27DD14E42E390056516B /* Scripts */,
+			);
+			sourceTree = "<group>";
+		};
+		226FB43813E1EA7200BF258D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		226FB43A13E1EA7200BF258D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2274A9EB14E40F42007D3E7C /* QuartzCore.framework */,
+				2274A9E914E40F02007D3E7C /* CoreText.framework */,
+				226FB43B13E1EA7200BF258D /* UIKit.framework */,
+				226FB43D13E1EA7200BF258D /* Foundation.framework */,
+				226FB43F13E1EA7200BF258D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		226FB46013E1EB0B00BF258D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				226FB46113E1EB0B00BF258D /* Info.plist */,
+				226FB46213E1EB0B00BF258D /* MainViewController.xib */,
+				226FB46613E1EB0B00BF258D /* InfoPlist.strings */,
+			);
+			name = Resources;
+			path = resources;
+			sourceTree = "<group>";
+		};
+		226FB46813E1EB0B00BF258D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				22B828FC13E847C900BF47CC /* AppDelegate.h */,
+				22B828FD13E847C900BF47CC /* AppDelegate.m */,
+				22B828FE13E847C900BF47CC /* MainViewController.h */,
+				22B828FF13E847C900BF47CC /* MainViewController.m */,
+				226FB46E13E1EB0B00BF258D /* main.m */,
+				226FB4E013E2914900BF258D /* ECFoundation */,
+				226FB46F13E1EB0B00BF258D /* Prefix */,
+			);
+			name = Source;
+			path = source;
+			sourceTree = "<group>";
+		};
+		226FB46F13E1EB0B00BF258D /* Prefix */ = {
+			isa = PBXGroup;
+			children = (
+				226FB47013E1EB0B00BF258D /* SharedPrefix.pch */,
+				226FB47113E1EB0B00BF258D /* DebugPrefix.pch */,
+				226FB47213E1EB0B00BF258D /* ReleasePrefix.pch */,
+			);
+			name = Prefix;
+			path = prefix;
+			sourceTree = "<group>";
+		};
+		226FB4E013E2914900BF258D /* ECFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				2274A85114E40D26007D3E7C /* ECCore */,
+				2274A94F14E40D34007D3E7C /* ECLogging */,
+				2274A9DB14E40E4D007D3E7C /* ECText */,
+				2274A97D14E40D34007D3E7C /* ECTouch */,
+			);
+			name = ECFoundation;
+			sourceTree = "<group>";
+		};
+		2274A85114E40D26007D3E7C /* ECCore */ = {
+			isa = PBXGroup;
+			children = (
+				2274A85E14E40D26007D3E7C /* Generic */,
+				2274A89514E40D26007D3E7C /* iOS */,
+				2274A8CE14E40D26007D3E7C /* Prefix */,
+			);
+			name = ECCore;
+			path = ../../../../../Modules/ECCore;
+			sourceTree = "<group>";
+		};
+		2274A85E14E40D26007D3E7C /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				2274A85F14E40D26007D3E7C /* CGGeometry+ECCore.h */,
+				2274A86014E40D26007D3E7C /* CGGeometry+ECCore.m */,
+				2274A86114E40D26007D3E7C /* ECClang.h */,
+				2214C6F114ED733A007C994A /* ECCoercion.h */,
+				2214C6F214ED733A007C994A /* ECCoercion.m */,
+				2274A86214E40D26007D3E7C /* ECLazyProperties.h */,
+				2274A86314E40D26007D3E7C /* ECLazyProperties.m */,
+				2274A86414E40D26007D3E7C /* ECMacros.h */,
+				2274A86514E40D26007D3E7C /* ECProperties.h */,
+				2274A86614E40D26007D3E7C /* ECRandom.h */,
+				2274A86714E40D26007D3E7C /* ECRandom.m */,
+				2274A86814E40D26007D3E7C /* ECRuntime.h */,
+				2274A86914E40D26007D3E7C /* ECRuntime.m */,
+				2274A86A14E40D26007D3E7C /* ECSha1.h */,
+				2274A86B14E40D26007D3E7C /* ECSha1.m */,
+				2274A86C14E40D26007D3E7C /* ECSingleton.h */,
+				2274A86D14E40D26007D3E7C /* ECSingleton.m */,
+				2274A86E14E40D26007D3E7C /* NSArray+ECCore.h */,
+				2274A86F14E40D26007D3E7C /* NSArray+ECCore.m */,
+				2274A87014E40D26007D3E7C /* NSBundle+ECCore.h */,
+				2274A87114E40D26007D3E7C /* NSBundle+ECCore.m */,
+				2274A87214E40D26007D3E7C /* NSData+ECCore.h */,
+				2274A87314E40D26007D3E7C /* NSData+ECCore.m */,
+				2274A87414E40D26007D3E7C /* NSDate+ECCore.h */,
+				2274A87514E40D26007D3E7C /* NSDate+ECCore.m */,
+				2274A87614E40D26007D3E7C /* NSDictionary+ECCore.h */,
+				2274A87714E40D26007D3E7C /* NSDictionary+ECCore.m */,
+				2274A87814E40D26007D3E7C /* NSException+ECCore.h */,
+				2274A87914E40D26007D3E7C /* NSException+ECCore.m */,
+				2274A87A14E40D26007D3E7C /* NSFileManager+ECCore.h */,
+				2274A87B14E40D26007D3E7C /* NSFileManager+ECCore.m */,
+				2274A87C14E40D26007D3E7C /* NSIndexSet+ECCore.h */,
+				2274A87D14E40D26007D3E7C /* NSIndexSet+ECCore.m */,
+				2274A87E14E40D26007D3E7C /* NSMutableAttributedString+ECCore.h */,
+				2274A87F14E40D26007D3E7C /* NSMutableAttributedString+ECCore.m */,
+				2274A88014E40D26007D3E7C /* NSString+ECCore.h */,
+				2274A88114E40D26007D3E7C /* NSString+ECCore.m */,
+				2274A88214E40D26007D3E7C /* NSURL+ECCore.h */,
+				2274A88314E40D26007D3E7C /* NSURL+ECCore.m */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		2274A89514E40D26007D3E7C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2274A89614E40D26007D3E7C /* NSURL+ECCoreIOS.m */,
+				2274A89B14E40D26007D3E7C /* UIApplication+ECCore.h */,
+				2274A89C14E40D26007D3E7C /* UIApplication+ECCore.m */,
+				2274A89D14E40D26007D3E7C /* UIColor+ECCore.h */,
+				2274A89E14E40D26007D3E7C /* UIColor+ECCore.m */,
+				2274A89F14E40D26007D3E7C /* UIFont+ECCore.h */,
+				2274A8A014E40D26007D3E7C /* UIFont+ECCore.m */,
+				2274A8A114E40D26007D3E7C /* UIImage+ECCore.h */,
+				2274A8A214E40D26007D3E7C /* UIImage+ECCore.m */,
+				2274A8A314E40D26007D3E7C /* UIViewController+ECUtilities.h */,
+				2274A8A414E40D26007D3E7C /* UIViewController+ECUtilities.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2274A8CE14E40D26007D3E7C /* Prefix */ = {
+			isa = PBXGroup;
+			children = (
+				2274A8CF14E40D26007D3E7C /* ECCoreAdHocPrefix.pch */,
+				2274A8D014E40D26007D3E7C /* ECCoreDebugPrefix.pch */,
+				2274A8D114E40D26007D3E7C /* ECCoreReleasePrefix.pch */,
+				2274A8D214E40D26007D3E7C /* ECCoreSharedPrefix.pch */,
+			);
+			path = Prefix;
+			sourceTree = "<group>";
+		};
+		2274A94F14E40D34007D3E7C /* ECLogging */ = {
+			isa = PBXGroup;
+			children = (
+				2274A95014E40D34007D3E7C /* Generic */,
+				2274A96B14E40D34007D3E7C /* iOS */,
+			);
+			name = ECLogging;
+			path = ../../../../../Modules/ECLogging;
+			sourceTree = "<group>";
+		};
+		2274A95014E40D34007D3E7C /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				2274A95114E40D34007D3E7C /* ECASLClient.h */,
+				2274A95214E40D34007D3E7C /* ECASLClient.m */,
+				2274A95314E40D34007D3E7C /* ECAssertion.h */,
+				2274A95414E40D34007D3E7C /* ECAssertion.m */,
+				2274A95514E40D34007D3E7C /* ECErrorReporter.h */,
+				2274A95614E40D34007D3E7C /* ECErrorReporter.m */,
+				2274A95714E40D34007D3E7C /* ECLogChannel.h */,
+				2274A95814E40D34007D3E7C /* ECLogChannel.m */,
+				2274A95914E40D34007D3E7C /* ECLogContext.h */,
+				2274A95A14E40D34007D3E7C /* ECLogging.h */,
+				2274A95B14E40D34007D3E7C /* ECLogging.m */,
+				2274A95C14E40D34007D3E7C /* ECLogHandler.h */,
+				2274A95D14E40D34007D3E7C /* ECLogHandler.m */,
+				2274A95E14E40D34007D3E7C /* ECLogManager.h */,
+				2274A95F14E40D34007D3E7C /* ECLogManager.m */,
+				2274A96014E40D34007D3E7C /* Handlers */,
+			);
+			name = Generic;
+			path = Source/Generic;
+			sourceTree = "<group>";
+		};
+		2274A96014E40D34007D3E7C /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				2274A96114E40D34007D3E7C /* ECLogHandlerASL.h */,
+				2274A96214E40D34007D3E7C /* ECLogHandlerASL.m */,
+				2274A96314E40D34007D3E7C /* ECLogHandlerFile.h */,
+				2274A96414E40D34007D3E7C /* ECLogHandlerFile.m */,
+				2274A96514E40D34007D3E7C /* ECLogHandlerNSLog.h */,
+				2274A96614E40D34007D3E7C /* ECLogHandlerNSLog.m */,
+				2274A96714E40D34007D3E7C /* ECLogHandlerStderr.h */,
+				2274A96814E40D34007D3E7C /* ECLogHandlerStderr.m */,
+				2274A96914E40D34007D3E7C /* ECLogHandlerStdout.h */,
+				2274A96A14E40D34007D3E7C /* ECLogHandlerStdout.m */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		2274A96B14E40D34007D3E7C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2274A96C14E40D34007D3E7C /* ECDebugChannelsViewController.h */,
+				2274A96D14E40D34007D3E7C /* ECDebugChannelsViewController.m */,
+				2274A96E14E40D34007D3E7C /* ECDebugChannelViewController.h */,
+				2274A96F14E40D34007D3E7C /* ECDebugChannelViewController.m */,
+				2274A97014E40D34007D3E7C /* ECDebugViewController.h */,
+				2274A97114E40D34007D3E7C /* ECDebugViewController.m */,
+				2274A97214E40D34007D3E7C /* ECDebugViewPopoverController.h */,
+				2274A97314E40D34007D3E7C /* ECDebugViewPopoverController.m */,
+				2274A97414E40D34007D3E7C /* ECLogViewController.h */,
+				2274A97514E40D34007D3E7C /* ECLogViewController.m */,
+				2274A97614E40D34007D3E7C /* ECLogViewHandler.h */,
+				2274A97714E40D34007D3E7C /* ECLogViewHandler.m */,
+				2274A97814E40D34007D3E7C /* ECLogViewHandlerItem.h */,
+				2274A97914E40D34007D3E7C /* ECLogViewHandlerItem.m */,
+			);
+			name = iOS;
+			path = Source/iOS;
+			sourceTree = "<group>";
+		};
+		2274A97D14E40D34007D3E7C /* ECTouch */ = {
+			isa = PBXGroup;
+			children = (
+				2214C6EA14ED727C007C994A /* ECTAppDelegate.h */,
+				2214C6EB14ED727C007C994A /* ECTAppDelegate.m */,
+				2214C6EC14ED727C007C994A /* ECTModelController.h */,
+				2214C6ED14ED727C007C994A /* ECTModelController.m */,
+				2274A99914E40D34007D3E7C /* Views */,
+			);
+			name = ECTouch;
+			path = ../../../../../Modules/ECTouch;
+			sourceTree = "<group>";
+		};
+		2274A99914E40D34007D3E7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2274A99A14E40D34007D3E7C /* ECTAlertView.h */,
+				2274A99B14E40D34007D3E7C /* ECTAlertView.m */,
+				2274A99C14E40D34007D3E7C /* ECTPopoverBarButtonItem.h */,
+				2274A99D14E40D34007D3E7C /* ECTPopoverBarButtonItem.m */,
+				2274A99E14E40D34007D3E7C /* ECTPopoverContentController.h */,
+				2274A99F14E40D34007D3E7C /* ECTPopoverContentController.m */,
+				2274A9A014E40D34007D3E7C /* ECTPopoverController.h */,
+				2274A9A114E40D34007D3E7C /* ECTPopoverController.m */,
+				2274A9A214E40D34007D3E7C /* ECTScrollingStyledLabel.h */,
+				2274A9A314E40D34007D3E7C /* ECTScrollingStyledLabel.m */,
+				2274A9A414E40D34007D3E7C /* ECTScrollView.h */,
+				2274A9A514E40D34007D3E7C /* ECTScrollView.m */,
+				2274A9A614E40D34007D3E7C /* ECTStyledLabel.h */,
+				2274A9A714E40D34007D3E7C /* ECTStyledLabel.m */,
+				22CA27F014E4355C0056516B /* ECTTappableStyledLabel.h */,
+				22CA27F114E4355C0056516B /* ECTTappableStyledLabel.m */,
+				2274A9A814E40D34007D3E7C /* ECTTabbedTableViewController.h */,
+				2274A9A914E40D34007D3E7C /* ECTTabbedTableViewController.m */,
+				2274A9AA14E40D34007D3E7C /* ECTTransparentToolbar.h */,
+				2274A9AB14E40D34007D3E7C /* ECTTransparentToolbar.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2274A9DB14E40E4D007D3E7C /* ECText */ = {
+			isa = PBXGroup;
+			children = (
+				2288158714EE933300DE962A /* iOS */,
+				2274A9DC14E40E4D007D3E7C /* Generic */,
+			);
+			name = ECText;
+			path = ../../../../../Modules/ECText;
+			sourceTree = "<group>";
+		};
+		2274A9DC14E40E4D007D3E7C /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				2274A9DD14E40E4D007D3E7C /* ECDocumentParser.h */,
+				2274A9DE14E40E4D007D3E7C /* ECDocumentParser.m */,
+				2274A9DF14E40E4D007D3E7C /* ECDocumentStyles.h */,
+				2274A9E014E40E4D007D3E7C /* ECDocumentStyles.m */,
+				2274A9E114E40E4D007D3E7C /* ECHTMLParser.h */,
+				2274A9E214E40E4D007D3E7C /* ECHTMLParser.m */,
+				2274A9E314E40E4D007D3E7C /* ECMarkdownParser.h */,
+				2274A9E414E40E4D007D3E7C /* ECMarkdownParser.m */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		2288158714EE933300DE962A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2288158814EE933300DE962A /* ECDocumentStyles+UIKit.h */,
+				2288158914EE933300DE962A /* ECDocumentStyles+UIKit.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		226FB43613E1EA7200BF258D /* ECTStyledLabelSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTStyledLabelSample" */;
+			buildPhases = (
+				226FB43313E1EA7200BF258D /* Sources */,
+				226FB43413E1EA7200BF258D /* Frameworks */,
+				226FB43513E1EA7200BF258D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECTStyledLabelSample;
+			productName = ECLoggingSample;
+			productReference = 226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		226FB42E13E1EA7200BF258D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTStyledLabelSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 226FB42C13E1EA7200BF258D;
+			productRefGroup = 226FB43813E1EA7200BF258D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				226FB43613E1EA7200BF258D /* ECTStyledLabelSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		226FB43513E1EA7200BF258D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226FB47413E1EB0B00BF258D /* MainViewController.xib in Resources */,
+				226FB47613E1EB0B00BF258D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		226FB43313E1EA7200BF258D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226FB47913E1EB0B00BF258D /* main.m in Sources */,
+				22B8290013E847C900BF47CC /* AppDelegate.m in Sources */,
+				22B8290113E847C900BF47CC /* MainViewController.m in Sources */,
+				2274A8FC14E40D26007D3E7C /* CGGeometry+ECCore.m in Sources */,
+				2274A8FD14E40D26007D3E7C /* ECLazyProperties.m in Sources */,
+				2274A8FE14E40D26007D3E7C /* ECRandom.m in Sources */,
+				2274A8FF14E40D26007D3E7C /* ECRuntime.m in Sources */,
+				2274A90014E40D26007D3E7C /* ECSha1.m in Sources */,
+				2274A90114E40D26007D3E7C /* ECSingleton.m in Sources */,
+				2274A90214E40D26007D3E7C /* NSArray+ECCore.m in Sources */,
+				2274A90314E40D26007D3E7C /* NSBundle+ECCore.m in Sources */,
+				2274A90414E40D26007D3E7C /* NSData+ECCore.m in Sources */,
+				2274A90514E40D26007D3E7C /* NSDate+ECCore.m in Sources */,
+				2274A90614E40D26007D3E7C /* NSDictionary+ECCore.m in Sources */,
+				2274A90714E40D26007D3E7C /* NSException+ECCore.m in Sources */,
+				2274A90814E40D26007D3E7C /* NSFileManager+ECCore.m in Sources */,
+				2274A90914E40D26007D3E7C /* NSIndexSet+ECCore.m in Sources */,
+				2274A90A14E40D26007D3E7C /* NSMutableAttributedString+ECCore.m in Sources */,
+				2274A90B14E40D26007D3E7C /* NSString+ECCore.m in Sources */,
+				2274A90C14E40D26007D3E7C /* NSURL+ECCore.m in Sources */,
+				2274A91D14E40D26007D3E7C /* NSURL+ECCoreIOS.m in Sources */,
+				2274A92114E40D26007D3E7C /* UIApplication+ECCore.m in Sources */,
+				2274A92214E40D26007D3E7C /* UIColor+ECCore.m in Sources */,
+				2274A92314E40D26007D3E7C /* UIFont+ECCore.m in Sources */,
+				2274A92414E40D26007D3E7C /* UIImage+ECCore.m in Sources */,
+				2274A92514E40D26007D3E7C /* UIViewController+ECUtilities.m in Sources */,
+				2274A9AC14E40D34007D3E7C /* ECASLClient.m in Sources */,
+				2274A9AD14E40D34007D3E7C /* ECAssertion.m in Sources */,
+				2274A9AE14E40D34007D3E7C /* ECErrorReporter.m in Sources */,
+				2274A9AF14E40D34007D3E7C /* ECLogChannel.m in Sources */,
+				2274A9B014E40D34007D3E7C /* ECLogging.m in Sources */,
+				2274A9B114E40D34007D3E7C /* ECLogHandler.m in Sources */,
+				2274A9B214E40D34007D3E7C /* ECLogManager.m in Sources */,
+				2274A9B314E40D34007D3E7C /* ECLogHandlerASL.m in Sources */,
+				2274A9B414E40D34007D3E7C /* ECLogHandlerFile.m in Sources */,
+				2274A9B514E40D34007D3E7C /* ECLogHandlerNSLog.m in Sources */,
+				2274A9B614E40D34007D3E7C /* ECLogHandlerStderr.m in Sources */,
+				2274A9B714E40D34007D3E7C /* ECLogHandlerStdout.m in Sources */,
+				2274A9B814E40D34007D3E7C /* ECDebugChannelsViewController.m in Sources */,
+				2274A9B914E40D34007D3E7C /* ECDebugChannelViewController.m in Sources */,
+				2274A9BA14E40D34007D3E7C /* ECDebugViewController.m in Sources */,
+				2274A9BB14E40D34007D3E7C /* ECDebugViewPopoverController.m in Sources */,
+				2274A9BC14E40D34007D3E7C /* ECLogViewController.m in Sources */,
+				2274A9BD14E40D34007D3E7C /* ECLogViewHandler.m in Sources */,
+				2274A9BE14E40D34007D3E7C /* ECLogViewHandlerItem.m in Sources */,
+				2274A9CD14E40D34007D3E7C /* ECTAlertView.m in Sources */,
+				2274A9CE14E40D34007D3E7C /* ECTPopoverBarButtonItem.m in Sources */,
+				2274A9CF14E40D34007D3E7C /* ECTPopoverContentController.m in Sources */,
+				2274A9D014E40D34007D3E7C /* ECTPopoverController.m in Sources */,
+				2274A9D114E40D34007D3E7C /* ECTScrollingStyledLabel.m in Sources */,
+				2274A9D214E40D34007D3E7C /* ECTScrollView.m in Sources */,
+				2274A9D314E40D34007D3E7C /* ECTStyledLabel.m in Sources */,
+				2274A9D414E40D34007D3E7C /* ECTTabbedTableViewController.m in Sources */,
+				2274A9D514E40D34007D3E7C /* ECTTransparentToolbar.m in Sources */,
+				2274A9E514E40E4D007D3E7C /* ECDocumentParser.m in Sources */,
+				2274A9E614E40E4D007D3E7C /* ECDocumentStyles.m in Sources */,
+				2274A9E714E40E4D007D3E7C /* ECHTMLParser.m in Sources */,
+				2274A9E814E40E4D007D3E7C /* ECMarkdownParser.m in Sources */,
+				22CA27F214E4355C0056516B /* ECTTappableStyledLabel.m in Sources */,
+				2214C6EE14ED727C007C994A /* ECTAppDelegate.m in Sources */,
+				2214C6EF14ED727C007C994A /* ECTModelController.m in Sources */,
+				2214C6F314ED733A007C994A /* ECCoercion.m in Sources */,
+				2288158A14EE933300DE962A /* ECDocumentStyles+UIKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		226FB46213E1EB0B00BF258D /* MainViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226FB46313E1EB0B00BF258D /* en */,
+			);
+			name = MainViewController.xib;
+			sourceTree = "<group>";
+		};
+		226FB46613E1EB0B00BF258D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				226FB46713E1EB0B00BF258D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		226FB45613E1EA7200BF258D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		226FB45713E1EA7200BF258D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		226FB45913E1EA7200BF258D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = resources/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		226FB45A13E1EA7200BF258D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "source/prefix/$(CONFIGURATION)Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = resources/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		226FB43113E1EA7200BF258D /* Build configuration list for PBXProject "ECTStyledLabelSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226FB45613E1EA7200BF258D /* Debug */,
+				226FB45713E1EA7200BF258D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226FB45813E1EA7200BF258D /* Build configuration list for PBXNativeTarget "ECTStyledLabelSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226FB45913E1EA7200BF258D /* Debug */,
+				226FB45A13E1EA7200BF258D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 226FB42E13E1EA7200BF258D /* Project object */;
+}

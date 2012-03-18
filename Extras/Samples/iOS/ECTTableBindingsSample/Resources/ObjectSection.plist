@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>section</key>
+	<dict>
+		<key>header</key>
+		<string>Object Binding</string>
+		<key>footer</key>
+		<string>This section is bound to an individual model object</string>
+	</dict>
+	<key>everyRow</key>
+	<dict>
+		<key>font</key>
+		<dict>
+			<key>label</key>
+			<dict>
+				<key>name</key>
+				<string>Marker Felt</string>
+				<key>size</key>
+				<integer>16</integer>
+			</dict>
+			<key>detail</key>
+			<dict>
+				<key>name</key>
+				<string>Marker Felt</string>
+				<key>size</key>
+				<integer>14</integer>
+			</dict>
+		</dict>
+	</dict>
+	<key>individualRows</key>
+	<array>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>name</string>
+			</dict>
+			<key>label</key>
+			<string>Name</string>
+			<key>cellClass</key>
+			<string>ECTEditableCell</string>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>label</string>
+			</dict>
+			<key>label</key>
+			<string>Label</string>
+			<key>cellClass</key>
+			<string>ECTSubtitleCell</string>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>enabled</string>
+			</dict>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>cellClass</key>
+			<string>ECTSwitchCell</string>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>name</string>
+			</dict>
+			<key>cellClass</key>
+			<string>ECTButtonCell</string>
+			<key>action</key>
+			<string>tappedButton:</string>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>option</string>
+			</dict>
+			<key>label</key>
+			<string>Option</string>
+			<key>disclosure</key>
+			<dict>
+				<key>detail</key>
+				<string>ECTSectionDrivenTableController</string>
+				<key>style</key>
+				<string>grouped</string>
+				<key>title</key>
+				<string>Choose An Option</string>
+				<key>sections</key>
+				<string>TickableOptionsSection</string>
+				<key>autoPop</key>
+				<false/>
+				<key>back</key>
+				<string>Cancel</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>mappings</key>
+			<dict>
+				<key>value</key>
+				<string>option</string>
+			</dict>
+			<key>label</key>
+			<string>Option</string>
+			<key>disclosure</key>
+			<dict>
+				<key>detail</key>
+				<string>ECTSectionDrivenTableController</string>
+				<key>style</key>
+				<string>grouped</string>
+				<key>title</key>
+				<string>Choose An Option</string>
+				<key>sections</key>
+				<string>OptionsSection</string>
+				<key>back</key>
+				<string>Cancel</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

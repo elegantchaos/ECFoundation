@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>section</key>
+	<dict>
+		<key>header</key>
+		<string>Array Binding</string>
+		<key>footer</key>
+		<string>This section is bound to the model.objects array. The information to set up the section came from ArraySection.plist. Each row in the table corresponds to one item in the model.objects array. Tapping on a row pushes an ObjectViewController onto the navigation stack for that row&apos;s object.</string>
+		<key>canMove</key>
+		<true/>
+	</dict>
+	<key>everyRow</key>
+	<dict>
+		<key>mappings</key>
+		<dict>
+			<key>value</key>
+			<string>name</string>
+			<key>detail</key>
+			<string>label</string>
+			<key>image</key>
+			<string>image</string>
+		</dict>
+		<key>canMove</key>
+		<true/>
+		<key>disclosure</key>
+		<dict>
+			<key>class</key>
+			<string>ObjectViewController</string>
+		</dict>
+	</dict>
+	<key>add</key>
+	<dict>
+		<key>label</key>
+		<string>Add Object</string>
+		<key>action</key>
+		<string>tappedAdd:</string>
+	</dict>
+</dict>
+</plist>
