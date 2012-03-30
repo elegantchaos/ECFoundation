@@ -59,7 +59,7 @@
 		2206F97E14924D6300AAC9B0 /* UIApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97B14924D6300AAC9B0 /* UIApplicationTests.m */; };
 		2206F97F14924D6300AAC9B0 /* UIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97C14924D6300AAC9B0 /* UIColorTests.m */; };
 		2206F98014924D6300AAC9B0 /* UIImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97D14924D6300AAC9B0 /* UIImageTests.m */; };
-		22177AC81495707400C7BDBE /* UIFont+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AC41495707400C7BDBE /* UIFont+ECCore.h */; };
+		22177AC81495707400C7BDBE /* UIFont+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AC41495707400C7BDBE /* UIFont+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22177AC91495707400C7BDBE /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC51495707400C7BDBE /* UIFont+ECCore.m */; };
 		22177ACA1495707400C7BDBE /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC51495707400C7BDBE /* UIFont+ECCore.m */; };
 		22177ACB1495707400C7BDBE /* UIViewController+ECUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */; };
