@@ -2921,7 +2921,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2946,7 +2946,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2971,7 +2971,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -2996,7 +2996,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -3021,7 +3021,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -3069,7 +3069,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "EC_USE_SEN_TEST=1";
-				INFOPLIST_FILE = "Modules/ECCore/Resources/Tests/ECFoundation SenTest.plist";
+				INFOPLIST_FILE = Modules/ECCore/Resources/Tests/ECCoreTests.plist;
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
