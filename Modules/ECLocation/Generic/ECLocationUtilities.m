@@ -8,6 +8,7 @@
 // --------------------------------------------------------------------------
 
 #import "ECLocationUtilities.h"
+#import "ECAssertion.h"
 
 BOOL CoordinatesEqual(CLLocationCoordinate2D value1, CLLocationCoordinate2D value2)
 {
