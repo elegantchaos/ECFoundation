@@ -9,8 +9,8 @@
 
 @implementation ECSparklePreferenceController
 
-ECPropertySynthesize(introText);
-ECPropertySynthesize(anonymousText);
+@synthesize introText = _introText;
+@synthesize anonymousText = _anonymousText;
 
 + (NSArray*) preferencePanes
 {
@@ -41,8 +41,8 @@ ECPropertySynthesize(anonymousText);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(introText);
-	ECPropertyDealloc(anonymousText);
+	[_introText release];
+	[_anonymousText release];
 	
 	[super dealloc];
 }

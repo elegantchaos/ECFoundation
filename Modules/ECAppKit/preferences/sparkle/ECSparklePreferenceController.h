@@ -9,13 +9,8 @@
 #import <ECFoundation/ECPreferencePanel.h>
 
 @interface ECSparklePreferenceController : ECPreferencePanel
-{
-@private
-	ECPropertyVariable(introText, NSString*);
-	ECPropertyVariable(anonymousText, NSString*);
-}
 
-ECPropertyRetained(introText, NSString*);
-ECPropertyRetained(anonymousText, NSString*);
+@property (strong, nonatomic) NSString* introText;
+@property (strong, nonatomic) NSString* anonymousText;
 
 @end

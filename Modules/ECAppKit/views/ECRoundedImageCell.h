@@ -7,18 +7,17 @@
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
+
 
 @interface ECRoundedImageCell : NSImageCell 
 {
-	ECPropertyVariable(cornerRadius, CGFloat);
 }
 
 // --------------------------------------------------------------------------
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyAssigned(cornerRadius, CGFloat);
+@property (assign, nonatomic) CGFloat cornerRadius;
 
 // --------------------------------------------------------------------------
 // Public Methods

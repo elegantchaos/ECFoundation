@@ -5,7 +5,7 @@
 //  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
-#import "ECProperties.h"
+
 
 @class ECXMLElement;
 
@@ -31,10 +31,10 @@
 // Public Properties
 // --------------------------------------------------------------------------
 
-ECPropertyRetained(indexKey, NSString*);
-ECPropertyRetained(nameKey, NSString*);
-ECPropertyRetained(valueKey, NSString*);
-ECPropertyRetained(arrayElements, NSDictionary*);
+@property (strong, nonatomic) NSString* indexKey;
+@property (strong, nonatomic) NSString* nameKey;
+@property (strong, nonatomic) NSString* valueKey;
+@property (strong, nonatomic) NSDictionary* arrayElements;
 
 // --------------------------------------------------------------------------
 // Public Methods

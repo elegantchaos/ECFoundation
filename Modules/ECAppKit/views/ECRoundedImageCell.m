@@ -31,7 +31,7 @@
 #pragma mark -
 #pragma mark Properties
 
-ECPropertySynthesize(cornerRadius);
+@synthesize cornerRadius = _cornerRadius;
 
 // ==============================================
 // Constants

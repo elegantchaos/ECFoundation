@@ -8,25 +8,19 @@
 // --------------------------------------------------------------------------
 
 #import "ECCommonKeys.h"
-#import "ECProperties.h"
 
 @interface ECDataItem : NSObject 
 {
-	ECPropertyVariable(data, NSMutableDictionary*);
-	ECPropertyVariable(defaults, NSMutableDictionary*);
-	ECPropertyVariable(parent, ECDataItem*);
-	ECPropertyVariable(items, NSMutableArray*);
-	
 	NSUInteger	mCachedSection;
 	NSUInteger	mCachedRow;
 	ECDataItem* mCachedSectionData;
 	ECDataItem* mCachedRowData;
 }
 
-ECPropertyRetained(data, NSMutableDictionary*);
-ECPropertyRetained(defaults, NSMutableDictionary*);
-ECPropertyRetained(parent, ECDataItem*);
-ECPropertyRetained(items, NSMutableArray*);
+@property (strong, nonatomic) NSMutableDictionary* data;
+@property (strong, nonatomic) NSMutableDictionary* defaults;
+@property (strong, nonatomic) ECDataItem* parent;
+@property (strong, nonatomic) NSMutableArray* items;
 
 + (ECDataItem*)		item;
 + (ECDataItem*)		itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
