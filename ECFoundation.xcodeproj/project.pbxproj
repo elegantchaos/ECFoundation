@@ -315,6 +315,8 @@
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		227C549D14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
 		227C549E14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
+		227D9744152EFBCB00649A1D /* ECDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 227D9742152EFBCB00649A1D /* ECDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		227D9745152EFBCB00649A1D /* ECDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 227D9743152EFBCB00649A1D /* ECDropAllViewsAnimation.m */; };
 		2288159414EE94EC00DE962A /* ECDocumentStyles+UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2288159514EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
 		2288159614EE94EC00DE962A /* ECDocumentStyles+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288159314EE94EC00DE962A /* ECDocumentStyles+UIKit.m */; };
@@ -878,6 +880,8 @@
 		227C549C14F4120700881415 /* Test.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Test.bundle; sourceTree = "<group>"; };
 		227C54A114F4132500881415 /* ocunit2junit.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = ocunit2junit.rb; sourceTree = "<group>"; };
 		227C54A214F4132500881415 /* test-common.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "test-common.sh"; sourceTree = "<group>"; };
+		227D9742152EFBCB00649A1D /* ECDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDropAllViewsAnimation.h; sourceTree = "<group>"; };
+		227D9743152EFBCB00649A1D /* ECDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		227EEB3911A6BC66009420F7 /* ECFoundationDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3A11A6BC66009420F7 /* ECFoundationReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB3B11A6BC66009420F7 /* ECFoundationSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECFoundationSharedSettings.xcconfig; sourceTree = "<group>"; };
@@ -1212,6 +1216,7 @@
 		220184B8152E0A4200BA2538 /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				227D9741152EFBCB00649A1D /* animation */,
 				220184EE152E0BF700BA2538 /* cells */,
 				220184FC152E0BF700BA2538 /* controllers */,
 				22018511152E0BF700BA2538 /* views */,
@@ -1606,6 +1611,15 @@
 				227C54A214F4132500881415 /* test-common.sh */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		227D9741152EFBCB00649A1D /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				227D9742152EFBCB00649A1D /* ECDropAllViewsAnimation.h */,
+				227D9743152EFBCB00649A1D /* ECDropAllViewsAnimation.m */,
+			);
+			path = animation;
 			sourceTree = "<group>";
 		};
 		227EEB8011A6BCCD009420F7 /* ECTouch */ = {
@@ -2203,6 +2217,7 @@
 				22018535152E0BF700BA2538 /* ECTouchAboutBoxController.h in Headers */,
 				22018537152E0BF700BA2538 /* ECGradientButton.h in Headers */,
 				22018539152E0BF700BA2538 /* ECGradientView.h in Headers */,
+				227D9744152EFBCB00649A1D /* ECDropAllViewsAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2607,6 +2622,7 @@
 				22018536152E0BF700BA2538 /* ECTouchAboutBoxController.m in Sources */,
 				22018538152E0BF700BA2538 /* ECGradientButton.m in Sources */,
 				2201853A152E0BF700BA2538 /* ECGradientView.m in Sources */,
+				227D9745152EFBCB00649A1D /* ECDropAllViewsAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
