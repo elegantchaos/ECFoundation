@@ -46,11 +46,15 @@
 
 - (id)transformedValue:(id)item 
 {
-	ECAssert([item respondsToSelector:@selector(length)]);
+	id result = item;
+	if (item)
+	{
+		ECAssert([item respondsToSelector:@selector(length)]);
+		
+		result = [NSNumber numberWithBool:[item length] != 0];
+	}
 	
-	NSString* string = item;
-	BOOL result = [string length] != 0;
-	return [NSNumber numberWithBool:result];
+	return result;
 }
 
 @end
