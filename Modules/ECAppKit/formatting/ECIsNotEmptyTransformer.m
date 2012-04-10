@@ -51,7 +51,7 @@
 	{
 		ECAssert([item respondsToSelector:@selector(length)]);
 		
-		result = [NSNumber numberWithBool:[item length] != 0];
+		result = [NSNumber numberWithBool:[(NSString*)item length] != 0];
 	}
 	
 	return result;
