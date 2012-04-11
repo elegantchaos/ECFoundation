@@ -10,6 +10,7 @@
 		2214C6EE14ED727C007C994A /* ECTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6EB14ED727C007C994A /* ECTAppDelegate.m */; };
 		2214C6EF14ED727C007C994A /* ECTModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6ED14ED727C007C994A /* ECTModelController.m */; };
 		2214C6F314ED733A007C994A /* ECCoercion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2214C6F214ED733A007C994A /* ECCoercion.m */; };
+		225E2F841535AB89005D721F /* ECErrorAndMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 225E2F831535AB89005D721F /* ECErrorAndMessage.m */; };
 		226FB43C13E1EA7200BF258D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43B13E1EA7200BF258D /* UIKit.framework */; };
 		226FB43E13E1EA7200BF258D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43D13E1EA7200BF258D /* Foundation.framework */; };
 		226FB44013E1EA7200BF258D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FB43F13E1EA7200BF258D /* CoreGraphics.framework */; };
@@ -86,6 +87,8 @@
 		2214C6ED14ED727C007C994A /* ECTModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTModelController.m; sourceTree = "<group>"; };
 		2214C6F114ED733A007C994A /* ECCoercion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoercion.h; sourceTree = "<group>"; };
 		2214C6F214ED733A007C994A /* ECCoercion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCoercion.m; sourceTree = "<group>"; };
+		225E2F821535AB89005D721F /* ECErrorAndMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECErrorAndMessage.h; path = ../../../../../ECLogging/Source/Generic/ECErrorAndMessage.h; sourceTree = "<group>"; };
+		225E2F831535AB89005D721F /* ECErrorAndMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECErrorAndMessage.m; path = ../../../../../ECLogging/Source/Generic/ECErrorAndMessage.m; sourceTree = "<group>"; };
 		226FB43713E1EA7200BF258D /* ECTStyledLabelSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECTStyledLabelSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB43B13E1EA7200BF258D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		226FB43D13E1EA7200BF258D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -425,6 +428,8 @@
 				2274A95214E40D34007D3E7C /* ECASLClient.m */,
 				2274A95314E40D34007D3E7C /* ECAssertion.h */,
 				2274A95414E40D34007D3E7C /* ECAssertion.m */,
+				225E2F821535AB89005D721F /* ECErrorAndMessage.h */,
+				225E2F831535AB89005D721F /* ECErrorAndMessage.m */,
 				2274A95514E40D34007D3E7C /* ECErrorReporter.h */,
 				2274A95614E40D34007D3E7C /* ECErrorReporter.m */,
 				2274A95714E40D34007D3E7C /* ECLogChannel.h */,
@@ -680,6 +685,7 @@
 				2214C6EF14ED727C007C994A /* ECTModelController.m in Sources */,
 				2214C6F314ED733A007C994A /* ECCoercion.m in Sources */,
 				2288158A14EE933300DE962A /* ECDocumentStyles+UIKit.m in Sources */,
+				225E2F841535AB89005D721F /* ECErrorAndMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
