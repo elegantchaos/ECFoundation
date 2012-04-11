@@ -128,7 +128,7 @@
 		22198ABD14585B48006BE993 /* NSButton+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22198ABB14585B48006BE993 /* NSButton+ECCore.m */; };
 		223CB89F14373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A014373230003F6D01 /* ECLogContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB89E14373230003F6D01 /* ECLogContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; };
+		223CB8A4143732E0003F6D01 /* ECLoggingMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		223CB8A5143732E0003F6D01 /* ECLoggingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CB8A3143732E0003F6D01 /* ECLoggingMenu.m */; };
 		223CB8A6143732E0003F6D01 /* ECLoggingMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CB8A3143732E0003F6D01 /* ECLoggingMenu.m */; };
 		223CB8A91437334D003F6D01 /* ECLaunchServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 223CB8A71437334D003F6D01 /* ECLaunchServices.h */; };
@@ -649,9 +649,18 @@
 		22EDDC2614A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
 		22EDDC2714A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
 		22EDDC2814A0E1B200E61CFF /* ECLogHandlerASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */; };
-		22F2CA4A1534841F00F0A01D /* ECGradientTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F2CA481534841F00F0A01D /* ECGradientTextView.h */; };
+		22F2CA4A1534841F00F0A01D /* ECGradientTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F2CA481534841F00F0A01D /* ECGradientTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F2CA4B1534841F00F0A01D /* ECGradientTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA491534841F00F0A01D /* ECGradientTextView.m */; };
 		22F2CA4C1534841F00F0A01D /* ECGradientTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA491534841F00F0A01D /* ECGradientTextView.m */; };
+		22F2CA7F1534B51300F0A01D /* ECErrorPresenterHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F2CA7B1534B51300F0A01D /* ECErrorPresenterHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22F2CA801534B51300F0A01D /* ECErrorPresenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA7C1534B51300F0A01D /* ECErrorPresenterHandler.m */; };
+		22F2CA811534B51300F0A01D /* ECErrorPresenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA7C1534B51300F0A01D /* ECErrorPresenterHandler.m */; };
+		22F2CA821534B51300F0A01D /* NSMenu+ECLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F2CA7D1534B51300F0A01D /* NSMenu+ECLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22F2CA831534B51300F0A01D /* NSMenu+ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA7E1534B51300F0A01D /* NSMenu+ECLogging.m */; };
+		22F2CA841534B51300F0A01D /* NSMenu+ECLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA7E1534B51300F0A01D /* NSMenu+ECLogging.m */; };
+		22F2CA881534B5AC00F0A01D /* ECErrorAndMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F2CA861534B5AC00F0A01D /* ECErrorAndMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22F2CA891534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */; };
+		22F2CA8A1534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */; };
 		22FAC46D132149E900103630 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FAC46C132149E900103630 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -1092,6 +1101,12 @@
 		22EDDC2214A0E1B200E61CFF /* ECLogHandlerASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerASL.m; sourceTree = "<group>"; };
 		22F2CA481534841F00F0A01D /* ECGradientTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECGradientTextView.h; sourceTree = "<group>"; };
 		22F2CA491534841F00F0A01D /* ECGradientTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECGradientTextView.m; sourceTree = "<group>"; };
+		22F2CA7B1534B51300F0A01D /* ECErrorPresenterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECErrorPresenterHandler.h; path = "../../../../../../../libraries/objective c/ECLogging/Source/Mac/ECErrorPresenterHandler.h"; sourceTree = "<group>"; };
+		22F2CA7C1534B51300F0A01D /* ECErrorPresenterHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECErrorPresenterHandler.m; path = "../../../../../../../libraries/objective c/ECLogging/Source/Mac/ECErrorPresenterHandler.m"; sourceTree = "<group>"; };
+		22F2CA7D1534B51300F0A01D /* NSMenu+ECLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenu+ECLogging.h"; path = "../../../../../../../libraries/objective c/ECLogging/Source/Mac/NSMenu+ECLogging.h"; sourceTree = "<group>"; };
+		22F2CA7E1534B51300F0A01D /* NSMenu+ECLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenu+ECLogging.m"; path = "../../../../../../../libraries/objective c/ECLogging/Source/Mac/NSMenu+ECLogging.m"; sourceTree = "<group>"; };
+		22F2CA861534B5AC00F0A01D /* ECErrorAndMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECErrorAndMessage.h; path = "../../../../../../../libraries/objective c/ECLogging/Source/Generic/ECErrorAndMessage.h"; sourceTree = "<group>"; };
+		22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECErrorAndMessage.m; path = "../../../../../../../libraries/objective c/ECLogging/Source/Generic/ECErrorAndMessage.m"; sourceTree = "<group>"; };
 		22F568D713211C39003E8EE8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		22F568D813211C39003E8EE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22FAC46C132149E900103630 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1793,8 +1808,10 @@
 			children = (
 				22EDDC1814A0E19300E61CFF /* ECASLClient.h */,
 				22EDDC1914A0E19300E61CFF /* ECASLClient.m */,
-				22E99E99148E50F90034E167 /* ECAssertion.m */,
 				22B1273413C785CA0022CC5B /* ECAssertion.h */,
+				22E99E99148E50F90034E167 /* ECAssertion.m */,
+				22F2CA861534B5AC00F0A01D /* ECErrorAndMessage.h */,
+				22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */,
 				22B1273513C785CA0022CC5B /* ECErrorReporter.h */,
 				22B1273613C785CA0022CC5B /* ECErrorReporter.m */,
 				22B1273713C785CA0022CC5B /* ECLogChannel.h */,
@@ -1846,6 +1863,10 @@
 		22B1274F13C785CA0022CC5B /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				22F2CA7B1534B51300F0A01D /* ECErrorPresenterHandler.h */,
+				22F2CA7C1534B51300F0A01D /* ECErrorPresenterHandler.m */,
+				22F2CA7D1534B51300F0A01D /* NSMenu+ECLogging.h */,
+				22F2CA7E1534B51300F0A01D /* NSMenu+ECLogging.m */,
 				223CB8A2143732E0003F6D01 /* ECLoggingMenu.h */,
 				223CB8A3143732E0003F6D01 /* ECLoggingMenu.m */,
 			);
@@ -2332,6 +2353,9 @@
 				22EA2D2014ED9B500043ABFA /* ECCoercion.h in Headers */,
 				22EA2D2614ED9BFD0043ABFA /* ECSingleton.h in Headers */,
 				22F2CA4A1534841F00F0A01D /* ECGradientTextView.h in Headers */,
+				22F2CA7F1534B51300F0A01D /* ECErrorPresenterHandler.h in Headers */,
+				22F2CA821534B51300F0A01D /* NSMenu+ECLogging.h in Headers */,
+				22F2CA881534B5AC00F0A01D /* ECErrorAndMessage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2839,6 +2863,9 @@
 				22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */,
 				22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 				22F2CA4C1534841F00F0A01D /* ECGradientTextView.m in Sources */,
+				22F2CA811534B51300F0A01D /* ECErrorPresenterHandler.m in Sources */,
+				22F2CA841534B51300F0A01D /* NSMenu+ECLogging.m in Sources */,
+				22F2CA8A1534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2932,6 +2959,9 @@
 				22EA2D2214ED9B500043ABFA /* ECCoercion.m in Sources */,
 				22EA2D2814ED9BFD0043ABFA /* ECSingleton.m in Sources */,
 				22F2CA4B1534841F00F0A01D /* ECGradientTextView.m in Sources */,
+				22F2CA801534B51300F0A01D /* ECErrorPresenterHandler.m in Sources */,
+				22F2CA831534B51300F0A01D /* NSMenu+ECLogging.m in Sources */,
+				22F2CA891534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

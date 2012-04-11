@@ -24,6 +24,7 @@
 #import "ECLogHandlerNSLog.h"
 #import "ECLogHandlerStdout.h"
 #import "ECLogHandlerStderr.h"
+#import "ECErrorPresenterHandler.h"
 
 // ==============================================
 // Private Methods
@@ -131,6 +132,10 @@ static NSString *const UserGuideType = @"pdf";
     ECLogHandler* stderrHandler = [[ECLogHandlerStderr alloc] init];
 	[lm registerHandler: stderrHandler];
 	[stderrHandler release];
+
+	ECErrorPresenterHandler* errorPresenterHandler = [[ECErrorPresenterHandler alloc] init];
+	[lm registerHandler: errorPresenterHandler];
+	[errorPresenterHandler release];
 }
 
 // --------------------------------------------------------------------------
