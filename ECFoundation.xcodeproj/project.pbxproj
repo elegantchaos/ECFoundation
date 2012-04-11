@@ -221,6 +221,8 @@
 		2256928214210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928314210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
 		2256928414210BE000C4F852 /* NSArray+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256927E14210BE000C4F852 /* NSArray+ECCore.m */; };
+		225E2F781535A82D005D721F /* ECErrorAndMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */; };
+		225E2F7A1535A82F005D721F /* ECErrorAndMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F2CA871534B5AC00F0A01D /* ECErrorAndMessage.m */; };
 		226021BE141F86F30044644C /* ECAboutBoxController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2260216A141F86F30044644C /* ECAboutBoxController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226021BF141F86F30044644C /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260216B141F86F30044644C /* ECAboutBoxController.m */; };
 		226021C0141F86F30044644C /* ECAboutBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2260216B141F86F30044644C /* ECAboutBoxController.m */; };
@@ -2656,6 +2658,7 @@
 				22018538152E0BF700BA2538 /* ECGradientButton.m in Sources */,
 				2201853A152E0BF700BA2538 /* ECGradientView.m in Sources */,
 				2285E5CA152F386500014DE3 /* ECTDropAllViewsAnimation.m in Sources */,
+				225E2F781535A82D005D721F /* ECErrorAndMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2745,6 +2748,7 @@
 				22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */,
 				22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */,
 				2285E5CB152F386500014DE3 /* ECTDropAllViewsAnimation.m in Sources */,
+				225E2F7A1535A82F005D721F /* ECErrorAndMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
