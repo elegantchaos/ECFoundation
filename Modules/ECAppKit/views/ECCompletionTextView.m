@@ -13,8 +13,7 @@
 @property (nonatomic, retain) NSTimer* completionTimer;
 @property (nonatomic, retain) NSCharacterSet* whitespace;
 @property (nonatomic, assign) NSUInteger nextInsertionIndex;
-@property (nonatomic, assign) NSRange lastRange;
-@property (nonatomic, assign) BOOL justCompleted;
+@property (nonatomic, assign) BOOL completing;
 
 - (void)setupWhitespace;
 
@@ -32,9 +31,8 @@ static NSTimeInterval kCompletionDelay = 0.5;
 
 #pragma mark - Properties
 
-@synthesize justCompleted = _justCompleted;
+@synthesize completing = _completing;
 @synthesize completionTimer;
-@synthesize lastRange = _lastRange;
 @synthesize nextInsertionIndex;
 @synthesize potentialCompletions;
 @synthesize triggers;
@@ -83,15 +81,8 @@ ECDefineDebugChannel(CompletionTextViewChannel);
 
 - (void)doCompletion:(NSTimer*)timer 
 {
-	NSRange completionRange = [self rangeForUserCompletion];
-	if (!NSEqualRanges(completionRange, self.lastRange))
-	{
-		ECDebug(CompletionTextViewChannel, @"shown completions");
-		self.lastRange = completionRange;
-		[self complete:nil];
-		
-	}
-
+	ECDebug(CompletionTextViewChannel, @"shown completions");
+	[self complete:nil];
 	[timer invalidate];
 	self.completionTimer = nil;
 }
@@ -113,7 +104,7 @@ ECDefineDebugChannel(CompletionTextViewChannel);
 
 - (BOOL)shouldChangeTextInRange: (NSRange)affectedCharRange replacementString:(NSString *) replacementString 
 {
-	if (!self.justCompleted)
+	if (!self.completing)
 	{
 		NSRange completionRange = [self rangeForUserCompletion];
 		
@@ -152,8 +143,6 @@ ECDefineDebugChannel(CompletionTextViewChannel);
 		}
 	}
 	
-	self.justCompleted = NO;
-    
     return YES;
 }
 
@@ -228,10 +217,10 @@ ECDefineDebugChannel(CompletionTextViewChannel);
 - (void)insertCompletion:(NSString *)word forPartialWordRange:(NSRange)charRange movement:(NSInteger)movement isFinal:(BOOL)flag
 {
     ECDebug(CompletionTextViewChannel, @"insert completion %@ range %@ movement %d final %d", word, NSStringFromRange(charRange), movement, flag);
-	self.justCompleted = YES;
-	self.lastRange = charRange;
+	self.completing = YES;
 	[super insertCompletion:word forPartialWordRange:charRange movement:movement isFinal:flag];
 	[self stopCompletionTimer];
+	self.completing = NO;
 }
 
 @end
