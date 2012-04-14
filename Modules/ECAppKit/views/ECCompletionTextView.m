@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSTimer* completionTimer;
 @property (nonatomic, retain) NSCharacterSet* whitespace;
 @property (nonatomic, assign) NSUInteger nextInsertionIndex;
+@property (nonatomic, assign) NSRange lastRange;
+@property (nonatomic, assign) BOOL justCompleted;
 
 - (void)setupWhitespace;
 
@@ -30,7 +32,9 @@ static NSTimeInterval kCompletionDelay = 0.5;
 
 #pragma mark - Properties
 
+@synthesize justCompleted = _justCompleted;
 @synthesize completionTimer;
+@synthesize lastRange = _lastRange;
 @synthesize nextInsertionIndex;
 @synthesize potentialCompletions;
 @synthesize triggers;
@@ -79,53 +83,76 @@ ECDefineDebugChannel(CompletionTextViewChannel);
 
 - (void)doCompletion:(NSTimer*)timer 
 {
-    [self complete:nil];
-    
-    [timer invalidate];
-    self.completionTimer = nil;
+	NSRange completionRange = [self rangeForUserCompletion];
+	if (!NSEqualRanges(completionRange, self.lastRange))
+	{
+		ECDebug(CompletionTextViewChannel, @"shown completions");
+		self.lastRange = completionRange;
+		[self complete:nil];
+		
+	}
+
+	[timer invalidate];
+	self.completionTimer = nil;
 }
 
 - (void)startCompletionTimer;
 {
+	ECDebug(CompletionTextViewChannel, @"started timer");
     [self.completionTimer invalidate];
     self.completionTimer = [NSTimer scheduledTimerWithTimeInterval:kCompletionDelay target:self selector:@selector(doCompletion:) userInfo:nil repeats:NO];
 }
 
 - (void)stopCompletionTimer 
 {
+
+	ECDebug(CompletionTextViewChannel, @"stopped timer");
     [self.completionTimer invalidate];
     self.completionTimer = nil;
 }
 
 - (BOOL)shouldChangeTextInRange: (NSRange)affectedCharRange replacementString:(NSString *) replacementString 
 {
-    NSRange completionRange = [self rangeForUserCompletion];
-    
-    ECDebug(CompletionTextViewChannel, @"should change %@ in range %@ '%@'", replacementString, NSStringFromRange(affectedCharRange), [[self string] substringWithRange:affectedCharRange]);
-    ECDebug(CompletionTextViewChannel, @"completionRange is %@", NSStringFromRange(completionRange));
-    
-    BOOL autoComplete = NO;
-    NSString* completionString;
-    if (completionRange.location != NSNotFound)
-    {
-        completionString = [[self string] substringWithRange:completionRange];
-    }
-    else 
-    {
-        completionString = replacementString;
-    }
-    autoComplete = (([completionString length] > 0) && ([self.triggers characterIsMember:[completionString characterAtIndex:0]]));
-    
-    if (autoComplete)
-    {
-        self.nextInsertionIndex = affectedCharRange.location + [replacementString length];
-        [self startCompletionTimer];
-    }
-    else
-    {
-        [self stopCompletionTimer];
-        self.nextInsertionIndex = NSNotFound;
-    }
+	if (!self.justCompleted)
+	{
+		NSRange completionRange = [self rangeForUserCompletion];
+		
+		ECDebug(CompletionTextViewChannel, @"should change %@ in range %@ '%@'", replacementString, NSStringFromRange(affectedCharRange), [[self string] substringWithRange:affectedCharRange]);
+		ECDebug(CompletionTextViewChannel, @"completionRange is %@", NSStringFromRange(completionRange));
+		
+		BOOL autoComplete = NO;
+		NSString* completionString;
+		if (completionRange.location != NSNotFound)
+		{
+			completionString = [[self string] substringWithRange:completionRange];
+		}
+		else 
+		{
+			completionString = replacementString;
+		}
+		autoComplete = (([completionString length] > 0) && ([self.triggers characterIsMember:[completionString characterAtIndex:0]]));
+		
+#if 0
+		if (autoComplete)
+		{
+			NSArray* completions = [self completionsForPartialWordRange:completionRange indexOfSelectedItem:nil];
+			autoComplete = !(([completions count] == 1) && ([[completions objectAtIndex:0] isEqual:replacementString])); 
+		}
+#endif
+		
+		if (autoComplete)
+		{
+			self.nextInsertionIndex = affectedCharRange.location + [replacementString length];
+			[self startCompletionTimer];
+		}
+		else
+		{
+			[self stopCompletionTimer];
+			self.nextInsertionIndex = NSNotFound;
+		}
+	}
+	
+	self.justCompleted = NO;
     
     return YES;
 }
@@ -196,6 +223,15 @@ ECDefineDebugChannel(CompletionTextViewChannel);
     }
     
     return result;
+}
+
+- (void)insertCompletion:(NSString *)word forPartialWordRange:(NSRange)charRange movement:(NSInteger)movement isFinal:(BOOL)flag
+{
+    ECDebug(CompletionTextViewChannel, @"insert completion %@ range %@ movement %d final %d", word, NSStringFromRange(charRange), movement, flag);
+	self.justCompleted = YES;
+	self.lastRange = charRange;
+	[super insertCompletion:word forPartialWordRange:charRange movement:movement isFinal:flag];
+	[self stopCompletionTimer];
 }
 
 @end
