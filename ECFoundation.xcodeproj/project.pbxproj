@@ -566,8 +566,8 @@
 		22CEFD5B1421391600565841 /* NSColor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEFD581421391600565841 /* NSColor+ECCore.m */; };
 		22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
 		22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
-		22DEA70714F40E0C00DF5777 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README */; };
-		22DEA70814F40E0C00DF5777 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README */; };
+		22DEA70714F40E0C00DF5777 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README.md */; };
+		22DEA70814F40E0C00DF5777 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README.md */; };
 		22E99E9A148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9B148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9C148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
@@ -1048,7 +1048,7 @@
 		22CEFD581421391600565841 /* NSColor+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ECCore.m"; sourceTree = "<group>"; };
 		22DEA70214F40E0C00DF5777 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
 		22DEA70314F40E0C00DF5777 /* ECTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTestCase.m; sourceTree = "<group>"; };
-		22DEA70414F40E0C00DF5777 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		22DEA70414F40E0C00DF5777 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22E99E99148E50F90034E167 /* ECAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAssertion.m; sourceTree = "<group>"; };
 		22E99E9F148E51800034E167 /* ECLazyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLazyProperties.h; sourceTree = "<group>"; };
 		22E99EA0148E51800034E167 /* ECLazyProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLazyProperties.m; sourceTree = "<group>"; };
@@ -2092,7 +2092,7 @@
 				22DEA70114F40E0C00DF5777 /* Generic */,
 				227C549B14F4120700881415 /* Resources */,
 				227C54A014F4132500881415 /* Scripts */,
-				22DEA70414F40E0C00DF5777 /* README */,
+				22DEA70414F40E0C00DF5777 /* README.md */,
 			);
 			path = ECUnitTests;
 			sourceTree = "<group>";
@@ -2489,7 +2489,7 @@
 			files = (
 				220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */,
 				22AE923714926D47008EF8E2 /* README.md in Resources */,
-				22DEA70814F40E0C00DF5777 /* README in Resources */,
+				22DEA70814F40E0C00DF5777 /* README.md in Resources */,
 				227C549E14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2501,7 +2501,7 @@
 				220375DF141FF4DD0040E740 /* finder support.scpt in Resources */,
 				220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */,
 				220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */,
-				22DEA70714F40E0C00DF5777 /* README in Resources */,
+				22DEA70714F40E0C00DF5777 /* README.md in Resources */,
 				227C549D14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
