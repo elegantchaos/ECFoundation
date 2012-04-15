@@ -2,7 +2,7 @@
 //! @author Sam Deane
 //! @date 16/01/2010
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import "ECSparklePreferenceController.h"

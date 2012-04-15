@@ -8,7 +8,7 @@
 //!    to prevent us depending on Aquatic Prime.
 //!    To use this class, add ECAquaticPrime.m to your project.
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import "ECLicenseChecker.h"
