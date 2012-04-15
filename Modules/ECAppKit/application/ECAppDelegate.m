@@ -12,6 +12,7 @@
 #import "ECAboutBoxController.h"
 #import "ECLicenseChecker.h"
 #import "ECMacStore.h"
+#import "ECMacStoreDifferentVersion.h"
 #import "ECMacStoreExact.h"
 #import "ECMacStoreTest.h"
 #import "ECCompoundLicenseChecker.h"
@@ -348,6 +349,11 @@ static NSString *const UserGuideType = @"pdf";
     [exactChecker release];
     
 #if CHECK_FOR_TEST_RECEIPT
+    // look for saved MAS receipt with different version
+    ECMacStoreDifferentVersion* differentVersionChecker = [[ECMacStoreDifferentVersion alloc] init];
+    [compoundChecker addChecker: differentVersionChecker];
+    [differentVersionChecker release];
+
     ECMacStoreTest* testChecker = [[ECMacStoreTest alloc] init];
     [compoundChecker addChecker: testChecker];
     [testChecker release];
