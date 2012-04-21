@@ -555,14 +555,14 @@
 		22CA55D713DA09FF007E89E2 /* UIImage+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA557D13DA09FF007E89E2 /* UIImage+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA55D913DA09FF007E89E2 /* UIImage+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557E13DA09FF007E89E2 /* UIImage+ECCore.m */; };
 		22CA55DB13DA09FF007E89E2 /* UIImage+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA557E13DA09FF007E89E2 /* UIImage+ECCore.m */; };
-		22CD5751154312D600C73114 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD574F154312D600C73114 /* NSString+ECCore.h */; };
+		22CD5751154312D600C73114 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD574F154312D600C73114 /* NSString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CD5752154312D600C73114 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5750154312D600C73114 /* NSString+ECCore.m */; };
 		22CD5753154312D600C73114 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5750154312D600C73114 /* NSString+ECCore.m */; };
-		22CD5756154312E800C73114 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD5754154312E800C73114 /* NSString+ECCore.h */; };
+		22CD5756154312E800C73114 /* NSString+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD5754154312E800C73114 /* NSString+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CD5757154312E800C73114 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5755154312E800C73114 /* NSString+ECCore.m */; };
 		22CD5758154312E800C73114 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD5755154312E800C73114 /* NSString+ECCore.m */; };
-		22CD575B1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD57591543131000C73114 /* NSString+ECCoreGeneric.h */; };
-		22CD575C1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD57591543131000C73114 /* NSString+ECCoreGeneric.h */; };
+		22CD575B1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD57591543131000C73114 /* NSString+ECCoreGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22CD575C1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CD57591543131000C73114 /* NSString+ECCoreGeneric.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CD575D1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD575A1543131000C73114 /* NSString+ECCoreGeneric.m */; };
 		22CD575E1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD575A1543131000C73114 /* NSString+ECCoreGeneric.m */; };
 		22CD575F1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD575A1543131000C73114 /* NSString+ECCoreGeneric.m */; };
@@ -2046,17 +2046,17 @@
 			children = (
 				22CD574F154312D600C73114 /* NSString+ECCore.h */,
 				22CD5750154312D600C73114 /* NSString+ECCore.m */,
-				22177AC41495707400C7BDBE /* UIFont+ECCore.h */,
-				22177AC51495707400C7BDBE /* UIFont+ECCore.m */,
-				22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */,
-				22177AC71495707400C7BDBE /* UIViewController+ECUtilities.m */,
+				2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */,
 				22CA557913DA09FF007E89E2 /* UIApplication+ECCore.h */,
 				22CA557A13DA09FF007E89E2 /* UIApplication+ECCore.m */,
 				22CA557B13DA09FF007E89E2 /* UIColor+ECCore.h */,
 				22CA557C13DA09FF007E89E2 /* UIColor+ECCore.m */,
+				22177AC41495707400C7BDBE /* UIFont+ECCore.h */,
+				22177AC51495707400C7BDBE /* UIFont+ECCore.m */,
 				22CA557D13DA09FF007E89E2 /* UIImage+ECCore.h */,
 				22CA557E13DA09FF007E89E2 /* UIImage+ECCore.m */,
-				2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */,
+				22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */,
+				22177AC71495707400C7BDBE /* UIViewController+ECUtilities.m */,
 				2206F97A14924D6200AAC9B0 /* Tests */,
 			);
 			path = iOS;
