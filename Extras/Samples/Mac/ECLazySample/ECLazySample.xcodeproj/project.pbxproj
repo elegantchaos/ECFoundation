@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229147701543337E009A39F9 /* NSString+ECCoreGeneric.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291476F1543337E009A39F9 /* NSString+ECCoreGeneric.m */; };
+		2291477415433392009A39F9 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291477315433392009A39F9 /* NSString+ECCore.m */; };
 		22A534C914731101006E2103 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A534C814731100006E2103 /* TestClass.m */; };
 		22A7235D1435DE0F00889A06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 22A723591435DE0F00889A06 /* Credits.rtf */; };
 		22A7235E1435DE0F00889A06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7235B1435DE0F00889A06 /* MainMenu.xib */; };
@@ -33,7 +35,6 @@
 		22E51FDD1434E117008F8D41 /* NSDate+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDBA1434B82B0049E222 /* NSDate+ECCore.m */; };
 		22E51FDE1434E117008F8D41 /* NSDictionary+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDBC1434B82B0049E222 /* NSDictionary+ECCore.m */; };
 		22E51FDF1434E117008F8D41 /* NSFileManager+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDBE1434B82B0049E222 /* NSFileManager+ECCore.m */; };
-		22E51FE01434E117008F8D41 /* NSString+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC01434B82B0049E222 /* NSString+ECCore.m */; };
 		22E51FE11434E117008F8D41 /* NSURL+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E6BDC21434B82B0049E222 /* NSURL+ECCore.m */; };
 		22E51FF51434E140008F8D41 /* ECAboutBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE41434E140008F8D41 /* ECAboutBox.xib */; };
 		22E51FF71434E140008F8D41 /* finder support.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 22E51FE81434E140008F8D41 /* finder support.scpt */; };
@@ -79,6 +80,10 @@
 		226FB49213E28F2A00BF258D /* ECLogHandlerStderr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStderr.m; sourceTree = "<group>"; };
 		226FB49313E28F2A00BF258D /* ECLogHandlerStdout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLogHandlerStdout.h; sourceTree = "<group>"; };
 		226FB49413E28F2A00BF258D /* ECLogHandlerStdout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECLogHandlerStdout.m; sourceTree = "<group>"; };
+		2291476E1543337E009A39F9 /* NSString+ECCoreGeneric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCoreGeneric.h"; sourceTree = "<group>"; };
+		2291476F1543337E009A39F9 /* NSString+ECCoreGeneric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCoreGeneric.m"; sourceTree = "<group>"; };
+		2291477215433392009A39F9 /* NSString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCore.h"; sourceTree = "<group>"; };
+		2291477315433392009A39F9 /* NSString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCore.m"; sourceTree = "<group>"; };
 		22A534C514731085006E2103 /* ECLazyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECLazyProperties.h; sourceTree = "<group>"; };
 		22A534C714731100006E2103 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestClass.h; path = Source/TestClass.h; sourceTree = SOURCE_ROOT; };
 		22A534C814731100006E2103 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestClass.m; path = Source/TestClass.m; sourceTree = SOURCE_ROOT; };
@@ -129,7 +134,6 @@
 		22E6BDAF1434B82B0049E222 /* ECClang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECClang.h; sourceTree = "<group>"; };
 		22E6BDB01434B82B0049E222 /* ECMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMacros.h; sourceTree = "<group>"; };
 		22E6BDB11434B82B0049E222 /* ECProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProperties.h; sourceTree = "<group>"; };
-		22E6BDB21434B82B0049E222 /* ECTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTestCase.h; sourceTree = "<group>"; };
 		22E6BDB31434B82B0049E222 /* NSArray+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ECCore.h"; sourceTree = "<group>"; };
 		22E6BDB41434B82B0049E222 /* NSArray+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ECCore.m"; sourceTree = "<group>"; };
 		22E6BDB51434B82B0049E222 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
@@ -142,8 +146,6 @@
 		22E6BDBC1434B82B0049E222 /* NSDictionary+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ECCore.m"; sourceTree = "<group>"; };
 		22E6BDBD1434B82B0049E222 /* NSFileManager+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ECCore.h"; sourceTree = "<group>"; };
 		22E6BDBE1434B82B0049E222 /* NSFileManager+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ECCore.m"; sourceTree = "<group>"; };
-		22E6BDBF1434B82B0049E222 /* NSString+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ECCore.h"; sourceTree = "<group>"; };
-		22E6BDC01434B82B0049E222 /* NSString+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ECCore.m"; sourceTree = "<group>"; };
 		22E6BDC11434B82B0049E222 /* NSURL+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ECCore.h"; sourceTree = "<group>"; };
 		22E6BDC21434B82B0049E222 /* NSURL+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ECCore.m"; sourceTree = "<group>"; };
 		22E6BDE91434B82B0049E222 /* ECCoreAdHocPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoreAdHocPrefix.pch; sourceTree = "<group>"; };
@@ -260,7 +262,8 @@
 				226FB48B13E28F2A00BF258D /* ECLogManager.m */,
 				226FB48C13E28F2A00BF258D /* Handlers */,
 			);
-			path = Generic;
+			name = Generic;
+			path = Source/Generic;
 			sourceTree = "<group>";
 		};
 		226FB48C13E28F2A00BF258D /* Handlers */ = {
@@ -293,7 +296,8 @@
 				22A723711435E4FD00889A06 /* ECLoggingMenu.h */,
 				22A723721435E4FD00889A06 /* ECLoggingMenu.m */,
 			);
-			path = Mac;
+			name = Mac;
+			path = Source/Mac;
 			sourceTree = "<group>";
 		};
 		22E51FBC1434E04F008F8D41 /* Other Frameworks */ = {
@@ -364,6 +368,8 @@
 				22E520081434E149008F8D41 /* NSGeometry+ECCore.m */,
 				22E520091434E149008F8D41 /* NSMenu+ECCore.h */,
 				22E5200A1434E149008F8D41 /* NSMenu+ECCore.m */,
+				2291477215433392009A39F9 /* NSString+ECCore.h */,
+				2291477315433392009A39F9 /* NSString+ECCore.m */,
 				22E5200B1434E149008F8D41 /* NSURL+ECCoreMac.h */,
 				22E5200C1434E149008F8D41 /* NSURL+ECCoreMac.m */,
 				22E5200D1434E149008F8D41 /* NSUserDefaults+ECCore.h */,
@@ -396,7 +402,6 @@
 				22BAAB8C1473DA14006B0CD9 /* ECLazyProperties.m */,
 				22E6BDB01434B82B0049E222 /* ECMacros.h */,
 				22E6BDB11434B82B0049E222 /* ECProperties.h */,
-				22E6BDB21434B82B0049E222 /* ECTestCase.h */,
 				22E6BDB31434B82B0049E222 /* NSArray+ECCore.h */,
 				22E6BDB41434B82B0049E222 /* NSArray+ECCore.m */,
 				22E6BDB51434B82B0049E222 /* NSBundle+ECCore.h */,
@@ -409,8 +414,8 @@
 				22E6BDBC1434B82B0049E222 /* NSDictionary+ECCore.m */,
 				22E6BDBD1434B82B0049E222 /* NSFileManager+ECCore.h */,
 				22E6BDBE1434B82B0049E222 /* NSFileManager+ECCore.m */,
-				22E6BDBF1434B82B0049E222 /* NSString+ECCore.h */,
-				22E6BDC01434B82B0049E222 /* NSString+ECCore.m */,
+				2291476E1543337E009A39F9 /* NSString+ECCoreGeneric.h */,
+				2291476F1543337E009A39F9 /* NSString+ECCoreGeneric.m */,
 				22E6BDC11434B82B0049E222 /* NSURL+ECCore.h */,
 				22E6BDC21434B82B0049E222 /* NSURL+ECCore.m */,
 			);
@@ -511,7 +516,6 @@
 				22E51FDD1434E117008F8D41 /* NSDate+ECCore.m in Sources */,
 				22E51FDE1434E117008F8D41 /* NSDictionary+ECCore.m in Sources */,
 				22E51FDF1434E117008F8D41 /* NSFileManager+ECCore.m in Sources */,
-				22E51FE01434E117008F8D41 /* NSString+ECCore.m in Sources */,
 				22E51FE11434E117008F8D41 /* NSURL+ECCore.m in Sources */,
 				22E520131434E149008F8D41 /* NSAppleEventDescriptor+ECCore.m in Sources */,
 				22E520141434E149008F8D41 /* NSAppleScript+ECCore.m in Sources */,
@@ -536,6 +540,8 @@
 				22A723731435E4FD00889A06 /* ECLoggingMenu.m in Sources */,
 				22A534C914731101006E2103 /* TestClass.m in Sources */,
 				22BAAB8D1473DA14006B0CD9 /* ECLazyProperties.m in Sources */,
+				229147701543337E009A39F9 /* NSString+ECCoreGeneric.m in Sources */,
+				2291477415433392009A39F9 /* NSString+ECCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
