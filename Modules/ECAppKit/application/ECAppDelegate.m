@@ -103,13 +103,14 @@ static NSString *const UserGuideType = @"pdf";
     ECDebug(ECAppDelegateChannel, @"Request to open file: %@", filename);
 
     NSString* licenseFileType = [[NSApplication sharedApplication] licenseFileType];
-    if (licenseFileType && [[filename pathExtension] isEqualToString: licenseFileType])
+	BOOL isLicenseFile = licenseFileType && [[filename pathExtension] isEqualToString: licenseFileType];
+    if (isLicenseFile)
     {
         NSURL* licenseURL = [NSURL fileURLWithPath: filename];
         [self.licenseChecker registerLicenseFile: licenseURL];
     }
 	
-	return YES;
+	return isLicenseFile;
 }
 
 #pragma mark - Logging
