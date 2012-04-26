@@ -2460,7 +2460,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EC;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Elegant Chaos";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ECFoundation" */;
@@ -3085,6 +3085,7 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREFIX_HEADER = "Modules/ECCore/Prefix/ECCore$(CONFIGURATION)Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
@@ -3093,6 +3094,7 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREFIX_HEADER = "Modules/ECCore/Prefix/ECCore$(CONFIGURATION)Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
@@ -3303,6 +3305,7 @@
 		2274C8E811FF841B00E5C351 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREFIX_HEADER = "Modules/ECCore/Prefix/ECCore$(CONFIGURATION)Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 			};
