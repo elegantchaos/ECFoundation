@@ -498,6 +498,20 @@
 		22C1E2381490FAE0004DA13E /* ECRandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E2361490FAE0004DA13E /* ECRandomTests.m */; };
 		22C1E24114910561004DA13E /* CGGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E24014910560004DA13E /* CGGeometryTests.m */; };
 		22C1E24214910561004DA13E /* CGGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1E24014910560004DA13E /* CGGeometryTests.m */; };
+		22C8858115497DFE007787B7 /* ECKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8857D15497DFE007787B7 /* ECKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C8858215497DFE007787B7 /* ECKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8857D15497DFE007787B7 /* ECKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C8858315497DFE007787B7 /* ECKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8857E15497DFE007787B7 /* ECKVO.m */; };
+		22C8858415497DFE007787B7 /* ECKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8857E15497DFE007787B7 /* ECKVO.m */; };
+		22C8858515497DFE007787B7 /* ECKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8857E15497DFE007787B7 /* ECKVO.m */; };
+		22C8858615497DFE007787B7 /* ECKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8857E15497DFE007787B7 /* ECKVO.m */; };
+		22C8858715497DFE007787B7 /* ECKVOManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8857F15497DFE007787B7 /* ECKVOManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C8858815497DFE007787B7 /* ECKVOManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C8857F15497DFE007787B7 /* ECKVOManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C8858915497DFE007787B7 /* ECKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858015497DFE007787B7 /* ECKVOManager.m */; };
+		22C8858A15497DFE007787B7 /* ECKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858015497DFE007787B7 /* ECKVOManager.m */; };
+		22C8858B15497DFE007787B7 /* ECKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858015497DFE007787B7 /* ECKVOManager.m */; };
+		22C8858C15497DFE007787B7 /* ECKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858015497DFE007787B7 /* ECKVOManager.m */; };
+		22C8858F15497E18007787B7 /* ECKVOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858E15497E18007787B7 /* ECKVOTests.m */; };
+		22C8859015497E18007787B7 /* ECKVOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C8858E15497E18007787B7 /* ECKVOTests.m */; };
 		22CA558213DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558313DA09FF007E89E2 /* CGGeometry+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA558413DA09FF007E89E2 /* CGGeometry+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */; };
@@ -1025,6 +1039,11 @@
 		22C1E19D1490CC27004DA13E /* NSExceptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NSExceptionTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22C1E2361490FAE0004DA13E /* ECRandomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECRandomTests.m; sourceTree = "<group>"; };
 		22C1E24014910560004DA13E /* CGGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CGGeometryTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		22C8857D15497DFE007787B7 /* ECKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECKVO.h; sourceTree = "<group>"; };
+		22C8857E15497DFE007787B7 /* ECKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECKVO.m; sourceTree = "<group>"; };
+		22C8857F15497DFE007787B7 /* ECKVOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECKVOManager.h; sourceTree = "<group>"; };
+		22C8858015497DFE007787B7 /* ECKVOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECKVOManager.m; sourceTree = "<group>"; };
+		22C8858E15497E18007787B7 /* ECKVOTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECKVOTests.m; sourceTree = "<group>"; };
 		22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+ECCore.h"; sourceTree = "<group>"; };
 		22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry+ECCore.m"; sourceTree = "<group>"; };
 		22CA556313DA09FF007E89E2 /* NSBundle+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ECCore.h"; sourceTree = "<group>"; };
@@ -1975,6 +1994,10 @@
 		22CA555E13DA09FF007E89E2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				22C8857D15497DFE007787B7 /* ECKVO.h */,
+				22C8857E15497DFE007787B7 /* ECKVO.m */,
+				22C8857F15497DFE007787B7 /* ECKVOManager.h */,
+				22C8858015497DFE007787B7 /* ECKVOManager.m */,
 				22CA555F13DA09FF007E89E2 /* CGGeometry+ECCore.h */,
 				22CA556013DA09FF007E89E2 /* CGGeometry+ECCore.m */,
 				22672DBF132321AA00CD8BC7 /* ECClang.h */,
@@ -2022,6 +2045,7 @@
 		22CA557113DA09FF007E89E2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				22C8858E15497E18007787B7 /* ECKVOTests.m */,
 				22C1E24014910560004DA13E /* CGGeometryTests.m */,
 				22C1E18F1490BF6D004DA13E /* ECLazyPropertiesTests.m */,
 				22C1E2361490FAE0004DA13E /* ECRandomTests.m */,
@@ -2264,6 +2288,8 @@
 				2285E5C9152F386500014DE3 /* ECTDropAllViewsAnimation.h in Headers */,
 				22CD5751154312D600C73114 /* NSString+ECCore.h in Headers */,
 				22CD575C1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */,
+				22C8858215497DFE007787B7 /* ECKVO.h in Headers */,
+				22C8858815497DFE007787B7 /* ECKVOManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2374,6 +2400,8 @@
 				22F2CA881534B5AC00F0A01D /* ECErrorAndMessage.h in Headers */,
 				22CD5756154312E800C73114 /* NSString+ECCore.h in Headers */,
 				22CD575B1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */,
+				22C8858115497DFE007787B7 /* ECKVO.h in Headers */,
+				22C8858715497DFE007787B7 /* ECKVOManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2676,6 +2704,8 @@
 				225E2F781535A82D005D721F /* ECErrorAndMessage.m in Sources */,
 				22CD5752154312D600C73114 /* NSString+ECCore.m in Sources */,
 				22CD575E1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */,
+				22C8858415497DFE007787B7 /* ECKVO.m in Sources */,
+				22C8858A15497DFE007787B7 /* ECKVOManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2767,6 +2797,9 @@
 				225E2F7A1535A82F005D721F /* ECErrorAndMessage.m in Sources */,
 				22CD5753154312D600C73114 /* NSString+ECCore.m in Sources */,
 				22CD57601543131000C73114 /* NSString+ECCoreGeneric.m in Sources */,
+				22C8858615497DFE007787B7 /* ECKVO.m in Sources */,
+				22C8858C15497DFE007787B7 /* ECKVOManager.m in Sources */,
+				22C8859015497E18007787B7 /* ECKVOTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2889,6 +2922,9 @@
 				22F2CA8A1534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */,
 				22CD5758154312E800C73114 /* NSString+ECCore.m in Sources */,
 				22CD575F1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */,
+				22C8858515497DFE007787B7 /* ECKVO.m in Sources */,
+				22C8858B15497DFE007787B7 /* ECKVOManager.m in Sources */,
+				22C8858F15497E18007787B7 /* ECKVOTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2986,6 +3022,8 @@
 				22F2CA891534B5AC00F0A01D /* ECErrorAndMessage.m in Sources */,
 				22CD5757154312E800C73114 /* NSString+ECCore.m in Sources */,
 				22CD575D1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */,
+				22C8858315497DFE007787B7 /* ECKVO.m in Sources */,
+				22C8858915497DFE007787B7 /* ECKVOManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
