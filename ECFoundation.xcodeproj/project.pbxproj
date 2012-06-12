@@ -96,6 +96,9 @@
 		2206F97E14924D6300AAC9B0 /* UIApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97B14924D6300AAC9B0 /* UIApplicationTests.m */; };
 		2206F97F14924D6300AAC9B0 /* UIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97C14924D6300AAC9B0 /* UIColorTests.m */; };
 		2206F98014924D6300AAC9B0 /* UIImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F97D14924D6300AAC9B0 /* UIImageTests.m */; };
+		220EE4291587A4F100004B0A /* ECErrorPresenterHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 220EE4271587A4F100004B0A /* ECErrorPresenterHandler.h */; };
+		220EE42A1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 220EE4281587A4F100004B0A /* ECErrorPresenterHandler.m */; };
+		220EE42B1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 220EE4281587A4F100004B0A /* ECErrorPresenterHandler.m */; };
 		22177AC81495707400C7BDBE /* UIFont+ECCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 22177AC41495707400C7BDBE /* UIFont+ECCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22177AC91495707400C7BDBE /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC51495707400C7BDBE /* UIFont+ECCore.m */; };
 		22177ACA1495707400C7BDBE /* UIFont+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22177AC51495707400C7BDBE /* UIFont+ECCore.m */; };
@@ -777,6 +780,8 @@
 		2206F97B14924D6300AAC9B0 /* UIApplicationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIApplicationTests.m; sourceTree = "<group>"; };
 		2206F97C14924D6300AAC9B0 /* UIColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorTests.m; sourceTree = "<group>"; };
 		2206F97D14924D6300AAC9B0 /* UIImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageTests.m; sourceTree = "<group>"; };
+		220EE4271587A4F100004B0A /* ECErrorPresenterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorPresenterHandler.h; sourceTree = "<group>"; };
+		220EE4281587A4F100004B0A /* ECErrorPresenterHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorPresenterHandler.m; sourceTree = "<group>"; };
 		22177AC41495707400C7BDBE /* UIFont+ECCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ECCore.h"; sourceTree = "<group>"; };
 		22177AC51495707400C7BDBE /* UIFont+ECCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ECCore.m"; sourceTree = "<group>"; };
 		22177AC61495707400C7BDBE /* UIViewController+ECUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECUtilities.h"; sourceTree = "<group>"; };
@@ -1879,6 +1884,8 @@
 		22B1274813C785CA0022CC5B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				220EE4271587A4F100004B0A /* ECErrorPresenterHandler.h */,
+				220EE4281587A4F100004B0A /* ECErrorPresenterHandler.m */,
 				22B1274913C785CA0022CC5B /* ECDebugChannelsViewController.h */,
 				22B1274A13C785CA0022CC5B /* ECDebugChannelsViewController.m */,
 				22B1274B13C785CA0022CC5B /* ECDebugChannelViewController.h */,
@@ -2290,6 +2297,7 @@
 				22CD575C1543131000C73114 /* NSString+ECCoreGeneric.h in Headers */,
 				22C8858215497DFE007787B7 /* ECKVO.h in Headers */,
 				22C8858815497DFE007787B7 /* ECKVOManager.h in Headers */,
+				220EE4291587A4F100004B0A /* ECErrorPresenterHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2706,6 +2714,7 @@
 				22CD575E1543131000C73114 /* NSString+ECCoreGeneric.m in Sources */,
 				22C8858415497DFE007787B7 /* ECKVO.m in Sources */,
 				22C8858A15497DFE007787B7 /* ECKVOManager.m in Sources */,
+				220EE42A1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2800,6 +2809,7 @@
 				22C8858615497DFE007787B7 /* ECKVO.m in Sources */,
 				22C8858C15497DFE007787B7 /* ECKVOManager.m in Sources */,
 				22C8859015497E18007787B7 /* ECKVOTests.m in Sources */,
+				220EE42B1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
