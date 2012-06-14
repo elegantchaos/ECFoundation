@@ -469,6 +469,9 @@
 		22B1278313C785CA0022CC5B /* ECDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B1274E13C785CA0022CC5B /* ECDebugViewController.m */; };
 		22B184E614F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
 		22B184E714F4404C0008887D /* ECParameterisedTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B184E514F4404C0008887D /* ECParameterisedTestCase.m */; };
+		22B3A9E7158A7CA4000E43F4 /* ECDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3A9E3158A7B31000E43F4 /* ECDownloadOperation.m */; };
+		22B3A9E8158A7CA9000E43F4 /* ECDownloadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B3A9E2158A7B31000E43F4 /* ECDownloadOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B3A9E9158A7CAE000E43F4 /* ECDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3A9E3158A7B31000E43F4 /* ECDownloadOperation.m */; };
 		22BE50B9149662D0007CC214 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE50B8149662D0007CC214 /* CoreText.framework */; };
 		22BE50D8149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BE50D9149668BE007CC214 /* ECHTMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE50D6149668BE007CC214 /* ECHTMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1028,6 +1031,8 @@
 		22B1274E13C785CA0022CC5B /* ECDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDebugViewController.m; sourceTree = "<group>"; };
 		22B184E414F4404C0008887D /* ECParameterisedTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECParameterisedTestCase.h; sourceTree = "<group>"; };
 		22B184E514F4404C0008887D /* ECParameterisedTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECParameterisedTestCase.m; sourceTree = "<group>"; };
+		22B3A9E2158A7B31000E43F4 /* ECDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDownloadOperation.h; sourceTree = "<group>"; };
+		22B3A9E3158A7B31000E43F4 /* ECDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDownloadOperation.m; sourceTree = "<group>"; };
 		22BE50B8149662D0007CC214 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		22BE50D6149668BE007CC214 /* ECHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECHTMLParser.h; sourceTree = "<group>"; };
 		22BE50D7149668BE007CC214 /* ECHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECHTMLParser.m; sourceTree = "<group>"; };
@@ -2075,6 +2080,8 @@
 		22CA557813DA09FF007E89E2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				22B3A9E2158A7B31000E43F4 /* ECDownloadOperation.h */,
+				22B3A9E3158A7B31000E43F4 /* ECDownloadOperation.m */,
 				22CD574F154312D600C73114 /* NSString+ECCore.h */,
 				22CD5750154312D600C73114 /* NSString+ECCore.m */,
 				2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */,
@@ -2298,6 +2305,7 @@
 				22C8858215497DFE007787B7 /* ECKVO.h in Headers */,
 				22C8858815497DFE007787B7 /* ECKVOManager.h in Headers */,
 				220EE4291587A4F100004B0A /* ECErrorPresenterHandler.h in Headers */,
+				22B3A9E8158A7CA9000E43F4 /* ECDownloadOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2715,6 +2723,7 @@
 				22C8858415497DFE007787B7 /* ECKVO.m in Sources */,
 				22C8858A15497DFE007787B7 /* ECKVOManager.m in Sources */,
 				220EE42A1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
+				22B3A9E7158A7CA4000E43F4 /* ECDownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2810,6 +2819,7 @@
 				22C8858C15497DFE007787B7 /* ECKVOManager.m in Sources */,
 				22C8859015497E18007787B7 /* ECKVOTests.m in Sources */,
 				220EE42B1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
+				22B3A9E9158A7CAE000E43F4 /* ECDownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
