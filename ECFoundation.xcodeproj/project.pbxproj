@@ -83,8 +83,8 @@
 		2206F9681492236400AAC9B0 /* NSURL+ECCoreIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F9661492236400AAC9B0 /* NSURL+ECCoreIOS.m */; };
 		2206F96A149235DC00AAC9B0 /* NSIndexSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F969149235DC00AAC9B0 /* NSIndexSetTests.m */; };
 		2206F96B149235DC00AAC9B0 /* NSIndexSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F969149235DC00AAC9B0 /* NSIndexSetTests.m */; };
-		2206F96E14923FAC00AAC9B0 /* ECSha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206F96C14923FAA00AAC9B0 /* ECSha1.h */; };
-		2206F96F14923FAC00AAC9B0 /* ECSha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206F96C14923FAA00AAC9B0 /* ECSha1.h */; };
+		2206F96E14923FAC00AAC9B0 /* ECSha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206F96C14923FAA00AAC9B0 /* ECSha1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2206F96F14923FAC00AAC9B0 /* ECSha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2206F96C14923FAA00AAC9B0 /* ECSha1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2206F97014923FAC00AAC9B0 /* ECSha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96D14923FAB00AAC9B0 /* ECSha1.m */; };
 		2206F97114923FAC00AAC9B0 /* ECSha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96D14923FAB00AAC9B0 /* ECSha1.m */; };
 		2206F97214923FAC00AAC9B0 /* ECSha1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206F96D14923FAB00AAC9B0 /* ECSha1.m */; };
