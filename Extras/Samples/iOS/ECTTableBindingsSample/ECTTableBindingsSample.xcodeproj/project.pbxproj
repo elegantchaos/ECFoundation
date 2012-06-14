@@ -86,6 +86,7 @@
 		22A72ED014EABAA200CFF8B9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22A72ECF14EABAA200CFF8B9 /* README.md */; };
 		22A72ED314EABD6D00CFF8B9 /* ModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A72ED214EABD6D00CFF8B9 /* ModelObject.m */; };
 		22A72ED614EABDDC00CFF8B9 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A72ED514EABDDC00CFF8B9 /* ModelController.m */; };
+		22B9B127158A10D700ECAE99 /* ECErrorPresenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B9B126158A10D700ECAE99 /* ECErrorPresenterHandler.m */; };
 		22E50CF814EB0C7E006F9F86 /* ECTSingleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E50CF714EB0C7D006F9F86 /* ECTSingleTableViewController.m */; };
 		22E50D0014EB124F006F9F86 /* ObjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E50CFE14EB124F006F9F86 /* ObjectViewController.xib */; };
 		22E50D0414EB1569006F9F86 /* ObjectSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22E50D0314EB1569006F9F86 /* ObjectSection.plist */; };
@@ -253,6 +254,8 @@
 		22A72ED214EABD6D00CFF8B9 /* ModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelObject.m; path = Source/ModelObject.m; sourceTree = SOURCE_ROOT; };
 		22A72ED414EABDDC00CFF8B9 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelController.h; path = Source/ModelController.h; sourceTree = SOURCE_ROOT; };
 		22A72ED514EABDDC00CFF8B9 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelController.m; path = Source/ModelController.m; sourceTree = SOURCE_ROOT; };
+		22B9B125158A10D700ECAE99 /* ECErrorPresenterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECErrorPresenterHandler.h; sourceTree = "<group>"; };
+		22B9B126158A10D700ECAE99 /* ECErrorPresenterHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECErrorPresenterHandler.m; sourceTree = "<group>"; };
 		22E50CF614EB0C7D006F9F86 /* ECTSingleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTSingleTableViewController.h; sourceTree = "<group>"; };
 		22E50CF714EB0C7D006F9F86 /* ECTSingleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTSingleTableViewController.m; sourceTree = "<group>"; };
 		22E50CFF14EB124F006F9F86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/ObjectViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -511,6 +514,8 @@
 				2266D4D114EAA9720033B236 /* ECDebugViewController.m */,
 				2266D4D214EAA9720033B236 /* ECDebugViewPopoverController.h */,
 				2266D4D314EAA9720033B236 /* ECDebugViewPopoverController.m */,
+				22B9B125158A10D700ECAE99 /* ECErrorPresenterHandler.h */,
+				22B9B126158A10D700ECAE99 /* ECErrorPresenterHandler.m */,
 				2266D4D414EAA9720033B236 /* ECLogViewController.h */,
 				2266D4D514EAA9720033B236 /* ECLogViewController.m */,
 				2266D4D614EAA9720033B236 /* ECLogViewHandler.h */,
@@ -775,6 +780,7 @@
 				225E2F8C1535AE3D005D721F /* ECErrorAndMessage.m in Sources */,
 				229147651543332B009A39F9 /* NSString+ECCore.m in Sources */,
 				229147691543333E009A39F9 /* NSString+ECCoreGeneric.m in Sources */,
+				22B9B127158A10D700ECAE99 /* ECErrorPresenterHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
