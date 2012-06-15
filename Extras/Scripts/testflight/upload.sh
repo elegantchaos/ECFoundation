@@ -1,10 +1,26 @@
 #!/bin/bash
 
+rm /tmp/upload.log
+
+TMP=/tmp/testflight-upload
+LOG="${TMP}/upload.log"
+ERROR_LOG="${TMP}/error.log"
+
+rm "${LLOG}"
+rm "${ERROR_LOG}"
+
+mkdir -p "$TMP"
+echo "Uploading..." > "${LOG}"
+echo "" > "${ERROR_LOG}"
+
+GIT=/usr/bin/git
+
 APITOKEN=`defaults read com.elegantchaos.testflight-upload API_TOKEN`
-if [ "${API_TOKEN}" == "" ]; then
-    echo "Need to set the TestFlight API token using 'defaults write com.elegantchaos.testflight-upload API_TOKEN <token>'"
+if [[ "${APITOKEN}" == "" ]]; then
+    echo "Need to set the TestFlight API token using 'defaults write com.elegantchaos.testflight-upload API_TOKEN <token>'" >> "${LOG}"
     exit 1
 fi
+
 
 # team token and distribution list are per-project settings, so should be passed in
 TEAMTOKEN="$1"
@@ -18,13 +34,15 @@ DEFAULT_MESSAGE_IS_GIT_LOG=true
 
 MESSAGE=""
 
-GIT=/usr/bin/git
-TMP=/tmp/testflight-upload
-mkdir -f "$TMP"
-
 if $DEFAULT_MESSAGE_IS_GIT_LOG; then
     # use the git log since the last upload as the upload message
-    MESSAGE=`cd "$PROJECT_DIR"; $GIT log --oneline testflight-upload..HEAD`
+    "$GIT" log testflight-upload
+    if [[ $? != 0 ]]; then
+        MESSAGE="first upload"
+
+    else
+        MESSAGE=`cd "$PROJECT_DIR"; $GIT log --oneline testflight-upload..HEAD`
+    fi
 
 else
     # default to the last saved message
@@ -33,49 +51,49 @@ else
     fi
 fi
 
-CONTINUE=true
-
 if $CONFIRM_MESSAGE; then
     # use applescript to ask about the upload
     MESSAGE=`osascript -e "tell application id \"com.apple.dt.Xcode\" to text returned of (display dialog \"Upload archive?\" default answer \"$MESSAGE\")"`
     if [[ $? != 0 ]] ; then
-        CONTINUE=false
+        echo "Upload cancelled" >> "${LOG}"
+        exit 1
     fi
 fi
 
-# if the user didn't cancel...
-if $CONTINUE; then
-    # archive the last commit message, just in case we want it
-    echo "$MESSAGE" > "${TMP}/upload.txt"
+# archive the last commit message, just in case we want it
+echo "$MESSAGE" > "${TMP}/upload.txt"
 
-    SCRIPT_DIR=`dirname $0`
+SCRIPT_DIR=`dirname $0`
 
-    # make the ipa
-    echo Making $EXECUTABLE_NAME.ipa as ${CODE_SIGN_IDENTITY}
-    APP="$ARCHIVE_PRODUCTS_PATH/Applications/$EXECUTABLE_NAME.app"
-    DSYM="$ARCHIVE_DSYMS_PATH/$EXECUTABLE_NAME.app.dSYM"
-    IPA="$TMPDIR/$EXECUTABLE_NAME.ipa"
-    XCROOT=`/usr/bin/xcode-select -print-path`
-    XCRUN="$XCROOT/usr/bin/xcrun"
-    "$XCRUN" -sdk iphoneos PackageApplication "$APP" -o "$IPA" --sign "${CODE_SIGN_IDENTITY}" --embed "${APP}/${EMBEDDED_PROFILE_NAME}" &> "${TMP}/xcrun.log"
+# make the ipa
+echo "Making $EXECUTABLE_NAME.ipa as ${CODE_SIGN_IDENTITY}" >> "${LOG}"
+APP="$ARCHIVE_PRODUCTS_PATH/Applications/$EXECUTABLE_NAME.app"
+DSYM="$ARCHIVE_DSYMS_PATH/$EXECUTABLE_NAME.app.dSYM"
+IPA="$TMPDIR/$EXECUTABLE_NAME.ipa"
+XCROOT=`/usr/bin/xcode-select -print-path`
+XCRUN="$XCROOT/usr/bin/xcrun"
 
-    if [[ $? == 0 ]] ; then
+echo "$XCRUN" -sdk iphoneos PackageApplication "$APP" -o "$IPA" --sign "${CODE_SIGN_IDENTITY}" --embed "${APP}/${EMBEDDED_PROFILE_NAME}" &> "${TMP}/xcrun.txt"
 
-            CURLLOG="${TMP}/testflightupload.log"
+"$XCRUN" -sdk iphoneos PackageApplication "$APP" -o "$IPA" --sign "${CODE_SIGN_IDENTITY}" --embed "${APP}/${EMBEDDED_PROFILE_NAME}" &> "${TMP}/xcrun.log"
 
-            echo "Uploading to Test Flight with notes:"
-            echo "\"${MESSAGE}\""
-            echo ""
-            echo "Distribution list ${DISTRIBUTION} will be mailed."
-            echo ""
+if [[ $? == 0 ]] ; then
 
-            zip -q -r "${DSYM}.zip" "${DSYM}"
-            rm "$CURLLOG"
-            curl http://testflightapp.com/api/builds.json --form file="@${IPA}" --form dsym="@${DSYM}.zip" --form api_token="${APITOKEN}" --form team_token="${TEAMTOKEN}" --form notes="${MESSAGE}" --form notify=True --form distribution_lists="${DISTRIBUTION}" -o "${CURLLOG}"
-            CONFIG_URL=`"${SCRIPT_DIR}/extract-url.py" < "${CURLLOG}"`
+        CURLLOG="${TMP}/curl.log"
 
-            if [[ $? == 0 ]] ; then
-            echo "Upload done."
+        echo "Uploading to Test Flight with notes:" >> "${LOG}"
+        echo "\"${MESSAGE}\"" >> "${LOG}"
+        echo "" >> "${LOG}"
+        echo "Distribution list ${DISTRIBUTION} will be mailed." >> "${LOG}"
+        echo "" >> "${LOG}"
+
+        zip -q -r "${DSYM}.zip" "${DSYM}"
+        rm "$CURLLOG"
+        curl http://testflightapp.com/api/builds.json --form file="@${IPA}" --form dsym="@${DSYM}.zip" --form api_token="${APITOKEN}" --form team_token="${TEAMTOKEN}" --form notes="${MESSAGE}" --form notify=True --form distribution_lists="${DISTRIBUTION}" -o "${CURLLOG}"
+        CONFIG_URL=`"${SCRIPT_DIR}/extract-url.py" < "${CURLLOG}"`
+
+        if [[ $? == 0 ]] ; then
+            echo "Upload done." >> "${LOG}"
             open "${CONFIG_URL}"
 
             # update the git tag
@@ -86,21 +104,16 @@ if $CONTINUE; then
             rm "${DSYM}.zip"
             rm "${IPA}"
 
-            else
-            ERROR_LOG="${TMP}/testflighterror.log"
-            echo "Test Flight returned error:" > $ERROR_LOG
-            cat "${CURLLOG}" >> $ERROR_LOG
-            open $ERROR_LOG
+        else
+            echo "Test Flight returned error:" > "${ERROR_LOG}"
+            cat "${CURLLOG}" >> "${ERROR_LOG}"
+            open "${ERROR_LOG}"
 
-    else
-
-        echo "Failed to build IPA"
-        open "${TMP}/xcrun.log"
-        exit 1
-    fi
-
+        fi
 else
-    echo "User cancelled, not uploading"
+
+    echo "Failed to build IPA"  >> "${ERROR_LOG}"
+    open "${TMP}/xcrun.log"
     exit 1
 fi
 
