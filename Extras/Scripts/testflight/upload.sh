@@ -36,12 +36,9 @@ MESSAGE=""
 
 if $DEFAULT_MESSAGE_IS_GIT_LOG; then
     # use the git log since the last upload as the upload message
-    "$GIT" log testflight-upload
+    MESSAGE=`cd "$PROJECT_DIR"; $GIT log --oneline testflight-upload..HEAD`
     if [[ $? != 0 ]]; then
         MESSAGE="first upload"
-
-    else
-        MESSAGE=`cd "$PROJECT_DIR"; $GIT log --oneline testflight-upload..HEAD`
     fi
 
 else
