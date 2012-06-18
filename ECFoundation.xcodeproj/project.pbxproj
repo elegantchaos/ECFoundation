@@ -3171,6 +3171,7 @@
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				SDKROOT = iphoneos;
+				STRIP_STYLE = debugging;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -3188,6 +3189,7 @@
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				SDKROOT = iphoneos;
+				STRIP_STYLE = debugging;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -3205,6 +3207,7 @@
 				PRODUCT_NAME = ECFoundation;
 				PUBLIC_HEADERS_FOLDER_PATH = ECFoundation.framework/Headers;
 				SDKROOT = iphoneos;
+				STRIP_STYLE = debugging;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = AdHoc;
