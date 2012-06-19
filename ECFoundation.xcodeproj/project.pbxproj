@@ -320,6 +320,9 @@
 		22728DBA124A34A100A9881F /* ECCoreSharedPrefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 22728A68124A240500A9881F /* ECCoreSharedPrefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		227C549D14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
 		227C549E14F4120700881415 /* Test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 227C549C14F4120700881415 /* Test.bundle */; };
+		22836D8115907CBF00ED239A /* ECVersionLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22836D7F15907CBF00ED239A /* ECVersionLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22836D8215907CBF00ED239A /* ECVersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22836D8015907CBF00ED239A /* ECVersionLabel.m */; };
+		22836D8315907CBF00ED239A /* ECVersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22836D8015907CBF00ED239A /* ECVersionLabel.m */; };
 		2285E5C9152F386500014DE3 /* ECTDropAllViewsAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2285E5C7152F386500014DE3 /* ECTDropAllViewsAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2285E5CA152F386500014DE3 /* ECTDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285E5C8152F386500014DE3 /* ECTDropAllViewsAnimation.m */; };
 		2285E5CB152F386500014DE3 /* ECTDropAllViewsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2285E5C8152F386500014DE3 /* ECTDropAllViewsAnimation.m */; };
@@ -932,6 +935,8 @@
 		227EEB3F11A6BC66009420F7 /* ECIOSDebugSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSDebugSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4011A6BC66009420F7 /* ECIOSReleaseSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSReleaseSettings.xcconfig; sourceTree = "<group>"; };
 		227EEB4111A6BC66009420F7 /* ECIOSSharedSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ECIOSSharedSettings.xcconfig; sourceTree = "<group>"; };
+		22836D7F15907CBF00ED239A /* ECVersionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECVersionLabel.h; sourceTree = "<group>"; };
+		22836D8015907CBF00ED239A /* ECVersionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECVersionLabel.m; sourceTree = "<group>"; };
 		2285E5C7152F386500014DE3 /* ECTDropAllViewsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTDropAllViewsAnimation.h; sourceTree = "<group>"; };
 		2285E5C8152F386500014DE3 /* ECTDropAllViewsAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTDropAllViewsAnimation.m; sourceTree = "<group>"; };
 		2288159214EE94EC00DE962A /* ECDocumentStyles+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ECDocumentStyles+UIKit.h"; sourceTree = "<group>"; };
@@ -1939,6 +1944,8 @@
 				22EA2D0714ED9B2E0043ABFA /* ECTTappableStyledLabel.m */,
 				22EA2D0814ED9B2E0043ABFA /* ECTTransparentToolbar.h */,
 				22EA2D0914ED9B2E0043ABFA /* ECTTransparentToolbar.m */,
+				22836D7F15907CBF00ED239A /* ECVersionLabel.h */,
+				22836D8015907CBF00ED239A /* ECVersionLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2306,6 +2313,7 @@
 				22C8858815497DFE007787B7 /* ECKVOManager.h in Headers */,
 				220EE4291587A4F100004B0A /* ECErrorPresenterHandler.h in Headers */,
 				22B3A9E8158A7CA9000E43F4 /* ECDownloadOperation.h in Headers */,
+				22836D8115907CBF00ED239A /* ECVersionLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2724,6 +2732,7 @@
 				22C8858A15497DFE007787B7 /* ECKVOManager.m in Sources */,
 				220EE42A1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
 				22B3A9E7158A7CA4000E43F4 /* ECDownloadOperation.m in Sources */,
+				22836D8215907CBF00ED239A /* ECVersionLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2820,6 +2829,7 @@
 				22C8859015497E18007787B7 /* ECKVOTests.m in Sources */,
 				220EE42B1587A4F100004B0A /* ECErrorPresenterHandler.m in Sources */,
 				22B3A9E9158A7CAE000E43F4 /* ECDownloadOperation.m in Sources */,
+				22836D8315907CBF00ED239A /* ECVersionLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
