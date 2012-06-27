@@ -595,8 +595,6 @@
 		22CEFD5B1421391600565841 /* NSColor+ECCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEFD581421391600565841 /* NSColor+ECCore.m */; };
 		22DEA70514F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
 		22DEA70614F40E0C00DF5777 /* ECTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DEA70314F40E0C00DF5777 /* ECTestCase.m */; };
-		22DEA70714F40E0C00DF5777 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README.md */; };
-		22DEA70814F40E0C00DF5777 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22DEA70414F40E0C00DF5777 /* README.md */; };
 		22E99E9A148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9B148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
 		22E99E9C148E50F90034E167 /* ECAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E99E99148E50F90034E167 /* ECAssertion.m */; };
@@ -2557,7 +2555,6 @@
 			files = (
 				220375D9141FF4C00040E740 /* InfoPlist.strings in Resources */,
 				22AE923714926D47008EF8E2 /* README.md in Resources */,
-				22DEA70814F40E0C00DF5777 /* README.md in Resources */,
 				227C549E14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2569,7 +2566,6 @@
 				220375DF141FF4DD0040E740 /* finder support.scpt in Resources */,
 				220375E5141FF4E60040E740 /* ECAboutBox.xib in Resources */,
 				220375E7141FF4E60040E740 /* InfoPlist.strings in Resources */,
-				22DEA70714F40E0C00DF5777 /* README.md in Resources */,
 				227C549D14F4120700881415 /* Test.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
