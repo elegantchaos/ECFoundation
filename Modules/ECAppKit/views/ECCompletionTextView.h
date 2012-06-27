@@ -2,7 +2,7 @@
 //! @author Sam Deane
 //! @date 12/08/2011.
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import <AppKit/AppKit.h>

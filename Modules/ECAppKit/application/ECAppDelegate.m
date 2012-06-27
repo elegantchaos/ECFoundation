@@ -2,7 +2,7 @@
 //! @author Sam Deane
 //! @date 28/11/2010
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
@@ -12,6 +12,7 @@
 #import "ECAboutBoxController.h"
 #import "ECLicenseChecker.h"
 #import "ECMacStore.h"
+#import "ECMacStoreDifferentVersion.h"
 #import "ECMacStoreExact.h"
 #import "ECMacStoreTest.h"
 #import "ECCompoundLicenseChecker.h"
@@ -24,6 +25,7 @@
 #import "ECLogHandlerNSLog.h"
 #import "ECLogHandlerStdout.h"
 #import "ECLogHandlerStderr.h"
+#import "ECErrorPresenterHandler.h"
 
 // ==============================================
 // Private Methods
@@ -101,13 +103,14 @@ static NSString *const UserGuideType = @"pdf";
     ECDebug(ECAppDelegateChannel, @"Request to open file: %@", filename);
 
     NSString* licenseFileType = [[NSApplication sharedApplication] licenseFileType];
-    if (licenseFileType && [[filename pathExtension] isEqualToString: licenseFileType])
+	BOOL isLicenseFile = licenseFileType && [[filename pathExtension] isEqualToString: licenseFileType];
+    if (isLicenseFile)
     {
         NSURL* licenseURL = [NSURL fileURLWithPath: filename];
         [self.licenseChecker registerLicenseFile: licenseURL];
     }
 	
-	return YES;
+	return isLicenseFile;
 }
 
 #pragma mark - Logging
@@ -131,6 +134,10 @@ static NSString *const UserGuideType = @"pdf";
     ECLogHandler* stderrHandler = [[ECLogHandlerStderr alloc] init];
 	[lm registerHandler: stderrHandler];
 	[stderrHandler release];
+
+	ECErrorPresenterHandler* errorPresenterHandler = [[ECErrorPresenterHandler alloc] init];
+	[lm registerHandler: errorPresenterHandler];
+	[errorPresenterHandler release];
 }
 
 // --------------------------------------------------------------------------
@@ -343,6 +350,11 @@ static NSString *const UserGuideType = @"pdf";
     [exactChecker release];
     
 #if CHECK_FOR_TEST_RECEIPT
+    // look for saved MAS receipt with different version
+    ECMacStoreDifferentVersion* differentVersionChecker = [[ECMacStoreDifferentVersion alloc] init];
+    [compoundChecker addChecker: differentVersionChecker];
+    [differentVersionChecker release];
+
     ECMacStoreTest* testChecker = [[ECMacStoreTest alloc] init];
     [compoundChecker addChecker: testChecker];
     [testChecker release];

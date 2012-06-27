@@ -2,7 +2,7 @@
 //! @author Sam Deane
 //! @date 12/04/2011
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
@@ -33,10 +33,10 @@ NSString *const DataItemSelected = @"ECDataItemSelected";
 // Properties
 // --------------------------------------------------------------------------
 
-ECPropertySynthesize(data);
-ECPropertySynthesize(defaults);
-ECPropertySynthesize(items);
-ECPropertySynthesize(parent);
+@synthesize data = _data;
+@synthesize defaults = _defaults;
+@synthesize items = _items;
+@synthesize parent = _parent;
 
 // --------------------------------------------------------------------------
 //! Return a new empty item, autoreleased.
@@ -140,10 +140,10 @@ ECPropertySynthesize(parent);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(data);
-	ECPropertyDealloc(defaults);
-	ECPropertyDealloc(items);
-	ECPropertyDealloc(parent);
+	[_data release];
+	[_defaults release];
+	[_items release];
+	[_parent release];
 	
 	[super dealloc];
 }

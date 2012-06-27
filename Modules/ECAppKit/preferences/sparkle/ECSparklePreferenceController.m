@@ -2,15 +2,15 @@
 //! @author Sam Deane
 //! @date 16/01/2010
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 // --------------------------------------------------------------------------
 
 #import "ECSparklePreferenceController.h"
 
 @implementation ECSparklePreferenceController
 
-ECPropertySynthesize(introText);
-ECPropertySynthesize(anonymousText);
+@synthesize introText = _introText;
+@synthesize anonymousText = _anonymousText;
 
 + (NSArray*) preferencePanes
 {
@@ -41,8 +41,8 @@ ECPropertySynthesize(anonymousText);
 
 - (void) dealloc
 {
-	ECPropertyDealloc(introText);
-	ECPropertyDealloc(anonymousText);
+	[_introText release];
+	[_anonymousText release];
 	
 	[super dealloc];
 }

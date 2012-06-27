@@ -2,31 +2,25 @@
 //! @author Sam Deane
 //! @date 12/04/2011
 //
-//  Copyright 2011 Sam Deane, Elegant Chaos. All rights reserved.
+//  Copyright 2012 Sam Deane, Elegant Chaos. All rights reserved.
 //  This source code is distributed under the terms of Elegant Chaos's 
 //  liberal license: http://www.elegantchaos.com/license/liberal
 // --------------------------------------------------------------------------
 
 #import "ECCommonKeys.h"
-#import "ECProperties.h"
 
 @interface ECDataItem : NSObject 
 {
-	ECPropertyVariable(data, NSMutableDictionary*);
-	ECPropertyVariable(defaults, NSMutableDictionary*);
-	ECPropertyVariable(parent, ECDataItem*);
-	ECPropertyVariable(items, NSMutableArray*);
-	
 	NSUInteger	mCachedSection;
 	NSUInteger	mCachedRow;
 	ECDataItem* mCachedSectionData;
 	ECDataItem* mCachedRowData;
 }
 
-ECPropertyRetained(data, NSMutableDictionary*);
-ECPropertyRetained(defaults, NSMutableDictionary*);
-ECPropertyRetained(parent, ECDataItem*);
-ECPropertyRetained(items, NSMutableArray*);
+@property (strong, nonatomic) NSMutableDictionary* data;
+@property (strong, nonatomic) NSMutableDictionary* defaults;
+@property (strong, nonatomic) ECDataItem* parent;
+@property (strong, nonatomic) NSMutableArray* items;
 
 + (ECDataItem*)		item;
 + (ECDataItem*)		itemWithObjectsAndKeys: (id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
